@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CustomMaterialModule } from './core/material.module';
+import {FormsModule} from '@angular/forms';
+
 
 import { HttpClientModule} from '@angular/common/http';
 
@@ -16,6 +20,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
+import { LoginComponent } from './pages/login/login.component';
+import { UserComponent } from './pages/user/user.component';
+
 
 @NgModule({
   declarations: [
@@ -25,14 +32,24 @@ import { SearchComponent } from './pages/search/search.component';
     HomeComponent,
     AboutComponent,
     ItemComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    CustomMaterialModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
