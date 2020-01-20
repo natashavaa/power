@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './core/material.module';
 import {FormsModule} from '@angular/forms';
-
-
+import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule} from '@angular/common/http';
 
 //Rutas
@@ -22,7 +21,10 @@ import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserComponent } from './pages/user/user.component';
-
+import { RegisterComponent } from './pages/register/register.component';
+import { MatButtonModule } from '@angular/material';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { UserComponent } from './pages/user/user.component';
     SearchComponent,
     LoginComponent,
     UserComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,8 +47,12 @@ import { UserComponent } from './pages/user/user.component';
     BrowserAnimationsModule,
     CustomMaterialModule,
     FormsModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    MatExpansionModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatSelectModule,
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })

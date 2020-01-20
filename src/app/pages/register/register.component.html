@@ -1,0 +1,100 @@
+    <div align='center'>
+       <mat-accordion multi="true">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            <h4> Información personal </h4>
+            </mat-panel-title>
+            <mat-panel-description>
+            Rellenar algunos datos personales
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre Completo</mat-label>
+            <input matInput placeholder="Nombre Completo" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Cedula</mat-label>
+            <input matInput placeholder="Cedula" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Direccion</mat-label>
+            <input matInput placeholder="Direccion" required>
+          </mat-form-field>
+
+          <form align='left'>
+            <div>
+            <label>Genero: </label>
+            <mat-radio-group>
+              <mat-radio-button value="1">Femenino</mat-radio-button>
+              <mat-radio-button value="2">Masculino</mat-radio-button>
+            </mat-radio-group>
+            </div>
+          </form>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Especialidad</mat-label>
+            <br>
+            <mat-select [(ngModel)]="selectedValue" name="especialidad">
+              <mat-option *ngFor="let especialidad of especialidades" [value]="especialidad.value">
+                {{especialidad.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" text="Email" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Telefono</mat-label>
+            <input matInput placeholder="Telefono" text="number"  required>
+          </mat-form-field>
+          
+          <mat-action-row>
+              <button mat-button color="primary" (click)="nextStep()">Next</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h4> Registrarse </h4> 
+            </mat-panel-title>
+            <mat-panel-description>
+              Rellenar su nuevo usuario y contraseña
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+            <mat-form-field appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input matInput placeholder="Usuario"  name="username" text="username"  required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input matInput placeholder="password"  name="password" text="password" required>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Contraseña</mat-label>
+                <input matInput placeholder="password"  name="password" text="password" required>
+                </mat-form-field>
+
+          <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+
+        <mat-card>
+          <button mat-raised-button routerLink="home" color="warn">INICIAR SESIÓN</button>
+          <br>
+          <br>
+          <a href="/#/">¿Tienes una cuenta?</a>  
+        </mat-card>
+        </mat-accordion>
+      </div>

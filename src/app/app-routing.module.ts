@@ -9,16 +9,17 @@ import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
-import { UserComponent } from './pages/user/user.component';
-
+import { RegisterComponent } from './pages/register/register.component';
 
 
 const app_routes: Routes = [
   {path : '', component : LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'about', component:AboutComponent},
-  {path: 'item/:id', component:ItemComponent},
-  {path: 'search/:termino', component:SearchComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'item/:id', component: ItemComponent},
+  {path: 'search/:termino', component: SearchComponent},
+  {path: 'register', component: RegisterComponent},
+  {path : 'login', component : LoginComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];
