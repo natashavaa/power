@@ -25,6 +25,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { MatButtonModule } from '@angular/material';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import { HomepacientesComponent } from './pages/homepacientes/homepacientes.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {MatSelectModule} from '@angular/material/select';
     LoginComponent,
     UserComponent,
     RegisterComponent,
+    HomepacientesComponent,
   ],
   imports: [
     BrowserModule,

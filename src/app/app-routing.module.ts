@@ -10,16 +10,18 @@ import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { HomepacientesComponent} from './pages/homepacientes/homepacientes.component';
 
 
 const app_routes: Routes = [
-  {path : '', component : LoginComponent},
+  {path: '', component : LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'item/:id', component: ItemComponent},
   {path: 'search/:termino', component: SearchComponent},
   {path: 'register', component: RegisterComponent},
-  {path : 'login', component : LoginComponent},
+  {path: 'login', component : LoginComponent},
+  {path: 'homepacientes', component: HomepacientesComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];
