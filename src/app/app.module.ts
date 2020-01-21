@@ -32,6 +32,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PacientesComponent } from './pages/pacientes/pacientes.component';
 import { HistoriaComponent } from './pages/historia/historia.component';
+import { ImagenesComponent } from './pages/imagenes/imagenes.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { HistoriaComponent } from './pages/historia/historia.component';
     RegisterComponent,
     PacientesComponent,
     HistoriaComponent,
+    ImagenesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-historia',
@@ -8,23 +9,22 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 })
 export class HistoriaComponent implements OnInit {
 
-  user: FormGroup;
 
-  constructor() {}
+
+  constructor(private router: Router) { }
+
+
+  datos(): void {
+    this.router.navigate(["historiaclinica"]);
+  }
   
-  ngOnInit() {
-    this.user= new FormGroup({
-       fullName: new FormControl(),
-       email: new FormControl(),
-       skills: new FormGroup({
-         skillName: new FormControl(),
-         experienceInYears: new FormControl(),
-         proficiency: new FormControl()
-       })
-    });
+  imagen(): void {
+    this.router.navigate(["imagenes"]);
   }
 
-    onSubmit(): void {
-      console.log(this.user);
-    }
+
+  ngOnInit() {
+
+  }
+
 }

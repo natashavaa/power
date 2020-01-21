@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PacientesComponent } from './pages/pacientes/pacientes.component';
 import { HistoriaComponent} from './pages/historia/historia.component';
+import { ImagenesComponent} from './pages/imagenes/imagenes.component';
 
 
 const app_routes: Routes = [
@@ -25,6 +26,7 @@ const app_routes: Routes = [
   {path: 'login', component : LoginComponent},
   {path: 'pacientes', component : PacientesComponent},
   {path: 'historiaclinica', component : HistoriaComponent},
+  {path: 'imagenes', component: ImagenesComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];

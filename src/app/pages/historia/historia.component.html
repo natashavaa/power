@@ -1,17 +1,18 @@
 <div class="container">
+    
     <div class="left">
         <br>
         <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <h5 align="center">Fernando Acosta</h5>
-                    <h1 align="center">Edad</h1>
+                    <h5 align="center">Maria Salazar</h5>
+                    <h1 align="center">12 años</h1>
                 </mat-card-title>
                 <mat-list-item>
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="pacientes()" class="a">Datos Personales</button>
+                            <button mat-stroked-button (click)="datos()" class="a">Datos Personales</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -19,7 +20,7 @@
                 <mat-list-item>
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="pacientes()" class="b">Imagenes y Archivos</button>
+                            <button mat-stroked-button (click)="imagen()" class="b">Imagenes y Archivos</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -75,29 +76,167 @@
             </mat-list>
         </mat-card-content>
     </div>
+
     <div class="center">
         <mat-card-content>
             <mat-card-title>
-                <br>
-                <h4 align="center">DATOS PERSONALES</h4>
+                <form>
+                    <mat-card>
+                        <br>
+                        <h4> DATOS PERSONALES </h4>
+                    </mat-card>
+                </form>
             </mat-card-title>
+
             <div class="row">
                 <div class="col-6">
+                    <br>
                     <form action="">
                         <div class="form-group row">
-                            <label for="" class="col-4 col-form-label">Nombre</label>
-                            <input placeholder="Escribe tu nombre" class="form-control col-8">
+                            <label for="" class="col-8 col-form-label"># Historia</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="1"
+                                class="form-control col-4">
                         </div>
                         <div class="form-group row">
-                            <label for=""  class="col-4 col-form-label">Email</label>
-                            <input placeholder="Escribe tu email" class="form-control col-8">
+                            <label for="" class="col-8 col-form-label">Nombre del Paciente</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="Maria Salazar"
+                                class="form-control col-4">
                         </div>
-                        <div class="form-group">
-                            <button class="btn btn-danger">Enviar</button>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Cedula</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="10106952"
+                                class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Direccion Habitacion</label>
+                            <textarea readonly class="form-control-plaintext" id="staticEmail"
+                                class="form-control col-4">Avenida Guayana</textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Direccion Trabajo</label>
+                            <textarea readonly class="form-control-plaintext" id="staticEmail"
+                                class="form-control col-4">San felix</textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Genero: </label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                    F
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                        class="selector" checked>
+                                    M
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Lugar de Nacimiento</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="Puerto Ordaz"
+                                class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Ocupacion</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="Estudiante"
+                                class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Motivo de la Consulta</label>
+                            <textarea readonly class="form-control-plaintext" id="staticEmail"
+                                class="form-control col-4">Dolor de Muela</textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Consultorio a Visitar</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="Odontologia"
+                                class="form-control col-4">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Edad</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="12"
+                                class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Telefono de Casa</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="02869515582"
+                                class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Celular</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="04162508521"
+                                class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Remitido por</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="mi mamá"
+                                class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Estado Civil: </label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                    S
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                        class="selector" checked>
+                                    C
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                        class="selector" checked>
+                                    D
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                        class="selector" checked>
+                                    V
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Color Dental</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="Amarillo"
+                                class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">En Emergencia llamar a</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="mi mama"
+                                class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Telefono de Casa</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="02869532142"
+                                class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Celular</label>
+                            <input readonly class="form-control-plaintext" id="staticEmail" value="04125205124"
+                                class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Historia Dental</label>
+                            <textarea readonly class="form-control-plaintext" rows="3" id="staticEmail"
+                                class="form-control col-6">Me saque una muela hace una semana</textarea>
                         </div>
                     </form>
                 </div>
             </div>
+
         </mat-card-content>
     </div>
 </div>
