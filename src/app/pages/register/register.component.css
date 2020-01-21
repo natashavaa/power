@@ -47,14 +47,10 @@
  background-color: #000 !important;
 }
 
-.mat-radio-button ~ .mat-radio-button {
+.selector {
   margin-left: 16px;
   text-align: left;
 
-}
-
-.mat-select {
-  color: #000;
 }
 
 .mat-card a {
