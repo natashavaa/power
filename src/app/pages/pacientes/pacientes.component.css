@@ -64,11 +64,14 @@
   color: #000;
 }
 
-.mat-card a {
+.mat-card {
   text-decoration: none;
   font-size: 12px;
   line-height: 20px;
-  color: darkgrey;
+  color: #000;
+  background: rgba(207, 205, 205, 0.199);
+  width: 60%;
+  height: 60%;
 }
 
 .mat-card a:hover {
