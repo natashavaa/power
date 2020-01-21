@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 export interface Consultorio {
   value: string;
