@@ -78,3 +78,9 @@
 .mat-radio-button {
   margin: 0 12px;
 }
+
+.selector {
+  margin-left: 5px;
+  text-align: left;
+
+}
