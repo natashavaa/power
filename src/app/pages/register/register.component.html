@@ -1,100 +1,75 @@
 <div align='center'>
-  <mat-accordion multi="true">
-    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <h4> Información personal </h4>
-        </mat-panel-title>
-        <mat-panel-description>
-          Rellenar algunos datos personales
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Nombre Completo</mat-label>
-        <input matInput placeholder="Nombre Completo" required>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Cedula</mat-label>
-        <input matInput placeholder="Cedula" required>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Direccion</mat-label>
-        <input matInput placeholder="Direccion" required>
-      </mat-form-field>
-
-      <form align='left'>
-        <div>
-          <label>Genero: </label>
-          <mat-radio-group>
-            <mat-radio-button value="1">Femenino</mat-radio-button>
-            <mat-radio-button value="2">Masculino</mat-radio-button>
-          </mat-radio-group>
-        </div>
-      </form>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Especialidad</mat-label>
-        <br>
-        <mat-select [(ngModel)]="selectedValue" name="especialidad">
-          <mat-option *ngFor="let especialidad of especialidades" [value]="especialidad.value">
-            {{especialidad.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" text="Email" required>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Telefono</mat-label>
-        <input matInput placeholder="Telefono" text="number" required>
-      </mat-form-field>
-
-      <mat-action-row>
-        <button mat-button color="primary" (click)="nextStep()">Next</button>
-      </mat-action-row>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <h4> Registrarse </h4>
-        </mat-panel-title>
-        <mat-panel-description>
-          Rellenar su nuevo usuario y contraseña
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Usuario</mat-label>
-        <input matInput placeholder="Usuario" name="username" text="username" required>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Contraseña</mat-label>
-        <input matInput placeholder="password" name="password" text="password" required>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Contraseña</mat-label>
-        <input matInput placeholder="password" name="password" text="password" required>
-      </mat-form-field>
-
-      <mat-action-row>
-        <button mat-button color="warn" (click)="prevStep()">Previous</button>
-      </mat-action-row>
-    </mat-expansion-panel>
-
-    <mat-card>
-      <button mat-raised-button (click)="home()" color="warn">REGISTRAR</button>
-      <br>
-      <br>
-      <a href="/#/">¿Tienes una cuenta?</a>
-    </mat-card>
-    </mat-accordion>
-  </div>
+  <mat-card>
+    <mat-panel-title>
+      <h4> Registro </h4>
+    </mat-panel-title>
+    <mat-panel-description>
+      Rellenar la informacion solicitada
+    </mat-panel-description>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col bg text-dark">
+        <form action="">
+          <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Nombre Completo</label>
+            <input placeholder="Escribe nombre del paciente" class="form-control col-8">
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Cedula</label>
+            <input placeholder="Escribe cedula del paciente" class="form-control col-8">
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Direccion</label>
+            <input placeholder="Escribe direccion del paciente" class="form-control col-8">
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Genero: </label>
+            <mat-radio-group>
+              <mat-radio-button value="1">Femenino</mat-radio-button>
+              <mat-radio-button value="2">Masculino</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="form-group row">
+            <mat-label for="" class="col-4 col-form-label">Especialidad</mat-label>
+            <br>
+            <select class="form-control col-8">
+              <option>Odontologia</option>
+              <option>Ortodoncia</option>
+              <option>Niguna</option>
+            </select>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Email</label>
+            <input placeholder="Escribe email del paciente" class="form-control col-8">
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Telefono</label>
+            <input placeholder="Escribe telefono del paciente" class="form-control col-8">
+          </div>
+        </form>
+      </div>
+      <div class="col-6">
+        <form action="">
+          <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Usuario</label>
+            <input placeholder="Escribe usuario del paciente" class="form-control col-8">
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Cedula</label>
+            <input placeholder="Escribe contraseña del paciente" class="form-control col-8">
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Confirmar Contraseña</label>
+            <input placeholder="Escribe contraseña del paciente" class="form-control col-8">
+          </div>
+        </form>
+      </div>
+    </div>
+    <br>
+    <button mat-raised-button (click)="home()" color="warn">REGISTRAR</button>
+    <br>
+    <br>
+    <a href="/#/">¿Tienes una cuenta?</a>
+  </mat-card>
+</div>

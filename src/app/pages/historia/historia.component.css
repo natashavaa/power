@@ -28,6 +28,11 @@
   font-size: 15px;
   line-height: none;
   color: #fff;
+  text-align: center;
+ width: 152%;
+ left: calc(29% - 40%);
+ border-color: transparent;
+ background-color: transparent;
 }
 
 .a:hover {
@@ -48,14 +53,6 @@
   text-align: center;
   font-size: 25px;
   color: #000;
-}
-
-button {
- text-align: center;
- width: 152%;
- left: calc(29% - 40%);
- border-color: transparent;
- background-color: transparent;
 }
 
 .b {

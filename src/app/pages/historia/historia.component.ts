@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
-export interface User {
-  name: string;
-  password: string;
-  passwordRepeat: string,
-}
-
 @Component({
   selector: 'app-historia',
   templateUrl: './historia.component.html',
@@ -16,9 +10,21 @@ export class HistoriaComponent implements OnInit {
 
   user: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor() {}
   
   ngOnInit() {
+    this.user= new FormGroup({
+       fullName: new FormControl(),
+       email: new FormControl(),
+       skills: new FormGroup({
+         skillName: new FormControl(),
+         experienceInYears: new FormControl(),
+         proficiency: new FormControl()
+       })
+    });
   }
 
+    onSubmit(): void {
+      console.log(this.user);
+    }
 }
