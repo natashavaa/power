@@ -23,13 +23,13 @@
 
   </div>
   <form align="right">
-  <div *ngIf="!productosService.cargando">
-    <button mat-mini-fab (click)="pacientes()">+</button>
-  </div>
-</form>
-<br>
- 
-    <div *ngIf="!productosService.cargando" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
+    <div *ngIf="!productosService.cargando">
+      <button mat-mini-fab (click)="pacientes()">+</button>
+    </div>
+  </form>
+  <br>
+
+  <div *ngIf="!productosService.cargando" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
 
     <a *ngFor="let producto of productosService.productos" [routerLink]="['/item' , producto.cod]"
       class="animated fadeIn rk-item ae-masonry__item">
@@ -40,4 +40,6 @@
       </div>
     </a>
   </div>
+  <mat-paginator [length]="100" [pageSize]="15" [pageSizeOptions]="[15, 30, 45, 100]">
+  </mat-paginator>
 </section>

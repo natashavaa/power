@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+
+export interface User {
+  name: string;
+  password: string;
+  passwordRepeat: string,
+}
 
 @Component({
   selector: 'app-historia',
@@ -7,8 +14,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoriaComponent implements OnInit {
 
-  constructor() { }
+  user: FormGroup;
 
+  constructor(private fb: FormBuilder) {}
+  
   ngOnInit() {
   }
 

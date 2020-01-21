@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 //Rutas
 import { Routes, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //Componentes
 import { HomeComponent } from './pages/home/home.component';
@@ -29,7 +30,7 @@ const app_routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(app_routes, { useHash: true })],
+  imports: [RouterModule.forRoot(app_routes, { useHash: true }), ReactiveFormsModule],
   exports: [RouterModule],  
 declarations: []
 }) 

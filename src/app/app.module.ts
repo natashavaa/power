@@ -6,7 +6,8 @@ import {FormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule} from '@angular/common/http';
 import {MatDividerModule} from '@angular/material/divider';
-import {MatGridListModule} from '@angular/material/grid-list'
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 //Rutas
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material';
 import {MatIconModule} from '@angular/material';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 //Componentes
@@ -62,7 +64,9 @@ import { HistoriaComponent } from './pages/historia/historia.component';
     MatDividerModule,
     MatListModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    MatPaginatorModule,
+    ReactiveFormsModule
    ],
   providers: [],
   bootstrap: [AppComponent]
