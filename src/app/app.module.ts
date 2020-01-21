@@ -34,6 +34,7 @@ import { PacientesComponent } from './pages/pacientes/pacientes.component';
 import { HistoriaComponent } from './pages/historia/historia.component';
 import { ImagenesComponent } from './pages/imagenes/imagenes.component';
 import { PacienteconsultaComponent } from './pages/pacienteconsulta/pacienteconsulta.component';
+import { PacienteprocedimientoComponent } from './pages/pacienteprocedimiento/pacienteprocedimiento.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PacienteconsultaComponent } from './pages/pacienteconsulta/pacientecons
     HistoriaComponent,
     ImagenesComponent,
     PacienteconsultaComponent,
+    PacienteprocedimientoComponent,
   ],
   imports: [
     BrowserModule,

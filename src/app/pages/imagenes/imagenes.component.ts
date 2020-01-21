@@ -25,4 +25,9 @@ export class ImagenesComponent implements OnInit {
     this.router.navigate(["pacienteconsulta"]);
   }
 
+  procedimiento(): void {
+    this.router.navigate(["pacienteprocedimiento"]);
+  }
+  
+
 }

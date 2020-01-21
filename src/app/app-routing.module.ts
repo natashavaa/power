@@ -15,6 +15,8 @@ import { PacientesComponent } from './pages/pacientes/pacientes.component';
 import { HistoriaComponent} from './pages/historia/historia.component';
 import { ImagenesComponent} from './pages/imagenes/imagenes.component';
 import { PacienteconsultaComponent } from './pages/pacienteconsulta/pacienteconsulta.component';
+import { PacienteprocedimientoComponent } from './pages/pacienteprocedimiento/pacienteprocedimiento.component';
+
 
 const app_routes: Routes = [
   {path: '', component : LoginComponent},
@@ -25,9 +27,10 @@ const app_routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component : LoginComponent},
   {path: 'pacientes', component : PacientesComponent},
+  {path: 'pacienteprocedimiento', component: PacienteprocedimientoComponent},
   {path: 'historiaclinica', component : HistoriaComponent},
   {path: 'imagenes', component: ImagenesComponent},
-  {path: 'pacienteconsulta', component: PacienteconsultaComponent},
+  {path: 'pacienteconsulta', component: PacienteconsultaComponent},  
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];
