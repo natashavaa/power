@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -14,6 +15,7 @@ export interface Especialidad {
 })
 
 export class RegisterComponent {
+
   selectedValue: string;
   step = 0;
 
@@ -34,4 +36,12 @@ export class RegisterComponent {
     {value: 'Or-1', viewValue: 'Ortodoncia'},
   ];
 
+  constructor( private router: Router) {
+
+  }
+  
+  home() : void {
+    this.router.navigate(["home"]);
+ 
+}
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/services/productos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( public productosService: ProductosService) {
+  constructor( public productosService: ProductosService, private router: Router) {
 
         
 
@@ -16,5 +17,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  pacientes() : void {
+      this.router.navigate(["pacientes"]);
+   
+  }
 }

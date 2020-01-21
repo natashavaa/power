@@ -17,7 +17,7 @@
     </h1>
     <nav class="rk-navigation">
       <ul class="rk-menu">
-        <li routerLinkActive="active"  class="rk-menu__item">
+        <li routerLinkActive="active" class="rk-menu__item">
           <a routerLink="home" class="rk-menu__link">Home</a>
         </li>
 
@@ -27,12 +27,8 @@
       </ul>
 
       <div class="rk-search">
-        <input type="text"
-               (keyup.enter)="buscarProducto( txtBuscar.value )"
-               placeholder="Buscar..."
-               id="urku-search"
-               class="rk-search-field"
-               #txtBuscar>
+        <input type="text" (keyup.enter)="buscarProducto( txtBuscar.value )" placeholder="Buscar..." id="urku-search"
+          class="rk-search-field" #txtBuscar>
 
         <label for="urku-search">
           <svg>
@@ -41,7 +37,7 @@
         </label>
       </div>
 
-      
+
     </nav>
   </div>
 </header>

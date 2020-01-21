@@ -5,10 +5,17 @@ import { CustomMaterialModule } from './core/material.module';
 import {FormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule} from '@angular/common/http';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatGridListModule} from '@angular/material/grid-list'
 
 //Rutas
 import { AppRoutingModule } from './app-routing.module';
-
+import { MatButtonModule } from '@angular/material';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatListModule} from '@angular/material';
+import {MatIconModule} from '@angular/material';
 
 
 //Componentes
@@ -20,12 +27,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
-import { UserComponent } from './pages/user/user.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { MatButtonModule } from '@angular/material';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatSelectModule} from '@angular/material/select';
-import { HomepacientesComponent } from './pages/homepacientes/homepacientes.component';
+import { PacientesComponent } from './pages/pacientes/pacientes.component';
+import { HistoriaComponent } from './pages/historia/historia.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +41,9 @@ import { HomepacientesComponent } from './pages/homepacientes/homepacientes.comp
     ItemComponent,
     SearchComponent,
     LoginComponent,
-    UserComponent,
     RegisterComponent,
-    HomepacientesComponent,
+    PacientesComponent,
+    HistoriaComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,11 @@ import { HomepacientesComponent } from './pages/homepacientes/homepacientes.comp
     MatButtonModule,
     MatRadioModule,
     MatSelectModule,
+    MatFormFieldModule,
+    MatDividerModule,
+    MatListModule,
+    MatIconModule,
+    MatGridListModule
    ],
   providers: [],
   bootstrap: [AppComponent]

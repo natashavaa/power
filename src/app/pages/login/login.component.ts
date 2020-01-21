@@ -7,6 +7,9 @@ import {MatDialog} from '@angular/material'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  hide = true;
+
   constructor(private router: Router) { }
 username: string;
 password: string;

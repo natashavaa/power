@@ -10,7 +10,8 @@ import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { HomepacientesComponent} from './pages/homepacientes/homepacientes.component';
+import { PacientesComponent } from './pages/pacientes/pacientes.component';
+import { HistoriaComponent} from './pages/historia/historia.component';
 
 
 const app_routes: Routes = [
@@ -21,7 +22,8 @@ const app_routes: Routes = [
   {path: 'search/:termino', component: SearchComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component : LoginComponent},
-  {path: 'homepacientes', component: HomepacientesComponent},
+  {path: 'pacientes', component : PacientesComponent},
+  {path: 'historiaclinica', component : HistoriaComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];

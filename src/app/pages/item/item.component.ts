@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductosService } from 'src/app/services/productos.service';
 import { ProductoDescripcion } from 'src/app/interfaces/producto.descripcion.interface';
 
@@ -14,7 +14,7 @@ export class ItemComponent implements OnInit {
    id: string ;
 
 
-  constructor( private route: ActivatedRoute, public productoService: ProductosService) { }
+  constructor( private route: ActivatedRoute, public productoService: ProductosService, private router: Router) { }
 
   ngOnInit() {
 
@@ -30,5 +30,8 @@ export class ItemComponent implements OnInit {
 
 
   }
-
+  historia() : void {
+    this.router.navigate(["historiaclinica"]);
+ 
+}
 }
