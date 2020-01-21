@@ -1,0 +1,231 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+                id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<!--Table-->
+
+<div class="container">
+    <div class="left">
+        <br>
+        <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
+        <mat-card-content>
+            <mat-list>
+                <mat-card-title>
+                    <h5 align="center">Maria Salazar</h5>
+                    <h1 align="center">12 años</h1>
+                </mat-card-title>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="datos()" class="a">Datos Personales</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="imagen()" class="b">Imagenes y Archivos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="consulta()" class="c">Consultas</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="d">Procedimientos Clinicos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="e">Seguimiento</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="f">Odontograma</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="g">Informacion Clinica</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="h">Recipe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </mat-card-content>
+    </div>
+
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+                <form>
+                    <mat-card>
+                        <br>
+                        <h4> CONSULTA DEL PACIENTE </h4>
+                    </mat-card>
+                </form>
+            </mat-card-title>
+
+            <form align="right">
+                <div>
+                    <button mat-raised-button (click)="pacientes()">ASIGNAR CITA</button>
+                </div>
+            </form>
+
+            <table class="table table-hover table-fixed">
+
+                <!--Table head-->
+
+                <thead>
+                    <tr>
+                        <th>FECHA</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+
+                <!--Table head-->
+
+                <!--Table body-->
+                <tbody>
+                    <tr>
+                        <th scope="row">20/12/2010</th>
+                        <th scope="row">Atentido</th>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
+                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
+                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
+                            </p>
+                        </td>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
+                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
+                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">20/12/2010</th>
+                        <th scope="row">Atentido</th>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
+                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
+                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
+                            </p>
+                        </td>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
+                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
+                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">20/12/2010</th>
+                        <th scope="row">Atentido</th>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
+                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
+                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
+                            </p>
+                        </td>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
+                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
+                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">20/12/2010</th>
+                        <th scope="row">Atentido</th>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
+                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
+                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
+                            </p>
+                        </td>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
+                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
+                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">20/12/2010</th>
+                        <th scope="row">Atentido</th>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
+                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
+                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
+                            </p>
+                        </td>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
+                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
+                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">20/12/2010</th>
+                        <th scope="row">Atentido</th>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
+                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
+                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
+                            </p>
+                        </td>
+                        <td>
+                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
+                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
+                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
+                            </p>
+                        </td>
+                    </tr>
+
+                </tbody>
+                <!--Table body-->
+            </table>
+
+            <!--Table-->
+
+        </mat-card-content>
+    </div>
+</div>

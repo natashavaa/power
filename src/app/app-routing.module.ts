@@ -14,7 +14,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { PacientesComponent } from './pages/pacientes/pacientes.component';
 import { HistoriaComponent} from './pages/historia/historia.component';
 import { ImagenesComponent} from './pages/imagenes/imagenes.component';
-
+import { PacienteconsultaComponent } from './pages/pacienteconsulta/pacienteconsulta.component';
 
 const app_routes: Routes = [
   {path: '', component : LoginComponent},
@@ -27,6 +27,7 @@ const app_routes: Routes = [
   {path: 'pacientes', component : PacientesComponent},
   {path: 'historiaclinica', component : HistoriaComponent},
   {path: 'imagenes', component: ImagenesComponent},
+  {path: 'pacienteconsulta', component: PacienteconsultaComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];

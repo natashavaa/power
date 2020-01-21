@@ -33,6 +33,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { PacientesComponent } from './pages/pacientes/pacientes.component';
 import { HistoriaComponent } from './pages/historia/historia.component';
 import { ImagenesComponent } from './pages/imagenes/imagenes.component';
+import { PacienteconsultaComponent } from './pages/pacienteconsulta/pacienteconsulta.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ImagenesComponent } from './pages/imagenes/imagenes.component';
     PacientesComponent,
     HistoriaComponent,
     ImagenesComponent,
+    PacienteconsultaComponent,
   ],
   imports: [
     BrowserModule,

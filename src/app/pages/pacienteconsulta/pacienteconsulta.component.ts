@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-historia',
-  templateUrl: './historia.component.html',
-  styleUrls: ['./historia.component.css']
+  selector: 'app-pacienteconsulta',
+  templateUrl: './pacienteconsulta.component.html',
+  styleUrls: ['./pacienteconsulta.component.css']
 })
-export class HistoriaComponent implements OnInit {
+export class PacienteconsultaComponent implements OnInit {
 
+  constructor(private router: Router) {}
 
-
-  constructor(private router: Router) { }
+  ngOnInit() {
+  }
 
 
   datos(): void {
     this.router.navigate(["historiaclinica"]);
   }
-  
+
   imagen(): void {
     this.router.navigate(["imagenes"]);
   }
@@ -26,8 +26,5 @@ export class HistoriaComponent implements OnInit {
     this.router.navigate(["pacienteconsulta"]);
   }
 
-  ngOnInit() {
-
-  }
 
 }

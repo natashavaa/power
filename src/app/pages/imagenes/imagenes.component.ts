@@ -12,12 +12,17 @@ export class ImagenesComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  imagen() : void {
+  
+  datos(): void {
+    this.router.navigate(["historiaclinica"]);
+  }
+  
+  imagen(): void {
     this.router.navigate(["imagenes"]);
   }
 
-  datos() : void {
-    this.router.navigate(["historiaclinica"]);
+  consulta(): void {
+    this.router.navigate(["pacienteconsulta"]);
   }
+
 }
