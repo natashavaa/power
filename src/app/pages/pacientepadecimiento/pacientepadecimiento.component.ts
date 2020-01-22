@@ -45,5 +45,14 @@ export class PacientepadecimientoComponent implements OnInit {
     this.router.navigate(["pacienteinformacion"]);
   }
 
+  historia(): void {
+    this.router.navigate(["historiaclinica"]);
+
+  }
+
+  cancelar(): void {
+    this.router.navigate(["pacientes"]);
+
+  }
   
 }
