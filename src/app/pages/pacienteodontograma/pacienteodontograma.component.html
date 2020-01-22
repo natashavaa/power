@@ -36,7 +36,8 @@
                 <mat-list-item>
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos Clinicos</button>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos
+                                Clinicos</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -83,26 +84,39 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4> IMAGENES Y ARCHIVOS </h4>
+                        <h4> ODONTOGRAMA </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
+            <br>
+            <div class="alert alert-secondary" role="alert">
+                SE DEBE SELECCIONAR EL DIENTE QUE SUFRE DEL PADECIMIENTO DETERMINADO
 
-            <div>
-                <br>
-                <div class="row">
-                    <div class="col-12">
-                        <label for="" class="col-6 col-form-label"></label>
-                        <input type="file" name="archivo">
-                    </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
+                            <br>
+                            <select class="form-control col-8">
+                                <option>Diente por Diente</option>
+                                <option>Parte Superior</option>
+                                <option>Parte Inferior</option>
+                                <option>Lado Derecho</option>
+                                <option>Lado Izquierdo</option>
+                                <option>Todos los Dientes</option>
+                            </select>
+                        </div>
+                    </form>
                 </div>
             </div>
             <br>
-            <div class="alert alert-danger" role="alert">
-                NO HAY NINGUN TIPO DE IMAGEN O DOC DE ESTE PACIENTE
-
-            </div>
-
+            <br>
+            <br>
+            <button (click)="padecimiento()" color="warn"><img src="assets/img/odontograma.png" alt="Avatar Image"></button>
+            <br>
         </mat-card-content>
     </div>
 </div>

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-pacienteseguimiento',
-  templateUrl: './pacienteseguimiento.component.html',
-  styleUrls: ['./pacienteseguimiento.component.css']
+  selector: 'app-pacientepadecimiento',
+  templateUrl: './pacientepadecimiento.component.html',
+  styleUrls: ['./pacientepadecimiento.component.css']
 })
-export class PacienteseguimientoComponent implements OnInit {
+export class PacientepadecimientoComponent implements OnInit {
 
-  constructor(private router: Router ) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -16,7 +16,7 @@ export class PacienteseguimientoComponent implements OnInit {
   datos(): void {
     this.router.navigate(["historiaclinica"]);
   }
-  
+
   imagen(): void {
     this.router.navigate(["imagenes"]);
   }
@@ -28,12 +28,16 @@ export class PacienteseguimientoComponent implements OnInit {
   procedimiento(): void {
     this.router.navigate(["pacienteprocedimiento"]);
   }
-  
+
   seguimiento(): void {
     this.router.navigate(["pacienteseguimiento"]);
   }
-
+   
   odontograma(): void {
     this.router.navigate(["pacienteodontograma"]);
+  }
+
+  padecimiento(): void {
+    this.router.navigate(["pacientepadecimiento"]);
   }
 }

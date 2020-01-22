@@ -34,4 +34,8 @@ export class PacienteprocedimientoComponent implements OnInit {
     this.router.navigate(["pacienteseguimiento"]);
   }
 
+  odontograma(): void {
+    this.router.navigate(["pacienteodontograma"]);
+  }
+
 }

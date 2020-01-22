@@ -17,6 +17,8 @@ import { ImagenesComponent} from './pages/imagenes/imagenes.component';
 import { PacienteconsultaComponent } from './pages/pacienteconsulta/pacienteconsulta.component';
 import { PacienteprocedimientoComponent } from './pages/pacienteprocedimiento/pacienteprocedimiento.component';
 import { PacienteseguimientoComponent } from './pages/pacienteseguimiento/pacienteseguimiento.component';
+import { PacienteodontogramaComponent } from './pages/pacienteodontograma/pacienteodontograma.component';
+import { PacientepadecimientoComponent } from './pages/pacientepadecimiento/pacientepadecimiento.component';
 
 
 const app_routes: Routes = [
@@ -27,9 +29,12 @@ const app_routes: Routes = [
   {path: 'pacienteseguimiento', component: PacienteseguimientoComponent},
   {path: 'search/:termino', component: SearchComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'pacienteodontograma', component: PacienteodontogramaComponent},
   {path: 'login', component : LoginComponent},
+  {path: 'pacientepadecimiento', component: PacientepadecimientoComponent},
   {path: 'pacientes', component : PacientesComponent},
   {path: 'pacienteprocedimiento', component: PacienteprocedimientoComponent},
+
   {path: 'historiaclinica', component : HistoriaComponent},
   {path: 'imagenes', component: ImagenesComponent},
   {path: 'pacienteconsulta', component: PacienteconsultaComponent},  

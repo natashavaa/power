@@ -36,6 +36,8 @@ import { ImagenesComponent } from './pages/imagenes/imagenes.component';
 import { PacienteconsultaComponent } from './pages/pacienteconsulta/pacienteconsulta.component';
 import { PacienteprocedimientoComponent } from './pages/pacienteprocedimiento/pacienteprocedimiento.component';
 import { PacienteseguimientoComponent } from './pages/pacienteseguimiento/pacienteseguimiento.component';
+import { PacienteodontogramaComponent } from './pages/pacienteodontograma/pacienteodontograma.component';
+import { PacientepadecimientoComponent } from './pages/pacientepadecimiento/pacientepadecimiento.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { PacienteseguimientoComponent } from './pages/pacienteseguimiento/pacien
     PacienteconsultaComponent,
     PacienteprocedimientoComponent,
     PacienteseguimientoComponent,
+    PacienteodontogramaComponent,
+    PacientepadecimientoComponent,
   ],
   imports: [
     BrowserModule,

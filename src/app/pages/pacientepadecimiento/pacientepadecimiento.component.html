@@ -84,13 +84,14 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4> SEGUIMIENTO </h4>
+                        <h4> ODONTOGRAMA </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
             <br>
-            <div class="alert alert-info" role="alert">
-                EL SEGUIMIENTO DEPENDE DEL PROCEDIMIENTO CLINICO ESCOGIDO
+            <div class="alert alert-success" role="alert">
+                SE DEBE SELECCIONAR EL PADECIMIENTO DEL DIENTE SELECCIONADO PARA PROCEDER A REALIZAR EL PROCEDIMIENTO
+                CLINICO CORRESPONDIENTE
             </div>
             <br>
             <div class="row">
@@ -100,22 +101,78 @@
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                             <br>
                             <select class="form-control col-8">
-                                <option>Todos los Dientes</option>
+                                <option>Diente por Diente</option>
                                 <option>Parte Superior</option>
                                 <option>Parte Inferior</option>
                                 <option>Lado Derecho</option>
                                 <option>Lado Izquierdo</option>
-                                <option>Diente por Diente</option>
+                                <option>Todos los Dientes</option>
                             </select>
                         </div>
+                    </form>
+                </div>
+            </div>
+            <form align="right">
+                <div>
+                    <button mat-mini-fab (click)="pacientes()">+</button>
+                </div>
+            </form>
+            <img src="assets/img/padecimientosundiente.png" alt="Avatar Image">
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <form action="">
+                        <fieldset disabled>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Pieza</label>
+                                <input placeholder="Seleccionar Pieza" class="form-control col-6">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Padecimiento</label>
+                                <input placeholder="Seleccionar Pieza" class="form-control col-6">
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Procedimiento Clinico</mat-label>
+                                <br>
+                                <select class="form-control col-6">
+                                    <option>Seleccionar</option>
+                                    <option>Parte Superior</option>
+                                    <option>Parte Inferior</option>
+                                    <option>Lado Derecho</option>
+                                    <option>Lado Izquierdo</option>
+                                    <option>Diente por Diente</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Cara</mat-label>
+                                <br>
+                                <select class="form-control col-6">
+                                    <option>Seleccionar</option>
+                                    <option>Parte Superior</option>
+                                    <option>Parte Inferior</option>
+                                    <option>Lado Derecho</option>
+                                    <option>Lado Izquierdo</option>
+                                    <option>Diente por Diente</option>
+                                </select>
+                            </div>
+                        </fieldset>
                     </form>
                 </div>
                 <div class="col-6">
                     <form action="">
                         <fieldset disabled>
                             <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Padecimiento</label>
-                                <input placeholder="Seleccionar Padecimiento" class="form-control col-6">
+                                <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
+                                <br>
+                                <select class="form-control col-6">
+                                    <option>Seleccionar</option>
+                                    <option>Parte Superior</option>
+                                    <option>Parte Inferior</option>
+                                    <option>Lado Derecho</option>
+                                    <option>Lado Izquierdo</option>
+                                    <option>Diente por Diente</option>
+                                </select>
                             </div>
                             <div class="form-group row">
                                 <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
@@ -131,29 +188,20 @@
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-4 col-form-label">Consultas Posteriores</label>
-                                <input placeholder="Asignar Consultas" class="form-control col-6">
+                                <input placeholder="Seleccionar Pieza" class="form-control col-6">
                             </div>
                         </fieldset>
                     </form>
                 </div>
             </div>
             <br>
+            <div class="form-group row">
+                <label for="" class="col-4 col-form-label">Diagnostico</label>
+                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+            </div>
             <br>
-            <img src="assets/img/odontograma.png" alt="Avatar Image">
-            <br>
-            <br>
-            <br>
-            <br>
-            <fieldset disabled>
-                <div class="form-group row">
-                    <label for="" class="col-4 col-form-label">Historia Dental</label>
-                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-                </div>
-                <div class="form-group row">
-                    <label for="" class="col-4 col-form-label">Motivo de la Consulta</label>
-                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-                </div>
-            </fieldset>
+            <button mat-raised-button (click)="historia()" class="uno">GUARDAR</button>
+            <button mat-raised-button (click)="cancelar()" class="dos">CANCELAR</button>
         </mat-card-content>
     </div>
 </div>
