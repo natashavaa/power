@@ -1,0 +1,679 @@
+<div class="container">
+
+    <div class="left">
+        <br>
+        <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
+        <mat-card-content>
+            <mat-list>
+                <mat-card-title>
+                    <h5 align="center">Maria Salazar</h5>
+                    <h1 align="center">12 años</h1>
+                </mat-card-title>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="datos()" class="a">Datos Personales</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="b">Imagenes y Archivos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="consulta()" class="c">Consultas</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos
+                                Clinicos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="seguimiento()" class="e">Seguimiento</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="odontograma()" class="f">Odontograma</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="informacion()" class="g">Informacion Clinica</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="h">Recipe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </mat-card-content>
+    </div>
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+                <form>
+                    <mat-card>
+                        <br>
+                        <h4> INFORMACION CLINICA </h4>
+                    </mat-card>
+                </form>
+            </mat-card-title>
+        </mat-card-content>
+        <div class="form-group row">
+            <label for="" class="col-4 col-form-label">Motivo de la Consulta</label>
+            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+        </div>
+        <mat-accordion multi="true">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <h6> Examen Intraoral </h6>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="row">
+                    <div class="col-6">
+                        <form action="">
+                            <br>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Labios: </label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Carrillos: </label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Paladar: </label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Lengua: </label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Piso de la Boca: </label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-6">
+                        <form action="">
+                            <br>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Mucosa</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Encia</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Calculos</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Ganglios</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Otro Motivo</label>
+                                <textarea class="form-control" rows="3" class="form-control col-2"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <mat-action-row>
+                    <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <h6>Examen Dentario </h6>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="row">
+                    <div class="col-6">
+                        <form action="">
+                            <br>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Piezas Ausentes</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Cantidad</label>
+                                <input placeholder="#" class="form-control col-2">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Piezas con Caries</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Cantidad</label>
+                                <input placeholder="#" class="form-control col-2">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Piezas con Movilidad</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Cantidad</label>
+                                <input placeholder="#" class="form-control col-2">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Protesis Fijas</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Cantidad</label>
+                                <input placeholder="#" class="form-control col-2">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Protesis Removibles</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Cantidad</label>
+                                <input placeholder="#" class="form-control col-2">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-6">
+                        <form action="">
+                            <br>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Indicacion de Extraccion</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Cantidad</label>
+                                <input placeholder="#" class="form-control col-2">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Piezas Obsturadas</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                                        Si
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                            class="selector" checked>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Cantidad</label>
+                                <input placeholder="#" class="form-control col-2">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <mat-action-row>
+                    <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+                    <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+            <br>
+            <div class="form-group row">
+                <br>
+                <label for="" class="col-8 col-form-label">Ha tenido Ud complicaciones por anestesia en la boca:
+                </label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                        Si
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="opciones" id="opciones_2" value="opcion_2" class="selector" checked>
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <h6> Ha padecido alguna de estas enfermedades </h6>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="row">
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <form action="">
+                                <br>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Fiebre Reumatica</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Diabetes</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Cardiopatias</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">T.B.C </label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Artritis</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Piso de la Boca: </label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-6">
+                            <form action="">
+                                <br>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Hemorragias</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Neuralgias</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Sinusitis</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Renales</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-8 col-form-label">Alergias</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_1" value="opcion_1"
+                                                checked>
+                                            Si
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
+                                                class="selector" checked>
+                                            No
+                                        </label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Otra</label>
+                                        <textarea class="form-control" rows="3" class="form-control col-4"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <mat-action-row>
+                    <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+                </mat-action-row>
+
+            </mat-expansion-panel>
+
+            <br>
+            <button mat-raised-button (click)="historia()" class="uno">GUARDAR HISTORIA CLINICA</button>
+            <button mat-raised-button (click)="cancelar()" class="dos">CANCELAR</button>
+            <br>
+            <br>
+        </mat-accordion>
+    </div>
+</div>

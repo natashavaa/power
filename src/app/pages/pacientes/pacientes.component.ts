@@ -29,11 +29,6 @@ export class PacientesComponent {
     this.step--;
   }
 
-  consultorios: Consultorio[] = [
-    { value: 'o-O', viewValue: 'Odontologia' },
-    { value: 'Or-1', viewValue: 'Ortodoncia' },
-  ];
-
   constructor(private router: Router) {
 
   }

@@ -2,15 +2,39 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-pacientepadecimiento',
-  templateUrl: './pacientepadecimiento.component.html',
-  styleUrls: ['./pacientepadecimiento.component.css']
+  selector: 'app-pacienteinformacion',
+  templateUrl: './pacienteinformacion.component.html',
+  styleUrls: ['./pacienteinformacion.component.css']
 })
-export class PacientepadecimientoComponent implements OnInit {
+export class PacienteinformacionComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  selectedValue: string;
+  step = 0;
 
-  ngOnInit() {
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+  
+  constructor(private router: Router) {
+
+  }
+
+  historia(): void {
+    this.router.navigate(["historiaclinica"]);
+
+  }
+
+  cancelar(): void {
+    this.router.navigate(["pacientes"]);
+
   }
 
   datos(): void {
@@ -28,22 +52,20 @@ export class PacientepadecimientoComponent implements OnInit {
   procedimiento(): void {
     this.router.navigate(["pacienteprocedimiento"]);
   }
-
+  
   seguimiento(): void {
     this.router.navigate(["pacienteseguimiento"]);
   }
-   
+  
   odontograma(): void {
     this.router.navigate(["pacienteodontograma"]);
   }
 
-  padecimiento(): void {
-    this.router.navigate(["pacientepadecimiento"]);
-  }
-
   informacion(): void {
     this.router.navigate(["pacienteinformacion"]);
+  } 
+  
+  ngOnInit() {
   }
 
-  
 }

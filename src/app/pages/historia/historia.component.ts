@@ -38,6 +38,11 @@ export class HistoriaComponent implements OnInit {
     this.router.navigate(["pacienteodontograma"]);
   }
 
+  informacion(): void {
+    this.router.navigate(["pacienteinformacion"]);
+  }
+
+
   ngOnInit() {
 
   }

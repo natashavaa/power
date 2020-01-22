@@ -38,6 +38,7 @@ import { PacienteprocedimientoComponent } from './pages/pacienteprocedimiento/pa
 import { PacienteseguimientoComponent } from './pages/pacienteseguimiento/pacienteseguimiento.component';
 import { PacienteodontogramaComponent } from './pages/pacienteodontograma/pacienteodontograma.component';
 import { PacientepadecimientoComponent } from './pages/pacientepadecimiento/pacientepadecimiento.component';
+import { PacienteinformacionComponent } from './pages/pacienteinformacion/pacienteinformacion.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { PacientepadecimientoComponent } from './pages/pacientepadecimiento/paci
     PacienteseguimientoComponent,
     PacienteodontogramaComponent,
     PacientepadecimientoComponent,
+    PacienteinformacionComponent,
   ],
   imports: [
     BrowserModule,
