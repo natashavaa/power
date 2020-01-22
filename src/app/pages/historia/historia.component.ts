@@ -30,6 +30,10 @@ export class HistoriaComponent implements OnInit {
     this.router.navigate(["pacienteprocedimiento"]);
   }
   
+  seguimiento(): void {
+    this.router.navigate(["pacienteseguimiento"]);
+  }
+  
   ngOnInit() {
 
   }

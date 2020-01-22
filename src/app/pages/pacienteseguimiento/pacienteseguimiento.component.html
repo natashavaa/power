@@ -1,0 +1,159 @@
+<div class="container">
+
+    <div class="left">
+        <br>
+        <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
+        <mat-card-content>
+            <mat-list>
+                <mat-card-title>
+                    <h5 align="center">Maria Salazar</h5>
+                    <h1 align="center">12 años</h1>
+                </mat-card-title>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="datos()" class="a">Datos Personales</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="b">Imagenes y Archivos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="consulta()" class="c">Consultas</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos
+                                Clinicos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="seguimiento()" class="e">Seguimiento</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="f">Odontograma</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="g">Informacion Clinica</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="pacientes()" class="h">Recipe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </mat-card-content>
+    </div>
+
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+                <form>
+                    <mat-card>
+                        <br>
+                        <h4> SEGUIMIENTO </h4>
+                    </mat-card>
+                </form>
+            </mat-card-title>
+            <br>
+            <div class="alert alert-info" role="alert">
+                EL SEGUIMIENTO DEPENDE DEL PROCEDIMIENTO CLINICO ESCOGIDO
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
+                            <br>
+                            <select class="form-control col-8">
+                                <option>Todos los Dientes</option>
+                                <option>Parte Superior</option>
+                                <option>Parte Inferior</option>
+                                <option>Lado Derecho</option>
+                                <option>Lado Izquierdo</option>
+                                <option>Diente por Diente</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form action="">
+                        <fieldset disabled>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Padecimiento</label>
+                                <input placeholder="Seleccionar Padecimiento" class="form-control col-6">
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
+                                <br>
+                                <select class="form-control col-6">
+                                    <option>Seleccionar</option>
+                                    <option>Parte Superior</option>
+                                    <option>Parte Inferior</option>
+                                    <option>Lado Derecho</option>
+                                    <option>Lado Izquierdo</option>
+                                    <option>Diente por Diente</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Consultas Posteriores</label>
+                                <input placeholder="Asignar Consultas" class="form-control col-6">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <img src="assets/img/odontograma.png" alt="Avatar Image">
+            <br>
+            <br>
+            <br>
+            <br>
+            <fieldset disabled>
+                <div class="form-group row">
+                    <label for="" class="col-4 col-form-label">Historia Dental</label>
+                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4 col-form-label">Motivo de la Consulta</label>
+                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                </div>
+            </fieldset>
+        </mat-card-content>
+    </div>
+</div>

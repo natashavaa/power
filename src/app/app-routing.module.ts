@@ -16,13 +16,15 @@ import { HistoriaComponent} from './pages/historia/historia.component';
 import { ImagenesComponent} from './pages/imagenes/imagenes.component';
 import { PacienteconsultaComponent } from './pages/pacienteconsulta/pacienteconsulta.component';
 import { PacienteprocedimientoComponent } from './pages/pacienteprocedimiento/pacienteprocedimiento.component';
+import { PacienteseguimientoComponent } from './pages/pacienteseguimiento/pacienteseguimiento.component';
 
 
 const app_routes: Routes = [
   {path: '', component : LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'item/:id', component: ItemComponent},
+  {path: 'item/:id', component: ItemComponent},  
+  {path: 'pacienteseguimiento', component: PacienteseguimientoComponent},
   {path: 'search/:termino', component: SearchComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component : LoginComponent},

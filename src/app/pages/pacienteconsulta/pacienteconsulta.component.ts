@@ -30,5 +30,8 @@ export class PacienteconsultaComponent implements OnInit {
     this.router.navigate(["pacienteprocedimiento"]);
   }
   
+  seguimiento(): void {
+    this.router.navigate(["pacienteseguimiento"]);
+  }
 
 }
