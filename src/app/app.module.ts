@@ -40,6 +40,7 @@ import { PacienteodontogramaComponent } from './pages/pacienteodontograma/pacien
 import { PacientepadecimientoComponent } from './pages/pacientepadecimiento/pacientepadecimiento.component';
 import { PacienteinformacionComponent } from './pages/pacienteinformacion/pacienteinformacion.component';
 import { OdontogramatodoslosdientesComponent } from './pages/odontogramatodoslosdientes/odontogramatodoslosdientes.component';
+import { ConsultadiariaComponent } from './pages/consultadiaria/consultadiaria.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { OdontogramatodoslosdientesComponent } from './pages/odontogramatodoslos
     PacientepadecimientoComponent,
     PacienteinformacionComponent,
     OdontogramatodoslosdientesComponent,
+    ConsultadiariaComponent,
   ],
   imports: [
     BrowserModule,

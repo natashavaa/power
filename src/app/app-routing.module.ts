@@ -21,6 +21,7 @@ import { PacienteodontogramaComponent } from './pages/pacienteodontograma/pacien
 import { PacientepadecimientoComponent } from './pages/pacientepadecimiento/pacientepadecimiento.component';
 import { PacienteinformacionComponent } from './pages/pacienteinformacion/pacienteinformacion.component';
 import { OdontogramatodoslosdientesComponent } from './pages/odontogramatodoslosdientes/odontogramatodoslosdientes.component';
+import { ConsultadiariaComponent } from './pages/consultadiaria/consultadiaria.component';
 
 
 const app_routes: Routes = [
@@ -36,6 +37,7 @@ const app_routes: Routes = [
   {path: 'pacientepadecimiento', component: PacientepadecimientoComponent},
   {path: 'pacientes', component : PacientesComponent},
   {path: 'pacienteprocedimiento', component: PacienteprocedimientoComponent},
+  {path: 'consultas', component: ConsultadiariaComponent}, 
   {path: 'historiaclinica', component : HistoriaComponent},
   {path: 'pacienteinformacion', component: PacienteinformacionComponent},
   {path: 'imagenes', component: ImagenesComponent},

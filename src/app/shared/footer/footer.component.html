@@ -3,15 +3,18 @@
     <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
       <ul class="rk-menu rk-footer-menu">
         <li class="rk-menu__item">
-          <a routerLink="about" class="rk-menu__link">About</a>
+          <a routerLink="home" class="rk-menu__link">Pacientes</a>
         </li>
-        <li class="rk-menu__item"><a href="documentation.html" class="rk-menu__link">Docs</a>
+        <li class="rk-menu__item"><a routerLink="consultas" class="rk-menu__link">Consultas</a>
         </li>
-        <li class="rk-menu__item"><a href="contact.html" class="rk-menu__link">Contact</a>
+        <li class="rk-menu__item"><a routerLink="inventario" class="rk-menu__link">Inventario</a>
+        </li>
+        <li class="rk-menu__item">
+          <a routerLink="about" class="rk-menu__link">Nosotros</a>
         </li>
       </ul>
       <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">
-          {{ anio }} Fernando Herrera Portafolio </span>All Right Reserved.</p>
+          {{ anio }} Consultorio Dental Merida </span>All Right Reserved.</p>
     </div>
     <div class="ae-grid__item item-lg-4 au-xs-ta-center">
       <a target="_blank" [href]="_servicio.info.facebook" class="rk-social-btn ">
@@ -30,7 +33,10 @@
           <use xlink:href="assets/img/symbols.svg#icon-pinterest"></use>
         </svg>
       </a>
-
+      <br>
+      <br>
+      <p class="rk-footer__text rk-footer__by"> <a class="ae-u-bolder">Lunes a Viernes 8 am - 12 m & 2 pm - 6 pm</a>
+        <p class="rk-footer__text rk-footer__by"> <a class="ae-u-bolder">Sabado 2 pm - 6 pm</a>
     </div>
     <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
       <p class="rk-footer__text rk-footer__contact ">
@@ -39,8 +45,9 @@
           <a href="mailTo:{{ _servicio.info.email }}" class="rk-dark-color "> {{ _servicio.info.email }}</a>
         </span>
       </p>
-      <p class="rk-footer__text rk-footer__by">Theme by <a href="http://pixeden.com" class="ae-u-bolder">Pixeden.</a>
-      </p>
+      <p class="rk-footer__text rk-footer__by"><a class="ae-u-bolder"> Av Dalla Costa Edificio Almary Local 1-B San
+          Felix - Estado Bolivar</a></p>
+      <p class="rk-footer__text rk-footer__by">Pide tu cita al<a class="ae-u-bolder"> 0286-9314977.</a></p>
     </div>
   </div>
 </footer>
