@@ -90,33 +90,61 @@
             </mat-card-title>
             <br>
             <div class="alert alert-secondary" role="alert">
-                SE DEBE SELECCIONAR EL DIENTE QUE SUFRE DEL PADECIMIENTO DETERMINADO
-
+                SE DEBE SELECCIONAR EL AREA AFECTADA
             </div>
             <br>
+
             <div class="row">
                 <div class="col-6">
+                    <br>
                     <form action="">
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
-                            <br>
-                            <select class="form-control col-8">
-                                <option selected >Diente por Diente</option>
-                                <option>Parte Superior</option>
-                                <option>Parte Inferior</option>
-                                <option>Lado Derecho</option>
-                                <option>Lado Izquierdo</option>
-                                <option>Todos los Dientes</option>
-                            </select>
+                            <button mat-raised-button (click)="odontograma()" class="cero">Diente x Diente</button>
                         </div>
+                        <div class="col-12 col-form-label">
+                            <button mat-raised-button (click)="todos()" class="uno">Todos Los Dientes</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <button mat-raised-button class="dos">Lado Izquierdo</button>
+                        </div>
+                        <form action="">
+                            <div class="form-group row">
+                                <button mat-raised-button class="tres">Lado Derecho</button>
+                            </div>
+                        </form>
+                    </form>
+                </div>
+                <div class="col-2">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <button mat-raised-button class="cuarto">Parte Inferior</button>
+                        </div>
+                        <form action="">
+                            <div class="form-group row">
+                                <button mat-raised-button class="cinco">Parte Superior</button>
+                            </div>
+                        </form>
                     </form>
                 </div>
             </div>
             <br>
             <br>
+            <div class="alert alert-danger" role="alert">
+                PARA LUEGO PROCEDER A ESCOGER EL DIENTE A REPARAR
+
+            </div>
             <br>
             <button (click)="padecimiento()" color="warn"><img src="assets/img/odontograma.png"
                     alt="Avatar Image"></button>
+            <br>
+            <br>
             <br>
         </mat-card-content>
     </div>

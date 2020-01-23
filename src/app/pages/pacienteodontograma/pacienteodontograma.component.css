@@ -179,3 +179,39 @@
     font-size: 40px;
   }
  
+  .cero {
+    margin: 0 12px;
+    color: snow;
+    background-color: blueviolet;
+  }
+  
+  .uno {
+    margin: 0 12px;
+    color: snow;
+    background-color: darkolivegreen;
+  }
+
+  .dos {
+    margin: 0 12px;
+    color: snow;
+    background-color: goldenrod;
+  }
+  
+  .tres {
+    margin: 0 12px;
+    color: snow;
+    background-color: lightslategrey;
+  }
+
+  .cuarto {
+    margin: 0 12px;
+    color: snow;
+    background-color: blue;
+  }
+  
+  .cinco {
+    margin: 0 12px;
+    color: snow;
+    background-color: darkred;
+  }
+  

@@ -32,7 +32,7 @@ export class PacienteodontogramaComponent implements OnInit {
   seguimiento(): void {
     this.router.navigate(["pacienteseguimiento"]);
   }
-   
+
   odontograma(): void {
     this.router.navigate(["pacienteodontograma"]);
   }
@@ -45,5 +45,8 @@ export class PacienteodontogramaComponent implements OnInit {
     this.router.navigate(["pacienteinformacion"]);
   }
 
+  todos(): void {
+    this.router.navigate(["todoslosdientes"]);
+  }
 
 }

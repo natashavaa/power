@@ -1,14 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-function mostrar(id: string) {
-  if (id == "todos") {
-    this.router.navigate(["todoslosdientes"]);
-  } else {
-    this.router.navigate(["odontograma"]);
-  }
-}
-
 @Component({
   selector: 'app-odontogramatodoslosdientes',
   templateUrl: './odontogramatodoslosdientes.component.html',
@@ -16,12 +8,8 @@ function mostrar(id: string) {
 })
 export class OdontogramatodoslosdientesComponent implements OnInit {
 
-  hide = true;
-
 
   constructor(private router: Router) { }
-
-  diente: string;
 
   ngOnInit() {
   }
