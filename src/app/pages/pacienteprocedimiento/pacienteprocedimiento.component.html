@@ -1,5 +1,4 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
-                id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -45,7 +44,8 @@
                 <mat-list-item>
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos Clinicos</button>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos
+                                Clinicos</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -92,16 +92,67 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4> CONSULTA DEL PACIENTE </h4>
+                        <h4> PROCEDIMIENTO CLINICO </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
 
             <form align="right">
                 <div>
-                    <button mat-raised-button (click)="informacion()">AGREGAR PROCEDIMIENTO</button>
+                    <button mat-mini-fab type="button" data-toggle="modal" data-target="#exampleModalCenter">+</button>
                 </div>
             </form>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 id="exampleModalLongTitle" class="text-center">AGREGAR
+                                PROCEDIMIENTO</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Nombre del Procedimiento</label>
+                                <input placeholder="Escribir Nombre" class="form-control col-6">
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Padecimiento</mat-label>
+                                <br>
+                                <select class="form-control col-6">
+                                    <option>Seleccionar</option>
+                                    <option>Parte Superior</option>
+                                    <option>Parte Inferior</option>
+                                    <option>Lado Derecho</option>
+                                    <option>Lado Izquierdo</option>
+                                    <option>Diente por Diente</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
+                                <br>
+                                <select class="form-control col-6">
+                                    <option>Seleccionar</option>
+                                    <option>Parte Superior</option>
+                                    <option>Parte Inferior</option>
+                                    <option>Lado Derecho</option>
+                                    <option>Lado Izquierdo</option>
+                                    <option>Diente por Diente</option>
+                                </select>
+                            </div>
+
+                            <label for="" class="col-6 col-form-label"></label>
+                            <input type="file" name="archivo">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button mat-raised-button type="button" class="uno" (click)="historia()">AGREGAR</button>
+                            <button mat-raised-button type="button" class="dos" (click)="cancelar()">CANCELAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <table class="table table-hover table-fixed">
 

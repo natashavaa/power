@@ -20,6 +20,7 @@ import { PacienteseguimientoComponent } from './pages/pacienteseguimiento/pacien
 import { PacienteodontogramaComponent } from './pages/pacienteodontograma/pacienteodontograma.component';
 import { PacientepadecimientoComponent } from './pages/pacientepadecimiento/pacientepadecimiento.component';
 import { PacienteinformacionComponent } from './pages/pacienteinformacion/pacienteinformacion.component';
+import { OdontogramatodoslosdientesComponent } from './pages/odontogramatodoslosdientes/odontogramatodoslosdientes.component';
 
 
 const app_routes: Routes = [
@@ -39,6 +40,7 @@ const app_routes: Routes = [
   {path: 'pacienteinformacion', component: PacienteinformacionComponent},
   {path: 'imagenes', component: ImagenesComponent},
   {path: 'pacienteconsulta', component: PacienteconsultaComponent},  
+  {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},  
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];

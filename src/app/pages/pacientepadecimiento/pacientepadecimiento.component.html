@@ -112,11 +112,64 @@
                     </form>
                 </div>
             </div>
+
             <form align="right">
                 <div>
-                    <button mat-mini-fab (click)="informacion()">+</button>
+                    <button mat-mini-fab type="button" data-toggle="modal" data-target="#exampleModalCenter">+</button>
                 </div>
             </form>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 id="exampleModalLongTitle" class="text-center">AGREGAR
+                                PADECIMIENTO</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Nombre del Padecimiento</label>
+                                <input placeholder="Escribir Nombre" class="form-control col-6">
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Procedimiento Clinico</mat-label>
+                                <br>
+                                <select class="form-control col-6">
+                                    <option>Seleccionar</option>
+                                    <option>Parte Superior</option>
+                                    <option>Parte Inferior</option>
+                                    <option>Lado Derecho</option>
+                                    <option>Lado Izquierdo</option>
+                                    <option>Diente por Diente</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
+                                <br>
+                                <select class="form-control col-6">
+                                    <option>Seleccionar</option>
+                                    <option>Parte Superior</option>
+                                    <option>Parte Inferior</option>
+                                    <option>Lado Derecho</option>
+                                    <option>Lado Izquierdo</option>
+                                    <option>Diente por Diente</option>
+                                </select>
+                            </div>
+
+                            <label for="" class="col-6 col-form-label"></label>
+                            <input type="file" name="archivo">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button mat-raised-button type="button" class="uno" (click)="historia()">AGREGAR</button>
+                            <button mat-raised-button type="button" class="dos" (click)="cancelar()">CANCELAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <img src="assets/img/padecimientosundiente.png" alt="Avatar Image">
             <br>
             <br>
