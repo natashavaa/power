@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consultadiaria',
@@ -12,9 +13,18 @@ export class ConsultadiariaComponent implements OnInit {
   numero: number = new Date().getDate();
   mes: number = new Date().getMonth();
 
-constructor() { }
+  constructor(private router: Router ) { }
 
-ngOnInit() {
-}
+  ngOnInit() {
+  }
+  
+  diaria(): void {
+    this.router.navigate(["diaria"]);
+  }
 
+  global(): void {
+    this.router.navigate(["global"]);
+  }
+  
+  
 }

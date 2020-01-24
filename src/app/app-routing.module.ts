@@ -22,6 +22,12 @@ import { PacientepadecimientoComponent } from './pages/pacientepadecimiento/paci
 import { PacienteinformacionComponent } from './pages/pacienteinformacion/pacienteinformacion.component';
 import { OdontogramatodoslosdientesComponent } from './pages/odontogramatodoslosdientes/odontogramatodoslosdientes.component';
 import { ConsultadiariaComponent } from './pages/consultadiaria/consultadiaria.component';
+import { ConsultaglobalComponent } from './pages/consultaglobal/consultaglobal.component';
+import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
+import { InventarioComponent } from './pages/inventario/inventario.component';
+import { MaterialesComponent } from './pages/materiales/materiales.component';
+import { MultimediaComponent } from './pages/multimedia/multimedia.component';
+import { ReportesComponent } from './pages/reportes/reportes.component';
 
 
 const app_routes: Routes = [
@@ -37,7 +43,13 @@ const app_routes: Routes = [
   {path: 'pacientepadecimiento', component: PacientepadecimientoComponent},
   {path: 'pacientes', component : PacientesComponent},
   {path: 'pacienteprocedimiento', component: PacienteprocedimientoComponent},
-  {path: 'consultas', component: ConsultadiariaComponent}, 
+  {path: 'diaria', component: ConsultadiariaComponent}, 
+  {path: 'global', component: ConsultaglobalComponent}, 
+  {path: 'especialidad', component: EspecialidadesComponent}, 
+  {path: 'inventario', component: InventarioComponent}, 
+  {path: 'materiales', component: MaterialesComponent}, 
+  {path: 'multimedia', component: MultimediaComponent}, 
+  {path: 'reportes', component: ReportesComponent}, 
   {path: 'historiaclinica', component : HistoriaComponent},
   {path: 'pacienteinformacion', component: PacienteinformacionComponent},
   {path: 'imagenes', component: ImagenesComponent},

@@ -41,6 +41,12 @@ import { PacientepadecimientoComponent } from './pages/pacientepadecimiento/paci
 import { PacienteinformacionComponent } from './pages/pacienteinformacion/pacienteinformacion.component';
 import { OdontogramatodoslosdientesComponent } from './pages/odontogramatodoslosdientes/odontogramatodoslosdientes.component';
 import { ConsultadiariaComponent } from './pages/consultadiaria/consultadiaria.component';
+import { ConsultaglobalComponent } from './pages/consultaglobal/consultaglobal.component';
+import { InventarioComponent } from './pages/inventario/inventario.component';
+import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
+import { MaterialesComponent } from './pages/materiales/materiales.component';
+import { MultimediaComponent } from './pages/multimedia/multimedia.component';
+import { ReportesComponent } from './pages/reportes/reportes.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +70,12 @@ import { ConsultadiariaComponent } from './pages/consultadiaria/consultadiaria.c
     PacienteinformacionComponent,
     OdontogramatodoslosdientesComponent,
     ConsultadiariaComponent,
+    ConsultaglobalComponent,
+    InventarioComponent,
+    EspecialidadesComponent,
+    MaterialesComponent,
+    MultimediaComponent,
+    ReportesComponent,
   ],
   imports: [
     BrowserModule,

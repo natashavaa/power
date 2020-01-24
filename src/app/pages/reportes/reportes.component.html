@@ -1,0 +1,93 @@
+<div class="container">
+
+    <div class="left">
+        <br>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="inventario()" class="a">Inventario</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="especialidad()" class="b">Especialidades</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="materiales()" class="c">Material Odontologico</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="multimedia()" class="d">Multimedia</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="reportes()" class="e">Reportes</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </mat-card-content>
+    </div>
+
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+                <form>
+                    <mat-card>
+                        <br>
+                        <h4> MATERIALES ODONTOLOGICOS </h4>
+                    </mat-card>
+                </form>
+            </mat-card-title>
+
+            <label for="" class="lolo">Rango de Fechas</label>
+            <div class="row">
+                <div class="col-6">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">DESDE</label>
+                            <input placeholder="Escribe Especialidad" class="form-control col-6">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">HASTA</label>
+                            <input placeholder="Escribe Especialidad" class="form-control col-6">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <button mat-raised-button class="uno">GENERAR</button>
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+
+        </mat-card-content>
+    </div>
+</div>

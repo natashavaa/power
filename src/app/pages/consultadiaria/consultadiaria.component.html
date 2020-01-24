@@ -1,5 +1,40 @@
 <div class="container">
 
+
+    <div class="left">
+        <br>
+        <mat-card>
+            <mat-card-title>
+                <label class="letra1" align="center">JUEVES</label>
+                <br>
+                <br>
+                <label class="letra2" align="center">
+                    <23>
+                        <br>
+                        <br>
+                </label>
+                <br>
+                <label class="letra1" align="center">ENERO 2020</label>
+                <br>
+                <br>
+            </mat-card-title>
+            <label class="letra">ESTADO DE LA CITA</label>
+            <br>
+            <br>
+            <br>
+            <br>
+            <label class="letra">AGENDADO</label>
+            <br>
+            <br>
+            <br>
+            <br>
+            <label class="letra">FINALIZADO</label>
+            <br>
+            <br>
+            <br>
+        </mat-card>
+    </div>
+
     <div class="center">
         <mat-card-content>
             <mat-card-title>
@@ -22,7 +57,7 @@
                                 <br>
                                 <form action="">
                                     <div class="form-group row">
-                                        <button mat-raised-button (click)="global" class="dos">Global</button>
+                                        <button mat-raised-button (click)="global()" class="dos">Global</button>
                                     </div>
                                 </form>
                             </div>
@@ -30,7 +65,7 @@
                                 <br>
                                 <form action="">
                                     <div class="form-group row">
-                                        <button mat-raised-button (click)="diario" class="cuarto">Semanal</button>
+                                        <button mat-raised-button (click)="diaria()" class="cuarto">Semanal</button>
                                     </div>
                                 </form>
                             </div>
@@ -47,12 +82,8 @@
                 <thead>
                     <tr>
                         <th>HORA</th>
-                        <th>LUNES</th>
-                        <th>MARTES</th>
-                        <th>MIERCOLES</th>
-                        <th>JUEVES</th>
-                        <th>VIERNES</th>
-                        <th>SABADO</th>
+                        <th>PACIENTE</th>
+                        <th>ESTADO DE LA CITA</th>
 
                     </tr>
                 </thead>
@@ -62,226 +93,60 @@
                 <!--Table body-->
                 <tbody>
                     <tr>
-                        <th scope="row">8:00 am 9:00 am</th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">9:00 am 10:00 am</th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">10:00 am 11:00 am</th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
                         <th scope="row"></th>
                         <th scope="row"></th>
                         <th scope="row"></th>
                     </tr>
 
                     <tr>
-                        <th scope="row">11:00 am 12:00 m</th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">12:00 m 1:00 pm</th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">1:00 pm 2:00 pm</th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">2:00 pm 3:00 pm</th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
                         <th scope="row"></th>
                         <th scope="row"></th>
                         <th scope="row"></th>
                     </tr>
 
                     <tr>
-                        <th scope="row">3:00 pm 4:00 pm</th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">4:00 pm 5:00 pm</th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
-                        <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
                         <th scope="row"></th>
                         <th scope="row"></th>
                         <th scope="row"></th>
                     </tr>
 
                     <tr>
-                        <th scope="row">5:00 pm 6:00 pm</th>
                         <th scope="row"></th>
                         <th scope="row"></th>
-                        <th scope="row">
-                            <form>
-                                <div class="col-6">
-                                    <button mat-mini-fab type="button" data-toggle="modal"
-                                        data-target="#exampleModalCenter">+</button>
-                                </div>
-                            </form>
-                        </th>
+                        <th scope="row"></th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                    </tr>
+
+                    <tr>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                        <th scope="row"></th>
+                    </tr>
+
+                    <tr>
                         <th scope="row"></th>
                         <th scope="row"></th>
                         <th scope="row"></th>
