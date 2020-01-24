@@ -30,5 +30,7 @@ export class EspecialidadesComponent implements OnInit {
   reportes(): void {
     this.router.navigate(["reportes"]);
   }
-
+  historia(): void {
+    this.router.navigate(["especialidad"]);
+  }
 }

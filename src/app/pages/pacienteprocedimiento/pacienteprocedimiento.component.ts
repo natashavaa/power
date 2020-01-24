@@ -42,5 +42,13 @@ export class PacienteprocedimientoComponent implements OnInit {
     this.router.navigate(["pacienteinformacion"]);
   }
 
+  historia(): void {
+    this.router.navigate(["pacienteprocedimiento"]);
+  }
+
+  cancelar(): void {
+    this.router.navigate(["pacienteprocedimiento"]);
+  }
+
 
 }

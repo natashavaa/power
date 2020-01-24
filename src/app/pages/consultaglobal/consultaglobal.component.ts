@@ -21,5 +21,12 @@ export class ConsultaglobalComponent implements OnInit {
     this.router.navigate(["global"]);
   }
   
-  
+    
+  historia(): void {
+    this.router.navigate(["global"]);
+  }
+
+  cancelar(): void {
+    this.router.navigate(["global"]);
+  }
 }

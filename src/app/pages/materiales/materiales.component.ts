@@ -30,5 +30,4 @@ export class MaterialesComponent implements OnInit {
   reportes(): void {
     this.router.navigate(["reportes"]);
   }
-
 }
