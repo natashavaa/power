@@ -49,6 +49,9 @@ export class PacienteprocedimientoComponent implements OnInit {
   cancelar(): void {
     this.router.navigate(["pacienteprocedimiento"]);
   }
+  recipe(): void {
+    this.router.navigate(["pacienterecipe"]);
+  }
 
 
 }

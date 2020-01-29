@@ -45,5 +45,8 @@ export class OdontogramatodoslosdientesComponent implements OnInit {
   informacion(): void {
     this.router.navigate(["pacienteinformacion"]);
   }
+  recipe(): void {
+    this.router.navigate(["pacienterecipe"]);
+  }
 
 }

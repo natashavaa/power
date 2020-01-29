@@ -47,6 +47,7 @@ import { EspecialidadesComponent } from './pages/especialidades/especialidades.c
 import { MaterialesComponent } from './pages/materiales/materiales.component';
 import { MultimediaComponent } from './pages/multimedia/multimedia.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
+import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { ReportesComponent } from './pages/reportes/reportes.component';
     MaterialesComponent,
     MultimediaComponent,
     ReportesComponent,
+    PacientesrecipeComponent,
   ],
   imports: [
     BrowserModule,

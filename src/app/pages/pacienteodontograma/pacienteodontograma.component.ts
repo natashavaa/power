@@ -49,4 +49,8 @@ export class PacienteodontogramaComponent implements OnInit {
     this.router.navigate(["todoslosdientes"]);
   }
 
+  recipe(): void {
+    this.router.navigate(["pacienterecipe"]);
+  }
+
 }

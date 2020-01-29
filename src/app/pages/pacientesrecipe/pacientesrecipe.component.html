@@ -36,7 +36,8 @@
                 <mat-list-item>
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos Clinicos</button>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos
+                                Clinicos</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -83,25 +84,38 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4> IMAGENES Y ARCHIVOS </h4>
+                        <h4> RECIPE </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
 
-            <div>
-                <br>
-                <div class="row">
-                    <div class="col-12">
-                        <label for="" class="col-6 col-form-label"></label>
-                        <input type="file" name="archivo">
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <form action="">
+                        <br>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Tratamiento</label>
+                            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Medicamentos</label>
+                            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Recomendaciones</label>
+                            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Tiempo</label>
+                            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                        </div>
+
+                    </form>
                 </div>
             </div>
             <br>
-            <div class="alert alert-danger" role="alert">
-                NO HAY NINGUN TIPO DE IMAGEN O DOC DE ESTE PACIENTE
-
-            </div>
+            <button mat-raised-button (click)="historia()" class="uno">GUARDAR</button>
+            <button mat-raised-button (click)="cancelar()" class="dos">IMPRIMIR</button>
 
         </mat-card-content>
     </div>

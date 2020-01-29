@@ -28,6 +28,7 @@ import { InventarioComponent } from './pages/inventario/inventario.component';
 import { MaterialesComponent } from './pages/materiales/materiales.component';
 import { MultimediaComponent } from './pages/multimedia/multimedia.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
+import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
 
 
 const app_routes: Routes = [
@@ -49,6 +50,7 @@ const app_routes: Routes = [
   {path: 'inventario', component: InventarioComponent}, 
   {path: 'materiales', component: MaterialesComponent}, 
   {path: 'multimedia', component: MultimediaComponent}, 
+  {path: 'pacienterecipe', component : PacientesrecipeComponent},
   {path: 'reportes', component: ReportesComponent}, 
   {path: 'historiaclinica', component : HistoriaComponent},
   {path: 'pacienteinformacion', component: PacienteinformacionComponent},

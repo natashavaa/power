@@ -55,4 +55,8 @@ export class PacientepadecimientoComponent implements OnInit {
 
   }
   
+  recipe(): void {
+    this.router.navigate(["pacienterecipe"]);
+  }
+
 }
