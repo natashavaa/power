@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 
 
@@ -19,6 +20,11 @@ export class RegisterComponent {
   selectedValue: string;
   step = 0;
 
+  guardar(formulario:NgForm){
+    console.log("Valido", formulario.valid);
+    console.log("Valores", formulario.value);
+  }
+  
   setStep(index: number) {
     this.step = index;
   }
@@ -42,6 +48,7 @@ export class RegisterComponent {
   
   home() : void {
     this.router.navigate(["home"]);
+ 
  
 }
 }

@@ -49,6 +49,13 @@ import { MultimediaComponent } from './pages/multimedia/multimedia.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
 
+/ firebase /
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage';
+import {AngularFireModule} from '@angular/fire';
+import { environment } from 'src/environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +92,9 @@ import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecip
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule,
+    AngularFireStorageModule,
     CustomMaterialModule,
     FormsModule,
     AppRoutingModule,
@@ -99,8 +109,11 @@ import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecip
     MatGridListModule,
     MatPaginatorModule,
     ReactiveFormsModule
+
    ],
-  providers: [],
+  providers: [
+    {provide: StorageBucket,useValue:'gs://angular-html-4afb9.appspot.com'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

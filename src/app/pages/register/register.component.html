@@ -10,7 +10,7 @@
     <br>
     <div class="row">
       <div class="col-6">
-        <form action="">
+        <form (ngSubmit)="guardar(formulario)" #formulario="ngForm" novalidate="" action="">
           <div class="form-group row">
             <label for="" class="col-4 col-form-label">Nombre Completo</label>
             <input placeholder="" class="form-control col-8">
