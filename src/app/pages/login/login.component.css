@@ -4,7 +4,8 @@
   position: center;
   background: rgba(207, 205, 205, 0.199);
   color: #000;
-  border-radius: 10%;
+  border-radius: 5%;
+  border-inline: 5px;
   box-sizing: border-box;
   padding: 20px 30px;
   top: 20%;
