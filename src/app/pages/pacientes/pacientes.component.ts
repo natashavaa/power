@@ -39,7 +39,7 @@ export class PacientesComponent {
   }
 
   cancelar(): void {
-    this.router.navigate(["pacientes"]);
+    this.router.navigate(["home"]);
 
   }
 
