@@ -1,26 +1,26 @@
 <div class="container">
-  <mat-card>
-    <div class="padre">
-      <img src="assets/img/logitoo.png" class="avatar" alt="Avatar Image">
-    </div>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="" [(ngModel)]="username" name="username" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="" [(ngModel)]="password" type="password" name="password" required>
-      </mat-form-field>
-    </form>
-    <mat-card-actions>
-      <div class="padre">
-        <button mat-raised-button (click)="login()" color="warn">INICIAR SESIÓN</button>
-        <br>
-        <a href="#">¿Olvidaste tu contraseña?</a>
-        <br>
-        <br>
-        <a routerLink="register">¿No tienes cuenta?</a>
-        <br>
-      </div>
-    </mat-card-actions>
-  </mat-card>
+    <mat-card>
+        <div class="padre">
+            <img src="assets/img/logitoo.png" class="avatar" alt="Avatar Image">
+        </div>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="username" [(ngModel)]="username" name="username" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="password" [(ngModel)]="password" type="password" name="password" required>
+            </mat-form-field>
+        </form>
+        <mat-card-actions>
+            <div class="padre">
+                <button mat-raised-button (click)="login()" color="warn">INICIAR SESIÓN</button>
+                <br>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <br>
+                <br>
+                <a routerLink="register">¿No tienes cuenta?</a>
+                <br>
+            </div>
+        </mat-card-actions>
+    </mat-card>
 </div>

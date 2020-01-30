@@ -1,99 +1,105 @@
  .mat-card {
-  width: 45%;
-  height: 45%;
-  position: center;
-  background: rgba(207, 205, 205, 0.199);
-  color: #000;
-  border-radius: 10%;
-  box-sizing: border-box;
-  padding: 20px 30px;
-  top: 20%;
-  left: 30%;
+     width: 45%;
+     height: 45%;
+     position: center;
+     background: rgba(131, 131, 131, 0.199);
+     color: #000;
+     border-radius: 10%;
+     box-sizing: border-box;
+     padding: 20px 30px;
+     top: 20%;
+     left: 30%;
  }
  
  .container .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    left: calc(20% - 50px);
-    text-align: center;
-    }
-  
-  .container h1 {
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
-    color: #000;
-  }
-  
-  .mat-form-field {
-    margin: 0;
-    padding: 0;    
-    font-weight: bold;
-    display: block;
-  }
-
-::ng-deep input.mat-input-element {
-  color: #000;
-}
-  ::ng-deep .mat-focused .mat-form-field-label {
-    /*change color of label*/
-    color: #000 !important;
-   }
-  
-   ::ng-deep.mat-form-field-underline {
-    /*change color of underline*/
-    background-color: #000 !important;
-  } 
-  
-  ::ng-deep.mat-form-field-ripple {
-   /*change color of underline when focused*/
-   background-color: #000 !important;
-  }
-  
-  .container input {
-    width: 50%;
-    margin-bottom: 20px;
-    position: center;
-    color: #000
-  
-  }
-  
-  .container input[type="text"], .container input[type="password"] {
-    border: none;
-    background: transparent;
-    outline: none;
-    height: 0px;
-    color: #000;
-    font-size: 16px;
-    position: center;
-  }
-  
-  button {
-    width: 50%;
-  }
-  
-  .container input[type="submit"]:hover {
-    cursor: pointer;
-    background: #ffc107;
-    color: #000;
-  }
-  
-  .container a {
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: darkgrey;
-  }
-  
-  .container a:hover {
-    color: #fff;
-  }
-
-  .padre {
-    margin: 1rem;
-    padding: 1rem;
-  /* IMPORTANTE */
-  text-align: center;
-  }
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     left: calc(20% - 50px);
+     text-align: center;
+ }
+ 
+ .input ::placeholder {
+     color: #000;
+     background-color: #000;
+ }
+ 
+ .container h1 {
+     margin: 0;
+     padding: 0 0 20px;
+     text-align: center;
+     font-size: 22px;
+     color: #000;
+ }
+ 
+ .mat-form-field {
+     margin: 0;
+     padding: 0;
+     font-weight: bold;
+     display: block;
+ }
+ 
+ ::ng-deep input.mat-input-element {
+     color: #000;
+ }
+ 
+ ::ng-deep .mat-focused .mat-form-field-label {
+     /*change color of label*/
+     color: #000 !important;
+ }
+ 
+ ::ng-deep.mat-form-field-underline {
+     /*change color of underline*/
+     background-color: #000 !important;
+ }
+ 
+ ::ng-deep.mat-form-field-ripple {
+     /*change color of underline when focused*/
+     background-color: #000 !important;
+ }
+ 
+ .container input {
+     width: 50%;
+     margin-bottom: 20px;
+     position: center;
+     color: #000
+ }
+ 
+ .container input[type="text"],
+ .container input[type="password"] {
+     border: none;
+     background: transparent;
+     outline: none;
+     height: 0px;
+     color: #000;
+     font-size: 16px;
+     position: center;
+ }
+ 
+ button {
+     width: 50%;
+ }
+ 
+ .container input[type="submit"]:hover {
+     cursor: pointer;
+     background: #ffc107;
+     color: #000;
+ }
+ 
+ .container a {
+     text-decoration: none;
+     font-size: 12px;
+     line-height: 20px;
+     color: rgb(0, 0, 0);
+ }
+ 
+ .container a:hover {
+     color: rgb(0, 0, 0);
+ }
+ 
+ .padre {
+     margin: 1rem;
+     padding: 1rem;
+     /* IMPORTANTE */
+     text-align: center;
+ }
