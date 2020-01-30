@@ -92,7 +92,7 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+   // AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireModule,
     AngularFireStorageModule,
     CustomMaterialModule,
