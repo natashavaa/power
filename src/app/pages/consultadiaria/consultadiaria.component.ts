@@ -22,7 +22,7 @@ export class ConsultadiariaComponent implements OnInit {
     this.router.navigate(["diaria"]);
   }
 
-  global(): void {
+  semanal(): void {
     this.router.navigate(["global"]);
   }
   

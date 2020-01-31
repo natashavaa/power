@@ -17,7 +17,7 @@ export class ConsultaglobalComponent implements OnInit {
     this.router.navigate(["diaria"]);
   }
 
-  global(): void {
+  semanal(): void {
     this.router.navigate(["global"]);
   }
   
