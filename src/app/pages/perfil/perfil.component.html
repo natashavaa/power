@@ -1,0 +1,83 @@
+<div align='center'>
+    <mat-card>
+      <mat-panel-title>
+        <h4> Registro </h4>
+      </mat-panel-title>
+      <mat-panel-description>
+       
+      </mat-panel-description>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-6">
+          <form (ngSubmit)="guardar(formulario)" #formulario="ngForm" novalidate="" action="">
+            <div class="form-group row">
+              <label for="" class="col-4 col-form-label">Nombre Completo</label>
+              <input placeholder="" class="form-control col-8">
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-4 col-form-label">Cedula</label>
+              <input placeholder="" class="form-control col-8">
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-4 col-form-label">Direccion</label>
+              <input placeholder="" class="form-control col-8">
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-4 col-form-label">Genero: </label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+                  Femenino
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="opciones" id="opciones_2" value="opcion_2" class="selector" checked>
+                  Masculino
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <mat-label for="" class="col-4 col-form-label">Especialidad</mat-label>
+              <br>
+              <select class="form-control col-8">
+                <option>Odontologia</option>
+                <option>Ortodoncia</option>
+                <option>Niguna</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-4 col-form-label">Email</label>
+              <input placeholder="" class="form-control col-8">
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-4 col-form-label">Telefono</label>
+              <input placeholder="" class="form-control col-8">
+            </div>
+          </form>
+        </div>
+        <div class="col-6">
+          <form action="">
+            <div class="form-group row">
+              <label for="" class="col-4 col-form-label">Usuario</label>
+              <input placeholder="" class="form-control col-8">
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-4 col-form-label">Contraseña</label>
+              <input placeholder="" class="form-control col-8">
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-4 col-form-label">Confirmar Contraseña</label>
+              <input placeholder="" class="form-control col-8">
+            </div>
+          </form>
+        </div>
+      </div>
+      <br>
+      <button mat-raised-button (click)="home()" color="warn">REGISTRAR</button>
+      <br>
+      <br>
+      <a href="/#/">¿Tienes una cuenta?</a>
+    </mat-card>
+  </div>

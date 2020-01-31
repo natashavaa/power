@@ -7,7 +7,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 //Componentes
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -26,16 +25,15 @@ import { ConsultaglobalComponent } from './pages/consultaglobal/consultaglobal.c
 import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
 import { InventarioComponent } from './pages/inventario/inventario.component';
 import { MaterialesComponent } from './pages/materiales/materiales.component';
-import { MultimediaComponent } from './pages/multimedia/multimedia.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 
 const app_routes: Routes = [
   {path: '', component : LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'item/:id', component: ItemComponent},  
   {path: 'pacienteseguimiento', component: PacienteseguimientoComponent},
   {path: 'search/:termino', component: SearchComponent},
   {path: 'register', component: RegisterComponent},
@@ -49,7 +47,7 @@ const app_routes: Routes = [
   {path: 'especialidad', component: EspecialidadesComponent}, 
   {path: 'inventario', component: InventarioComponent}, 
   {path: 'materiales', component: MaterialesComponent}, 
-  {path: 'multimedia', component: MultimediaComponent}, 
+  {path: 'perfil', component : PerfilComponent},
   {path: 'pacienterecipe', component : PacientesrecipeComponent},
   {path: 'reportes', component: ReportesComponent}, 
   {path: 'historiaclinica', component : HistoriaComponent},

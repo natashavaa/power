@@ -23,10 +23,6 @@ export class InventarioComponent implements OnInit {
     this.router.navigate(["materiales"]);
   }
 
-  multimedia(): void {
-    this.router.navigate(["multimedia"]);
-  }
-
   reportes(): void {
     this.router.navigate(["reportes"]);
   }

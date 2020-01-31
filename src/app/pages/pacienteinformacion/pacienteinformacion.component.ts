@@ -33,7 +33,7 @@ export class PacienteinformacionComponent implements OnInit {
   }
 
   cancelar(): void {
-    this.router.navigate(["pacientes"]);
+    this.router.navigate(["home"]);
 
   }
 

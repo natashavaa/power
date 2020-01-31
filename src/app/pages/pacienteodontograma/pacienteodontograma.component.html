@@ -20,7 +20,7 @@
                 <mat-list-item>
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="imagen()" class="b">Imagenes y Archivos</button>
+                            <button mat-stroked-button (click)="imagen()" class="b">Imagenes</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -97,15 +97,14 @@
             <div class="row">
                 <div class="col-6">
                     <br>
-                    <form action="">
-                        <div class="form-group row">
-                            <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
-                            <button mat-raised-button (click)="odontograma()" class="cero">Diente x Diente</button>
-                        </div>
-                        <div class="col-12 col-form-label">
-                            <button mat-raised-button (click)="todos()" class="uno">Todos Los Dientes</button>
-                        </div>
-                    </form>
+                    <div class="form-group row">
+                        <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
+                        <br>
+                        <select class="form-control col-8">
+                            <option>Diente x Diente</option>
+                            <option>Todos los Dientes</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <br>
