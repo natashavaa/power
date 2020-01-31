@@ -1,23 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModule } from './core/material.module';
-import {FormsModule} from '@angular/forms';
-import {MatExpansionModule} from '@angular/material/expansion';
-import { HttpClientModule} from '@angular/common/http';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 //Rutas
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule } from '@angular/material';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatListModule} from '@angular/material';
-import {MatIconModule} from '@angular/material';
-import {ReactiveFormsModule} from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 //Componentes
@@ -48,12 +48,21 @@ import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
 
 / firebase /
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage';
-import {AngularFireModule} from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 
+/calendario/
+
+
+import { CommonModule } from '@angular/common';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+//import { DemoComponent } from './component';
 
 @NgModule({
   declarations: [
@@ -90,7 +99,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-   // AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireModule,
     AngularFireStorageModule,
     CustomMaterialModule,
@@ -106,13 +115,20 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     MatIconModule,
     MatGridListModule,
     MatPaginatorModule,
-    ReactiveFormsModule
+    CommonModule,
+    NgbModalModule,
+    ReactiveFormsModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
 
-   ],
-  providers: [
-    {provide: StorageBucket,useValue:'gs://angular-html-4afb9.appspot.com'}
   ],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com' }
+  ],
+  bootstrap: [AppComponent],  
 })
 export class AppModule { }
 
