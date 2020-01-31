@@ -1,5 +1,4 @@
  .mat-card {
-<<<<<<< HEAD
      width: 45%;
      height: 45%;
      position: center;
@@ -10,19 +9,6 @@
      padding: 20px 30px;
      top: 20%;
      left: 30%;
-=======
-  width: 45%;
-  height: 45%;
-  position: center;
-  background: rgba(207, 205, 205, 0.199);
-  color: #000;
-  border-radius: 5%;
-  border-inline: 5px;
-  box-sizing: border-box;
-  padding: 20px 30px;
-  top: 20%;
-  left: 30%;
->>>>>>> 476ef8b3a3cfc2e4a066f10d518d453e2633b633
  }
  
  .container .avatar {
