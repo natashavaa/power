@@ -56,7 +56,6 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 
 /calendario/
 
-
 import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
@@ -99,7 +98,6 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireModule,
     AngularFireStorageModule,
     CustomMaterialModule,
@@ -125,6 +123,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     })
 
   ],
+  //declarations: [DemoComponent],
+  //exports: [DemoComponent]
   providers: [
     { provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com' }
   ],

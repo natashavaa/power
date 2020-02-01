@@ -1,12 +1,9 @@
 import {
   Component,
-  OnInit,
   ChangeDetectionStrategy,
   ViewChild,
   TemplateRef
 } from '@angular/core';
-
-import { Router } from '@angular/router';
 
 import {
   startOfDay,
@@ -52,7 +49,7 @@ const colors: any = {
   styleUrls: ['./consultadiaria.component.css']
 })
 
-export class ConsultadiariaComponent implements OnInit {
+export class ConsultadiariaComponent {
 
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
@@ -130,7 +127,7 @@ export class ConsultadiariaComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal, private router: Router) { }
+  constructor(private modal: NgbModal) { }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -197,16 +194,4 @@ export class ConsultadiariaComponent implements OnInit {
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
-
-  ngOnInit() {
-  }
-
-  diaria(): void {
-    this.router.navigate(["diaria"]);
-  }
-
-  semanal(): void {
-    this.router.navigate(["global"]);
-  }
-
 }
