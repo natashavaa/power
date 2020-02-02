@@ -14,9 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatListModule } from '@angular/material';
-import { MatIconModule } from '@angular/material';
+import { MatListModule } from '@angular/material';;
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -63,6 +61,16 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 //import { DemoComponent } from './component';
 
+//fecha
+import {
+  MatFormFieldModule,
+  MatMenuModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatDatepickerModule,
+  MatNativeDateModule
+} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +113,10 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     MatExpansionModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatMenuModule,
+    MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
     MatFormFieldModule,
@@ -126,9 +138,11 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
   //declarations: [DemoComponent],
   //exports: [DemoComponent]
   providers: [
-    { provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com' }
+    {
+      provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com'
+    }
   ],
-  bootstrap: [AppComponent],  
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
 
