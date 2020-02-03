@@ -28,6 +28,7 @@ import { MaterialesComponent } from './pages/materiales/materiales.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { PantallahomeComponent } from './pages/pantallahome/pantallahome.component';
 
 
 const app_routes: Routes = [
@@ -53,6 +54,7 @@ const app_routes: Routes = [
   {path: 'historiaclinica', component : HistoriaComponent},
   {path: 'pacienteinformacion', component: PacienteinformacionComponent},
   {path: 'imagenes', component: ImagenesComponent},
+  {path: 'pantallahome', component: PantallahomeComponent},
   {path: 'pacienteconsulta', component: PacienteconsultaComponent},  
   {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},  
   {path: '**', pathMatch: 'full', redirectTo: 'home'},

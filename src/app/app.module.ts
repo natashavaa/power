@@ -70,6 +70,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule
 } from '@angular/material';
+import { PantallahomeComponent } from './pages/pantallahome/pantallahome.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import {
     ReportesComponent,
     PacientesrecipeComponent,
     PerfilComponent,
+    PantallahomeComponent,
   ],
   imports: [
     BrowserModule,
