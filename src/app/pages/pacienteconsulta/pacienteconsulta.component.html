@@ -1,5 +1,4 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
-                id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -29,7 +28,7 @@
                 <mat-list-item>
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="imagen()" class="b">Imagenes</button>
+                            <button mat-stroked-button (click)="imagen()" class="b">Evolucion</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -45,7 +44,8 @@
                 <mat-list-item>
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos Clinicos</button>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos
+                                Clinicos</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -58,13 +58,13 @@
                     </form>
                 </mat-list-item>
                 <mat-divider></mat-divider>
-                <mat-list-item>
-                    <form>
+                <!--   <mat-list-item>
+                        <form>
                         <div>
                             <button mat-stroked-button (click)="odontograma()" class="f">Odontograma</button>
                         </div>
-                    </form>
-                </mat-list-item>
+                    </form> 
+                </mat-list-item> -->
                 <mat-divider></mat-divider>
                 <mat-list-item>
                     <form>
@@ -103,128 +103,56 @@
                 </div>
             </form>
 
-            <table class="table table-hover table-fixed">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+            </mat-form-field>
 
-                <!--Table head-->
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-                <thead>
-                    <tr>
-                        <th>FECHA</th>
-                        <th>STATUS</th>
-                    </tr>
-                </thead>
+                <!-- Checkbox Column -->
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+                        </mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"
+                            [aria-label]="checkboxLabel(row)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
 
-                <!--Table head-->
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
 
-                <!--Table body-->
-                <tbody>
-                    <tr>
-                        <th scope="row">20/12/2010</th>
-                        <th scope="row">Atentido</th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
 
-                    <tr>
-                        <th scope="row">20/12/2010</th>
-                        <th scope="row">Atentido</th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef> Weight </th>
+                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                </ng-container>
 
-                    <tr>
-                        <th scope="row">20/12/2010</th>
-                        <th scope="row">Atentido</th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                </ng-container>
 
-                    <tr>
-                        <th scope="row">20/12/2010</th>
-                        <th scope="row">Atentido</th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">20/12/2010</th>
-                        <th scope="row">Atentido</th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">20/12/2010</th>
-                        <th scope="row">Atentido</th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
-
-                </tbody>
-                <!--Table body-->
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                </tr>
             </table>
-
-            <!--Table-->
 
         </mat-card-content>
     </div>

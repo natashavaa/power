@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
   
   pacientes() : void {
-      this.router.navigate(["pacientes"]);
+      this.router.navigate(["registerpaciente"]);
    
   }
 }

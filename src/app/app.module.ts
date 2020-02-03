@@ -71,6 +71,7 @@ import {
   MatNativeDateModule
 } from '@angular/material';
 import { PantallahomeComponent } from './pages/pantallahome/pantallahome.component';
+import { RegistropacienteComponent } from './pages/registropaciente/registropaciente.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { PantallahomeComponent } from './pages/pantallahome/pantallahome.compone
     PacientesrecipeComponent,
     PerfilComponent,
     PantallahomeComponent,
+    RegistropacienteComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-imagenes',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ImagenesComponent implements OnInit {
 
-  constructor(private router: Router ) { }
+  constructor(public productosService: ProductosService, private router: Router ) { }
 
   ngOnInit() {
   }

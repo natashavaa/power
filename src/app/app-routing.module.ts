@@ -29,6 +29,7 @@ import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { PantallahomeComponent } from './pages/pantallahome/pantallahome.component';
+import { RegistropacienteComponent } from './pages/registropaciente/registropaciente.component';
 
 
 const app_routes: Routes = [
@@ -41,6 +42,7 @@ const app_routes: Routes = [
   {path: 'pacienteodontograma', component: PacienteodontogramaComponent},
   {path: 'login', component : LoginComponent},
   {path: 'pacientepadecimiento', component: PacientepadecimientoComponent},
+  {path: 'registerpaciente', component : RegistropacienteComponent},
   {path: 'pacientes', component : PacientesComponent},
   {path: 'pacienteprocedimiento', component: PacienteprocedimientoComponent},
   {path: 'diaria', component: ConsultadiariaComponent}, 

@@ -163,17 +163,18 @@
   }
 
   .uno {
-    margin: 0 12px;
+    margin: 0 80px;
     color: snow;
     background-color: blue;
-  }
+    font-size: 20px;
+  } 
 
   button {
     font-size: 20px;
   }
 
   .raya {
-    margin: 0 12px;
+    margin: 0 40px;
     color: snow;
     background-color: silver;
   }
