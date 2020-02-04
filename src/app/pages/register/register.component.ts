@@ -47,7 +47,7 @@ export class RegisterComponent {
   }
   
   home() : void {
-    this.router.navigate(["home"]);
+    this.router.navigate(["pantallahome"]);
  
  
 }
