@@ -11,15 +11,12 @@ export class HomeComponent implements OnInit {
 
   constructor( public productosService: ProductosService, private router: Router) {
 
-        
-
    }
 
   ngOnInit() {
   }
-  
-  pacientes() : void {
-      this.router.navigate(["registerpaciente"]);
-   
+
+  pacientes(): void {
+      this.router.navigate(['registerpaciente']);
   }
 }

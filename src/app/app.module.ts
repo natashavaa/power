@@ -9,16 +9,16 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-//Rutas
+// Rutas
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { MatListModule } from '@angular/material';;
+import { MatListModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-//Componentes
+// Componentes
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -45,14 +45,14 @@ import { MaterialesComponent } from './pages/materiales/materiales.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
 
-/ firebase /
+// firebase
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 
-/calendario/
+// calendario
 
 import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -60,7 +60,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
-//fecha
+// fecha
 import {
   MatFormFieldModule,
   MatMenuModule,
@@ -71,6 +71,7 @@ import {
 } from '@angular/material';
 import { PantallahomeComponent } from './pages/pantallahome/pantallahome.component';
 import { RegistropacienteComponent } from './pages/registropaciente/registropaciente.component';
+import { DataApiService } from './services/data-api.service';
 
 @NgModule({
   declarations: [
@@ -138,8 +139,8 @@ import { RegistropacienteComponent } from './pages/registropaciente/registropaci
     })
 
   ],
-  //exports: [DemoComponent]
-  providers: [
+  // exports: [DemoComponent]
+  providers: [DataApiService,
     {
       provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com'
     }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IniciosService } from 'src/app/services/inicios.service';
-import { Router } from '@angular/router';
+import { Router, Data } from '@angular/router';
+import { DataApiService } from '../../services/data-api.service';
 
 @Component({
   selector: 'app-pantallahome',
@@ -9,17 +10,22 @@ import { Router } from '@angular/router';
 })
 export class PantallahomeComponent implements OnInit {
 
-  constructor(public inicioService: IniciosService, private router: Router) {
+  constructor(public inicioService: IniciosService, private router: Router, private dataApi: DataApiService) {
 
 
 
   }
 
   ngOnInit() {
+    this.getlistPatients();
+  }
+
+  getlistPatients() {
+    this.dataApi.getAllPatints().subscribe(patients => console.log(patients));
   }
 
   pacientes(): void {
-    this.router.navigate(["pacientes"]);
+    this.router.navigate(['pacientes']);
 
   }
 }
