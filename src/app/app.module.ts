@@ -59,7 +59,6 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-//import { DemoComponent } from './component';
 
 //fecha
 import {
@@ -139,7 +138,6 @@ import { RegistropacienteComponent } from './pages/registropaciente/registropaci
     })
 
   ],
-  //declarations: [DemoComponent],
   //exports: [DemoComponent]
   providers: [
     {
