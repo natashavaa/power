@@ -1,26 +1,34 @@
-<div class="container">
-  <mat-card>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+  type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+<div class="testbox">
+  <div class="container">
     <div class="padre">
       <img src="assets/img/logitoo.png" class="avatar" alt="Avatar Image">
     </div>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="" [(ngModel)]="username" name="username" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="" [(ngModel)]="password" type="password" name="password" required>
-      </mat-form-field>
+  </div>
+
+  <mat-card-content>
+    <form action="/">
+      <br>
+      <label id="icon" for="name"><i class="icon-user"></i></label>
+      <input type="text" name="name" id="name" placeholder="Name" required />
+      <label id="icon" for="name"><i class="icon-shield"></i></label>
+      <input type="password" name="password" id="name" placeholder="Password" required />
     </form>
-    <mat-card-actions>
-      <div class="padre">
-        <button mat-raised-button (click)="login()" color="warn">INICIAR SESIÓN</button>
-        <br>
-        <a href="#">¿Olvidaste tu contraseña?</a>
-        <br>
-        <br>
-        <a routerLink="register">¿No tienes cuenta?</a>
-        <br>
-      </div>
-    </mat-card-actions>
+  </mat-card-content>
+
+
+  <div class="padre">
+    <button mat-raised-button (click)="login()" color="warn">INICIAR SESIÓN</button>
+    <br>
+  </div>
+  <mat-card>
+    <div class="center">
+      <a href="#">¿Olvidaste tu contraseña?</a>
+      <br>
+      <a routerLink="register">¿No tienes cuenta?</a>
+    </div>
   </mat-card>
 </div>

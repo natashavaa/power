@@ -30,6 +30,8 @@ import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecip
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { PantallahomeComponent } from './pages/pantallahome/pantallahome.component';
 import { RegistropacienteComponent } from './pages/registropaciente/registropaciente.component';
+import { PantallanohomeComponent } from './pages/pantallanohome/pantallanohome.component';
+import { DoctoresComponent } from './pages/doctores/doctores.component';
 
 
 const appRoutes: Routes = [
@@ -44,6 +46,7 @@ const appRoutes: Routes = [
   {path: 'pacientepadecimiento', component: PacientepadecimientoComponent},
   {path: 'registerpaciente', component : RegistropacienteComponent},
   {path: 'pacientes', component : PacientesComponent},
+  {path: 'doctores', component : DoctoresComponent},
   {path: 'pacienteprocedimiento', component: PacienteprocedimientoComponent},
   {path: 'diaria', component: ConsultadiariaComponent},
   {path: 'global', component: ConsultaglobalComponent},

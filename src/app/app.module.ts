@@ -44,6 +44,7 @@ import { EspecialidadesComponent } from './pages/especialidades/especialidades.c
 import { MaterialesComponent } from './pages/materiales/materiales.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
+import { PantallanohomeComponent } from './pages/pantallanohome/pantallanohome.component';
 
 // firebase
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -72,6 +73,7 @@ import {
 import { PantallahomeComponent } from './pages/pantallahome/pantallahome.component';
 import { RegistropacienteComponent } from './pages/registropaciente/registropaciente.component';
 import { DataApiService } from './services/data-api.service';
+import { DoctoresComponent } from './pages/doctores/doctores.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +105,8 @@ import { DataApiService } from './services/data-api.service';
     PerfilComponent,
     PantallahomeComponent,
     RegistropacienteComponent,
+    PantallanohomeComponent,
+    DoctoresComponent,
   ],
   imports: [
     BrowserModule,

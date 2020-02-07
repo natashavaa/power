@@ -8,6 +8,22 @@ import { Router } from '@angular/router';
 })
 export class RegistropacienteComponent implements OnInit {
 
+  
+  selectedValue: string;
+  step = 0;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+  
   constructor(private router: Router) {
 
   }
