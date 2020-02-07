@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
+import { PaatientInterface } from '../../models/patients.interface';
+import { DataApiService } from '../../services/data-api.service';
+import { Observable } from 'rxjs';
 
 export interface PeriodicElement {
   name: string;
@@ -33,9 +36,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PacientesComponent {
 
+  constructor(private router: Router, private dataApi: DataApiService) {
+
+  }
+
   displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
+
+  private patient: PaatientInterface;
+
+
+
+
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
@@ -62,22 +75,19 @@ export class PacientesComponent {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-  constructor(private router: Router) {
-
-  }
-
   pacientes(): void {
-    this.router.navigate(["registerpaciente"]);
+    this.router.navigate(['registerpaciente']);
 
   }
 
   cancelar(): void {
-    this.router.navigate(["home"]);
+    this.router.navigate(['home']);
 
   }
-
   ngOnInit() {
-  }
-
+    this.getlistPatients();
+}
+getlistPatients() {
+  this.dataApi.getAllPatints().subscribe((patients: PaatientInterface) => (this.patient = patients));
+}
 }
