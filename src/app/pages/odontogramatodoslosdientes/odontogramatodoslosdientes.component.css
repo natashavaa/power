@@ -60,8 +60,8 @@
     font-size: 15px;
     line-height: none;
     color: #fff;
-    width: 133%;
-    left: calc(30% - 40%);
+    width: 235%;
+    left: calc(23% - 40%);
   }
   
   .b:hover {
@@ -179,3 +179,16 @@
     font-size: 40px;
   }
  
+   
+  .uno {
+    margin: 0 12px;
+    color: snow;
+    background-color: blue;
+  }
+  
+  .dos {
+    margin: 0 12px;
+    color: snow;
+    background-color: darkred;
+  }
+  

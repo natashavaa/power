@@ -60,8 +60,8 @@
     font-size: 15px;
     line-height: none;
     color: #fff;
-    width: 225%;
-    left: calc(30% - 40%);
+    width: 237%;
+    left: calc(20% - 40%);
   }
   
   .b:hover {
@@ -188,13 +188,13 @@
   .uno {
     margin: 0 12px;
     color: snow;
-    background-color: darkolivegreen;
+    background-color: blue;
   }
-
+  
   .dos {
     margin: 0 12px;
     color: snow;
-    background-color: goldenrod;
+    background-color: darkred;
   }
   
   .tres {
