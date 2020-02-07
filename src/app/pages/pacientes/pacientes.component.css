@@ -1,26 +1,53 @@
 /* Structure */
+
 table {
-  width: 100%;
+    width: 100%;
 }
 
 .mat-form-field {
-  font-size: 14px;
-  width: 100%;
+    font-size: 14px;
+    width: 100%;
 }
 
 button {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .uno {
-  margin: 0 12px;
-  color: snow;
-  background-color: #1DA1F2;
+    margin: 0 12px;
+    color: snow;
+    background-color: #1DA1F2;
 }
 
-
 .raya {
-  margin: 0 12px;
-  color: snow;
-  background-color: silver;
+    margin: 0 12px;
+    color: snow;
+    background-color: silver;
+}
+
+#books {
+    border-radius: 0.25rem;
+    background: #f9f9f9 !important;
+}
+
+.centrado {
+    padding-top: 5px;
+    text-align: center;
+}
+
+.card-patient {
+    margin: 10px;
+}
+
+section {
+    padding: 20px 0;
+}
+
+#books .card {
+    border: none;
+    background: #fff;
+}
+
+.mat-button {
+    background-color: darkgray;
 }

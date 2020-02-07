@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IniciosService } from 'src/app/services/inicios.service';
 import { Router, Data } from '@angular/router';
 import { DataApiService } from '../../services/data-api.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pantallahome',
@@ -9,20 +10,23 @@ import { DataApiService } from '../../services/data-api.service';
   styleUrls: ['./pantallahome.component.css']
 })
 export class PantallahomeComponent implements OnInit {
+patients: Observable<any>;
+patient: Observable<any>;
 
-  constructor(public inicioService: IniciosService, private router: Router, private dataApi: DataApiService) {
+  constructor(public inicioService: IniciosService, private router: Router) {
 
 
 
   }
 
   ngOnInit() {
-    this.getlistPatients();
   }
 
-  getlistPatients() {
-    this.dataApi.getAllPatints().subscribe(patients => console.log(patients));
-  }
+
+
+  getPatientById(id: string) {
+    const urlApi = '';
+   }
 
   pacientes(): void {
     this.router.navigate(['pacientes']);

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-//Rutas
+// Rutas
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
-//Componentes
+// Componentes
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { SearchComponent } from './pages/search/search.component';
@@ -32,7 +32,7 @@ import { PantallahomeComponent } from './pages/pantallahome/pantallahome.compone
 import { RegistropacienteComponent } from './pages/registropaciente/registropaciente.component';
 
 
-const app_routes: Routes = [
+const appRoutes: Routes = [
   {path: '', component : LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
@@ -45,28 +45,28 @@ const app_routes: Routes = [
   {path: 'registerpaciente', component : RegistropacienteComponent},
   {path: 'pacientes', component : PacientesComponent},
   {path: 'pacienteprocedimiento', component: PacienteprocedimientoComponent},
-  {path: 'diaria', component: ConsultadiariaComponent}, 
-  {path: 'global', component: ConsultaglobalComponent}, 
-  {path: 'especialidad', component: EspecialidadesComponent}, 
-  {path: 'inventario', component: InventarioComponent}, 
-  {path: 'materiales', component: MaterialesComponent}, 
+  {path: 'diaria', component: ConsultadiariaComponent},
+  {path: 'global', component: ConsultaglobalComponent},
+  {path: 'especialidad', component: EspecialidadesComponent},
+  {path: 'inventario', component: InventarioComponent},
+  {path: 'materiales', component: MaterialesComponent},
   {path: 'perfil', component : PerfilComponent},
   {path: 'pacienterecipe', component : PacientesrecipeComponent},
-  {path: 'reportes', component: ReportesComponent}, 
+  {path: 'reportes', component: ReportesComponent},
   {path: 'historiaclinica', component : HistoriaComponent},
   {path: 'pacienteinformacion', component: PacienteinformacionComponent},
   {path: 'imagenes', component: ImagenesComponent},
   {path: 'pantallahome', component: PantallahomeComponent},
-  {path: 'pacienteconsulta', component: PacienteconsultaComponent},  
-  {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},  
+  {path: 'pacienteconsulta', component: PacienteconsultaComponent},
+  {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(app_routes, { useHash: true }), ReactiveFormsModule],
-  exports: [RouterModule],  
+  imports: [RouterModule.forRoot(appRoutes, { useHash: true }), ReactiveFormsModule],
+  exports: [RouterModule],
 declarations: []
-}) 
+})
 
 export class AppRoutingModule { }
