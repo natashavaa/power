@@ -74,6 +74,7 @@ import { PantallahomeComponent } from './pages/pantallahome/pantallahome.compone
 import { RegistropacienteComponent } from './pages/registropaciente/registropaciente.component';
 import { DataApiService } from './services/data-api.service';
 import { DoctoresComponent } from './pages/doctores/doctores.component';
+import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { DoctoresComponent } from './pages/doctores/doctores.component';
     RegistropacienteComponent,
     PantallanohomeComponent,
     DoctoresComponent,
+    OrtodonciaComponent,
   ],
   imports: [
     BrowserModule,

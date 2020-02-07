@@ -1,0 +1,308 @@
+<div class="container">
+
+    <div class="left">
+        <br>
+        <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
+        <mat-card-content>
+            <mat-list>
+                <mat-card-title>
+                    <h5 align="center">Maria Salazar</h5>
+                    <h1 align="center">12 años</h1>
+                </mat-card-title>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="datos()" class="a">Datos Personales</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="imagen()" class="b">Evolucion</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="consulta()" class="c">Consultas</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos
+                                Clinicos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="seguimiento()" class="e">Seguimiento</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <!--   <mat-list-item>
+                        <form>
+                        <div>
+                            <button mat-stroked-button (click)="odontograma()" class="f">Odontograma</button>
+                        </div>
+                    </form> 
+                </mat-list-item> -->
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="informacion()" class="g">Informacion Clinica</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="recipe()" class="h">Recipe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </mat-card-content>
+    </div>
+
+
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+                <form>
+                    <mat-card>
+                        <br>
+                        <h4> ORTODONCIA</h4>
+                    </mat-card>
+                </form>
+            </mat-card-title>
+
+
+            <div class="row">
+                <div class="col-8">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-4 col-form-label"></mat-label>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <mat-label for="" class="col-4 col-form-label">Procedimiento Odontologico</mat-label>
+                <br>
+                <select class="form-control col-6">
+                    <option selected>Ortodoncia</option>
+                    <option>Profilaxis</option>
+                    <option>Blanqueamiento</option>
+                    <option>Topificacion de flour</option>
+                </select>
+            </div>
+            <br>
+            <br>
+
+            <img src="assets/img/odontogramaconbracktes.png" alt="Avatar Image">
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-6">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-8 col-form-label">Clase Canina</mat-label>
+                            <br>
+                            <select class="form-control col-4">
+                                <option selected>Seleccionar</option>
+                                <option>Derecha</option>
+                                <option>Izquierda</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-8 col-form-label">Clase Molar</mat-label>
+                            <br>
+                            <select class="form-control col-4">
+                                <option selected>Seleccionar</option>
+                                <option>Derecha</option>
+                                <option>Izquierda</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-8 col-form-label">Divisiones</mat-label>
+                            <br>
+                            <select class="form-control col-4">
+                                <option selected>Seleccionar</option>
+                                <option>Division 1</option>
+                                <option>Division 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-8 col-form-label">Clase Esqueletal</mat-label>
+                            <br>
+                            <select class="form-control col-4">
+                                <option selected>Seleccionar</option>
+                                <option>Derecha</option>
+                                <option>Izquierda</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Overjet</label>
+                            <input placeholder="" class="form-control col-4" required>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-8 col-form-label">Linea Media</mat-label>
+                            <br>
+                            <select class="form-control col-4">
+                                <option selected>Seleccionar</option>
+                                <option>Estandar</option>
+                                <option>Desviacion</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <h1 for="" class="col-8 col-form-label">Estudio de la Cefalica</h1>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">SN-FH</label>
+                            <input placeholder="" class="form-control col-4" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">SN-PLO</label>
+                            <input placeholder="" class="form-control col-4" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">SN-GOGN</label>
+                            <input placeholder="" class="form-control col-4" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">1NA-POG</label>
+                            <input placeholder="" class="form-control col-4" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">SN-GN</label>
+                            <input placeholder="" class="form-control col-4" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Clasificacion Angle</mat-label>
+                            <br>
+                            <select class="form-control col-6">
+                                <option selected>Seleccionar</option>
+                                <option>Clase 1</option>
+                                <option>Clase 2</option>
+                                <option>Clase 3</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Clasificacion Angle</mat-label>
+                            <br>
+                            <select class="form-control col-6">
+                                <option selected>Seleccionar</option>
+                                <option>Clase 1</option>
+                                <option>Clase 2</option>
+                                <option>Clase 3</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Subdvisiones</mat-label>
+                            <br>
+                            <select class="form-control col-6">
+                                <option selected>Seleccionar</option>
+                                <option>Division 1 - Mordida Profunda</option>
+                                <option>Division 2 - Mandibula retruciba</option>
+                                <option>Division 2 - Retroinclinacion de los Incisivos Centrales Superiores</option>
+                                <option>Division 2 - Proclinacion de los Incisivos Laterales Superiores Combinado con
+                                    Mordida Profunda</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Clasificacion Angle</mat-label>
+                            <br>
+                            <select class="form-control col-6">
+                                <option selected>Seleccionar</option>
+                                <option>Clase 1</option>
+                                <option>Clase 2</option>
+                                <option>Clase 3</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">OverBite</label>
+                            <input placeholder="" class="form-control col-6" required>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Tipo de Perfil</mat-label>
+                            <br>
+                            <select class="form-control col-6">
+                                <option selected>Seleccionar</option>
+                                <option>Convexo</option>
+                                <option>Concavo</option>
+                            </select>
+                        </div>
+                        <br>
+
+
+                        <div class="form-group row">
+                            <h1 for="" class="col-12 col-form-label">En Milimetros</h1>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">SNA</label>
+                            <input placeholder="" class="form-control col-6" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">SNB</label>
+                            <input placeholder="" class="form-control col-6" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">ANB</label>
+                            <input placeholder="" class="form-control col-6" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">1SUP/INF</label>
+                            <input placeholder="" class="form-control col-6" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">GOGN -P.MAX</label>
+                            <input placeholder="" class="form-control col-6" required>
+                        </div>
+                    </form>
+                    <br>
+                </div>
+
+                <div class="form-group row">
+                    <br>
+                    <br>
+                    <label for="" class="col-7 col-form-label">Diagnostico</label>
+                    <textarea class="form-control" rows="3" class="form-control col-4"></textarea>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-7 col-form-label">Plan de Procedimiento</label>
+                    <textarea class="form-control" rows="3" class="form-control col-4"></textarea>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-7 col-form-label">Medicaciones</label>
+                    <textarea class="form-control" rows="3" class="form-control col-4"></textarea>
+                </div>
+
+            </div>
+        </mat-card-content>
+    </div>
+</div>

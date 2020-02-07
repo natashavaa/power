@@ -32,6 +32,7 @@ import { PantallahomeComponent } from './pages/pantallahome/pantallahome.compone
 import { RegistropacienteComponent } from './pages/registropaciente/registropaciente.component';
 import { PantallanohomeComponent } from './pages/pantallanohome/pantallanohome.component';
 import { DoctoresComponent } from './pages/doctores/doctores.component';
+import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
 
 
 const app_routes: Routes = [
@@ -60,6 +61,7 @@ const app_routes: Routes = [
   {path: 'pacienteinformacion', component: PacienteinformacionComponent},
   {path: 'imagenes', component: ImagenesComponent},
   {path: 'pantallahome', component: PantallahomeComponent},
+  {path: 'ortodoncia', component: OrtodonciaComponent},
   {path: 'pacienteconsulta', component: PacienteconsultaComponent},  
   {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},  
   {path: 'pantallaNOhome', component: PantallanohomeComponent},  
