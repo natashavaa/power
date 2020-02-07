@@ -44,6 +44,7 @@ import { EspecialidadesComponent } from './pages/especialidades/especialidades.c
 import { MaterialesComponent } from './pages/materiales/materiales.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
+import { PantallanohomeComponent } from './pages/pantallanohome/pantallanohome.component';
 
 // firebase
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -103,6 +104,7 @@ import { DataApiService } from './services/data-api.service';
     PerfilComponent,
     PantallahomeComponent,
     RegistropacienteComponent,
+    PantallanohomeComponent,
   ],
   imports: [
     BrowserModule,
