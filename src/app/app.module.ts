@@ -73,6 +73,7 @@ import {
 import { PantallahomeComponent } from './pages/pantallahome/pantallahome.component';
 import { RegistropacienteComponent } from './pages/registropaciente/registropaciente.component';
 import { DataApiService } from './services/data-api.service';
+import { DoctoresComponent } from './pages/doctores/doctores.component';
 
 @NgModule({
   declarations: [
@@ -105,6 +106,7 @@ import { DataApiService } from './services/data-api.service';
     PantallahomeComponent,
     RegistropacienteComponent,
     PantallanohomeComponent,
+    DoctoresComponent,
   ],
   imports: [
     BrowserModule,
