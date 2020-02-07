@@ -16,10 +16,6 @@ password: string;
   ngOnInit() {
   }
   login() : void {
-    if(this.username == 'admin' && this.password == 'admin'){
      this.router.navigate(["pantallahome"]);
-    }else {
-      alert("Invalid credentials");
-    }
   }
   }
