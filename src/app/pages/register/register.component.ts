@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {NgForm} from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { UserInterface } from '../../models/user.interface';
 
 
 
@@ -17,14 +19,49 @@ export interface Especialidad {
 
 export class RegisterComponent {
 
+  constructor( private router: Router, private authService: AuthService) {
+
+  }
+    private user: UserInterface = {
+      name: '',
+      dni: '',
+      age: 0,
+      sex: '',
+      mail: '',
+      password: '',
+      userType: '',
+      username: '',
+      phone: ''
+
+
+  };
+
   selectedValue: string;
   step = 0;
 
-  guardar(formulario:NgForm){
-    console.log("Valido", formulario.valid);
-    console.log("Valores", formulario.value);
+  especialidades: Especialidad[] = [
+    {value: 'o-O', viewValue: 'Odontologia'},
+    {value: 'Or-1', viewValue: 'Ortodoncia'},
+  ];
+
+  onRegister(): void {
+      this.authService.registerUser(
+        this.user.name,
+        this.user.phone,
+        this.user.password,
+        this.user.dni,
+        this.user.age,
+        this.user.sex,
+        this.user.mail,
+        this.user.userType,
+        this.user.username
+      ).subscribe(user => {console.log(user); } );
   }
-  
+
+  guardar(formulario: NgForm) {
+    console.log('Valido', formulario.valid);
+    console.log('Valores', formulario.value);
+  }
   setStep(index: number) {
     this.step = index;
   }
@@ -37,18 +74,7 @@ export class RegisterComponent {
     this.step--;
   }
 
-  especialidades: Especialidad[] = [
-    {value: 'o-O', viewValue: 'Odontologia'},
-    {value: 'Or-1', viewValue: 'Ortodoncia'},
-  ];
-
-  constructor( private router: Router) {
-
-  }
-  
-  home() : void {
-    this.router.navigate(["pantallahome"]);
- 
- 
+  home(): void {
+    this.router.navigate(['pantallahome']);
 }
 }
