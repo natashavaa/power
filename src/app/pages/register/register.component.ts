@@ -58,9 +58,9 @@ export class RegisterComponent {
         this.user.username
       ).subscribe(user => {
         this.authService.setUser(user);
-        const token = this.user.id;
+        let token = this.user.id;
         this.authService.setToken(token);
-        this.router.navigate(['registerpaciente']);
+        this.router.navigate(['pantallahome']);
        } );
       }
 

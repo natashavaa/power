@@ -45,16 +45,14 @@ export class AuthService {
       );
   }
 
-/*  loginuser(email: string, password: string): Observable<any> {
-    const url_api = "http://localhost:3000/api/Users/login?include=user";
+  loginuser(username: string, password: string): Observable<any> {
+    const urlApi = 'http://localhost:3000/users/login';
     return this.htttp
       .post<UserInterface>(
-        url_api,
-        { email, password },
-        { headers: this.headers }
-      )
-      .pipe(map(data => data));
-  }*/
+        urlApi,
+        { username, password },
+      );
+  }/**/
 
   setUser(user: UserInterface): void {
     let user_string = JSON.stringify(user);
