@@ -23,6 +23,7 @@ export class RegisterComponent {
 
   }
     private user: UserInterface = {
+      id: '',
       name: '',
       dni: '',
       age: 0,
@@ -55,8 +56,13 @@ export class RegisterComponent {
         this.user.mail,
         this.user.userType,
         this.user.username
-      ).subscribe(user => {console.log(user); } );
-  }
+      ).subscribe(user => {
+        this.authService.setUser(user);
+        const token = this.user.id;
+        this.authService.setToken(token);
+        this.router.navigate(['registerpaciente']);
+       } );
+      }
 
   guardar(formulario: NgForm) {
     console.log('Valido', formulario.valid);

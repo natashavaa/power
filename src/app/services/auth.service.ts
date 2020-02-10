@@ -54,22 +54,22 @@ export class AuthService {
         { headers: this.headers }
       )
       .pipe(map(data => data));
-  }
+  }*/
 
   setUser(user: UserInterface): void {
     let user_string = JSON.stringify(user);
-    localStorage.setItem("currentUser", user_string);
+    localStorage.setItem('currentUser', user_string);
   }
 
   setToken(token): void {
-    localStorage.setItem("accessToken", token);
+    localStorage.setItem('accessToken', token);
   }
 
   getToken() {
-    return localStorage.getItem("accessToken");
+    return localStorage.getItem('accessToken');
   }
 
-  getCurrentUser(): UserInterface {
+ /* getCurrentUser(): UserInterface {
     let user_string = localStorage.getItem("currentUser");
     if (!isNullOrUndefined(user_string)) {
       let user: UserInterface = JSON.parse(user_string);
