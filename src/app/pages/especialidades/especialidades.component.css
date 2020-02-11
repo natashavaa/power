@@ -173,6 +173,13 @@
   
   }
   
+    
+  .container .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: left;
+}
   
   .mat-card {
     text-decoration: none;
