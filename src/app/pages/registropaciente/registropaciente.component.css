@@ -41,11 +41,18 @@
  /*change color of underline when focused*/
  background-color: #000 !important;
 }
-
+.caja input{
+  background-color: #fff ;
+  padding: 10px;
+}
 .uno {
   margin: 0 12px;
   color: snow;
   background-color: blue;
+}
+.margen{
+  margin-top: 50px;
+    margin-right: 20px;
 }
 
 .dos {

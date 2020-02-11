@@ -19,6 +19,14 @@ button {
     background-color: #1DA1F2;
 }
 
+.tres img {
+    margin: 0 12px;
+    background-color:transparent;
+    outline: transparent;
+    border-radius: 5px;
+    margin-left: 100px;
+   }
+
 .raya {
     margin: 0 12px;
     color: snow;

@@ -1,3 +1,4 @@
+
 <form align="right">
     <div>
         <button mat-raised-button (click)="pacientes()" class="uno">Agregar Pacientes</button>
@@ -16,10 +17,9 @@
                     <th scope="col">Nombre </th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Cedula</th>
-                    <th scope="col">Sexo</th>
-                    <th scope="col">Ocupacion</th>
                     <th scope="col">Nombre Familiar</th>
                     <th scope="col">Numero Familiar</th>
+                    <th scope="col">Tipo de Especialidad</th>
                     <th scope="col">Historia clinica</th>
                     <th scope="col">Editar Paciente</th>
                 </tr>
@@ -30,16 +30,14 @@
                     <td>{{patient.name}}</td>
                     <td>{{patient.mobile}}</td>
                     <td>{{patient.dni}}</td>
-                    <td>{{patient.sex}}</td>
-                    <td>{{patient.ocupation}}</td>
                     <td>{{patient.familyName}}</td>
                     <td>{{patient.familyNumber}}</td>
-                    <td></td>
+                    <td>{{patient.usertype}}</td>
                     <td>
-                        <button class="btn btn-success" data-toggle="modal" data-target="#modalBook">Ver</button>
+                        <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/order-history.png">
                     </td>
                     <td>
-                        <button class="btn btn-info">Ir</button>
+                        <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/edit-property.png">
                     </td>
                 </tr>
 
