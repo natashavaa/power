@@ -5,7 +5,184 @@
                 <h4> DATOS PERSONALES </h4>
             </mat-card>
         </form>
-        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <!--REGISTRAR PACIENTE FORMULARIO-->
+        <form #formRegisterPatient="ngForm" (ngSubmit)="onRegisterPatient(formRegisterPatient)">
+
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <h6> Primera parte </h6>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="row">
+                    <div class="col-12">
+                        <form action="">
+                            <br>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Nombre Completo</label>
+                                <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='patient.name' required minlength="4" maxlength="50" class="form-control col-8">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Edad</label>
+                                <input type="text" #age="ngModel" name="age" class="form-control" placeholder="" [(ngModel)]='patient.age' required minlength="1" maxlength="50" class="form-control col-8">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Estado Civil: </label>
+                                <div class="radio">
+                                    <label>
+                                    <input type="radio" #Soltero="ngModel" name="Soltero" id="Soltero" value="Soltero" [(ngModel)]="patient.statusC" checked required>
+                                    Soltero
+                                </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                    <input type="radio"  #Casado="ngModel" name="Casado" id="Casado" value="Casado" [(ngModel)]="patient.statusC"
+                                        class="selector" checked required>
+                                    Casado
+                                </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                    <input type="radio" #Viudo="ngModel" name="Viudo" id="Viudo" value="Viudo" [(ngModel)]="patient.statusC"
+                                        class="selector" checked required>
+                                    Viudo
+                                </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                    <input type="radio"  #Divorciado="ngModel" name="Divorciado" id="Divorciado" value="Divorciado" [(ngModel)]="patient.statusC"
+                                        class="selector" checked required>
+                                    Divorciado
+                                </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Direccion Trabajo</label>
+                                <input type="text" #workAddress="ngModel" name="workAddress" class="form-control" placeholder="" [(ngModel)]='patient.workAddress' required minlength="1" maxlength="50" class="form-control col-8">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Direccion Habitacion</label>
+                                <input type="text" #homeAddress="ngModel" name="homeAddress" class="form-control" placeholder="" [(ngModel)]='patient.homeAddress' required minlength="1" maxlength="50" class="form-control col-8">
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Lugar de Nacimiento</label>
+                                <input type="text" #birthplace="ngModel" name="birthplace" class="form-control" placeholder="" [(ngModel)]='patient.birthplace' required minlength="1" maxlength="50" class="form-control col-8">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Ocupacion</label>
+                                <input type="text" #occupation="ngModel" name="occupation" class="form-control" placeholder="" [(ngModel)]='patient.occupation' required minlength="1" maxlength="50" class="form-control col-8">
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <mat-action-row>
+
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <h6> Segunda parte </h6>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="row">
+                    <div class="col-12">
+                        <form action="">
+                            <br>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Celular</label>
+                                <input type="text" #phone="ngModel" name="phone" class="form-control" placeholder="" [(ngModel)]='patient.phone' required minlength="1" maxlength="50" class="form-control col-8">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Telefono de Casa</label>
+                                <input type="text" #mobile="ngModel" name="mobile" class="form-control" placeholder="" [(ngModel)]='patient.mobile' required minlength="1" maxlength="50" class="form-control col-8">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Remitido por</label>
+                                <input type="text" #sentBy="ngModel" name="sentBy" class="form-control" placeholder="" [(ngModel)]='patient.sentBy' required minlength="1" maxlength="50" class="form-control col-8">
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Color Dental</label>
+                                <input type="text" #dentalColor="ngModel" name="dentalColor" class="form-control" placeholder="" [(ngModel)]='patient.dentalColor' required minlength="1" maxlength="50" class="form-control col-8">
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">En caso de Emergencia llamar a</label>
+                                <input type="text" #familyNumberHome="ngModel" name="familyNumberHome" class="form-control" placeholder="" [(ngModel)]='patient.familyNumberHome' required minlength="1" maxlength="50" class="form-control col-8">
+
+                            </div>
+                            <!--  <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Telefono de Casa</label>
+                                <input type="text" #sentBy="ngModel" name="sentBy" class="form-control" placeholder="" [(ngModel)]='patient.sentBy' required minlength="1" maxlength="50" class="form-control col-8">
+
+                            </div>-->
+                        </form>
+                    </div>
+                </div>
+
+                <mat-action-row>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-description>
+                        <h6> Tercera parte </h6>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="row">
+                    <div class="col-12">
+                        <form action="">
+                            <br>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Usuario</label>
+                                <input type="text" #username="ngModel" name="username" class="form-control" placeholder="" [(ngModel)]='patient.username' required minlength="1" maxlength="50" class="form-control col-8">
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Contraseña</label>
+                                <input type="text" #password="ngModel" name="password" class="form-control" placeholder="" [(ngModel)]='patient.password' required minlength="1" maxlength="50" class="form-control col-8">
+
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Consultorio</mat-label>
+                                <br>
+                                <select #Especialidad="ngModel" name="Especialidad" id="Especialidad" [(ngModel)]="patient.userType" class="form-control col-8">
+                                <option>Odontologia</option>
+                                <option>Ortodoncia</option>
+                            </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <mat-action-row>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <div>
+                <button type="submit" class="btn btn-lg btn-primary">Registrar</button>
+                <button mat-raised-button (click)="cancelar()" class="dos">CANCELAR</button>
+
+            </div>
+
+        </form>
+
+
+        <br>
+
+    </mat-accordion>
+</div>
+
+<!-- <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
             <mat-expansion-panel-header>
                 <mat-panel-description>
                     <h6> Primera parte </h6>
@@ -162,11 +339,4 @@
             <mat-action-row>
                 <button mat-button color="warn" (click)="prevStep()">Anterior</button>
             </mat-action-row>
-        </mat-expansion-panel>
-
-        <br>
-        <button mat-raised-button (click)="historia()" class="uno">GUARDAR PACIENTE</button>
-        <button mat-raised-button (click)="cancelar()" class="dos">CANCELAR</button>
-
-    </mat-accordion>
-</div>
+        </mat-expansion-panel>-->
