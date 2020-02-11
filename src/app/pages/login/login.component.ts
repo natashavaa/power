@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
           } else if (Object.is(data.username, 'admin')) {
              this.router.navigate(['pantallaNOhome']);
           } else {
-            this.router.navigate(['pacientes']);
+            this.router.navigate(['pantallahome']);
           }
          }, error => console.log(error) );
   }
