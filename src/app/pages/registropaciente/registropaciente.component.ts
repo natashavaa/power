@@ -38,7 +38,6 @@ export class RegistropacienteComponent implements OnInit {
     phone: '',
   };
   onRegisterPatient(): void {
-    console.log(this.patient);
     this.authService.registerPatient(
       this.patient.name,
       this.patient.dni,
@@ -61,7 +60,6 @@ export class RegistropacienteComponent implements OnInit {
       this.patient.userType,
       this.patient.phone,
     ).subscribe(patient => {
-      console.log(patient);
       this.router.navigate(['pacientes']);
      } );
     }
