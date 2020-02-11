@@ -1,5 +1,6 @@
-export interface PaatientInterface {
-    id?: number;
+import { UserInterface } from './user.interface';
+export interface PaatientInterface extends UserInterface {
+    id?: string;
     statusC?: string;
     homeAddress?: string;
     occupation ?: string;
@@ -11,5 +12,8 @@ export interface PaatientInterface {
     familyNumber?: number;
     familyNumberHome?: number;
     familyName?: string;
+    password: string;
+    username: string;
+
 
 }

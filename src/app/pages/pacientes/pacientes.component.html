@@ -2,9 +2,53 @@
     <div>
         <button mat-raised-button (click)="pacientes()" class="uno">Agregar Pacientes</button>
     </div>
+
+
 </form>
 <br>
-<section>
+<div class="row mt-5">
+    <div class="col">
+        <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre </th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Cedula</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Ocupacion</th>
+                    <th scope="col">Nombre Familiar</th>
+                    <th scope="col">Numero Familiar</th>
+                    <th scope="col">Historia clinica</th>
+                    <th scope="col">Editar Paciente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let patient of patient">
+
+                    <td>{{patient.name}}</td>
+                    <td>{{patient.mobile}}</td>
+                    <td>{{patient.dni}}</td>
+                    <td>{{patient.sex}}</td>
+                    <td>{{patient.ocupation}}</td>
+                    <td>{{patient.familyName}}</td>
+                    <td>{{patient.familyNumber}}</td>
+                    <td></td>
+                    <td>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#modalBook">Ver</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info">Ir</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--<section>
     <div id="patient">
         <div class="container">
             <div class="row">
@@ -27,4 +71,4 @@
 
         </div>
     </div>
-</section>
+</section>-->
