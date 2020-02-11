@@ -1,83 +1,115 @@
 <div align='center'>
     <mat-card>
-      <mat-panel-title>
-        <h4> EDITAR PERFIL </h4>
-      </mat-panel-title>
-      <mat-panel-description>
-       
-      </mat-panel-description>
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-6">
-          <form (ngSubmit)="guardar(formulario)" #formulario="ngForm" novalidate="" action="">
-            <div class="form-group row">
-              <label for="" class="col-4 col-form-label">Nombre Completo</label>
-              <input placeholder="" class="form-control col-8">
+        <mat-panel-title>
+            <h4> EDITAR PERFIL </h4>
+        </mat-panel-title>
+        <mat-panel-description>
+
+        </mat-panel-description>
+        <br>
+        <form #formEdit="ngForm" (ngSubmit)="onUpdate(formEdit)">
+
+            <div class="row perso" id="register">
+                <div class="col-6">
+                    <br>
+                    <form #formEdit="ngForm" (ngSubmit)="onUpdate(formEdit)">
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Nombre Completo</label>
+                            <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='user.name' required minlength="4" maxlength="50" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="nameC.touched && !nameC.valid">
+                            <div *ngIf="nameC.errors.required">Campo Obligatorio</div>
+                            <div *ngIf="nameC.errors.minlength">Minimo de 5 caracteres</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Cedula</label>
+                            <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='user.dni' required minlength="4" maxlength="15" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="dni.touched && !dni.valid">
+                            <div *ngIf="dni.errors.required">Campo Obligatorio</div>
+                            <div *ngIf="dni.errors.minlength">Minimo de 5 caracteres</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Genero: </label>
+                            <div class="radio">
+                                <label>
+                          <input type="radio"  #Femenino="ngModel" name="Femenino" id="Femenino" value="Femenino" [(ngModel)]="user.sex" checked>
+                          F
+                          </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                            <input type="radio"  #Masculino="ngModel" name="Masculino" id="Masculino" value="Masculino" class="selector" [(ngModel)]="user.sex" checked>
+                            M
+                          </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Especialidad</mat-label>
+                            <br>
+                            <select #Especialidad="ngModel" name="Especialidad" id="Especialidad" [(ngModel)]="user.userType" class="form-control col-6">
+                        <option>Odontologia</option>
+                        <option>Ortodoncia</option>
+                        <option>Niguna</option>
+                      </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Email</label>
+                            <input type="email" #email="ngModel" name="email" class="form-control" placeholder="" [(ngModel)]="user.mail" required minlength="8" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+                            <div *ngIf="email.errors.required">Campo requerido</div>
+                            <div *ngIf="email.errors.minlength">debe contener al menos 8 caracteres</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Telefono</label>
+                            <input type="text" #phone="ngModel" name="phone" class="form-control" placeholder="" [(ngModel)]="user.phone" required minlength="8" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="phone.touched && !phone.valid">
+                            <div *ngIf="phone.errors.required">Campo Obligatorio</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Usuario</label>
+                            <input type="email" #username="ngModel" name="username" class="form-control" placeholder="" [(ngModel)]="user.username" required minlength="8" placeholder="" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="username.touched && !username.valid">
+                            <div *ngIf="username.errors.required">Campo requrido</div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Contraseña</label>
+                            <input type="password" #password="ngModel" name="password" class="form-control" placeholder="" [(ngModel)]="user.password" required minlength="5" maxlength="10" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+                            <div *ngIf="password.errors.required">Campo requerido</div>
+                            <div *ngIf="password.errors.minlength">Minimo 5 caracteres</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Confirmar Contraseña</label>
+                            <input required type="password" id="Cpassword" name="Cpassword" placeholder="" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+                            <div *ngIf="password.errors.required">Campo requerido</div>
+                            <div *ngIf="password.errors.minlength">Minimo 5 caracteres</div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group row">
-              <label for="" class="col-4 col-form-label">Cedula</label>
-              <input placeholder="" class="form-control col-8">
-            </div>
-            <div class="form-group row">
-              <label for="" class="col-4 col-form-label">Direccion</label>
-              <input placeholder="" class="form-control col-8">
-            </div>
-            <div class="form-group row">
-              <label for="" class="col-4 col-form-label">Genero: </label>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
-                  Femenino
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="opciones" id="opciones_2" value="opcion_2" class="selector" checked>
-                  Masculino
-                </label>
-              </div>
-            </div>
-            <div class="form-group row">
-              <mat-label for="" class="col-4 col-form-label">Especialidad</mat-label>
-              <br>
-              <select class="form-control col-8">
-                <option>Odontologia</option>
-                <option>Ortodoncia</option>
-                <option>Niguna</option>
-              </select>
-            </div>
-            <div class="form-group row">
-              <label for="" class="col-4 col-form-label">Email</label>
-              <input placeholder="" class="form-control col-8">
-            </div>
-            <div class="form-group row">
-              <label for="" class="col-4 col-form-label">Telefono</label>
-              <input placeholder="" class="form-control col-8">
-            </div>
-          </form>
-        </div>
-        <div class="col-6">
-          <form action="">
-            <div class="form-group row">
-              <label for="" class="col-4 col-form-label">Usuario</label>
-              <input placeholder="" class="form-control col-8">
-            </div>
-            <div class="form-group row">
-              <label for="" class="col-4 col-form-label">Contraseña</label>
-              <input placeholder="" class="form-control col-8">
-            </div>
-            <div class="form-group row">
-              <label for="" class="col-4 col-form-label">Confirmar Contraseña</label>
-              <input placeholder="" class="form-control col-8">
-            </div>
-          </form>
-        </div>
-      </div>
-      <br>
-      <button mat-raised-button (click)="home()" color="warn">REGISTRAR</button>
-      <br>
-      <br>
-      <a href="/#/">¿Tienes una cuenta?</a>
+
+            <button type="submit" class="btn btn-lg btn-primary">Register</button>
+
+        </form>
+
+
+        <br>
+
+        <br>
+        <br>
+        <a href="/#/">¿Tienes una cuenta?</a>
     </mat-card>
-  </div>
+</div>

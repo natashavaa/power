@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
     username : '',
     password : ''
   };
+  private error: string;
+
   ngOnInit() {
   }
 
@@ -25,8 +27,16 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.authService.setUser(data);
-          console.log(data)
-          this.router.navigate(['pantallahome']);
+          console.log(data);
+          if (!data || data == null) {
+
+           alert('Credenciales Incorrectas');
+
+          } else if (Object.is(data.username, 'admin')) {
+             this.router.navigate(['pantallaNOhome']);
+          } else {
+            this.router.navigate(['pacientes']);
+          }
          }, error => console.log(error) );
   }
   }

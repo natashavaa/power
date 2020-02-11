@@ -45,6 +45,38 @@ export class AuthService {
       );
   }
 
+  updateUser(id: string, name: string, phone: string, password: string, dni: string,
+             age: number, sex: string, email: string,
+             userType: string, username: string) {
+        const urlApi = 'http://localhost:3000/users/update';
+        return this.htttp
+        .put<UserInterface>(
+        urlApi,
+        {
+          // tslint:disable-next-line: object-literal-shorthand
+          id: id,
+        // tslint:disable-next-line: object-literal-shorthand
+        name: name,
+        // tslint:disable-next-line: object-literal-shorthand
+        dni: dni,
+        // tslint:disable-next-line: object-literal-shorthand
+        age: age,
+        // tslint:disable-next-line: object-literal-shorthand
+        sex: sex,
+        // tslint:disable-next-line: object-literal-shorthand
+        mail: email,
+        // tslint:disable-next-line: object-literal-shorthand
+        username: username,
+        // tslint:disable-next-line: object-literal-shorthand
+        password: password,
+        // tslint:disable-next-line: object-literal-shorthand
+        userType: userType,
+        // tslint:disable-next-line: object-literal-shorthand
+        phone: phone,
+        },
+        );
+}
+
   loginuser(username: string, password: string): Observable<any> {
     const urlApi = 'http://localhost:3000/users/login';
     return this.htttp
@@ -67,10 +99,10 @@ export class AuthService {
     return localStorage.getItem('accessToken');
   }
 
- /* getCurrentUser(): UserInterface {
-    let user_string = localStorage.getItem("currentUser");
-    if (!isNullOrUndefined(user_string)) {
-      let user: UserInterface = JSON.parse(user_string);
+  getCurrentUser(): UserInterface {
+    const userString = localStorage.getItem('currentUser');
+    if (!isNullOrUndefined(userString)) {
+      let user: UserInterface = JSON.parse(userString);
       return user;
     } else {
       return null;
@@ -78,10 +110,7 @@ export class AuthService {
   }
 
   logoutUser() {
-    let accessToken = localStorage.getItem("accessToken");
-    const url_api = `http://localhost:3000/api/Users/logout?access_token=${accessToken}`;
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("currentUser");
-    return this.htttp.post<UserInterface>(url_api, { headers: this.headers });
-  }*/
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('currentUser');
+  }/**/
 }

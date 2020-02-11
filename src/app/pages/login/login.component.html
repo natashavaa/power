@@ -10,7 +10,6 @@
 
     <mat-card-content>
         <form #LoginUser="ngForm" (ngSubmit)="onLoginUser(LoginUser)">
-            <br>
             <label id="icon" for="name"><i class="icon-user"></i></label>
             <input id="username " type="text" #username="ngModel" name="username" placeholder="user" [(ngModel)]='user.username' required />
             <div class="alert alert-danger" role="alert" *ngIf="username.touched && !username.valid">
@@ -22,13 +21,14 @@
                 <div *ngIf="password.errors.required">Campo requerido</div>
             </div>
             <button [disabled]="!LoginUser.valid" mat-raised-button type="submit" color="warn">INICIAR SESIÓN</button>
+
+            <div class="padre">
+                <div class="alert alert-danger" role="alert" *ngIf="error!= ''">
+                    <div *ngIf="error">Campo requerido</div>
+                </div>
+            </div>
         </form>
     </mat-card-content>
-
-
-    <div class="padre">
-
-    </div>
     <mat-card>
         <div class="">
             <a href="#">¿Olvidaste tu contraseña?</a>

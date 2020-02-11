@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoPaginaService } from '../../services/info-pagina.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   constructor( public _servicio: InfoPaginaService,
-               private router: Router) { }
+               private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -23,6 +24,9 @@ export class HeaderComponent implements OnInit {
 
     this.router.navigate(['/search', termino]);
 
+  }
+  logoutUser(): void {
+     this.authService.logoutUser();
   }
 
 }
