@@ -22,6 +22,12 @@
     left: calc(29% - 40%);
     }
   
+    
+  .caja input{
+    background-color: gray;
+    padding: 10px;
+}
+
   .a {
     text-decoration: none;
     font-size: 15px;

@@ -33,6 +33,7 @@ import { RegistropacienteComponent } from './pages/registropaciente/registropaci
 import { PantallanohomeComponent } from './pages/pantallanohome/pantallanohome.component';
 import { DoctoresComponent } from './pages/doctores/doctores.component';
 import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
+import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.component';
 
 
 const appRoutes: Routes = [
@@ -65,7 +66,7 @@ const appRoutes: Routes = [
   {path: 'pacienteconsulta', component: PacienteconsultaComponent},  
   {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},  
   {path: 'pantallaNOhome', component: PantallanohomeComponent},  
-  {path: 'pacienteconsulta', component: PacienteconsultaComponent},
+  {path: 'listahistorias', component: ListahistoriasComponent},
   {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 

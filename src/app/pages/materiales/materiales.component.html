@@ -22,9 +22,7 @@
                                 <form action="">
                                     <div class="form-group row">
                                         <div class="container">
-                                            <div class="padre">
-                                                <img src="assets/inicio/inicio-4.jpg" class="avatar" alt="Avatar Image">
-                                            </div>
+                                            <img src="https://img.icons8.com/dusk/50/000000/product.png">
                                         </div>
                                     </div>
                                 </form>
@@ -32,9 +30,7 @@
                             <div class="col-10">
                                 <br>
                                 <form action="">
-                                    <br>
                                     <div class="form-group row">
-                                        <br>
                                         <h4 for="" class="col-10 col-form-label">MATERIALES ODONTOLOGICOS</h4>
                                     </div>
                                 </form>
@@ -50,6 +46,10 @@
                     <form action="">
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Nombre del Material</label>
+                            <input placeholder="" class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Cantidad</label>
                             <input placeholder="" class="form-control col-6">
                         </div>
                     </form>
@@ -73,117 +73,45 @@
             <br>
             <button mat-raised-button (click)="materiales()" class="uno">GUARDAR</button>
             <button mat-raised-button (click)="materiales()" class="dos">CANCELAR</button>
-            <br>
-            <br>
-            <br>
-            <br>
+            <div class="row mt-5">
+                <div class="col">
+                    <label for="" class="lolo">Lista Materiales Odontologicos</label>
+                    <mat-form-field class="caja">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput (keyup)="applyFilter($event)">
+                    </mat-form-field>
+                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre del Material </th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Tipo de Especialidad</th>
+                                <th scope="col">Eliminar</th>
+                                <th scope="col">Modificar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let material of material">
+                                <td></td>
+                                <td>{{material.name}}</td>
+                                <td>{{material.cantidad}}</td>
+                                <td>{{material.date}}</td>
+                                <td>{{material.usertype}}</td>
+                                <td>
+                                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/delete-sign.png">
+                                </td>
+                                <td>
+                                    <img class="tres"  src="https://img.icons8.com/dusk/50/000000/sign-up.png">
+                                </td>
+                            </tr>
 
-            <label for="" class="lolo">Lista Materiales Odontologicos</label>
-
-            <table class="table table-hover table-fixed">
-
-                <!--Table head-->
-
-                <thead>
-                    <tr>
-                        <th># Material</th>
-                        <th>Nombre Material</th>
-                        <th>Cantidad</th>
-                        <th>Fecha</th>
-                        <th>Especialidad</th>
-
-                    </tr>
-                </thead>
-
-                <!--Table head-->
-
-                <!--Table body-->
-                <tbody>
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                    </tr>
-
-                </tbody>
-                <!--Table body-->
-            </table>
-
-            <!--Table-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
         </mat-card-content>
     </div>

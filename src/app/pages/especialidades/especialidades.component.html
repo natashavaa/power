@@ -1,12 +1,3 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-<!--Table-->
-
 <div class="au-xs-ta-center au-lg-ta-center">
     <ul class="rk-menu rk-categories-menu">
         <li class="active rk-menu__item"><a routerLink="/especialidad" class="rk-menu__link">Especialidades</a>
@@ -33,7 +24,7 @@
                                     <div class="form-group row">
                                         <div class="container">
                                             <div class="padre">
-                                                <img src="assets/inicio/inicio-6.jpg" class="avatar" alt="Avatar Image">
+                                                <img src="https://img.icons8.com/dusk/50/000000/property-script.png">
                                             </div>
                                         </div>
                                     </div>
@@ -42,9 +33,7 @@
                             <div class="col-10">
                                 <br>
                                 <form action="">
-                                    <br>
                                     <div class="form-group row">
-                                        <br>
                                         <h4 for="" class="col-10 col-form-label">MATERIALES SEGUN ESPECIALIDAD</h4>
                                     </div>
                                 </form>
@@ -70,134 +59,45 @@
                     </form>
                 </div>
             </div>
-            <br>
-            <br>
+            <div class="row mt-5">
+                <div class="col">
+                    <label for="" class="lolo">Lista Materiales segun Especialidad</label>
+                    <mat-form-field class="caja">
+                        <mat-label>Buscar</mat-label>
+                        <input matInput (keyup)="applyFilter($event)">
+                    </mat-form-field>
+                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre del Material </th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Tipo de Especialidad</th>
+                                <th scope="col">Eliminar</th>
+                                <th scope="col">Modificar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let material of material">
+                                <td></td>
+                                <td>{{material.name}}</td>
+                                <td>{{material.cantidad}}</td>
+                                <td>{{material.date}}</td>
+                                <td>{{material.usertype}}</td>
+                                <td>
+                                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/delete-sign.png">
+                                </td>
+                                <td>
+                                    <img class="tres"  src="https://img.icons8.com/dusk/50/000000/sign-up.png">
+                                </td>
+                            </tr>
 
-            <label for="" class="lolo">Materiales segun Especialidad</label>
-            <br>
-            <table class="table table-hover table-fixed">
-
-                <!--Table head-->
-
-                <thead>
-                    <tr>
-                        <th># Especialidad</th>
-                        <th>Nombre Especialidad</th>
-                    </tr>
-                </thead>
-
-                <!--Table head-->
-
-                <!--Table body-->
-                <tbody>
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"></th>
-                        <th scope="row"></th>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                                    class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                                    data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                            </p>
-                        </td>
-                        <td>
-                            <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                                    class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                                    data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
-                            </p>
-                        </td>
-                    </tr>
-
-                </tbody>
-                <!--Table body-->
-            </table>
-
-            <!--Table-->
-
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
         </mat-card-content>
     </div>
