@@ -84,7 +84,7 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4> IMAGENES </h4>
+                        <h4> EVOLUCION </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
@@ -104,19 +104,52 @@
 
             </div>
 
-            <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
 
-                <a *ngFor="let producto of productosService.productos" [routerLink]="['/historiaclinica']"
-                    class="animated fadeIn rk-item ae-masonry__item">
-                    <img src="assets/productos/{{ producto.url}}.jpg" alt="">
-                    <div [routerLink]="['/historiaclinica']" class="item-meta">
-                        <h2>{{producto.titulo}}</h2>
-                        <p>{{producto.categoria}}</p>
-                    </div>
-                </a>
+            <mat-form-field class="caja">
+                <img class="tres" src="https://img.icons8.com/dusk/50/000000/search.png">
+                <input matInput (keyup)="applyFilter($event)">
+            </mat-form-field>
 
+            <div class="row mt-5">
+                <div class="col">
+                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre </th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Cedula</th>
+                                <th scope="col">Nombre Familiar</th>
+                                <th scope="col">Numero Familiar</th>
+                                <th scope="col">Tipo de Especialidad</th>
+                                <th scope="col">Historia clinica</th>
+                                <th scope="col">Editar Paciente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let patient of patient">
+                                <td></td>
+                                <td>{{patient.name}}</td>
+                                <td>{{patient.mobile}}</td>
+                                <td>{{patient.dni}}</td>
+                                <td>{{patient.familyName}}</td>
+                                <td>{{patient.familyNumber}}</td>
+                                <td>{{patient.usertype}}</td>
+                                <td>
+                                    <img class="tres" (click)="historia()"
+                                        src="https://img.icons8.com/dusk/50/000000/order-history.png">
+                                </td>
+                                <td>
+                                    <img class="tres" (click)="historia()"
+                                        src="https://img.icons8.com/dusk/50/000000/edit-property.png">
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
 
         </mat-card-content>
     </div>

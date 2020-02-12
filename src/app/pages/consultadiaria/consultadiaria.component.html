@@ -14,14 +14,13 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Nombre </th>
-          <th scope="col">Telefono</th>
+          <th scope="col">Nombre Paciente </th>
           <th scope="col">Cedula</th>
-          <th scope="col">Nombre Familiar</th>
-          <th scope="col">Numero Familiar</th>
+          <th scope="col">Nombre del Doctor</th>
+          <th scope="col">Fecha de Creacion</th>
+          <th scope="col">Motivo</th>
           <th scope="col">Tipo de Especialidad</th>
-          <th scope="col">Historia clinica</th>
-          <th scope="col">Editar Paciente</th>
+          <th scope="col">Status</th>
         </tr>
       </thead>
       <tbody>
@@ -33,12 +32,7 @@
           <td>{{patient.familyName}}</td>
           <td>{{patient.familyNumber}}</td>
           <td>{{patient.usertype}}</td>
-          <td>
-            <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/order-history.png">
-          </td>
-          <td>
-            <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/edit-property.png">
-          </td>
+          <td>{{patient.usertype}}</td>
         </tr>
 
       </tbody>
