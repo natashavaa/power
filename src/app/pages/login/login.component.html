@@ -1,4 +1,5 @@
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+    type='text/css'>
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 
 <div class="testbox">
@@ -11,12 +12,14 @@
     <mat-card-content>
         <form #LoginUser="ngForm" (ngSubmit)="onLoginUser(LoginUser)">
             <label id="icon" for="name"><i class="icon-user"></i></label>
-            <input id="username " type="text" #username="ngModel" name="username" placeholder="user" [(ngModel)]='user.username' required />
+            <input id="username " type="text" #username="ngModel" name="username" placeholder="user"
+                [(ngModel)]='user.username' required />
             <div class="alert alert-danger" role="alert" *ngIf="username.touched && !username.valid">
                 <div *ngIf="username.errors.required">Campo requerido</div>
             </div>
             <label id="icon" for="pass"><i class="icon-shield"></i></label>
-            <input id="password" type="password" #password="ngModel" name="password" placeholder="password" [(ngModel)]='user.password' required />
+            <input id="password" type="password" #password="ngModel" name="password" placeholder="password"
+                [(ngModel)]='user.password' required />
             <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
                 <div *ngIf="password.errors.required">Campo requerido</div>
             </div>
@@ -28,12 +31,14 @@
                 </div>
             </div>
         </form>
+      
+            <div class="uno"> 
+                <br>
+                <a class="uno" href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="dos">
+                <a class="dos" routerLink="register">¿No tienes cuenta?</a>
+            </div>
+     
     </mat-card-content>
-    <mat-card>
-        <div class="">
-            <a href="#">¿Olvidaste tu contraseña?</a>
-            <br>
-            <a routerLink="register">¿No tienes cuenta?</a>
-        </div>
-    </mat-card>
 </div>
