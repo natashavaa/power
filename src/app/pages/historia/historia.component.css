@@ -55,6 +55,14 @@
   color: #000;
 }
 
+.tres img {
+  margin: 0 12px;
+  background-color:transparent;
+  outline: transparent;
+  border-radius: 5px;
+  margin-left: 100px;
+ }
+ 
 .b {
   text-decoration: none;
   font-size: 15px;
@@ -62,6 +70,8 @@
   color: #fff;
   width: 225%;
   left: calc(30% - 40%);
+  border-color: transparent;
+ background-color: transparent;
 }
 
 .b:hover {
@@ -74,7 +84,9 @@
   line-height: none;
   color: #fff;
   width: 230%;
-  left: calc(23% - 40%);
+  left: calc(23% - 40%);  
+  border-color: transparent;
+ background-color: transparent;
 }
 
 .c:hover {
@@ -86,8 +98,10 @@
   font-size: 15px;
   line-height: none;
   color: #fff;
-  width: 118%;
-  left: calc(31% - 40%);
+  width: 120%;
+  left: calc(48% - 40%);
+  border-color: transparent;
+ background-color: transparent;
 }
 
 .d:hover {
@@ -101,6 +115,8 @@
   color: #fff;
   width: 198%;
   left: calc(25% - 40%);
+  border-color: transparent;
+ background-color: transparent;
 }
 
 .e:hover {
@@ -114,6 +130,8 @@
   color: #fff;
   width: 186%;
   left: calc(26% - 40%);
+  border-color: transparent;
+ background-color: transparent;
 }
 
 .f:hover {
@@ -126,7 +144,9 @@
   line-height: none;
   color: #fff;
   width: 142%;
-  left: calc(29% - 40%);
+  left: calc(37% - 40%);
+  border-color: transparent;
+ background-color: transparent;
 }
 
 .g:hover {
@@ -140,6 +160,8 @@
   color: #fff;
   width: 298%;
   left: calc(17% - 40%);
+  border-color: transparent;
+ background-color: transparent;
 }
 
 .h:hover {
