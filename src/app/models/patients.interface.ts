@@ -12,8 +12,5 @@ export interface PaatientInterface extends UserInterface {
     familyNumber?: number;
     familyNumberHome?: number;
     familyName?: string;
-    password: string;
-    username: string;
-
-
+    numberEmergency?: number;
 }

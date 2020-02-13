@@ -16,7 +16,6 @@
                     <th scope="col">Nombre </th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Cedula</th>
-                    <th scope="col">Sexo</th>
                     <th scope="col">Ocupacion</th>
                     <th scope="col">Nombre Familiar</th>
                     <th scope="col">Numero Familiar</th>
@@ -28,13 +27,11 @@
                 <tr *ngFor="let patient of patient">
                     <td></td>
                     <td>{{patient.name}}</td>
-                    <td>{{patient.mobile}}</td>
+                    <td>{{patient.phone}}</td>
                     <td>{{patient.dni}}</td>
-                    <td>{{patient.sex}}</td>
-                    <td>{{patient.ocupation}}</td>
+                    <td>{{patient.occupation}}</td>
                     <td>{{patient.familyName}}</td>
-                    <td>{{patient.familyNumber}}</td>
-                    <td></td>
+                    <td>{{patient.familyNumberHome}}</td>
                     <td>
                         <button class="btn btn-success" data-toggle="modal" data-target="#modalBook">Ver</button>
                     </td>

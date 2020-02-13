@@ -24,6 +24,10 @@
                                 <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='patient.name' required minlength="4" maxlength="50" class="form-control col-8">
                             </div>
                             <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Cedula</label>
+                                <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patient.dni' required minlength="4" maxlength="50" class="form-control col-8">
+                            </div>
+                            <div class="form-group row">
                                 <label for="" class="col-4 col-form-label">Edad</label>
                                 <input type="text" #age="ngModel" name="age" class="form-control" placeholder="" [(ngModel)]='patient.age' required minlength="1" maxlength="50" class="form-control col-8">
                             </div>
@@ -97,11 +101,11 @@
                             <br>
                             <div class="form-group row">
                                 <label for="" class="col-4 col-form-label">Celular</label>
-                                <input type="text" #phone="ngModel" name="phone" class="form-control" placeholder="" [(ngModel)]='patient.phone' required minlength="1" maxlength="50" class="form-control col-8">
+                                <input type="text" #phone="ngModel" name="phone" class="form-control" placeholder="" [(ngModel)]='patient.mobile' required minlength="1" maxlength="50" class="form-control col-8">
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-4 col-form-label">Telefono de Casa</label>
-                                <input type="text" #mobile="ngModel" name="mobile" class="form-control" placeholder="" [(ngModel)]='patient.mobile' required minlength="1" maxlength="50" class="form-control col-8">
+                                <input type="text" #mobile="ngModel" name="mobile" class="form-control" placeholder="" [(ngModel)]='patient.phone' required minlength="1" maxlength="50" class="form-control col-8">
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-4 col-form-label">Remitido por</label>
@@ -109,12 +113,12 @@
 
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Color Dental</label>
-                                <input type="text" #dentalColor="ngModel" name="dentalColor" class="form-control" placeholder="" [(ngModel)]='patient.dentalColor' required minlength="1" maxlength="50" class="form-control col-8">
+                                <label for="" class="col-4 col-form-label">En caso de Emergencia llamar a</label>
+                                <input type="text" #familyName="ngModel" name="familyName" class="form-control" placeholder="" [(ngModel)]='patient.familyName' required minlength="1" maxlength="50" class="form-control col-8">
 
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">En caso de Emergencia llamar a</label>
+                                <label for="" class="col-4 col-form-label">Al telefono</label>
                                 <input type="text" #familyNumberHome="ngModel" name="familyNumberHome" class="form-control" placeholder="" [(ngModel)]='patient.familyNumberHome' required minlength="1" maxlength="50" class="form-control col-8">
 
                             </div>
