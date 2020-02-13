@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Componentes
-import { AboutComponent } from './pages/about/about.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -37,7 +36,6 @@ import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.c
 
 const appRoutes: Routes = [
   {path: '', component : LoginComponent},
-  {path: 'about', component: AboutComponent},
   {path: 'pacienteseguimiento', component: PacienteseguimientoComponent},
   {path: 'search/:termino', component: SearchComponent},
   {path: 'register', component: RegisterComponent},

@@ -148,6 +148,11 @@
 
                             </div>
                             <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Correo</label>
+                                <input type="text" #username="ngModel" name="username" class="form-control" placeholder="" [(ngModel)]='patient.username' required minlength="1" maxlength="50" class="form-control col-4">
+
+                            </div>
+                            <div class="form-group row">
                                 <label for="" class="col-4 col-form-label">Contraseña</label>
                                 <input type="text" #password="ngModel" name="password" class="form-control" placeholder="" [(ngModel)]='patient.password' required minlength="1" maxlength="50" class="form-control col-4">
 

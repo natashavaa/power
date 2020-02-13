@@ -145,10 +145,8 @@ import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.c
       provide: DateAdapter,
       useFactory: adapterFactory
     })
-
-  ],
-  // exports: [DemoComponent]
-  providers: [DataApiService,
+  ], 
+  providers: [ConsultaglobalComponent, DataApiService,
     {
       provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com'
     }
