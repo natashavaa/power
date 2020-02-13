@@ -72,7 +72,7 @@ html {
 .testbox {
     margin: 20px auto;
     width: 343px;
-    height: 548px;
+    height: 400px;
     -webkit-border-radius: 8px/7px;
     -moz-border-radius: 8px/7px;
     border-radius: 8px/7px;
@@ -84,7 +84,7 @@ html {
 }
 
 button {
-    margin: 0 75px;
+    margin: 0 100px;
     color: snow;
     background-color: darkred;
     justify-content: center;
@@ -288,11 +288,11 @@ a.button:hover {
     font-size: 12px;
     line-height: 20px;
     color: darkgrey;
-    margin: 0 110px;
+    margin: 0 128px;
 }
 
 .dos a:hover {
     color: #fff;
     text-align: center;
-    margin: 0 110px;
+    margin: 0 128px;
 }

@@ -7,11 +7,12 @@ import { isNullOrUndefined } from 'util';
 
 import { UserInterface } from '../models/user.interface';
 import { PaatientInterface } from '../models/patients.interface';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private htttp: HttpClient) {}
+  constructor(private router: Router , private htttp: HttpClient) {}
   headers: HttpHeaders = new HttpHeaders({
    'Content-Type': 'application/json'
   });
@@ -169,5 +170,6 @@ export class AuthService {
   logoutUser() {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
+    
   }/**/
 }

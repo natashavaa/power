@@ -25,8 +25,8 @@ export class PacientesComponent {
 
   }
 
-  cancelar(): void {
-    this.router.navigate(['home']);
+  historia(): void {
+    this.router.navigate(['historiaclinica']);
 
   }
   ngOnInit() {

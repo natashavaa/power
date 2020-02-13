@@ -75,6 +75,8 @@ import { RegistropacienteComponent } from './pages/registropaciente/registropaci
 import { DataApiService } from './services/data-api.service';
 import { DoctoresComponent } from './pages/doctores/doctores.component';
 import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
+import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.component';
+import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +111,8 @@ import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
     PantallanohomeComponent,
     DoctoresComponent,
     OrtodonciaComponent,
+    ListahistoriasComponent,
+    RecuperacionComponent,
   ],
   imports: [
     BrowserModule,
@@ -143,10 +147,8 @@ import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
       provide: DateAdapter,
       useFactory: adapterFactory
     })
-
-  ],
-  // exports: [DemoComponent]
-  providers: [DataApiService,
+  ], 
+  providers: [ConsultaglobalComponent, DataApiService,
     {
       provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com'
     }

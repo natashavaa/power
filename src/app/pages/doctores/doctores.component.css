@@ -8,10 +8,23 @@ table {
     width: 100%;
   }
   
+  .caja input{
+    background-color: gray;
+    padding: 10px;
+}
+
   button {
     font-size: 20px;
   }
   
+  .tres img {
+    margin: 0 12px;
+    background-color:transparent;
+    outline: transparent;
+    border-radius: 5px;
+    margin-left: 100px;
+   }
+
   .uno {
     margin: 0 12px;
     color: snow;

@@ -1,0 +1,32 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+    type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+<div class="testbox">
+    <div class="container">
+        <div class="padre">
+            <img src="assets/img/logitoo.png" class="avatar" alt="Avatar Image">
+        </div>
+    </div>
+
+    <mat-card-content>
+        <form #LoginUser="ngForm" (ngSubmit)="onLoginUser(LoginUser)">
+            <label id="icon" for="name"><i class="icon-envelope "></i></label>
+            <input type="text" name="name" id="name" placeholder="Email" required />
+            <br>
+            <br>
+            <button mat-raised-button type="submit">ENVIAR</button>
+
+            <div class="padre">
+                <div class="alert alert-danger" role="alert" *ngIf="error!= ''">
+                    <div *ngIf="error">Campo requerido</div>
+                </div>
+            </div>
+        </form>
+
+        <div class="dos">
+            <a class="dos" routerLink="login">¿Tienes cuenta?</a>
+        </div>
+
+    </mat-card-content>
+</div>

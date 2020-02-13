@@ -26,6 +26,7 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
+import { Router } from '@angular/router';
 
 const colors: any = {
   red: {
@@ -127,7 +128,7 @@ export class ConsultadiariaComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) { }
+  constructor(private modal: NgbModal , private router: Router) { }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -193,5 +194,9 @@ export class ConsultadiariaComponent {
 
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
+  }
+
+  global(): void {
+    this.router.navigate(["global"]);
   }
 }

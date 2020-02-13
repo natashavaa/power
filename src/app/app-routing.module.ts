@@ -5,8 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Componentes
-import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -33,12 +31,13 @@ import { RegistropacienteComponent } from './pages/registropaciente/registropaci
 import { PantallanohomeComponent } from './pages/pantallanohome/pantallanohome.component';
 import { DoctoresComponent } from './pages/doctores/doctores.component';
 import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
+import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.component';
+import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
+
 
 
 const appRoutes: Routes = [
   {path: '', component : LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
   {path: 'pacienteseguimiento', component: PacienteseguimientoComponent},
   {path: 'search/:termino', component: SearchComponent},
   {path: 'register', component: RegisterComponent},
@@ -65,8 +64,8 @@ const appRoutes: Routes = [
   {path: 'pacienteconsulta', component: PacienteconsultaComponent},  
   {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},  
   {path: 'pantallaNOhome', component: PantallanohomeComponent},  
-  {path: 'pacienteconsulta', component: PacienteconsultaComponent},
-  {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},
+  {path: 'listahistorias', component: ListahistoriasComponent},
+  {path: 'recuperacion', component: RecuperacionComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];
