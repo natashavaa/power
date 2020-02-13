@@ -76,6 +76,7 @@ import { DataApiService } from './services/data-api.service';
 import { DoctoresComponent } from './pages/doctores/doctores.component';
 import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
 import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.component';
+import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
 
 @NgModule({
   declarations: [
@@ -111,6 +112,7 @@ import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.c
     DoctoresComponent,
     OrtodonciaComponent,
     ListahistoriasComponent,
+    RecuperacionComponent,
   ],
   imports: [
     BrowserModule,
