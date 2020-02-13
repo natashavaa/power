@@ -29,6 +29,13 @@ export class PacientesComponent {
     this.router.navigate(['historiaclinica']);
 
   }
+
+  editarpaciente(): void {
+    this.router.navigate(['editarpaciente']);
+
+  }
+  
+
   ngOnInit() {
     this.getlistPatients();
 }

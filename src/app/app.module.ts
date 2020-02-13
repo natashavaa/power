@@ -77,6 +77,7 @@ import { DoctoresComponent } from './pages/doctores/doctores.component';
 import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
 import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.component';
 import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
+import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import { RecuperacionComponent } from './pages/recuperacion/recuperacion.compone
     OrtodonciaComponent,
     ListahistoriasComponent,
     RecuperacionComponent,
+    EditarpacienteComponent,
   ],
   imports: [
     BrowserModule,

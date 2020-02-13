@@ -33,6 +33,7 @@ import { DoctoresComponent } from './pages/doctores/doctores.component';
 import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
 import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.component';
 import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
+import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.component';
 
 
 
@@ -53,7 +54,7 @@ const appRoutes: Routes = [
   {path: 'especialidad', component: EspecialidadesComponent},
   {path: 'inventario', component: InventarioComponent},
   {path: 'materiales', component: MaterialesComponent},
-  {path: 'perfil', component : PerfilComponent},
+  {path: 'editarperfil', component : PerfilComponent},
   {path: 'pacienterecipe', component : PacientesrecipeComponent},
   {path: 'reportes', component: ReportesComponent},
   {path: 'historiaclinica', component : HistoriaComponent},
@@ -65,7 +66,8 @@ const appRoutes: Routes = [
   {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},  
   {path: 'pantallaNOhome', component: PantallanohomeComponent},  
   {path: 'listahistorias', component: ListahistoriasComponent},
-  {path: 'recuperacion', component: RecuperacionComponent},
+  {path: 'recuperacion', component: RecuperacionComponent},  
+  {path: 'editarpaciente', component: EditarpacienteComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
 ];
