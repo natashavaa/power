@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class PacientesComponent {
 
-  constructor(private router: Router, private dataApi: DataApiService,) {
+  constructor(private router: Router, private dataApi: DataApiService) {
 
   }
 
@@ -40,6 +40,7 @@ export class PacientesComponent {
     this.getlistPatients();
 }
 getlistPatients() {
-  this.dataApi.getAllPatints().subscribe((patients: PaatientInterface) => (this.patient = patients));
+  this.dataApi.getAllPatints().subscribe((patients: PaatientInterface) => ( this.patient = patients));
+  console.log(this.patient);
 }
 }
