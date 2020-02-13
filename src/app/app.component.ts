@@ -20,15 +20,34 @@ export class AppComponent {
     userType: '',
     username: '',
     phone: ''
-  
-  
   };
-  
-  constructor( public infoPaginaService: InfoPaginaService, private authService: AuthService){
+  private user2: UserInterface = {
+    id: '',
+    name: '',
+    dni: '',
+    age: 0,
+    sex: '',
+    mail: '',
+    password: '',
+    userType: '',
+    username: '',
+    phone: ''
+  };
+  mostrar: Boolean;
+  constructor( public infoPaginaService: InfoPaginaService, private authService: AuthService) {
 
   }
 
-  getLogin(){
+  mostrarHF(): boolean {
+      this.user2 = this.authService.getCurrentUser();
+      if (!this.user2.id) {
+        return false;
+      } else {
+        return true;
+      }
+  }
+
+  getLogin() {
 
     this.user = this.authService.getCurrentUser();
     if(this.user){
@@ -39,5 +58,4 @@ export class AppComponent {
   ngOnInit(): void {
     this.getLogin();
   }
-  
 }

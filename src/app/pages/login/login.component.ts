@@ -3,6 +3,8 @@ import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material';
 import { AuthService } from '../../services/auth.service';
 import { UserInterface } from '../../models/user.interface';
+import { AppComponent } from '../../app.component';
+import { app } from 'firebase';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   hide = true;
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService,private app: AppComponent) { }
   private user: UserInterface = {
     username : '',
     password : ''
