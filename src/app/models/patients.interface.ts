@@ -5,7 +5,7 @@ export interface PaatientInterface extends UserInterface {
     homeAddress?: string;
     occupation ?: string;
     workAddress: string;
-    mobile?: number;
+    mobile?: number; 
     birthplace?: string;
     sentBy?: string;
     dentalColor?: string;

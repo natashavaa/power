@@ -99,19 +99,22 @@
                 </div>
             </div>
             <br>
+            
             <div class="alert alert-danger" role="alert">
                 NO HAY NINGUN TIPO DE IMAGEN O DOC DE ESTE PACIENTE
 
             </div>
-
-
-            <mat-form-field class="caja">
-                <img class="tres" src="https://img.icons8.com/dusk/50/000000/search.png">
-                <input matInput (keyup)="applyFilter($event)">
-            </mat-form-field>
-
             <div class="row mt-5">
                 <div class="col">
+                    <mat-form-field class=" col-2 border-bottom text-dark">
+                        <div class="row caja2">
+                            <img src="https://img.icons8.com/dusk/25/000000/search.png">
+                            <div class="row marg">
+                                <mat-label class="text-dark"></mat-label>
+                                <input matInput (keyup)="applyFilter($event)" placeholder="Buscar">
+                            </div>
+                        </div>
+                    </mat-form-field>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
                     <table class="table table-hover">
                         <thead>
@@ -153,4 +156,5 @@
 
         </mat-card-content>
     </div>
+    
 </div>

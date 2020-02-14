@@ -42,5 +42,6 @@ export class PacientesComponent {
 getlistPatients() {
   this.dataApi.getAllPatints().subscribe((patients: PaatientInterface) => ( this.patient = patients));
   console.log(this.patient);
+  console.log("lista recibida");
 }
 }

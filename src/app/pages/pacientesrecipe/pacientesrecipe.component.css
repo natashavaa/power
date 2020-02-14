@@ -172,14 +172,21 @@
   
   .h:hover {
     color: darkgrey;
+  } 
+  .ces{
+    background-color: #f9f9f9;
+    box-shadow: none;
+    outline: transparent;
   }
   
   .mat-form-field {
-    margin: 0;
-    padding: 0;    
     font-weight: bold;
     display: block;
-   
+    margin-left: 10px;    
+    font-size: 14px;
+    
+    
+
   }
   
   
@@ -187,6 +194,17 @@
     margin-left: 20px;
     text-align: left;
   
+  }
+  .caja2{
+    z-index: 10000;
+    margin-left: 12px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5%;
+  }
+
+  .marg{
+    margin:1px;
   }
   
   

@@ -2,11 +2,31 @@
 .caja input{
     background-color: gray;
     padding: 10px;
+    border-radius: 5%;
   }
   
   .uno {
     margin: 0 12px;
     color: snow;
     background-color: #1DA1F2;
+  }
+  
+   
+  .tama{
+    size: 1px;
+  }
+  
+  .caja2{
+    z-index: 10000;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5%;
+  }
+  .marg{
+    margin:1px;
+  }
+  .mat-form-field {
+margin-left: 10px;    font-size: 14px;
+    width: 100%;
   }
   
