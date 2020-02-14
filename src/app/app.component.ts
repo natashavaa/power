@@ -33,24 +33,20 @@ export class AppComponent {
     username: '',
     phone: ''
   };
-  mostrar: Boolean;
+  mostrar: boolean ;
   constructor( public infoPaginaService: InfoPaginaService, private authService: AuthService) {
 
   }
 
-  mostrarHF(): boolean {
+  mostrarHF(): void {
       this.user2 = this.authService.getCurrentUser();
-      if (!this.user2.id) {
-        return false;
-      } else {
-        return true;
-      }
+      this.mostrar =  true;
   }
 
   getLogin() {
 
     this.user = this.authService.getCurrentUser();
-    if(this.user){
+    if (this.user) {
       console.log(this.user);
     }
   }

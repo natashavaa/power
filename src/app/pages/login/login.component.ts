@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   hide = true;
 
-  constructor(private router: Router, private authService: AuthService,private app: AppComponent) { }
+  constructor(private router: Router, private authService: AuthService, private app: AppComponent) { }
   private user: UserInterface = {
     username : '',
     password : ''
@@ -30,12 +30,13 @@ export class LoginComponent implements OnInit {
         data => {
           this.authService.setUser(data);
           if (!data || data == null) {
-
            alert('Credenciales Incorrectas');
-
-          } else if (Object.is(data.username, 'admin')) {
+          } else
+           if (Object.is(data.username, 'admin')) {
+             this.app.mostrar = true;
              this.router.navigate(['pantallaNOhome']);
           } else {
+            this.app.mostrar = true;
             this.router.navigate(['pantallahome']);
           }
          }, error => console.log(error) );

@@ -8,6 +8,7 @@ import { isNullOrUndefined } from 'util';
 import { UserInterface } from '../models/user.interface';
 import { PaatientInterface } from '../models/patients.interface';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -170,6 +171,6 @@ export class AuthService {
   logoutUser() {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
-    
+
   }/**/
 }
