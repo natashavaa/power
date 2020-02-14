@@ -89,17 +89,18 @@
 
 
             <div class="row">
-                <div class="col-8">
-                    <br>
-                    <form action="">
-                        <div class="form-group row">
-                            <mat-label for="" class="col-4 col-form-label"></mat-label>
-                            <button mat-raised-button (click)="odontograma()" class="uno">Crear Odontograma</button>
-                        </div>
-                    </form>
-                </div>
 
+                <br>
+                <form action="">
+                    <div class="form-group row">
+                        <mat-label for="" class="col-6 col-form-label"></mat-label>
+                        <button mat-raised-button (click)="odontograma()" class="col-6 uno">Crear Odontograma</button>
+                    </div>
+                </form>
             </div>
+
+
+            <br>
             <br>
             <div class="form-group row">
                 <mat-label for="" class="col-4 col-form-label">Status del Procedimiento</mat-label>
@@ -110,7 +111,7 @@
                     <option>Cerrado</option>
                 </select>
             </div>
-            <br>
+
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -162,13 +163,21 @@
                     </div>
                 </div>
             </div>
-            <mat-form-field class="caja">
-                <mat-label>Buscar</mat-label>
-                <input matInput (keyup)="applyFilter($event)">
-            </mat-form-field>
+
 
             <div class="row mt-5">
                 <div class="col">
+                    <mat-form-field class=" col-2 border-bottom text-dark">
+                        <div class="row caja2">
+                            <img src="https://img.icons8.com/dusk/25/000000/search.png">
+
+                            <div class="row marg">
+                                <mat-label class="text-dark"></mat-label>
+                                <input matInput (keyup)="applyFilter($event)" placeholder="Buscar">
+                            </div>
+                        </div>
+
+                    </mat-form-field>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
                     <table class="table table-hover">
                         <thead>
@@ -177,6 +186,7 @@
                                 <th scope="col">Nombre </th>
                                 <th scope="col">Telefono</th>
                                 <th scope="col">Cedula</th>
+                                <th scope="col">Ocupacion</th>
                                 <th scope="col">Nombre Familiar</th>
                                 <th scope="col">Numero Familiar</th>
                                 <th scope="col">Tipo de Especialidad</th>
@@ -188,17 +198,18 @@
                             <tr *ngFor="let patient of patient">
                                 <td></td>
                                 <td>{{patient.name}}</td>
-                                <td>{{patient.mobile}}</td>
+                                <td>{{patient.phone}}</td>
                                 <td>{{patient.dni}}</td>
+                                <td>{{patient.occupation}}</td>
                                 <td>{{patient.familyName}}</td>
-                                <td>{{patient.familyNumber}}</td>
-                                <td>{{patient.usertype}}</td>
+                                <td>{{patient.familyNumberHome}}</td>
+                                <td>{{patient.userType}}</td>
                                 <td>
                                     <img class="tres" (click)="historia()"
                                         src="https://img.icons8.com/dusk/50/000000/order-history.png">
                                 </td>
                                 <td>
-                                    <img class="tres" (click)="historia()"
+                                    <img class="tres" (click)="editarpaciente()"
                                         src="https://img.icons8.com/dusk/50/000000/edit-property.png">
                                 </td>
                             </tr>

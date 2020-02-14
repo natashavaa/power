@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Cantidad</label>
-                            <input placeholder="" class="form-control col-6">
+                            <input placeholder="" class="form-control col-2">
                         </div>
                     </form>
                 </div>
@@ -73,38 +73,54 @@
             <br>
             <button mat-raised-button (click)="materiales()" class="uno">GUARDAR</button>
             <button mat-raised-button (click)="materiales()" class="dos">CANCELAR</button>
+            
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista Materiales Odontologicos</label>
-                    <mat-form-field class="caja">
-                        <mat-label>Buscar</mat-label>
-                        <input matInput (keyup)="applyFilter($event)">
+                    <mat-form-field class=" col-2 border-bottom text-dark">
+                        <div class="row caja2">
+                            <img src="https://img.icons8.com/dusk/25/000000/search.png">
+
+                            <div class="row marg">
+                                <mat-label class="text-dark"></mat-label>
+                                <input matInput (keyup)="applyFilter($event)" placeholder="Buscar">
+                            </div>
+                        </div>
+
                     </mat-form-field>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Nombre del Material </th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Fecha</th>
+                                <th scope="col">Nombre </th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Cedula</th>
+                                <th scope="col">Ocupacion</th>
+                                <th scope="col">Nombre Familiar</th>
+                                <th scope="col">Numero Familiar</th>
                                 <th scope="col">Tipo de Especialidad</th>
-                                <th scope="col">Eliminar</th>
-                                <th scope="col">Modificar</th>
+                                <th scope="col">Historia clinica</th>
+                                <th scope="col">Editar Paciente</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let material of material">
+                            <tr *ngFor="let patient of patient">
                                 <td></td>
-                                <td>{{material.name}}</td>
-                                <td>{{material.cantidad}}</td>
-                                <td>{{material.date}}</td>
-                                <td>{{material.usertype}}</td>
+                                <td>{{patient.name}}</td>
+                                <td>{{patient.phone}}</td>
+                                <td>{{patient.dni}}</td>
+                                <td>{{patient.occupation}}</td>
+                                <td>{{patient.familyName}}</td>
+                                <td>{{patient.familyNumberHome}}</td>
+                                <td>{{patient.userType}}</td>
                                 <td>
-                                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/delete-sign.png">
+                                    <img class="tres" (click)="historia()"
+                                        src="https://img.icons8.com/dusk/50/000000/order-history.png">
                                 </td>
                                 <td>
-                                    <img class="tres"  src="https://img.icons8.com/dusk/50/000000/sign-up.png">
+                                    <img class="tres" (click)="editarpaciente()"
+                                        src="https://img.icons8.com/dusk/50/000000/edit-property.png">
                                 </td>
                             </tr>
 

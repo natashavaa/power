@@ -23,11 +23,6 @@
     }
   
     
-  .caja input{
-    background-color: gray;
-    padding: 10px;
-}
-
   .a {
     text-decoration: none;
     font-size: 15px;
@@ -164,14 +159,30 @@
     color: darkgrey;
   }
   
+ 
   .mat-form-field {
-    margin: 0;
-    padding: 0;    
     font-weight: bold;
     display: block;
-   
+    margin-left: 10px;    
+  font-size: 14px;
+  width: 30%;
   }
   
+  .caja input{
+    background-color: gray;
+    padding: 10px;
+    border-radius: 5%;
+}
+.caja2{
+    z-index: 10000;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5%;
+}
+.marg{
+    margin:-5px;
+
+}
   
   .selector {
     margin-left: 20px;

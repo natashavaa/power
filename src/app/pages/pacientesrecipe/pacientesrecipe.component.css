@@ -183,30 +183,32 @@
     font-weight: bold;
     display: block;
     margin-left: 10px;    
-    font-size: 14px;
-    
-    
-
+  font-size: 14px;
+  width: 30%;
   }
   
-  
+  .caja input{
+    background-color: gray;
+    padding: 10px;
+    border-radius: 5%;
+}
+.caja2{
+    z-index: 10000;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5%;
+}
+.marg{
+    margin:-5px;
+
+}
+
   .selector {
     margin-left: 20px;
     text-align: left;
   
   }
-  .caja2{
-    z-index: 10000;
-    margin-left: 12px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5%;
-  }
-
-  .marg{
-    margin:1px;
-  }
-  
+ 
   
   .mat-card {
     text-decoration: none;
