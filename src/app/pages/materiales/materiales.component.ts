@@ -12,22 +12,29 @@ export class MaterialesComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   inventario(): void {
-    this.router.navigate(["inventario"]);
+    this.router.navigate(['inventario']);
   }
 
   especialidad(): void {
-    this.router.navigate(["especialidad"]);
+    this.router.navigate(['especialidad']);
   }
   materiales(): void {
-    this.router.navigate(["materiales"]);
+    this.router.navigate(['materiales']);
   }
 
   multimedia(): void {
-    this.router.navigate(["multimedia"]);
+    this.router.navigate(['multimedia']);
   }
   reportes(): void {
-    this.router.navigate(["reportes"]);
+    this.router.navigate(['reportes']);
+  }
+  editarpaciente(): void {
+    this.router.navigate(['editarpaciente']);
+
+  }
+  historia(): void {
+    this.router.navigate(['global']);
   }
 }

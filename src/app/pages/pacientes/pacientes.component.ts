@@ -34,14 +34,12 @@ export class PacientesComponent {
     this.router.navigate(['editarpaciente']);
 
   }
-  
-
   ngOnInit() {
     this.getlistPatients();
 }
 getlistPatients() {
   this.dataApi.getAllPatints().subscribe((patients: PaatientInterface) => ( this.patient = patients));
   console.log(this.patient);
-  console.log("lista recibida");
+  console.log('lista recibida');
 }
 }

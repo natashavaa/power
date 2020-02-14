@@ -99,7 +99,7 @@
                 </div>
             </div>
             <br>
-            
+
             <div class="alert alert-danger" role="alert">
                 NO HAY NINGUN TIPO DE IMAGEN O DOC DE ESTE PACIENTE
 
@@ -111,7 +111,7 @@
                             <img src="https://img.icons8.com/dusk/25/000000/search.png">
                             <div class="row marg">
                                 <mat-label class="text-dark"></mat-label>
-                                <input matInput (keyup)="applyFilter($event)" placeholder="Buscar">
+                                <input matInput placeholder="Buscar">
                             </div>
                         </div>
                     </mat-form-field>
@@ -140,12 +140,10 @@
                                 <td>{{patient.familyNumber}}</td>
                                 <td>{{patient.usertype}}</td>
                                 <td>
-                                    <img class="tres" (click)="historia()"
-                                        src="https://img.icons8.com/dusk/50/000000/order-history.png">
+                                    <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/order-history.png">
                                 </td>
                                 <td>
-                                    <img class="tres" (click)="historia()"
-                                        src="https://img.icons8.com/dusk/50/000000/edit-property.png">
+                                    <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/edit-property.png">
                                 </td>
                             </tr>
 
@@ -156,5 +154,5 @@
 
         </mat-card-content>
     </div>
-    
+
 </div>
