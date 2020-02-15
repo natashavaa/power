@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataApiService } from '../../services/data-api.service';
+import { MaterialInterface } from '../../models/material.interface';
 
 @Component({
   selector: 'app-materiales',
@@ -8,9 +10,11 @@ import { Router } from '@angular/router';
 })
 export class MaterialesComponent implements OnInit {
 
-  constructor(private router: Router ) { }
+  constructor(private router: Router , private dataApi: DataApiService) { }
+  private material: MaterialInterface;
 
   ngOnInit() {
+    this.getlistMaterial();
   }
 
   inventario(): void {
@@ -36,5 +40,11 @@ export class MaterialesComponent implements OnInit {
   }
   historia(): void {
     this.router.navigate(['global']);
+  }
+
+  getlistMaterial() {
+    this.dataApi.getAllMAterial().subscribe((materials: MaterialInterface) => ( this.material = materials));
+    console.log(this.material);
+    console.log('lista material recibida');
   }
 }

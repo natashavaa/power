@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataApiService } from '../../services/data-api.service';
+import { PaatientInterface } from '../../models/patients.interface';
+import { MaterialInterface } from '../../models/material.interface';
 
 @Component({
   selector: 'app-inventario',
@@ -8,23 +11,21 @@ import { Router } from '@angular/router';
 })
 export class InventarioComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
-
+  constructor(private router: Router, private dataApi: DataApiService) { }
   inventario(): void {
-    this.router.navigate(["inventario"]);
+    this.router.navigate(['inventario']);
   }
 
   especialidad(): void {
-    this.router.navigate(["especialidad"]);
+    this.router.navigate(['especialidad']);
   }
 
   materiales(): void {
-    this.router.navigate(["materiales"]);
+    this.router.navigate(['materiales']);
   }
 
   reportes(): void {
-    this.router.navigate(["reportes"]);
+    this.router.navigate(['reportes']);
   }
 
   ngOnInit() {
