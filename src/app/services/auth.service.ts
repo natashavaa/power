@@ -104,6 +104,22 @@ export class AuthService {
         );
 }
 
+registerMaterial(name: string, cantidad: string, especiality: string) {
+    const urlApi = 'http://localhost:3000/material';
+    return this.htttp
+    .post<PaatientInterface>(
+    urlApi,
+    {
+    // tslint:disable-next-line: object-literal-shorthand
+    name: name,
+    // tslint:disable-next-line: object-literal-shorthand
+    cantidad: cantidad,
+    // tslint:disable-next-line: object-literal-shorthand
+    especiality: especiality,
+
+    },
+    );
+}
   updateUser(id: string, name: string, phone: string, password: string, dni: string,
              age: number, sex: string, email: string,
              userType: string, username: string) {
