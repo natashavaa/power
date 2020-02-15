@@ -25,10 +25,7 @@ export class MaterialesComponent implements OnInit {
     this.getlistMaterial();
   }
 
-  inventario(): void {
-    this.router.navigate(['inventario']);
-  }
-
+ 
   especialidad(): void {
     this.router.navigate(['especialidad']);
   }
@@ -36,18 +33,9 @@ export class MaterialesComponent implements OnInit {
     this.router.navigate(['materiales']);
   }
 
-  multimedia(): void {
-    this.router.navigate(['multimedia']);
-  }
-  reportes(): void {
-    this.router.navigate(['reportes']);
-  }
-  editarpaciente(): void {
-    this.router.navigate(['editarpaciente']);
-
-  }
-  historia(): void {
-    this.router.navigate(['global']);
+  
+  agregarmaterial(): void {
+    this.router.navigate(['registermaterial']);
   }
 
   getlistMaterial() {
@@ -55,9 +43,7 @@ export class MaterialesComponent implements OnInit {
     console.log(this.material);
     console.log('lista material recibida');
   }
-  cancelar() {
 
-  }
 
   onRegisterMaterial(): void {
     this.authService.registerMaterial(
