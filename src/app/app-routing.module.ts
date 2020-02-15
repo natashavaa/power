@@ -34,6 +34,7 @@ import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.c
 import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
 import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.component';
 import { RegistromaterialComponent } from './pages/registromaterial/registromaterial.component';
+import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.component';
 
 
 
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
   {path: 'pantallaNOhome', component: PantallanohomeComponent},
   {path: 'listahistorias', component: ListahistoriasComponent},
   {path: 'recuperacion', component: RecuperacionComponent},
+  {path: 'registerinsumo', component : RegistroinsumoComponent},
   {path: 'registermaterial', component : RegistromaterialComponent},
   {path: 'editarpaciente', component: EditarpacienteComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},

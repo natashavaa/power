@@ -13,10 +13,6 @@ export class EspecialidadesComponent implements OnInit {
   ngOnInit() {
   }
 
-  inventario(): void {
-    this.router.navigate(['inventario']);
-  }
-
   especialidad(): void {
     this.router.navigate(['especialidad']);
   }
@@ -24,17 +20,8 @@ export class EspecialidadesComponent implements OnInit {
     this.router.navigate(['materiales']);
   }
 
-  multimedia(): void {
-    this.router.navigate(['multimedia']);
+  agregarinsumo(): void {
+    this.router.navigate(['registerinsumo']);
   }
-  reportes(): void {
-    this.router.navigate(['reportes']);
-  }
-  historia(): void {
-    this.router.navigate(['especialidad']);
-  }
-  editarpaciente(): void {
-    this.router.navigate(['editarpaciente']);
-
-  }
+  
 }

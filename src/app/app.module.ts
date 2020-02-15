@@ -79,6 +79,7 @@ import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.c
 import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
 import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.component';
 import { RegistromaterialComponent } from './pages/registromaterial/registromaterial.component';
+import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.component';
 
 @NgModule({
   declarations: [
@@ -117,6 +118,7 @@ import { RegistromaterialComponent } from './pages/registromaterial/registromate
     RecuperacionComponent,
     EditarpacienteComponent,
     RegistromaterialComponent,
+    RegistroinsumoComponent,
   ],
   imports: [
     BrowserModule,

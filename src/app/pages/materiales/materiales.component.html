@@ -1,13 +1,17 @@
 <div class="au-xs-ta-center au-lg-ta-center">
     <ul class="rk-menu rk-categories-menu">
-        <li class="active rk-menu__item"><a routerLink="/especialidad" class="rk-menu__link">Especialidades</a>
+        <img src="https://img.icons8.com/dusk/50/000000/dental-filling.png">
+        <li class="active rk-menu__item"><a routerLink="/especialidad" class="rk-menu__link">Insumos Odontologicos</a>
         </li>
+        <img src="https://img.icons8.com/dusk/50/000000/product.png">
         <li class="rk-menu__item"><a routerLink="/materiales" class="rk-menu__link">Materiales Odontologicos</a>
         </li>
+        <img src="https://img.icons8.com/dusk/50/000000/search-property.png">
         <li class="rk-menu__item"><a routerLink="/reportes" class="rk-menu__link">Reportes</a>
         </li>
     </ul>
 </div>
+
 <div class="container">
 
     <div class="center">
@@ -22,7 +26,7 @@
                                 <form action="">
                                     <div class="form-group row">
                                         <div class="container">
-                                            <img src="https://img.icons8.com/dusk/50/000000/product.png">
+                                            <img src="https://img.icons8.com/dusk/50/000000/electric-toothbrush.png">
                                         </div>
                                     </div>
                                 </form>
@@ -45,6 +49,23 @@
                     <button mat-raised-button (click)="agregarmaterial()" class="uno">Agregar Material</button>
                 </div>
             </form>
+            <div class="row">
+                <div class="col-6">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <br>
+                            <br>
+                            <label for="" class="col-6 col-form-label">Tipo de Especialidad:</label>
+                            <select class="form-control col-6">
+                                <option>Odontologia</option>
+                                <option>Ortodoncia</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista Materiales Odontologicos</label>

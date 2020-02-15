@@ -1,9 +1,12 @@
 <div class="au-xs-ta-center au-lg-ta-center">
     <ul class="rk-menu rk-categories-menu">
-        <li class="active rk-menu__item"><a routerLink="/especialidad" class="rk-menu__link">Especialidades</a>
+        <img src="https://img.icons8.com/dusk/50/000000/dental-filling.png">
+        <li class="active rk-menu__item"><a routerLink="/especialidad" class="rk-menu__link">Insumos Odontologicos</a>
         </li>
+        <img src="https://img.icons8.com/dusk/50/000000/product.png">
         <li class="rk-menu__item"><a routerLink="/materiales" class="rk-menu__link">Materiales Odontologicos</a>
         </li>
+        <img src="https://img.icons8.com/dusk/50/000000/search-property.png">
         <li class="rk-menu__item"><a routerLink="/reportes" class="rk-menu__link">Reportes</a>
         </li>
     </ul>
@@ -24,7 +27,7 @@
                                     <div class="form-group row">
                                         <div class="container">
                                             <div class="padre">
-                                                <img src="https://img.icons8.com/dusk/50/000000/property-script.png">
+                                                <img src="https://img.icons8.com/dusk/50/000000/dental-implant.png">
                                             </div>
                                         </div>
                                     </div>
@@ -34,7 +37,7 @@
                                 <br>
                                 <form action="">
                                     <div class="form-group row">
-                                        <h4 for="" class="col-10 col-form-label">MATERIALES SEGUN ESPECIALIDAD</h4>
+                                        <h4 for="" class="col-10 col-form-label">INSUMOS ODONTOLOGICOS</h4>
                                     </div>
                                 </form>
                             </div>
@@ -42,7 +45,12 @@
                     </mat-card>
                 </form>
             </mat-card-title>
-
+            <br>
+            <form align="right">
+                <div>
+                    <button mat-raised-button (click)="agregarinsumo()" class="uno">Agregar Insumos</button>
+                </div>
+            </form>
             <div class="row">
                 <div class="col-6">
                     <br>
@@ -61,7 +69,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col">
-                    <label for="" class="lolo">Lista Materiales segun Especialidad</label>
+                    <label for="" class="lolo">Lista de Insumos Odontologicos</label>
                     <mat-form-field class=" col-2 border-bottom text-dark">
                         <div class="row caja2">
                             <img src="https://img.icons8.com/dusk/25/000000/search.png">

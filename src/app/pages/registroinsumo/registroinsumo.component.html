@@ -11,12 +11,11 @@
         </li>
     </ul>
 </div>
-
 <div align='center'>
     <form>
         <mat-card>
             <br>
-            <h4> AGREGAR MATERIAL </h4>
+            <h4> AGREGAR INSUMOS </h4>
             <br>
             <!--AGREGAR MATERIAL FORMULARIO-->
             <form #formRegisterMaterial="ngForm" (ngSubmit)="onRegisterMaterial(formRegisterMaterial)">
@@ -25,7 +24,7 @@
                         <br>
                         <form action="">
                             <div class="form-group row">
-                                <label for="" class="col-6 col-form-label">Nombre del Material</label>
+                                <label for="" class="col-6 col-form-label">Nombre del Instrumento</label>
                                 <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
                                     [(ngModel)]='materialRe.name' required minlength="4" maxlength="50"
                                     class="form-control col-6">
@@ -49,11 +48,6 @@
                                     <option>Odontologia</option>
                                     <option>Ortodoncia</option>
                                 </select>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-6 col-form-label">Costo</label>
-                                <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
-                                    [(ngModel)]='materialRe.costo' required class="form-control col-4">
                             </div>
                         </form>
                     </div>
