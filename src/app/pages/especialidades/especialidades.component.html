@@ -79,31 +79,25 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre </th>
-                                <th scope="col">Telefono</th>
-                                <th scope="col">Cedula</th>
-                                <th scope="col">Ocupacion</th>
-                                <th scope="col">Nombre Familiar</th>
-                                <th scope="col">Numero Familiar</th>
-                                <th scope="col">Tipo de Especialidad</th>
-                                <th scope="col">Historia clinica</th>
-                                <th scope="col">Editar Paciente</th>
+                                <th scope="col">Especialidad</th>
+                                <th scope="col">Costo</th>
+                                <th scope="col">Catidad</th>
+                                <th scope="col">Usar Material</th>
+                                <th scope="col">Estado</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let patient of patient">
-                                <td></td>
-                                <td>{{patient.name}}</td>
-                                <td>{{patient.phone}}</td>
-                                <td>{{patient.dni}}</td>
-                                <td>{{patient.occupation}}</td>
-                                <td>{{patient.familyName}}</td>
-                                <td>{{patient.familyNumberHome}}</td>
-                                <td>{{patient.userType}}</td>
+                            <tr *ngFor="let material of material">
+                                <td>{{material.id}}</td>
+                                <td>{{material.name}}</td>
+                                <td>{{material.especiality}}</td>
+                                <td>{{material.costo}}</td>
+                                <td>{{material.cantidad}}</td>
                                 <td>
-                                    <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/order-history.png">
+                                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/order-history.png">
                                 </td>
                                 <td>
-                                    <img class="tres" (click)="editarpaciente()" src="https://img.icons8.com/dusk/50/000000/edit-property.png">
+                                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/edit-property.png">
                                 </td>
                             </tr>
 

@@ -104,7 +104,7 @@ export class AuthService {
         );
 }
 
-registerMaterial(name: string, cantidad: string, especiality: string) {
+registerMaterial(name: string, cantidad: string, especiality: string, costo: string, idDoctor: string) {
     const urlApi = 'http://localhost:3000/material';
     return this.htttp
     .post<PaatientInterface>(
@@ -116,6 +116,10 @@ registerMaterial(name: string, cantidad: string, especiality: string) {
     cantidad: cantidad,
     // tslint:disable-next-line: object-literal-shorthand
     especiality: especiality,
+    // tslint:disable-next-line: object-literal-shorthand
+    costo: costo,
+    // tslint:disable-next-line: object-literal-shorthand
+    idDoctor: idDoctor,
 
     },
     );

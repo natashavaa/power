@@ -25,7 +25,7 @@ export class MaterialesComponent implements OnInit {
     this.getlistMaterial();
   }
 
- 
+
   especialidad(): void {
     this.router.navigate(['especialidad']);
   }
@@ -33,7 +33,7 @@ export class MaterialesComponent implements OnInit {
     this.router.navigate(['materiales']);
   }
 
-  
+
   agregarmaterial(): void {
     this.router.navigate(['registermaterial']);
   }
@@ -45,13 +45,4 @@ export class MaterialesComponent implements OnInit {
   }
 
 
-  onRegisterMaterial(): void {
-    this.authService.registerMaterial(
-      this.materialRe.name,
-      this.materialRe.cantidad,
-      this.materialRe.especiality,
-    ).subscribe(patient => {
-      console.log(patient);
-     } );
-    }
 }

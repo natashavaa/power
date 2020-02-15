@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { DataApiService } from '../../services/data-api.service';
 import { MaterialInterface } from '../../models/material.interface';
 import { AuthService } from '../../services/auth.service';
+import { UserInterface } from '../../models/user.interface';
 
 
 @Component({
@@ -23,6 +24,18 @@ export class RegistromaterialComponent implements OnInit {
     costo: '',
     cantidad: '',
   };
+  private user2: UserInterface = {
+    id: '',
+    name: '',
+    dni: '',
+    age: 0,
+    sex: '',
+    mail: '',
+    password: '',
+    userType: '',
+    username: '',
+    phone: ''
+  };
 
   ngOnInit() {
     this.getlistMaterial();
@@ -38,16 +51,21 @@ export class RegistromaterialComponent implements OnInit {
     console.log('lista material recibida');
   }
   cancelar() {
-
+    this.router.navigate(['materiales']);
   }
 
   onRegisterMaterial(): void {
+    this.user2 = this.authService.getCurrentUser();
+    this.materialRe.idDoctor = this.user2.id;
     this.authService.registerMaterial(
       this.materialRe.name,
       this.materialRe.cantidad,
       this.materialRe.especiality,
-    ).subscribe(patient => {
-      console.log(patient);
+      this.materialRe.costo,
+      this.materialRe.idDoctor
+    ).subscribe(material => {
+      console.log(material);
+      this.router.navigate(['materiales']);
      } );
     }
 }
