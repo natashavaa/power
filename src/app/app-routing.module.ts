@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Componentes
-import { SearchComponent } from './pages/search/search.component';
+
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PacientesComponent } from './pages/pacientes/pacientes.component';
@@ -21,7 +21,6 @@ import { OdontogramatodoslosdientesComponent } from './pages/odontogramatodoslos
 import { ConsultadiariaComponent } from './pages/consultadiaria/consultadiaria.component';
 import { ConsultaglobalComponent } from './pages/consultaglobal/consultaglobal.component';
 import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
-import { InventarioComponent } from './pages/inventario/inventario.component';
 import { MaterialesComponent } from './pages/materiales/materiales.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
@@ -40,7 +39,6 @@ import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.c
 const appRoutes: Routes = [
   {path: '', component : LoginComponent},
   {path: 'pacienteseguimiento', component: PacienteseguimientoComponent},
-  {path: 'search/:termino', component: SearchComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'pacienteodontograma', component: PacienteodontogramaComponent},
   {path: 'login', component : LoginComponent},
@@ -52,7 +50,6 @@ const appRoutes: Routes = [
   {path: 'diaria', component: ConsultadiariaComponent},
   {path: 'global', component: ConsultaglobalComponent},
   {path: 'especialidad', component: EspecialidadesComponent},
-  {path: 'inventario', component: InventarioComponent},
   {path: 'materiales', component: MaterialesComponent},
   {path: 'editarperfil', component : PerfilComponent},
   {path: 'pacienterecipe', component : PacientesrecipeComponent},
