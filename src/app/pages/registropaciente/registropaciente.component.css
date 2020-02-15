@@ -1,4 +1,46 @@
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+  flex-basis: 0;
+  color: #000;
 
+}
+
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+.mat-form-field {
+  margin: 0;
+  padding: 0;    
+  font-weight: bold;
+  display: block;
+  width: 100%;
+ 
+}
+
+.mat-expansion-panel {
+  background: rgba(207, 205, 205, 0.199);
+  color: #000;
+  width: 60%;
+  height: 60%;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color:#000 !important;
+ }
+
+ ::ng-deep .mat-form-field-underline {
+  /*change color of underline*/
+  background-color: #000 !important;
+} 
+
+::ng-deep .mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: #000 !important;
+}
 
 .caja input{
   background-color: #fff ;
@@ -22,8 +64,8 @@
   line-height: 20px;
   color: #000;
   background: rgba(207, 205, 205, 0.199);
-  width: 50%;
-  height: 40%;
+  width: 60%;
+  height: 60%;
 }
 
 .mat-card a:hover {
