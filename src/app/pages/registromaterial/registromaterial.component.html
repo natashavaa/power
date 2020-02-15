@@ -18,13 +18,13 @@
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-6 col-form-label">Cantidad</label>
-                                <input type="number" #Cantidad="ngModel" name="Cantidad" class="form-control"
+                                <input type="number"  min="0" #Cantidad="ngModel" name="Cantidad" class="form-control"
                                     placeholder="" [(ngModel)]='materialRe.cantidad' required minlength="1"
                                     maxlength="50" class="form-control col-4">
                             </div>
                         </form>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 caja">
                         <br>
                         <form action="">
                             <div class="form-group row">
@@ -35,6 +35,11 @@
                                     <option>Odontologia</option>
                                     <option>Ortodoncia</option>
                                 </select>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-6 col-form-label">Costo</label>
+                                <input type="text" #nameC="ngModel" name="nameM" class="form-control" placeholder=""
+                                    [(ngModel)]='materialRe.costo' required class="form-control col-4">
                             </div>
                         </form>
                     </div>
