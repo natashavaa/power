@@ -39,47 +39,12 @@
                     </mat-card>
                 </form>
             </mat-card-title>
-            <form #formRegisterMaterial="ngForm" (ngSubmit)="onRegisterMaterial(formRegisterMaterial)">
-                <div class="row">
-                    <div class="col-6">
-                        <br>
-                        <form action="">
-                            <div class="form-group row">
-                                <label for="" class="col-6 col-form-label">Nombre del Material</label>
-                                <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='materialRe.name' required minlength="4" maxlength="50" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-6 col-form-label">Cantidad</label>
-                                <input type="number" #Cantidad="ngModel" name="Cantidad" class="form-control" placeholder="" [(ngModel)]='materialRe.cantidad' required minlength="1" maxlength="50" class="form-control col-4">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-6">
-                        <br>
-                        <form action="">
-                            <div class="form-group row">
-                                <mat-label for="" class="col-6 col-form-label">Escoger Especialidad</mat-label>
-                                <br>
-                                <select #Especialidad="ngModel" name="Especialidad" id="Especialidad" [(ngModel)]="materialRe.especiality" class="form-control col-4">
-                                <option>Odontologia</option>
-                                <option>Ortodoncia</option>
-                            </select>
-                            </div>
 
-                        </form>
-                    </div>
-                </div>
-                <br>
-                <br>
+            <form align="right">
                 <div>
-                    <button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
-
-                    <button (click)="cancelar()" class="btn btn-lg btn-danger margen">Cancelar</button>
-
+                    <button mat-raised-button (click)="agregarmaterial()" class="uno">Agregar Material</button>
                 </div>
-
             </form>
-
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista Materiales Odontologicos</label>
@@ -115,10 +80,12 @@
                                 <td>{{material.costo}}</td>
                                 <td>{{material.cantidad}}</td>
                                 <td>
-                                    <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/order-history.png">
+                                    <img class="tres" (click)="historia()"
+                                        src="https://img.icons8.com/dusk/50/000000/order-history.png">
                                 </td>
                                 <td>
-                                    <img class="tres" (click)="editarpaciente()" src="https://img.icons8.com/dusk/50/000000/edit-property.png">
+                                    <img class="tres" (click)="editarpaciente()"
+                                        src="https://img.icons8.com/dusk/50/000000/edit-property.png">
                                 </td>
                             </tr>
 

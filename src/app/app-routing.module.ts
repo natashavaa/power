@@ -33,6 +33,7 @@ import { OrtodonciaComponent } from './pages/ortodoncia/ortodoncia.component';
 import { ListahistoriasComponent } from './pages/listahistorias/listahistorias.component';
 import { RecuperacionComponent } from './pages/recuperacion/recuperacion.component';
 import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.component';
+import { RegistromaterialComponent } from './pages/registromaterial/registromaterial.component';
 
 
 
@@ -64,6 +65,7 @@ const appRoutes: Routes = [
   {path: 'pantallaNOhome', component: PantallanohomeComponent},
   {path: 'listahistorias', component: ListahistoriasComponent},
   {path: 'recuperacion', component: RecuperacionComponent},
+  {path: 'registermaterial', component : RegistromaterialComponent},
   {path: 'editarpaciente', component: EditarpacienteComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 

@@ -1,0 +1,50 @@
+<div align='center'>
+    <form>
+        <mat-card>
+            <br>
+            <h4> AGREGAR MATERIAL </h4>
+            <br>
+            <!--AGREGAR MATERIAL FORMULARIO-->
+            <form #formRegisterMaterial="ngForm" (ngSubmit)="onRegisterMaterial(formRegisterMaterial)">
+                <div class="row">
+                    <div class="col-6 caja">
+                        <br>
+                        <form action="">
+                            <div class="form-group row">
+                                <label for="" class="col-6 col-form-label">Nombre del Material</label>
+                                <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
+                                    [(ngModel)]='materialRe.name' required minlength="4" maxlength="50"
+                                    class="form-control col-6">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-6 col-form-label">Cantidad</label>
+                                <input type="number" #Cantidad="ngModel" name="Cantidad" class="form-control"
+                                    placeholder="" [(ngModel)]='materialRe.cantidad' required minlength="1"
+                                    maxlength="50" class="form-control col-4">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <br>
+                        <form action="">
+                            <div class="form-group row">
+                                <mat-label for="" class="col-6 col-form-label">Escoger Especialidad</mat-label>
+                                <br>
+                                <select #Especialidad="ngModel" name="Especialidad" id="Especialidad"
+                                    [(ngModel)]="materialRe.especiality" class="form-control col-4">
+                                    <option>Odontologia</option>
+                                    <option>Ortodoncia</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
+                    <button (click)="cancelar()" class="btn btn-lg btn-danger margen">Cancelar</button>
+                </div>
+                <br>
+            </form>
+        </mat-card>
+    </form>
+</div>
