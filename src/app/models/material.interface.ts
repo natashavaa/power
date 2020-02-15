@@ -5,6 +5,7 @@ export interface MaterialInterface {
   especiality?: string;
   costo?: string;
   cantidad?: string;
+  estadoDisp?: string;
   ultimaFecha?: Date;
 
 
