@@ -19,6 +19,7 @@ export class EspecialidadesComponent implements OnInit {
     costo: '',
     cantidad: '',
   };
+  cargando: boolean = false;
   ngOnInit() {
     this.getlistInstrumentos();
   }
@@ -37,6 +38,15 @@ export class EspecialidadesComponent implements OnInit {
     this.dataApi.getAllIntrumentos().subscribe((Instrumentos: InstrumentoInterface) => ( this.instrumento = Instrumentos));
     console.log(this.instrumento);
     console.log('lista Instrumento');
+  }
+  estado() {
+    if (this.cargando === true) {
+      this.cargando = false;
+   } else {
+    this.cargando = true;
+   }
+    console.log(this.cargando);
+
   }
 
 }

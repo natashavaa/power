@@ -91,7 +91,6 @@
                                 <th scope="col">Costo</th>
                                 <th scope="col">Catidad</th>
                                 <th scope="col">Usar Material</th>
-                                <th scope="col">Estado</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -102,11 +101,12 @@
                                 <td>{{instrumento.costo}}</td>
                                 <td>{{instrumento.cantidad}}</td>
                                 <td>
-                                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/order-history.png">
+                                    <button (click)="estado()" [ngClass]="{'btn-success': !cargando,'btn-danger': cargando }" class="btn" type="button">
+                                    <span *ngIf="!cargando"  >Usar</span >
+                                    <span *ngIf="cargando"  >Usando</span >
+                                    </button>
                                 </td>
-                                <td>
-                                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/edit-property.png">
-                                </td>
+
                             </tr>
 
                         </tbody>
