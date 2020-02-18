@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class MaterialesComponent implements OnInit {
 
-  constructor(private router: Router , private dataApi: DataApiService,private authService: AuthService) { }
+  constructor(private router: Router , private dataApi: DataApiService, private authService: AuthService) { }
   private material: MaterialInterface;
   private materialRe: MaterialInterface = {
     id: '',
