@@ -89,8 +89,8 @@
                                 <th scope="col">Especialidad</th>
                                 <th scope="col">Costo</th>
                                 <th scope="col">Catidad</th>
-                                <th scope="col">Usar Material</th>
                                 <th scope="col">Estado</th>
+                                <th scope="col">Accion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,10 +101,14 @@
                                 <td>{{material.costo}}</td>
                                 <td>{{material.cantidad}}</td>
                                 <td>
-                                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/order-history.png">
+                                    <button mat-raised-button class="btn btn-success">
+                                      <span>
+                                        Disponible
+                                      </span>
+                                    </button>
                                 </td>
                                 <td>
-                                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/edit-property.png">
+                                    <button mat-raised-button (click)="openDialog(material)" class="btn btn-success">Usar</button>
                                 </td>
                             </tr>
 

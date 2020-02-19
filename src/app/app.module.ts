@@ -41,7 +41,7 @@ import { ConsultadiariaComponent } from './pages/consultadiaria/consultadiaria.c
 import { ConsultaglobalComponent } from './pages/consultaglobal/consultaglobal.component';
 import { InventarioComponent } from './pages/inventario/inventario.component';
 import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
-import { MaterialesComponent } from './pages/materiales/materiales.component';
+import { MaterialesComponent} from './pages/materiales/materiales.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { PacientesrecipeComponent } from './pages/pacientesrecipe/pacientesrecipe.component';
 import { PantallanohomeComponent } from './pages/pantallanohome/pantallanohome.component';
@@ -80,6 +80,8 @@ import { RecuperacionComponent } from './pages/recuperacion/recuperacion.compone
 import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.component';
 import { RegistromaterialComponent } from './pages/registromaterial/registromaterial.component';
 import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.component';
+import { ModalComponent } from './pages/modal/modal.component';
+
 
 @NgModule({
   declarations: [
@@ -119,6 +121,7 @@ import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.c
     EditarpacienteComponent,
     RegistromaterialComponent,
     RegistroinsumoComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -153,13 +156,17 @@ import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.c
       provide: DateAdapter,
       useFactory: adapterFactory
     })
-  ], 
+  ],
   providers: [ConsultaglobalComponent, DataApiService,
     {
       provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com'
     }
   ],
   bootstrap: [AppComponent],
+
+  entryComponents: [
+    ModalComponent,
+ ]
 })
 export class AppModule { }
 

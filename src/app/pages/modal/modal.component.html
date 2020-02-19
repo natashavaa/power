@@ -1,0 +1,18 @@
+{{data.id}}
+<h1 mat-dialog-title>Cantidad De Material</h1>
+<div mat-dialog-content>
+    <div class="col 6 simP">
+        <span class="col-3 ">Disponible: </span>
+        <p class="col-3">{{data.cantidad}}</p>
+    </div>
+    <br>
+    <div class="col 6">
+        <span class="col-3">A usar: </span>
+        <input type="number" class="col-4 minii" [(ngModel)]='data.id'>
+    </div>
+    <br>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button [mat-dialog-close]="" cdkFocusInitial>Guardar</button>
+</div>

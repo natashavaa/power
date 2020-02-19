@@ -1,8 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataApiService } from '../../services/data-api.service';
 import { MaterialInterface } from '../../models/material.interface';
 import { AuthService } from '../../services/auth.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { ModalComponent } from '../modal/modal.component';
+
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-materiales',
@@ -10,8 +18,12 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./materiales.component.css']
 })
 export class MaterialesComponent implements OnInit {
-
-  constructor(private router: Router , private dataApi: DataApiService, private authService: AuthService) { }
+  animal: string;
+  name: string;
+  constructor(private router: Router ,
+              private dataApi: DataApiService,
+              private authService: AuthService,
+              public dialog: MatDialog) { }
   private material: MaterialInterface;
   private materialRe: MaterialInterface = {
     id: '',
@@ -20,7 +32,17 @@ export class MaterialesComponent implements OnInit {
     costo: '',
     cantidad: '',
   };
+  openDialog(material: MaterialInterface): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '250px',
+      height: '250px',
+      data: {material}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      this.animal = result;
+    });
+  }
   ngOnInit() {
     this.getlistMaterial();
   }
@@ -46,3 +68,4 @@ export class MaterialesComponent implements OnInit {
 
 
 }
+
