@@ -40,8 +40,9 @@ export class MaterialesComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.animal = result;
-    });
+      this.material = result;
+      console.log(result);
+        });
   }
   ngOnInit() {
     this.getlistMaterial();
