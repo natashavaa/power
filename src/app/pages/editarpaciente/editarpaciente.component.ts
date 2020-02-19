@@ -4,6 +4,7 @@ import { UserInterface } from '../../models/user.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../helpers/must-match.validator';
 import { Router } from '@angular/router';
+import { PaatientInterface } from '../../models/patients.interface';
 
 @Component({
   selector: 'app-editarpaciente',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./editarpaciente.component.css']
 })
 export class EditarpacienteComponent implements OnInit {
- 
+
 editForm: FormGroup;
 submitted = false;
 private user: UserInterface = {
@@ -28,10 +29,12 @@ private user: UserInterface = {
 
 
 };
+private patient: PaatientInterface;
 constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService) { }
 
 ngOnInit() {
     this.user = this.authService.getCurrentUser();
+    this.patient = this.authService.getCurrentPatient();
 }
 
 // convenience getter for easy access to form fields
@@ -54,5 +57,7 @@ onUpdate(): void {
     this.router.navigate(['pantallahome']);
    } );
   }
+  onUpdatePatient(): void {
 
+  }
 }

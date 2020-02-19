@@ -9,6 +9,10 @@ table {
     width: 100%;
 }
 
+.claDoc {
+    font-size: 25px;
+}
+
 button {
     font-size: 20px;
 }
@@ -18,30 +22,35 @@ button {
     color: snow;
     background-color: #1DA1F2;
 }
-.tama{
+
+.tama {
     size: 1px;
 }
-.caja input{
+
+.caja input {
     background-color: gray;
     padding: 10px;
     border-radius: 5%;
 }
-.caja2{
+
+.caja2 {
     z-index: 10000;
     background-color: #f9f9f9;
     padding: 10px;
     border-radius: 5%;
 }
-.marg{
-    margin:5px;
+
+.marg {
+    margin: 5px;
 }
+
 .tres img {
     margin: 0 12px;
-    background-color:transparent;
+    background-color: transparent;
     outline: transparent;
     border-radius: 5px;
     margin-left: 100px;
-   }
+}
 
 .raya {
     margin: 0 12px;

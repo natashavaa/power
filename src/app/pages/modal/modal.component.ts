@@ -20,6 +20,8 @@ export class ModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    // tslint:disable-next-line: no-unused-expression
+    this.data;
   }
 
 }
