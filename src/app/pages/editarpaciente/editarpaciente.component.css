@@ -17,6 +17,12 @@
     width: 100%;
 }
 
+.per input {
+    background-color: rgb(206, 206, 206);
+    padding: 10px;
+    color: black;
+}
+
 .mat-expansion-panel {
     background: rgba(207, 205, 205, 0.199);
     color: #000;

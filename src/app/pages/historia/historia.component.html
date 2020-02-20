@@ -82,73 +82,68 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4><img src="https://img.icons8.com/dusk/50/000000/user-female-circle.png">   DATOS PERSONALES </h4>
+                        <h4><img src="https://img.icons8.com/dusk/50/000000/user-female-circle.png"> DATOS PERSONALES </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
             <br>
             <div class="alert alert-danger" role="alert">
-                EL PACIENTE PADECE DE (COLOCAR ENFERMEDADES EN CASO DE QUE PADEZCA DE ALGO) Y EN CASO DE QUE HAYA TENIDO
-                COMPLICACIONES CON LA ANESTECIA TAMBIEN COLOCARLO.
+                EL PACIENTE PADECE DE (COLOCAR ENFERMEDADES EN CASO DE QUE PADEZCA DE ALGO) Y EN CASO DE QUE HAYA TENIDO COMPLICACIONES CON LA ANESTECIA TAMBIEN COLOCARLO.
             </div>
-            <div class="row">
+            <div class="row per ">
                 <div class="col-6">
                     <br>
                     <form action="">
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Numero Historia</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-4">
+                            <input readonly type="text" #id="ngModel" name="id" class="form-control" placeholder="" [(ngModel)]='patient.id' required minlength="1" maxlength="50" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Nombre del Paciente</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-4">
+                            <input readonly type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='patient.name' required minlength="1" maxlength="50" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Cedula</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-4">
+                            <input readonly type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patient.dni' required minlength="1" maxlength="40" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Direccion Habitacion</label>
-                            <textarea readonly class="form-control-plaintext" id="staticEmail"
-                                class="form-control col-4"></textarea>
+                            <input readonly type="text" #homeAddress="ngModel" name="homeAddress" class="form-control" placeholder="" [(ngModel)]='patient.homeAddress' required minlength="4" maxlength="100" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Direccion Trabajo</label>
-                            <textarea readonly class="form-control-plaintext" id="staticEmail"
-                                class="form-control col-4"></textarea>
+                            <input readonly type="text" #workAddress="ngModel" name="workAddress" class="form-control" placeholder="" [(ngModel)]='patient.workAddress' required minlength="4" maxlength="100" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Genero: </label>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
-                                    F
+                                  <input type="radio"  #Femenino="ngModel" name="Femenino" id="Femenino" value="Femenino" [(ngModel)]="patient.sex" class="selector" checked>
+                                  F
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
-                                        class="selector" checked>
+                                  <input readonly type="radio"  #Masculino="ngModel" name="Masculino" id="Masculino" value="Masculino" [(ngModel)]="patient.sex" class="selector" checked>
                                     M
                                 </label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Lugar de Nacimiento</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-4">
+                            <input readonly type="text" #birthPlace="ngModel" name="birthPlace" class="form-control" placeholder="" [(ngModel)]='patient.birthplace' required minlength="4" maxlength="1" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Ocupacion</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-4">
+                            <input readonly type="text" #occupation="ngModel" name="occupation" class="form-control" placeholder="" [(ngModel)]='patient.occupation' required minlength="4" maxlength="1" class="form-control col-4">
                         </div>
-                        <div class="form-group row">
+                        <!--   <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Motivo de la Consulta</label>
-                            <textarea readonly class="form-control-plaintext" id="staticEmail"
-                                class="form-control col-4"></textarea>
-                        </div>
+                            <textarea readonly class="form-control-plaintext" id="staticEmail" class="form-control col-4"></textarea>
+                        </div>-->
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Consultorio a Visitar</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-4">
+                            <input readonly type="text" #userType="ngModel" name="userType" class="form-control" placeholder="" [(ngModel)]='patient.userType' required minlength="4" maxlength="1" class="form-control col-4">
                         </div>
                     </form>
                 </div>
@@ -157,71 +152,70 @@
                     <form action="">
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Edad</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-6">
+                            <input readonly min="1" type="number" #age="ngModel" name="age" placeholder="" [(ngModel)]='patient.age' required minlength="4" maxlength="100" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Telefono de Casa</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-6">
+                            <input readonly type="text" #phone="ngModel" name="phone" placeholder="" [(ngModel)]='patient.phone' required minlength="1" maxlength="100" class="form-control caja col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Celular</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-6">
+                            <input readonly type="text" #mobile="ngModel" name="mobile" class="form-control" placeholder="" [(ngModel)]='patient.mobile' required minlength="1" maxlength="100" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Remitido por</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-6">
+                            <input readonly type="text" #sentBy="ngModel" name="sentBy" class="form-control" placeholder="" [(ngModel)]='patient.sentBy' required minlength="1" maxlength="100" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Estado Civil: </label>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
-                                    S
+                                  <input readonly type="radio" #Soltero="ngModel" name="Soltero" id="Soltero" value="Soltero" [(ngModel)]="patient.statusC" checked required>
+                                  S
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="opciones" id="opciones_2" value="opcion_2"
-                                        class="selector" checked>
+                                  <input readonly type="radio"  #Casado="ngModel" name="Casado" id="Casado" value="Casado" [(ngModel)]="patient.statusC"
+                                  class="selector" checked>
                                     C
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="opciones" id="opciones_1" value="opcion_3"
-                                        class="selector" checked>
+                                  <input readonly type="radio"  #Divorciado="ngModel" name="Divorciado" id="Divorciado" value="Divorciado" [(ngModel)]="patient.statusC"
+                                  class="selector" checked>
                                     D
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="opciones" id="opciones_2" value="opcion_4"
-                                        class="selector" checked>
+                                  <input readonly type="radio" #Viudo="ngModel" name="Viudo" id="Viudo" value="Viudo" [(ngModel)]="patient.statusC"
+                                  class="selector" checked>
                                     V
                                 </label>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Color Dental</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-6">
+                            <input readonly type="text" #dentalColor="ngModel" name="dentalColor" class="form-control" placeholder="" [(ngModel)]='patient.dentalColor' required minlength="1" maxlength="50" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">En Emergencia llamar a</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-6">
+                            <input readonly type="text" #familyName="ngModel" name="familyName" class="form-control" placeholder="" [(ngModel)]='patient.familyName' required minlength="1" maxlength="50" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Telefono de Casa</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-6">
+                            <input readonly type="text" #familyNumberHome="ngModel" name="familyNumberHome" class="form-control" placeholder="" [(ngModel)]='patient.familyNumberHome' required minlength="1" maxlength="50" class="form-control col-4">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Celular</label>
-                            <input readonly class="form-control-plaintext" id="staticEmail" class="form-control col-6">
+                            <input readonly type="text" #familyNumber="ngModel" name="familyNumber" class="form-control" placeholder="" [(ngModel)]='patient.familyNumber' required minlength="1" maxlength="50" class="form-control col-4">
                         </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Historia Dental</label>
-                            <textarea readonly class="form-control-plaintext" rows="3" id="staticEmail"
-                                class="form-control col-6"></textarea>
-                        </div>
+                            <textarea readonly class="form-control-plaintext" rows="3" id="staticEmail" class="form-control col-6"></textarea>
+                        </div>-->
                     </form>
                 </div>
             </div>

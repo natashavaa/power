@@ -103,60 +103,62 @@ export class AuthService {
               },
         );
 }
-UpdatePatient(name: string, dni: string, age: number, sex: string,
+UpdatePatient(id: string, name: string, dni: string, age: number, sex: string,
               statusC: string, homeAddress: string, occupation: string, workAddress: string,
               mobile: number, birthplace: string, sentBy: string,
               dentalColor: string, familyNumber: number,
               familyName: string, familyNumberHome: number,
               password: string, username: string, mail: string,
               userType: string, phone: string) {
-const urlApi = 'http://localhost:3000/patient/';
-return this.htttp
-.put<PaatientInterface>(
-urlApi,
-{
-// tslint:disable-next-line: object-literal-shorthand
-name: name,
-// tslint:disable-next-line: object-literal-shorthand
-dni: dni,
-// tslint:disable-next-line: object-literal-shorthand
-age: age,
-// tslint:disable-next-line: object-literal-shorthand
-sex: sex,
-// tslint:disable-next-line: object-literal-shorthand
-statusC: statusC,
-// tslint:disable-next-line: object-literal-shorthand
-homeAddress: homeAddress,
-// tslint:disable-next-line: object-literal-shorthand
-occupation: occupation,
-// tslint:disable-next-line: object-literal-shorthand
-workAddress: workAddress,
-// tslint:disable-next-line: object-literal-shorthand
-mobile: mobile,
-// tslint:disable-next-line: object-literal-shorthand
-birthplace: birthplace,
-// tslint:disable-next-line: object-literal-shorthand
-sentBy: sentBy,
-// tslint:disable-next-line: object-literal-shorthand
-dentalColor: dentalColor,
-// tslint:disable-next-line: object-literal-shorthand
-familyNumber: familyNumber,
-// tslint:disable-next-line: object-literal-shorthand
-familyNumberHome: familyNumberHome,
-// tslint:disable-next-line: object-literal-shorthand
-familyName: familyName,
-// tslint:disable-next-line: object-literal-shorthand
-password: password,
-// tslint:disable-next-line: object-literal-shorthand
-username: username,
-// tslint:disable-next-line: object-literal-shorthand
-mail: mail,
-// tslint:disable-next-line: object-literal-shorthand
-userType: userType,
-// tslint:disable-next-line: object-literal-shorthand
-phone: phone,
-},
-);
+      const urlApi = 'http://localhost:3000/patient/update';
+      return this.htttp
+      .put<PaatientInterface>(
+      urlApi,
+      {
+        // tslint:disable-next-line: object-literal-shorthand
+        id: id,
+      // tslint:disable-next-line: object-literal-shorthand
+      name: name,
+      // tslint:disable-next-line: object-literal-shorthand
+      dni: dni,
+      // tslint:disable-next-line: object-literal-shorthand
+      age: age,
+      // tslint:disable-next-line: object-literal-shorthand
+      sex: sex,
+      // tslint:disable-next-line: object-literal-shorthand
+      statusC: statusC,
+      // tslint:disable-next-line: object-literal-shorthand
+      homeAddress: homeAddress,
+      // tslint:disable-next-line: object-literal-shorthand
+      occupation: occupation,
+      // tslint:disable-next-line: object-literal-shorthand
+      workAddress: workAddress,
+      // tslint:disable-next-line: object-literal-shorthand
+      mobile: mobile,
+      // tslint:disable-next-line: object-literal-shorthand
+      birthplace: birthplace,
+      // tslint:disable-next-line: object-literal-shorthand
+      sentBy: sentBy,
+      // tslint:disable-next-line: object-literal-shorthand
+      dentalColor: dentalColor,
+      // tslint:disable-next-line: object-literal-shorthand
+      familyNumber: familyNumber,
+      // tslint:disable-next-line: object-literal-shorthand
+      familyNumberHome: familyNumberHome,
+      // tslint:disable-next-line: object-literal-shorthand
+      familyName: familyName,
+      // tslint:disable-next-line: object-literal-shorthand
+      password: password,
+      // tslint:disable-next-line: object-literal-shorthand
+      username: username,
+      // tslint:disable-next-line: object-literal-shorthand
+      mail: mail,
+      // tslint:disable-next-line: object-literal-shorthand
+      userType: userType,
+      // tslint:disable-next-line: object-literal-shorthand
+      phone: phone,
+      },
+      );
 }
 
 registerMaterial(name: string, cantidad: string, especiality: string, costo: string, idDoctor: string) {

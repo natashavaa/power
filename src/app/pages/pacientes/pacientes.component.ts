@@ -41,7 +41,8 @@ export class PacientesComponent {
 
   }
 
-  historia(): void {
+  historia(patient: PaatientInterface): void {
+    this.auth.setPatient(patient);
     this.router.navigate(['historiaclinica']);
 
   }

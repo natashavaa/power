@@ -1,11 +1,12 @@
 import { UserInterface } from './user.interface';
 export interface PaatientInterface extends UserInterface {
     id?: string;
+    idClinicHistory?: string;
     statusC?: string;
     homeAddress?: string;
     occupation ?: string;
     workAddress: string;
-    mobile?: number; 
+    mobile?: number;
     birthplace?: string;
     sentBy?: string;
     dentalColor?: string;

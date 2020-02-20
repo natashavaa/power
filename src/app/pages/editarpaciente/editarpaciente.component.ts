@@ -58,6 +58,33 @@ onUpdate(): void {
    } );
   }
   onUpdatePatient(): void {
+    this.authService.UpdatePatient(
+    this.patient.id,
+    this.patient.name,
+    this.patient.dni,
+    this.patient.age,
+    this.patient.sex,
+    this.patient.statusC,
+    this.patient.homeAddress,
+    this.patient.occupation,
+    this.patient.workAddress,
+    this.patient.mobile,
+    this.patient.birthplace,
+    this.patient.sentBy,
+    this.patient.dentalColor,
+    this.patient.familyNumber,
+    this.patient.familyName,
+    this.patient.familyNumberHome,
+    this.patient.password,
+    this.patient.username,
+    this.patient.mail,
+    this.patient.userType,
+    this.patient.phone,
+  ).subscribe(patient => {
+    console.log(patient);
+    localStorage.removeItem('currentPatient');
+    this.router.navigate(['pacientes']);
+   } );
 
   }
 }
