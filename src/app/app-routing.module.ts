@@ -35,6 +35,7 @@ import { RecuperacionComponent } from './pages/recuperacion/recuperacion.compone
 import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.component';
 import { RegistromaterialComponent } from './pages/registromaterial/registromaterial.component';
 import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.component';
+import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
 
 
 
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
   {path: 'todoslosdientes', component: OdontogramatodoslosdientesComponent},
   {path: 'pantallaNOhome', component: PantallanohomeComponent},
   {path: 'listahistorias', component: ListahistoriasComponent},
+  {path: 'accesodenegado', component: PantallaNOaccesoComponent},
   {path: 'recuperacion', component: RecuperacionComponent},
   {path: 'registerinsumo', component : RegistroinsumoComponent},
   {path: 'registermaterial', component : RegistromaterialComponent},

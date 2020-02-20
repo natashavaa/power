@@ -61,8 +61,8 @@ export class RegisterComponent {
         this.authService.setUser(user);
         let token = this.user.id;
         this.authService.setToken(token);
-        this.app.mostrar = true;
-        this.router.navigate(['pantallahome']);
+        this.app.mostrar = false;
+        this.router.navigate(['accesodenegado']);
        } );
       }
 

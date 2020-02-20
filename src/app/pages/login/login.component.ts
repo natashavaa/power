@@ -36,8 +36,14 @@ export class LoginComponent implements OnInit {
              this.app.mostrar = true;
              this.router.navigate(['pantallaNOhome']);
           } else {
+            if(Object.is(data.status, 'PERMISO') ) {
             this.app.mostrar = true;
             this.router.navigate(['pantallahome']);
+
+            }else{
+              this.router.navigate(['accesodenegado']);
+            }
+            
           }
          }, error => console.log(error) );
   }

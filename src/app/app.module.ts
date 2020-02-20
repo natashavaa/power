@@ -81,6 +81,7 @@ import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.c
 import { RegistromaterialComponent } from './pages/registromaterial/registromaterial.component';
 import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.component';
 import { ModalComponent } from './pages/modal/modal.component';
+import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
 
 
 @NgModule({
@@ -121,7 +122,8 @@ import { ModalComponent } from './pages/modal/modal.component';
     EditarpacienteComponent,
     RegistromaterialComponent,
     RegistroinsumoComponent,
-    ModalComponent
+    ModalComponent,
+    PantallaNOaccesoComponent,
   ],
   imports: [
     BrowserModule,
