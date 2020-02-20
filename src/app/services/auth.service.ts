@@ -18,7 +18,7 @@ export class AuthService {
    'Content-Type': 'application/json'
   });
 
-  registerUser(name: string, phone: string, password: string, dni: string,
+registerUser(name: string, phone: string, password: string, dni: string,
                age: number, sex: string, email: string,
                userType: string, username: string) {
     const urlApi = 'http://localhost:3000/users';
@@ -48,7 +48,7 @@ export class AuthService {
       );
   }
 
-  registerPatient(name: string, dni: string, age: number, sex: string,
+registerPatient(name: string, dni: string, age: number, sex: string,
                   statusC: string, homeAddress: string, occupation: string, workAddress: string,
                   mobile: number, birthplace: string, sentBy: string,
                   dentalColor: string, familyNumber: number,
@@ -232,8 +232,41 @@ registerInstrumento(name: string, cantidad: string, especiality: string, costo: 
         },
         );
 }
+updateUserPermiso(id: string, name: string, phone: string, password: string, dni: string,
+                  age: number, sex: string, email: string,
+                  userType: string, username: string, status: string) {
+                const urlApi = 'http://localhost:3000/users/permiso';
+                return this.htttp
+              .put<UserInterface>(
+              urlApi,
+              {
+              // tslint:disable-next-line: object-literal-shorthand
+              id: id,
+              // tslint:disable-next-line: object-literal-shorthand
+              name: name,
+              // tslint:disable-next-line: object-literal-shorthand
+              dni: dni,
+              // tslint:disable-next-line: object-literal-shorthand
+              age: age,
+              // tslint:disable-next-line: object-literal-shorthand
+              sex: sex,
+              // tslint:disable-next-line: object-literal-shorthand
+              mail: email,
+              // tslint:disable-next-line: object-literal-shorthand
+              username: username,
+              // tslint:disable-next-line: object-literal-shorthand
+              password: password,
+              // tslint:disable-next-line: object-literal-shorthand
+              userType: userType,
+              // tslint:disable-next-line: object-literal-shorthand
+              phone: phone,
+              // tslint:disable-next-line: object-literal-shorthand
+              status: status
+              },
+              );
+}
 
-  loginuser(username: string, password: string): Observable<any> {
+loginuser(username: string, password: string): Observable<any> {
     const urlApi = 'http://localhost:3000/users/login';
     return this.htttp
       .post<UserInterface>(

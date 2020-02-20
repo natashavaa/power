@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
+import { DataApiService } from '../../services/data-api.service';
+import { PaatientInterface } from '../../models/patients.interface';
+import { UserInterface } from '../../models/user.interface';
+import { AuthService } from '../../services/auth.service';
 
 export interface PeriodicElement {
   name: string;
@@ -29,10 +33,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class DoctoresComponent implements OnInit {
+  constructor(private dataApi: DataApiService,private authService: AuthService, private router: Router) {}
 
   displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
+
+  public doctorUser: UserInterface = {
+};
+private user: UserInterface = {};
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
@@ -60,9 +69,61 @@ export class DoctoresComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor() { }
-
   ngOnInit() {
+   this.getlistUsers();
   }
+  getlistUsers() {
+    this.dataApi.getAllUser().subscribe((doctorUser: UserInterface) => ( this.doctorUser = doctorUser));
+    console.log(this.doctorUser);
+    console.log('lista recibida de usuarios');
+  }
+  darPermisoDoctor(doctorUser: UserInterface) {
+    doctorUser.status = 'PERMISO';
+    this.authService.updateUserPermiso(
+      doctorUser.id,
+      doctorUser.name,
+      doctorUser.phone,
+      doctorUser.password,
+      doctorUser.dni,
+      doctorUser.age,
+      doctorUser.sex,
+      doctorUser.mail,
+      doctorUser.userType,
+      doctorUser.username,
+      doctorUser.status
+    ).subscribe(user => {
+      console.log(user);
+      this.router.navigate(['doctores']);
+      this.ngOnInit();
+     } );
+    console.log('permiso');
+    console.log(doctorUser);
+  }
+  quitarPermisoDoctor(doctorUser: UserInterface) {
+    doctorUser.status = 'NO PERMISO';
+    this.authService.updateUserPermiso(
+      doctorUser.id,
+      doctorUser.name,
+      doctorUser.phone,
+      doctorUser.password,
+      doctorUser.dni,
+      doctorUser.age,
+      doctorUser.sex,
+      doctorUser.mail,
+      doctorUser.userType,
+      doctorUser.username,
+      doctorUser.status
+    ).subscribe(user => {
+      console.log(user);
+      this.router.navigate(['doctores']);
+      this.ngOnInit();
+     } );
+    console.log('permiso');
+    console.log(doctorUser);
+  }
+  eliminarDoctor(doctorUser: UserInterface) {
+    console.log('eliminar'); console.log(doctorUser);
+}
+
 
 }

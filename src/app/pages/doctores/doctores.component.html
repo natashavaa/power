@@ -23,21 +23,29 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre </th>
-                    <th scope="col">Telefono</th>
                     <th scope="col">Cedula</th>
                     <th scope="col">Tipo de Especialidad</th>
-                    <th scope="col">Eliminar</th>
+                    <th scope="col">Estatus</th>
+                    <th scope="col">Deshabilitar</th>
+                    <th scope="col">Habilitar</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let doctor of doctor">
+                <tr *ngFor="let doctorUser of doctorUser">
                     <td></td>
-                    <td>{{doctor.name}}</td>
-                    <td>{{doctor.mobile}}</td>
-                    <td>{{doctor.dni}}</td>
-                    <td>{{doctor.usertype}}</td>
+                    <td>{{doctorUser.name}}</td>
+                    <td>{{doctorUser.dni}}</td>
+                    <td>{{doctorUser.userType}}</td>
+                    <td>{{doctorUser.status}}</td>
                     <td>
-                        <img class="tres" src="https://img.icons8.com/dusk/50/000000/delete-sign.png">
+                        <button class="btn btn-link" (click)="darPermisoDoctor(doctorUser)">
+                        <img  src="https://img.icons8.com/dusk/50/000000/delete-sign.png">
+                      </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-link" (click)="quitarPermisoDoctor(doctorUser)">
+                      <img  src="https://img.icons8.com/dusk/50/000000/delete-sign.png">
+                    </button>
                     </td>
                 </tr>
 

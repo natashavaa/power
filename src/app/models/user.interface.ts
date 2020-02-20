@@ -9,4 +9,5 @@ export interface UserInterface {
   userType?: string;
   username?: string;
   phone?: string;
+  status?: string;
 }

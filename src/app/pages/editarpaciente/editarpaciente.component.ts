@@ -38,25 +38,7 @@ ngOnInit() {
 }
 
 // convenience getter for easy access to form fields
-onUpdate(): void {
-  this.authService.updateUser(
-    this.user.id,
-    this.user.name,
-    this.user.phone,
-    this.user.password,
-    this.user.dni,
-    this.user.age,
-    this.user.sex,
-    this.user.mail,
-    this.user.userType,
-    this.user.username
-  ).subscribe(user => {
-    this.authService.setUser(user);
-    let token = this.user.id;
-    this.authService.setToken(token);
-    this.router.navigate(['pantallahome']);
-   } );
-  }
+
   onUpdatePatient(): void {
     this.authService.UpdatePatient(
     this.patient.id,
