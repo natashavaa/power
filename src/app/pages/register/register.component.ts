@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import {NgForm} from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { UserInterface } from '../../models/user.interface';
+import { AppComponent } from '../../app.component';
 
 
 
@@ -19,7 +20,7 @@ export interface Especialidad {
 
 export class RegisterComponent {
 
-  constructor( private router: Router, private authService: AuthService) {
+  constructor( private router: Router, private authService: AuthService, private app: AppComponent) {
 
   }
     private user: UserInterface = {
@@ -60,6 +61,7 @@ export class RegisterComponent {
         this.authService.setUser(user);
         let token = this.user.id;
         this.authService.setToken(token);
+        this.app.mostrar = true;
         this.router.navigate(['pantallahome']);
        } );
       }
