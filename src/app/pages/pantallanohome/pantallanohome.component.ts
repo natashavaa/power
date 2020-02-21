@@ -1,3 +1,4 @@
+import { PacientesComponent } from './../pacientes/pacientes.component';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pantallanohome.component.html',
   styleUrls: ['./pantallanohome.component.css']
 })
+
+
 export class PantallanohomeComponent implements OnInit {
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit() {
   }

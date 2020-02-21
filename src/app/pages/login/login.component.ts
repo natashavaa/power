@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.authService.setUser(data);
+          console.log(data);
           if (!data || data == null) {
            alert('Credenciales Incorrectas');
           } else
@@ -36,14 +37,13 @@ export class LoginComponent implements OnInit {
              this.app.mostrar = true;
              this.router.navigate(['pantallaNOhome']);
           } else {
-            if(Object.is(data.status, 'PERMISO') ) {
+            if (Object.is(data.status, 'PERMISO') ) {
             this.app.mostrar = true;
             this.router.navigate(['pantallahome']);
 
-            }else{
+            } else {
               this.router.navigate(['accesodenegado']);
             }
-            
           }
          }, error => console.log(error) );
   }

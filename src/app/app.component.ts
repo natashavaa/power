@@ -41,7 +41,6 @@ export class AppComponent {
   mostrarHF(): void {
       this.user2 = this.authService.getCurrentUser();
       this.mostrar =  true;
-      this.ngOnInit();
   }
 
   getLogin() {
