@@ -10,7 +10,8 @@ table {
 }
 
 .claDoc {
-    font-size: 25px;
+    font-size: 40px;
+    font: oblique bold 160% cursive;
 }
 
 button {

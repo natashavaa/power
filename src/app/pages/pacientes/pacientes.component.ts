@@ -34,6 +34,8 @@ export class PacientesComponent {
 
 };
 
+     usuarioA: string;
+
   private patient: PaatientInterface;
 
   pacientes(): void {
@@ -61,9 +63,19 @@ getlistPatients() {
   console.log(this.patient);
   console.log('lista recibida');
 }
-doctor() {
+doctor(): string {
   this.user = this.auth.getCurrentUser();
   console.log(this.user);
 
+  if (Object.is(this.user.username, 'admin')) {
+      this.usuarioA = 'Administrador';
+      console.log(this.usuarioA);
+      return this.usuarioA;
+  } else {
+    this.usuarioA = 'Doctor: ' + this.user.name;
+    console.log(this.usuarioA);
+    return  this.usuarioA;
+
+  }
 }
 }
