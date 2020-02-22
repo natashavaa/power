@@ -67,7 +67,7 @@ diferencia: number;
     console.log(this.CantUsar);
      // tslint:disable-next-line: radix
     if ( this.CantUsar > material.cantidad) {
-      alert('cantidad mayor');
+      alert('No tiene tantos materiales');
 
     } else {
         material.cantidad =  material.cantidad - this.CantUsar;
