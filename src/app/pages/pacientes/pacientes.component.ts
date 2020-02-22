@@ -73,8 +73,8 @@ doctor(): string {
       this.usuarioA = 'Administrador';
       return this.usuarioA;
   } else {
-    this.usuarioA = 'Doctor: ' + this.user.name;
-    this.especialidad = this.user.userType;
+    this.usuarioA = 'Doctor : ' + this.user.name;
+    this.especialidad = 'Especialidad : ' +  this.user.userType;
     return  this.usuarioA;
 
   }
