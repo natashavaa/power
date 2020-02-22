@@ -50,7 +50,7 @@ diferencia: number;
   }
   ngOnInit() {
     this.getlistMaterial();
-  }//acaaaa
+  }
   OnInput(CantUsar: number) {
     this.CantUsar = CantUsar;
     }
