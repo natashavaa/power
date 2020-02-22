@@ -88,9 +88,11 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre </th>
                                 <th scope="col">Especialidad</th>
-                                <th scope="col">Costo</th>
                                 <th scope="col">Catidad</th>
-                                <th scope="col">Usar Material</th>
+                                <th scope="col">Usar</th>
+                                <th scope="col">En Uso</th>
+                                <th scope="col">En Limpieza</th>
+                                <th scope="col">Eliminar Insumo</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -98,13 +100,27 @@
                                 <td>{{instrumento.id}}</td>
                                 <td>{{instrumento.name}}</td>
                                 <td>{{instrumento.especiality}}</td>
-                                <td>{{instrumento.costo}}</td>
                                 <td>{{instrumento.cantidad}}</td>
                                 <td>
-                                    <button (click)="estado()" [ngClass]="{'btn-success': !cargando,'btn-danger': cargando }" class="btn" type="button">
-                                    <span *ngIf="!cargando"  >Usar</span >
-                                    <span *ngIf="cargando"  >Usando</span >
+                                    <button (click)="usarInsumo(instrumento)" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="Presione para usar un Insumo">
+                                        <span>Usar</span>
                                     </button>
+                                </td>
+                                <td>
+                                    <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Insumos Utilizados ahora,Presiones si ya los usó">
+                                      <span>En uso: {{instrumento.enUso}}
+                                      </span>
+                                  </button>
+                                </td>
+                                <td>
+                                    <button (click)="limpiarInsumos(instrumento)" class=" btn btn-warning" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Insumos en Limpieza,Presione para limpiar">
+                                      <span>En Limpieza: {{instrumento.enLimpieza}}</span>
+                                </button>
+                                </td>
+                                <td>
+                                    <button (click)="eliminarIsumos(instrumento)" class=" btn btn-danger" type="button" data-toggle="tooltip" data-placement="top" title="Presione para eliminar">
+                                    <span>Eliminar</span>
+                              </button>
                                 </td>
 
                             </tr>

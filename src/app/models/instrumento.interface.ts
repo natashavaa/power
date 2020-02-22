@@ -4,8 +4,10 @@ export interface InstrumentoInterface {
   idDoctor?: string;
   especiality?: string;
   costo?: string;
-  cantidad?: string;
+  cantidad?: number;
   estadoDisp?: string;
+  enUso?: number;
+  enLimpieza?: number;
   ultimaFecha?: Date;
 
 

@@ -10,6 +10,7 @@ import { PaatientInterface } from '../models/patients.interface';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { MaterialInterface } from '../models/material.interface';
+import { InstrumentoInterface } from '../models/instrumento.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -75,11 +76,15 @@ registerUser(name: string, phone: string, password: string, dni: string,
     );
 }
 deleteMaterial(id: string) {
-      const urlApi = 'http://localhost:3000/material/${id}';
-
+      const urlApi = `http://localhost:3000/material/${id}`;
       return this.htttp.delete<PaatientInterface>(urlApi,
       );
       }
+deleteInstrumento(id: string) {
+        const urlApi = `http://localhost:3000/instrumento/${id}`;
+        return this.htttp.delete<PaatientInterface>(urlApi,
+        );
+        }
 registerPatient(name: string, dni: string, age: number, sex: string,
                 statusC: string, homeAddress: string, occupation: string, workAddress: string,
                 mobile: number, birthplace: string, sentBy: string,
@@ -213,10 +218,10 @@ registerMaterial(name: string, cantidad: number, especiality: string, costo: str
     },
     );
 }
-registerInstrumento(name: string, cantidad: string, especiality: string, costo: string, idDoctor: string) {
+registerInstrumento(name: string, cantidad: number, especiality: string, costo: string, idDoctor: string) {
   const urlApi = 'http://localhost:3000/instrumento';
   return this.htttp
-  .post<PaatientInterface>(
+  .post<InstrumentoInterface>(
   urlApi,
   {
   // tslint:disable-next-line: object-literal-shorthand
@@ -229,6 +234,33 @@ registerInstrumento(name: string, cantidad: string, especiality: string, costo: 
   costo: costo,
   // tslint:disable-next-line: object-literal-shorthand
   idDoctor: idDoctor,
+
+  },
+  );
+}
+updateInstrumento(id: string, name: string, cantidad: number, especiality: string,
+                  costo: string, idDoctor: string, enUso: number, enLimpieza: number ) {
+  const urlApi = 'http://localhost:3000/instrumento/update';
+  return this.htttp
+  .put<PaatientInterface>(
+  urlApi,
+  {
+    // tslint:disable-next-line: object-literal-shorthand
+    id: id,
+  // tslint:disable-next-line: object-literal-shorthand
+  name: name,
+  // tslint:disable-next-line: object-literal-shorthand
+  cantidad: cantidad,
+  // tslint:disable-next-line: object-literal-shorthand
+  especiality: especiality,
+  // tslint:disable-next-line: object-literal-shorthand
+  costo: costo,
+  // tslint:disable-next-line: object-literal-shorthand
+  idDoctor: idDoctor,
+   // tslint:disable-next-line: object-literal-shorthand
+  enUso: enUso,
+    // tslint:disable-next-line: object-literal-shorthand
+  enLimpieza: enLimpieza,
 
   },
   );

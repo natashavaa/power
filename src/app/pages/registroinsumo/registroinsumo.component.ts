@@ -19,7 +19,7 @@ export class RegistroinsumoComponent implements OnInit {
     name: '',
     especiality: '',
     costo: '',
-    cantidad: '',
+    cantidad: 0,
   };
   private user2: UserInterface = {
     id: '',

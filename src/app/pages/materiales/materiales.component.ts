@@ -5,6 +5,7 @@ import { MaterialInterface } from '../../models/material.interface';
 import { AuthService } from '../../services/auth.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { ModalComponent } from '../modal/modal.component';
+import { AppComponent } from '../../app.component';
 
 
 export interface DialogData {
@@ -22,10 +23,11 @@ export class MaterialesComponent implements OnInit {
   name: string;
 CantUsar: number;
 hay = true;
+diferencia: number;
   constructor(private router: Router ,
               private dataApi: DataApiService,
               private authService: AuthService,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog , private app: AppComponent) { }
   private material: MaterialInterface;
   private materialRe: MaterialInterface = {
     id: '',
@@ -52,40 +54,38 @@ hay = true;
   OnInput(CantUsar: number) {
     this.CantUsar = CantUsar;
     }
-
+    eliminarMaterial(material: MaterialInterface): void {
+        this.authService.deleteMaterial(material.id).subscribe(data => {
+          console.log(data);
+          console.log('material eliminado');
+          delete this.CantUsar;
+          this.ngOnInit();
+         } );
+      }
   usarMaterial(material: MaterialInterface, Cantusar: number): void {
-    console.log(material.cantidad);
+    console.log(material);
     console.log(this.CantUsar);
      // tslint:disable-next-line: radix
     if ( this.CantUsar > material.cantidad) {
       alert('cantidad mayor');
 
     } else {
-      material.cantidad =  material.cantidad - this.CantUsar;
-      if (material.cantidad === 0) {
-        this.hay = false;
+        material.cantidad =  material.cantidad - this.CantUsar;
         material.estadoDisp = 'No Disponible';
-        this.authService.deleteMaterial(material.id).subscribe(materialw => {
+        this.authService.updateMaterial(
+          material.id,
+          material.name,
+          material.cantidad,
+          material.especiality,
+          material.costo,
+          material.idDoctor,
+          material.estadoDisp
+        ).subscribe(materialw => {
+          console.log('lista actualizada');
           console.log(materialw);
           delete this.CantUsar;
           this.ngOnInit();
          } );
-      }
-
-      this.authService.updateMaterial(
-        material.id,
-        material.name,
-        material.cantidad,
-        material.especiality,
-        material.costo,
-        material.idDoctor,
-        material.estadoDisp
-      ).subscribe(materialw => {
-        console.log(materialw);
-        delete this.CantUsar;
-        this.ngOnInit();
-       } );
-
     }
   }
   especialidad(): void {
