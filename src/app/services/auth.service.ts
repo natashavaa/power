@@ -51,7 +51,7 @@ registerUser(name: string, phone: string, password: string, dni: string,
   }
   updateMaterial(id: string, name: string, cantidad: number,
                  especiality: string, costo: string, idDoctor: string,
-                 estadoDisp: string) {
+                 estadoDisp: string, usados: number) {
     const urlApi = 'http://localhost:3000/material/update';
     return this.htttp
     .put<PaatientInterface>(
@@ -70,7 +70,9 @@ registerUser(name: string, phone: string, password: string, dni: string,
     // tslint:disable-next-line: object-literal-shorthand
     idDoctor: idDoctor,
     // tslint:disable-next-line: object-literal-shorthand
-    estadoDisp: estadoDisp
+    estadoDisp: estadoDisp,
+    // tslint:disable-next-line: object-literal-shorthand
+    usados: usados
 
     },
     );

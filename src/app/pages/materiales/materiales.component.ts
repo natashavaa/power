@@ -45,7 +45,7 @@ diferencia: number;
 
     dialogRef.afterClosed().subscribe(result => {
       this.material = result;
-      console.log(result);
+
         });
   }
   ngOnInit() {
@@ -56,21 +56,30 @@ diferencia: number;
     }
     eliminarMaterial(material: MaterialInterface): void {
         this.authService.deleteMaterial(material.id).subscribe(data => {
-          console.log(data);
-          console.log('material eliminado');
+
           delete this.CantUsar;
           this.ngOnInit();
          } );
       }
-  usarMaterial(material: MaterialInterface, Cantusar: number): void {
-    console.log(material);
-    console.log(this.CantUsar);
-     // tslint:disable-next-line: radix
-    if ( this.CantUsar > material.cantidad) {
-      alert('No tiene tantos materiales');
-
+  usarMaterial(material: MaterialInterface): void {
+    if ( material.cantidad > 0) {
+        material.cantidad =  material.cantidad - 1;
+        material.usados = material.usados + 1;
+        this.authService.updateMaterial(
+          material.id,
+          material.name,
+          material.cantidad,
+          material.especiality,
+          material.costo,
+          material.idDoctor,
+          material.estadoDisp,
+          material.usados
+        ).subscribe(materialw => {
+          delete this.CantUsar;
+          this.ngOnInit();
+         } );
     } else {
-        material.cantidad =  material.cantidad - this.CantUsar;
+        this.hay = false;
         material.estadoDisp = 'No Disponible';
         this.authService.updateMaterial(
           material.id,
@@ -79,13 +88,13 @@ diferencia: number;
           material.especiality,
           material.costo,
           material.idDoctor,
-          material.estadoDisp
+          material.estadoDisp,
+          material.usados
         ).subscribe(materialw => {
-          console.log('lista actualizada');
-          console.log(materialw);
           delete this.CantUsar;
           this.ngOnInit();
          } );
+        alert('Material insuficiente');
     }
   }
   especialidad(): void {
@@ -102,8 +111,7 @@ diferencia: number;
 
   getlistMaterial() {
     this.dataApi.getAllMAterial().subscribe((materials: MaterialInterface) => ( this.material = materials));
-    console.log(this.material);
-    console.log('lista material recibida');
+
   }
 
 

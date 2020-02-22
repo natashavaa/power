@@ -6,6 +6,7 @@ export interface MaterialInterface {
   costo?: string;
   cantidad?: number;
   estadoDisp?: string;
+  usados?: number;
   ultimaFecha?: Date;
 
 
