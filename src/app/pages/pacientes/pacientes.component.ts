@@ -7,6 +7,7 @@ import { DataApiService } from '../../services/data-api.service';
 import { Observable } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { UserInterface } from '../../models/user.interface';
+import { AppComponent } from '../../app.component';
 
 
 @Component({
@@ -16,7 +17,10 @@ import { UserInterface } from '../../models/user.interface';
 })
 export class PacientesComponent {
 
-  constructor(private router: Router, private dataApi: DataApiService, private auth: AuthService) {
+  constructor(private router: Router,
+              private dataApi: DataApiService,
+              private auth: AuthService,
+              private app: AppComponent) {
 
   }
   public user: UserInterface = {
@@ -35,6 +39,7 @@ export class PacientesComponent {
 };
 
      usuarioA: string;
+     especialidad: string;
 
   private patient: PaatientInterface;
 
@@ -55,25 +60,21 @@ export class PacientesComponent {
 
   }
   ngOnInit() {
+    this.app.mostrar = true;
     this.getlistPatients();
     this.doctor();
 }
 getlistPatients() {
   this.dataApi.getAllPatints().subscribe((patients: PaatientInterface) => ( this.patient = patients));
-  console.log(this.patient);
-  console.log('lista recibida');
 }
 doctor(): string {
   this.user = this.auth.getCurrentUser();
-  console.log(this.user);
-
   if (Object.is(this.user.username, 'admin')) {
       this.usuarioA = 'Administrador';
-      console.log(this.usuarioA);
       return this.usuarioA;
   } else {
     this.usuarioA = 'Doctor: ' + this.user.name;
-    console.log(this.usuarioA);
+    this.especialidad = this.user.userType;
     return  this.usuarioA;
 
   }

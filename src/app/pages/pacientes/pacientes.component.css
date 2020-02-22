@@ -14,6 +14,11 @@ table {
     font: oblique bold 160% cursive;
 }
 
+.claDocEs {
+    font-size: 40px;
+    font: oblique bold 110% cursive;
+}
+
 button {
     font-size: 20px;
 }
