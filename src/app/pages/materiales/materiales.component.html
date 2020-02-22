@@ -89,8 +89,9 @@
                                 <th scope="col">Especialidad</th>
                                 <th scope="col">Costo</th>
                                 <th scope="col">Catidad</th>
+                                <th scope="col">Catidad a usar</th>
                                 <th scope="col">Estado</th>
-                                <th scope="col">Accion</th>
+                                <th scope="col">Usar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,15 +102,22 @@
                                 <td>{{material.costo}}</td>
                                 <td>{{material.cantidad}}</td>
                                 <td>
-                                    <button mat-raised-button class="btn btn-success">
+                                    <div class="caja">
+                                        <input [(ngModel)]="CantUsar" class="inp col-4" min="0" type="number" name="CantUsar">
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <button mat-raised-button class="btn btn-dark">
                                       <span>
-                                        Disponible
+                                       {{material.estadoDisp}}
                                       </span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button mat-raised-button (click)="openDialog(material)" class="btn btn-success">Usar</button>
+                                    <button mat-raised-button (click)="usarMaterial(material)" class="btn btn-success">Usar</button>
                                 </td>
+
                             </tr>
 
                         </tbody>

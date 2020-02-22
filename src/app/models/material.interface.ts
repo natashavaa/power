@@ -4,7 +4,7 @@ export interface MaterialInterface {
   idDoctor?: string;
   especiality?: string;
   costo?: string;
-  cantidad?: string;
+  cantidad?: number;
   estadoDisp?: string;
   ultimaFecha?: Date;
 

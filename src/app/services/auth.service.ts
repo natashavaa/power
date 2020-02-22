@@ -9,6 +9,7 @@ import { UserInterface } from '../models/user.interface';
 import { PaatientInterface } from '../models/patients.interface';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
+import { MaterialInterface } from '../models/material.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -47,14 +48,45 @@ registerUser(name: string, phone: string, password: string, dni: string,
         },
       );
   }
+  updateMaterial(id: string, name: string, cantidad: number,
+                 especiality: string, costo: string, idDoctor: string,
+                 estadoDisp: string) {
+    const urlApi = 'http://localhost:3000/material/update';
+    return this.htttp
+    .put<PaatientInterface>(
+    urlApi,
+    {
+      // tslint:disable-next-line: object-literal-shorthand
+      id: id,
+    // tslint:disable-next-line: object-literal-shorthand
+    name: name,
+    // tslint:disable-next-line: object-literal-shorthand
+    cantidad: cantidad,
+    // tslint:disable-next-line: object-literal-shorthand
+    especiality: especiality,
+    // tslint:disable-next-line: object-literal-shorthand
+    costo: costo,
+    // tslint:disable-next-line: object-literal-shorthand
+    idDoctor: idDoctor,
+    // tslint:disable-next-line: object-literal-shorthand
+    estadoDisp: estadoDisp
 
+    },
+    );
+}
+deleteMaterial(id: string) {
+      const urlApi = 'http://localhost:3000/material/${id}';
+
+      return this.htttp.delete<PaatientInterface>(urlApi,
+      );
+      }
 registerPatient(name: string, dni: string, age: number, sex: string,
-                  statusC: string, homeAddress: string, occupation: string, workAddress: string,
-                  mobile: number, birthplace: string, sentBy: string,
-                  dentalColor: string, familyNumber: number,
-                  familyName: string, familyNumberHome: number,
-                  password: string, username: string, mail: string,
-                  userType: string, phone: string) {
+                statusC: string, homeAddress: string, occupation: string, workAddress: string,
+                mobile: number, birthplace: string, sentBy: string,
+                dentalColor: string, familyNumber: number,
+                familyName: string, familyNumberHome: number,
+                password: string, username: string, mail: string,
+                userType: string, phone: string) {
         const urlApi = 'http://localhost:3000/patient';
         return this.htttp
               .post<PaatientInterface>(
@@ -161,7 +193,7 @@ UpdatePatient(id: string, name: string, dni: string, age: number, sex: string,
       );
 }
 
-registerMaterial(name: string, cantidad: string, especiality: string, costo: string, idDoctor: string) {
+registerMaterial(name: string, cantidad: number, especiality: string, costo: string, idDoctor: string) {
     const urlApi = 'http://localhost:3000/material';
     return this.htttp
     .post<PaatientInterface>(
@@ -266,6 +298,7 @@ updateUserPermiso(id: string, name: string, phone: string, password: string, dni
               );
 }
 
+
 loginuser(username: string, password: string): Observable<any> {
     const urlApi = 'http://localhost:3000/users/login';
     return this.htttp
@@ -278,6 +311,10 @@ loginuser(username: string, password: string): Observable<any> {
   setUser(user: UserInterface): void {
     let user_string = JSON.stringify(user);
     localStorage.setItem('currentUser', user_string);
+  }
+  setMaterial(material: MaterialInterface): void {
+    let materialString = JSON.stringify(material);
+    localStorage.setItem('currentMaterial', materialString);
   }
   setPatient(patient: PaatientInterface): void {
     const patientString = JSON.stringify(patient);
@@ -306,6 +343,15 @@ loginuser(username: string, password: string): Observable<any> {
     if (!isNullOrUndefined(patientString)) {
       let patient: PaatientInterface = JSON.parse(patientString);
       return patient;
+    } else {
+      return null;
+    }
+  }
+  getCurrentMaterial(): MaterialInterface {
+    const materialString = localStorage.getItem('currentMaterial');
+    if (!isNullOrUndefined(materialString)) {
+      let material: PaatientInterface = JSON.parse(materialString);
+      return material;
     } else {
       return null;
     }

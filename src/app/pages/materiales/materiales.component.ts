@@ -20,6 +20,8 @@ export interface DialogData {
 export class MaterialesComponent implements OnInit {
   animal: string;
   name: string;
+CantUsar: number;
+hay = true;
   constructor(private router: Router ,
               private dataApi: DataApiService,
               private authService: AuthService,
@@ -30,7 +32,7 @@ export class MaterialesComponent implements OnInit {
     name: '',
     especiality: '',
     costo: '',
-    cantidad: '',
+    cantidad: 0,
   };
   openDialog(material: MaterialInterface): void {
     const dialogRef = this.dialog.open(ModalComponent, {
@@ -46,9 +48,46 @@ export class MaterialesComponent implements OnInit {
   }
   ngOnInit() {
     this.getlistMaterial();
+  }//acaaaa
+  OnInput(CantUsar: number) {
+    this.CantUsar = CantUsar;
+    }
+
+  usarMaterial(material: MaterialInterface, Cantusar: number): void {
+    console.log(material.cantidad);
+    console.log(this.CantUsar);
+     // tslint:disable-next-line: radix
+    if ( this.CantUsar > material.cantidad) {
+      alert('cantidad mayor');
+
+    } else {
+      material.cantidad =  material.cantidad - this.CantUsar;
+      if (material.cantidad === 0) {
+        this.hay = false;
+        material.estadoDisp = 'No Disponible';
+        this.authService.deleteMaterial(material.id).subscribe(materialw => {
+          console.log(materialw);
+          delete this.CantUsar;
+          this.ngOnInit();
+         } );
+      }
+
+      this.authService.updateMaterial(
+        material.id,
+        material.name,
+        material.cantidad,
+        material.especiality,
+        material.costo,
+        material.idDoctor,
+        material.estadoDisp
+      ).subscribe(materialw => {
+        console.log(materialw);
+        delete this.CantUsar;
+        this.ngOnInit();
+       } );
+
+    }
   }
-
-
   especialidad(): void {
     this.router.navigate(['especialidad']);
   }
@@ -58,7 +97,8 @@ export class MaterialesComponent implements OnInit {
 
 
   agregarmaterial(): void {
-    this.router.navigate(['registermaterial']);
+    console.log(this.CantUsar);
+    // this.router.navigate(['registermaterial']);
   }
 
   getlistMaterial() {
