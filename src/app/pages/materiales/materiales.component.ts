@@ -97,8 +97,7 @@ hay = true;
 
 
   agregarmaterial(): void {
-    console.log(this.CantUsar);
-    // this.router.navigate(['registermaterial']);
+   this.router.navigate(['registermaterial']);
   }
 
   getlistMaterial() {
