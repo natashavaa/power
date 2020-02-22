@@ -57,6 +57,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.getLogin();
+    this.mostrar = false;
     this.mostrarHF();
   }
 }
