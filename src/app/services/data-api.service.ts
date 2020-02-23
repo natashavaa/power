@@ -27,6 +27,7 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/material' ;
     return this.http.get(urlApi);
   }
+
    getAllIntrumentos() {
     const urlApi = 'http://localhost:3000/instrumento' ;
     return this.http.get(urlApi);

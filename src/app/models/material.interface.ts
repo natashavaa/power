@@ -7,7 +7,7 @@ export interface MaterialInterface {
   cantidad?: number;
   estadoDisp?: string;
   usados?: number;
-  ultimaFecha?: Date;
+  fechadeInsert?: Date;
 
 
 }

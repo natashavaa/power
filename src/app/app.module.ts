@@ -55,7 +55,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 
 // calendario
 
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
@@ -159,7 +159,7 @@ import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-no
       useFactory: adapterFactory
     })
   ],
-  providers: [ConsultaglobalComponent, DataApiService,
+  providers: [ConsultaglobalComponent, DataApiService, DatePipe,
     {
       provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com'
     }

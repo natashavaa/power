@@ -8,7 +8,7 @@ export interface InstrumentoInterface {
   estadoDisp?: string;
   enUso?: number;
   enLimpieza?: number;
-  ultimaFecha?: Date;
+  fechadeInsert?: Date;
 
 
 }

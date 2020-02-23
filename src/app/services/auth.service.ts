@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { MaterialInterface } from '../models/material.interface';
 import { InstrumentoInterface } from '../models/instrumento.interface';
+import { ReporteInterface } from '../models/reporte.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -331,7 +332,26 @@ updateUserPermiso(id: string, name: string, phone: string, password: string, dni
               },
               );
 }
-
+getAllMAterialPorFecha(fecha1: string , fecha2: string) {
+  const urlApi = 'http://localhost:3000/material/fecha' ;
+  return this.htttp.post<MaterialInterface>(urlApi,
+     {
+     // tslint:disable-next-line: object-literal-shorthand
+     fecha1: fecha1,
+      // tslint:disable-next-line: object-literal-shorthand
+      fecha2: fecha2
+    });
+}
+getAllInstrumentoPorFecha(fecha1: string , fecha2: string) {
+  const urlApi = 'http://localhost:3000/instrumento/fecha' ;
+  return this.htttp.post<InstrumentoInterface>(urlApi,
+     {
+     // tslint:disable-next-line: object-literal-shorthand
+     fecha1: fecha1,
+      // tslint:disable-next-line: object-literal-shorthand
+      fecha2: fecha2
+    });
+}
 
 loginuser(username: string, password: string): Observable<any> {
     const urlApi = 'http://localhost:3000/users/login';

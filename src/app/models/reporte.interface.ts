@@ -1,5 +1,5 @@
 export interface ReporteInterface {
-  date1?: Date;
-  date2?: Date;
-  site?: string;
+  fecha1?: Date;
+  fecha2?: Date;
+  tabla?: string;
 }
