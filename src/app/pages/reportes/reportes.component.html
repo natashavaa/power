@@ -96,31 +96,34 @@
             <br>
             <br>
             <br>
-            <div *ngIf="materialestrue" id="pdfTable" #pdfTable>
-                <table class="table table-hover">
-                    <thead bgcolor="">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nombre </th>
-                            <th scope="col">Especialidad</th>
-                            <th scope="col">Costo</th>
-                            <th scope="col">Catidad</th>
-                            <th scope="col">Usados</th>
-                            <th scope="col">Fecha Ingresado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let material of material">
-                            <td>{{material.id}}</td>
-                            <td>{{material.name}}</td>
-                            <td>{{material.especiality}}</td>
-                            <td>{{material.costo}}</td>
-                            <td>{{material.cantidad}}</td>
-                            <td>{{material.usados}}</td>
-                            <td>{{material.fechadeInsert |date:"short" }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div *ngIf="materialestrue">
+                <div id="pdfTable" #pdfTable>
+                    <table class="table table-hover">
+                        <thead bgcolor="">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre </th>
+                                <th scope="col">Especialidad</th>
+                                <th scope="col">Costo</th>
+                                <th scope="col">Catidad</th>
+                                <th scope="col">Usados</th>
+                                <th scope="col">Fecha Ingresado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let material of material">
+                                <td>{{material.id}}</td>
+                                <td>{{material.name}}</td>
+                                <td>{{material.especiality}}</td>
+                                <td>{{material.costo}}</td>
+                                <td>{{material.cantidad}}</td>
+                                <td>{{material.usados}}</td>
+                                <td>{{material.fechadeInsert |date:"short" }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <br>
                 <br>
                 <br>
@@ -153,6 +156,7 @@
                 <br>
                 <br>
                 <br>
+
                 <div class="row center2">
                     <button type="submit" class="btn btn-info">Imprimir</button>
                 </div>

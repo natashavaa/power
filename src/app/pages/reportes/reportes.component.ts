@@ -83,7 +83,7 @@ export class ReportesComponent implements OnInit {
 
     const pdfTable = this.pdfTable.nativeElement;
 
-    doc.fromHTML(pdfTable.innerHTML, 15, 15, {
+    doc.fromHTML(pdfTable.innerHTML, 5, 5, {
       elementHandlers: specialElementHandlers
     });
 
