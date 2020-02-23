@@ -1,5 +1,6 @@
 import { PacientesComponent } from './../pacientes/pacientes.component';
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-pantallanohome',
@@ -10,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class PantallanohomeComponent implements OnInit {
 
-  constructor( ) { }
+  constructor(private app: AppComponent ) { }
 
   ngOnInit() {
+    this.app.mostrar = true;
   }
 
 }

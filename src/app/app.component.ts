@@ -39,12 +39,7 @@ export class AppComponent {
   }
 
   mostrarHF(): void {
-      this.user2 = this.authService.getCurrentUser();
-      if (!this.user2) {
-        this.mostrar =  false;
-      } else {
-        this.mostrar =  true;
-      }
+
   }
 
   getLogin() {
@@ -56,6 +51,7 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+    this.mostrar = false;
     this.getLogin();
     this.mostrarHF();
   }

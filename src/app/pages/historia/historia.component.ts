@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PaatientInterface } from '../../models/patients.interface';
 import { AuthService } from '../../services/auth.service';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-historia',
@@ -14,7 +15,7 @@ export class HistoriaComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private auth: AuthService) { }
+  constructor(private router: Router, private auth: AuthService, private app: AppComponent) { }
 
   private patient: PaatientInterface;
 
@@ -51,6 +52,7 @@ export class HistoriaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.app.mostrar = true;
     this.patient = this.auth.getCurrentPatient();
   }
 

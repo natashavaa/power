@@ -4,6 +4,7 @@ import { DataApiService } from '../../services/data-api.service';
 import { InstrumentoInterface } from '../../models/instrumento.interface';
 import { AuthService } from '../../services/auth.service';
 import { MaterialInterface } from '../../models/material.interface';
+import { AppComponent } from '../../app.component';
 @Component({
   selector: 'app-especialidades',
   templateUrl: './especialidades.component.html',
@@ -11,7 +12,7 @@ import { MaterialInterface } from '../../models/material.interface';
 })
 export class EspecialidadesComponent implements OnInit {
 
-  constructor(private router: Router,  private authService: AuthService, private dataApi: DataApiService ) { }
+  constructor(private router: Router,  private authService: AuthService, private dataApi: DataApiService, private app: AppComponent ) { }
   private instrumento: InstrumentoInterface;
   private instrumentoRe: InstrumentoInterface = {
     id: '',
@@ -25,6 +26,7 @@ export class EspecialidadesComponent implements OnInit {
   };
   cargando: boolean = false;
   ngOnInit() {
+    this.app.mostrar = true;
     this.getlistInstrumentos();
   }
 

@@ -4,6 +4,7 @@ import { UserInterface } from '../../models/user.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../helpers/must-match.validator';
 import { Router } from '@angular/router';
+import { AppComponent } from '../../app.component';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -27,9 +28,10 @@ private user: UserInterface = {
 
 
 };
-constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService) { }
+constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService, private app: AppComponent) { }
 
 ngOnInit() {
+    this.app.mostrar = true;
     this.user = this.authService.getCurrentUser();
 }
 

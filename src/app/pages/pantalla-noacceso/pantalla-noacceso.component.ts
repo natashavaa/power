@@ -13,11 +13,10 @@ export class PantallaNOaccesoComponent implements OnInit {
   constructor(private auth: AuthService, private app: AppComponent,private router: Router) { }
 
   ngOnInit() {
+    this.app.mostrar = false;
   }
   logoutUser(): void {
-    this.app.mostrar = false;
     this.auth.logoutUser();
     this.router.navigate(['login']);
-    
  }
 }

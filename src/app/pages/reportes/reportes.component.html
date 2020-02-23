@@ -49,46 +49,49 @@
             </mat-card-title>
 
             <label for="" class="lolo">Rango de Fechas</label>
-            <div class="row">
-                <div class="col-4">
-                    <br>
-                    <form action="">
+            <form #getDateRange="ngForm" (ngSubmit)="getDateRange(getDateRange)">
+                <div class="row">
+
+
+
+                    <div class="col-4">
+                        <br>
+
                         <div class="form-group row">
                             <label for="" class="col-2 col-form-label"></label>
-                            <input matInput [matDatepicker]="picker" placeholder="Elije una fecha"
-                                class="form-control col-6">
+                            <input matInput [matDatepicker]="picker" placeholder="Elije una fecha" class="form-control col-6">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                         </div>
-                    </form>
-                </div>
-                <div class="col-4">
-                    <br>
-                    <form action="">
+
+                    </div>
+                    <div class="col-4">
+                        <br>
+
                         <div class="form-group row">
                             <label for="" class="col-2 col-form-label"></label>
-                            <input matInput [matDatepicker]="picker1" placeholder="Elije una fecha"
-                                class="form-control col-6">
+                            <input matInput [matDatepicker]="picker1" placeholder="Elije una fecha" class="form-control col-6">
                             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                             <mat-datepicker #picker1></mat-datepicker>
                         </div>
-                    </form>
-                </div>
-                <div class="col-4">
-                    <br>
-                    <form action="">
+
+                    </div>
+                    <div class="col-4">
+                        <br>
+
                         <div class="form-group row">
                             <label for="" class="col-4 col-form-label">Inventario</label>
                             <select class="form-control col-6">
-                                <option>Materiales</option>
-                                <option>Insumos</option>
-                            </select>
+                              <option>Materiales</option>
+                              <option>Insumos</option>
+                          </select>
                         </div>
-                    </form>
+
+                    </div>
                 </div>
-            </div>
-            <br>
-            <button mat-raised-button class="uno">GENERAR</button>
+                <br>
+                <button type="submit" class="btn btn-info">Generar</button>
+            </form>
             <br>
             <br>
             <br>
