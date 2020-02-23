@@ -40,7 +40,7 @@ export class AppComponent {
 
   mostrarHF(): void {
       this.user2 = this.authService.getCurrentUser();
-      if (!this.user2.name) {
+      if (!this.user2) {
         this.mostrar =  false;
       } else {
         this.mostrar =  true;

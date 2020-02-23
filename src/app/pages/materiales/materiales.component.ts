@@ -49,6 +49,7 @@ diferencia: number;
         });
   }
   ngOnInit() {
+    this.app.mostrar = true;
     this.getlistMaterial();
   }
   OnInput(CantUsar: number) {
