@@ -51,22 +51,31 @@
                     <button mat-raised-button (click)="agregarinsumo()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/dental-mirror.png">    Agregar Insumos</button>
                 </div>
             </form>
-            <div class="row">
-                <div class="col-6">
-                    <br>
-                    <form action="">
+            <form #gelistIn="ngForm" (ngSubmit)="getInsumosSpeciality(gelistIn)">
+                <div class="row ">
+                    <div class="col-6">
+                        <br>
+
                         <div class="form-group row">
                             <br>
                             <br>
                             <label for="" class="col-6 col-form-label">Tipo de Especialidad:</label>
-                            <select class="form-control col-6">
-                                <option>Odontologia</option>
-                                <option>Ortodoncia</option>
-                            </select>
+                            <select class="form-control col-6" #Especialidad="ngModel" name="speciality" id="speciality" [(ngModel)]="speciality">
+                              <option>Odontologia</option>
+                              <option>Ortodoncia</option>
+                              <option>Todas</option>
+                          </select>
+
                         </div>
-                    </form>
+
+                    </div>
+                    <div>
+                        <button class="sinp" type="submit" class="btn btn-info">
+                  Buscar
+                </button>
+                    </div>
                 </div>
-            </div>
+            </form>
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista de Insumos Odontologicos</label>
