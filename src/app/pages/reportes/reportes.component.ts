@@ -9,6 +9,10 @@ import { MaterialInterface } from '../../models/material.interface';
 import { InstrumentoInterface } from '../../models/instrumento.interface';
 import * as jsPDF from 'jspdf';
 import * as html2canvas from 'html2canvas';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
   selector: 'app-reportes',
@@ -47,6 +51,7 @@ export class ReportesComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.app.mostrar = true;
     this.materialestrue = false;
     this.insumostrue = false;
   }
@@ -87,6 +92,41 @@ export class ReportesComponent implements OnInit {
       elementHandlers: specialElementHandlers
     });
 
-    doc.save('tableToPdf.pdf');
+    doc.save('Reportes.pdf');
+  }
+
+  generatePdf() {
+    const pdf = new PdfMakeWrapper();
+    pdf.styles({
+      style1: {
+          bold: true
+      },
+      style2: {
+          italics: true
+      }
+  });
+    pdf.pageSize('A4');
+    pdf.pageMargins([ 40, 60 ]);
+    pdf.header('Consultorio Dental MERIDA');
+    pdf.rawContent('Simple content');
+    pdf.footer('Numero de Contacto : 0123123');
+    pdf.create().open();
+   }
+   imprimirPdfMateriales() {
+     const pdf = new  jsPDF('p', 'mm', 'A4');
+     pdf.setFont('helvetica');
+     pdf.setFontType('bold');
+     pdf.setFontSize(4);
+     pdf.fromHTML(document.getElementById('pdfTable'), 1 , 1);
+     pdf.save('Reportes-Materiales');
+   }
+
+   imprimirPdfInsumos() {
+    const pdf = new  jsPDF('p', 'mm', 'A4');
+    pdf.setFont('helvetica');
+    pdf.setFontType('bold');
+    pdf.setFontSize(4);
+    pdf.fromHTML(document.getElementById('pdfTableInsumos'), 1 , 1);
+    pdf.save('Reportes-Insumos');
   }
 }

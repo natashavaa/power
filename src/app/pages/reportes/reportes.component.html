@@ -99,20 +99,18 @@
             <div *ngIf="materialestrue">
                 <div id="pdfTable" #pdfTable>
                     <table class="table table-hover">
-                        <thead bgcolor="">
+                        <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Nombre </th>
                                 <th scope="col">Especialidad</th>
                                 <th scope="col">Costo</th>
                                 <th scope="col">Catidad</th>
                                 <th scope="col">Usados</th>
-                                <th scope="col">Fecha Ingresado</th>
+                                <th scope="col">Ingresado</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let material of material">
-                                <td>{{material.id}}</td>
                                 <td>{{material.name}}</td>
                                 <td>{{material.especiality}}</td>
                                 <td>{{material.costo}}</td>
@@ -128,37 +126,40 @@
                 <br>
                 <br>
                 <div class="row center2">
-                    <button (click)="downloadAsPDF()" class="btn btn-info">Imprimir</button>
+                    <button (click)="imprimirPdfMateriales()" class="btn btn-info">Imprimir</button>
                 </div>
             </div>
 
             <div *ngIf="insumostrue">
-                <table class="table table-hover">
-                    <thead bgcolor="">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nombre </th>
-                            <th scope="col">Especialidad</th>
-                            <th scope="col">Catidad</th>
-                            <th scope="col">Fecha Ingresado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let insumo of insumo">
-                            <td>{{insumo.id}}</td>
-                            <td>{{insumo.name}}</td>
-                            <td>{{insumo.especiality}}</td>
-                            <td>{{insumo.cantidad}}</td>
-                            <td>{{insumo.fechadeInsert |date:"short" }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br>
-                <br>
-                <br>
+                <div id="pdfTableInsumos">
+                    <table class="table table-hover">
+                        <thead bgcolor="">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre </th>
+                                <th scope="col">Especialidad</th>
+                                <th scope="col">Catidad</th>
+                                <th scope="col">Ingresado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let insumo of insumo">
+                                <td>{{insumo.id}}</td>
+                                <td>{{insumo.name}}</td>
+                                <td>{{insumo.especiality}}</td>
+                                <td>{{insumo.cantidad}}</td>
+                                <td>{{insumo.fechadeInsert |date:"short" }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+
 
                 <div class="row center2">
-                    <button type="submit" class="btn btn-info">Imprimir</button>
+                    <button (click)="imprimirPdfInsumos()" class="btn btn-info">Imprimir</button>
                 </div>
             </div>
 

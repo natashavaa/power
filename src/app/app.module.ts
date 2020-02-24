@@ -82,7 +82,11 @@ import { RegistromaterialComponent } from './pages/registromaterial/registromate
 import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.component';
 import { ModalComponent } from './pages/modal/modal.component';
 import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import pdfFonts from 'pdfmake/build/vfs_fonts'; // fonts provided for pdfmake
 
+// Set the fonts to use
+PdfMakeWrapper.setFonts(pdfFonts);
 
 @NgModule({
   declarations: [
