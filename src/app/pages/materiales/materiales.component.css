@@ -200,6 +200,12 @@
     width: 30%;
 }
 
+.snip {
+    padding: 10px;
+    margin: 10px;
+    background-color: darkred;
+}
+
 .caja input {
     background-color: rgb(207, 207, 207);
     padding: 10px;

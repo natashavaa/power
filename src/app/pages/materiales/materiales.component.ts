@@ -24,6 +24,10 @@ export class MaterialesComponent implements OnInit {
 CantUsar: number;
 hay = true;
 diferencia: number;
+speciality: string;
+todastrue: boolean;
+ortodonciatrue: boolean;
+odontologiatrue: boolean;
   constructor(private router: Router ,
               private dataApi: DataApiService,
               private authService: AuthService,
@@ -50,7 +54,9 @@ diferencia: number;
   }
   ngOnInit() {
     this.app.mostrar = true;
-    this.getlistMaterial();
+    this.todastrue = true;
+    this.odontologiatrue = false;
+    this.ortodonciatrue = false;
   }
   OnInput(CantUsar: number) {
     this.CantUsar = CantUsar;
@@ -104,17 +110,32 @@ diferencia: number;
   materiales(): void {
     this.router.navigate(['materiales']);
   }
-
-
   agregarmaterial(): void {
    this.router.navigate(['registermaterial']);
   }
 
-  getlistMaterial() {
+  getlistAllMaterial() {
     this.dataApi.getAllMAterial().subscribe((materials: MaterialInterface) => ( this.material = materials));
-
+  }
+  getlistMaterialOdontologia() {
+    this.dataApi.getAllMAterialOdontologia().subscribe((materials: MaterialInterface) => ( this.material = materials));
+  }
+  getlistMaterialOrtodoncia() {
+    this.dataApi.getAllMAterialOrtodoncia().subscribe((materials: MaterialInterface) => ( this.material = materials));
   }
 
+  getMAterialSpeciality(): void {
+    console.log(this.speciality);
+    if ( Object.is(this.speciality, 'Todas')) {
+      this.getlistAllMaterial();
+    } else if ( Object.is(this.speciality, 'Odontologia')) {
+      this.getlistMaterialOdontologia();
+    } else if (Object.is(this.speciality, 'Ortodoncia')) {
+      this.getlistMaterialOrtodoncia();
+
+    }
+    this.ngOnInit();
+  }
 
 }
 

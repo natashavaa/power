@@ -49,22 +49,32 @@
                     <button mat-raised-button (click)="agregarmaterial()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/toothpaste.png">     Agregar Material</button>
                 </div>
             </form>
-            <div class="row">
-                <div class="col-6">
-                    <br>
-                    <form action="">
+            <form #gelist="ngForm" (ngSubmit)="getMAterialSpeciality(gelist)">
+                <div class="row ">
+                    <div class="col-6">
+                        <br>
+
                         <div class="form-group row">
                             <br>
                             <br>
                             <label for="" class="col-6 col-form-label">Tipo de Especialidad:</label>
-                            <select class="form-control col-6">
+                            <select class="form-control col-6" #Especialidad="ngModel" name="speciality" id="speciality" [(ngModel)]="speciality">
                                 <option>Odontologia</option>
                                 <option>Ortodoncia</option>
+                                <option>Todas</option>
                             </select>
+
                         </div>
-                    </form>
+
+                    </div>
+                    <div>
+                        <button class="sinp" type="submit" class="btn btn-success">
+                    Buscar
+                  </button>
+                    </div>
                 </div>
-            </div>
+            </form>
+
 
             <div class="row mt-5">
                 <div class="col">
@@ -127,6 +137,7 @@
 
                         </tbody>
                     </table>
+
                 </div>
             </div>
 
