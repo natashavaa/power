@@ -14,6 +14,7 @@ export class EspecialidadesComponent implements OnInit {
 
   constructor(private router: Router,  private authService: AuthService, private dataApi: DataApiService, private app: AppComponent ) { }
   private instrumento: InstrumentoInterface;
+  speciality: string;
   private instrumentoRe: InstrumentoInterface = {
     id: '',
     name: '',
@@ -27,7 +28,6 @@ export class EspecialidadesComponent implements OnInit {
   cargando: boolean = false;
   ngOnInit() {
     this.app.mostrar = true;
-    this.getlistInstrumentos();
   }
 
   especialidad(): void {
@@ -40,11 +40,16 @@ export class EspecialidadesComponent implements OnInit {
   agregarinsumo(): void {
     this.router.navigate(['registerinsumo']);
   }
-  getlistInstrumentos() {
+  getlistAllInstrumentos() {
     this.dataApi.getAllIntrumentos().subscribe((Instrumentos: InstrumentoInterface) => ( this.instrumento = Instrumentos));
-    console.log(this.instrumento);
-    console.log('lista Instrumento');
   }
+  getlistInstrumentosOdontologia() {
+    this.dataApi.getAllIntrumentosOdontologia().subscribe((Instrumentos: InstrumentoInterface) => ( this.instrumento = Instrumentos));
+  }
+  getlistInstrumentosOrtodoncia() {
+    this.dataApi.getAllIntrumentosOrtodoncia().subscribe((Instrumentos: InstrumentoInterface) => ( this.instrumento = Instrumentos));
+  }
+
   usarInsumo(instrumento: InstrumentoInterface): void {
     if ( instrumento.cantidad > 0) {
       instrumento.cantidad = instrumento.cantidad - 1;
@@ -121,6 +126,17 @@ export class EspecialidadesComponent implements OnInit {
       console.log('Instrumento eliminado');
       this.ngOnInit();
      } );
+  }
+  getInsumosSpeciality(): void {
+    if ( Object.is(this.speciality, 'Todas')) {
+      this.getlistAllInstrumentos();
+    } else if ( Object.is(this.speciality, 'Odontologia')) {
+      this.getlistInstrumentosOdontologia();
+    } else if (Object.is(this.speciality, 'Ortodoncia')) {
+      this.getlistInstrumentosOrtodoncia();
+
+    }
+    this.ngOnInit();
   }
 
 }

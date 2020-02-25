@@ -40,4 +40,12 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/instrumento' ;
     return this.http.get(urlApi);
   }
+  getAllIntrumentosOrtodoncia() {
+    const urlApi = 'http://localhost:3000/instrumento/ortodoncia' ;
+    return this.http.get(urlApi);
+  }
+  getAllIntrumentosOdontologia() {
+    const urlApi = 'http://localhost:3000/instrumento/odontologia' ;
+    return this.http.get(urlApi);
+  }
 }

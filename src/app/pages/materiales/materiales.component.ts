@@ -65,6 +65,8 @@ odontologiatrue: boolean;
         this.authService.deleteMaterial(material.id).subscribe(data => {
 
           delete this.CantUsar;
+          this.speciality = 'Todas';
+          this.getMAterialSpeciality();
           this.ngOnInit();
          } );
       }
