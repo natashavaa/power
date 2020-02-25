@@ -122,8 +122,8 @@ export class EspecialidadesComponent implements OnInit {
   }
   eliminarIsumos(instrumento: InstrumentoInterface): void {
     this.authService.deleteInstrumento(instrumento.id).subscribe(data => {
-      console.log(data);
-      console.log('Instrumento eliminado');
+      this.speciality = 'Todas';
+      this.getInsumosSpeciality();
       this.ngOnInit();
      } );
   }
