@@ -46,31 +46,30 @@
             <br>
             <form align="right">
                 <div>
-                    <button mat-raised-button (click)="agregarmaterial()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/toothpaste.png">     Agregar Material</button>
+                    <button mat-raised-button (click)="agregarmaterial()" class="uno"><img
+                            src="https://img.icons8.com/dusk/50/000000/toothpaste.png"> Agregar Material</button>
                 </div>
             </form>
             <form #gelist="ngForm" (ngSubmit)="getMAterialSpeciality(gelist)">
                 <div class="row ">
                     <div class="col-6">
                         <br>
-
                         <div class="form-group row">
                             <br>
                             <br>
                             <label for="" class="col-6 col-form-label">Tipo de Especialidad:</label>
-                            <select class="form-control col-6" #Especialidad="ngModel" name="speciality" id="speciality" [(ngModel)]="speciality">
+                            <select class="form-control col-4" #Especialidad="ngModel" name="speciality" id="speciality"
+                                [(ngModel)]="speciality">
                                 <option>Odontologia</option>
                                 <option>Ortodoncia</option>
                                 <option>Todas</option>
                             </select>
-
+                            <div>
+                                <button class="sinp" type="submit" class="btn btn-success">
+                                    Buscar
+                                </button>
+                            </div>
                         </div>
-
-                    </div>
-                    <div>
-                        <button class="sinp" type="submit" class="btn btn-success">
-                    Buscar
-                  </button>
                     </div>
                 </div>
             </form>
@@ -114,23 +113,25 @@
                                 <td>{{material.cantidad}}</td>
                                 <td>
                                     <button mat-raised-button class="btn btn-info">
-                                    <span>
-                                     {{material.usados}}
-                                    </span>
-                                  </button>
-                                </td>
-                                <td>
-                                    <button mat-raised-button class="btn btn-primary">
-                                      <span>
-                                       {{material.estadoDisp}}
-                                      </span>
+                                        <span>
+                                            {{material.usados}}
+                                        </span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button mat-raised-button (click)="usarMaterial(material)" class="btn btn-success">Usar</button>
+                                    <button mat-raised-button class="btn btn-primary">
+                                        <span>
+                                            {{material.estadoDisp}}
+                                        </span>
+                                    </button>
                                 </td>
                                 <td>
-                                    <button mat-raised-button (click)="eliminarMaterial(material)" class="btn btn-danger">Eliminar</button>
+                                    <button mat-raised-button (click)="usarMaterial(material)"
+                                        class="btn btn-success">Usar</button>
+                                </td>
+                                <td>
+                                    <button mat-raised-button (click)="eliminarMaterial(material)"
+                                        class="btn btn-danger">Eliminar</button>
                                 </td>
 
                             </tr>
