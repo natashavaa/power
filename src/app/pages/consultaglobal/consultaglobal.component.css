@@ -17,6 +17,13 @@
     width: 100%;
 }
 
+button .snip {
+    padding: 10px;
+    margin: 12px;
+    background-color: darkred;
+}
+
+
 .per input {
     background-color: #fff;
     padding: 10px;
