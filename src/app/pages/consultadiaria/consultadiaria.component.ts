@@ -1,47 +1,38 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  ViewChild,
-  TemplateRef
+  ChangeDetectorRef,
+  Component,
+  Injectable,
+  ViewEncapsulation
 } from '@angular/core';
+import { CalendarEvent, CalendarEventTitleFormatter } from 'angular-calendar';
+import { WeekViewHourSegment } from 'calendar-utils';
+import { fromEvent } from 'rxjs';
+import { finalize, takeUntil } from 'rxjs/operators';
+import { addDays, addMinutes, endOfWeek } from 'date-fns';
 
-import {
-  startOfDay,
-  endOfDay,
-  subDays,
-  addDays,
-  endOfMonth,
-  isSameDay,
-  isSameMonth,
-  addHours
-} from 'date-fns';
+function floorToNearest(amount: number, precision: number) {
+  return Math.floor(amount / precision) * precision;
+}
 
-import { Subject } from 'rxjs';
+function ceilToNearest(amount: number, precision: number) {
+  return Math.ceil(amount / precision) * precision;
+}
 
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
-import {
-  CalendarEvent,
-  CalendarEventAction,
-  CalendarEventTimesChangedEvent,
-  CalendarView
-} from 'angular-calendar';
-import { Router } from '@angular/router';
-
-const colors: any = {
-  red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
-  },
-  blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF'
-  },
-  yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
+@Injectable()
+export class CustomEventTitleFormatter extends CalendarEventTitleFormatter {
+  weekTooltip(event: CalendarEvent, title: string) {
+    if (!event.meta.tmpEvent) {
+      return super.weekTooltip(event, title);
+    }
   }
-};
+
+  dayTooltip(event: CalendarEvent, title: string) {
+    if (!event.meta.tmpEvent) {
+      return super.dayTooltip(event, title);
+    }
+  }
+}
 
 @Component({
   selector: 'app-consultadiaria',
@@ -50,153 +41,92 @@ const colors: any = {
   styleUrls: ['./consultadiaria.component.css']
 })
 
+
+
+// tslint:disable-next-line max-classes-per-file
+@Component({
+  selector: 'app-consultadiaria',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './consultadiaria.component.html',
+  providers: [
+    {
+      provide: CalendarEventTitleFormatter,
+      useClass: CustomEventTitleFormatter
+    }
+  ],
+  styles: [
+    `
+      .disable-hover {
+        pointer-events: none;
+      }
+    `
+  ],
+  encapsulation: ViewEncapsulation.None
+})
+
 export class ConsultadiariaComponent {
 
-  @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
+  viewDate = new Date();
 
-  view: CalendarView = CalendarView.Month;
+  events: CalendarEvent[] = [];
 
-  CalendarView = CalendarView;
+  dragToCreateActive = false;
 
-  viewDate: Date = new Date();
+  weekStartsOn: 0 = 0;
 
-  modalData: {
-    action: string;
-    event: CalendarEvent;
-  };
+  constructor(private cdr: ChangeDetectorRef) {}
 
-  actions: CalendarEventAction[] = [
-    {
-      label: '<i class="fa fa-fw fa-pencil"></i>',
-      a11yLabel: 'Edit',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.handleEvent('Edited', event);
+  startDragToCreate(
+    segment: WeekViewHourSegment,
+    mouseDownEvent: MouseEvent,
+    segmentElement: HTMLElement
+  ) {
+    const dragToSelectEvent: CalendarEvent = {
+      id: this.events.length,
+      title: 'New event',
+      start: segment.date,
+      meta: {
+        tmpEvent: true
       }
-    },
-    {
-      label: '<i class="fa fa-fw fa-times"></i>',
-      a11yLabel: 'Delete',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.events = this.events.filter(iEvent => iEvent !== event);
-        this.handleEvent('Deleted', event);
-      }
-    }
-  ];
-
-  refresh: Subject<any> = new Subject();
-
-  events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: colors.red,
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
-      actions: this.actions
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: colors.blue,
-      allDay: true
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: addHours(new Date(), 2),
-      title: 'A draggable and resizable event',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    }
-  ];
-
-  activeDayIsOpen: boolean = true;
-
-  constructor(private modal: NgbModal , private router: Router) { }
-
-  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-    if (isSameMonth(date, this.viewDate)) {
-      if (
-        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-        events.length === 0
-      ) {
-        this.activeDayIsOpen = false;
-      } else {
-        this.activeDayIsOpen = true;
-      }
-      this.viewDate = date;
-    }
-  }
-
-  eventTimesChanged({
-    event,
-    newStart,
-    newEnd
-  }: CalendarEventTimesChangedEvent): void {
-    this.events = this.events.map(iEvent => {
-      if (iEvent === event) {
-        return {
-          ...event,
-          start: newStart,
-          end: newEnd
-        };
-      }
-      return iEvent;
+    };
+    this.events = [...this.events, dragToSelectEvent];
+    const segmentPosition = segmentElement.getBoundingClientRect();
+    this.dragToCreateActive = true;
+    const endOfView = endOfWeek(this.viewDate, {
+      weekStartsOn: this.weekStartsOn
     });
-    this.handleEvent('Dropped or resized', event);
-  }
 
-  handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
-  }
+    fromEvent(document, 'mousemove')
+      .pipe(
+        finalize(() => {
+          delete dragToSelectEvent.meta.tmpEvent;
+          this.dragToCreateActive = false;
+          this.refresh();
+        }),
+        takeUntil(fromEvent(document, 'mouseup'))
+      )
+      .subscribe((mouseMoveEvent: MouseEvent) => {
+        const minutesDiff = ceilToNearest(
+          mouseMoveEvent.clientY - segmentPosition.top,
+          30
+        );
 
-  addEvent(): void {
-    this.events = [
-      ...this.events,
-      {
-        title: 'New event',
-        start: startOfDay(new Date()),
-        end: endOfDay(new Date()),
-        color: colors.red,
-        draggable: true,
-        resizable: {
-          beforeStart: true,
-          afterEnd: true
+        const daysDiff =
+          floorToNearest(
+            mouseMoveEvent.clientX - segmentPosition.left,
+            segmentPosition.width
+          ) / segmentPosition.width;
+
+        const newEnd = addDays(addMinutes(segment.date, minutesDiff), daysDiff);
+        if (newEnd > segment.date && newEnd < endOfView) {
+          dragToSelectEvent.end = newEnd;
         }
-      }
-    ];
+        this.refresh();
+      });
   }
 
-  deleteEvent(eventToDelete: CalendarEvent) {
-    this.events = this.events.filter(event => event !== eventToDelete);
-  }
-
-  setView(view: CalendarView) {
-    this.view = view;
-  }
-
-  closeOpenMonthViewDay() {
-    this.activeDayIsOpen = false;
-  }
-
-  global(): void {
-    this.router.navigate(["global"]);
+  private refresh() {
+    this.events = [...this.events];
+    this.cdr.detectChanges();
   }
 }

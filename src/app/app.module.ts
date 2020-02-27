@@ -8,6 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { DemoUtilsModule } from '../demo-utils/module';
+
+
+
+
 
 // Rutas
 import { AppRoutingModule } from './app-routing.module';
@@ -84,6 +89,7 @@ import { ModalComponent } from './pages/modal/modal.component';
 import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
 import { PdfMakeWrapper } from 'pdfmake-wrapper';
 import pdfFonts from 'pdfmake/build/vfs_fonts'; // fonts provided for pdfmake
+import { DemoUtilsModule } from '../demo-utils/module';
 
 // Set the fonts to use
 PdfMakeWrapper.setFonts(pdfFonts);
@@ -161,9 +167,10 @@ PdfMakeWrapper.setFonts(pdfFonts);
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    })
+    }),
+    DemoUtilsModule
   ],
-  providers: [ConsultaglobalComponent, DataApiService, DatePipe,
+  providers: [ConsultadiariaComponent, ConsultaglobalComponent, DataApiService, DatePipe,
     {
       provide: StorageBucket, useValue: 'gs://angular-html-4afb9.appspot.com'
     }
