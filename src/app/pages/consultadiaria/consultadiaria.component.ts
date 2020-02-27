@@ -10,6 +10,7 @@ import { WeekViewHourSegment } from 'calendar-utils';
 import { fromEvent } from 'rxjs';
 import { finalize, takeUntil } from 'rxjs/operators';
 import { addDays, addMinutes, endOfWeek } from 'date-fns';
+import { Router } from '@angular/router';
 
 function floorToNearest(amount: number, precision: number) {
   return Math.floor(amount / precision) * precision;
@@ -33,15 +34,6 @@ export class CustomEventTitleFormatter extends CalendarEventTitleFormatter {
     }
   }
 }
-
-@Component({
-  selector: 'app-consultadiaria',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './consultadiaria.component.html',
-  styleUrls: ['./consultadiaria.component.css']
-})
-
-
 
 // tslint:disable-next-line max-classes-per-file
 @Component({
@@ -74,7 +66,7 @@ export class ConsultadiariaComponent {
 
   weekStartsOn: 0 = 0;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private router: Router) {}
 
   startDragToCreate(
     segment: WeekViewHourSegment,
@@ -129,4 +121,9 @@ export class ConsultadiariaComponent {
     this.events = [...this.events];
     this.cdr.detectChanges();
   }
+
+  global(): void {
+    this.router.navigate(['global']);
+  }
+
 }
