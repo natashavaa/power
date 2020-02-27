@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { DemoUtilsModule } from '../demo-utils/module';
 
 
 
@@ -89,7 +88,7 @@ import { ModalComponent } from './pages/modal/modal.component';
 import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
 import { PdfMakeWrapper } from 'pdfmake-wrapper';
 import pdfFonts from 'pdfmake/build/vfs_fonts'; // fonts provided for pdfmake
-import { DemoUtilsModule } from '../demo-utils/module';
+//import { DemoUtilsModule } from '../demo-utils/module';
 
 // Set the fonts to use
 PdfMakeWrapper.setFonts(pdfFonts);
@@ -168,7 +167,7 @@ PdfMakeWrapper.setFonts(pdfFonts);
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
-    DemoUtilsModule
+   // DemoUtilsModule
   ],
   providers: [ConsultadiariaComponent, ConsultaglobalComponent, DataApiService, DatePipe,
     {
