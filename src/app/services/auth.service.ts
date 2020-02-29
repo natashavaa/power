@@ -22,8 +22,8 @@ export class AuthService {
   });
 
 registerUser(name: string, phone: string, password: string, dni: string,
-               age: number, sex: string, email: string,
-               userType: string, username: string) {
+             age: number, sex: string, email: string,
+             userType: string, username: string) {
     const urlApi = 'http://localhost:3000/users';
     return this.htttp
       .post<UserInterface>(

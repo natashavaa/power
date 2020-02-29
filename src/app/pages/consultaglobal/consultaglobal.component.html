@@ -9,18 +9,28 @@
         </mat-panel-description>
         <br>
 
-        <div class="row per">
+        <div class="row per" *ngIf="!MostrarForm">
             <div class="col-6">
                 <br>
+                <form #SearchPatient="ngForm" (ngSubmit)="onSearch(SearchPatient)">
+                    <div class="form-group row">
+                        <label for="" class="col-8 col-form-label">Cedula</label>
+                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patient.dni' required minlength="4" maxlength="50" class="form-control col-2">
 
+                        <div>
+                            <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="row per" *ngIf="MostrarForm">
+            <div class="col-6">
                 <div class="form-group row">
                     <label for="" class="col-8 col-form-label">Cedula</label>
-                    <input type="text" name="dni" class="form-control" placeholder="" required minlength="4"
-                        maxlength="50" class="form-control col-2">
-
-                    <div>
-                        <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
-                    </div>
+                    <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patientf.dni' required minlength="4" maxlength="50" class="form-control col-2">
                 </div>
 
                 <div class="form-group row">
@@ -41,8 +51,7 @@
 
                 <div class="form-group row">
                     <label for="" class="col-6 col-form-label">Nombre Completo</label>
-                    <input type="text" name="dni" class="form-control" placeholder="" required minlength="4"
-                        maxlength="50" class="form-control col-5">
+                    <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='patientf.name' required minlength="4" maxlength="50" class="form-control col-5">
                 </div>
                 <div class="form-group row">
                     <label for="" class="col-6 col-form-label">Fecha</label>

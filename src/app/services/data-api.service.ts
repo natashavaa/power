@@ -23,6 +23,10 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/patient/$id' ;
     return (this.patient = this.http.get(urlApi));
    }
+   getPatientByDni(dni: string) {
+    const urlApi = `http://localhost:3000/patient/${dni}` ;
+    return (this.patient = this.http.get(urlApi));
+   }
    getAllMAterial() {
     const urlApi = 'http://localhost:3000/material' ;
     return this.http.get(urlApi);

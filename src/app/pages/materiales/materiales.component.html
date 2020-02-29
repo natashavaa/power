@@ -1,3 +1,11 @@
+<form align="left">
+    <div>
+        <span class="claDoc ">{{usuarioA}} </span>
+
+    </div>
+    <br>
+    <span class="claDocEs ">{{especialidad}} </span>
+</form>
 <div class="au-xs-ta-center au-lg-ta-center">
     <ul class="rk-menu rk-categories-menu">
         <img src="https://img.icons8.com/dusk/50/000000/dental-filling.png">
@@ -58,8 +66,7 @@
                             <br>
                             <br>
                             <label for="" class="col-6 col-form-label">Tipo de Especialidad:</label>
-                            <select class="form-control col-4" #Especialidad="ngModel" name="speciality" id="speciality"
-                                [(ngModel)]="speciality">
+                            <select class="form-control col-4" #Especialidad="ngModel" name="speciality" id="speciality" [(ngModel)]="speciality">
                                 <option>Odontologia</option>
                                 <option>Ortodoncia</option>
                                 <option>Todas</option>
@@ -125,12 +132,10 @@
                                     </button>
                                 </td>
                                 <td>
-                                    <button mat-raised-button (click)="usarMaterial(material)"
-                                        class="btn btn-success">Usar</button>
+                                    <button mat-raised-button (click)="usarMaterial(material)" class="btn btn-success">Usar</button>
                                 </td>
                                 <td>
-                                    <button mat-raised-button (click)="eliminarMaterial(material)"
-                                        class="btn btn-danger">Eliminar</button>
+                                    <button mat-raised-button (click)="eliminarMaterial(material)" class="btn btn-danger">Eliminar</button>
                                 </td>
 
                             </tr>

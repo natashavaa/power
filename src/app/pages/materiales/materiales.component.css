@@ -223,6 +223,16 @@
     margin: -5px;
 }
 
+.claDoc {
+    font-size: 40px;
+    font: oblique bold 160% cursive;
+}
+
+.claDocEs {
+    font-size: 40px;
+    font: oblique bold 140% cursive;
+}
+
 .tres img {
     margin: 0 12px;
     background-color: transparent;

@@ -6,6 +6,7 @@ import { AuthService } from '../../services/auth.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { ModalComponent } from '../modal/modal.component';
 import { AppComponent } from '../../app.component';
+import { UserInterface } from '../../models/user.interface';
 
 
 export interface DialogData {
@@ -40,6 +41,20 @@ odontologiatrue: boolean;
     costo: '',
     cantidad: 0,
   };
+  public user: UserInterface = {
+    id: '',
+    name: '',
+    dni: '',
+    age: 0,
+    sex: '',
+    mail: '',
+    password: '',
+    userType: '',
+    username: '',
+    phone: ''
+  };
+     usuarioA: string;
+     especialidad: string;
   openDialog(material: MaterialInterface): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '250px',
@@ -47,16 +62,30 @@ odontologiatrue: boolean;
       data: {material}
     });
 
+
     dialogRef.afterClosed().subscribe(result => {
       this.material = result;
 
         });
+  }
+  doctor(): string {
+    this.user = this.authService.getCurrentUser();
+    if (Object.is(this.user.username, 'admin')) {
+        this.usuarioA = 'Administrador';
+        return this.usuarioA;
+    } else {
+      this.usuarioA = 'Doctor : ' + this.user.name;
+      this.especialidad = 'Especialidad : ' +  this.user.userType;
+      return  this.usuarioA;
+
+    }
   }
   ngOnInit() {
     this.app.mostrar = true;
     this.todastrue = true;
     this.odontologiatrue = false;
     this.ortodonciatrue = false;
+    this.doctor();
   }
   OnInput(CantUsar: number) {
     this.CantUsar = CantUsar;
@@ -106,7 +135,7 @@ odontologiatrue: boolean;
         alert('Material insuficiente');
     }
   }
-  especialidad(): void {
+  especialidadC(): void {
     this.router.navigate(['especialidad']);
   }
   materiales(): void {

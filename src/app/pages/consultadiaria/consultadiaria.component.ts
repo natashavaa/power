@@ -27,6 +27,10 @@ import {
   CalendarView
 } from 'angular-calendar';
 import { Router } from '@angular/router';
+import { DataApiService } from '../../services/data-api.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { AppComponent } from '../../app.component';
+import { UserInterface } from '../../models/user.interface';
 
 const colors: any = {
   red: {
@@ -128,7 +132,29 @@ export class ConsultadiariaComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal , private router: Router) { }
+  constructor(private router: Router,
+              private dataApi: DataApiService,
+              private auth: AuthService,
+              private app: AppComponent) {
+
+}
+public user: UserInterface = {
+  id: '',
+  name: '',
+  dni: '',
+  age: 0,
+  sex: '',
+  mail: '',
+  password: '',
+  userType: '',
+  username: '',
+  phone: ''
+
+
+};
+
+   usuarioA: string;
+   especialidad: string;
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -143,7 +169,10 @@ export class ConsultadiariaComponent {
       this.viewDate = date;
     }
   }
-
+ngOnInit(): void {
+  this.app.mostrar = true;
+  this.doctor();
+}
   eventTimesChanged({
     event,
     newStart,
@@ -164,7 +193,7 @@ export class ConsultadiariaComponent {
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
+
   }
 
   addEvent(): void {
@@ -197,6 +226,18 @@ export class ConsultadiariaComponent {
   }
 
   global(): void {
-    this.router.navigate(["global"]);
+    this.router.navigate(['global']);
+  }
+  doctor(): string {
+    this.user = this.auth.getCurrentUser();
+    if (Object.is(this.user.username, 'admin')) {
+        this.usuarioA = 'Administrador';
+        return this.usuarioA;
+    } else {
+      this.usuarioA = 'Doctor : ' + this.user.name;
+      this.especialidad = 'Especialidad : ' +  this.user.userType;
+      return  this.usuarioA;
+
+    }
   }
 }
