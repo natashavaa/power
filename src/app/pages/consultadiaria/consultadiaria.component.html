@@ -6,12 +6,29 @@
     <br>
     <span class="claDocEs ">{{especialidad}} </span>
 </form>
-<form align="right">
-    <div>
-        <br>
-        <button mat-raised-button (click)="global()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/calendar-plus.png">   Agregar Consultas</button>
+<br>
+<br>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <select class="form-control col-4" #ConsultasBuscar="ngModel" name="Buscar" id="Busca"
+                [(ngModel)]="Buscar">
+                <option>Hoy</option>
+                <option>Semana</option>
+                <option>Mes</option>
+            </select>
+            <div>
+                <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
+            </div>
+        </div>
     </div>
-</form>
+    <div class="col-6">
+        <form align="right">
+            <button mat-raised-button (click)="global()" class="uno"><img
+                    src="https://img.icons8.com/dusk/50/000000/calendar-plus.png"> Agregar Consultas</button>
+        </form>
+    </div>
+</div>
 
 <div class="row mt-5">
     <div class="col">
