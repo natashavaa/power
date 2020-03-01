@@ -1,3 +1,4 @@
+import { ConsultaInterface } from 'src/app/models/consulta.interface';
 import {
   Component,
   ChangeDetectionStrategy,
@@ -152,9 +153,11 @@ public user: UserInterface = {
 
 
 };
+ private consulta: ConsultaInterface = {};
 
    usuarioA: string;
    especialidad: string;
+   cambiarColor: boolean;
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -170,6 +173,7 @@ public user: UserInterface = {
     }
   }
 ngOnInit(): void {
+  this.getlistConsultas();
   this.app.mostrar = true;
   this.doctor();
 }
@@ -228,6 +232,9 @@ ngOnInit(): void {
   global(): void {
     this.router.navigate(['global']);
   }
+  getlistConsultas() {
+    this.dataApi.getAllconsultas().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
+  }
   doctor(): string {
     this.user = this.auth.getCurrentUser();
     if (Object.is(this.user.username, 'admin')) {
@@ -239,5 +246,51 @@ ngOnInit(): void {
       return  this.usuarioA;
 
     }
+  }
+  cambiarstatus(consulta: ConsultaInterface): void {
+    if (Object.is(consulta.status, 'PROGRAMADA')) {
+      consulta.status = 'REALIZADA';
+      this.auth.UpdateConsulta(
+        consulta.id,
+        consulta.idDoctor,
+        consulta.idSpeciality ,
+        consulta.idClinicHistory ,
+        consulta.idPatient ,
+        consulta.namePatient ,
+        consulta.dniPatient,
+        consulta.fechaPlanificada,
+        consulta.hora ,
+        consulta.motive,
+        consulta.status,
+        consulta.consultorioVisitar,
+      ).subscribe(consulta2 => {
+        console.log(consulta2);
+        this.ngOnInit();
+      } );
+    }
+
+  }
+  suspenderstatus(consulta: ConsultaInterface): void {
+    this.cambiarColor = false;
+    consulta.status = 'Suspendida';
+    this.auth.UpdateConsulta(
+      consulta.id,
+      consulta.idDoctor,
+      consulta.idSpeciality ,
+      consulta.idClinicHistory ,
+      consulta.idPatient ,
+      consulta.namePatient ,
+      consulta.dniPatient,
+      consulta.fechaPlanificada,
+      consulta.hora ,
+      consulta.motive,
+      consulta.status,
+      consulta.consultorioVisitar,
+    ).subscribe(consulta2 => {
+      console.log(consulta2);
+      this.ngOnInit();
+      this.cambiarColor = true;
+
+    } );
   }
 }

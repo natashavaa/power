@@ -11,13 +11,12 @@
 <div class="row">
     <div class="col-6">
         <div class="form-group row">
-            <select class="form-control col-4" #ConsultasBuscar="ngModel" name="Buscar" id="Busca"
-                [(ngModel)]="Buscar">
+            <select class="form-control col-4" name="Buscar">
                 <option>Hoy</option>
                 <option>Semana</option>
                 <option>Mes</option>
             </select>
-            <div>
+            <div class="col-6">
                 <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
             </div>
         </div>
@@ -34,12 +33,9 @@
     <div class="col">
         <mat-form-field class=" col-2 border-bottom text-dark">
             <div class="row caja2">
-                <img src="https://img.icons8.com/dusk/25/000000/search.png">
-                <div class="row marg">
-                    <mat-label class="text-dark"></mat-label>
-                    <input matInput placeholder="Buscar">
-                </div>
+
             </div>
+
         </mat-form-field>
         <table class="table table-hover">
             <thead>
@@ -47,23 +43,29 @@
                     <th scope="col">#</th>
                     <th scope="col">Nombre Paciente </th>
                     <th scope="col">Cedula</th>
-                    <th scope="col">Nombre del Doctor</th>
                     <th scope="col">Fecha de Consulta</th>
+                    <th scope="col">Hora</th>
                     <th scope="col">Motivo</th>
                     <th scope="col">Consultorio a Visitar</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Suspender</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let patient of patient">
+                <tr *ngFor="let consulta of consulta">
                     <td></td>
-                    <td>{{patient.name}}</td>
-                    <td>{{patient.mobile}}</td>
-                    <td>{{patient.dni}}</td>
-                    <td>{{patient.familyName}}</td>
-                    <td>{{patient.familyNumber}}</td>
-                    <td>{{patient.usertype}}</td>
-                    <td>{{patient.usertype}}</td>
+                    <td>{{consulta.namePatient}}</td>
+                    <td>{{consulta.dniPatient}}</td>
+                    <td>{{consulta.fechaPlanificada}}</td>
+                    <td>{{consulta.hora}}</td>
+                    <td>{{consulta.motive}}</td>
+                    <td>{{consulta.consultorioVisitar}}</td>
+                    <td><button type="button" class="btn btn-success" (click)="cambiarstatus(consulta)">
+                        <span>{{consulta.status}}</span>
+                    </button></td>
+                    <td><button type="button" class="btn btn-danger" (click)="suspenderstatus(consulta)">
+                      <span>X</span>
+                  </button></td>
                 </tr>
 
             </tbody>

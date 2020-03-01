@@ -40,6 +40,16 @@ export class ConsultaglobalComponent implements OnInit {
       status: '',
       consultorioVisitar: '',
     };
+    private consultal: ConsultaInterface = {
+      idDoctor: '',
+      idSpeciality: '',
+      idClinicHistory: '',
+      fechaPlanificada: '',
+      hora: '',
+      motive: '',
+      status: '',
+      consultorioVisitar: '',
+    };
     private patientf: PaatientInterface = {
       dni : '',
       name : '',
@@ -87,35 +97,34 @@ onRegisterConsulta(): void {
   this.consulta.idDoctor = this.user.id;
   this.consulta.idSpeciality = this.user.id; //  cambiar mas adelante
   this.consulta.idClinicHistory = this.user.id; //  cambiar mas adelante
+  this.consulta.idPatient = this.patientf.id;
+  this.consulta.namePatient = this.patientf.name;
+  this.consulta.dniPatient = this.patientf.dni;
   this.consulta.fechaPlanificada = this.datepipe.transform(this.fecha, 'yyyy-MM-dd');
+  this.consulta.hora = this.hora;
   this.consulta.status = 'PROGRAMADA';
   this.consulta.hora = this.hora;
-  this.consulta.dni = this.patientf.dni;
-  this.consulta.name = this.patientf.name,
-  this.consulta.age = this.patientf.age,
-  this.consulta.sex = this.patientf.sex,
-  this.consulta.statusC = this.patientf.statusC,
-  this.consulta.homeAddress = this.patientf.homeAddress,
-  this.consulta.occupation = this.patientf.occupation,
-  this.consulta.workAddress = this.patientf.workAddress,
-  this.consulta.mobile = this.patientf.mobile,
-  this.consulta.birthplace = this.patientf.birthplace,
-  this.consulta.sentBy = this.patientf.sentBy,
-  this.consulta.dentalColor = this.patientf.dentalColor,
-  this.consulta.familyNumber = this.patientf.familyNumber,
-  this.consulta.familyName = this.patientf.familyName,
-  this.consulta.familyNumberHome = this.patientf.familyNumberHome,
-  this.consulta.password = this.patientf.password,
-  this.consulta.username = this.patientf.username,
-  this.consulta.mail = this.patientf.mail,
-  this.consulta.phone = this.patientf.phone,
+
   console.log(this.consulta);
   this.authService.registerConsulta(
-    this.consulta
+    this.consulta.idDoctor,
+    this.consulta.idSpeciality ,
+    this.consulta.idClinicHistory ,
+    this.consulta.idPatient ,
+    this.consulta.namePatient ,
+    this.consulta.dniPatient,
+    this.consulta.fechaPlanificada,
+    this.consulta.hora ,
+    this.consulta.motive,
+    this.consulta.status,
+    this.consulta.consultorioVisitar,
   ).subscribe(consulta => {
     console.log(consulta);
     this.router.navigate(['diaria']);
   } );
+}
+getlistConsultas() {
+  this.dataApi.getAllconsultas().subscribe((cosultas: ConsultaInterface) => ( this.consultal = cosultas));
 }
 }
 /**/

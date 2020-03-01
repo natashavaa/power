@@ -145,10 +145,70 @@ registerPatient(name: string, dni: string, age: number, sex: string,
         );
 }
 
-registerConsulta(consulta: ConsultaInterface) {
+registerConsulta(idDoctor: string, idSpeciality: string, idClinicHistory: string, idPatient: string,
+                 namePatient: string, dniPatient: string, fechaPlanificada: string, hora: string,
+                 motive: string, status: string, consultorioVisitar: string) {
       const urlApi = 'http://localhost:3000/consulta';
       return this.htttp
-      .post<PaatientInterface>(urlApi, {consulta},
+      .post<ConsultaInterface>(urlApi, {
+          // tslint:disable-next-line: object-literal-shorthand
+          idDoctor: idDoctor,
+          // tslint:disable-next-line: object-literal-shorthand
+          idSpeciality: idSpeciality,
+          // tslint:disable-next-line: object-literal-shorthand
+          idClinicHistory: idClinicHistory,
+          // tslint:disable-next-line: object-literal-shorthand
+          idPatient: idPatient,
+        // tslint:disable-next-line: object-literal-shorthand
+        namePatient: namePatient,
+        // tslint:disable-next-line: object-literal-shorthand
+        dniPatient: dniPatient,
+         // tslint:disable-next-line: object-literal-shorthand
+         fechaPlanificada: fechaPlanificada,
+         // tslint:disable-next-line: object-literal-shorthand
+         hora: hora,
+         // tslint:disable-next-line: object-literal-shorthand
+         motive: motive,
+          // tslint:disable-next-line: object-literal-shorthand
+          status: status,
+          // tslint:disable-next-line: object-literal-shorthand
+          consultorioVisitar: consultorioVisitar,
+
+      },
+      );
+}
+UpdateConsulta(id: string, idDoctor: string, idSpeciality: string, idClinicHistory: string, idPatient: string,
+               namePatient: string, dniPatient: string, fechaPlanificada: string, hora: string,
+               motive: string, status: string, consultorioVisitar: string) {
+      const urlApi = 'http://localhost:3000/consulta/update';
+      return this.htttp
+      .put<ConsultaInterface>(urlApi, {
+        // tslint:disable-next-line: object-literal-shorthand
+        id: id,
+      // tslint:disable-next-line: object-literal-shorthand
+      idDoctor: idDoctor,
+      // tslint:disable-next-line: object-literal-shorthand
+      idSpeciality: idSpeciality,
+      // tslint:disable-next-line: object-literal-shorthand
+      idClinicHistory: idClinicHistory,
+      // tslint:disable-next-line: object-literal-shorthand
+      idPatient: idPatient,
+      // tslint:disable-next-line: object-literal-shorthand
+      namePatient: namePatient,
+      // tslint:disable-next-line: object-literal-shorthand
+      dniPatient: dniPatient,
+      // tslint:disable-next-line: object-literal-shorthand
+      fechaPlanificada: fechaPlanificada,
+      // tslint:disable-next-line: object-literal-shorthand
+      hora: hora,
+      // tslint:disable-next-line: object-literal-shorthand
+      motive: motive,
+      // tslint:disable-next-line: object-literal-shorthand
+      status: status,
+      // tslint:disable-next-line: object-literal-shorthand
+      consultorioVisitar: consultorioVisitar,
+
+      },
       );
 }
 UpdatePatient(id: string, name: string, dni: string, age: number, sex: string,
