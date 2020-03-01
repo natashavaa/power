@@ -7,6 +7,7 @@ import { PaatientInterface } from '../../models/patients.interface';
 import { ConsultaInterface } from 'src/app/models/consulta.interface';
 import { UserInterface } from '../../models/user.interface';
 import { DatePipe } from '@angular/common';
+import { AppComponent } from '../../app.component';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class ConsultaglobalComponent implements OnInit {
   [x: string]: any;
 
 
-  constructor(private router: Router, private  authService: AuthService, private dataApi: DataApiService, public datepipe: DatePipe) {}
+  constructor(private router: Router, private  authService: AuthService, private dataApi: DataApiService, public datepipe: DatePipe,
+              private app: AppComponent) {}
     dni: string;
     MostrarForm: boolean;
     fecha = Date;
@@ -61,6 +63,7 @@ export class ConsultaglobalComponent implements OnInit {
       phone: '',
     };
   ngOnInit() {
+    this.app.mostrar = true;
   }
   onSearch(): void {
     this.MostrarForm =  false;
