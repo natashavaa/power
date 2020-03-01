@@ -32,8 +32,14 @@
 
 button {
     font-size: 20px;
-    margin: 20px;
 }
+
+.snip {
+    padding: 10px;
+    margin: 0 12px;
+    background-color: darkred;
+}
+
 
 .claDoc {
     font-size: 40px;
