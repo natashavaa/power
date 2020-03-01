@@ -12,6 +12,7 @@ import { AppComponent } from '../app.component';
 import { MaterialInterface } from '../models/material.interface';
 import { InstrumentoInterface } from '../models/instrumento.interface';
 import { ReporteInterface } from '../models/reporte.interface';
+import { ConsultaInterface } from '../models/consulta.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -142,6 +143,13 @@ registerPatient(name: string, dni: string, age: number, sex: string,
               phone: phone,
               },
         );
+}
+
+registerConsulta(consulta: ConsultaInterface) {
+      const urlApi = 'http://localhost:3000/consulta';
+      return this.htttp
+      .post<PaatientInterface>(urlApi, {consulta},
+      );
 }
 UpdatePatient(id: string, name: string, dni: string, age: number, sex: string,
               statusC: string, homeAddress: string, occupation: string, workAddress: string,

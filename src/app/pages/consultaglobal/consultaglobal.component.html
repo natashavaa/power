@@ -28,49 +28,48 @@
 
         </div>
         <div *ngIf="MostrarForm">
-            <div class="row per">
-                <div class="col-6">
-                    <div class="form-group row">
-                        <label for="" class="col-8 col-form-label">Cedula</label>
-                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder=""
-                            [(ngModel)]='patientf.dni' required minlength="4" maxlength="50" class="form-control col-4">
-                    </div>
+            <form #formRegisterConsulta="ngForm" (ngSubmit)="onRegisterConsulta(formRegisterConsulta)">
+                <div class="row per">
+                    <div class="col-6">
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Cedula</label>
+                            <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patientf.dni' required minlength="4" maxlength="50" class="form-control col-2">
+                        </div>
 
-                    <div class="form-group row">
-                        <label for="" class="col-8 col-form-label">Motivo de la Consulta</label>
-                        <textarea class="form-control" rows="3" class="form-control col-4"></textarea>
+                        <div class="form-group row">
+                            <label for="" class="col-8 col-form-label">Motivo de la Consulta</label>
+                            <textarea #motive="ngModel" name="motive" class="form-control" placeholder="" [(ngModel)]='consulta.motive' rows="3" class="form-control col-4"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <mat-label for="" class="col-8 col-form-label">Consultorio a Visitar</mat-label>
+                            <br>
+                            <select #consultorioVisitar="ngModel" name="consultorioVisitar" class="form-control" placeholder="" [(ngModel)]='consulta.consultorioVisitar' id="consultorioVisitar" class="form-control col-4">
+                        <option>Odontologia</option>
+                        <option>Ortodoncia</option>
+                    </select>
+                        </div>
                     </div>
-                    <div class="form-group row">
-                        <mat-label for="" class="col-8 col-form-label">Consultorio a Visitar</mat-label>
-                        <br>
-                        <select name="Especialidad" id="Especialidad" class="form-control col-4">
-                            <option>Odontologia</option>
-                            <option>Ortodoncia</option>
-                        </select>
+                    <div class="col-4">
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Nombre Completo</label>
+                            <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='patientf.name' required minlength="4" maxlength="50" class="form-control col-5">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Fecha</label>
+                            <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha" class="form-control col-4" [(ngModel)]="fecha">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Hora</label>
+                            <input [(ngModel)]="hora" type="time" name="hora" id="hora" class="form-control col-4" min="8:00" max="18:00" step="5:00">
+                        </div>
+
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="form-group row">
-                        <label for="" class="col-5 col-form-label">Nombre Completo</label>
-                        <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
-                            [(ngModel)]='patientf.name' required minlength="4" maxlength="50"
-                            class="form-control col-4">
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-5 col-form-label">Fecha</label>
-                        <input matInput [matDatepicker]="picker" placeholder="Elije una fecha"
-                            class="form-control col-4">
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-5 col-form-label">Hora</label>
-                    </div>
-                </div>
-
-            </div>
-            <br>
-            <button type="submit" class="btn btn-lg btn-success">Crear Consulta</button>
+                <br>
+                <button type="submit" class="btn btn-lg btn-success">Crear Consulta</button>
+            </form>
         </div>
 
        
