@@ -1,3 +1,4 @@
+
 <div align='center'>
     <mat-card>
         <mat-panel-title>
@@ -15,7 +16,8 @@
                 <form #SearchPatient="ngForm" (ngSubmit)="onSearch(SearchPatient)">
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Cedula</label>
-                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patient.dni' required minlength="4" maxlength="50" class="form-control col-2">
+                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder=""
+                            [(ngModel)]='patient.dni' required minlength="4" maxlength="50" class="form-control col-2">
 
                         <div>
                             <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
@@ -30,7 +32,8 @@
                 <div class="col-6">
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Cedula</label>
-                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patientf.dni' required minlength="4" maxlength="50" class="form-control col-2">
+                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder=""
+                            [(ngModel)]='patientf.dni' required minlength="4" maxlength="50" class="form-control col-4">
                     </div>
 
                     <div class="form-group row">
@@ -41,25 +44,28 @@
                         <mat-label for="" class="col-8 col-form-label">Consultorio a Visitar</mat-label>
                         <br>
                         <select name="Especialidad" id="Especialidad" class="form-control col-4">
-                        <option>Odontologia</option>
-                        <option>Ortodoncia</option>
-                    </select>
+                            <option>Odontologia</option>
+                            <option>Ortodoncia</option>
+                        </select>
                     </div>
                 </div>
-                <div class="col-4">
-                    <br>
-
+                <div class="col-6">
                     <div class="form-group row">
-                        <label for="" class="col-6 col-form-label">Nombre Completo</label>
-                        <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='patientf.name' required minlength="4" maxlength="50" class="form-control col-5">
+                        <label for="" class="col-5 col-form-label">Nombre Completo</label>
+                        <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
+                            [(ngModel)]='patientf.name' required minlength="4" maxlength="50"
+                            class="form-control col-4">
                     </div>
                     <div class="form-group row">
-                        <label for="" class="col-6 col-form-label">Fecha</label>
-                        <input matInput [matDatepicker]="picker" placeholder="Elije una fecha" class="form-control col-4">
+                        <label for="" class="col-5 col-form-label">Fecha</label>
+                        <input matInput [matDatepicker]="picker" placeholder="Elije una fecha"
+                            class="form-control col-4">
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
                     </div>
-
+                    <div class="form-group row">
+                        <label for="" class="col-5 col-form-label">Hora</label>
+                    </div>
                 </div>
 
             </div>
@@ -67,6 +73,7 @@
             <button type="submit" class="btn btn-lg btn-success">Crear Consulta</button>
         </div>
 
+       
 
         <br>
     </mat-card>

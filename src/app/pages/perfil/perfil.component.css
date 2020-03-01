@@ -45,6 +45,11 @@
     background-color: #000 !important;
 }
 
+.centrado {
+    text-align:center;
+    }
+    
+
 .selector {
     margin-left: 10px;
     text-align: left;
