@@ -6,6 +6,7 @@ import { DataApiService } from '../../services/data-api.service';
 import { PaatientInterface } from '../../models/patients.interface';
 import { UserInterface } from '../../models/user.interface';
 import { AuthService } from '../../services/auth.service';
+import { AppComponent } from '../../app.component';
 
 export interface PeriodicElement {
   name: string;
@@ -33,7 +34,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class DoctoresComponent implements OnInit {
-  constructor(private dataApi: DataApiService,private authService: AuthService, private router: Router) {}
+  public user2: UserInterface = {
+    id: '',
+    name: '',
+    dni: '',
+    age: 0,
+    sex: '',
+    mail: '',
+    password: '',
+    userType: '',
+    username: '',
+    phone: ''
+
+
+};
+
+     usuarioA: string;
+     especialidad: string;
+  constructor(private dataApi: DataApiService, private authService: AuthService, private router: Router, private app: AppComponent) {}
 
   displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -49,7 +67,18 @@ private user: UserInterface = {};
     const numRows = this.dataSource.data.length;
     return numSelected === numRows;
   }
+  doctor(): string {
+    this.user2 = this.authService.getCurrentUser();
+    if (Object.is(this.user2.username, 'admin')) {
+        this.usuarioA = 'Administrador';
+        return this.usuarioA;
+    } else {
+      this.usuarioA = 'Doctor : ' + this.user2.name;
+      this.especialidad = 'Especialidad : ' +  this.user2.userType;
+      return  this.usuarioA;
 
+    }
+  }
   /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle() {
     this.isAllSelected() ?
@@ -70,7 +99,9 @@ private user: UserInterface = {};
   }
 
   ngOnInit() {
-   this.getlistUsers();
+    this.app.mostrar = true;
+    this.doctor();
+    this.getlistUsers();
   }
   getlistUsers() {
     this.dataApi.getAllUser().subscribe((doctorUser: UserInterface) => ( this.doctorUser = doctorUser));
