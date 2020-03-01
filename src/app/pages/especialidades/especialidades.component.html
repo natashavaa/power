@@ -1,3 +1,11 @@
+<form align="left">
+    <div>
+        <span class="claDoc ">{{usuarioA}} </span>
+
+    </div>
+    <br>
+    <span class="claDocEs ">{{especialidad}} </span>
+</form>
 <div class="au-xs-ta-center au-lg-ta-center">
     <ul class="rk-menu rk-categories-menu">
         <img src="https://img.icons8.com/dusk/50/000000/dental-filling.png">
@@ -61,8 +69,7 @@
                             <br>
                             <br>
                             <label for="" class="col-6 col-form-label">Tipo de Especialidad:</label>
-                            <select class="form-control col-4" #Especialidad="ngModel" name="speciality" id="speciality"
-                                [(ngModel)]="speciality">
+                            <select class="form-control col-4" #Especialidad="ngModel" name="speciality" id="speciality" [(ngModel)]="speciality">
                                 <option>Odontologia</option>
                                 <option>Ortodoncia</option>
                                 <option>Todas</option>
@@ -110,29 +117,23 @@
                                 <td>{{instrumento.especiality}}</td>
                                 <td>{{instrumento.cantidad}}</td>
                                 <td>
-                                    <button (click)="usarInsumo(instrumento)" class="btn btn-success" type="button"
-                                        data-toggle="tooltip" data-placement="top" title="Presione para usar un Insumo">
+                                    <button (click)="usarInsumo(instrumento)" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="Presione para usar un Insumo">
                                         <span>Usar</span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button"
-                                        data-toggle="tooltip" data-placement="top"
-                                        title="Cantidad de Insumos Utilizados ahora,Presiones si ya los usó">
+                                    <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Insumos Utilizados ahora,Presiones si ya los usó">
                                         <span>En uso: {{instrumento.enUso}}
                                         </span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button (click)="limpiarInsumos(instrumento)" class=" btn btn-warning" type="button"
-                                        data-toggle="tooltip" data-placement="top"
-                                        title="Cantidad de Insumos en Limpieza,Presione para limpiar">
+                                    <button (click)="limpiarInsumos(instrumento)" class=" btn btn-warning" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Insumos en Limpieza,Presione para limpiar">
                                         <span>En Limpieza: {{instrumento.enLimpieza}}</span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button (click)="eliminarIsumos(instrumento)" class=" btn btn-danger" type="button"
-                                        data-toggle="tooltip" data-placement="top" title="Presione para eliminar">
+                                    <button (click)="eliminarIsumos(instrumento)" class=" btn btn-danger" type="button" data-toggle="tooltip" data-placement="top" title="Presione para eliminar">
                                         <span>Eliminar</span>
                                     </button>
                                 </td>

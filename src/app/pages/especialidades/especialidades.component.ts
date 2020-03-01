@@ -5,6 +5,7 @@ import { InstrumentoInterface } from '../../models/instrumento.interface';
 import { AuthService } from '../../services/auth.service';
 import { MaterialInterface } from '../../models/material.interface';
 import { AppComponent } from '../../app.component';
+import { UserInterface } from '../../models/user.interface';
 @Component({
   selector: 'app-especialidades',
   templateUrl: './especialidades.component.html',
@@ -25,12 +26,39 @@ export class EspecialidadesComponent implements OnInit {
     enUso: 0,
 
   };
+  public user: UserInterface = {
+    id: '',
+    name: '',
+    dni: '',
+    age: 0,
+    sex: '',
+    mail: '',
+    password: '',
+    userType: '',
+    username: '',
+    phone: ''
+  };
+     usuarioA: string;
+     especialidad: string;
   cargando: boolean = false;
   ngOnInit() {
+    this.doctor();
     this.app.mostrar = true;
   }
+  doctor(): string {
+    this.user = this.authService.getCurrentUser();
+    if (Object.is(this.user.username, 'admin')) {
+        this.usuarioA = 'Administrador';
+        return this.usuarioA;
+    } else {
+      this.usuarioA = 'Doctor : ' + this.user.name;
+      this.especialidad = 'Especialidad : ' +  this.user.userType;
+      return  this.usuarioA;
 
-  especialidad(): void {
+    }
+  }
+
+  especialidadC(): void {
     this.router.navigate(['especialidad']);
   }
   materiales(): void {

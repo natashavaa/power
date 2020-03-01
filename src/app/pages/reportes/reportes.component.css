@@ -7,6 +7,16 @@
     background-color: lightgray;
 }
 
+.claDoc {
+    font-size: 40px;
+    font: oblique bold 160% cursive;
+}
+
+.claDocEs {
+    font-size: 40px;
+    font: oblique bold 140% cursive;
+}
+
 .center {
     display: inline-block;
     width: 79%;

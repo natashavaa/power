@@ -12,6 +12,7 @@ import * as html2canvas from 'html2canvas';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import { UserInterface } from '../../models/user.interface';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -32,11 +33,25 @@ export class ReportesComponent implements OnInit {
   private insumo: InstrumentoInterface;
   tabla: string;
   events: string[] = [];
+  public user: UserInterface = {
+    id: '',
+    name: '',
+    dni: '',
+    age: 0,
+    sex: '',
+    mail: '',
+    password: '',
+    userType: '',
+    username: '',
+    phone: ''
+  };
+     usuarioA: string;
+     especialidad: string;
   inventario(): void {
     this.router.navigate(['inventario']);
   }
 
-  especialidad(): void {
+  especialidadC(): void {
     this.router.navigate(['especialidad']);
   }
   materiales(): void {
@@ -49,8 +64,22 @@ export class ReportesComponent implements OnInit {
   reportes(): void {
     this.router.navigate(['reportes']);
   }
+  doctor(): string {
+    this.user = this.auth.getCurrentUser();
+    if (Object.is(this.user.username, 'admin')) {
+        this.usuarioA = 'Administrador';
+        return this.usuarioA;
+    } else {
+      this.usuarioA = 'Doctor : ' + this.user.name;
+      this.especialidad = 'Especialidad : ' +  this.user.userType;
+      return  this.usuarioA;
+
+    }
+  }
+
 
   ngOnInit() {
+    this.doctor();
     this.app.mostrar = true;
     this.materialestrue = false;
     this.insumostrue = false;
