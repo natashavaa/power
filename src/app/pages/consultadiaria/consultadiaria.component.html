@@ -17,9 +17,8 @@
                 <option>Mes</option>
                 <option>Todas</option>
             </select>
-            <div class="col-6">
-                <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
-            </div>
+            <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
+
         </div>
     </div>
     <div class="col-6">
@@ -62,11 +61,11 @@
                     <td>{{consulta.motive}}</td>
                     <td>{{consulta.consultorioVisitar}}</td>
                     <td><button type="button" class="btn btn-success" (click)="cambiarstatus(consulta)">
-                        <span>{{consulta.status}}</span>
-                    </button></td>
+                            <span>{{consulta.status}}</span>
+                        </button></td>
                     <td><button type="button" class="btn btn-danger" (click)="suspenderstatus(consulta)">
-                      <span>X</span>
-                  </button></td>
+                            <span>X</span>
+                        </button></td>
                 </tr>
 
             </tbody>
