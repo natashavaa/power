@@ -7,7 +7,7 @@
                 <mat-card-title>
                     <div class="text-right">
                         <h5 align="center">{{patient.name}}</h5>
-                        <h1 align="center">{{patient.age}}</h1>
+                        <h1 align="center">{{patient.age}} años</h1>
                     </div>
 
                 </mat-card-title>
@@ -118,21 +118,6 @@
                             <input readonly type="text" #workAddress="ngModel" name="workAddress" class="form-control" placeholder="" [(ngModel)]='patient.workAddress' required minlength="4" maxlength="100" class="form-control col-4">
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-8 col-form-label">Genero: </label>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio"  #Femenino="ngModel" name="Femenino" id="Femenino" value="Femenino" [(ngModel)]="patient.sex" class="selector" checked>
-                                  F
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                  <input readonly type="radio"  #Masculino="ngModel" name="Masculino" id="Masculino" value="Masculino" [(ngModel)]="patient.sex" class="selector" checked>
-                                    M
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Lugar de Nacimiento</label>
                             <input readonly type="text" #birthPlace="ngModel" name="birthPlace" class="form-control" placeholder="" [(ngModel)]='patient.birthplace' required minlength="4" maxlength="1" class="form-control col-4">
                         </div>
@@ -210,10 +195,6 @@
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Telefono de Casa</label>
                             <input readonly type="text" #familyNumberHome="ngModel" name="familyNumberHome" class="form-control" placeholder="" [(ngModel)]='patient.familyNumberHome' required minlength="1" maxlength="50" class="form-control col-4">
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-6 col-form-label">Celular</label>
-                            <input readonly type="text" #familyNumber="ngModel" name="familyNumber" class="form-control" placeholder="" [(ngModel)]='patient.familyNumber' required minlength="1" maxlength="50" class="form-control col-4">
                         </div>
                         <!-- <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Historia Dental</label>

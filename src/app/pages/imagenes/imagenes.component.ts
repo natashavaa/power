@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductosService } from 'src/app/services/productos.service';
+import { PaatientInterface } from '../../models/patients.interface';
+import { AppComponent } from '../../app.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-imagenes',
@@ -9,9 +12,16 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class ImagenesComponent implements OnInit {
 
-  constructor(public productosService: ProductosService, private router: Router ) { }
+  constructor(public productosService: ProductosService, private router: Router,
+              private app: AppComponent, private auth: AuthService  ) { }
+  private patient: PaatientInterface;
+  getPatient() {
+    this.patient = this.auth.getCurrentPatient();
 
+  }
   ngOnInit() {
+    this.app.mostrar = true;
+    this.getPatient();
   }
 
   datos(): void {

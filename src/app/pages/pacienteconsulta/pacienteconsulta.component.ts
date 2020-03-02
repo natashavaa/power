@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
+import { ConsultaInterface } from '../../models/consulta.interface';
+import { DataApiService } from '../../services/data-api.service';
+import { PaatientInterface } from '../../models/patients.interface';
+import { AuthService } from '../../services/auth.service';
+import { AppComponent } from '../../app.component';
 
 export interface PeriodicElement {
   name: string;
@@ -33,8 +38,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./pacienteconsulta.component.css']
 })
 export class PacienteconsultaComponent implements OnInit {
-
-
+  private patient: PaatientInterface;
+  private consulta: ConsultaInterface = {};
   displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
@@ -66,9 +71,11 @@ export class PacienteconsultaComponent implements OnInit {
   }
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dataApi: DataApiService,
+              private auth: AuthService, private app: AppComponent) { }
 
   ngOnInit() {
+    this.getlistConsultas();
   }
 
 
@@ -80,7 +87,7 @@ export class PacienteconsultaComponent implements OnInit {
     this.router.navigate(['imagenes']);
   }
 
-  consulta(): void {
+  consultac(): void {
     this.router.navigate(['pacienteconsulta']);
   }
 
@@ -116,5 +123,9 @@ export class PacienteconsultaComponent implements OnInit {
     this.router.navigate(['pacienterecipe']);
   }
 
-
+  getlistConsultas() {
+    this.app.mostrar = true;
+    this.patient = this.auth.getCurrentPatient();
+    this.dataApi.getAllconsultasBypatient(this.patient.id).subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
+  }
 }
