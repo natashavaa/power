@@ -20,7 +20,7 @@ export class DataApiService {
     return this.http.get(urlApi);
   }
   getAllconsultasBypatient(id) {
-    const urlApi = `http://localhost:3000/consulta/${id}`;
+    const urlApi = `http://localhost:3000/consulta/patient${id}`;
     return this.http.get(urlApi);
   }
   getAllconsultasHoy() {

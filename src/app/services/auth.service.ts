@@ -338,6 +338,14 @@ updateInstrumento(id: string, name: string, cantidad: number, especiality: strin
   },
   );
 }
+getAllconsultasBypatient(id: string) {
+  const urlApi = 'http://localhost:3000/consulta/patient' ;
+  return this.htttp.get<ConsultaInterface>(urlApi,
+     {
+     // tslint:disable-next-line: object-literal-shorthand
+    });
+}
+
   updateUser(id: string, name: string, phone: string, password: string, dni: string,
              age: number, sex: string, email: string,
              userType: string, username: string) {
