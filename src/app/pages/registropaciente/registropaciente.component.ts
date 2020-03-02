@@ -60,7 +60,6 @@ export class RegistropacienteComponent implements OnInit {
       this.patient.userType,
       this.patient.phone,
     ).subscribe(patient => {
-      console.log(patient);
       this.router.navigate(['pacientes']);
      } );
     }

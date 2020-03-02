@@ -18,7 +18,6 @@ export class IniciosService {
   private cargarInicios() {
     this.http.get('https://angular-html-4afb9.firebaseio.com/inicio_idx.json')
       .subscribe((resp: Inicio[]) => {
-        console.log(resp);
         this.inicios = resp;
         this.cargando = false;
 

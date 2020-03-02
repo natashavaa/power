@@ -244,7 +244,6 @@ ngOnInit(): void {
     this.dataApi.getAllconsultasMes().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
   }
   getConsultas(): void {
-    console.log(this.momentoC);
     if ( Object.is(this.momentoC, 'Todas')) {
       this.getlistConsultas();
     } else if ( Object.is(this.momentoC, 'Mes')) {
@@ -284,7 +283,6 @@ ngOnInit(): void {
         consulta.status,
         consulta.consultorioVisitar,
       ).subscribe(consulta2 => {
-        console.log(consulta2);
         this.ngOnInit();
       } );
     }
@@ -307,7 +305,6 @@ ngOnInit(): void {
       consulta.status,
       consulta.consultorioVisitar,
     ).subscribe(consulta2 => {
-      console.log(consulta2);
       this.ngOnInit();
       this.cambiarColor = true;
 

@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.authService.setUser(data);
-          console.log(data);
           if (!data || data == null) {
            alert('Credenciales Incorrectas');
           } else

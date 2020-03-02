@@ -45,7 +45,6 @@ export class RegistroinsumoComponent implements OnInit {
       this.instrumentoRe.costo,
       this.instrumentoRe.idDoctor
     ).subscribe(instrumento => {
-      console.log(instrumento);
       this.router.navigate(['especialidad']);
      } );
     }

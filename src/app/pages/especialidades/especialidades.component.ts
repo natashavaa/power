@@ -92,8 +92,6 @@ export class EspecialidadesComponent implements OnInit {
         instrumento.enUso,
         instrumento.enLimpieza
       ).subscribe(materialw => {
-        console.log('lista actualizada');
-        console.log(materialw);
         this.ngOnInit();
        } );
     } else {
@@ -115,8 +113,6 @@ export class EspecialidadesComponent implements OnInit {
         instrumento.enUso,
         instrumento.enLimpieza
       ).subscribe(materialw => {
-        console.log('lista actualizada');
-        console.log(materialw);
         this.ngOnInit();
        } );
     } else {
@@ -139,8 +135,6 @@ export class EspecialidadesComponent implements OnInit {
         instrumento.enUso,
         instrumento.enLimpieza
       ).subscribe(materialw => {
-        console.log('lista actualizada');
-        console.log(materialw);
         this.ngOnInit();
        } );
     } else {

@@ -46,7 +46,6 @@ export class AppComponent {
 
     this.user = this.authService.getCurrentUser();
     if (this.user) {
-      console.log(this.user);
     }
   }
 

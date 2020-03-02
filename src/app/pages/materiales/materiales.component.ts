@@ -156,7 +156,6 @@ odontologiatrue: boolean;
   }
 
   getMAterialSpeciality(): void {
-    console.log(this.speciality);
     if ( Object.is(this.speciality, 'Todas')) {
       this.getlistAllMaterial();
     } else if ( Object.is(this.speciality, 'Odontologia')) {

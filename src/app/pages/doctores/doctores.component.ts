@@ -105,8 +105,6 @@ private user: UserInterface = {};
   }
   getlistUsers() {
     this.dataApi.getAllUser().subscribe((doctorUser: UserInterface) => ( this.doctorUser = doctorUser));
-    console.log(this.doctorUser);
-    console.log('lista recibida de usuarios');
   }
   darPermisoDoctor(doctorUser: UserInterface) {
     doctorUser.status = 'PERMISO';
@@ -123,12 +121,9 @@ private user: UserInterface = {};
       doctorUser.username,
       doctorUser.status
     ).subscribe(user => {
-      console.log(user);
       this.router.navigate(['doctores']);
       this.ngOnInit();
      } );
-    console.log('permiso');
-    console.log(doctorUser);
   }
   quitarPermisoDoctor(doctorUser: UserInterface) {
     doctorUser.status = 'NO PERMISO';
@@ -145,15 +140,11 @@ private user: UserInterface = {};
       doctorUser.username,
       doctorUser.status
     ).subscribe(user => {
-      console.log(user);
       this.router.navigate(['doctores']);
       this.ngOnInit();
      } );
-    console.log('permiso');
-    console.log(doctorUser);
   }
   eliminarDoctor(doctorUser: UserInterface) {
-    console.log('eliminar'); console.log(doctorUser);
 }
 
 

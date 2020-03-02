@@ -63,7 +63,6 @@ ngOnInit() {
     this.patient.userType,
     this.patient.phone,
   ).subscribe(patient => {
-    console.log(patient);
     localStorage.removeItem('currentPatient');
     this.router.navigate(['pacientes']);
    } );

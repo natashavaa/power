@@ -82,7 +82,6 @@ export class ConsultaglobalComponent implements OnInit {
    } else if (this.patient.dni) {
     this.dataApi.getPatientByDni(this.patient.dni).subscribe((patients: PaatientInterface) => {
        this.patientf = patients;
-       console.log(this.patientf);
        if (this.patientf) {
          this.MostrarForm = true;
        } else {
@@ -106,7 +105,6 @@ onRegisterConsulta(): void {
   this.consulta.hora = this.hora;
   this.consulta.mes = this.datepipe.transform(this.fecha, 'MM');
 
-  console.log(this.consulta);
   this.authService.registerConsulta(
     this.consulta.idDoctor,
     this.consulta.idSpeciality ,
@@ -121,7 +119,6 @@ onRegisterConsulta(): void {
     this.consulta.consultorioVisitar,
     this.consulta.mes,
   ).subscribe(consulta => {
-    console.log(consulta);
     this.router.navigate(['diaria']);
   } );
 }

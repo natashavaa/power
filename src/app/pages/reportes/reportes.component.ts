@@ -94,13 +94,13 @@ export class ReportesComponent implements OnInit {
       this.materialestrue = true;
       this.auth.getAllMAterialPorFecha(
         fechaInicio, fechaFinal
-      ).subscribe((materials: MaterialInterface) => {   console.log(materials); ( this.material = materials); } );
+      ).subscribe((materials: MaterialInterface) => { ( this.material = materials); } );
     } else
     if (Object.is(this.tabla, 'Insumos')) {
       this.insumostrue = true;
       this.auth.getAllInstrumentoPorFecha(
         fechaInicio, fechaFinal
-      ).subscribe((insumo: InstrumentoInterface) => {   console.log(insumo); ( this.insumo = insumo); } );
+      ).subscribe((insumo: InstrumentoInterface) => {   ( this.insumo = insumo); } );
     }
 
 

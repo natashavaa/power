@@ -47,8 +47,6 @@ export class RegistromaterialComponent implements OnInit {
 
   getlistMaterial() {
     this.dataApi.getAllMAterial().subscribe((materials: MaterialInterface) => ( this.material = materials));
-    console.log(this.material);
-    console.log('lista material recibida');
   }
   cancelar() {
     this.router.navigate(['materiales']);
@@ -64,7 +62,6 @@ export class RegistromaterialComponent implements OnInit {
       this.materialRe.costo,
       this.materialRe.idDoctor
     ).subscribe(material => {
-      console.log(material);
       this.router.navigate(['materiales']);
      } );
     }
