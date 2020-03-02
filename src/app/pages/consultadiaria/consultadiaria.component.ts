@@ -57,11 +57,19 @@ const colors: any = {
 
 export class ConsultadiariaComponent {
 
+  constructor(private router: Router,
+              private dataApi: DataApiService,
+              private auth: AuthService,
+              private app: AppComponent) {
+
+}
+
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Month;
 
   CalendarView = CalendarView;
+
 
   viewDate: Date = new Date();
 
@@ -132,13 +140,6 @@ export class ConsultadiariaComponent {
   ];
 
   activeDayIsOpen: boolean = true;
-
-  constructor(private router: Router,
-              private dataApi: DataApiService,
-              private auth: AuthService,
-              private app: AppComponent) {
-
-}
 public user: UserInterface = {
   id: '',
   name: '',
@@ -158,6 +159,7 @@ public user: UserInterface = {
    usuarioA: string;
    especialidad: string;
    cambiarColor: boolean;
+  momentoC: string;
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -234,6 +236,24 @@ ngOnInit(): void {
   }
   getlistConsultas() {
     this.dataApi.getAllconsultas().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
+  }
+  getlistConsultasHoy() {
+    this.dataApi.getAllconsultasHoy().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
+  }
+  getlistConsultasMes() {
+    this.dataApi.getAllconsultasMes().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
+  }
+  getConsultas(): void {
+    console.log(this.momentoC);
+    if ( Object.is(this.momentoC, 'Todas')) {
+      this.getlistConsultas();
+    } else if ( Object.is(this.momentoC, 'Mes')) {
+      this.getlistConsultasMes();
+    } else if (Object.is(this.momentoC, 'Hoy')) {
+      this.getlistConsultasHoy();
+    } else {
+      this.getlistConsultas();
+    }
   }
   doctor(): string {
     this.user = this.auth.getCurrentUser();
