@@ -1,4 +1,5 @@
 <div class="container">
+
     <div class="left">
         <br>
         <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
@@ -89,76 +90,36 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4><img src="https://img.icons8.com/dusk/50/000000/dental-crown.png"> SEGUIMIENTO </h4>
+                        <h4><img src="https://img.icons8.com/dusk/64/000000/cheap.png"> PRESUPUESTO </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
+
+
             <br>
-            <div class="alert alert-info" role="alert">
-                EL SEGUIMIENTO DEPENDE DEL PROCEDIMIENTO CLINICO ESCOGIDO
-            </div>
             <br>
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
                     <form action="">
+                        <br>
                         <div class="form-group row">
-                            <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
-                            <br>
-                            <select class="form-control col-8">
-                                <option>Todos los Dientes</option>
-                                <option>Diente por Diente</option>
-                            </select>
+                            <label for="" class="col-4 col-form-label">Presupuesto</label>
+                            <input type="text" class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Abono</label>
+                            <input type="text" class="form-control col-6">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Debe</label>
+                            <input type="text" class="form-control col-6">
                         </div>
                     </form>
                 </div>
-                <div class="col-6">
-                    <form action="">
-                        <fieldset disabled>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Padecimiento</label>
-                                <input placeholder="" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
-                                <br>
-                                <select class="form-control col-6">
-                                    <option>Seleccionar</option>
-                                    <option>Parte Superior</option>
-                                    <option>Parte Inferior</option>
-                                    <option>Lado Derecho</option>
-                                    <option>Lado Izquierdo</option>
-                                    <option>Diente por Diente</option>
-                                </select>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Consultas Anteriores</label>
-                                <input placeholder="" class="form-control col-6">
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
             </div>
             <br>
-            <br>
-            <img src="assets/img/odontograma.png" alt="Avatar Image">
-            <br>
-            <br>
-            <br>
-            <br>
-            <fieldset disabled>
-                <div class="form-group row">
-                    <label for="" class="col-4 col-form-label">Historia Dental</label>
-                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-                </div>
-                <div class="form-group row">
-                    <label for="" class="col-4 col-form-label">Motivo de la Consulta</label>
-                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-                </div>
-                <div class="form-group row">
-                    <label for="" class="col-4 col-form-label">Observaciones</label>
-                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-                </div>
-            </fieldset>
+            <button mat-raised-button class="uno">GUARDAR</button>
+            <button mat-raised-button class="dos">CANCELAR</button>
         </mat-card-content>
     </div>
 </div>

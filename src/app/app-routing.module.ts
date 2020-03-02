@@ -36,6 +36,7 @@ import { EditarpacienteComponent } from './pages/editarpaciente/editarpaciente.c
 import { RegistromaterialComponent } from './pages/registromaterial/registromaterial.component';
 import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.component';
 import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
+import { PacientepresupuestoComponent } from './pages/pacientepresupuesto/pacientepresupuesto.component';
 
 
 
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
   {path: 'pacienteodontograma', component: PacienteodontogramaComponent},
   {path: 'login', component : LoginComponent},
   {path: 'pacientepadecimiento', component: PacientepadecimientoComponent},
+  {path: 'pacientepresupuesto', component: PacientepresupuestoComponent},
   {path: 'registerpaciente', component : RegistropacienteComponent},
   {path: 'pacientes', component : PacientesComponent},
   {path: 'doctores', component : DoctoresComponent},

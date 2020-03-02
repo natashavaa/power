@@ -168,6 +168,24 @@
     color: darkgrey;
   }
   
+  
+
+
+.i {
+  text-decoration: none;
+  font-size: 15px;
+  line-height: none;
+  color: #fff;
+  width: 200%;
+  left: calc(25% - 40%);
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.i:hover {
+  color: darkgrey;
+}
+
   .mat-form-field {
     margin: 0;
     padding: 0;    
