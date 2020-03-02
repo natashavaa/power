@@ -44,5 +44,8 @@ export class PacienteseguimientoComponent implements OnInit {
   recipe(): void {
     this.router.navigate(["pacienterecipe"]);
   }
+  presupuesto(): void {
+    this.router.navigate(['pacientepresupuesto']);
+  }
 
 }

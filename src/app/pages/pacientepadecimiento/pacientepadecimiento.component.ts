@@ -59,4 +59,9 @@ export class PacientepadecimientoComponent implements OnInit {
     this.router.navigate(["pacienterecipe"]);
   }
 
+    
+  presupuesto(): void {
+    this.router.navigate(['pacientepresupuesto']);
+  }
+
 }

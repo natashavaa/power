@@ -57,7 +57,10 @@ export class ImagenesComponent implements OnInit {
   historia(): void {
     this.router.navigate(['global']);
   }
-
+  
+  presupuesto(): void {
+    this.router.navigate(['pacientepresupuesto']);
+  }
 
 
 }

@@ -169,6 +169,21 @@
   }
   
   
+.i {
+  text-decoration: none;
+  font-size: 15px;
+  line-height: none;
+  color: #fff;
+  width: 200%;
+  left: calc(25% - 40%);
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.i:hover {
+  color: darkgrey;
+}
+  
   .selector {
     margin-left: 16px;
     text-align: left;
