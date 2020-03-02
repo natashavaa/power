@@ -13,6 +13,19 @@
     color: black;
 }
 
+.uno {
+    margin: 0 20px;
+    color: snow;
+    background-color: blue;
+}
+
+.dos {
+    margin: 0 12px;
+    color: snow;
+    background-color: darkred;
+}
+
+
 .center {
     display: inline-block;
     width: 79%;
@@ -174,6 +187,7 @@
     color: darkgrey;
 }
 
+
 .i {
     text-decoration: none;
     font-size: 15px;
@@ -183,14 +197,14 @@
     left: calc(25% - 40%);
     border-color: transparent;
     background-color: transparent;
-}
-
-.i:hover {
+  }
+  
+  .i:hover {
     color: darkgrey;
-}
+  }
 
 
-.j {
+  .j {
     text-decoration: none;
     font-size: 15px;
     line-height: none;
@@ -203,7 +217,7 @@
     .j:hover {
       color: darkgrey;
     }
-
+    
 .mat-form-field {
     margin: 0;
     padding: 0;
@@ -214,6 +228,12 @@
 .selector {
     margin-left: 15px;
     text-align: left;
+}
+
+input {
+    background-color: #d3d3d3;
+    padding: 10px;
+    margin: 1px;
 }
 
 .mat-card {

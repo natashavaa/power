@@ -108,6 +108,10 @@ export class PacientesrecipeComponent implements OnInit {
   }
 
 
+  informe(): void {
+    this.router.navigate(['pacienteinforme']);
+  }
+  
   ngOnInit() {
   }
 

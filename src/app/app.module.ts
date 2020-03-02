@@ -88,7 +88,8 @@ import { ModalComponent } from './pages/modal/modal.component';
 import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
 import { PdfMakeWrapper } from 'pdfmake-wrapper';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { PacientepresupuestoComponent } from './pages/pacientepresupuesto/pacientepresupuesto.component'; // fonts provided for pdfmake
+import { PacientepresupuestoComponent } from './pages/pacientepresupuesto/pacientepresupuesto.component';
+import { PacienteinformeComponent } from './pages/pacienteinforme/pacienteinforme.component'; // fonts provided for pdfmake
 //import { DemoUtilsModule } from '../demo-utils/module';
 
 // Set the fonts to use
@@ -135,6 +136,7 @@ PdfMakeWrapper.setFonts(pdfFonts);
     ModalComponent,
     PantallaNOaccesoComponent,
     PacientepresupuestoComponent,
+    PacienteinformeComponent,
   ],
   imports: [
     BrowserModule,

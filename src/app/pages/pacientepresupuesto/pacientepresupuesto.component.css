@@ -203,6 +203,20 @@
     color: darkgrey;
   }
 
+  
+.j {
+    text-decoration: none;
+    font-size: 15px;
+    line-height: none;
+    color: #fff;
+    width: 280%;
+    left: calc(17% - 40%);
+    border-color: transparent;
+   background-color: transparent;
+  }
+    .j:hover {
+      color: darkgrey;
+    }
 
 .mat-form-field {
     margin: 0;
@@ -214,6 +228,12 @@
 .selector {
     margin-left: 15px;
     text-align: left;
+}
+
+input {
+    background-color: #d3d3d3;
+    padding: 10px;
+    margin: 1px;
 }
 
 .mat-card {
