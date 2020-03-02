@@ -175,9 +175,9 @@ public user: UserInterface = {
     }
   }
 ngOnInit(): void {
+  this.doctor();
   this.getlistConsultas();
   this.app.mostrar = true;
-  this.doctor();
 }
   eventTimesChanged({
     event,

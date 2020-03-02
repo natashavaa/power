@@ -13,4 +13,5 @@ export interface ConsultaInterface {
   status?: string;
   consultorioVisitar?: string;
   mes?: string;
+  dia?: string;
 }

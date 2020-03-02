@@ -104,7 +104,22 @@ onRegisterConsulta(): void {
   this.consulta.status = 'PROGRAMADA';
   this.consulta.hora = this.hora;
   this.consulta.mes = this.datepipe.transform(this.fecha, 'MM');
-
+  this.consulta.dia = this.datepipe.transform(this.fecha, 'EEEE');
+  if (Object.is(this.consulta.dia, 'Monday')) {
+    this.consulta.dia = 'Lunes';
+  } else if (Object.is(this.consulta.dia, 'Tuesday')) {
+    this.consulta.dia = 'Martes';
+  } else if (Object.is(this.consulta.dia, 'Wednesday')) {
+    this.consulta.dia = 'Miercoles';
+  } else if (Object.is(this.consulta.dia, 'Thursday')) {
+    this.consulta.dia = 'Jueves';
+  } else if (Object.is(this.consulta.dia, 'Friday')) {
+    this.consulta.dia = 'Viernes';
+  }  else if (Object.is(this.consulta.dia, 'Saturday')) {
+    this.consulta.dia = 'Sabado';
+  } else if (Object.is(this.consulta.dia, 'Sunday')) {
+    this.consulta.dia = 'Domingo';
+  }
   this.authService.registerConsulta(
     this.consulta.idDoctor,
     this.consulta.idSpeciality ,
@@ -118,6 +133,7 @@ onRegisterConsulta(): void {
     this.consulta.status,
     this.consulta.consultorioVisitar,
     this.consulta.mes,
+    this.consulta.dia,
   ).subscribe(consulta => {
     this.router.navigate(['diaria']);
   } );
