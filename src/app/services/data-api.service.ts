@@ -19,6 +19,14 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/consulta' ;
     return this.http.get(urlApi);
   }
+  getAllconsultasHoy() {
+    const urlApi = 'http://localhost:3000/consulta/hoy' ;
+    return this.http.get(urlApi);
+  }
+  getAllconsultasMes() {
+    const urlApi = 'http://localhost:3000/consulta/mes' ;
+    return this.http.get(urlApi);
+  }
   getAllUser() {
     const urlApi = 'http://localhost:3000/users' ;
     return this.http.get(urlApi);

@@ -12,4 +12,5 @@ export interface ConsultaInterface {
   motive?: string;
   status?: string;
   consultorioVisitar?: string;
+  mes?: string;
 }

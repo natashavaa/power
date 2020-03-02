@@ -272,7 +272,7 @@ ngOnInit(): void {
   }
   suspenderstatus(consulta: ConsultaInterface): void {
     this.cambiarColor = false;
-    consulta.status = 'Suspendida';
+    consulta.status = 'SUSPENDIDA';
     this.auth.UpdateConsulta(
       consulta.id,
       consulta.idDoctor,

@@ -100,10 +100,11 @@ onRegisterConsulta(): void {
   this.consulta.idPatient = this.patientf.id;
   this.consulta.namePatient = this.patientf.name;
   this.consulta.dniPatient = this.patientf.dni;
-  this.consulta.fechaPlanificada = this.datepipe.transform(this.fecha, 'yyyy-MM-dd');
+  this.consulta.fechaPlanificada = this.datepipe.transform(this.fecha, 'dd-MM-yyyy');
   this.consulta.hora = this.hora;
   this.consulta.status = 'PROGRAMADA';
   this.consulta.hora = this.hora;
+  this.consulta.mes = this.datepipe.transform(this.fecha, 'MM');
 
   console.log(this.consulta);
   this.authService.registerConsulta(
@@ -118,6 +119,7 @@ onRegisterConsulta(): void {
     this.consulta.motive,
     this.consulta.status,
     this.consulta.consultorioVisitar,
+    this.consulta.mes,
   ).subscribe(consulta => {
     console.log(consulta);
     this.router.navigate(['diaria']);

@@ -147,7 +147,7 @@ registerPatient(name: string, dni: string, age: number, sex: string,
 
 registerConsulta(idDoctor: string, idSpeciality: string, idClinicHistory: string, idPatient: string,
                  namePatient: string, dniPatient: string, fechaPlanificada: string, hora: string,
-                 motive: string, status: string, consultorioVisitar: string) {
+                 motive: string, status: string, consultorioVisitar: string, mes: string) {
       const urlApi = 'http://localhost:3000/consulta';
       return this.htttp
       .post<ConsultaInterface>(urlApi, {
@@ -173,6 +173,8 @@ registerConsulta(idDoctor: string, idSpeciality: string, idClinicHistory: string
           status: status,
           // tslint:disable-next-line: object-literal-shorthand
           consultorioVisitar: consultorioVisitar,
+            // tslint:disable-next-line: object-literal-shorthand
+            mes: mes
 
       },
       );
