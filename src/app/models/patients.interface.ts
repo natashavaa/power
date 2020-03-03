@@ -9,6 +9,7 @@ export interface PaatientInterface extends UserInterface {
     mobile?: number;
     birthplace?: string;
     sentBy?: string;
+    registradoPor?: string;
     dentalColor?: string;
     familyNumber?: number;
     familyNumberHome?: number;

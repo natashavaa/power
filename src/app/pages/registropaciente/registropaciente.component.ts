@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { PaatientInterface } from '../../models/patients.interface';
+import { UserInterface } from 'src/app/models/user.interface';
 
 @Component({
   selector: 'app-registropaciente',
@@ -27,6 +28,7 @@ export class RegistropacienteComponent implements OnInit {
     mobile: 0,
     birthplace: '',
     sentBy: '',
+    registradoPor: '',
     dentalColor: '',
     familyNumber: 0,
     familyNumberHome: 0,
@@ -37,7 +39,22 @@ export class RegistropacienteComponent implements OnInit {
     userType: '',
     phone: '',
   };
+  private user: UserInterface = {
+    id: '',
+    name: '',
+    dni: '',
+    age: 0,
+    sex: '',
+    mail: '',
+    password: '',
+    userType: '',
+    username: '',
+    phone: ''
+  
+  
+  };
   onRegisterPatient(): void {
+    this.patient.registradoPor  = this.user.name;
     this.authService.registerPatient(
       this.patient.name,
       this.patient.dni,
@@ -59,6 +76,7 @@ export class RegistropacienteComponent implements OnInit {
       this.patient.mail,
       this.patient.userType,
       this.patient.phone,
+      this.patient.registradoPor,
     ).subscribe(patient => {
       this.router.navigate(['pacientes']);
      } );
@@ -86,6 +104,7 @@ export class RegistropacienteComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this.authService.getCurrentUser();
   }
 
 }
