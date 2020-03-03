@@ -82,7 +82,7 @@
                 </mat-list-item>
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
-                   <form>
+                    <form>
                         <div>
                             <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
                         </div>
@@ -99,7 +99,7 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4><img src="https://img.icons8.com/color/50/000000/false-teeth.png">   ODONTOGRAMA </h4>
+                        <h4><img src="https://img.icons8.com/color/50/000000/false-teeth.png"> ODONTOGRAMA </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
@@ -109,16 +109,32 @@
                     <br>
                     <form action="">
                         <div class="form-group row">
-                            <br>
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
-                            <select class="form-control col-8" id="status" name="status">
+                            <br>
+                            <select class="form-control col-6">
                                 <option selected>Todos los Dientes</option>
-                                <option>Diente por Diente</option>
+                                <option>Diente x Diente</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-4 col-form-label">Estatus</mat-label>
+                            <br>
+                            <select class="form-control col-6">
+                                <option selected>Seleccionar</option>
+                                <option>Evaluado</option>
+                                <option>Iniciado</option>
+                                <option>Terminado</option>
                             </select>
                         </div>
                     </form>
                 </div>
             </div>
+
             <br>
             <br>
             <img src="assets/img/odontograma.png" alt="Avatar Image">
@@ -134,7 +150,7 @@
                             <mat-label for="" class="col-4 col-form-label">Insumos</mat-label>
                             <br>
                             <select class="form-control col-6">
-                                <option>Seleccionar</option>
+                                <option selected>Seleccionar</option>
 
                             </select>
                         </div>
@@ -147,7 +163,7 @@
                             <mat-label for="" class="col-4 col-form-label">Materiales</mat-label>
                             <br>
                             <select class="form-control col-6">
-                                <option>Seleccionar</option>
+                                <option selected>Seleccionar</option>
 
                             </select>
                         </div>
@@ -179,9 +195,9 @@
                 <label for="" class="col-4 col-form-label">Recomendaciones</label>
                 <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
             </div>
-    
-            <button mat-raised-button  class="uno">GUARDAR</button>
-            <button mat-raised-button  class="dos">CANCELAR</button>
+
+            <button mat-raised-button class="uno">GUARDAR</button>
+            <button mat-raised-button class="dos">CANCELAR</button>
         </mat-card-content>
     </div>
 </div>
