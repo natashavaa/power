@@ -2,7 +2,8 @@
     <mat-card>
         <mat-panel-title>
             <br>
-            <h4 class="centrado"><img src="https://img.icons8.com/dusk/50/000000/edit-user-male.png"> EDITAR PACIENTE </h4>
+            <h4 class="centrado"><img src="https://img.icons8.com/dusk/50/000000/edit-user-male.png"> EDITAR PACIENTE
+            </h4>
         </mat-panel-title>
         <mat-panel-description>
 
@@ -16,46 +17,59 @@
 
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Numero Historia</label>
-                        <input disabled type="text" #id="ngModel" name="id" class="form-control" placeholder="" [(ngModel)]='patient.id' required minlength="1" maxlength="50" class="form-control col-4">
+                        <input disabled type="text" #id="ngModel" name="id" class="form-control" placeholder=""
+                            [(ngModel)]='patient.id' required minlength="1" maxlength="50" class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Nombre del Paciente</label>
-                        <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='patient.name' required minlength="1" maxlength="50" class="form-control col-4">
+                        <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
+                            [(ngModel)]='patient.name' required minlength="1" maxlength="50" class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Cedula</label>
-                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patient.dni' required minlength="1" maxlength="40" class="form-control col-4">
+                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder=""
+                            [(ngModel)]='patient.dni' required minlength="1" maxlength="40" class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Direccion Habitacion</label>
-                        <input type="text" #homeAddress="ngModel" name="homeAddress" class="form-control" placeholder="" [(ngModel)]='patient.homeAddress' required minlength="4" maxlength="100" class="form-control col-4">
+                        <input type="text" #homeAddress="ngModel" name="homeAddress" class="form-control" placeholder=""
+                            [(ngModel)]='patient.homeAddress' required minlength="4" maxlength="100"
+                            class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Direccion Trabajo</label>
-                        <input type="text" #workAddress="ngModel" name="workAddress" class="form-control" placeholder="" [(ngModel)]='patient.workAddress' required minlength="4" maxlength="100" class="form-control col-4">
+                        <input type="text" #workAddress="ngModel" name="workAddress" class="form-control" placeholder=""
+                            [(ngModel)]='patient.workAddress' required minlength="4" maxlength="100"
+                            class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Genero: </label>
                         <div class="radio">
                             <label>
-                              <input readonly type="radio"  #Femenino="ngModel" name="Femenino" id="Femenino" value="Femenino" [(ngModel)]="patient.sex" class="selector" checked>
-                                  F
-                              </label>
+                                <input type="radio" #Femenino="ngModel" name="Femenino" id="Femenino" value="Femenino"
+                                    [(ngModel)]="patient.sex" checked required>
+                                F
+                            </label>
                         </div>
                         <div class="radio">
                             <label>
-                              <input readonly type="radio"  #Masculino="ngModel" name="Masculino" id="Masculino" value="Masculino" [(ngModel)]="patient.sex" class="selector" checked>
-                                  M
-                              </label>
+                                <input type="radio" #Masculino="ngModel" name="Masculino" id="Masculino"
+                                    value="Masculino" [(ngModel)]="patient.sex" class="selector" checked required>
+                                M
+                            </label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Lugar de Nacimiento</label>
-                        <input type="text" #birthPlace="ngModel" name="birthPlace" class="form-control" placeholder="" [(ngModel)]='patient.birthplace' required minlength="4" maxlength="100" class="form-control col-4">
+                        <input type="text" #birthPlace="ngModel" name="birthPlace" class="form-control" placeholder=""
+                            [(ngModel)]='patient.birthplace' required minlength="4" maxlength="100"
+                            class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Ocupacion</label>
-                        <input type="text" #occupation="ngModel" name="occupation" class="form-control" placeholder="" [(ngModel)]='patient.occupation' required minlength="4" maxlength="100" class="form-control col-4">
+                        <input type="text" #occupation="ngModel" name="occupation" class="form-control" placeholder=""
+                            [(ngModel)]='patient.occupation' required minlength="4" maxlength="100"
+                            class="form-control col-4">
                     </div>
                     <!-- <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Motivo de la Consulta</label>
@@ -63,7 +77,9 @@
                     </div>-->
                     <div class="form-group row">
                         <label for="" class="col-8 col-form-label">Consultorio a Visitar</label>
-                        <input type="text" #userType="ngModel" name="userType" class="form-control" placeholder="" [(ngModel)]='patient.userType' required minlength="4" maxlength="100" class="form-control col-4">
+                        <input type="text" #userType="ngModel" name="userType" class="form-control" placeholder=""
+                            [(ngModel)]='patient.userType' required minlength="4" maxlength="100"
+                            class="form-control col-4">
                     </div>
 
                 </div>
@@ -72,65 +88,80 @@
 
                     <div class="form-group row">
                         <label for="" class="col-6 col-form-label">Edad</label>
-                        <input min="1" type="number" #age="ngModel" name="age" placeholder="" [(ngModel)]='patient.age' required minlength="4" maxlength="100" class="form-control col-4">
+                        <input min="1" type="number" #age="ngModel" name="age" placeholder="" [(ngModel)]='patient.age'
+                            required minlength="4" maxlength="100" class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-6 col-form-label">Telefono de Casa</label>
-                        <input type="text" #phone="ngModel" name="phone" placeholder="" [(ngModel)]='patient.phone' required minlength="1" maxlength="100" class="form-control caja col-4">
+                        <input type="text" #phone="ngModel" name="phone" placeholder="" [(ngModel)]='patient.phone'
+                            required minlength="1" maxlength="100" class="form-control caja col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-6 col-form-label">Celular</label>
-                        <input type="text" #mobile="ngModel" name="mobile" class="form-control" placeholder="" [(ngModel)]='patient.mobile' required minlength="1" maxlength="100" class="form-control col-4">
+                        <input type="text" #mobile="ngModel" name="mobile" class="form-control" placeholder=""
+                            [(ngModel)]='patient.mobile' required minlength="1" maxlength="100"
+                            class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-6 col-form-label">Remitido por</label>
-                        <input type="text" #sentBy="ngModel" name="sentBy" class="form-control" placeholder="" [(ngModel)]='patient.sentBy' required minlength="1" maxlength="100" class="form-control col-4">
+                        <input type="text" #sentBy="ngModel" name="sentBy" class="form-control" placeholder=""
+                            [(ngModel)]='patient.sentBy' required minlength="1" maxlength="100"
+                            class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-6 col-form-label">Estado Civil: </label>
                         <div class="radio">
                             <label>
-                              <input type="radio" #Soltero="ngModel" name="Soltero" id="Soltero" value="Soltero" [(ngModel)]="patient.statusC" checked required>
-                                  S
-                              </label>
+                                <input type="radio" #Soltero="ngModel" name="Soltero" id="Soltero" value="Soltero"
+                                    [(ngModel)]="patient.statusC" checked required>
+                                S
+                            </label>
                         </div>
                         <div class="radio">
                             <label>
-                              <input type="radio"  #Casado="ngModel" name="Casado" id="Casado" value="Casado" [(ngModel)]="patient.statusC"
-                              class="selector" checked required>
-                                  C
-                              </label>
+                                <input type="radio" #Casado="ngModel" name="Casado" id="Casado" value="Casado"
+                                    [(ngModel)]="patient.statusC" class="selector" checked required>
+                                C
+                            </label>
                         </div>
                         <div class="radio">
                             <label>
-                              <input type="radio" #Viudo="ngModel" name="Viudo" id="Viudo" value="Viudo" [(ngModel)]="patient.statusC"
-                              class="selector" checked required>
-                                  V
-                              </label>
+                                <input type="radio" #Viudo="ngModel" name="Viudo" id="Viudo" value="Viudo"
+                                    [(ngModel)]="patient.statusC" class="selector" checked required>
+                                V
+                            </label>
                         </div>
                         <div class="radio">
                             <label>
-                              <input type="radio"  #Divorciado="ngModel" name="Divorciado" id="Divorciado" value="Divorciado" [(ngModel)]="patient.statusC"
-                              class="selector" checked required>
-                                  D
-                              </label>
+                                <input type="radio" #Divorciado="ngModel" name="Divorciado" id="Divorciado"
+                                    value="Divorciado" [(ngModel)]="patient.statusC" class="selector" checked required>
+                                D
+                            </label>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-6 col-form-label">Color Dental</label>
-                        <input type="text" #dentalColor="ngModel" name="dentalColor" class="form-control" placeholder="" [(ngModel)]='patient.dentalColor' required minlength="1" maxlength="50" class="form-control col-4">
+                        <input type="text" #dentalColor="ngModel" name="dentalColor" class="form-control" placeholder=""
+                            [(ngModel)]='patient.dentalColor' required minlength="1" maxlength="50"
+                            class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-6 col-form-label">En Emergencia llamar a</label>
-                        <input type="text" #familyName="ngModel" name="familyName" class="form-control" placeholder="" [(ngModel)]='patient.familyName' required minlength="1" maxlength="50" class="form-control col-4">
+                        <input type="text" #familyName="ngModel" name="familyName" class="form-control" placeholder=""
+                            [(ngModel)]='patient.familyName' required minlength="1" maxlength="50"
+                            class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-6 col-form-label">Telefono de Casa</label>
-                        <input type="text" #familyNumberHome="ngModel" name="familyNumberHome" class="form-control" placeholder="" [(ngModel)]='patient.familyNumberHome' required minlength="1" maxlength="50" class="form-control col-4">
+                        <input type="text" #familyNumberHome="ngModel" name="familyNumberHome" class="form-control"
+                            placeholder="" [(ngModel)]='patient.familyNumberHome' required minlength="1" maxlength="50"
+                            class="form-control col-4">
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-6 col-form-label">Celular</label>
-                        <input type="text" #familyNumber="ngModel" name="familyNumber" class="form-control" placeholder="" [(ngModel)]='patient.familyNumber' required minlength="1" maxlength="50" class="form-control col-4">
+                        <input type="text" #familyNumber="ngModel" name="familyNumber" class="form-control"
+                            placeholder="" [(ngModel)]='patient.familyNumber' required minlength="1" maxlength="50"
+                            class="form-control col-4">
                     </div>
 
                 </div>

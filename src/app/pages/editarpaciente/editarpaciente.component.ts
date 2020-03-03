@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../helpers/must-match.validator';
 import { Router } from '@angular/router';
 import { PaatientInterface } from '../../models/patients.interface';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-editarpaciente',
@@ -30,9 +31,10 @@ private user: UserInterface = {
 
 };
 private patient: PaatientInterface;
-constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService) { }
+constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService, private app: AppComponent) { }
 
 ngOnInit() {
+  this.app.mostrar = true;
     this.user = this.authService.getCurrentUser();
     this.patient = this.authService.getCurrentPatient();
 }

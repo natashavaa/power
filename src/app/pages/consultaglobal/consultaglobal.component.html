@@ -9,15 +9,20 @@
         </mat-panel-description>
         <br>
 
+
         <div class="row per" *ngIf="!MostrarForm">
-            <div class="col-6">
+            <div class="col-8">
                 <br>
                 <form #SearchPatient="ngForm" (ngSubmit)="onSearch(SearchPatient)">
                     <div class="form-group row">
-                        <label for="" class="col-8 col-form-label">Cedula</label>
-                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patient.dni' required minlength="4" maxlength="50" class="form-control col-2">
+                        <div class="col-4">
+                            <p></p>
+                        </div>
+                        <label for="" class="col-2 col-form-label">Cedula :</label>
+                        <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder=""
+                            [(ngModel)]='patient.dni' required minlength="4" maxlength="50" class="form-control col-2">
 
-                        <div>
+                        <div class="col-1">
                             <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
                         </div>
                     </div>
@@ -31,42 +36,53 @@
                     <div class="col-6">
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Cedula</label>
-                            <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder="" [(ngModel)]='patientf.dni' required minlength="4" maxlength="50" class="form-control col-2">
+                            <input type="text" #dni="ngModel" name="dni" class="form-control" placeholder=""
+                                [(ngModel)]='patientf.dni' required minlength="4" maxlength="50"
+                                class="form-control col-2">
                         </div>
 
                         <div class="form-group row">
                             <label for="" class="col-8 col-form-label">Motivo de la Consulta</label>
-                            <textarea #motive="ngModel" name="motive" class="form-control" placeholder="" [(ngModel)]='consulta.motive' rows="3" class="form-control col-4"></textarea>
+                            <textarea #motive="ngModel" name="motive" class="form-control" placeholder=""
+                                [(ngModel)]='consulta.motive' rows="3" class="form-control col-4"></textarea>
                         </div>
                         <div class="form-group row">
                             <mat-label for="" class="col-8 col-form-label">Consultorio a Visitar</mat-label>
                             <br>
-                            <select #consultorioVisitar="ngModel" name="consultorioVisitar" class="form-control" placeholder="" [(ngModel)]='consulta.consultorioVisitar' id="consultorioVisitar" class="form-control col-4">
-                        <option>Odontologia</option>
-                        <option>Ortodoncia</option>
-                    </select>
+                            <select #consultorioVisitar="ngModel" name="consultorioVisitar" class="form-control"
+                                placeholder="" [(ngModel)]='consulta.consultorioVisitar' id="consultorioVisitar"
+                                class="form-control col-4">
+                                <option>Odontologia</option>
+                                <option>Ortodoncia</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Nombre Completo</label>
-                            <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='patientf.name' required minlength="4" maxlength="50" class="form-control col-5">
+                            <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
+                                [(ngModel)]='patientf.name' required minlength="4" maxlength="50"
+                                class="form-control col-5">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Fecha</label>
-                            <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha" class="form-control col-4" [(ngModel)]="fecha">
+                            <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha"
+                                class="form-control col-4" [(ngModel)]="fecha">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Hora</label>
-                            <input [(ngModel)]="hora" type="time" name="hora" id="hora" class="form-control col-5" min="8:00" max="18:00" step="5:00">
+                            <input [(ngModel)]="hora" type="time" name="hora" id="hora" class="form-control col-5"
+                                min="8:00" max="18:00" step="5:00">
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Atentido Por: </label>
-                            <select #atendidoPor="ngModel" name="atendidoPor" class="form-control" placeholder="" [(ngModel)]='consulta.atendidoPor' id="atendidoPor" class="form-control col-5">
-                            <option *ngFor="let doctorUser of doctorUser" [ngValue]="doctorUser.name">{{doctorUser.name}}</option>
-                        </select>
+                            <select #atendidoPor="ngModel" name="atendidoPor" class="form-control" placeholder=""
+                                [(ngModel)]='consulta.atendidoPor' id="atendidoPor" class="form-control col-5">
+                                <option *ngFor="let doctorUser of doctorUser" [ngValue]="doctorUser.name">
+                                    {{doctorUser.name}}</option>
+                            </select>
                         </div>
 
 

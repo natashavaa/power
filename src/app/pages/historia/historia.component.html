@@ -195,6 +195,23 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Genero: </label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" #Femenino="ngModel" name="Femenino" id="Femenino" value="Femenino"
+                                        [(ngModel)]="patient.sex" checked required>
+                                    F
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" #Masculino="ngModel" name="Masculino" id="Masculino"
+                                        value="Masculino" [(ngModel)]="patient.sex" class="selector" checked required>
+                                    M
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Color Dental</label>
                             <input readonly type="text" #dentalColor="ngModel" name="dentalColor" class="form-control" placeholder="" [(ngModel)]='patient.dentalColor' required minlength="1" maxlength="50" class="form-control col-4">
                         </div>

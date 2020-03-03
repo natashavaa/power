@@ -74,7 +74,7 @@
                                 <option>Ortodoncia</option>
                                 <option>Todas</option>
                             </select>
-                            <div>
+                            <div class="col-1">
                                 <button class="sinp" type="submit" class="btn btn-info">Buscar </button>
                             </div>
                         </div>
@@ -103,8 +103,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre </th>
                                 <th scope="col">Especialidad</th>
-                                <th scope="col">Catidad</th>
-                                <th scope="col">Usar</th>
+                                <th scope="col">Cantidad</th>
                                 <th scope="col">En Uso</th>
                                 <th scope="col">En Limpieza</th>
                                 <th scope="col">Eliminar Insumo</th>
@@ -116,11 +115,7 @@
                                 <td>{{instrumento.name}}</td>
                                 <td>{{instrumento.especiality}}</td>
                                 <td>{{instrumento.cantidad}}</td>
-                                <td>
-                                    <button (click)="usarInsumo(instrumento)" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="Presione para usar un Insumo">
-                                        <span>Usar</span>
-                                    </button>
-                                </td>
+                               
                                 <td>
                                     <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Insumos Utilizados ahora,Presiones si ya los usó">
                                         <span>En uso: {{instrumento.enUso}}
