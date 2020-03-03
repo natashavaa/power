@@ -159,7 +159,6 @@
                 </div>
             </div>
             <br>
-            <br>
             <div class="row">
                 <div class="col-6">
                     <form action="">
@@ -182,13 +181,30 @@
             <br>
             <br>
             <br>
-            <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Fecha</label>
-                <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha"
-                    class="form-control col-2" [(ngModel)]="fecha">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+            <div class="row">
+                <div class="col-6">
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Fecha </mat-label>
+                            <br>
+                            <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha"
+                                class="form-control col-4" [(ngModel)]="fecha">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form action="">
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Hora </label>
+                            <input [(ngModel)]="hora" type="time" name="hora" id="hora" class="form-control col-4"
+                                class="prueba" min="8:00" max="18:00" step="5:00">
+                        </div>
+                    </form>
+                </div>
             </div>
+            <br>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Tratamiento Efectuado</label>
                 <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
@@ -197,6 +213,7 @@
                 <label for="" class="col-4 col-form-label">Observaciones</label>
                 <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
             </div>
+            <br>
             <button mat-raised-button (click)="historia()" class="uno">GUARDAR</button>
             <button mat-raised-button (click)="cancelar()" class="dos">CANCELAR</button>
         </mat-card-content>

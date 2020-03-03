@@ -249,3 +249,13 @@
     font-size: 40px;
   }
  
+.prueba input {
+  padding: 10px;
+  margin: 1px;
+  background-color: #fff;
+}
+
+input {
+  padding: 10px;
+  margin: 1px;
+}
