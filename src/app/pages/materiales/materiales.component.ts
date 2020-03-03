@@ -166,6 +166,17 @@ odontologiatrue: boolean;
     }
     this.ngOnInit();
   }
+  getMAterialSpecialityOninit(): void {
+    if ( Object.is(this.speciality, 'Todas')) {
+      this.getlistAllMaterial();
+    } else if ( Object.is(this.speciality, 'Odontologia')) {
+      this.getlistMaterialOdontologia();
+    } else if (Object.is(this.speciality, 'Ortodoncia')) {
+      this.getlistMaterialOrtodoncia();
+
+    }
+    this.ngOnInit();
+  }
 
 }
 
