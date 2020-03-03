@@ -128,6 +128,11 @@ export class PacienteconsultaComponent implements OnInit {
     this.router.navigate(['pacientepresupuesto']);
   }
 
+  
+  informe(): void {
+    this.router.navigate(['pacienteinforme']);
+  }
+
   getlistConsultas() {
     this.app.mostrar = true;
     this.patient = this.auth.getCurrentPatient();

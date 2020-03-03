@@ -37,6 +37,7 @@ import { RegistromaterialComponent } from './pages/registromaterial/registromate
 import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.component';
 import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
 import { PacientepresupuestoComponent } from './pages/pacientepresupuesto/pacientepresupuesto.component';
+import { PacienteinformeComponent } from './pages/pacienteinforme/pacienteinforme.component';
 
 
 
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
   {path: 'login', component : LoginComponent},
   {path: 'pacientepadecimiento', component: PacientepadecimientoComponent},
   {path: 'pacientepresupuesto', component: PacientepresupuestoComponent},
+  {path: 'pacienteinforme', component: PacienteinformeComponent},
   {path: 'registerpaciente', component : RegistropacienteComponent},
   {path: 'pacientes', component : PacientesComponent},
   {path: 'doctores', component : DoctoresComponent},

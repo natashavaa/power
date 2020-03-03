@@ -6,10 +6,8 @@
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <div class="text-right">
-                        <h5 align="center">{{patient.name}}</h5>
-                        <h1 align="center">{{patient.age}} años</h1>
-                    </div>
+                    <h5 align="center">Maria RodriguezDB</h5>
+                    <h1 align="center">12 años</h1>
                 </mat-card-title>
                 <mat-list-item>
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
@@ -82,20 +80,17 @@
                         </div>
                     </form>
                 </mat-list-item>
-                
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
-                   <form>
+                    <form>
                         <div>
                             <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
                         </div>
                     </form>
                 </mat-list-item>
-
             </mat-list>
         </mat-card-content>
     </div>
-
 
     <div class="center">
         <mat-card-content>
@@ -103,75 +98,59 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4><img src="https://img.icons8.com/dusk/50/000000/change-user-male.png"> EVOLUCION </h4>
+                        <h4><img src="https://img.icons8.com/office/50/000000/treatment-plan.png"> INFORME ODONTOLOGICO
+                        </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
 
-            <div>
-                <br>
-                <div class="row">
-                    <div class="col-12">
-                        <label for="" class="col-6 col-form-label"></label>
-                        <input type="file" name="archivo">
-                    </div>
+
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <form action="">
+                        <div class="form-group row">
+                            <label for="" class="col-5 col-form-label">Certifico que el dia</label>
+                            <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha"
+                                class="form-control col-4" [(ngModel)]="fecha">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form action="">
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Atendi a</label>
+                            <input type="text" class="form-control" class="form-control col-5">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form action="">
+                        <br>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Por Presentar</label>
+                            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Diagnostico Definitivo</label>
+                            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label"></label>
+                            <textarea class="form-control" rows="3" class="form-control col-4"></textarea>
+                        </div>
+                        <label for="" class="col-4 col-form-label">Firma</label>
+                    </form>
                 </div>
             </div>
             <br>
-
-            <div class="alert alert-danger" role="alert">
-                NO HAY NINGUN TIPO DE IMAGEN O DOC DE ESTE PACIENTE
-
-            </div>
-            <div class="row mt-5">
-                <div class="col">
-                    <mat-form-field class=" col-2 border-bottom text-dark">
-                        <div class="row caja2">
-                            <img src="https://img.icons8.com/dusk/25/000000/search.png">
-                            <div class="row marg">
-                                <mat-label class="text-dark"></mat-label>
-                                <input matInput placeholder="Buscar">
-                            </div>
-                        </div>
-                    </mat-form-field>
-                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre </th>
-                                <th scope="col">Telefono</th>
-                                <th scope="col">Cedula</th>
-                                <th scope="col">Nombre Familiar</th>
-                                <th scope="col">Numero Familiar</th>
-                                <th scope="col">Tipo de Especialidad</th>
-                                <th scope="col">Historia clinica</th>
-                                <th scope="col">Editar Paciente</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let patient of patient">
-                                <td></td>
-                                <td>{{patient.name}}</td>
-                                <td>{{patient.mobile}}</td>
-                                <td>{{patient.dni}}</td>
-                                <td>{{patient.familyName}}</td>
-                                <td>{{patient.familyNumber}}</td>
-                                <td>{{patient.usertype}}</td>
-                                <td>
-                                    <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/order-history.png">
-                                </td>
-                                <td>
-                                    <img class="tres" (click)="historia()" src="https://img.icons8.com/dusk/50/000000/edit-property.png">
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
+            <button mat-raised-button class="uno">GUARDAR</button>
+            <button mat-raised-button class="dos">IMPRIMIR</button>
         </mat-card-content>
     </div>
-
 </div>

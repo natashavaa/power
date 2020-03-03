@@ -54,4 +54,9 @@ export class OdontogramatodoslosdientesComponent implements OnInit {
   }
 
 
+  
+  informe(): void {
+    this.router.navigate(['pacienteinforme']);
+  }
+
 }
