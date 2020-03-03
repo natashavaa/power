@@ -1,4 +1,11 @@
-<br>
+<form align="left">
+    <div>
+        <span class="claDoc ">{{usuarioA}} </span>
+
+    </div>
+    <br>
+    <span class="claDocEs ">{{especialidad}} </span>
+</form>
 <br>
 <div class="row">
     <form #gelist="ngForm" (ngSubmit)="getConsultas(gelist)">
@@ -21,14 +28,7 @@
 
 
 </div>
-<form align="right">
-    <div>
-        <span class="claDoc ">{{usuarioA}} </span>
 
-    </div>
-    <br>
-    <span class="claDocEs ">{{especialidad}} </span>
-</form>
 <form align="right">
     <button mat-raised-button (click)="global()" class="uno"><img
               src="https://img.icons8.com/dusk/50/000000/calendar-plus.png"> Agregar Consultas</button>
@@ -54,6 +54,7 @@
                     <th scope="col">Hora</th>
                     <th scope="col">Motivo</th>
                     <th scope="col">Consultorio a Visitar</th>
+                    <th scope="col">Atendido Por</th>
                     <th scope="col">Status</th>
                     <th scope="col">Suspender</th>
                 </tr>
@@ -68,6 +69,7 @@
                     <td>{{consulta.hora}}</td>
                     <td>{{consulta.motive}}</td>
                     <td>{{consulta.consultorioVisitar}}</td>
+                    <td>{{consulta.atendidoPor}}</td>
                     <td><button type="button" class="btn btn-success" (click)="cambiarstatus(consulta)">
                         <span>{{consulta.status}}</span>
                     </button></td>
@@ -78,5 +80,7 @@
 
             </tbody>
         </table>
+
+
     </div>
 </div>

@@ -25,6 +25,7 @@ export class ConsultaglobalComponent implements OnInit {
     MostrarForm: boolean;
     fecha = Date;
     hora: string;
+    private doctorUser: UserInterface = {};
     private user: UserInterface = {
     };
     private patient: PaatientInterface = {
@@ -74,6 +75,7 @@ export class ConsultaglobalComponent implements OnInit {
     };
   ngOnInit() {
     this.app.mostrar = true;
+    this.getlistUsers();
   }
   onSearch(): void {
     this.MostrarForm =  false;
@@ -90,6 +92,9 @@ export class ConsultaglobalComponent implements OnInit {
        }
     });
    }
+}
+getlistUsers() {
+  this.dataApi.getAllUser().subscribe((doctorUser: UserInterface) => ( this.doctorUser = doctorUser));
 }
 onRegisterConsulta(): void {
   this.user = this.authService.getCurrentUser();
@@ -134,6 +139,7 @@ onRegisterConsulta(): void {
     this.consulta.consultorioVisitar,
     this.consulta.mes,
     this.consulta.dia,
+    this.consulta.atendidoPor,
   ).subscribe(consulta => {
     this.router.navigate(['diaria']);
   } );

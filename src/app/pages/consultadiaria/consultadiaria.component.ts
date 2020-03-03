@@ -156,6 +156,7 @@ public user: UserInterface = {
 };
  private consulta: ConsultaInterface = {};
 
+
    usuarioA: string;
    especialidad: string;
    cambiarColor: boolean;
@@ -236,6 +237,7 @@ ngOnInit(): void {
   }
   getlistConsultas() {
     this.dataApi.getAllconsultas().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
+    console.log(this.consulta);
   }
   getlistConsultasHoy() {
     this.dataApi.getAllconsultasHoy().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
@@ -254,14 +256,17 @@ ngOnInit(): void {
       this.getlistConsultas();
     }
   }
+
   doctor(): string {
     this.user = this.auth.getCurrentUser();
     if (Object.is(this.user.username, 'admin')) {
         this.usuarioA = 'Administrador';
+        console.log(this.usuarioA);
         return this.usuarioA;
     } else {
       this.usuarioA = 'Doctor : ' + this.user.name;
       this.especialidad = 'Especialidad : ' +  this.user.userType;
+      console.log(this.usuarioA);
       return  this.usuarioA;
 
     }

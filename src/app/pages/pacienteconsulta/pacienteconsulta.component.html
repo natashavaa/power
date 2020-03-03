@@ -73,7 +73,7 @@
                 </mat-list-item>
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
-                   <form>
+                    <form>
                         <div>
                             <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
                         </div>
@@ -123,6 +123,7 @@
                                 <th scope="col">Nombre Paciente </th>
                                 <th scope="col">Cedula</th>
                                 <th scope="col">Fecha de Consulta</th>
+                                <th scope="col">Dia</th>
                                 <th scope="col">Hora</th>
                                 <th scope="col">Motivo</th>
                                 <th scope="col">Consultorio a Visitar</th>
@@ -136,6 +137,7 @@
                                 <td>{{consulta.namePatient}}</td>
                                 <td>{{consulta.dniPatient}}</td>
                                 <td>{{consulta.fechaPlanificada}}</td>
+                                <td>{{consulta.dia}}</td>
                                 <td>{{consulta.hora}}</td>
                                 <td>{{consulta.motive}}</td>
                                 <td>{{consulta.consultorioVisitar}}</td>

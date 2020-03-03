@@ -14,4 +14,5 @@ export interface ConsultaInterface {
   consultorioVisitar?: string;
   mes?: string;
   dia?: string;
+  atendidoPor?: string;
 }
