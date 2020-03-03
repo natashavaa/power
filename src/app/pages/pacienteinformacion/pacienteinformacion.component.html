@@ -82,7 +82,7 @@
                 </mat-list-item>
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
-                   <form>
+                    <form>
                         <div>
                             <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
                         </div>
@@ -97,15 +97,12 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4><img src="https://img.icons8.com/dusk/50/000000/treatment-plan.png"> INFORMACION CLINICA </h4>
+                        <h4><img src="https://img.icons8.com/dusk/50/000000/treatment-plan.png"> INFORMACION CLINICA
+                        </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
         </mat-card-content>
-        <div class="form-group row">
-            <label for="" class="col-4 col-form-label">Motivo de la Consulta</label>
-            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-        </div>
         <mat-accordion multi="true">
             <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
                 <mat-expansion-panel-header>
@@ -662,7 +659,7 @@
                 <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
             </div>
             <br>
-            
+
             <button mat-raised-button (click)="historia()" class="uno">GUARDAR HISTORIA CLINICA</button>
             <button mat-raised-button (click)="cancelar()" class="dos">CANCELAR</button>
             <br>

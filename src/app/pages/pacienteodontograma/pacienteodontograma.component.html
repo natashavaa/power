@@ -82,7 +82,7 @@
                 </mat-list-item>
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
-                   <form>
+                    <form>
                         <div>
                             <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
                         </div>
@@ -99,7 +99,7 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4><img src="https://img.icons8.com/color/50/000000/false-teeth.png">   ODONTOGRAMA </h4>
+                        <h4><img src="https://img.icons8.com/color/50/000000/false-teeth.png"> ODONTOGRAMA </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
@@ -129,6 +129,22 @@
 
             </div>
             <br>
+
+            <div class="row">
+                <div class="col-6">
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-4 col-form-label">Estatus</mat-label>
+                            <br>
+                            <select class="form-control col-8">
+                                <option>Programada</option>
+                                <option>Suspendida</option>
+                                <option>Culminado</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <button (click)="padecimiento()" color="warn"><img src="assets/img/odontograma.png"
                     alt="Avatar Image"></button>
             <br>

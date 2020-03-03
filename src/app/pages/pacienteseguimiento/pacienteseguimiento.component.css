@@ -15,6 +15,11 @@
     border-color: #d3d3d3;
   }
   
+  .input  {
+    background-color: #fff;
+    padding: 10px;
+  }
+
   .container .avatar {
     width: 120px;
     height: 120px;
@@ -169,7 +174,17 @@
   }
   
   
-
+  .uno {
+    margin: 0 12px;
+    color: snow;
+    background-color: blue;
+  }
+  
+  .dos {
+    margin: 0 12px;
+    color: snow;
+    background-color: darkred;
+  }
 
 .i {
   text-decoration: none;

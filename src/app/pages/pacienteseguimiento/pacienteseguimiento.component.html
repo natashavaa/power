@@ -81,7 +81,7 @@
                 </mat-list-item>
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
-                   <form>
+                    <form>
                         <div>
                             <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
                         </div>
@@ -103,7 +103,7 @@
             </mat-card-title>
             <br>
             <div class="alert alert-info" role="alert">
-                EL SEGUIMIENTO DEPENDE DEL PROCEDIMIENTO CLINICO ESCOGIDO
+                EL SEGUIMIENTO DEPENDE DEL PROCEDIMIENTO ODONTOLOGICO ESCOGIDO
             </div>
             <br>
             <div class="row">
@@ -127,7 +127,7 @@
                                 <input placeholder="" class="form-control col-6">
                             </div>
                             <div class="form-group row">
-                                <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
+                                <mat-label for="" class="col-4 col-form-label">Insumos</mat-label>
                                 <br>
                                 <select class="form-control col-6">
                                     <option>Seleccionar</option>
@@ -139,10 +139,39 @@
                                 </select>
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Consultas Anteriores</label>
+                                <mat-label for="" class="col-4 col-form-label">Materiales</mat-label>
+                                <br>
+                                <select class="form-control col-6">
+                                    <option>Seleccionar</option>
+                                    <option>Parte Superior</option>
+                                    <option>Parte Inferior</option>
+                                    <option>Lado Derecho</option>
+                                    <option>Lado Izquierdo</option>
+                                    <option>Diente por Diente</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-4 col-form-label">Consultas Posteriores</label>
                                 <input placeholder="" class="form-control col-6">
                             </div>
                         </fieldset>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-4 col-form-label">Estatus</mat-label>
+                            <br>
+                            <select class="form-control col-8">
+                                <option>Programada</option>
+                                <option>Suspendida</option>
+                                <option>Culminado</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -153,20 +182,23 @@
             <br>
             <br>
             <br>
-            <fieldset disabled>
-                <div class="form-group row">
-                    <label for="" class="col-4 col-form-label">Historia Dental</label>
-                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-                </div>
-                <div class="form-group row">
-                    <label for="" class="col-4 col-form-label">Motivo de la Consulta</label>
-                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-                </div>
-                <div class="form-group row">
-                    <label for="" class="col-4 col-form-label">Observaciones</label>
-                    <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-                </div>
-            </fieldset>
+            <div class="form-group row">
+                <label for="" class="col-4 col-form-label">Fecha</label>
+                <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha"
+                    class="form-control col-2" [(ngModel)]="fecha">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-4 col-form-label">Tratamiento Efectuado</label>
+                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-4 col-form-label">Observaciones</label>
+                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+            </div>
+            <button mat-raised-button (click)="historia()" class="uno">GUARDAR</button>
+            <button mat-raised-button (click)="cancelar()" class="dos">CANCELAR</button>
         </mat-card-content>
     </div>
 </div>
