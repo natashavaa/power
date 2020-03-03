@@ -15,34 +15,27 @@
             <br>
             <label for="" class="col-5">Buscar por:</label>
             <select class="form-control col-4" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
-          <option>Hoy</option>
-          <option>Mes</option>
-          <option>Todas</option>
-      </select>
+                <option>Hoy</option>
+                <option>Mes</option>
+                <option>Todas</option>
+            </select>
             <div class="col-3">
                 <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
             </div>
         </div>
     </form>
 
-
-
 </div>
 
 <form align="right">
     <button mat-raised-button (click)="global()" class="uno"><img
-              src="https://img.icons8.com/dusk/50/000000/calendar-plus.png"> Agregar Consultas</button>
+            src="https://img.icons8.com/dusk/50/000000/calendar-plus.png"> Agregar Consultas</button>
 </form>
 
 
 <div class="row mt-5">
     <div class="col">
-        <mat-form-field class=" col-2 border-bottom text-dark">
-            <div class="row caja2">
 
-            </div>
-
-        </mat-form-field>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -71,11 +64,11 @@
                     <td>{{consulta.consultorioVisitar}}</td>
                     <td>{{consulta.atendidoPor}}</td>
                     <td><button type="button" class="btn btn-success" (click)="cambiarstatus(consulta)">
-                        <span>{{consulta.status}}</span>
-                    </button></td>
+                            <span>{{consulta.status}}</span>
+                        </button></td>
                     <td><button type="button" class="btn btn-danger" (click)="suspenderstatus(consulta)">
-                      <span>X</span>
-                  </button></td>
+                            <span>X</span>
+                        </button></td>
                 </tr>
 
             </tbody>
