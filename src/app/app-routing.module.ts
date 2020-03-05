@@ -38,6 +38,12 @@ import { RegistroinsumoComponent } from './pages/registroinsumo/registroinsumo.c
 import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
 import { PacientepresupuestoComponent } from './pages/pacientepresupuesto/pacientepresupuesto.component';
 import { PacienteinformeComponent } from './pages/pacienteinforme/pacienteinforme.component';
+import { MantenimientoComponent } from './pages/mantenimiento/mantenimiento.component';
+import { RegistropiezaComponent } from './pages/registropieza/registropieza.component';
+import { PadecimientoComponent } from './pages/padecimiento/padecimiento.component';
+import { RegistropadecimientoComponent } from './pages/registropadecimiento/registropadecimiento.component';
+import { ProcedimientoComponent } from './pages/procedimiento/procedimiento.component';
+import { RegistroprocedimientoComponent } from './pages/registroprocedimiento/registroprocedimiento.component';
 
 
 
@@ -57,9 +63,15 @@ const appRoutes: Routes = [
   {path: 'diaria', component: ConsultadiariaComponent},
   {path: 'global', component: ConsultaglobalComponent},
   {path: 'especialidad', component: EspecialidadesComponent},
+  {path: 'mantenimiento', component: MantenimientoComponent},
+  {path: 'padecimiento', component: PadecimientoComponent},
+  {path: 'procedimiento', component: ProcedimientoComponent},
+  {path: 'registerpadecimiento', component: RegistropadecimientoComponent},
+  {path: 'registerprocedimiento', component: RegistroprocedimientoComponent},
   {path: 'materiales', component: MaterialesComponent},
   {path: 'editarperfil', component : PerfilComponent},
   {path: 'pacienterecipe', component : PacientesrecipeComponent},
+  {path: 'registerpieza', component : RegistropiezaComponent},
   {path: 'reportes', component: ReportesComponent},
   {path: 'historiaclinica', component : HistoriaComponent},
   {path: 'pacienteinformacion', component: PacienteinformacionComponent},

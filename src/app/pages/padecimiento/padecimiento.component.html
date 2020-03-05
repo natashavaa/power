@@ -1,0 +1,144 @@
+<form align="left">
+    <div>
+        <span class="claDoc ">{{usuarioA}} </span>
+
+    </div>
+    <br>
+    <span class="claDocEs ">{{especialidad}} </span>
+</form>
+<div class="au-xs-ta-center au-lg-ta-center">
+    <ul class="rk-menu rk-categories-menu">
+        <img src="https://img.icons8.com/ultraviolet/50/000000/tooth.png">
+        <li class="active rk-menu__item"><a routerLink="/mantenimiento" class="rk-menu__link">Piezas</a>
+        </li>
+        <img src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png">
+        <li class="rk-menu__item"><a routerLink="/padecimiento" class="rk-menu__link">Padecimientos</a>
+        </li>
+        <img src="https://img.icons8.com/ultraviolet/50/000000/process.png">
+        <li class="rk-menu__item"><a routerLink="/procedimiento" class="rk-menu__link">Procedimientos</a>
+        </li>
+    </ul>
+</div>
+
+<div class="container">
+
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+                <form>
+                    <mat-card>
+                        <br>
+                        <div class="row">
+                            <div class="col-2">
+                                <br>
+                                <form action="">
+                                    <div class="form-group row">
+                                        <div class="container">
+                                            <div class="padre">
+                                                <img src="https://img.icons8.com/ios/50/000000/set-of-teeth.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-10">
+                                <br>
+                                <form action="">
+                                    <div class="form-group row">
+                                        <h4 for="" class="col-10 col-form-label">Padecimientos</h4>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </mat-card>
+                </form>
+            </mat-card-title>
+            <br>
+            <form align="right">
+                <div>
+                    <button mat-raised-button (click)="agregarpadecimiento()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png"> Agregar Padecimiento</button>
+                </div>
+            </form>
+            <form #gelistIn="ngForm" (ngSubmit)="getInsumosSpeciality(gelistIn)">
+                <div class="row ">
+                    <div class="col-6">
+                        <br>
+
+                        <div class="form-group row">
+                            <br>
+                            <br>
+                            <label for="" class="col-6 col-form-label">Tipo de Especialidad:</label>
+                            <select class="form-control col-4" #Especialidad="ngModel" name="speciality" id="speciality" [(ngModel)]="speciality">
+                                <option>Odontologia</option>
+                                <option>Ortodoncia</option>
+                                <option>Todas</option>
+                            </select>
+                            <div class="col-1">
+                                <button class="sinp" type="submit" class="btn btn-info">Buscar </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+            <div class="row mt-5">
+                <div class="col">
+                    <label for="" class="lolo">Lista de Insumos Odontologicos</label>
+                    <mat-form-field class=" col-2 border-bottom text-dark">
+                        <div class="row caja2">
+                            <img src="https://img.icons8.com/dusk/25/000000/search.png">
+
+                            <div class="row marg">
+                                <mat-label class="text-dark"></mat-label>
+                                <input matInput placeholder="Buscar">
+                            </div>
+                        </div>
+
+                    </mat-form-field>
+                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre </th>
+                                <th scope="col">Especialidad</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">En Uso</th>
+                                <th scope="col">En Limpieza</th>
+                                <th scope="col">Eliminar Insumo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let instrumento of instrumento">
+                                <td>{{instrumento.id}}</td>
+                                <td>{{instrumento.name}}</td>
+                                <td>{{instrumento.especiality}}</td>
+                                <td>{{instrumento.cantidad}}</td>
+                               
+                                <td>
+                                    <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Insumos Utilizados ahora,Presiones si ya los usó">
+                                        <span>En uso: {{instrumento.enUso}}
+                                        </span>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button (click)="limpiarInsumos(instrumento)" class=" btn btn-warning" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Insumos en Limpieza,Presione para limpiar">
+                                        <span>En Limpieza: {{instrumento.enLimpieza}}</span>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button (click)="eliminarIsumos(instrumento)" class=" btn btn-danger" type="button" data-toggle="tooltip" data-placement="top" title="Presione para eliminar">
+                                        <span>Eliminar</span>
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </div>
+</div>

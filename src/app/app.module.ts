@@ -89,7 +89,13 @@ import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-no
 import { PdfMakeWrapper } from 'pdfmake-wrapper';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { PacientepresupuestoComponent } from './pages/pacientepresupuesto/pacientepresupuesto.component';
-import { PacienteinformeComponent } from './pages/pacienteinforme/pacienteinforme.component'; // fonts provided for pdfmake
+import { PacienteinformeComponent } from './pages/pacienteinforme/pacienteinforme.component';
+import { MantenimientoComponent } from './pages/mantenimiento/mantenimiento.component';
+import { RegistropiezaComponent } from './pages/registropieza/registropieza.component';
+import { RegistropadecimientoComponent } from './pages/registropadecimiento/registropadecimiento.component';
+import { PadecimientoComponent } from './pages/padecimiento/padecimiento.component';
+import { ProcedimientoComponent } from './pages/procedimiento/procedimiento.component';
+import { RegistroprocedimientoComponent } from './pages/registroprocedimiento/registroprocedimiento.component'; // fonts provided for pdfmake
 //import { DemoUtilsModule } from '../demo-utils/module';
 
 // Set the fonts to use
@@ -137,6 +143,12 @@ PdfMakeWrapper.setFonts(pdfFonts);
     PantallaNOaccesoComponent,
     PacientepresupuestoComponent,
     PacienteinformeComponent,
+    MantenimientoComponent,
+    RegistropiezaComponent,
+    RegistropadecimientoComponent,
+    PadecimientoComponent,
+    ProcedimientoComponent,
+    RegistroprocedimientoComponent,
   ],
   imports: [
     BrowserModule,

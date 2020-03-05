@@ -1,0 +1,77 @@
+<div class="au-xs-ta-center au-lg-ta-center">
+    <ul class="rk-menu rk-categories-menu">
+        <img src="https://img.icons8.com/ultraviolet/50/000000/tooth.png">
+        <li class="active rk-menu__item"><a routerLink="/mantenimiento" class="rk-menu__link">Piezas</a>
+        </li>
+        <img src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png">
+        <li class="rk-menu__item"><a routerLink="/padecimiento" class="rk-menu__link">Padecimientos</a>
+        </li>
+        <img src="https://img.icons8.com/ultraviolet/50/000000/process.png">
+        <li class="rk-menu__item"><a routerLink="/procedimiento" class="rk-menu__link">Procedimientos</a>
+        </li>
+    </ul>
+</div>
+
+<div align='center'>
+    <form>
+        <mat-card>
+            <br>
+            <h4> AGREGAR PROCEDIMIENTO DENTAL </h4>
+            <br>
+            <!--AGREGAR PIEZA FORMULARIO-->
+            <div class="row">
+                <div class="col-6 caja">
+                    <br>
+
+                    <div class="form-group row">
+                        <label for="" class="col-6 col-form-label">Nombre del Procedimiento</label>
+                        <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
+                            [(ngModel)]='PiezaRe.name' required minlength="4" maxlength="50" class="form-control col-6">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="nameC.touched && !nameC.valid">
+                        <div *ngIf="nameC.errors.required">Campo requerido</div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-6 col-form-label">Descripcion</label>
+                        <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
+                            [(ngModel)]='PiezaRe.descripcion' required minlength="4" maxlength="50"
+                            class="form-control col-6">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="nameC.touched && !nameC.valid">
+                        <div *ngIf="nameC.errors.required">Campo requerido</div>
+                    </div>
+                </div>
+                <div class="col-6 caja">
+                    <br>
+
+                    <div class="form-group row">
+                        <mat-label for="" class="col-6 col-form-label">Estatus</mat-label>
+                        <br>
+                        <select #Especialidad="ngModel" name="Especialidad" id="Especialidad"
+                            [(ngModel)]="materialRe.especiality" class="form-control col-5">
+                            <option>Abierto</option>
+                            <option>Cerrado</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-6 col-form-label">Costo</label>
+                        <input type="number" min="1" #Cantidad="ngModel" name="posicion" class="form-control"
+                            placeholder="" [(ngModel)]='PiezaRe.posicion' required max="32"
+                            class="form-control col-2">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="posicion.touched && !posicion.valid">
+                        <div *ngIf="posicion.errors.required">Campo requerido</div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div>
+                <button mat-raised-button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
+                <button (click)="cancelar()" mat-raised-button class="btn btn-lg btn-danger margen">Cancelar</button>
+
+            </div>
+            <br>
+        </mat-card>
+    </form>
+</div>

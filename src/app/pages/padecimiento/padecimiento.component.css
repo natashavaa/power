@@ -7,15 +7,19 @@
     background-color: lightgray;
 }
 
-.inp #CantUsar {
-    size: 10px;
-    background-color: rgb(255, 0, 0);
-    padding: 10px;
+.claDoc {
+    font-size: 40px;
+    font: oblique bold 160% cursive;
+}
+
+.claDocEs {
+    font-size: 40px;
+    font: oblique bold 140% cursive;
 }
 
 .center {
     display: inline-block;
-    width: 110%;
+    width: 79%;
     border-style: solid;
     border-width: 2px;
     border-color: #d3d3d3;
@@ -155,19 +159,38 @@
 }
 
 .uno {
-    margin: 0 20px;
+    margin: 0 12px;
     color: snow;
     background-color: blue;
 }
 
-.dos {
-    margin: 0 12px;
-    color: snow;
-    background-color: darkred;
-}
-
 .h:hover {
     color: darkgrey;
+}
+
+.mat-form-field {
+    font-weight: bold;
+    display: block;
+    margin-left: 10px;
+    font-size: 14px;
+    width: 30%;
+}
+
+.caja input {
+    background-color: gray;
+    padding: 10px;
+    border-radius: 5%;
+}
+
+.caja2 {
+    z-index: 10000;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5%;
+}
+
+.marg {
+    margin: -5px;
 }
 
 .selector {
@@ -190,53 +213,4 @@
     background: rgba(207, 205, 205, 0.199);
     width: 100%;
     height: 100%;
-}
-
-.mat-form-field {
-    font-weight: bold;
-    display: block;
-    margin-left: 10px;
-    font-size: 14px;
-    width: 30%;
-}
-
-.snip {
-    padding: 10px;
-    margin: 0 12px;
-    background-color: darkred;
-}
-
-.caja input {
-    background-color: rgb(207, 207, 207);
-    padding: 10px;
-    border-radius: 5%;
-}
-
-.caja2 {
-    z-index: 10000;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5%;
-}
-
-.marg {
-    margin: -5px;
-}
-
-.claDoc {
-    font-size: 40px;
-    font: oblique bold 160% cursive;
-}
-
-.claDocEs {
-    font-size: 40px;
-    font: oblique bold 140% cursive;
-}
-
-.tres img {
-    margin: 0 12px;
-    background-color: transparent;
-    outline: transparent;
-    border-radius: 5px;
-    margin-left: 100px;
 }
