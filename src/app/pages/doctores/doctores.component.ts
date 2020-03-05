@@ -98,6 +98,10 @@ private user: UserInterface = {};
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  agregardoctores(): void {
+    this.router.navigate(['register']);
+  }
+
   ngOnInit() {
     this.app.mostrar = true;
     this.doctor();
