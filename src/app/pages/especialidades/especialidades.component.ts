@@ -95,7 +95,7 @@ export class EspecialidadesComponent implements OnInit {
         this.ngOnInit();
        } );
     } else {
-      alert('Cantidad de Insumos insuficientes');
+      alert('Cantidad de Instrumentos insuficientes');
     }
 
   }
