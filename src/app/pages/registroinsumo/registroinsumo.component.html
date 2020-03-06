@@ -1,7 +1,8 @@
 <div class="au-xs-ta-center au-lg-ta-center">
     <ul class="rk-menu rk-categories-menu">
         <img src="https://img.icons8.com/dusk/50/000000/dental-filling.png">
-        <li class="active rk-menu__item"><a routerLink="/especialidad" class="rk-menu__link">Insumos Odontologicos</a>
+        <li class="active rk-menu__item"><a routerLink="/especialidad" class="rk-menu__link">Instrumentos
+                Odontologicos</a>
         </li>
         <img src="https://img.icons8.com/dusk/50/000000/product.png">
         <li class="rk-menu__item"><a routerLink="/materiales" class="rk-menu__link">Materiales Odontologicos</a>
@@ -15,7 +16,7 @@
     <form>
         <mat-card>
             <br>
-            <h4> AGREGAR INSUMOS </h4>
+            <h4> AGREGAR INSTRUMENTOS </h4>
             <br>
             <!--AGREGAR MATERIAL FORMULARIO-->
             <form #formRegisterInstrumentos="ngForm" (ngSubmit)="onRegisterInstrumento(formRegisterInstrumentos)">
@@ -25,14 +26,18 @@
 
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Nombre del Instrumento</label>
-                            <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder="" [(ngModel)]='instrumentoRe.name' required minlength="4" maxlength="50" class="form-control col-6">
+                            <input type="text" #nameC="ngModel" name="nameC" class="form-control" placeholder=""
+                                [(ngModel)]='instrumentoRe.name' required minlength="4" maxlength="50"
+                                class="form-control col-6">
                         </div>
                         <div class="alert alert-danger" role="alert" *ngIf="nameC.touched && !nameC.valid">
                             <div *ngIf="nameC.errors.required">Campo requerido</div>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Cantidad</label>
-                            <input type="number" min="0" #Cantidad="ngModel" name="Cantidad" class="form-control" placeholder="" [(ngModel)]='instrumentoRe.cantidad' required minlength="1" maxlength="50" class="form-control col-4">
+                            <input type="number" min="0" #Cantidad="ngModel" name="Cantidad" class="form-control"
+                                placeholder="" [(ngModel)]='instrumentoRe.cantidad' required minlength="1"
+                                maxlength="50" class="form-control col-4">
                         </div>
                         <div class="alert alert-danger" role="alert" *ngIf="Cantidad.touched && !Cantidad.valid">
                             <div *ngIf="Cantidad.errors.required">Campo requerido</div>
@@ -45,17 +50,21 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-6 col-form-label">Escoger Especialidad</mat-label>
                             <br>
-                            <select #Especialidad="ngModel" name="Especialidad" id="Especialidad" [(ngModel)]="instrumentoRe.especiality" class="form-control col-4">
-                                    <option>Odontologia</option>
-                                    <option>Ortodoncia</option>
-                                </select>
+                            <select #Especialidad="ngModel" name="Especialidad" id="Especialidad"
+                                [(ngModel)]="instrumentoRe.especiality" class="form-control col-4">
+                                <option>Odontologia</option>
+                                <option>Ortodoncia</option>
+                                <option>Todas</option>
+                            </select>
                         </div>
 
                     </div>
                 </div>
                 <div>
-                    <button [disabled]="!formRegisterInstrumentos.valid" mat-raised-button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
-                    <button (click)="cancelar()" mat-raised-button class="btn btn-lg btn-danger margen">Cancelar</button>
+                    <button [disabled]="!formRegisterInstrumentos.valid" mat-raised-button type="submit"
+                        class="btn btn-lg btn-success margen">Guardar</button>
+                    <button (click)="cancelar()" mat-raised-button
+                        class="btn btn-lg btn-danger margen">Cancelar</button>
 
                 </div>
                 <br>

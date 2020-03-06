@@ -9,7 +9,7 @@
 <div class="au-xs-ta-center au-lg-ta-center">
     <ul class="rk-menu rk-categories-menu">
         <img src="https://img.icons8.com/dusk/50/000000/dental-filling.png">
-        <li class="active rk-menu__item"><a routerLink="/especialidad" class="rk-menu__link">Insumos Odontologicos</a>
+        <li class="active rk-menu__item"><a routerLink="/especialidad" class="rk-menu__link">Instrumentos Odontologicos</a>
         </li>
         <img src="https://img.icons8.com/dusk/50/000000/product.png">
         <li class="rk-menu__item"><a routerLink="/materiales" class="rk-menu__link">Materiales Odontologicos</a>
@@ -45,7 +45,7 @@
                                 <br>
                                 <form action="">
                                     <div class="form-group row">
-                                        <h4 for="" class="col-10 col-form-label">INSUMOS ODONTOLOGICOS</h4>
+                                        <h4 for="" class="col-10 col-form-label">Instrumentos ODONTOLOGICOS</h4>
                                     </div>
                                 </form>
                             </div>
@@ -57,7 +57,7 @@
             <form align="right">
                 <div>
                     <button mat-raised-button (click)="agregarinsumo()" class="uno"><img
-                            src="https://img.icons8.com/dusk/50/000000/dental-mirror.png"> Agregar Insumos</button>
+                            src="https://img.icons8.com/dusk/50/000000/dental-mirror.png"> Agregar Instrumentos</button>
                 </div>
             </form>
             <form #gelistIn="ngForm" (ngSubmit)="getInsumosSpeciality(gelistIn)">
@@ -84,7 +84,7 @@
             </form>
             <div class="row mt-5">
                 <div class="col">
-                    <label for="" class="lolo">Lista de Insumos Odontologicos</label>
+                    <label for="" class="lolo">Lista de Instrumentos Odontologicos</label>
                     <mat-form-field class=" col-2 border-bottom text-dark">
                         <div class="row caja2">
                             <img src="https://img.icons8.com/dusk/25/000000/search.png">
@@ -117,13 +117,13 @@
                                 <td>{{instrumento.cantidad}}</td>
                                
                                 <td>
-                                    <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Insumos Utilizados ahora,Presiones si ya los usó">
+                                    <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Instrumentos Utilizados ahora,Presiones si ya los usó">
                                         <span>En uso: {{instrumento.enUso}}
                                         </span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button (click)="limpiarInsumos(instrumento)" class=" btn btn-warning" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Insumos en Limpieza,Presione para limpiar">
+                                    <button (click)="limpiarInsumos(instrumento)" class=" btn btn-warning" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Instrumentos en Limpieza,Presione para limpiar">
                                         <span>En Limpieza: {{instrumento.enLimpieza}}</span>
                                     </button>
                                 </td>

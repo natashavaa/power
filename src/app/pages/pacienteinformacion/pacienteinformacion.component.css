@@ -253,6 +253,11 @@
   background-color: darkred;
 }
 
+.caja input{
+  background-color: #fff ;
+  padding: 10px;
+}
+
 .mat-radio-button ~ .mat-radio-button {
   margin-left: 16px;
   text-align: left;
