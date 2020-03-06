@@ -25,6 +25,26 @@
         </div>
     </form>
 
+
+</div>
+<div class="row">
+    <form #gelist="ngForm" (ngSubmit)="getConsultaByDoctor(gelist)">
+        <br>
+        <div class="form-group row">
+            <br>
+            <br>
+            <label for="" class="col-5">Consultas del Doctor: </label>
+            <select #name="ngModel" name="name" class="form-control" placeholder="" [(ngModel)]='doctorP.name' id="name" class="form-control col-5">
+                              <option *ngFor="let doctorUser of doctorUser" [ngValue]="doctorUser.name">
+                                  {{doctorUser.name}}</option>
+                                  <option>Todos</option>
+                          </select>
+            <div class="col-2">
+                <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
+            </div>
+        </div>
+    </form>
+
 </div>
 
 <form align="right">

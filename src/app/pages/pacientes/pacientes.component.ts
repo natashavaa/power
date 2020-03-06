@@ -23,6 +23,10 @@ export class PacientesComponent {
               private app: AppComponent) {
 
   }
+  private doctorP: UserInterface = {
+    name: '',
+  };
+  private doctorUser: UserInterface = {};
   public user: UserInterface = {
     id: '',
     name: '',
@@ -59,13 +63,28 @@ export class PacientesComponent {
     this.router.navigate(['editarpaciente']);
 
   }
+  getlistUsers() {
+    this.dataApi.getAllUser().subscribe((doctorUser: UserInterface) => { this.doctorUser = doctorUser; console.log(this.doctorUser);});
+  }
   ngOnInit() {
     this.app.mostrar = true;
     this.getlistPatients();
+    this.getlistUsers();
     this.doctor();
 }
 getlistPatients() {
   this.dataApi.getAllPatints().subscribe((patients: PaatientInterface) => ( this.patient = patients));
+}
+getlistPatientsByDoctor() {
+  this.dataApi.getPatientsByDoctor(this.doctorP.name).subscribe((patients: PaatientInterface) => ( this.patient = patients));
+}
+getPatientByDoctor(): void {
+  if (Object.is(this.doctorP.name, 'Todos')) {
+    this.getlistPatients();
+} else {
+this.getlistPatientsByDoctor();
+}
+
 }
 doctor(): string {
   this.user = this.auth.getCurrentUser();

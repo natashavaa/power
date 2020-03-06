@@ -95,7 +95,7 @@ registerPatient(name: string, dni: string, age: number, sex: string,
                 dentalColor: string, familyNumber: number,
                 familyName: string, familyNumberHome: number,
                 password: string, username: string, mail: string,
-                userType: string, phone: string, registradorPor: string) {
+                userType: string, phone: string, registradoPor: string) {
         const urlApi = 'http://localhost:3000/patient';
         return this.htttp
               .post<PaatientInterface>(
@@ -142,7 +142,7 @@ registerPatient(name: string, dni: string, age: number, sex: string,
                // tslint:disable-next-line: object-literal-shorthand
               phone: phone,
                // tslint:disable-next-line: object-literal-shorthand
-               registradorPor: registradorPor,
+               registradoPor: registradoPor,
               },
         );
 }

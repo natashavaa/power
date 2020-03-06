@@ -155,7 +155,10 @@ public user: UserInterface = {
 
 };
  private consulta: ConsultaInterface = {};
-
+ private doctorUser: UserInterface = {};
+ private doctorP: UserInterface = {
+  name: '',
+};
 
    usuarioA: string;
    especialidad: string;
@@ -176,6 +179,7 @@ public user: UserInterface = {
     }
   }
 ngOnInit(): void {
+  this.getlistUsers();
   this.doctor();
   this.getlistConsultas();
   this.app.mostrar = true;
@@ -231,13 +235,27 @@ ngOnInit(): void {
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
+  getConsultaByDoctor(): void {
+    if (Object.is(this.doctorP.name, 'Todos')) {
+      this.getlistConsultas();
+  } else {
+  this.getlistConsultasByDoctor();
+  }
 
+  }
   global(): void {
     this.router.navigate(['global']);
   }
   getlistConsultas() {
     this.dataApi.getAllconsultas().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
     console.log(this.consulta);
+  }
+  getlistConsultasByDoctor() {
+    this.dataApi.getAllconsultasByDoctor(this.doctorP.name).subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
+    console.log(this.consulta);
+  }
+  getlistUsers() {
+    this.dataApi.getAllUser().subscribe((doctorUser: UserInterface) => { this.doctorUser = doctorUser; console.log(this.doctorUser); } );
   }
   getlistConsultasHoy() {
     this.dataApi.getAllconsultasHoy().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));

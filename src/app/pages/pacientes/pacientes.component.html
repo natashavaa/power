@@ -6,6 +6,28 @@
     <br>
     <span class="claDocEs ">{{especialidad}} </span>
 </form>
+<br>
+<br>
+<br>
+<div class="row">
+    <form #gelist="ngForm" (ngSubmit)="getPatientByDoctor(gelist)">
+        <br>
+        <div class="form-group row">
+            <br>
+            <br>
+            <label for="" class="col-5">Pacientes del Doctor: </label>
+            <select #name="ngModel" name="name" class="form-control" placeholder="" [(ngModel)]='doctorP.name' id="name" class="form-control col-3">
+                                <option *ngFor="let doctorUser of doctorUser" [ngValue]="doctorUser.name">
+                                    {{doctorUser.name}}</option>
+                                    <option>Todos</option>
+                            </select>
+            <div class="col-1">
+                <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
+            </div>
+        </div>
+    </form>
+
+</div>
 <form align="right">
     <div>
 
