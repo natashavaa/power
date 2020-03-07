@@ -94,7 +94,7 @@ export class ConsultaglobalComponent implements OnInit {
    }
 }
 getlistUsers() {
-  this.dataApi.getAllUser().subscribe((doctorUser: UserInterface) => ( this.doctorUser = doctorUser));
+  this.dataApi.getAllUserConPermiso().subscribe((doctorUser: UserInterface) => ( this.doctorUser = doctorUser));
 }
 onRegisterConsulta(): void {
   this.user = this.authService.getCurrentUser();

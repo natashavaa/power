@@ -255,7 +255,8 @@ ngOnInit(): void {
     console.log(this.consulta);
   }
   getlistUsers() {
-    this.dataApi.getAllUser().subscribe((doctorUser: UserInterface) => { this.doctorUser = doctorUser; console.log(this.doctorUser); } );
+    // tslint:disable-next-line: max-line-length
+    this.dataApi.getAllUserConPermiso().subscribe((doctorUser: UserInterface) => { this.doctorUser = doctorUser; console.log(this.doctorUser); } );
   }
   getlistConsultasHoy() {
     this.dataApi.getAllconsultasHoy().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));

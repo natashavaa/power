@@ -64,7 +64,8 @@ export class PacientesComponent {
 
   }
   getlistUsers() {
-    this.dataApi.getAllUser().subscribe((doctorUser: UserInterface) => { this.doctorUser = doctorUser; console.log(this.doctorUser);});
+    // tslint:disable-next-line: max-line-length
+    this.dataApi.getAllUserConPermiso().subscribe((doctorUser: UserInterface) => { this.doctorUser = doctorUser; console.log(this.doctorUser);});
   }
   ngOnInit() {
     this.app.mostrar = true;

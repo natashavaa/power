@@ -43,6 +43,10 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/users' ;
     return this.http.get(urlApi);
   }
+  getAllUserConPermiso() {
+    const urlApi = 'http://localhost:3000/users/doctorPermiso' ;
+    return this.http.get(urlApi);
+  }
     getPatientById(id: string) {
     const urlApi = 'http://localhost:3000/patient/$id' ;
     return (this.patient = this.http.get(urlApi));
