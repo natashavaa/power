@@ -15,7 +15,7 @@ import { UserInterface } from '../../models/user.interface';
 
 export class RegistromaterialComponent implements OnInit {
 
-  constructor(private router: Router , private dataApi: DataApiService,private authService: AuthService) { }
+  constructor(private router: Router , private dataApi: DataApiService, private authService: AuthService) { }
   private material: MaterialInterface;
   private materialRe: MaterialInterface = {
     id: '',

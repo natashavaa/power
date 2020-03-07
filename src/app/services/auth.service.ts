@@ -13,6 +13,7 @@ import { MaterialInterface } from '../models/material.interface';
 import { InstrumentoInterface } from '../models/instrumento.interface';
 import { ReporteInterface } from '../models/reporte.interface';
 import { ConsultaInterface } from '../models/consulta.interface';
+import { PiezaDentalInterface } from '../models/piezadental.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -297,6 +298,28 @@ registerMaterial(name: string, cantidad: number, especiality: string, costo: str
 
     },
     );
+}
+registerPiezaDental(NombrePieza: string, Descripcion: string, Nomenclatura: string, Ubicacion: string, Imagen: string, Posicion: string) {
+  const urlApi = 'http://localhost:3000/piezadental';
+  return this.htttp
+  .post<PiezaDentalInterface>(
+  urlApi,
+  {
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePieza: NombrePieza,
+  // tslint:disable-next-line: object-literal-shorthand
+  Descripcion: Descripcion,
+  // tslint:disable-next-line: object-literal-shorthand
+  Nomenclatura: Nomenclatura,
+  // tslint:disable-next-line: object-literal-shorthand
+  Ubicacion: Ubicacion,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen: Imagen,
+  // tslint:disable-next-line: object-literal-shorthand
+  Posicion: Posicion,
+
+  },
+  );
 }
 registerInstrumento(name: string, cantidad: number, especiality: string, costo: string, idDoctor: string) {
   const urlApi = 'http://localhost:3000/instrumento';

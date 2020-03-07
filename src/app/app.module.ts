@@ -98,7 +98,7 @@ import { ProcedimientoComponent } from './pages/procedimiento/procedimiento.comp
 import { RegistroprocedimientoComponent } from './pages/registroprocedimiento/registroprocedimiento.component';
 import { ReponermaterialComponent } from './reponermaterial/reponermaterial.component'; // fonts provided for pdfmake
 //import { DemoUtilsModule } from '../demo-utils/module';
-
+import { ImageUploadModule } from 'angular2-image-upload';
 // Set the fonts to use
 PdfMakeWrapper.setFonts(pdfFonts);
 
@@ -153,6 +153,7 @@ PdfMakeWrapper.setFonts(pdfFonts);
     ReponermaterialComponent,
   ],
   imports: [
+    ImageUploadModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

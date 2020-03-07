@@ -59,7 +59,7 @@
                     <button mat-raised-button (click)="agregarpieza()" class="uno"><img src="https://img.icons8.com/cotton/50/000000/toothache.png"> Agregar Pieza</button>
                 </div>
             </form>
-            <form #gelistIn="ngForm" (ngSubmit)="getInsumosSpeciality(gelistIn)">
+            <!-- <form #gelistIn="ngForm" (ngSubmit)="getInsumosSpeciality(gelistIn)">
                 <div class="row ">
                     <div class="col-6">
                         <br>
@@ -80,10 +80,10 @@
 
                     </div>
                 </div>
-            </form>
+            </form>-->
             <div class="row mt-5">
                 <div class="col">
-                    <label for="" class="lolo">Lista de Instrumentos Odontologicos</label>
+                    <label for="" class="lolo">Lista de Piezas Dentales</label>
                     <mat-form-field class=" col-2 border-bottom text-dark">
                         <div class="row caja2">
                             <img src="https://img.icons8.com/dusk/25/000000/search.png">
@@ -100,37 +100,23 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Nombre </th>
-                                <th scope="col">Especialidad</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">En Uso</th>
-                                <th scope="col">En Limpieza</th>
-                                <th scope="col">Eliminar Insumo</th>
+                                <th scope="col">Nombre Pieza</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Nomenclatura</th>
+                                <th scope="col">Ubicacion</th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Posicion</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let instrumento of instrumento">
-                                <td>{{instrumento.id}}</td>
-                                <td>{{instrumento.name}}</td>
-                                <td>{{instrumento.especiality}}</td>
-                                <td>{{instrumento.cantidad}}</td>
-                               
-                                <td>
-                                    <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Instrumentos Utilizados ahora,Presiones si ya los usó">
-                                        <span>En uso: {{instrumento.enUso}}
-                                        </span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button (click)="limpiarInsumos(instrumento)" class=" btn btn-warning" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Instrumentos en Limpieza,Presione para limpiar">
-                                        <span>En Limpieza: {{instrumento.enLimpieza}}</span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button (click)="eliminarIsumos(instrumento)" class=" btn btn-danger" type="button" data-toggle="tooltip" data-placement="top" title="Presione para eliminar">
-                                        <span>Eliminar</span>
-                                    </button>
-                                </td>
+                            <tr *ngFor="let piezadental of piezadental">
+                                <td>{{piezadental.id}}</td>
+                                <td>{{piezadental.NombrePieza}}</td>
+                                <td>{{piezadental.Descripcion}}</td>
+                                <td>{{piezadental.Nomenclatura}}</td>
+                                <td>{{piezadental.Ubicacion}}</td>
+                                <td>{{piezadental.Imagen}}</td>
+                                <td>{{piezadental.Posicion}}</td>
 
                             </tr>
 
