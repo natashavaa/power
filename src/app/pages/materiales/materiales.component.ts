@@ -99,6 +99,11 @@ odontologiatrue: boolean;
           this.ngOnInit();
          } );
       }
+
+   ReponerMaterial(material: MaterialInterface): void {
+     this.authService.setMaterial(material);
+     this.router.navigate(['reponermaterial']);
+      }
   usarMaterial(material: MaterialInterface): void {
     if ( material.cantidad > 0) {
         material.cantidad =  material.cantidad - 1;

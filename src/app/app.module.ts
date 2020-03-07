@@ -95,7 +95,8 @@ import { RegistropiezaComponent } from './pages/registropieza/registropieza.comp
 import { RegistropadecimientoComponent } from './pages/registropadecimiento/registropadecimiento.component';
 import { PadecimientoComponent } from './pages/padecimiento/padecimiento.component';
 import { ProcedimientoComponent } from './pages/procedimiento/procedimiento.component';
-import { RegistroprocedimientoComponent } from './pages/registroprocedimiento/registroprocedimiento.component'; // fonts provided for pdfmake
+import { RegistroprocedimientoComponent } from './pages/registroprocedimiento/registroprocedimiento.component';
+import { ReponermaterialComponent } from './reponermaterial/reponermaterial.component'; // fonts provided for pdfmake
 //import { DemoUtilsModule } from '../demo-utils/module';
 
 // Set the fonts to use
@@ -149,6 +150,7 @@ PdfMakeWrapper.setFonts(pdfFonts);
     PadecimientoComponent,
     ProcedimientoComponent,
     RegistroprocedimientoComponent,
+    ReponermaterialComponent,
   ],
   imports: [
     BrowserModule,

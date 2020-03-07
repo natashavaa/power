@@ -44,6 +44,7 @@ import { PadecimientoComponent } from './pages/padecimiento/padecimiento.compone
 import { RegistropadecimientoComponent } from './pages/registropadecimiento/registropadecimiento.component';
 import { ProcedimientoComponent } from './pages/procedimiento/procedimiento.component';
 import { RegistroprocedimientoComponent } from './pages/registroprocedimiento/registroprocedimiento.component';
+import { ReponermaterialComponent } from './reponermaterial/reponermaterial.component';
 
 
 
@@ -86,6 +87,7 @@ const appRoutes: Routes = [
   {path: 'recuperacion', component: RecuperacionComponent},
   {path: 'registerinsumo', component : RegistroinsumoComponent},
   {path: 'registermaterial', component : RegistromaterialComponent},
+  {path: 'reponermaterial', component : ReponermaterialComponent},
   {path: 'editarpaciente', component: EditarpacienteComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 
