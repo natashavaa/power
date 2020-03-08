@@ -14,6 +14,7 @@ import { InstrumentoInterface } from '../models/instrumento.interface';
 import { ReporteInterface } from '../models/reporte.interface';
 import { ConsultaInterface } from '../models/consulta.interface';
 import { PiezaDentalInterface } from '../models/piezadental.interface';
+import { ProcedimientoInterface } from '../models/procedimiento.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -317,6 +318,24 @@ registerPiezaDental(NombrePieza: string, Descripcion: string, Nomenclatura: stri
   Imagen: Imagen,
   // tslint:disable-next-line: object-literal-shorthand
   Posicion: Posicion,
+
+  },
+  );
+}
+registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string) {
+  const urlApi = 'http://localhost:3000/procedimiento';
+  return this.htttp
+  .post<ProcedimientoInterface>(
+  urlApi,
+  {
+  // tslint:disable-next-line: object-literal-shorthand
+  NombreProcedimiento: NombreProcedimiento,
+  // tslint:disable-next-line: object-literal-shorthand
+  Descripcion: Descripcion,
+  // tslint:disable-next-line: object-literal-shorthand
+  Estatus: Estatus,
+  // tslint:disable-next-line: object-literal-shorthand
+  costo: costo,
 
   },
   );

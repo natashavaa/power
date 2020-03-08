@@ -3,4 +3,5 @@ export interface ProcedimientoInterface {
     NombreProcedimiento?: string;
     Descripcion?: string;
     Estatus?: string;
+    costo?: string;
 }

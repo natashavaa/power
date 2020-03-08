@@ -33,6 +33,7 @@ export class ProcedimientoComponent implements OnInit {
     NombreProcedimiento: '',
     Descripcion: '',
     Estatus: '',
+    costo: '',
 
   };
   constructor(private router: Router,
