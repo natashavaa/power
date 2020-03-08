@@ -28,8 +28,8 @@ export class RegistropiezaComponent implements OnInit {
     this.router.navigate(['mantenimiento']);
   }
   onRegisterPiezaDental(): void {
-      const cadena1 =  this.toBase64(this.file);
-      console.log(cadena1);
+      const cadena1 =  this.convertToBase64();
+      console.log(cadena1); // REVISAR NO ESTA GUARDANDO IMAGENES
       this.authService.registerPiezaDental(
         this.PiezaRe.NombrePieza,
         this.PiezaRe.Descripcion,
@@ -46,7 +46,30 @@ export class RegistropiezaComponent implements OnInit {
       }
        toBase64 = file => new Promise((resolve) => {
         const reader = new FileReader();
-        reader.readAsBinaryString(file);
+        reader.readAsDataURL(file);
         reader.onload = () => resolve(reader.result);
     })
+
+
+
+
+    convertToBase64() {
+
+      if (this.file === undefined) {
+        throw new Error('File could not be found');
+      }
+      const fileReader = new FileReader();
+        // tslint:disable-next-line: no-unused-expression
+      new Promise((resolve, reject) => {
+        fileReader.readAsDataURL(this.file);
+        fileReader.onerror = (error) => {
+          reject('Input: File could not be read:' + error);
+        };
+
+        fileReader.onloadend = () => {
+          resolve(fileReader.result);
+        };
+      });
+      return fileReader.result;
+    }
 }

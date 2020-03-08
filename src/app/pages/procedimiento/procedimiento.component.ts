@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataApiService } from '../../services/data-api.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { AppComponent } from '../../app.component';
+import { UserInterface } from '../../models/user.interface';
+import { ProcedimientoInterface } from '../../models/procedimiento.interface';
 
 @Component({
   selector: 'app-procedimiento',
@@ -7,11 +12,55 @@ import { Router } from '@angular/router';
   styleUrls: ['./procedimiento.component.css']
 })
 export class ProcedimientoComponent implements OnInit {
+  usuarioA: string;
+  especialidad: string;
+  public user: UserInterface = {
+    id: '',
+    name: '',
+    dni: '',
+    age: 0,
+    sex: '',
+    mail: '',
+    password: '',
+    userType: '',
+    username: '',
+    phone: ''
 
-  
-  constructor(private router: Router ) { }
+
+  };
+  public procedimiento: ProcedimientoInterface = {
+    id: '',
+    NombreProcedimiento: '',
+    Descripcion: '',
+    Estatus: '',
+
+  };
+  constructor(private router: Router,
+              private dataApi: DataApiService,
+              private auth: AuthService,
+              private app: AppComponent ) { }
 
   ngOnInit() {
+    this.getlistAllPiezasDentales();
+    this.doctor();
+    this.app.mostrar = true;
+  }
+  doctor(): string {
+    this.user = this.auth.getCurrentUser();
+    if (Object.is(this.user.username, 'admin')) {
+        this.usuarioA = 'Administrador';
+        console.log(this.usuarioA);
+        return this.usuarioA;
+    } else {
+      this.usuarioA = 'Doctor : ' + this.user.name;
+      this.especialidad = 'Especialidad : ' +  this.user.userType;
+      console.log(this.usuarioA);
+      return  this.usuarioA;
+
+    }
+  }
+  getlistAllPiezasDentales() {
+    this.dataApi.getAllProcedimientos().subscribe((procedimiento: ProcedimientoInterface) => ( this.procedimiento = procedimiento));
   }
 
   agregarprocedimiento(): void {
