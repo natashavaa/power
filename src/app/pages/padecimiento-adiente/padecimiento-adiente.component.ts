@@ -35,5 +35,7 @@ public padecimiento: PadecimientoInterface = { };
     getlistAllPadecimientos() {
       this.dataApi.getAllPadecimientos().subscribe((padecimiento: PadecimientoInterface) => ( this.padecimiento = padecimiento));
     }
-
+    cancelar() {
+      this.router.navigate(['padecimiento']);
+    }
 }
