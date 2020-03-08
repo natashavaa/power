@@ -68,6 +68,10 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/procedimiento' ;
     return this.http.get(urlApi);
   }
+  getAllPadecimientos() {
+    const urlApi = 'http://localhost:3000/padecimiento' ;
+    return this.http.get(urlApi);
+  }
   getAllMAterialOrtodoncia() {
     const urlApi = 'http://localhost:3000/material/ortodoncia' ;
     return this.http.get(urlApi);

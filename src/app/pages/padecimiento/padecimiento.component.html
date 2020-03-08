@@ -54,33 +54,17 @@
                 </form>
             </mat-card-title>
             <br>
+            <form align="left">
+                <div>
+                    <button mat-raised-button (click)="agrgegarpadecimientoAdiente()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png">Agregar Padecimiento a Diente</button>
+                </div>
+            </form>
             <form align="right">
                 <div>
-                    <button mat-raised-button (click)="agregarpadecimiento()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png"> Agregar Padecimiento</button>
+                    <button mat-raised-button (click)="agregarpadecimiento()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png"> Agregar Nuevo Padecimiento</button>
                 </div>
             </form>
-            <form #gelistIn="ngForm" (ngSubmit)="getInsumosSpeciality(gelistIn)">
-                <div class="row ">
-                    <div class="col-6">
-                        <br>
 
-                        <div class="form-group row">
-                            <br>
-                            <br>
-                            <label for="" class="col-6 col-form-label">Tipo de Especialidad:</label>
-                            <select class="form-control col-4" #Especialidad="ngModel" name="speciality" id="speciality" [(ngModel)]="speciality">
-                                <option>Odontologia</option>
-                                <option>Ortodoncia</option>
-                                <option>Todas</option>
-                            </select>
-                            <div class="col-1">
-                                <button class="sinp" type="submit" class="btn btn-info">Buscar </button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </form>
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista de Instrumentos Odontologicos</label>
@@ -101,36 +85,15 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre </th>
-                                <th scope="col">Especialidad</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">En Uso</th>
-                                <th scope="col">En Limpieza</th>
-                                <th scope="col">Eliminar Insumo</th>
+                                <th scope="col">Descripcion</th>
+
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let instrumento of instrumento">
-                                <td>{{instrumento.id}}</td>
-                                <td>{{instrumento.name}}</td>
-                                <td>{{instrumento.especiality}}</td>
-                                <td>{{instrumento.cantidad}}</td>
-                               
-                                <td>
-                                    <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Instrumentos Utilizados ahora,Presiones si ya los usó">
-                                        <span>En uso: {{instrumento.enUso}}
-                                        </span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button (click)="limpiarInsumos(instrumento)" class=" btn btn-warning" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Instrumentos en Limpieza,Presione para limpiar">
-                                        <span>En Limpieza: {{instrumento.enLimpieza}}</span>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button (click)="eliminarIsumos(instrumento)" class=" btn btn-danger" type="button" data-toggle="tooltip" data-placement="top" title="Presione para eliminar">
-                                        <span>Eliminar</span>
-                                    </button>
-                                </td>
+                            <tr *ngFor="let padecimiento of padecimiento">
+                                <td>{{padecimiento.id}}</td>
+                                <td>{{padecimiento.NombrePadecimiento}}</td>
+                                <td>{{padecimiento.Descripcion}}</td>
 
                             </tr>
 
