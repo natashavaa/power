@@ -100,7 +100,7 @@ import { ReponermaterialComponent } from './reponermaterial/reponermaterial.comp
 //import { DemoUtilsModule } from '../demo-utils/module';
 import { ImageUploadModule } from 'angular2-image-upload';
 import { PadecimientoADienteComponent } from './pages/padecimiento-adiente/padecimiento-adiente.component';
-import { ProcedimientoAPadecimientoComponent } from './pages/procedimiento-apadecimiento/procedimiento-apadecimiento.component';
+import { ProcedimientoapadecimientoComponent } from './pages/procedimientoapadecimiento/procedimientoapadecimiento.component';
 // Set the fonts to use
 PdfMakeWrapper.setFonts(pdfFonts);
 
@@ -154,7 +154,7 @@ PdfMakeWrapper.setFonts(pdfFonts);
     RegistroprocedimientoComponent,
     ReponermaterialComponent,
     PadecimientoADienteComponent,
-    ProcedimientoAPadecimientoComponent,
+    ProcedimientoapadecimientoComponent,
   ],
   imports: [
     ImageUploadModule.forRoot(),

@@ -54,6 +54,11 @@
                 </form>
             </mat-card-title>
             <br>
+            <form align="left">
+                <div>
+                    <button mat-raised-button (click)="agregarprocedimientoaPadecimiento()" class="uno"><img src="https://img.icons8.com/ultraviolet/50/000000/process.png"> Agregar Procedimiento a Padecimiento</button>
+                </div>
+            </form>
             <form align="right">
                 <div>
                     <button mat-raised-button (click)="agregarprocedimiento()" class="uno"><img src="https://img.icons8.com/ultraviolet/50/000000/process.png"> Agregar Procedimiento</button>
@@ -92,6 +97,28 @@
                                 <td>{{procedimiento.Estatus}}</td>
                                 <td>{{procedimiento.costo}}</td>
 
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">NombreProcedimiento</th>
+                                <th scope="col">Nombre Padecimiento</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let procedimientoaPad of procedimientoaPad">
+                                <td>{{procedimientoaPad.id}}</td>
+                                <td>{{procedimientoaPad.NombreProcedimiento}}</td>
+                                <td>{{procedimientoaPad.NombrePadecimiento}}</td>
                             </tr>
 
                         </tbody>

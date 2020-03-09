@@ -46,6 +46,7 @@ import { ProcedimientoComponent } from './pages/procedimiento/procedimiento.comp
 import { RegistroprocedimientoComponent } from './pages/registroprocedimiento/registroprocedimiento.component';
 import { ReponermaterialComponent } from './reponermaterial/reponermaterial.component';
 import { PadecimientoADienteComponent } from './pages/padecimiento-adiente/padecimiento-adiente.component';
+import { ProcedimientoapadecimientoComponent } from './pages/procedimientoapadecimiento/procedimientoapadecimiento.component';
 
 
 
@@ -69,6 +70,7 @@ const appRoutes: Routes = [
   {path: 'padecimiento', component: PadecimientoComponent},
   {path: 'padecimientoDiente', component: PadecimientoADienteComponent},
   {path: 'procedimiento', component: ProcedimientoComponent},
+  {path: 'procedimientoapadecimiento', component: ProcedimientoapadecimientoComponent},
   {path: 'registerpadecimiento', component: RegistropadecimientoComponent},
   {path: 'registerprocedimiento', component: RegistroprocedimientoComponent},
   {path: 'materiales', component: MaterialesComponent},

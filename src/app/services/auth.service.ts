@@ -17,6 +17,7 @@ import { PiezaDentalInterface } from '../models/piezadental.interface';
 import { ProcedimientoInterface } from '../models/procedimiento.interface';
 import { PadecimientoInterface } from '../models/padecimiento.interface';
 import { PadecimientoporDienteInterface } from '../models/piezaconPadecimiento.interface';
+import { ProcedimientoApadecimentoInterface } from '../models/procedimientoapadecimiento.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -339,6 +340,30 @@ registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus:
   // tslint:disable-next-line: object-literal-shorthand
   costo: costo,
 
+  },
+  );
+}
+registerProcedimientoaPadecimiento(NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string,
+                                   NombrePadecimiento: string, NombrePieza: string, Imagen: string) {
+  const urlApi = 'http://localhost:3000/procedimientoapadecimiento';
+  return this.htttp
+  .post<ProcedimientoApadecimentoInterface>(
+  urlApi,
+  {
+  // tslint:disable-next-line: object-literal-shorthand
+  NombreProcedimiento: NombreProcedimiento,
+  // tslint:disable-next-line: object-literal-shorthand
+  Descripcion: Descripcion,
+ // tslint:disable-next-line: object-literal-shorthand
+ Estatus: Estatus,
+ // tslint:disable-next-line: object-literal-shorthand
+ costo: costo,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento: NombrePadecimiento,
+ // tslint:disable-next-line: object-literal-shorthand
+ NombrePieza: NombrePieza,
+ // tslint:disable-next-line: object-literal-shorthand
+ Imagen: Imagen
   },
   );
 }

@@ -1,0 +1,45 @@
+<div align='center'>
+    <form>
+        <mat-card>
+            <br>
+            <h4> PROCEDIMIENTO DENTAL A UN PADECIMIENTO</h4>
+            <br>
+            <!--AGREGAR PIEZA FORMULARIO-->
+            <form #formRegisterProcedimientoaPad="ngForm" (ngSubmit)="onRegisterProcedimientoApad(formRegisterProcedimientoaPad)">
+                <div class="row">
+                    <div class="col-6 caja">
+                        <br>
+
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Nombre del Padecimiento</label>
+                            <select #nombrePieza="ngModel" name="nombrePieza" class="form-control" placeholder="" [(ngModel)]='procedimientoaPad.NombrePadecimiento' id="nombrePieza" class="form-control col-5">
+                          <option *ngFor="let padecimiento of padecimiento" [ngValue]="padecimiento.NombrePadecimiento">
+                              {{padecimiento.NombrePadecimiento}}</option>
+                      </select>
+                        </div>
+                    </div>
+                    <div class="col-6 caja">
+                        <br>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Nombre del Procedimieto</label>
+                            <select #nombrePadecimiento="ngModel" name="nombrePadecimiento" class="form-control" placeholder="" [(ngModel)]='procedimientoaPad.NombreProcedimiento' id="nombrePadecimiento" class="form-control col-5">
+                          <option *ngFor="let procedimiento of procedimiento" [ngValue]="procedimiento.NombreProcedimiento">
+                              {{procedimiento.NombreProcedimiento}}</option>
+                      </select>
+                        </div>
+                    </div>
+                    <!--  <div>
+                        <label for="" class="col-6 col-form-label">Simbologia</label>
+                        <input (change)="picked($event,1)" type="file">
+                    </div>-->
+                </div>
+                <div>
+                    <button mat-raised-button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
+                    <button (click)="cancelar()" mat-raised-button class="btn btn-lg btn-danger margen">Cancelar</button>
+
+                </div>
+                <br>
+            </form>
+        </mat-card>
+    </form>
+</div>

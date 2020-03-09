@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { AppComponent } from '../../app.component';
 import { UserInterface } from '../../models/user.interface';
 import { ProcedimientoInterface } from '../../models/procedimiento.interface';
+import { ProcedimientoApadecimentoInterface } from '../../models/procedimientoapadecimiento.interface';
 
 @Component({
   selector: 'app-procedimiento',
@@ -36,6 +37,17 @@ export class ProcedimientoComponent implements OnInit {
     costo: '',
 
   };
+  public procedimientoaPad: ProcedimientoApadecimentoInterface = {
+    id: '',
+    NombreProcedimiento: '',
+    Descripcion      : '',
+    Estatus: '',
+    costo: '',
+    NombrePadecimiento: '',
+    NombrePieza: '',
+    Imagen: '',
+
+  };
   constructor(private router: Router,
               private dataApi: DataApiService,
               private auth: AuthService,
@@ -45,6 +57,11 @@ export class ProcedimientoComponent implements OnInit {
     this.getlistAllPiezasDentales();
     this.doctor();
     this.app.mostrar = true;
+    this.getlistAllProcedimientosaPadecimientos();
+  }
+  getlistAllProcedimientosaPadecimientos() {
+    // tslint:disable-next-line: max-line-length
+    this.dataApi.getAllProcedimientosaPadecimientos().subscribe((procedimientoaPad: ProcedimientoApadecimentoInterface) => ( this.procedimientoaPad = procedimientoaPad));
   }
   doctor(): string {
     this.user = this.auth.getCurrentUser();
@@ -67,5 +84,7 @@ export class ProcedimientoComponent implements OnInit {
   agregarprocedimiento(): void {
     this.router.navigate(['registerprocedimiento']);
   }
-
+  agregarprocedimientoaPadecimiento() {
+    this.router.navigate(['procedimientoapadecimiento']);
+  }
 }

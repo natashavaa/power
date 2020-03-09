@@ -71,6 +71,10 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/procedimiento' ;
     return this.http.get(urlApi);
   }
+  getAllProcedimientosaPadecimientos() {
+    const urlApi = 'http://localhost:3000/procedimientoapadecimiento' ;
+    return this.http.get(urlApi);
+  }
   getAllPadecimientos() {
     const urlApi = 'http://localhost:3000/padecimiento' ;
     return this.http.get(urlApi);
