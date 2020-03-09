@@ -10,7 +10,17 @@ import { PiezaDentalInterface } from '../../models/piezadental.interface';
   styleUrls: ['./registropieza.component.css']
 })
 export class RegistropiezaComponent implements OnInit {
-
+  imageSrc;
+  sellersPermitFile: any;
+  DriversLicenseFile: any;
+  InteriorPicFile: any;
+  ExteriorPicFile: any;
+  // base64s
+  sellersPermitString: string;
+  DriversLicenseString: string;
+  InteriorPicString: string;
+  ExteriorPicString: string;
+  currentId = 0;
   constructor(private router: Router , private dataApi: DataApiService, private authService: AuthService) { }
   private PiezaRe: PiezaDentalInterface = {
 
@@ -22,14 +32,15 @@ export class RegistropiezaComponent implements OnInit {
     Posicion: '',
   };
    file;
+   imagen: string;
   ngOnInit() {
   }
   cancelar() {
     this.router.navigate(['mantenimiento']);
   }
   onRegisterPiezaDental(): void {
-      const cadena1 =  this.convertToBase64();
-      console.log(cadena1); // REVISAR NO ESTA GUARDANDO IMAGENES
+      this.PiezaRe.Imagen = this.sellersPermitString;
+      console.log(this.PiezaRe.Imagen); // REVISAR NO ESTA GUARDANDO IMAGENES
       this.authService.registerPiezaDental(
         this.PiezaRe.NombrePieza,
         this.PiezaRe.Descripcion,
@@ -41,35 +52,40 @@ export class RegistropiezaComponent implements OnInit {
         this.router.navigate(['mantenimiento']);
        } );
       }
-      onFileChanged(event) {
-      this.file  = event.target.files[0];
+      public picked(event, field) {
+        this.currentId = field;
+        const fileList: FileList = event.target.files;
+        if (fileList.length > 0) {
+          const file: File = fileList[0];
+          if (field === 1) {
+            this.sellersPermitFile = file;
+            this.handleInputChange(file); // turn into base64
+          }
+        } else {
+          alert('No file selected');
+        }
       }
-       toBase64 = file => new Promise((resolve) => {
+
+      handleInputChange(files) {
+        const file = files;
+        const pattern = /image-*/;
         const reader = new FileReader();
+        if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+        reader.onloadend = this._handleReaderLoaded.bind(this);
         reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-    })
-
-
-
-
-    convertToBase64() {
-
-      if (this.file === undefined) {
-        throw new Error('File could not be found');
       }
-      const fileReader = new FileReader();
-        // tslint:disable-next-line: no-unused-expression
-      new Promise((resolve, reject) => {
-        fileReader.readAsDataURL(this.file);
-        fileReader.onerror = (error) => {
-          reject('Input: File could not be read:' + error);
-        };
-
-        fileReader.onloadend = () => {
-          resolve(fileReader.result);
-        };
-      });
-      return fileReader.result;
-    }
+      _handleReaderLoaded(e) {
+        const reader = e.target;
+        const base64result = reader.result.substr(reader.result.indexOf(',') + 1);
+        // this.imageSrc = base64result;
+        const id = this.currentId;
+        switch (id) {
+          case 1:
+            this.sellersPermitString = base64result;
+            break;
+        }
+      }
 }

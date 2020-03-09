@@ -41,7 +41,9 @@ export class MantenimientoComponent implements OnInit {
     this.getlistAllPiezasDentales();
   }
   getlistAllPiezasDentales() {
-    this.dataApi.getAllPiezasDentales().subscribe((piezadental: PiezaDentalInterface) => ( this.piezadental = piezadental));
+    this.dataApi.getAllPiezasDentales().subscribe((piezadental: PiezaDentalInterface) => {
+       this.piezadental = piezadental;
+    } );
   }
   agregarpieza(): void {
     this.router.navigate(['registerpieza']);

@@ -61,7 +61,8 @@
                             <div class="cajita">
                                 <div class="form-group row">
                                     <label for="" class="col-6 col-form-label"></label>
-                                    <input type="file" (change)="onFileChanged($event)">
+                                    <input (change)="picked($event,1)" type="file">
+
                                 </div>
                             </div>
                         </div>

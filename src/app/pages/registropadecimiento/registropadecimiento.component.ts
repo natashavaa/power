@@ -38,5 +38,8 @@ export class RegistropadecimientoComponent implements OnInit {
      } );
 
   }
+  cancelar() {
+    this.router.navigate(['padecimiento']);
+  }
 
 }
