@@ -5,6 +5,7 @@ import { UserInterface } from '../../models/user.interface';
 import { DataApiService } from '../../services/data-api.service';
 import { AppComponent } from '../../app.component';
 import { PiezaDentalInterface } from '../../models/piezadental.interface';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-mantenimiento',
@@ -17,9 +18,12 @@ export class MantenimientoComponent implements OnInit {
   constructor(private router: Router,
               private dataApi: DataApiService,
               private auth: AuthService,
-              private app: AppComponent) { }
+              private app: AppComponent,
+              private _sanitizer: DomSanitizer) { }
   usuarioA: string;
   especialidad: string;
+  pepe: string;
+  imagePath: any;
   public user: UserInterface = {
     id: '',
     name: '',
@@ -34,7 +38,15 @@ export class MantenimientoComponent implements OnInit {
 
 
   };
-  public piezadental: PiezaDentalInterface = {};
+  public piezadental: PiezaDentalInterface = {
+    id: '',
+    NombrePieza: '',
+    Descripcion: '',
+    Nomenclatura: '',
+    Ubicacion: '',
+    Imagen: '',
+    Posicion: '',
+  };
   ngOnInit() {
     this.doctor();
     this.app.mostrar = true;
@@ -44,6 +56,10 @@ export class MantenimientoComponent implements OnInit {
     this.dataApi.getAllPiezasDentales().subscribe((piezadental: PiezaDentalInterface) => {
        this.piezadental = piezadental;
     } );
+  }
+  convert(imagen) {
+    return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'
+       + imagen);
   }
   agregarpieza(): void {
     this.router.navigate(['registerpieza']);
