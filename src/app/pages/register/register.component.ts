@@ -4,6 +4,7 @@ import {NgForm} from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { UserInterface } from '../../models/user.interface';
 import { AppComponent } from '../../app.component';
+import { DataApiService } from '../../services/data-api.service';
 
 
 
@@ -20,7 +21,7 @@ export interface Especialidad {
 
 export class RegisterComponent {
 
-  constructor( private router: Router, private authService: AuthService, private app: AppComponent) {
+  constructor( private router: Router, private authService: AuthService, private app: AppComponent, private dataApi: DataApiService) {
 
   }
     private user: UserInterface = {
@@ -37,6 +38,20 @@ export class RegisterComponent {
 
 
   };
+  private userEncontrado: UserInterface = {
+    id: '',
+    name: '',
+    dni: '',
+    age: 0,
+    sex: '',
+    mail: '',
+    password: '',
+    userType: '',
+    username: '',
+    phone: ''
+
+
+};
 
   selectedValue: string;
   step = 0;
@@ -47,23 +62,33 @@ export class RegisterComponent {
   ];
 
   onRegister(): void {
-      this.authService.registerUser(
-        this.user.name,
-        this.user.phone,
-        this.user.password,
-        this.user.dni,
-        this.user.age,
-        this.user.sex,
-        this.user.mail,
-        this.user.userType,
-        this.user.username
-      ).subscribe(user => {
-        this.authService.setUser(user);
-        let token = this.user.id;
-        this.authService.setToken(token);
-        this.app.mostrar = false;
-        this.router.navigate(['accesodenegado']);
-       } );
+      if (this.user.dni) {
+        this.dataApi.getUserByDni(this.user.dni).subscribe((userE: UserInterface) => {
+          this.userEncontrado = userE;
+          if (!this.userEncontrado) {
+            this.authService.registerUser(
+              this.user.name,
+              this.user.phone,
+              this.user.password,
+              this.user.dni,
+              this.user.age,
+              this.user.sex,
+              this.user.mail,
+              this.user.userType,
+              this.user.username
+            ).subscribe(user => {
+              this.authService.setUser(user);
+              let token = this.user.id;
+              this.authService.setToken(token);
+              this.app.mostrar = false;
+              this.router.navigate(['accesodenegado']);
+             } );
+          } else {
+           alert('Cedula Registrada');
+          }
+       });
+
+    }
       }
 
   guardar(formulario: NgForm) {
