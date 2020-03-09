@@ -5,40 +5,38 @@
             <h4>PADECIMIENTO A PIEZA DENTAL </h4>
             <br>
             <!--AGREGAR PIEZA FORMULARIO-->
-            <form #formRegisterPadecimientoaDiente="ngForm" (ngSubmit)="onRegisterPadecimientoADiente(formRegisterPadecimientoaDiente)">
+            <form #formRegisterPadecimientoaDiente="ngForm"
+                (ngSubmit)="onRegisterPadecimientoADiente(formRegisterPadecimientoaDiente)">
                 <div class="row">
                     <div class="col-6 caja">
-                        <br>
-
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Pieza Dental</label>
-                            <select #nombrePieza="ngModel" name="nombrePieza" class="form-control" placeholder="" [(ngModel)]='Padpordiente.NombrePieza' id="nombrePieza" class="form-control col-5">
-                            <option *ngFor="let piezadental of piezadental" [ngValue]="piezadental.NombrePieza">
-                                {{piezadental.NombrePieza}}</option>
-                        </select>
+                            <select #nombrePieza="ngModel" name="nombrePieza" class="form-control" placeholder=""
+                                [(ngModel)]='Padpordiente.NombrePieza' id="nombrePieza" class="form-control col-5">
+                                <option *ngFor="let piezadental of piezadental" [ngValue]="piezadental.NombrePieza">
+                                    {{piezadental.NombrePieza}}</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="col-6 caja">
-                        <br>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Nombre del Padecimiento</label>
-                            <select #nombrePadecimiento="ngModel" name="nombrePadecimiento" class="form-control" placeholder="" [(ngModel)]='Padpordiente.NombrePadecimiento' id="nombrePadecimiento" class="form-control col-5">
-                            <option *ngFor="let padecimiento of padecimiento" [ngValue]="padecimiento.NombrePadecimiento">
-                                {{padecimiento.NombrePadecimiento}}</option>
-                        </select>
+                            <select #nombrePadecimiento="ngModel" name="nombrePadecimiento" class="form-control"
+                                placeholder="" [(ngModel)]='Padpordiente.NombrePadecimiento' id="nombrePadecimiento"
+                                class="form-control col-5">
+                                <option *ngFor="let padecimiento of padecimiento"
+                                    [ngValue]="padecimiento.NombrePadecimiento">
+                                    {{padecimiento.NombrePadecimiento}}</option>
+                            </select>
                         </div>
                     </div>
-                    <div>
-                        <label for="" class="col-6 col-form-label">Simbologia</label>
-                        <input (change)="picked($event,1)" type="file">
+                    <div class="col-6">
+                        <div class="form-group row">
+                            <label for="" class="col-3 col-form-label">Simbologia</label>
+                            <input (change)="picked($event,1)" type="file">
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <button mat-raised-button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
-                    <button (click)="cancelar()" mat-raised-button class="btn btn-lg btn-danger margen">Cancelar</button>
-
-                </div>
-                <br>
+                <button mat-raised-button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
+                <button (click)="cancelar()" mat-raised-button class="btn btn-lg btn-danger margen">Cancelar</button>
             </form>
         </mat-card>
     </form>
