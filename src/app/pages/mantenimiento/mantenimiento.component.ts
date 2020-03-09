@@ -35,8 +35,6 @@ export class MantenimientoComponent implements OnInit {
     userType: '',
     username: '',
     phone: ''
-
-
   };
   public piezadental: PiezaDentalInterface = {
     id: '',
@@ -62,6 +60,9 @@ export class MantenimientoComponent implements OnInit {
        + imagen);
   }
   agregarpieza(): void {
+    this.router.navigate(['registerpieza']);
+  }
+  agregarpieza12(): void {
     this.router.navigate(['registerpieza']);
   }
 

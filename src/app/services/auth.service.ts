@@ -16,6 +16,7 @@ import { ConsultaInterface } from '../models/consulta.interface';
 import { PiezaDentalInterface } from '../models/piezadental.interface';
 import { ProcedimientoInterface } from '../models/procedimiento.interface';
 import { PadecimientoInterface } from '../models/padecimiento.interface';
+import { PadecimientoporDienteInterface } from '../models/piezaconPadecimiento.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -337,6 +338,23 @@ registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus:
   Estatus: Estatus,
   // tslint:disable-next-line: object-literal-shorthand
   costo: costo,
+
+  },
+  );
+}
+registerProcedimientoPorPieza(NombrePadecimiento: string, NombrePieza: string, Imagen: string) {
+  const urlApi = 'http://localhost:3000/padecimientoporPieza';
+  return this.htttp
+  .post<PadecimientoporDienteInterface>(
+  urlApi,
+  {
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento: NombrePadecimiento,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePieza: NombrePieza,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen: Imagen,
+  // tslint:disable-next-line: object-literal-shorthand
 
   },
   );

@@ -5,7 +5,8 @@ import { AuthService } from '../../services/auth.service';
 import { AppComponent } from '../../app.component';
 import { UserInterface } from '../../models/user.interface';
 import { PadecimientoInterface } from '../../models/padecimiento.interface';
-
+import { PadecimientoporDienteInterface } from '../../models/piezaconPadecimiento.interface';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-padecimiento',
   templateUrl: './padecimiento.component.html',
@@ -29,18 +30,29 @@ export class PadecimientoComponent implements OnInit {
 
   };
   public padecimiento: PadecimientoInterface = { };
+  public padecimientoxdiente: PadecimientoporDienteInterface = { };
   constructor(private router: Router,
               private dataApi: DataApiService,
               private auth: AuthService,
-              private app: AppComponent ) { }
+              private app: AppComponent,
+              private _sanitizer: DomSanitizer ) { }
 
   ngOnInit() {
     this.doctor();
     this.app.mostrar = true;
     this.getlistAllPadecimientos();
+    this.getlistAllPadecimientosporDiente();
   }
   getlistAllPadecimientos() {
     this.dataApi.getAllPadecimientos().subscribe((padecimiento: PadecimientoInterface) => ( this.padecimiento = padecimiento));
+  }
+  getlistAllPadecimientosporDiente() {
+    // tslint:disable-next-line: max-line-length
+    this.dataApi.getAllPadecimientoPorPieza().subscribe((padecimientoxdiente: PadecimientoporDienteInterface) => ( this.padecimientoxdiente = padecimientoxdiente));
+  }
+  convert(imagen) {
+    return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'
+       + imagen);
   }
   agregarpadecimiento(): void {
     this.router.navigate(['registerpadecimiento']);

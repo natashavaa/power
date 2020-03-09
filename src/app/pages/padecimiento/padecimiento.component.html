@@ -68,17 +68,6 @@
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista de Padecimientos Odontologicos</label>
-                    <mat-form-field class=" col-2 border-bottom text-dark">
-                        <div class="row caja2">
-                            <img src="https://img.icons8.com/dusk/25/000000/search.png">
-
-                            <div class="row marg">
-                                <mat-label class="text-dark"></mat-label>
-                                <input matInput placeholder="Buscar">
-                            </div>
-                        </div>
-
-                    </mat-form-field>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
                     <table class="table table-hover">
                         <thead>
@@ -94,6 +83,39 @@
                                 <td>{{padecimiento.id}}</td>
                                 <td>{{padecimiento.NombrePadecimiento}}</td>
                                 <td>{{padecimiento.Descripcion}}</td>
+
+                            </tr>
+
+                        </tbody>
+                        <br>
+                        <br>
+                        <br>
+
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col">
+                    <label for="" class="lolo">Lista de Padecimientos en las Piezas Dentales</label>
+                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre </th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Imagen</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let padecimientoxdiente of padecimientoxdiente">
+                                <td>{{padecimientoxdiente.id}}</td>
+                                <td>{{padecimientoxdiente.NombrePadecimiento}}</td>
+                                <td>{{padecimientoxdiente.NombrePieza}}</td>
+                                <td> <img width="40" height="40" [src]="convert(padecimientoxdiente.Imagen)" alt="img"></td>
 
                             </tr>
 

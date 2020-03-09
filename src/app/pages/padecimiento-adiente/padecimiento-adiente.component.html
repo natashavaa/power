@@ -5,7 +5,7 @@
             <h4>PADECIMIENTO A PIEZA DENTAL </h4>
             <br>
             <!--AGREGAR PIEZA FORMULARIO-->
-            <form #formRegisterPadecimiento="ngForm" (ngSubmit)="onRegisterPadecimiento(formRegisterPadecimiento)">
+            <form #formRegisterPadecimientoaDiente="ngForm" (ngSubmit)="onRegisterPadecimientoADiente(formRegisterPadecimientoaDiente)">
                 <div class="row">
                     <div class="col-6 caja">
                         <br>
@@ -30,7 +30,7 @@
                     </div>
                     <div>
                         <label for="" class="col-6 col-form-label">Simbologia</label>
-                        <input type="file" name="archivo">
+                        <input (change)="picked($event,1)" type="file">
                     </div>
                 </div>
                 <div>

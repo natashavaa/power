@@ -24,10 +24,32 @@ public Padpordiente: PadecimientoporDienteInterface = {
   Imagen: '',
 };
 public padecimiento: PadecimientoInterface = { };
+imageSrc;
+  sellersPermitFile: any;
+  DriversLicenseFile: any;
+  InteriorPicFile: any;
+  ExteriorPicFile: any;
+  // base64s
+  sellersPermitString: string;
+  DriversLicenseString: string;
+  InteriorPicString: string;
+  ExteriorPicString: string;
+  currentId = 0;
     ngOnInit() {
       this.app.mostrar = true;
       this.getlistAllPiezasDentales();
       this. getlistAllPadecimientos();
+    }
+
+    onRegisterPadecimientoADiente() {
+      this.Padpordiente.Imagen = this.sellersPermitString;
+      this.authService.registerProcedimientoPorPieza(
+        this.Padpordiente.NombrePadecimiento,
+        this.Padpordiente.NombrePieza,
+        this.Padpordiente.Imagen,
+      ).subscribe(pieza => {
+        this.router.navigate(['padecimiento']);
+       } );
     }
     getlistAllPiezasDentales() {
     this.dataApi.getAllPiezasDentales().subscribe((piezadental: PiezaDentalInterface) => ( this.piezadental = piezadental));
@@ -37,5 +59,42 @@ public padecimiento: PadecimientoInterface = { };
     }
     cancelar() {
       this.router.navigate(['padecimiento']);
+    }
+
+    public picked(event, field) {
+      this.currentId = field;
+      const fileList: FileList = event.target.files;
+      if (fileList.length > 0) {
+        const file: File = fileList[0];
+        if (field === 1) {
+          this.sellersPermitFile = file;
+          this.handleInputChange(file); // turn into base64
+        }
+      } else {
+        alert('No file selected');
+      }
+    }
+
+    handleInputChange(files) {
+      const file = files;
+      const pattern = /image-*/;
+      const reader = new FileReader();
+      if (!file.type.match(pattern)) {
+        alert('invalid format');
+        return;
+      }
+      reader.onloadend = this._handleReaderLoaded.bind(this);
+      reader.readAsDataURL(file);
+    }
+    _handleReaderLoaded(e) {
+      const reader = e.target;
+      const base64result = reader.result.substr(reader.result.indexOf(',') + 1);
+      // this.imageSrc = base64result;
+      const id = this.currentId;
+      switch (id) {
+        case 1:
+          this.sellersPermitString = base64result;
+          break;
+      }
     }
 }

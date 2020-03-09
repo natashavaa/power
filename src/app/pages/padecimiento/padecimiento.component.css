@@ -7,6 +7,14 @@
     background-color: lightgray;
 }
 
+table td {
+    background-color: rgb(190, 190, 190);
+}
+
+table tr {
+    background-color: rgb(105, 105, 105);
+}
+
 .claDoc {
     font-size: 40px;
     font: oblique bold 160% cursive;
