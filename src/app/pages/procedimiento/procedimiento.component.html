@@ -54,20 +54,28 @@
                 </form>
             </mat-card-title>
             <br>
-            <form align="left">
-                <div>
-                    <button mat-raised-button (click)="agregarprocedimientoaPadecimiento()" class="uno"><img
-                            src="https://img.icons8.com/ultraviolet/50/000000/process.png"> Agregar Procedimiento a
-                        Padecimiento</button>
+            <div class="row">
+                <div class="col-6">
+                    <form action="">
+                        <form align="left">
+                            <div>
+                                <button mat-raised-button (click)="agregarprocedimientoaPadecimiento()" class="uno"><img
+                                        src="https://img.icons8.com/ultraviolet/50/000000/process.png"> Agregar Procedimiento a
+                                    Padecimiento</button>
+                            </div>
+                        </form>
+                    </form>
                 </div>
-            </form>
-            <form align="right">
-                <div>
-                    <button mat-raised-button (click)="agregarprocedimiento()" class="uno"><img
-                            src="https://img.icons8.com/ultraviolet/50/000000/process.png"> Agregar
-                        Procedimiento</button>
+                <div class="col-6">
+                    <form align="right">
+                        <div>
+                            <button mat-raised-button (click)="agregarprocedimiento()" class="uno"><img
+                                    src="https://img.icons8.com/ultraviolet/50/000000/process.png"> Agregar
+                                Procedimiento</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista de Procedimientos Odontologicos</label>

@@ -54,17 +54,28 @@
                 </form>
             </mat-card-title>
             <br>
-            <form align="left">
-                <div>
-                    <button mat-raised-button (click)="agrgegarpadecimientoAdiente()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png">Agregar Padecimiento a Diente</button>
+            <div class="row">
+                <div class="col-6">
+                    <form action="">
+                        <form align="left">
+                            <div>
+                                <button mat-raised-button (click)="agrgegarpadecimientoAdiente()" class="uno"><img
+                                        src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png">Agregar Padecimiento a
+                                    Diente</button>
+                            </div>
+                        </form>
+                    </form>
                 </div>
-            </form>
-            <form align="right">
-                <div>
-                    <button mat-raised-button (click)="agregarpadecimiento()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png"> Agregar Nuevo Padecimiento</button>
+                <div class="col-6">
+                    <form align="right">
+                        <div>
+                            <button mat-raised-button (click)="agregarpadecimiento()" class="uno"><img
+                                    src="https://img.icons8.com/dusk/50/000000/tooth-cracked.png"> Agregar Nuevo
+                                Padecimiento</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-
+            </div>
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista de Padecimientos Odontologicos</label>
@@ -110,7 +121,8 @@
                                 <td>{{padecimientoxdiente.id}}</td>
                                 <td>{{padecimientoxdiente.NombrePadecimiento}}</td>
                                 <td>{{padecimientoxdiente.NombrePieza}}</td>
-                                <td> <img width="20" height="20" [src]="convert(padecimientoxdiente.Imagen)" alt="img"></td>
+                                <td> <img width="20" height="20" [src]="convert(padecimientoxdiente.Imagen)" alt="img">
+                                </td>
 
                             </tr>
 
