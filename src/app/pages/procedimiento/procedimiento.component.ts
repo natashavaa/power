@@ -46,6 +46,8 @@ export class ProcedimientoComponent implements OnInit {
     NombrePadecimiento: '',
     NombrePieza: '',
     Imagen: '',
+    materiales: [],
+    intrumentos: [],
 
   };
   constructor(private router: Router,

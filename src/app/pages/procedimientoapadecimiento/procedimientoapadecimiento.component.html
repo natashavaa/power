@@ -27,6 +27,22 @@
                               {{procedimiento.NombreProcedimiento}}</option>
                       </select>
                         </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Materiales a Usar: </label>
+                            <select #materiales="ngModel" name="materiales" class="form-control" placeholder="" [(ngModel)]='procedimientoaPad.materiales' id="materiales" class="form-control col-5">
+                          <option *ngFor="let materials of materials" [ngValue]="materials.name">
+                              {{materials.name}}</option>
+                      </select>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Instrumentos a Usar: </label>
+                            <select #intrumentos="ngModel" name="intrumentos" class="form-control" placeholder="" [(ngModel)]='procedimientoaPad.intrumentos' id="intrumentos" class="form-control col-5">
+                          <option *ngFor="let instrumento of instrumento" [ngValue]="instrumento.name">
+                              {{instrumento.name}}</option>
+                      </select>
+                        </div>
                     </div>
                     <!--  <div>
                         <label for="" class="col-6 col-form-label">Simbologia</label>

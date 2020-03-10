@@ -6,6 +6,8 @@ import { AuthService } from '../../services/auth.service';
 import { PadecimientoInterface } from '../../models/padecimiento.interface';
 import { ProcedimientoInterface } from '../../models/procedimiento.interface';
 import { ProcedimientoApadecimentoInterface } from '../../models/procedimientoapadecimiento.interface';
+import { MaterialInterface } from '../../models/material.interface';
+import { InstrumentoInterface } from '../../models/instrumento.interface';
 
 @Component({
   selector: 'app-procedimientoapadecimiento',
@@ -35,13 +37,24 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
     NombrePadecimiento: '',
     NombrePieza: '',
     Imagen: '',
+    materiales: [],
+    intrumentos: [],
 
   };
-
+  private materials: MaterialInterface;
+  private instrumento: InstrumentoInterface;
   ngOnInit() {
     this.app.mostrar = true;
     this. getlistAllPadecimientos();
     this. getlistAllProcedimientos();
+    this.getlistAllMaterial();
+    this.getlistAllInstrumentos();
+  }
+  getlistAllMaterial() {
+    this.dataApi.getAllMAterial().subscribe((materials: MaterialInterface) => ( this.materials = materials));
+  }
+  getlistAllInstrumentos() {
+    this.dataApi.getAllIntrumentos().subscribe((Instrumentos: InstrumentoInterface) => ( this.instrumento = Instrumentos));
   }
   getlistAllPadecimientos() {
     this.dataApi.getAllPadecimientos().subscribe((padecimiento: PadecimientoInterface) => ( this.padecimiento = padecimiento));
