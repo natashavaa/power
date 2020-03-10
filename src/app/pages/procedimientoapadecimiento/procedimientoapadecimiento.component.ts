@@ -38,15 +38,14 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
     NombrePadecimiento: '',
     NombrePieza: '',
     Imagen: '',
-    materiales: [],
-    intrumentos: [],
+    materiales: '',
+    intrumentos: '' ,
 
   };
   private materials: MaterialInterface;
   private instrumento: InstrumentoInterface;
   instrumentosArray = new FormControl();
   materialesArray = new FormControl();
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   ngOnInit() {
     this.app.mostrar = true;
     this. getlistAllPadecimientos();
@@ -67,6 +66,8 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
     this.dataApi.getAllProcedimientos().subscribe((procedimiento: ProcedimientoInterface) => ( this.procedimiento = procedimiento));
   }
   onRegisterProcedimientoApad(): void {
+    this.procedimientoaPad.materiales = this.materialesArray.value.map(x => x).join(' , ');
+    this.procedimientoaPad.intrumentos = this.instrumentosArray.value.map(x => x).join(' , ');
     this.authService.registerProcedimientoaPadecimiento(
       this.procedimientoaPad.NombreProcedimiento,
       this.procedimientoaPad.Descripcion,
@@ -75,12 +76,16 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
       this.procedimientoaPad.NombrePadecimiento,
       this.procedimientoaPad.NombrePieza,
       this.procedimientoaPad.Imagen,
+      this.procedimientoaPad.materiales,
+      this.procedimientoaPad.intrumentos,
     ).subscribe(pieza => {
       this.router.navigate(['procedimiento']);
      } );
   }
+
   cancelar() {
     console.log(this.materialesArray.value);
+    console.log(this.materialesArray.value.map(x => x).join(' , '));
     console.log(this.instrumentosArray.value);
     this.router.navigate(['procedimiento']);
   }

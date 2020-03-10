@@ -7,6 +7,6 @@ export interface ProcedimientoApadecimentoInterface {
   NombrePadecimiento?: string;
   NombrePieza?: string;
   Imagen?: string;
-  materiales?: [];
-  intrumentos?: [];
+  materiales?: string;
+  intrumentos?: string;
 }
