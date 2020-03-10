@@ -84,9 +84,6 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
   }
 
   cancelar() {
-    console.log(this.materialesArray.value);
-    console.log(this.materialesArray.value.map(x => x).join(' , '));
-    console.log(this.instrumentosArray.value);
     this.router.navigate(['procedimiento']);
   }
 
