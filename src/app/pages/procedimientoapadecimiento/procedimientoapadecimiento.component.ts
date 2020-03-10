@@ -44,7 +44,8 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
   };
   private materials: MaterialInterface;
   private instrumento: InstrumentoInterface;
-  toppings = new FormControl();
+  instrumentosArray = new FormControl();
+  materialesArray = new FormControl();
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   ngOnInit() {
     this.app.mostrar = true;
@@ -79,6 +80,8 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
      } );
   }
   cancelar() {
+    console.log(this.materialesArray.value);
+    console.log(this.instrumentosArray.value);
     this.router.navigate(['procedimiento']);
   }
 

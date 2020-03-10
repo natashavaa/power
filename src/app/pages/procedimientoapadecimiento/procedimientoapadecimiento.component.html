@@ -31,7 +31,7 @@
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Materiales a Usar: </label>
                             <mat-form-field class="col-3">
-                                <mat-select [formControl]="toppings" multiple>
+                                <mat-select [formControl]="materialesArray" multiple>
                                     <mat-option *ngFor="let materials of materials" [value]="materials.name">{{materials.name}}</mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -39,8 +39,8 @@
                         <br>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Instrumentos a Usar: </label>
-                            <mat-form-field class="col-3">
-                                <mat-select [formControl]="toppings" multiple>
+                            <mat-form-field class="col-3 text-success">
+                                <mat-select [formControl]="instrumentosArray" multiple>
                                     <mat-option *ngFor="let instrumento of instrumento" [value]="instrumento.name">{{instrumento.name}}</mat-option>
                                 </mat-select>
                             </mat-form-field>
