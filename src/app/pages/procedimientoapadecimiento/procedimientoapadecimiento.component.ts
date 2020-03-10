@@ -8,6 +8,7 @@ import { ProcedimientoInterface } from '../../models/procedimiento.interface';
 import { ProcedimientoApadecimentoInterface } from '../../models/procedimientoapadecimiento.interface';
 import { MaterialInterface } from '../../models/material.interface';
 import { InstrumentoInterface } from '../../models/instrumento.interface';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-procedimientoapadecimiento',
@@ -43,6 +44,8 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
   };
   private materials: MaterialInterface;
   private instrumento: InstrumentoInterface;
+  toppings = new FormControl();
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   ngOnInit() {
     this.app.mostrar = true;
     this. getlistAllPadecimientos();

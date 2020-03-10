@@ -8,9 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
-
-
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 
 // Rutas
@@ -158,6 +156,7 @@ PdfMakeWrapper.setFonts(pdfFonts);
   ],
   imports: [
     ImageUploadModule.forRoot(),
+    AngularMultiSelectModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
