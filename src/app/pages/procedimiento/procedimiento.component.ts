@@ -47,7 +47,7 @@ export class ProcedimientoComponent implements OnInit {
     NombrePieza: '',
     Imagen: '',
     materiales: '',
-    intrumentos: '',
+    instrumentos: '',
 
   };
   constructor(private router: Router,

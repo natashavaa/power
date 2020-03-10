@@ -76,7 +76,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">NombreProcedimiento</th>
+                                <th scope="col">Nombre del Procedimiento</th>
                                 <th scope="col">Descripcion</th>
                                 <th scope="col">Estatus</th>
                                 <th scope="col">Costo</th>
@@ -100,8 +100,10 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">NombreProcedimiento</th>
-                                <th scope="col">Nombre Padecimiento</th>
+                                <th scope="col">Nombre del Procedimiento</th>
+                                <th scope="col">Nombre del Padecimiento</th>
+                                <th scope="col">Materiales a usar</th>
+                                <th scope="col">Instrumentos a usar</th>
 
                             </tr>
                         </thead>
@@ -110,6 +112,8 @@
                                 <td>{{procedimientoaPad.id}}</td>
                                 <td>{{procedimientoaPad.NombreProcedimiento}}</td>
                                 <td>{{procedimientoaPad.NombrePadecimiento}}</td>
+                                <td>{{procedimientoaPad.materiales}}</td>
+                                <td>{{procedimientoaPad.instrumentos}}</td>
                             </tr>
 
                         </tbody>

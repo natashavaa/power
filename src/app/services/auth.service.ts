@@ -345,7 +345,7 @@ registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus:
 }
 registerProcedimientoaPadecimiento(NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string,
                                    NombrePadecimiento: string, NombrePieza: string, Imagen: string, materiales: string,
-                                   intrumentos: string ) {
+                                   instrumentos: string ) {
   const urlApi = 'http://localhost:3000/procedimientoapadecimiento';
   return this.htttp
   .post<ProcedimientoApadecimentoInterface>(
@@ -368,7 +368,7 @@ registerProcedimientoaPadecimiento(NombreProcedimiento: string, Descripcion: str
   // tslint:disable-next-line: object-literal-shorthand
   materiales: materiales,
   // tslint:disable-next-line: object-literal-shorthand
-  intrumentos: intrumentos
+  instrumentos: instrumentos
   },
   );
 }

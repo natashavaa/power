@@ -8,5 +8,5 @@ export interface ProcedimientoApadecimentoInterface {
   NombrePieza?: string;
   Imagen?: string;
   materiales?: string;
-  intrumentos?: string;
+  instrumentos?: string;
 }

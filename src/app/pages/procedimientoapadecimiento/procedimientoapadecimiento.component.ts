@@ -39,7 +39,7 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
     NombrePieza: '',
     Imagen: '',
     materiales: '',
-    intrumentos: '' ,
+    instrumentos: '' ,
 
   };
   private materials: MaterialInterface;
@@ -67,7 +67,7 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
   }
   onRegisterProcedimientoApad(): void {
     this.procedimientoaPad.materiales = this.materialesArray.value.map(x => x).join(' , ');
-    this.procedimientoaPad.intrumentos = this.instrumentosArray.value.map(x => x).join(' , ');
+    this.procedimientoaPad.instrumentos = this.instrumentosArray.value.map(x => x).join(' , ');
     this.authService.registerProcedimientoaPadecimiento(
       this.procedimientoaPad.NombreProcedimiento,
       this.procedimientoaPad.Descripcion,
@@ -77,7 +77,7 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
       this.procedimientoaPad.NombrePieza,
       this.procedimientoaPad.Imagen,
       this.procedimientoaPad.materiales,
-      this.procedimientoaPad.intrumentos,
+      this.procedimientoaPad.instrumentos,
     ).subscribe(pieza => {
       this.router.navigate(['procedimiento']);
      } );
