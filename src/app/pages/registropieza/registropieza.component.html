@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Nomenclatura</label>
-                            <input type="number" min="0" #nomenclatura="ngModel" name="nomenclatura" class="form-control" placeholder="" [(ngModel)]='PiezaRe.Nomenclatura' required minlength="1" maxlength="50" class="form-control col-4">
+                            <input type="number" min="1" max="32" #nomenclatura="ngModel" name="nomenclatura" class="form-control" placeholder="" [(ngModel)]='PiezaRe.Nomenclatura' required minlength="1" maxlength="50" class="form-control col-4">
                         </div>
 
                     </div>
@@ -69,7 +69,7 @@
 
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Posicion</label>
-                            <input type="number" min="1" #Posicion="ngModel" name="Posicion" class="form-control" placeholder="" [(ngModel)]='PiezaRe.Posicion' required max="32" class="form-control col-2">
+                            <input type="number"  min="1" max="8" #Posicion="ngModel" name="Posicion" class="form-control" placeholder="" [(ngModel)]='PiezaRe.Posicion' required max="32" class="form-control col-2">
                         </div>
                         <div class="alert alert-danger" role="alert" *ngIf="Posicion.touched && !Posicion.valid">
                             <div *ngIf="Posicion.errors.required">Campo requerido</div>
