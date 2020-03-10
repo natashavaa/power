@@ -89,4 +89,7 @@ export class ProcedimientoComponent implements OnInit {
   agregarprocedimientoaPadecimiento() {
     this.router.navigate(['procedimientoapadecimiento']);
   }
+  agregarprocedimientoaPadecimientoad() {
+    this.router.navigate(['procedimientoapadecimiento']);
+  }
 }
