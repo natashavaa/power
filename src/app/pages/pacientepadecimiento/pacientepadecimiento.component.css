@@ -214,6 +214,10 @@
 
 }
 
+img .mar {
+  margin-left: 15px;
+}
+
 
 .mat-card {
   text-decoration: none;
