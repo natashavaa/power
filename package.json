@@ -28,6 +28,7 @@
         "angular-base64-upload": "^0.1.23",
         "angular-calendar": "^0.28.2",
         "angular-forms-utils": "^0.6.7",
+        "angular-image-slider": "0.0.9",
         "angular-pipes": "^10.0.0",
         "angular2-image-upload": "^1.0.0-rc.2",
         "angular2-multiselect-dropdown": "^4.6.3",

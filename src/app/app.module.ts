@@ -100,6 +100,7 @@ import { ImageUploadModule } from 'angular2-image-upload';
 import { PadecimientoADienteComponent } from './pages/padecimiento-adiente/padecimiento-adiente.component';
 import { ProcedimientoapadecimientoComponent } from './pages/procedimientoapadecimiento/procedimientoapadecimiento.component';
 // Set the fonts to use
+import { SliderModule } from 'angular-image-slider';
 PdfMakeWrapper.setFonts(pdfFonts);
 
 @NgModule({
@@ -155,6 +156,7 @@ PdfMakeWrapper.setFonts(pdfFonts);
     ProcedimientoapadecimientoComponent,
   ],
   imports: [
+    SliderModule,
     ImageUploadModule.forRoot(),
     AngularMultiSelectModule,
     BrowserModule,

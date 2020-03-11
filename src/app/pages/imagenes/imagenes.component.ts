@@ -5,6 +5,8 @@ import { PaatientInterface } from '../../models/patients.interface';
 import { AppComponent } from '../../app.component';
 import { AuthService } from '../../services/auth.service';
 import { EvolutionInterface } from '../../models/evolution.interface';
+import { DataApiService } from '../../services/data-api.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-imagenes',
@@ -14,9 +16,17 @@ import { EvolutionInterface } from '../../models/evolution.interface';
 export class ImagenesComponent implements OnInit {
 
   constructor(public productosService: ProductosService, private router: Router,
-              private app: AppComponent, private auth: AuthService  ) { }
+              private app: AppComponent, private auth: AuthService, private dataApi: DataApiService,
+              private _sanitizer: DomSanitizer  ) { }
   private patient: PaatientInterface;
   private EvolutionRe: EvolutionInterface = {
+
+    idPatient: '',
+    idClinicHistory: '',
+    imagen: '',
+    diagnostic: '',
+  };
+  private evolution: EvolutionInterface = {
 
     idPatient: '',
     idClinicHistory: '',
@@ -33,11 +43,23 @@ export class ImagenesComponent implements OnInit {
   ngOnInit() {
     this.app.mostrar = true;
     this.getPatient();
+    this.getlistEvlution();
+  }
+  convert(imagen) {
+    return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'
+       + imagen);
+  }
+  getlistEvlution() {
+    this.app.mostrar = true;
+    this.patient = this.auth.getCurrentPatient();
+    this.dataApi.getAllEvolutionBypatient(this.patient.id)
+    .subscribe((evolution: EvolutionInterface) => {this.evolution = evolution;
+                                                   console.log(this.evolution); } );
   }
   onRegisterEvolution(): void {
     this.EvolutionRe.imagen = this.sellersPermitString;
     this.EvolutionRe.idPatient = this.patient.id;
-    this.EvolutionRe.idClinicHistory = this.patient.idClinicHistory;
+    this.EvolutionRe.idClinicHistory = '1';
     console.log(this.EvolutionRe.imagen);
     this.auth.registerEvolution(
       this.EvolutionRe.idPatient,
@@ -45,7 +67,7 @@ export class ImagenesComponent implements OnInit {
       this.EvolutionRe.imagen,
       this.EvolutionRe.diagnostic,
     ).subscribe(evolution => {
-      this.router.navigate(['imagenes']);
+      this.ngOnInit();
      } );
     }
     public picked(event, field) {
