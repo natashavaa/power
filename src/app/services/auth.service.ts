@@ -18,6 +18,7 @@ import { ProcedimientoInterface } from '../models/procedimiento.interface';
 import { PadecimientoInterface } from '../models/padecimiento.interface';
 import { PadecimientoporDienteInterface } from '../models/piezaconPadecimiento.interface';
 import { ProcedimientoApadecimentoInterface } from '../models/procedimientoapadecimiento.interface';
+import { EvolutionInterface } from '../models/evolution.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -302,6 +303,24 @@ registerMaterial(name: string, cantidad: number, especiality: string, costo: str
 
     },
     );
+}
+registerEvolution(idPatient: string, idClinicHistory: string, imagen: string, diagnostic: string) {
+  const urlApi = 'http://localhost:3000/evolution';
+  return this.htttp
+  .post<EvolutionInterface>(
+  urlApi,
+  {
+  // tslint:disable-next-line: object-literal-shorthand
+  idPatient: idPatient,
+  // tslint:disable-next-line: object-literal-shorthand
+  idClinicHistory: idClinicHistory,
+  // tslint:disable-next-line: object-literal-shorthand
+  imagen: imagen,
+  // tslint:disable-next-line: object-literal-shorthand
+  diagnostic: diagnostic,
+
+  },
+  );
 }
 registerPiezaDental(NombrePieza: string, Descripcion: string, Nomenclatura: string, Ubicacion: string, Imagen: string, Posicion: string) {
   const urlApi = 'http://localhost:3000/piezadental';
