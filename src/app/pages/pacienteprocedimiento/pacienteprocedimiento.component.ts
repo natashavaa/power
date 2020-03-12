@@ -113,6 +113,9 @@ export class PacienteprocedimientoComponent implements OnInit {
     this.router.navigate(['pacientepresupuesto']);
   }
 
+  verservicios(): void {
+    this.router.navigate(['verservicios']);
+  }
   
   informe(): void {
     this.router.navigate(['pacienteinforme']);

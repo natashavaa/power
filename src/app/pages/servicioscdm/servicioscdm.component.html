@@ -1,0 +1,82 @@
+<form align="left">
+    <div>
+        <span class="claDoc ">{{usuarioA}} </span>
+
+    </div>
+    <br>
+    <span class="claDocEs ">{{especialidad}} </span>
+</form>
+<div class="container">
+
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+                <form>
+                    <mat-card>
+                        <br>
+                        <div class="row">
+                            <div class="col-2">
+                                <br>
+                                <form action="">
+                                    <div class="form-group row">
+                                        <div class="container">
+                                            <div class="padre">
+                                                <img src="https://img.icons8.com/dotty/50/000000/doctors-folder.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-10">
+                                <br>
+                                <form action="">
+                                    <div class="form-group row">
+                                        <h4 for="" class="col-10 col-form-label">Servicios</h4>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </mat-card>
+                </form>
+            </mat-card-title>
+            <br>
+            <form align="right">
+                <div>
+                    <button mat-raised-button (click)="agregarservicio()" class="uno">
+                        <img src="https://img.icons8.com/dusk/50/000000/services.png"/> Agregar Servicio</button>
+                </div>
+            </form>
+            <div class="row mt-5">
+                <div class="col">
+                    <label for="" class="lolo">Lista de los Servicios</label>
+                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
+                    <table class="table table-hover" mdbTable mdbTableScroll scrollY="true" maxHeight="200"
+                        bordered="true">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre Servicio</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Costo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let piezadental of piezadental">
+                                <td>{{piezadental.id}}</td>
+                                <td>{{piezadental.NombrePieza}}</td>
+                                <td>{{piezadental.Descripcion}}</td>
+                                <td>{{piezadental.Nomenclatura}}</td>
+                                <td>{{piezadental.Ubicacion}}</td>
+                                <td> <img width="20" height="20" [src]="convert(piezadental.Imagen)" alt="img"></td>
+                                <td>{{piezadental.Posicion}}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </div>
+</div>

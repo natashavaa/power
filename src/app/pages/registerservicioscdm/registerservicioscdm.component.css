@@ -1,0 +1,102 @@
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+  flex-basis: 0;
+  color: #000;
+
+}
+
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+.mat-form-field {
+  margin: 0;
+  padding: 0;    
+  font-weight: bold;
+  display: block;
+  width: 100%;
+ 
+}
+
+.mat-expansion-panel {
+  background: rgba(207, 205, 205, 0.199);
+  color: #000;
+  width: 60%;
+  height: 60%;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color:#000 !important;
+ }
+
+ ::ng-deep .mat-form-field-underline {
+  /*change color of underline*/
+  background-color: #000 !important;
+} 
+
+::ng-deep .mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: #000 !important;
+}
+.caja input{
+  background-color: #fff ;
+  padding: 10px;
+}
+
+.cajita input {
+  background-color: rgba(207, 205, 205, 0.199);
+  margin: 0 68px;
+  
+}
+.uno {
+  margin: 0 12px;
+  color: snow;
+  background-color: blue;
+}
+.margen{
+  margin-top: 50px;
+    margin-right: 20px;
+}
+
+.dos {
+  margin: 0 12px;
+  color: snow;
+  background-color: darkred;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+  text-align: left;
+
+}
+
+.mat-select {
+  color: #000;
+}
+
+.mat-card {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000;
+  background-color: rgba(207, 205, 205, 0.199);
+  width: 60%;
+  height: 60%;
+}
+
+.mat-card a:hover {
+  color: #fff;
+}
+
+.mat-radio-button {
+  margin: 0 12px;
+}
+
+.selector {
+  margin-left: 10px;
+  text-align: left;
+
+}

@@ -101,6 +101,9 @@ import { PadecimientoADienteComponent } from './pages/padecimiento-adiente/padec
 import { ProcedimientoapadecimientoComponent } from './pages/procedimientoapadecimiento/procedimientoapadecimiento.component';
 // Set the fonts to use
 import { SliderModule } from 'angular-image-slider';
+import { ServicioscdmComponent } from './pages/servicioscdm/servicioscdm.component';
+import { RegisterservicioscdmComponent } from './pages/registerservicioscdm/registerservicioscdm.component';
+import { OdontogramaserviciosComponent } from './pages/odontogramaservicios/odontogramaservicios.component';
 PdfMakeWrapper.setFonts(pdfFonts);
 
 @NgModule({
@@ -154,6 +157,9 @@ PdfMakeWrapper.setFonts(pdfFonts);
     ReponermaterialComponent,
     PadecimientoADienteComponent,
     ProcedimientoapadecimientoComponent,
+    ServicioscdmComponent,
+    RegisterservicioscdmComponent,
+    OdontogramaserviciosComponent,
   ],
   imports: [
     SliderModule,
