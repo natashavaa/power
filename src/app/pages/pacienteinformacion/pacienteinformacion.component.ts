@@ -4,6 +4,7 @@ import { PaatientInterface } from '../../models/patients.interface';
 import { AppComponent } from '../../app.component';
 import { AuthService } from '../../services/auth.service';
 import { HistotialClinicoInterface } from '../../models/historialclinico.interface';
+import { DataApiService } from '../../services/data-api.service';
 
 @Component({
   selector: 'app-pacienteinformacion',
@@ -13,6 +14,33 @@ import { HistotialClinicoInterface } from '../../models/historialclinico.interfa
 export class PacienteinformacionComponent implements OnInit {
   private patient: PaatientInterface;
   private historial: HistotialClinicoInterface = {
+
+    idPatient: '',
+    Labios: '',
+    Carrillos: '',
+    Paladar: '',
+    Lengua: '',
+    PisodelaBoca: '',
+    Mucosa: '',
+    Encias: '',
+    Calculos: '',
+    Ganglios: '',
+    OtroMotivo: '',
+    complicacionesanestesia: '',
+    FiebreReumatica: '',
+    Diabetes: '',
+    Cardiopatias: '',
+    Tbc: '',
+    Artritis: '',
+    Hemorragias: '',
+    Neuralgias: '',
+    Sinusitiss: '',
+    Renales: '',
+    Alergias: '',
+    Otra: '',
+    Observaciones: '',
+  };
+  private historialRec: HistotialClinicoInterface = {
 
     idPatient: '',
     Labios: '',
@@ -85,7 +113,7 @@ export class PacienteinformacionComponent implements OnInit {
     this.step--;
   }
 
-  constructor(private router: Router, private auth: AuthService, private app: AppComponent) {
+  constructor(private dataApi: DataApiService, private router: Router, private auth: AuthService, private app: AppComponent) {
 
   }
 
@@ -143,6 +171,15 @@ export class PacienteinformacionComponent implements OnInit {
   ngOnInit() {
     this.app.mostrar = true;
     this.patient = this.auth.getCurrentPatient();
+    this.getHistoria();
+  }
+  getHistoria() {
+    this.patient = this.auth.getCurrentPatient();
+    this.dataApi.getAllHistorialBypatient(this.patient.id)
+    .subscribe((historialRec: HistotialClinicoInterface) => {
+      this.historial = historialRec;
+      console.log(historialRec);
+    } );
   }
 
 }

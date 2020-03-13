@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PantallaNOaccesoComponent implements OnInit {
 
-  constructor(private auth: AuthService, private app: AppComponent,private router: Router) { }
+  constructor(private auth: AuthService, private app: AppComponent, private router: Router) { }
 
   ngOnInit() {
     this.app.mostrar = false;
