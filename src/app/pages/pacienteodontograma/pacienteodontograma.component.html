@@ -111,21 +111,21 @@
 
             <div class="row">
                 <div class="col-6">
-                    <br>
-                    <div class="form-group row">
-                        <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
-                        <form #getype="ngForm" (ngSubmit)="getType(getype)">
+                    <form #getype="ngForm" (ngSubmit)="getType(getype)">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                             <br>
-                            <select class="form-control col-6" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento"
+                                [(ngModel)]="momentoC">
                                 <option selected>Diente por Diente</option>
                                 <option>Todos los Dientes</option>
                                 <option>Ortodoncia</option>
-                                </select>
-                            <div class="col-2">
+                            </select>
+                            <div class="col-1">
                                 <button class="sinp" type="submit" class="btn btn-success">Ir </button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <br>
@@ -137,7 +137,7 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Estatus</mat-label>
                             <br>
-                            <select class="form-control col-6">
+                            <select class="form-control col-4">
                                 <option>Evaluado</option>
                                 <option>Iniciado</option>
                                 <option>Terminado</option>
@@ -155,7 +155,8 @@
                 <div class="form-group row col-12 d-block">
                     <div>
                         <div class="mar">
-                            <img class="mar" (click)="padecimiento()" height="50" width="50" src="assets/dientesanos/Diente1.png">
+                            <img class="mar" (click)="padecimiento()" height="50" width="50"
+                                src="assets/dientesanos/Diente1.png">
                             <img class="mar" height="60" width="60" src="assets/dientesanos/Diente2.png">
                             <img class="mar" height="70" width="70" src="assets/dientesanos/Diente3.png">
                             <img class="mar" height="30" width="30" src="assets/dientesanos/Diente4.png">

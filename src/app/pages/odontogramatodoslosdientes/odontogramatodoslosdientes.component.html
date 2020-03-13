@@ -107,19 +107,20 @@
             <div class="row">
                 <div class="col-6">
                     <br>
-                    <form action="">
+                    <form #getype="ngForm" (ngSubmit)="getType(getype)">
                         <div class="form-group row">
-                            <form #getype="ngForm" (ngSubmit)="getType(getype)">
-                                <br>
-                                <select class="form-control col-6" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
-                            <option selected>Diente por Diente</option>
-                            <option>Todos los Dientes</option>
-                            <option>Ortodoncia</option>
+                            <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
+                            <br>
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento"
+                                [(ngModel)]="momentoC">
+                                <option selected>Diente por Diente</option>
+                                <option>Todos los Dientes</option>
+                                <option>Ortodoncia</option>
                             </select>
-                                <div class="col-2">
-                                    <button class="sinp" type="submit" class="btn btn-success">Ir </button>
-                                </div>
-                            </form>
+                            <div class="col-2">
+                                <button class="sinp" type="submit" class="btn btn-success">Ir </button>
+                            </div>
+
                         </div>
                     </form>
                 </div>
