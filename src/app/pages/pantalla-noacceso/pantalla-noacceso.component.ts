@@ -17,6 +17,6 @@ export class PantallaNOaccesoComponent implements OnInit {
   }
   logoutUser(): void {
     this.auth.logoutUser();
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
  }
 }
