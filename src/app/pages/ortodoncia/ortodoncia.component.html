@@ -117,16 +117,17 @@
 
             </div>
             <div class="form-group row">
-                <mat-label for="" class="col-3 col-form-label">Area Afectada</mat-label>
-                <br>
-                <select class="form-control col-3">
+                <form #getype="ngForm" (ngSubmit)="getType(getype)">
+                    <br>
+                    <select class="form-control col-6" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
+                    <option selected>Diente por Diente</option>
                     <option>Todos los Dientes</option>
-                    <option>Diente por Diente</option>
-                    <option selected>Ortodoncia</option>
-                </select>
-                <div class="col-1">
-                    <button class="sinp" type="submit" class="btn btn-success">Ir </button>
-                </div>
+                    <option>Ortodoncia</option>
+                    </select>
+                    <div class="col-2">
+                        <button class="sinp" type="submit" class="btn btn-success">Ir </button>
+                    </div>
+                </form>
             </div>
             <br>
             <br>

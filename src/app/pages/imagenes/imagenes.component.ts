@@ -69,6 +69,8 @@ export class ImagenesComponent implements OnInit {
     ).subscribe(evolution => {
       this.ngOnInit();
      } );
+    this.ngOnInit();
+    this.router.navigate(['historiaclinica']);
     }
     public picked(event, field) {
       this.currentId = field;

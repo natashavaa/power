@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-ortodoncia',
@@ -8,9 +9,19 @@ import { Router } from '@angular/router';
 })
 export class OrtodonciaComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
+  constructor(private router: Router, private app: AppComponent) { }
+  momentoC: string;
   ngOnInit() {
+    this.app.mostrar = true;
+  }
+  getType(): void {
+    if ( Object.is(this.momentoC, 'Diente por Diente')) {
+      this.router.navigate(['pacienteodontograma']);
+    } else if ( Object.is(this.momentoC, 'Todos los Dientes')) {
+      this.router.navigate(['todoslosdientes']);
+    } else if (Object.is(this.momentoC, 'Ortodoncia')) {
+      this.router.navigate(['ortodoncia']);
+    }
   }
 
   datos(): void {
@@ -53,12 +64,12 @@ export class OrtodonciaComponent implements OnInit {
     this.router.navigate(["pacienterecipe"]);
   }
 
-   
+
   presupuesto(): void {
     this.router.navigate(['pacientepresupuesto']);
   }
 
-  
+
   informe(): void {
     this.router.navigate(['pacienteinforme']);
   }

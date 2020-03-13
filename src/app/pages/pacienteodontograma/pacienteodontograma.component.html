@@ -114,24 +114,21 @@
                     <br>
                     <div class="form-group row">
                         <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
-                        <br>
-                        <select class="form-control col-6">
-                            <option selected>Diente x Diente</option>
-                            <option>Todos los Dientes</option>
-                            <option>Ortodoncia</option>
-                        </select>
-                        <div class="col-1">
-                            <button class="sinp" type="submit" class="btn btn-success">Ir </button>
-                        </div>
+                        <form #getype="ngForm" (ngSubmit)="getType(getype)">
+                            <br>
+                            <select class="form-control col-6" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
+                                <option selected>Diente por Diente</option>
+                                <option>Todos los Dientes</option>
+                                <option>Ortodoncia</option>
+                                </select>
+                            <div class="col-2">
+                                <button class="sinp" type="submit" class="btn btn-success">Ir </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <br>
-            <br>
-            <div class="alert alert-danger" role="alert">
-                PARA LUEGO PROCEDER A ESCOGER EL DIENTE A REPARAR
-
-            </div>
             <br>
 
             <div class="row">
@@ -178,7 +175,7 @@
                         <div>
                             <img class="mar" height="50" width="50" src="assets/dientesanos/Diente17.png">
                             <img class="mar" height="60" width="60" src="assets/dientesanos/Diente18.png">
-                            <img class="mar" height="70" width="70"  src="assets/dientesanos/Diente19.png">
+                            <img class="mar" height="70" width="70" src="assets/dientesanos/Diente19.png">
                             <img class="mar" height="30" width="30" src="assets/dientesanos/Diente20.png">
                             <img class="mar" height="30" width="30" src="assets/dientesanos/Diente21.png">
                             <img class="mar" height="30" width="30" src="assets/dientesanos/Diente22.png">

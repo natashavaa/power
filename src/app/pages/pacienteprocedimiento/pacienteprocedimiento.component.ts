@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
+import { AppComponent } from '../../app.component';
 
 export interface PeriodicElement {
   name: string;
@@ -64,9 +65,10 @@ export class PacienteprocedimientoComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private app: AppComponent) { }
 
   ngOnInit() {
+    this.app.mostrar = true;
   }
 
 
@@ -116,7 +118,7 @@ export class PacienteprocedimientoComponent implements OnInit {
   verservicios(): void {
     this.router.navigate(['verservicios']);
   }
-  
+
   informe(): void {
     this.router.navigate(['pacienteinforme']);
   }
