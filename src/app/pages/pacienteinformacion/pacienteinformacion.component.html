@@ -174,13 +174,13 @@
               </label>
                     <div class="radio">
                         <label>
-                      <input type="radio"  #complicacionesanestesia="ngModel" name="complicacionesanestesia" [(ngModel)]='historial.complicacionesanestesia'>
+                      <input type="radio"  #complicacionesanestesiaSi="ngModel" name="complicacionesanestesiaSi" value="Si" [(ngModel)]='historial.complicacionesanestesia'>
                       Si
                   </label>
                     </div>
                     <div class="radio">
                         <label>
-                      <input type="radio"  #complicacionesanestesia="ngModel" name="complicacionesanestesia" [(ngModel)]='historial.complicacionesanestesia' class="selector">
+                      <input type="radio"  #complicacionesanestesiaNo="ngModel" name="complicacionesanestesiaNo" value="No" [(ngModel)]='historial.complicacionesanestesia' class="selector">
                       No
                   </label>
                     </div>
@@ -202,13 +202,13 @@
                                         <label for="" class="col-8 col-form-label">Fiebre Reumatica </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio"  #FiebreReumatica="ngModel" name="FiebreReumatica" [(ngModel)]='historial.FiebreReumatica'>
+                                          <input type="radio"  #FiebreSi="ngModel" name="FiebreSi" id="FiebreSi"  value="Si" [(ngModel)]='historial.FiebreReumatica'>
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #FiebreReumatica="ngModel" name="FiebreReumatica" [(ngModel)]='historial.FiebreReumatica'
+                                          <input type="radio" #FiebreNo="ngModel" name="FiebreNo" id="FiebreNo" value="No" [(ngModel)]='historial.FiebreReumatica'
                                               class="selector">
                                           No
                                       </label>
@@ -218,13 +218,13 @@
                                         <label for="" class="col-8 col-form-label">Diabetes </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Diabetes="ngModel" name="Diabetes" [(ngModel)]='historial.Diabetes' class="selector">
+                                          <input type="radio" #DiabetesSi="ngModel" name="DiabetesSi" id="DiabetesSi" value="Si" [(ngModel)]='historial.Diabetes' class="selector">
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Diabetes="ngModel" name="Diabetes" [(ngModel)]='historial.Diabetes'
+                                          <input type="radio" #DiabetesNo="ngModel" name="DiabetesNo" id="DiabetesNo" value="No" [(ngModel)]='historial.Diabetes'
                                               class="selector">
                                           No
                                       </label>
@@ -234,13 +234,13 @@
                                         <label for="" class="col-8 col-form-label">Cardiopatias </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Cardiopatias="ngModel" name="Cardiopatias" [(ngModel)]='historial.Cardiopatias'>
+                                          <input type="radio" #CardiopatiasSi="ngModel" name="CardiopatiasSi" id="CardiopatiasSi" value="Si" [(ngModel)]='historial.Cardiopatias'>
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio"  #Cardiopatias="ngModel" name="Cardiopatias" [(ngModel)]='historial.Cardiopatias'
+                                          <input type="radio"  #CardiopatiasNo="ngModel" name="CardiopatiasNo" id="CardiopatiasNo" value="No" [(ngModel)]='historial.Cardiopatias'
                                               class="selector">
                                           No
                                       </label>
@@ -250,13 +250,13 @@
                                         <label for="" class="col-8 col-form-label">T.B.C </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio"  #Tbc="ngModel" name="Tbc" [(ngModel)]='historial.Tbc'>
+                                          <input type="radio"  #TbcSi="ngModel" name="TbcSi" id="TbcSi" value="Si" [(ngModel)]='historial.Tbc'>
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio"  #Tbc="ngModel" name="Tbc" [(ngModel)]='historial.Tbc'
+                                          <input type="radio"  #TbcNo="ngModel" name="TbcNo" id="TbcNo" value="No" [(ngModel)]='historial.Tbc'
                                               class="selector">
                                           No
                                       </label>
@@ -266,13 +266,13 @@
                                         <label for="" class="col-8 col-form-label">Artritis </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Artritis="ngModel" name="Artritis" [(ngModel)]='historial.Artritis'>
+                                          <input type="radio" #ArtritisSi="ngModel" name="ArtritisSi"  id="ArtritisSi" value="Si" [(ngModel)]='historial.Artritis'>
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio"  #Artritis="ngModel" name="Artritis" [(ngModel)]='historial.Artritis'
+                                          <input type="radio"  #ArtritisNo="ngModel" name="ArtritisNo" id="ArtritisNo" value="No" [(ngModel)]='historial.Artritis'
                                               class="selector">
                                           No
                                       </label>
@@ -288,13 +288,13 @@
                                         <label for="" class="col-8 col-form-label">Hemorragias </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Hemorragias="ngModel" name="Hemorragias" [(ngModel)]='historial.Hemorragias'>
+                                          <input type="radio" #HemorragiasSi="ngModel" name="HemorragiasSi"  id="HemorragiasSi" value="Si" [(ngModel)]='historial.Hemorragias'>
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio"  #Hemorragias="ngModel" name="Hemorragias" [(ngModel)]='historial.Hemorragias'
+                                          <input type="radio"  #HemorragiasNo="ngModel" name="HemorragiasNo"  id="HemorragiasNo" value="No" [(ngModel)]='historial.Hemorragias'
                                               class="selector">
                                           No
                                       </label>
@@ -304,29 +304,29 @@
                                         <label for="" class="col-8 col-form-label">Neuralgias </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Neuralgias="ngModel" name="Neuralgias" [(ngModel)]='historial.Neuralgias'>
+                                          <input type="radio" #NeuralgiasSi="ngModel" name="NeuralgiasSi"  id="NeuralgiasSi" value="Si" [(ngModel)]='historial.Neuralgias'>
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Neuralgias="ngModel" name="Neuralgias" [(ngModel)]='historial.Neuralgias'
+                                          <input type="radio" #NeuralgiasNo="ngModel" name="NeuralgiasNo" id="NeuralgiasNo" value="No" [(ngModel)]='historial.Neuralgias'
                                               class="selector">
                                           No
                                       </label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="" class="col-8 col-form-label">Sinusitiss </label>
+                                        <label for="" class="col-8 col-form-label">Sinusitis </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Sinusitiss="ngModel" name="Sinusitiss" [(ngModel)]='historial.Sinusitiss'>
+                                          <input type="radio" #NeuralgiasSi="ngModel" name="SinusitisSi"  id="SinusitisSi" value="Si" [(ngModel)]='historial.Sinusitiss'>
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Sinusitiss="ngModel" name="Sinusitiss" [(ngModel)]='historial.Sinusitiss'
+                                          <input type="radio" #SinusitisNo="ngModel" name="SinusitisNo" id="SinusitisNo" value="No"  [(ngModel)]='historial.Sinusitiss'
                                               class="selector">
                                           No
                                       </label>
@@ -336,13 +336,13 @@
                                         <label for="" class="col-8 col-form-label">Renales </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Renales="ngModel" name="Renales" [(ngModel)]='historial.Renales'>
+                                          <input type="radio" #RenalesSi="ngModel" name="RenalesSi" id="RenalesSi" value="Si" [(ngModel)]='historial.Renales'>
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio"  #Renales="ngModel" name="Renales" [(ngModel)]='historial.Renales'
+                                          <input type="radio"  #RenalesNo="ngModel" name="RenalesNo" id="RenalesNo" value="No" [(ngModel)]='historial.Renales'
                                               class="selector">
                                           No
                                       </label>
@@ -352,13 +352,13 @@
                                         <label for="" class="col-8 col-form-label">Alergias </label>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio"  #Alergias="ngModel" name="Alergias" [(ngModel)]='historial.Alergias'>
+                                          <input type="radio"  #AlergiasSi="ngModel" name="AlergiasSi" id="AlergiasSi" value="Si" [(ngModel)]='historial.Alergias'>
                                           Si
                                       </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                          <input type="radio" #Alergias="ngModel" name="Alergias" [(ngModel)]='historial.Alergias'
+                                          <input type="radio" #AlergiasNo="ngModel" name="AlergiasNo"  id="AlergiasNo" value="No" [(ngModel)]='historial.Alergias'
                                               class="selector">
                                           No
                                       </label>
