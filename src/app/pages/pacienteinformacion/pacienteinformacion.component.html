@@ -6,8 +6,8 @@
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <h5 align="center">Maria RodriguezDB</h5>
-                    <h1 align="center">12 años</h1>
+                    <h5 align="center">{{patient.name}}</h5>
+                    <h1 align="center">{{patient.age}} años</h1>
                 </mat-card-title>
                 <mat-list-item>
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
@@ -103,306 +103,293 @@
                 </form>
             </mat-card-title>
         </mat-card-content>
-        <mat-accordion multi="true">
-            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-                <mat-expansion-panel-header>
-                    <mat-panel-description>
-                        <h6> Examen Intraoral </h6>
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <div class="row">
-                    <div class="col-6 caja">
-                        <form action="">
-                            <br>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Labios </label>
-                                <input type="text" class="form-control" placeholder="" required minlength="4"
-                                    maxlength="50" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Carrillos </label>
-                                <input type="text" class="form-control" placeholder="" required minlength="4"
-                                    maxlength="50" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Paladar </label>
-                                <input type="text" class="form-control" placeholder="" required minlength="4"
-                                    maxlength="50" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Lengua </label>
-                                <input type="text" class="form-control" placeholder="" required minlength="4"
-                                    maxlength="50" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Piso de la Boca </label>
-                                <input type="text" class="form-control" placeholder="" required minlength="4"
-                                    maxlength="50" class="form-control col-6">
-                            </div>
-                        </form>
-                    </div>
+        <form #formRegisterhistorial="ngForm" (ngSubmit)="onRegisterhistorial(formRegisterhistorial)">
+            <mat-accordion multi="true">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-description>
+                            <h6> Examen Intraoral </h6>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="row">
+                        <div class="col-6 caja">
+                            <form action="">
+                                <br>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Labios </label>
+                                    <input type="text" #labios="ngModel" name="labios" class="form-control" placeholder="" [(ngModel)]='historial.Labios' required minlength="4" maxlength="50" class="form-control col-6">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Carrillos </label>
+                                    <input type="text" class="form-control" placeholder="" #carrillos="ngModel" name="carrillos" [(ngModel)]='historial.Carrillos' required minlength="4" maxlength="50" class="form-control col-6">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Paladar </label>
+                                    <input type="text" class="form-control" placeholder="" #paladar="ngModel" name="paladar" [(ngModel)]='historial.Paladar' required minlength="4" maxlength="50" class="form-control col-6">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Lengua </label>
+                                    <input type="text" class="form-control" placeholder="" #lengua="ngModel" name="lengua" [(ngModel)]='historial.Lengua' required minlength="4" maxlength="50" class="form-control col-6">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Piso de la Boca </label>
+                                    <input type="text" class="form-control" placeholder="" #pisodelaBoca="ngModel" name="pisodelaBoca" [(ngModel)]='historial.PisodelaBoca' required minlength="4" maxlength="50" class="form-control col-6">
+                                </div>
+                            </form>
+                        </div>
 
-                    <div class="col-6 caja">
-                        <form action="">
-                            <br>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Mucosa </label>
-                                <input type="text" class="form-control" placeholder="" required minlength="4"
-                                    maxlength="50" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Encias </label>
-                                <input type="text" class="form-control" placeholder="" required minlength="4"
-                                    maxlength="50" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Calculos </label>
-                                <input type="text" class="form-control" placeholder="" required minlength="4"
-                                    maxlength="50" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Ganglios </label>
-                                <input type="text" class="form-control" placeholder="" required minlength="4"
-                                    maxlength="50" class="form-control col-6">
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Otro Motivo</label>
-                                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-                            </div>
-                        </form>
+                        <div class="col-6 caja">
+                            <form action="">
+                                <br>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Mucosa </label>
+                                    <input type="text" class="form-control" placeholder="" #mucosa="ngModel" name="mucosa" [(ngModel)]='historial.Mucosa' required minlength="4" maxlength="50" class="form-control col-6">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Encias </label>
+                                    <input type="text" class="form-control" placeholder="" #encias="ngModel" name="encias" [(ngModel)]='historial.Encias' required minlength="4" maxlength="50" class="form-control col-6">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Calculos </label>
+                                    <input type="text" class="form-control" placeholder="" #calculos="ngModel" name="calculos" [(ngModel)]='historial.Calculos' required minlength="4" maxlength="50" class="form-control col-6">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Ganglios </label>
+                                    <input type="text" class="form-control" placeholder="" #ganglios="ngModel" name="ganglios" [(ngModel)]='historial.Ganglios' required minlength="4" maxlength="50" class="form-control col-6">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-4 col-form-label">Otro Motivo</label>
+                                    <textarea class="form-control" rows="3" class="form-control col-6" #otroMotivo="ngModel" name="otroMotivo" [(ngModel)]='historial.OtroMotivo'></textarea>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <mat-action-row>
-                    <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
-                </mat-action-row>
-            </mat-expansion-panel>
-            <br>
-            <div class="form-group row">
+                    <mat-action-row>
+                    </mat-action-row>
+                </mat-expansion-panel>
                 <br>
-                <label for="" class="col-8 col-form-label">Ha tenido UD complicaciones por anestesia en la boca:
-                </label>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="opciones16" id="opciones_1" value="opcion_1">
-                        Si
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="opciones16" id="opciones_2" value="opcion_2" class="selector">
-                        No
-                    </label>
-                </div>
-            </div>
-
-            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-                <mat-expansion-panel-header>
-                    <mat-panel-description>
-                        <h6> Ha padecido alguna de estas enfermedades </h6>
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-
-                <div class="row">
-                    <div class="form-group row">
-                        <div class="col-6">
-                            <form action="">
-                                <br>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">Fiebre Reumatica </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones17" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones17" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">Diabetes </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones18" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones18" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">Cardiopatias </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones19" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones19" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">T.B.C </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones20" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones20" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">Artritis </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones21" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones21" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="col-6">
-                            <form action="">
-                                <br>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">Hemorragias </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones22" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones22" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">Neuralgias </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones23" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones23" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">Sinusitiss </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones24" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones24" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">Renales </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones25" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones25" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="" class="col-8 col-form-label">Alergias </label>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones26" id="opciones_1" value="opcion_1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="opciones26" id="opciones_2" value="opcion_2"
-                                                class="selector">
-                                            No
-                                        </label>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-4 col-form-label"></label>
-                                        <input type="text" class="form-control" placeholder="" required minlength="4"
-                                            maxlength="50" class="form-control col-6">
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-3 col-form-label">Otra</label>
-                                        <textarea class="form-control" rows="3" class="form-control col-9"></textarea>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                <div class="form-group row">
+                    <br>
+                    <label for="" class="col-8 col-form-label">Ha tenido UD complicaciones por anestesia en la boca:
+              </label>
+                    <div class="radio">
+                        <label>
+                      <input type="radio"  #complicacionesanestesia="ngModel" name="complicacionesanestesia" [(ngModel)]='historial.complicacionesanestesia'>
+                      Si
+                  </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                      <input type="radio"  #complicacionesanestesia="ngModel" name="complicacionesanestesia" [(ngModel)]='historial.complicacionesanestesia' class="selector">
+                      No
+                  </label>
                     </div>
                 </div>
-                <mat-action-row>
-                    <button mat-button color="warn" (click)="prevStep()">Anterior</button>
-                </mat-action-row>
 
-            </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-description>
+                            <h6> Ha padecido alguna de estas enfermedades </h6>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
 
-            <br>
-            <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Observaciones</label>
-                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
-            </div>
-            <br>
+                    <div class="row">
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <form action="">
+                                    <br>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Fiebre Reumatica </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio"  #FiebreReumatica="ngModel" name="FiebreReumatica" [(ngModel)]='historial.FiebreReumatica'>
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #FiebreReumatica="ngModel" name="FiebreReumatica" [(ngModel)]='historial.FiebreReumatica'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Diabetes </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Diabetes="ngModel" name="Diabetes" [(ngModel)]='historial.Diabetes' class="selector">
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Diabetes="ngModel" name="Diabetes" [(ngModel)]='historial.Diabetes'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Cardiopatias </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Cardiopatias="ngModel" name="Cardiopatias" [(ngModel)]='historial.Cardiopatias'>
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio"  #Cardiopatias="ngModel" name="Cardiopatias" [(ngModel)]='historial.Cardiopatias'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">T.B.C </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio"  #Tbc="ngModel" name="Tbc" [(ngModel)]='historial.Tbc'>
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio"  #Tbc="ngModel" name="Tbc" [(ngModel)]='historial.Tbc'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Artritis </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Artritis="ngModel" name="Artritis" [(ngModel)]='historial.Artritis'>
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio"  #Artritis="ngModel" name="Artritis" [(ngModel)]='historial.Artritis'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
 
-            <button mat-raised-button (click)="historia()" class="uno">GUARDAR HISTORIA CLINICA</button>
-            <button mat-raised-button (click)="cancelar()" class="dos">CANCELAR</button>
-            <br>
-            <br>
-        </mat-accordion>
+                            <div class="col-6">
+                                <form action="">
+                                    <br>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Hemorragias </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Hemorragias="ngModel" name="Hemorragias" [(ngModel)]='historial.Hemorragias'>
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio"  #Hemorragias="ngModel" name="Hemorragias" [(ngModel)]='historial.Hemorragias'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Neuralgias </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Neuralgias="ngModel" name="Neuralgias" [(ngModel)]='historial.Neuralgias'>
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Neuralgias="ngModel" name="Neuralgias" [(ngModel)]='historial.Neuralgias'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Sinusitiss </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Sinusitiss="ngModel" name="Sinusitiss" [(ngModel)]='historial.Sinusitiss'>
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Sinusitiss="ngModel" name="Sinusitiss" [(ngModel)]='historial.Sinusitiss'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Renales </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Renales="ngModel" name="Renales" [(ngModel)]='historial.Renales'>
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio"  #Renales="ngModel" name="Renales" [(ngModel)]='historial.Renales'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-8 col-form-label">Alergias </label>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio"  #Alergias="ngModel" name="Alergias" [(ngModel)]='historial.Alergias'>
+                                          Si
+                                      </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                          <input type="radio" #Alergias="ngModel" name="Alergias" [(ngModel)]='historial.Alergias'
+                                              class="selector">
+                                          No
+                                      </label>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-3 col-form-label">Otra</label>
+                                            <textarea class="form-control" rows="3" class="form-control col-9" #Otra="ngModel" name="Otra" [(ngModel)]='historial.Otra'></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-action-row>
+                        <button mat-button color="warn"></button>
+                    </mat-action-row>
+
+                </mat-expansion-panel>
+
+                <br>
+                <div class="form-group row">
+                    <label for="" class="col-4 col-form-label">Observaciones</label>
+                    <textarea class="form-control" rows="3" class="form-control col-6" #Observaciones="ngModel" name="Observaciones" [(ngModel)]='historial.Observaciones'></textarea>
+                </div>
+                <br>
+
+                <button type="submit" class="uno">GUARDAR HISTORIA CLINICA</button>
+                <button (click)="cancelar()" class="dos">CANCELAR</button>
+                <br>
+                <br>
+            </mat-accordion>
+        </form>
     </div>
 </div>

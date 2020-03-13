@@ -25,43 +25,43 @@ export class OrtodonciaComponent implements OnInit {
   }
 
   datos(): void {
-    this.router.navigate(["historiaclinica"]);
+    this.router.navigate(['historiaclinica']);
   }
 
   imagen(): void {
-    this.router.navigate(["imagenes"]);
+    this.router.navigate(['imagenes']);
   }
 
   consulta(): void {
-    this.router.navigate(["pacienteconsulta"]);
+    this.router.navigate(['pacienteconsulta']);
   }
 
   procedimiento(): void {
-    this.router.navigate(["pacienteprocedimiento"]);
+    this.router.navigate(['pacienteprocedimiento']);
   }
 
   seguimiento(): void {
-    this.router.navigate(["pacienteseguimiento"]);
+    this.router.navigate(['pacienteseguimiento']);
   }
 
   odontograma(): void {
-    this.router.navigate(["pacienteodontograma"]);
+    this.router.navigate(['pacienteodontograma']);
   }
 
   padecimiento(): void {
-    this.router.navigate(["pacientepadecimiento"]);
+    this.router.navigate(['pacientepadecimiento']);
   }
 
   informacion(): void {
-    this.router.navigate(["pacienteinformacion"]);
+    this.router.navigate(['pacienteinformacion']);
   }
 
   todos(): void {
-    this.router.navigate(["todoslosdientes"]);
+    this.router.navigate(['todoslosdientes']);
   }
 
   recipe(): void {
-    this.router.navigate(["pacienterecipe"]);
+    this.router.navigate(['pacienterecipe']);
   }
 
 

@@ -19,6 +19,7 @@ import { PadecimientoInterface } from '../models/padecimiento.interface';
 import { PadecimientoporDienteInterface } from '../models/piezaconPadecimiento.interface';
 import { ProcedimientoApadecimentoInterface } from '../models/procedimientoapadecimiento.interface';
 import { EvolutionInterface } from '../models/evolution.interface';
+import { HistotialClinicoInterface } from '../models/historialclinico.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -344,6 +345,43 @@ registerPiezaDental(NombrePieza: string, Descripcion: string, Nomenclatura: stri
   },
   );
 }
+registerHistorial(idPatient: string, Labios: string, Carrillos: string, Paladar: string, Lengua: string, PisodelaBoca: string,
+                  Mucosa: string, Encias: string, Calculos: string, Ganglios: string, OtroMotivo: string, complicacionesanestesia: string,
+                  FiebreReumatica: string, Diabetes: string, Cardiopatias: string, Tbc: string, Artritis: string, Hemorragias: string,
+                  Neuralgias: string, Sinusitiss: string, Renales: string, Alergias: string, Otra: string, Observaciones: string, ) {
+  const urlApi = 'http://localhost:3000/historialclinico';
+  return this.htttp
+  .post<HistotialClinicoInterface>(
+  urlApi,
+  {
+    idPatient,
+    Labios,
+    Carrillos,
+    Paladar,
+    Lengua,
+    PisodelaBoca,
+    Mucosa,
+    Encias,
+    Calculos,
+    Ganglios,
+    OtroMotivo,
+    complicacionesanestesia,
+    FiebreReumatica,
+    Diabetes,
+    Cardiopatias,
+    Tbc,
+    Artritis,
+    Hemorragias,
+    Neuralgias,
+    Sinusitiss,
+    Renales,
+    Alergias,
+    Otra,
+    Observaciones,
+
+  },
+  );
+}
 registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string) {
   const urlApi = 'http://localhost:3000/procedimiento';
   return this.htttp
@@ -576,7 +614,7 @@ loginuser(username: string, password: string): Observable<any> {
     localStorage.setItem('currentUser', user_string);
   }
   setMaterial(material: MaterialInterface): void {
-    let materialString = JSON.stringify(material);
+    const materialString = JSON.stringify(material);
     localStorage.setItem('currentMaterial', materialString);
   }
   setPatient(patient: PaatientInterface): void {
@@ -595,7 +633,7 @@ loginuser(username: string, password: string): Observable<any> {
   getCurrentUser(): UserInterface {
     const userString = localStorage.getItem('currentUser');
     if (!isNullOrUndefined(userString)) {
-      let user: UserInterface = JSON.parse(userString);
+      const user: UserInterface = JSON.parse(userString);
       return user;
     } else {
       return null;
@@ -604,7 +642,7 @@ loginuser(username: string, password: string): Observable<any> {
   getCurrentPatient(): PaatientInterface {
     const patientString = localStorage.getItem('currentPatient');
     if (!isNullOrUndefined(patientString)) {
-      let patient: PaatientInterface = JSON.parse(patientString);
+      const patient: PaatientInterface = JSON.parse(patientString);
       return patient;
     } else {
       return null;
@@ -613,7 +651,7 @@ loginuser(username: string, password: string): Observable<any> {
   getCurrentMaterial(): MaterialInterface {
     const materialString = localStorage.getItem('currentMaterial');
     if (!isNullOrUndefined(materialString)) {
-      let material: PaatientInterface = JSON.parse(materialString);
+      const material: PaatientInterface = JSON.parse(materialString);
       return material;
     } else {
       return null;
