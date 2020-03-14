@@ -382,6 +382,44 @@ registerHistorial(idPatient: string, Labios: string, Carrillos: string, Paladar:
   },
   );
 }
+UpdateHistorial(id: string, idPatient: string, Labios: string, Carrillos: string, Paladar: string, Lengua: string, PisodelaBoca: string,
+                Mucosa: string, Encias: string, Calculos: string, Ganglios: string, OtroMotivo: string, complicacionesanestesia: string,
+                FiebreReumatica: string, Diabetes: string, Cardiopatias: string, Tbc: string, Artritis: string, Hemorragias: string,
+                Neuralgias: string, Sinusitiss: string, Renales: string, Alergias: string, Otra: string, Observaciones: string, ) {
+const urlApi = 'http://localhost:3000/historialclinico';
+return this.htttp
+.put<HistotialClinicoInterface>(
+urlApi,
+{
+id,
+idPatient,
+Labios,
+Carrillos,
+Paladar,
+Lengua,
+PisodelaBoca,
+Mucosa,
+Encias,
+Calculos,
+Ganglios,
+OtroMotivo,
+complicacionesanestesia,
+FiebreReumatica,
+Diabetes,
+Cardiopatias,
+Tbc,
+Artritis,
+Hemorragias,
+Neuralgias,
+Sinusitiss,
+Renales,
+Alergias,
+Otra,
+Observaciones,
+
+},
+);
+}
 registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string) {
   const urlApi = 'http://localhost:3000/procedimiento';
   return this.htttp

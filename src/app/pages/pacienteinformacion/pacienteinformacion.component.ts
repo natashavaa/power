@@ -75,35 +75,68 @@ export class PacienteinformacionComponent implements OnInit {
   }
   onRegisterhistorial(): void {
     this.historial.idPatient = this.patient.id;
-    this.auth.registerHistorial(
-      this.historial.idPatient,
-      this.historial.Labios,
-      this.historial.Carrillos,
-      this.historial.Paladar,
-      this.historial.Lengua,
-      this.historial.PisodelaBoca,
-      this.historial.Mucosa,
-      this.historial.Encias,
-      this.historial.Calculos,
-      this.historial.Ganglios,
-      this.historial.OtroMotivo,
-      this.historial.complicacionesanestesia,
-      this.historial.FiebreReumatica,
-      this.historial.Diabetes,
-      this.historial.Cardiopatias,
-      this.historial.Tbc,
-      this.historial.Artritis,
-      this.historial.Hemorragias,
-      this.historial.Neuralgias,
-      this.historial.Sinusitiss,
-      this.historial.Renales,
-      this.historial.Alergias,
-      this.historial.Otra,
-      this.historial.Observaciones,
-    ).subscribe(historila => {
-      console.log(historila);
-      this.router.navigate(['historiaclinica']);
-     } );
+    if (this.historialRec.idPatient) {
+      this.auth.UpdateHistorial(
+        this.historialRec.id,
+        this.historial.idPatient,
+        this.historial.Labios,
+        this.historial.Carrillos,
+        this.historial.Paladar,
+        this.historial.Lengua,
+        this.historial.PisodelaBoca,
+        this.historial.Mucosa,
+        this.historial.Encias,
+        this.historial.Calculos,
+        this.historial.Ganglios,
+        this.historial.OtroMotivo,
+        this.historial.complicacionesanestesia,
+        this.historial.FiebreReumatica,
+        this.historial.Diabetes,
+        this.historial.Cardiopatias,
+        this.historial.Tbc,
+        this.historial.Artritis,
+        this.historial.Hemorragias,
+        this.historial.Neuralgias,
+        this.historial.Sinusitiss,
+        this.historial.Renales,
+        this.historial.Alergias,
+        this.historial.Otra,
+        this.historial.Observaciones,
+      ).subscribe(historila => {
+        console.log(historila);
+        this.router.navigate(['historiaclinica']);
+       } );
+    } else {
+      this.auth.registerHistorial(
+        this.historial.idPatient,
+        this.historial.Labios,
+        this.historial.Carrillos,
+        this.historial.Paladar,
+        this.historial.Lengua,
+        this.historial.PisodelaBoca,
+        this.historial.Mucosa,
+        this.historial.Encias,
+        this.historial.Calculos,
+        this.historial.Ganglios,
+        this.historial.OtroMotivo,
+        this.historial.complicacionesanestesia,
+        this.historial.FiebreReumatica,
+        this.historial.Diabetes,
+        this.historial.Cardiopatias,
+        this.historial.Tbc,
+        this.historial.Artritis,
+        this.historial.Hemorragias,
+        this.historial.Neuralgias,
+        this.historial.Sinusitiss,
+        this.historial.Renales,
+        this.historial.Alergias,
+        this.historial.Otra,
+        this.historial.Observaciones,
+      ).subscribe(historila => {
+        console.log(historila);
+        this.router.navigate(['historiaclinica']);
+       } );
+    }
     }
   nextStep() {
     this.step++;
@@ -177,8 +210,10 @@ export class PacienteinformacionComponent implements OnInit {
     this.patient = this.auth.getCurrentPatient();
     this.dataApi.getAllHistorialBypatient(this.patient.id)
     .subscribe((historialRec: HistotialClinicoInterface) => {
-      this.historial = historialRec;
-      console.log(historialRec);
+      if (historialRec.idPatient) {
+        this.historialRec = historialRec;
+        this.historial =  historialRec;
+      } else {}
     } );
   }
 
