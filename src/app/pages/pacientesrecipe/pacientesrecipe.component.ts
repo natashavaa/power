@@ -125,7 +125,7 @@ export class PacientesrecipeComponent implements OnInit {
       this.recipeRe.idDoctor,
     ).subscribe(pieza => {
       this.ngOnInit();
-      this.router.navigate(['pacienterecipe']);
+      this.router.navigate(['historiaclinica']);
      } );
     }
     imprimirPdfMateriales() {
