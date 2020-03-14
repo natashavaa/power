@@ -8,6 +8,7 @@ import { AppComponent } from '../../app.component';
 import { DataApiService } from '../../services/data-api.service';
 import { RecipeInterface } from '../../models/recipe.interface';
 import * as jsPDF from 'jspdf';
+import { PdfMakeWrapper } from 'pdfmake-wrapper/lib/pdfmake-wrapper';
 
 export interface PeriodicElement {
   name: string;
@@ -129,11 +130,9 @@ export class PacientesrecipeComponent implements OnInit {
      } );
     }
     imprimirPdfMateriales() {
-      const pdf = new  jsPDF('p', 'mm', 'A4');
-      pdf.setFont('helvetica');
-      pdf.setFontType('bold');
-      pdf.setFontSize(4);
-      pdf.fromHTML(document.getElementById('res'), 1 , 1);
-      pdf.save('Recipe');
+      const pdf = new PdfMakeWrapper();
+      pdf.header('Consultorio Dental Merida');
+      pdf.footer('Email: consultoriodentalmerida@gmail.com Av Dalla Costa Edificio Almary Local 1-B San Felix - Estado Bolivar Pide tu cita al 0286-9314977.');
+      pdf.create().download();
     }
 }
