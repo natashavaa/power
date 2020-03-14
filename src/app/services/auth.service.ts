@@ -20,6 +20,7 @@ import { PadecimientoporDienteInterface } from '../models/piezaconPadecimiento.i
 import { ProcedimientoApadecimentoInterface } from '../models/procedimientoapadecimiento.interface';
 import { EvolutionInterface } from '../models/evolution.interface';
 import { HistotialClinicoInterface } from '../models/historialclinico.interface';
+import { RecipeInterface } from '../models/recipe.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -341,6 +342,26 @@ registerPiezaDental(NombrePieza: string, Descripcion: string, Nomenclatura: stri
   Imagen: Imagen,
   // tslint:disable-next-line: object-literal-shorthand
   Posicion: Posicion,
+
+  },
+  );
+}
+registerRecipe(Rp: string, Indicaciones: string, Firma: string, idPatient: string, idDoctor: string) {
+  const urlApi = 'http://localhost:3000/recipe';
+  return this.htttp
+  .post<RecipeInterface>(
+  urlApi,
+  {
+  // tslint:disable-next-line: object-literal-shorthand
+  Rp: Rp,
+  // tslint:disable-next-line: object-literal-shorthand
+  Indicaciones: Indicaciones,
+  // tslint:disable-next-line: object-literal-shorthand
+  Firma: Firma,
+  // tslint:disable-next-line: object-literal-shorthand
+  idPatient: idPatient,
+  // tslint:disable-next-line: object-literal-shorthand
+  idDoctor: idDoctor,
 
   },
   );

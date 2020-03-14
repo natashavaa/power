@@ -6,8 +6,8 @@
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <h5 align="center">Maria RodriguezDB</h5>
-                    <h1 align="center">12 años</h1>
+                    <h5 align="center">{{patient.name}}</h5>
+                    <h1 align="center">{{patient.age}} años</h1>
                 </mat-card-title>
                 <mat-list-item>
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
@@ -82,7 +82,7 @@
                 </mat-list-item>
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
-                   <form>
+                    <form>
                         <div>
                             <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
                         </div>
@@ -106,30 +106,57 @@
 
             <br>
             <br>
-            <div class="row">
-                <div class="col-12">
-                    <form action="">
+            <form #formRegisterRecipe="ngForm" (ngSubmit)="onRegisterRecipe(formRegisterRecipe)">
+                <div id="res" class="row">
+                    <div class="col-12">
+
                         <br>
                         <div class="form-group row">
                             <label for="" class="col-4 col-form-label">Rp</label>
-                            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                            <textarea #Rp="ngModel" name="Rp" [(ngModel)]='recipeRe.Rp' rows="3" class="form-control col-6"></textarea>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-4 col-form-label">Indicaciones</label>
-                            <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                            <textarea #Indicaciones="ngModel" name="Indicaciones" [(ngModel)]='recipeRe.Indicaciones' rows="3" class="form-control col-6"></textarea>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-4 col-form-label"></label>
-                            <textarea class="form-control" rows="3" class="form-control col-4"></textarea>
+                            <textarea #Firma="ngModel" name="Firma" [(ngModel)]='recipeRe.Firma' rows="3" class="form-control col-4"></textarea>
                         </div>
                         <label for="" class="col-4 col-form-label">Firma</label>
 
-                    </form>
+                    </div>
                 </div>
-            </div>
-            <br>
-            <button mat-raised-button class="uno">GUARDAR</button>
-            <button mat-raised-button class="dos">IMPRIMIR</button>
+                <br>
+                <button type="submit" class=" btn btn-success">GUARDAR</button>
+
+            </form>
         </mat-card-content>
+        <br>
+        <br>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Rp </th>
+                    <th scope="col">Indicaciones</th>
+                    <th scope="col">Firma</th>
+                    <th scope="col">Imprimir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let recipeRecibido of recipeRecibido">
+                    <td></td>
+                    <td>{{recipeRecibido.Rp}}</td>
+                    <td>{{recipeRecibido.Indicaciones}}</td>
+                    <td>{{recipeRecibido.Firma}}</td>
+                    <td>
+                        <button type="button" (click)="imprimirPdfMateriales()" class="btn btn-primary dos">IMPRIMIR</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
 </div>

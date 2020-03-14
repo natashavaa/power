@@ -19,6 +19,10 @@ export class DataApiService {
     const urlApi =`http://localhost:3000/patient/doctor${name}`;
     return this.http.get(urlApi);
   }
+  getAllRecipePatient(id: string) {
+    const urlApi =`http://localhost:3000/recipe/patientrecipe${id}`;
+    return this.http.get(urlApi);
+  }
   getAllconsultas() {
     const urlApi = 'http://localhost:3000/consulta' ;
     return this.http.get(urlApi);

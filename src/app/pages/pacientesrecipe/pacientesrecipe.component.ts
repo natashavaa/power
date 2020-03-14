@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
+import { PaatientInterface } from '../../models/patients.interface';
+import { AuthService } from 'src/app/services/auth.service';
+import { AppComponent } from '../../app.component';
+import { DataApiService } from '../../services/data-api.service';
+import { RecipeInterface } from '../../models/recipe.interface';
+import * as jsPDF from 'jspdf';
 
 export interface PeriodicElement {
   name: string;
@@ -33,38 +39,28 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PacientesrecipeComponent implements OnInit {
 
-  displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  selection = new SelectionModel<PeriodicElement>(true, []);
+  constructor(private router: Router, private dataApi: DataApiService, private authService: AuthService, private app: AppComponent) { }
 
-  /** Whether the number of selected elements matches the total number of rows. */
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
-    return numSelected === numRows;
+  private patient: PaatientInterface;
+  private user: PaatientInterface;
+  private recipeRe: RecipeInterface = {
+    Rp: '',
+    Indicaciones: '',
+    Firma: '',
+    idPatient: '',
+    idDoctor: '',
+  };
+  private recipeRecibido: RecipeInterface = {
+    Rp: '',
+    Indicaciones: '',
+    Firma: '',
+    idPatient: '',
+    idDoctor: '',
+  };
+  getlistAllrecipepatients() {
+    this.dataApi.getAllRecipePatient(this.patient.id)
+    .subscribe((recipes: RecipeInterface) => ( this.recipeRecibido = recipes));
   }
-
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  masterToggle() {
-    this.isAllSelected() ?
-      this.selection.clear() :
-      this.dataSource.data.forEach(row => this.selection.select(row));
-  }
-
-  /** The label for the checkbox on the passed row */
-  checkboxLabel(row?: PeriodicElement): string {
-    if (!row) {
-      return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
-    }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
-  }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  constructor(private router: Router) { }
-
   datos(): void {
     this.router.navigate(['historiaclinica']);
   }
@@ -111,8 +107,33 @@ export class PacientesrecipeComponent implements OnInit {
   informe(): void {
     this.router.navigate(['pacienteinforme']);
   }
-  
-  ngOnInit() {
-  }
 
+  ngOnInit() {
+    this.app.mostrar = true;
+    this.patient = this.authService.getCurrentPatient();
+    this.user = this.authService.getCurrentUser();
+    this.getlistAllrecipepatients();
+  }
+  onRegisterRecipe(): void {
+    this.recipeRe.idPatient = this.patient.id;
+    this.recipeRe.idDoctor = this.user.id;
+    this.authService.registerRecipe(
+      this.recipeRe.Rp,
+      this.recipeRe.Indicaciones,
+      this.recipeRe.Firma,
+      this.recipeRe.idPatient,
+      this.recipeRe.idDoctor,
+    ).subscribe(pieza => {
+      this.ngOnInit();
+      this.router.navigate(['pacienterecipe']);
+     } );
+    }
+    imprimirPdfMateriales() {
+      const pdf = new  jsPDF('p', 'mm', 'A4');
+      pdf.setFont('helvetica');
+      pdf.setFontType('bold');
+      pdf.setFontSize(4);
+      pdf.fromHTML(document.getElementById('res'), 1 , 1);
+      pdf.save('Recipe');
+    }
 }
