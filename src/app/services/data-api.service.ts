@@ -16,11 +16,15 @@ export class DataApiService {
     return this.http.get(urlApi);
   }
   getPatientsByDoctor(name: string) {
-    const urlApi =`http://localhost:3000/patient/doctor${name}`;
+    const urlApi = `http://localhost:3000/patient/doctor${name}`;
     return this.http.get(urlApi);
   }
   getAllRecipePatient(id: string) {
-    const urlApi =`http://localhost:3000/recipe/patientrecipe${id}`;
+    const urlApi = `http://localhost:3000/recipe/patientrecipe${id}`;
+    return this.http.get(urlApi);
+  }
+  getAllInformePatient(id: string) {
+    const urlApi = `http://localhost:3000/informemedico/patientinforme${id}`;
     return this.http.get(urlApi);
   }
   getAllconsultas() {

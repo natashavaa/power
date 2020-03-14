@@ -21,6 +21,7 @@ import { ProcedimientoApadecimentoInterface } from '../models/procedimientoapade
 import { EvolutionInterface } from '../models/evolution.interface';
 import { HistotialClinicoInterface } from '../models/historialclinico.interface';
 import { RecipeInterface } from '../models/recipe.interface';
+import { InformeMedicoInterface } from '../models/informemedico.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -358,6 +359,32 @@ registerRecipe(Rp: string, Indicaciones: string, Firma: string, idPatient: strin
   Indicaciones: Indicaciones,
   // tslint:disable-next-line: object-literal-shorthand
   Firma: Firma,
+  // tslint:disable-next-line: object-literal-shorthand
+  idPatient: idPatient,
+  // tslint:disable-next-line: object-literal-shorthand
+  idDoctor: idDoctor,
+
+  },
+  );
+}
+registerInforme(PorPresentar: string, DiagnosticoDefinitivo: string, Firma: string,
+                Certificoqueeldia: string, AtendiA: string, idPatient: string,
+                idDoctor: string) {
+  const urlApi = 'http://localhost:3000/informemedico';
+  return this.htttp
+  .post<InformeMedicoInterface>(
+  urlApi,
+  {
+  // tslint:disable-next-line: object-literal-shorthand
+  PorPresentar: PorPresentar,
+  // tslint:disable-next-line: object-literal-shorthand
+  DiagnosticoDefinitivo: DiagnosticoDefinitivo,
+  // tslint:disable-next-line: object-literal-shorthand
+  Firma: Firma,
+  // tslint:disable-next-line: object-literal-shorthand
+  Certificoqueeldia: Certificoqueeldia,
+  // tslint:disable-next-line: object-literal-shorthand
+  AtendiA: AtendiA,
   // tslint:disable-next-line: object-literal-shorthand
   idPatient: idPatient,
   // tslint:disable-next-line: object-literal-shorthand
