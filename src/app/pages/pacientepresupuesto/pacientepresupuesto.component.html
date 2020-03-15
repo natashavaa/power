@@ -126,12 +126,30 @@
                             <label for="" class="col-5 col-form-label">Debe</label>
                             <input type="text" class="form-control col-4">
                         </div>
+                            <div>
+                                <br>
+                                <form #getype="ngForm" (ngSubmit)="getType(getype)">
+                                    <div class="form-group row">
+                                        <mat-label for="" class="col-5 col-form-label">Estatus</mat-label>
+                                        <br>
+                                        <select class="form-control col-2" #momento="ngModel" name="momento" id="momento"
+                                            [(ngModel)]="momentoC">
+                                            <option selected>Deuda</option>
+                                            <option>Pagado</option>
+                                        </select>
+                                        <div class="col-1">
+                                            <button class="sinp" type="submit" class="btn btn-info">Asignar </button>
+                                        </div>
+            
+                                    </div>
+                                </form>
+                            </div>
                     </form>
                 </div>
             </div>
             <br>
-            <button mat-raised-button class="uno">GUARDAR</button>
-            <button mat-raised-button class="dos">CANCELAR</button>
+            <button mat-raised-button class="btn btn-success" >Guardar</button>
+            <button mat-raised-button  class="btn btn-danger">Cancelar</button>
         </mat-card-content>
     </div>
 </div>
