@@ -22,6 +22,8 @@ public Padpordiente: PadecimientoporDienteInterface = {
   NombrePadecimiento: '',
   NombrePieza: '',
   Imagen: '',
+  Nomenclatura: '',
+  Posicion: '',
 };
 public padecimiento: PadecimientoInterface = { };
 imageSrc;
@@ -47,6 +49,8 @@ imageSrc;
         this.Padpordiente.NombrePadecimiento,
         this.Padpordiente.NombrePieza,
         this.Padpordiente.Imagen,
+        this.Padpordiente.Nomenclatura,
+        this.Padpordiente.Posicion,
       ).subscribe(pieza => {
         this.router.navigate(['padecimiento']);
        } );
@@ -60,7 +64,10 @@ imageSrc;
     cancelar() {
       this.router.navigate(['padecimiento']);
     }
-
+    getPieza(piezadental: PiezaDentalInterface) {
+      this.Padpordiente.Posicion = piezadental.Posicion;
+      this.Padpordiente.Nomenclatura = piezadental.Nomenclatura;
+    }
     public picked(event, field) {
       this.currentId = field;
       const fileList: FileList = event.target.files;

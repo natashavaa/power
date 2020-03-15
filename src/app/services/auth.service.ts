@@ -515,7 +515,7 @@ registerProcedimientoaPadecimiento(NombreProcedimiento: string, Descripcion: str
   },
   );
 }
-registerProcedimientoPorPieza(NombrePadecimiento: string, NombrePieza: string, Imagen: string) {
+registerProcedimientoPorPieza(NombrePadecimiento: string, NombrePieza: string, Imagen: string, Nomenclatura: string, Posicion: string) {
   const urlApi = 'http://localhost:3000/padecimientoporPieza';
   return this.htttp
   .post<PadecimientoporDienteInterface>(
@@ -528,7 +528,10 @@ registerProcedimientoPorPieza(NombrePadecimiento: string, NombrePieza: string, I
   // tslint:disable-next-line: object-literal-shorthand
   Imagen: Imagen,
   // tslint:disable-next-line: object-literal-shorthand
-
+// tslint:disable-next-line: object-literal-shorthand
+  Nomenclatura: Nomenclatura,
+// tslint:disable-next-line: object-literal-shorthand
+  Posicion: Posicion,
   },
   );
 }

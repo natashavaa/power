@@ -4,5 +4,7 @@ export interface PadecimientoporDienteInterface {
   NombrePadecimiento?: string;
   NombrePieza?: string;
   Imagen?: string;
+  Nomenclatura?: string;
+  Posicion?: string;
 
 }
