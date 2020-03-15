@@ -8,8 +8,7 @@ import { AppComponent } from '../../app.component';
 import { DataApiService } from '../../services/data-api.service';
 import { RecipeInterface } from '../../models/recipe.interface';
 import * as jsPDF from 'jspdf';
-import { PdfMakeWrapper } from 'pdfmake-wrapper';
-import { position } from 'html2canvas/dist/types/css/property-descriptors/position';
+import { PdfMakeWrapper } from 'pdfmake-wrapper/lib/pdfmake-wrapper';
 
 export interface PeriodicElement {
   name: string;

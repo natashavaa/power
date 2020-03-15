@@ -264,7 +264,10 @@
 .marg {
     margin: -5px;
 }
-
+.colorBt {
+    background-color: blue;
+    color: white;
+}
 .mat-form-field {
     margin-left: 10px;
     font-size: 14px;
