@@ -16,14 +16,24 @@ export class PadecimientoADienteComponent implements OnInit {
 
   constructor(private router: Router , private dataApi: DataApiService, private authService: AuthService,
               private app: AppComponent) { }
+MostrarForm = false;
 public piezadental: PiezaDentalInterface = {};
+public piezadentalf: PiezaDentalInterface = {};
 public Padpordiente: PadecimientoporDienteInterface = {
   id: '',
   NombrePadecimiento: '',
   NombrePieza: '',
   Imagen: '',
   Nomenclatura: '',
-  Posicion: '',
+  Ubicacion: '',
+};
+public Padpordientef: PadecimientoporDienteInterface = {
+  id: '',
+  NombrePadecimiento: '',
+  NombrePieza: '',
+  Imagen: '',
+  Nomenclatura: '',
+  Ubicacion: '',
 };
 public padecimiento: PadecimientoInterface = { };
 imageSrc;
@@ -42,7 +52,26 @@ imageSrc;
       this.getlistAllPiezasDentales();
       this. getlistAllPadecimientos();
     }
-
+    onSearch(): void {
+      console.log(this.piezadentalf);
+      this.MostrarForm =  false;
+      if (!this.piezadentalf.id) {
+      alert('Pieza No seleccionada');
+     } else if (this.piezadentalf.id) {
+      this.dataApi.getPiezaById(this.piezadentalf.id).subscribe((pieza: PiezaDentalInterface) => {
+         console.log(pieza);
+         this.Padpordiente.Nomenclatura = pieza.Nomenclatura;
+         this.Padpordiente.Ubicacion = pieza.Ubicacion;
+         this.Padpordiente.NombrePieza = pieza.NombrePieza;
+         if (pieza) {
+           this.MostrarForm = true;
+         } else {
+          alert('Paciente No registrado');
+          this.router.navigate(['registerpaciente']);
+         }
+      });
+     }
+  }
     onRegisterPadecimientoADiente() {
       this.Padpordiente.Imagen = this.sellersPermitString;
       this.authService.registerProcedimientoPorPieza(
@@ -50,7 +79,7 @@ imageSrc;
         this.Padpordiente.NombrePieza,
         this.Padpordiente.Imagen,
         this.Padpordiente.Nomenclatura,
-        this.Padpordiente.Posicion,
+        this.Padpordiente.Ubicacion,
       ).subscribe(pieza => {
         this.router.navigate(['padecimiento']);
        } );
@@ -63,10 +92,6 @@ imageSrc;
     }
     cancelar() {
       this.router.navigate(['padecimiento']);
-    }
-    getPieza(piezadental: PiezaDentalInterface) {
-      this.Padpordiente.Posicion = piezadental.Posicion;
-      this.Padpordiente.Nomenclatura = piezadental.Nomenclatura;
     }
     public picked(event, field) {
       this.currentId = field;

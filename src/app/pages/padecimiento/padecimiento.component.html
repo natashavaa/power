@@ -114,6 +114,8 @@
                                 <th scope="col">Nombre Padecimiento</th>
                                 <th scope="col">Pieza Dental</th>
                                 <th scope="col">Imagen</th>
+                                <th scope="col">Nomeclatura</th>
+                                <th scope="col">Ubicacion</th>
 
                             </tr>
                         </thead>
@@ -124,7 +126,8 @@
                                 <td>{{padecimientoxdiente.NombrePieza}}</td>
                                 <td> <img width="20" height="20" [src]="convert(padecimientoxdiente.Imagen)" alt="img">
                                 </td>
-
+                                <td>{{padecimientoxdiente.Nomenclatura}}</td>
+                                <td>{{padecimientoxdiente.Posicion}}</td>
                             </tr>
 
                         </tbody>

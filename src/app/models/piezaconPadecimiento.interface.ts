@@ -5,6 +5,6 @@ export interface PadecimientoporDienteInterface {
   NombrePieza?: string;
   Imagen?: string;
   Nomenclatura?: string;
-  Posicion?: string;
+  Ubicacion?: string;
 
 }

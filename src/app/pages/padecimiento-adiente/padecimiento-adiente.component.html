@@ -5,49 +5,64 @@
             <h4>PADECIMIENTO A PIEZA DENTAL </h4>
             <br>
             <!--AGREGAR PIEZA FORMULARIO-->
-            <form #formRegisterPadecimientoaDiente="ngForm" (ngSubmit)="onRegisterPadecimientoADiente(formRegisterPadecimientoaDiente)">
-                <div class="row">
-                    <div class="col-6 caja">
-                        <div class="form-group row">
-                            <label for="" class="col-6 col-form-label">Pieza Dental</label>
-                            <select #nombrePieza="ngModel" name="nombrePieza" [(ngModel)]='Padpordiente.NombrePieza' id="nombrePieza" class="form-control col-5">
-                                <option *ngFor="let piezadental of piezadental" [ngValue]="piezadental.NombrePieza">
-                                    {{piezadental.NombrePieza}}</option>
-                            </select>
+            <div *ngIf="!MostrarForm">
+                <form #SearchPieza="ngForm" (ngSubmit)="onSearch(SearchPieza)">
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <p></p>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-6 col-form-label">Nombre del Padecimiento</label>
-                            <select #nombrePadecimiento="ngModel" name="nombrePadecimiento" [(ngModel)]='Padpordiente.NombrePadecimiento' id="nombrePadecimiento" class="form-control col-5">
+                            <label for="" class="col-6 col-form-label">Pieza Dental</label>
+                            <select #nombrePieza="ngModel" name="nombrePieza" [(ngModel)]='piezadentalf.id' id="nombrePieza" class="form-control col-5">
+                      <option *ngFor="let piezadental of piezadental" [ngValue]="piezadental.id">
+                          {{piezadental.NombrePieza}}</option>
+                  </select>
+                        </div>
+                        <div class="col-1">
+                            <button class="sinp" type="submit" class="btn btn-success">Buscar </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="MostrarForm">
+                <form #formRegisterPadecimientoaDiente="ngForm" (ngSubmit)="onRegisterPadecimientoADiente(formRegisterPadecimientoaDiente)">
+                    <div class="row">
+                        <div class="col-6 caja">
+                            <div class="form-group row">
+                                <label for="" class="col-6 col-form-label">Pieza Dental</label>
+                                <input disabled #nombrePieza="ngModel" name="nombrePieza" [(ngModel)]='Padpordiente.NombrePieza' id="nombrePieza" class="form-control col-5">
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-6 col-form-label">Nombre del Padecimiento</label>
+                                <select #nombrePadecimiento="ngModel" name="nombrePadecimiento" [(ngModel)]='Padpordiente.NombrePadecimiento' id="nombrePadecimiento" class="form-control col-5">
                                 <option *ngFor="let padecimiento of padecimiento"
                                     [ngValue]="padecimiento.NombrePadecimiento">
                                     {{padecimiento.NombrePadecimiento}}</option>
                             </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group row">
+                                <label for="" class="col-3 col-form-label">Nomenclatura</label>
+                                <input disabled #Nomenclatura="ngModel" name="Nomenclatura" [(ngModel)]='Padpordiente.Nomenclatura' id="Nomenclatura" class="form-control col-5">
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-3 col-form-label">Ubicacion</label>
+                                <input disabled #Ubicacion="ngModel" name="Ubicacion" [(ngModel)]='Padpordiente.Ubicacion' id="Ubicacion" class="form-control col-5">
+
+                            </div>
+                            <div class="form-group row ">
+                                <label class="col-3 col-form-label ">Simbologia</label>
+                                <input (change)="picked($event,1)" type="file">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="form-group row">
-                            <label for="" class="col-3 col-form-label">Nomenclatura</label>
-                            <select #Nomenclatura="ngModel" name="Nomenclatura" [(ngModel)]='Padpordiente.Nomenclatura' id="Nomenclatura" class="form-control col-5">
-                              <option *ngFor="let piezadental of piezadental" [ngValue]="piezadental.Nomenclatura">
-                                  {{piezadental.Nomenclatura}}</option>
-                          </select>
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-3 col-form-label">Posicion</label>
-                            <select #Posicion="ngModel" name="Posicion" [(ngModel)]='Padpordiente.Posicion' id="Posicion" class="form-control col-5">
-                              <option *ngFor="let piezadental of piezadental" [ngValue]="piezadental.Posicion">
-                                  {{piezadental.Posicion}}</option>
-                          </select>
-                        </div>
-                        <div class="form-group row ">
-                            <label class="col-3 col-form-label ">Simbologia</label>
-                            <input (change)="picked($event,1)" type="file">
-                        </div>
-                    </div>
-                </div>
-                <button mat-raised-button type="submit " class="btn btn-lg btn-success margen ">Guardar</button>
-                <button (click)="cancelar() " mat-raised-button class="btn btn-lg btn-danger margen ">Cancelar</button>
-            </form>
+                    <button mat-raised-button type="submit " class="btn btn-lg btn-success margen ">Guardar</button>
+                    <button (click)="cancelar() " mat-raised-button class="btn btn-lg btn-danger margen ">Cancelar</button>
+                </form>
+            </div>
         </mat-card>
     </form>
 </div>
