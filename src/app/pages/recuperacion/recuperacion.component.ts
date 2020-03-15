@@ -16,26 +16,25 @@ export class RecuperacionComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) { }
   private user: UserInterface = {
     username: '',
-    password: ''
+    password: '',
+    mail: '',
   };
   private error: string;
 
   ngOnInit() {
   }
 
-  onLoginUser() {
-    this.authService.loginuser(this.user.username, this.user.password)
+  onRecuperacion() {
+    this.authService.Recuperacion(this.user.mail)
       .subscribe(
         data => {
-          this.authService.setUser(data);
           if (!data || data == null) {
 
-            alert('Credenciales Incorrectas');
+            alert('Correo No encontrado');
 
-          } else if (Object.is(data.username, 'admin')) {
-            this.router.navigate(['pantallaNOhome']);
-          } else {
-            this.router.navigate(['pantallahome']);
+          } else if (data) {
+            alert('Revise su correo');
+            this.router.navigate(['']);
           }
         }, error => console.log(error));
   }

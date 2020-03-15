@@ -697,7 +697,15 @@ loginuser(username: string, password: string): Observable<any> {
         { username, password },
       );
   }/**/
-
+  Recuperacion(mail: string): Observable<any> {
+    const urlApi = 'http://localhost:3000/users/pass';
+    return this.htttp
+      .post<UserInterface>(
+        urlApi,
+        // tslint:disable-next-line: object-literal-shorthand
+        {mail: mail},
+      );
+  }
   setUser(user: UserInterface): void {
     let user_string = JSON.stringify(user);
     localStorage.setItem('currentUser', user_string);
