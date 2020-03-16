@@ -24,6 +24,7 @@ export class RegisterComponent {
   constructor( private router: Router, private authService: AuthService, private app: AppComponent, private dataApi: DataApiService) {
 
   }
+  Cpassword: string;
     private user: UserInterface = {
       id: '',
       name: '',
@@ -62,33 +63,37 @@ export class RegisterComponent {
   ];
 
   onRegister(): void {
-      if (this.user.dni) {
-        this.dataApi.getUserByDni(this.user.dni).subscribe((userE: UserInterface) => {
-          this.userEncontrado = userE;
-          if (!this.userEncontrado) {
-            this.authService.registerUser(
-              this.user.name,
-              this.user.phone,
-              this.user.password,
-              this.user.dni,
-              this.user.age,
-              this.user.sex,
-              this.user.mail,
-              this.user.userType,
-              this.user.username
-            ).subscribe(user => {
-              this.authService.setUser(user);
-              let token = this.user.id;
-              this.authService.setToken(token);
-              this.app.mostrar = false;
-              this.router.navigate(['accesodenegado']);
-             } );
-          } else {
-           alert('Cedula Registrada');
-          }
-       });
+      if (Object.is(this.user.password, this.Cpassword)) {
+        if (this.user.dni) {
+          this.dataApi.getUserByDni(this.user.dni).subscribe((userE: UserInterface) => {
+            this.userEncontrado = userE;
+            if (!this.userEncontrado) {
+              this.authService.registerUser(
+                this.user.name,
+                this.user.phone,
+                this.user.password,
+                this.user.dni,
+                this.user.age,
+                this.user.sex,
+                this.user.mail,
+                this.user.userType,
+                this.user.username
+              ).subscribe(user => {
+                this.authService.setUser(user);
+                let token = this.user.id;
+                this.authService.setToken(token);
+                this.app.mostrar = false;
+                this.router.navigate(['accesodenegado']);
+               } );
+            } else {
+             alert('Cedula Registrada');
+            }
+         });
 
-    }
+      }
+      } else {
+        alert('contraseñas no coinciden');
+      }
       }
 
   guardar(formulario: NgForm) {
