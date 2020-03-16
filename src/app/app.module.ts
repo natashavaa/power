@@ -104,7 +104,9 @@ import { SliderModule } from 'angular-image-slider';
 import { ServicioscdmComponent } from './pages/servicioscdm/servicioscdm.component';
 import { RegisterservicioscdmComponent } from './pages/registerservicioscdm/registerservicioscdm.component';
 import { OdontogramaserviciosComponent } from './pages/odontogramaservicios/odontogramaservicios.component';
-PdfMakeWrapper.setFonts(pdfFonts);
+import { ModificarpiezadentalComponent } from './pages/modificarpiezadental/modificarpiezadental.component';
+import { ModificarprocedimientoComponent } from './pages/modificarprocedimiento/modificarprocedimiento.component';
+import { ModificarpadecimientoComponent } from './pages/modificarpadecimiento/modificarpadecimiento.component';
 
 @NgModule({
   declarations: [
@@ -160,6 +162,9 @@ PdfMakeWrapper.setFonts(pdfFonts);
     ServicioscdmComponent,
     RegisterservicioscdmComponent,
     OdontogramaserviciosComponent,
+    ModificarpiezadentalComponent,
+    ModificarprocedimientoComponent,
+    ModificarpadecimientoComponent
   ],
   imports: [
     SliderModule,

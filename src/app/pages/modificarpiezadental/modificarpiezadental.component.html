@@ -1,0 +1,76 @@
+<div align='center'>
+    <form>
+        <mat-card>
+            <br>
+            <h4> MODIFICAR PIEZA DENTAL </h4>
+            <br>
+            <!--AGREGAR PIEZA FORMULARIO-->
+            <form #formRegisterPieza="ngForm" (ngSubmit)="onRegisterPiezaDental(formRegisterPieza)">
+                <div class="row">
+                    <div class="col-6 caja">
+                        <br>
+
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Nombre de la Pieza</label>
+                            <input type="text" #nombrePieza="ngModel" name="nombrePieza" class="form-control" placeholder="" [(ngModel)]='PiezaRe.NombrePieza' required minlength="4" maxlength="50" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="nombrePieza.touched && !nombrePieza.valid">
+                            <div *ngIf="nombrePieza.errors.required">Campo requerido</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Descripcion</label>
+                            <input type="text" #descripcion="ngModel" name="descripcion" class="form-control" placeholder="" [(ngModel)]='PiezaRe.Descripcion' required minlength="4" maxlength="50" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="descripcion.touched && !descripcion.valid">
+                            <div *ngIf="descripcion.errors.required">Campo requerido</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Nomenclatura</label>
+                            <input type="number" min="1" max="32" #nomenclatura="ngModel" name="nomenclatura" class="form-control" placeholder="" [(ngModel)]='PiezaRe.Nomenclatura' required minlength="1" maxlength="50" class="form-control col-4">
+                        </div>
+
+                    </div>
+                    <div class="col-6 caja">
+                        <br>
+
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Ubicacion</mat-label>
+                            <br>
+                            <select #ubicacion="ngModel" name="ubicacion" id="ubicacion" [(ngModel)]="PiezaRe.Ubicacion" class="form-control col-5">
+                          <option>Inferior Derecha</option>
+                          <option>Inferior Izquierda</option>
+                          <option>Superior Derecha</option>
+                          <option>Superior Izquierda</option>
+                      </select>
+                        </div>
+                        <div>
+                            <div class="cajita">
+                                <div class="form-group row">
+                                    <label for="" class="col-6 col-form-label"></label>
+                                    <input (change)="picked($event,1)" type="file">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Posicion</label>
+                            <input type="number" min="1" max="8" #Posicion="ngModel" name="Posicion" class="form-control" placeholder="" [(ngModel)]='PiezaRe.Posicion' required max="32" class="form-control col-2">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="Posicion.touched && !Posicion.valid">
+                            <div *ngIf="Posicion.errors.required">Campo requerido</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div>
+                    <button mat-raised-button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
+                    <button (click)="cancelar()" mat-raised-button class="btn btn-lg btn-danger margen">Cancelar</button>
+
+                </div>
+            </form>
+            <br>
+        </mat-card>
+    </form>
+</div>

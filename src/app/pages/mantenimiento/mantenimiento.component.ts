@@ -45,6 +45,16 @@ export class MantenimientoComponent implements OnInit {
     Imagen: '',
     Posicion: '',
   };
+  ReponerMaterial(pieza: PiezaDentalInterface): void {
+    this.auth.setPiezaDental(pieza);
+    this.router.navigate(['modificarpieza']);
+     }
+  eliminarMaterial(pieza: PiezaDentalInterface): void {
+    this.auth.deletePiezaDental(pieza.id).subscribe(data => {
+
+      this.ngOnInit();
+     } );
+  }
   ngOnInit() {
     this.doctor();
     this.app.mostrar = true;

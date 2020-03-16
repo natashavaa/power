@@ -1,0 +1,59 @@
+<div align='center'>
+    <form>
+        <mat-card>
+            <br>
+            <h4> AGREGAR PROCEDIMIENTO DENTAL </h4>
+            <br>
+            <!--AGREGAR PIEZA FORMULARIO-->
+            <form #formRegisterProcedimiento="ngForm" (ngSubmit)="onRegisterProcedimiento(formRegisterProcedimiento)">
+                <div class="row">
+                    <div class="col-6 caja">
+                        <br>
+
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Nombre del Procedimiento</label>
+                            <input type="text" #nombreProcedimiento="ngModel" name="nombreProcedimiento" class="form-control" placeholder="" [(ngModel)]='procedimientoRe.NombreProcedimiento' required minlength="4" maxlength="50" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="nombreProcedimiento.touched && !nombreProcedimiento.valid">
+                            <div *ngIf="nombreProcedimiento.errors.required">Campo requerido</div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Descripcion</label>
+                            <input type="text" #descripcion="ngModel" name="descripcion" class="form-control" placeholder="" [(ngModel)]='procedimientoRe.Descripcion' required minlength="4" maxlength="50" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="descripcion.touched && !descripcion.valid">
+                            <div *ngIf="descripcion.errors.required">Campo requerido</div>
+                        </div>
+                    </div>
+                    <div class="col-6 caja">
+                        <br>
+
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Estatus</mat-label>
+                            <br>
+                            <select #Especialidad="ngModel" name="estatus" id="estatus" [(ngModel)]="procedimientoRe.Estatus" class="form-control col-5">
+                          <option>Abierto</option>
+                          <option>Cerrado</option>
+                      </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Costo</label>
+                            <input type="number" min="1" #costo="ngModel" name="costo" class="form-control" placeholder="" [(ngModel)]='procedimientoRe.costo' required max="32" class="form-control col-2">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="costo.touched && !costo.valid">
+                            <div *ngIf="costo.errors.required">Campo requerido</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div>
+                    <button mat-raised-button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
+                    <button (click)="cancelar()" mat-raised-button class="btn btn-lg btn-danger margen">Cancelar</button>
+
+                </div>
+                <br>
+            </form>
+        </mat-card>
+    </form>
+</div>

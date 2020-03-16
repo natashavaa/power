@@ -64,8 +64,7 @@
                 <div class="col">
                     <label for="" class="lolo">Lista de Piezas Dentales</label>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
-                    <table class="table table-hover" mdbTable mdbTableScroll scrollY="true" maxHeight="200"
-                        bordered="true">
+                    <table class="table table-hover" mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -75,6 +74,8 @@
                                 <th scope="col">Ubicacion</th>
                                 <th scope="col">Imagen</th>
                                 <th scope="col">Posicion</th>
+                                <th scope="col">MOdificar</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -86,7 +87,12 @@
                                 <td>{{piezadental.Ubicacion}}</td>
                                 <td> <img width="20" height="20" [src]="convert(piezadental.Imagen)" alt="img"></td>
                                 <td>{{piezadental.Posicion}}</td>
-
+                                <td>
+                                    <button mat-raised-button (click)="ReponerMaterial(piezadental)" class="btn btn-info">Modificar</button>
+                                </td>
+                                <td>
+                                    <button mat-raised-button (click)="eliminarMaterial(piezadental)" class="btn btn-danger">Eliminar</button>
+                                </td>
                             </tr>
 
                         </tbody>

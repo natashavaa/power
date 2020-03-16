@@ -1,0 +1,41 @@
+<div align='center'>
+    <form>
+        <mat-card>
+            <br>
+            <h4> AGREGAR PADECIMIENTO DENTAL </h4>
+            <br>
+            <!--AGREGAR PIEZA FORMULARIO-->
+            <form #formRegisterPadecimiento="ngForm" (ngSubmit)="onRegisterPadecimiento(formRegisterPadecimiento)">
+                <div class="row">
+                    <div class="col-6 caja">
+                        <br>
+
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Nombre del Padecimiento</label>
+                            <input type="text" #NombrePadecimiento="ngModel" name="NombrePadecimiento" class="form-control" placeholder="" [(ngModel)]='PadecimientoRe.NombrePadecimiento' required minlength="4" maxlength="50" class="form-control col-6">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="NombrePadecimiento.touched && !NombrePadecimiento.valid">
+                            <div *ngIf="NombrePadecimiento.errors.required">Campo requerido</div>
+                        </div>
+                    </div>
+                    <div class="col-6 caja">
+                        <br>
+                        <div class="form-group row">
+                            <label for="" class="col-6 col-form-label">Descripcion</label>
+                            <input type="text" #Descripcion="ngModel" name="Descripcion" class="form-control" placeholder="" [(ngModel)]='PadecimientoRe.Descripcion' required minlength="4" maxlength="50" class="form-control col-5">
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="Descripcion.touched && !Descripcion.valid">
+                            <div *ngIf="Descripcion.errors.required">Campo requerido</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button mat-raised-button type="submit" class="btn btn-lg btn-success margen">Guardar</button>
+                    <button (click)="cancelar()" mat-raised-button class="btn btn-lg btn-danger margen">Cancelar</button>
+
+                </div>
+                <br>
+            </form>
+        </mat-card>
+    </form>
+</div>

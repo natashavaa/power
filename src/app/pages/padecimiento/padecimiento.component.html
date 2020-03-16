@@ -87,6 +87,8 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre </th>
                                 <th scope="col">Descripcion</th>
+                                <th scope="col">Modificar </th>
+                                <th scope="col">Eliminar</th>
 
                             </tr>
                         </thead>
@@ -95,7 +97,12 @@
                                 <td>{{padecimiento.id}}</td>
                                 <td>{{padecimiento.NombrePadecimiento}}</td>
                                 <td>{{padecimiento.Descripcion}}</td>
-
+                                <td>
+                                    <button mat-raised-button (click)="ReponerMaterial(padecimiento)" class="btn btn-info">Modificar</button>
+                                </td>
+                                <td>
+                                    <button mat-raised-button (click)="eliminarMaterial(padecimiento)" class="btn btn-danger">Eliminar</button>
+                                </td>
                             </tr>
 
                         </tbody>
@@ -116,6 +123,8 @@
                                 <th scope="col">Imagen</th>
                                 <th scope="col">Nomeclatura</th>
                                 <th scope="col">Ubicacion</th>
+                                <th scope="col">Modificar </th>
+                                <th scope="col">Eliminar</th>
 
                             </tr>
                         </thead>
@@ -128,6 +137,12 @@
                                 </td>
                                 <td>{{padecimientoxdiente.Nomenclatura}}</td>
                                 <td>{{padecimientoxdiente.Posicion}}</td>
+                                <td>
+                                    <button mat-raised-button (click)="ReponerMaterial(piezadental)" class="btn btn-info">Modificar</button>
+                                </td>
+                                <td>
+                                    <button mat-raised-button (click)="eliminarMaterial(piezadental)" class="btn btn-danger">Eliminar</button>
+                                </td>
                             </tr>
 
                         </tbody>

@@ -50,6 +50,9 @@ import { ProcedimientoapadecimientoComponent } from './pages/procedimientoapadec
 import { ServicioscdmComponent } from './pages/servicioscdm/servicioscdm.component';
 import { RegisterservicioscdmComponent } from './pages/registerservicioscdm/registerservicioscdm.component';
 import { OdontogramaserviciosComponent } from './pages/odontogramaservicios/odontogramaservicios.component';
+import { ModificarpiezadentalComponent } from './pages/modificarpiezadental/modificarpiezadental.component';
+import { ModificarpadecimientoComponent } from './pages/modificarpadecimiento/modificarpadecimiento.component';
+import { ModificarprocedimientoComponent } from './pages/modificarprocedimiento/modificarprocedimiento.component';
 
 
 
@@ -80,6 +83,9 @@ const appRoutes: Routes = [
   { path: 'editarperfil', component: PerfilComponent },
   { path: 'pacienterecipe', component: PacientesrecipeComponent },
   { path: 'registerpieza', component: RegistropiezaComponent },
+  { path: 'modificarpieza', component: ModificarpiezadentalComponent },
+  { path: 'modificarpadecimiento', component: ModificarpadecimientoComponent },
+  { path: 'modificarprocedimiento', component: ModificarprocedimientoComponent },
   { path: 'reportes', component: ReportesComponent },
   { path: 'historiaclinica', component: HistoriaComponent },
   { path: 'pacienteinformacion', component: PacienteinformacionComponent },

@@ -7,6 +7,8 @@ import { UserInterface } from '../../models/user.interface';
 import { PadecimientoInterface } from '../../models/padecimiento.interface';
 import { PadecimientoporDienteInterface } from '../../models/piezaconPadecimiento.interface';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ProcedimientoApadecimentoInterface } from '../../models/procedimientoapadecimiento.interface';
+import { ProcedimientoInterface } from '../../models/procedimiento.interface';
 @Component({
   selector: 'app-padecimiento',
   templateUrl: './padecimiento.component.html',
@@ -37,11 +39,23 @@ export class PadecimientoComponent implements OnInit {
               private app: AppComponent,
               private _sanitizer: DomSanitizer ) { }
 
+
+
   ngOnInit() {
     this.doctor();
     this.app.mostrar = true;
     this.getlistAllPadecimientos();
     this.getlistAllPadecimientosporDiente();
+  }
+  ReponerMaterial(pro: PadecimientoInterface): void {
+    this.auth.setPadecimiento(pro);
+    this.router.navigate(['modificarpadecimiento']);
+     }
+  eliminarMaterial(pro: PadecimientoInterface): void {
+    this.auth.deletePadecimiento(pro.id).subscribe(data => {
+
+      this.ngOnInit();
+     } );
   }
   getlistAllPadecimientos() {
     this.dataApi.getAllPadecimientos().subscribe((padecimiento: PadecimientoInterface) => ( this.padecimiento = padecimiento));
