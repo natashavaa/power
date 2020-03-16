@@ -996,9 +996,9 @@ loginuser(username: string, password: string): Observable<any> {
     }
   }
   getCurrentPadecimiento(): PadecimientoInterface {
-    const padecimientoString = localStorage.getItem('currentProcedimiento');
+    const padecimientoString = localStorage.getItem('currentPadecimiento');
     if (!isNullOrUndefined(padecimientoString)) {
-      const pieza: ProcedimientoInterface = JSON.parse(padecimientoString);
+      const pieza: PadecimientoInterface = JSON.parse(padecimientoString);
       return pieza;
     } else {
       return null;
