@@ -90,4 +90,8 @@ export class ModificarprodedimientoapadecimientoComponent implements OnInit  {
     this.router.navigate(['procedimiento']);
   }
 
+  cancelaras() {
+    this.router.navigate(['procedimiento']);
+  }
+
 }
