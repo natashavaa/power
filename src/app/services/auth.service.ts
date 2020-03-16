@@ -23,6 +23,7 @@ import { HistotialClinicoInterface } from '../models/historialclinico.interface'
 import { RecipeInterface } from '../models/recipe.interface';
 import { InformeMedicoInterface } from '../models/informemedico.interface';
 import { PadecimientoADienteComponent } from '../pages/padecimiento-adiente/padecimiento-adiente.component';
+import { ServicioInterface } from '../models/servicios.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -94,6 +95,11 @@ deletePiezaDental(id: string) {
   return this.htttp.delete<PiezaDentalInterface>(urlApi,
   );
   }
+  deleteServicio(id: string) {
+    const urlApi = `http://localhost:3000/servicios/delete/${id}`;
+    return this.htttp.delete<ServicioInterface>(urlApi,
+    );
+    }
   deletePadecimiento(id: string) {
     const urlApi = `http://localhost:3000/padecimiento/delete/${id}`;
     return this.htttp.delete<PadecimientoInterface>(urlApi,
@@ -369,6 +375,40 @@ registerPiezaDental(NombrePieza: string, Descripcion: string, Nomenclatura: stri
   Imagen: Imagen,
   // tslint:disable-next-line: object-literal-shorthand
   Posicion: Posicion,
+
+  },
+  );
+}
+registerServicio(NombredelServicio: string, Descripcion: string, Costo: string) {
+  const urlApi = 'http://localhost:3000/servicios';
+  return this.htttp
+  .post<ServicioInterface>(
+  urlApi,
+  {
+  // tslint:disable-next-line: object-literal-shorthand
+  NombredelServicio: NombredelServicio,
+  // tslint:disable-next-line: object-literal-shorthand
+  Descripcion: Descripcion,
+  // tslint:disable-next-line: object-literal-shorthand
+  Costo: Costo,
+
+  },
+  );
+}
+updateServicio(id: string, NombredelServicio: string, Descripcion: string, Costo: string) {
+  const urlApi = 'http://localhost:3000/servicios/update';
+  return this.htttp
+  .put<ServicioInterface>(
+  urlApi,
+  {
+    // tslint:disable-next-line: object-literal-shorthand
+    id: id,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombredelServicio: NombredelServicio,
+  // tslint:disable-next-line: object-literal-shorthand
+  Descripcion: Descripcion,
+  // tslint:disable-next-line: object-literal-shorthand
+  Costo: Costo,
 
   },
   );
@@ -859,6 +899,10 @@ loginuser(username: string, password: string): Observable<any> {
     const piezaString = JSON.stringify(pieza);
     localStorage.setItem('currentPiezaDental', piezaString);
   }
+  setServicio(pieza: ServicioInterface): void {
+    const piezaString = JSON.stringify(pieza);
+    localStorage.setItem('currentServicio', piezaString);
+  }
   setProcedimiento(procedimiento: ProcedimientoInterface): void {
     const procedimientoString = JSON.stringify(procedimiento);
     localStorage.setItem('currentProcedimiento', procedimientoString);
@@ -910,6 +954,15 @@ loginuser(username: string, password: string): Observable<any> {
     const materialString = localStorage.getItem('currentMaterial');
     if (!isNullOrUndefined(materialString)) {
       const material: PaatientInterface = JSON.parse(materialString);
+      return material;
+    } else {
+      return null;
+    }
+  }
+  getCurrentServicio(): ServicioInterface {
+    const materialString = localStorage.getItem('currentServicio');
+    if (!isNullOrUndefined(materialString)) {
+      const material: ServicioInterface = JSON.parse(materialString);
       return material;
     } else {
       return null;

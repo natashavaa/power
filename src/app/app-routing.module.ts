@@ -55,6 +55,7 @@ import { ModificarpadecimientoComponent } from './pages/modificarpadecimiento/mo
 import { ModificarprocedimientoComponent } from './pages/modificarprocedimiento/modificarprocedimiento.component';
 import { ModificarpadecimientoapiezadetalComponent } from './pages/modificarpadecimientoapiezadetal/modificarpadecimientoapiezadetal.component';
 import { ModificarprodedimientoapadecimientoComponent } from './pages/modificarprodedimientoapadecimiento/modificarprodedimientoapadecimiento.component';
+import { ModificarservicioComponent } from './pages/modificarservicio/modificarservicio.component';
 
 
 
@@ -108,6 +109,7 @@ const appRoutes: Routes = [
   { path: 'verservicios', component: OdontogramaserviciosComponent},
   { path: 'editarpaciente', component: EditarpacienteComponent },
   { path: 'servicios', component: ServicioscdmComponent },
+  { path: 'modiicarservicio', component: ModificarservicioComponent },
   { path: 'registerservicios', component: RegisterservicioscdmComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 

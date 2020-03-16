@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { DataApiService } from '../../services/data-api.service';
 import { PiezaDentalInterface } from '../../models/piezadental.interface';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-registropieza',
@@ -21,7 +22,8 @@ export class RegistropiezaComponent implements OnInit {
   InteriorPicString: string;
   ExteriorPicString: string;
   currentId = 0;
-  constructor(private router: Router , private dataApi: DataApiService, private authService: AuthService) { }
+  constructor(private router: Router , private dataApi: DataApiService, private authService: AuthService,
+              private app: AppComponent) { }
   private PiezaRe: PiezaDentalInterface = {
 
     NombrePieza: '',
@@ -34,6 +36,7 @@ export class RegistropiezaComponent implements OnInit {
    file;
    imagen: string;
   ngOnInit() {
+    this.app.mostrar = true;
   }
   cancelar() {
     this.router.navigate(['mantenimiento']);

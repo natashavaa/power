@@ -109,6 +109,7 @@ import { ModificarprocedimientoComponent } from './pages/modificarprocedimiento/
 import { ModificarpadecimientoComponent } from './pages/modificarpadecimiento/modificarpadecimiento.component';
 import { ModificarpadecimientoapiezadetalComponent } from './pages/modificarpadecimientoapiezadetal/modificarpadecimientoapiezadetal.component';
 import { ModificarprodedimientoapadecimientoComponent } from './pages/modificarprodedimientoapadecimiento/modificarprodedimientoapadecimiento.component';
+import { ModificarservicioComponent } from './pages/modificarservicio/modificarservicio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -167,7 +168,8 @@ import { ModificarprodedimientoapadecimientoComponent } from './pages/modificarp
     ModificarprocedimientoComponent,
     ModificarpadecimientoComponent,
     ModificarpadecimientoapiezadetalComponent,
-    ModificarprodedimientoapadecimientoComponent
+    ModificarprodedimientoapadecimientoComponent,
+    ModificarservicioComponent
   ],
   imports: [
     SliderModule,

@@ -91,6 +91,10 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/piezadental' ;
     return this.http.get(urlApi);
   }
+  getAllServicios() {
+    const urlApi = 'http://localhost:3000/servicios' ;
+    return this.http.get(urlApi);
+  }
   getAllProcedimientos() {
     const urlApi = 'http://localhost:3000/procedimiento' ;
     return this.http.get(urlApi);

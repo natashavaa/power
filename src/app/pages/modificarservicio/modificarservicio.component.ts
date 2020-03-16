@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { DataApiService } from '../../services/data-api.service';
 import { Router } from '@angular/router';
 import { AppComponent } from '../../app.component';
 import { ServicioInterface } from '../../models/servicios.interface';
+import { DataApiService } from '../../services/data-api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-registerservicioscdm',
-  templateUrl: './registerservicioscdm.component.html',
-  styleUrls: ['./registerservicioscdm.component.css']
+  selector: 'app-modificarservicio',
+  templateUrl: './modificarservicio.component.html',
+  styleUrls: ['./modificarservicio.component.css']
 })
-export class RegisterservicioscdmComponent implements OnInit {
+export class ModificarservicioComponent implements OnInit  {
 
   constructor(private app: AppComponent, private router: Router , private dataApi: DataApiService, private authService: AuthService) { }
   private PiezaRe: ServicioInterface = {
@@ -21,10 +21,12 @@ export class RegisterservicioscdmComponent implements OnInit {
   };
   ngOnInit() {
     this.app.mostrar = true;
+    this.PiezaRe = this.authService.getCurrentServicio();
   }
 
   onRegisterServicio(): void {
-    this.authService.registerServicio(
+    this.authService.updateServicio(
+      this.PiezaRe.id,
       this.PiezaRe.NombredelServicio,
       this.PiezaRe.Descripcion,
       this.PiezaRe.Costo,
