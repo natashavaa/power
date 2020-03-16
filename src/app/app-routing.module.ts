@@ -54,6 +54,7 @@ import { ModificarpiezadentalComponent } from './pages/modificarpiezadental/modi
 import { ModificarpadecimientoComponent } from './pages/modificarpadecimiento/modificarpadecimiento.component';
 import { ModificarprocedimientoComponent } from './pages/modificarprocedimiento/modificarprocedimiento.component';
 import { ModificarpadecimientoapiezadetalComponent } from './pages/modificarpadecimientoapiezadetal/modificarpadecimientoapiezadetal.component';
+import { ModificarprodedimientoapadecimientoComponent } from './pages/modificarprodedimientoapadecimiento/modificarprodedimientoapadecimiento.component';
 
 
 
@@ -78,6 +79,7 @@ const appRoutes: Routes = [
   { path: 'padecimientoDiente', component: PadecimientoADienteComponent },
   { path: 'procedimiento', component: ProcedimientoComponent },
   { path: 'procedimientoapadecimiento', component: ProcedimientoapadecimientoComponent },
+  { path: 'modificarprocedimientoapadecimiento', component: ModificarprodedimientoapadecimientoComponent },
   { path: 'registerpadecimiento', component: RegistropadecimientoComponent },
   { path: 'registerprocedimiento', component: RegistroprocedimientoComponent },
   { path: 'modificarpadecimientoadiente', component: ModificarpadecimientoapiezadetalComponent },

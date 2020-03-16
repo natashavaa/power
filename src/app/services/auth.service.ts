@@ -109,6 +109,11 @@ deletePiezaDental(id: string) {
       return this.htttp.delete<ProcedimientoInterface>(urlApi,
       );
       }
+      deleteProcedimientoaPade(id: string) {
+        const urlApi = `http://localhost:3000/procedimientoapadecimiento/delete/${id}`;
+        return this.htttp.delete<ProcedimientoApadecimentoInterface>(urlApi,
+        );
+        }
 deleteMaterial(id: string) {
       const urlApi = `http://localhost:3000/material/${id}`;
       return this.htttp.delete<PaatientInterface>(urlApi,
@@ -581,6 +586,37 @@ registerProcedimientoaPadecimiento(NombreProcedimiento: string, Descripcion: str
   },
   );
 }
+updateProcedimientoaPadecimiento(id: string, NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string,
+                                 NombrePadecimiento: string, NombrePieza: string, Imagen: string, materiales: string,
+                                 instrumentos: string ) {
+const urlApi = 'http://localhost:3000/procedimientoapadecimiento/update';
+return this.htttp
+.put<ProcedimientoApadecimentoInterface>(
+urlApi,
+{
+  // tslint:disable-next-line: object-literal-shorthand
+  id: id,
+// tslint:disable-next-line: object-literal-shorthand
+NombreProcedimiento: NombreProcedimiento,
+// tslint:disable-next-line: object-literal-shorthand
+Descripcion: Descripcion,
+// tslint:disable-next-line: object-literal-shorthand
+Estatus: Estatus,
+// tslint:disable-next-line: object-literal-shorthand
+costo: costo,
+// tslint:disable-next-line: object-literal-shorthand
+NombrePadecimiento: NombrePadecimiento,
+// tslint:disable-next-line: object-literal-shorthand
+NombrePieza: NombrePieza,
+// tslint:disable-next-line: object-literal-shorthand
+Imagen: Imagen,
+// tslint:disable-next-line: object-literal-shorthand
+materiales: materiales,
+// tslint:disable-next-line: object-literal-shorthand
+instrumentos: instrumentos
+},
+);
+}
 registerProcedimientoPorPieza(NombrePadecimiento: string, NombrePieza: string, Imagen: string, Nomenclatura: string, Posicion: string) {
   const urlApi = 'http://localhost:3000/padecimientoporPieza';
   return this.htttp
@@ -831,6 +867,10 @@ loginuser(username: string, password: string): Observable<any> {
     const padecimientoString = JSON.stringify(padecimiento);
     localStorage.setItem('currentPadecimiento', padecimientoString);
   }
+  setProaPadecimiento(propa: ProcedimientoApadecimentoInterface): void {
+    const padecimientoString = JSON.stringify(propa);
+    localStorage.setItem('currentProcedimientoAPadecimiento', padecimientoString);
+  }
   setPadecimientoadiente(padecimientoadiente: PadecimientoporDienteInterface): void {
     const padecimientoString = JSON.stringify(padecimientoadiente);
     localStorage.setItem('currentPadecimientoaDiente', padecimientoString);
@@ -886,6 +926,15 @@ loginuser(username: string, password: string): Observable<any> {
   }
   getCurrentProcedimiento(): ProcedimientoInterface {
     const procedimientoString = localStorage.getItem('currentPadecimiento');
+    if (!isNullOrUndefined(procedimientoString)) {
+      const pieza: ProcedimientoInterface = JSON.parse(procedimientoString);
+      return pieza;
+    } else {
+      return null;
+    }
+  }
+  getCurrentProdecimientoapadecimiento(): ProcedimientoApadecimentoInterface {
+    const procedimientoString = localStorage.getItem('currentProcedimientoAPadecimiento');
     if (!isNullOrUndefined(procedimientoString)) {
       const pieza: ProcedimientoInterface = JSON.parse(procedimientoString);
       return pieza;

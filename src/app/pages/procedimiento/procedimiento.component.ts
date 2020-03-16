@@ -79,6 +79,16 @@ export class ProcedimientoComponent implements OnInit {
 
     }
   }
+  ReponerMaterialpro(pro: ProcedimientoApadecimentoInterface): void {
+    this.auth.setProaPadecimiento(pro);
+    this.router.navigate(['modificarprocedimientoapadecimiento']);
+     }
+  eliminarMaterialpro(pro: ProcedimientoApadecimentoInterface): void {
+    this.auth.deleteProcedimientoaPade(pro.id).subscribe(data => {
+
+      this.ngOnInit();
+     } );
+  }
   ReponerMaterial(pro: ProcedimientoInterface): void {
     this.auth.setPadecimiento(pro);
     this.router.navigate(['modificarprocedimiento']);
