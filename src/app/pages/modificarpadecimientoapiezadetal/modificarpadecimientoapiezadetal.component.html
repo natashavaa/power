@@ -1,0 +1,51 @@
+<div align='center'>
+    <form>
+        <mat-card>
+            <br>
+            <h4>MODIFICAR PADECIMIENTO A PIEZA DENTAL </h4>
+            <br>
+            <!--AGREGAR PIEZA FORMULARIO-->
+            <div>
+                <form #formRegisterPadecimientoaDiente="ngForm" (ngSubmit)="onRegisterPadecimientoADiente(formRegisterPadecimientoaDiente)">
+                    <div class="row">
+                        <div class="col-6 caja">
+                            <div class="form-group row">
+                                <label for="" class="col-6 col-form-label">Pieza Dental</label>
+                                <input disabled #nombrePieza="ngModel" name="nombrePieza" [(ngModel)]='Padpordiente.NombrePieza' id="nombrePieza" class="form-control col-5">
+
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-6 col-form-label">Nombre del Padecimiento</label>
+                                <input #nombrePadecimiento="ngModel" name="nombrePadecimiento" [(ngModel)]='Padpordiente.NombrePadecimiento' id="nombrePadecimiento" class="form-control col-5">
+
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group row">
+                                <label for="" class="col-3 col-form-label">Nomenclatura</label>
+                                <input #Nomenclatura="ngModel" name="Nomenclatura" [(ngModel)]='Padpordiente.Nomenclatura' id="Nomenclatura" class="form-control col-5">
+
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-6 col-form-label">Ubicacion</mat-label>
+                                <br>
+                                <select #ubicacion="ngModel" name="ubicacion" id="ubicacion" [(ngModel)]="Padpordiente.Ubicacion" class="form-control col-5">
+                              <option>Inferior Derecha</option>
+                              <option>Inferior Izquierda</option>
+                              <option>Superior Derecha</option>
+                              <option>Superior Izquierda</option>
+                          </select>
+                            </div>
+                            <div class="form-group row ">
+                                <label class="col-3 col-form-label ">Simbologia</label>
+                                <input (change)="picked($event,1)" type="file">
+                            </div>
+                        </div>
+                    </div>
+                    <button mat-raised-button type="submit " class="btn btn-lg btn-success margen ">Guardar</button>
+                    <button (click)="cancelar() " mat-raised-button class="btn btn-lg btn-danger margen ">Cancelar</button>
+                </form>
+            </div>
+        </mat-card>
+    </form>
+</div>

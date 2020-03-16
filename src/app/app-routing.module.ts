@@ -53,6 +53,7 @@ import { OdontogramaserviciosComponent } from './pages/odontogramaservicios/odon
 import { ModificarpiezadentalComponent } from './pages/modificarpiezadental/modificarpiezadental.component';
 import { ModificarpadecimientoComponent } from './pages/modificarpadecimiento/modificarpadecimiento.component';
 import { ModificarprocedimientoComponent } from './pages/modificarprocedimiento/modificarprocedimiento.component';
+import { ModificarpadecimientoapiezadetalComponent } from './pages/modificarpadecimientoapiezadetal/modificarpadecimientoapiezadetal.component';
 
 
 
@@ -79,6 +80,7 @@ const appRoutes: Routes = [
   { path: 'procedimientoapadecimiento', component: ProcedimientoapadecimientoComponent },
   { path: 'registerpadecimiento', component: RegistropadecimientoComponent },
   { path: 'registerprocedimiento', component: RegistroprocedimientoComponent },
+  { path: 'modificarpadecimientoadiente', component: ModificarpadecimientoapiezadetalComponent },
   { path: 'materiales', component: MaterialesComponent },
   { path: 'editarperfil', component: PerfilComponent },
   { path: 'pacienterecipe', component: PacientesrecipeComponent },

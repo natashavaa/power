@@ -107,6 +107,7 @@ import { OdontogramaserviciosComponent } from './pages/odontogramaservicios/odon
 import { ModificarpiezadentalComponent } from './pages/modificarpiezadental/modificarpiezadental.component';
 import { ModificarprocedimientoComponent } from './pages/modificarprocedimiento/modificarprocedimiento.component';
 import { ModificarpadecimientoComponent } from './pages/modificarpadecimiento/modificarpadecimiento.component';
+import { ModificarpadecimientoapiezadetalComponent } from './pages/modificarpadecimientoapiezadetal/modificarpadecimientoapiezadetal.component';
 
 @NgModule({
   declarations: [
@@ -164,7 +165,8 @@ import { ModificarpadecimientoComponent } from './pages/modificarpadecimiento/mo
     OdontogramaserviciosComponent,
     ModificarpiezadentalComponent,
     ModificarprocedimientoComponent,
-    ModificarpadecimientoComponent
+    ModificarpadecimientoComponent,
+    ModificarpadecimientoapiezadetalComponent
   ],
   imports: [
     SliderModule,

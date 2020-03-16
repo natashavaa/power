@@ -9,6 +9,7 @@ import { PadecimientoporDienteInterface } from '../../models/piezaconPadecimient
 import { DomSanitizer } from '@angular/platform-browser';
 import { ProcedimientoApadecimentoInterface } from '../../models/procedimientoapadecimiento.interface';
 import { ProcedimientoInterface } from '../../models/procedimiento.interface';
+import { PadecimientoADienteComponent } from '../padecimiento-adiente/padecimiento-adiente.component';
 @Component({
   selector: 'app-padecimiento',
   templateUrl: './padecimiento.component.html',
@@ -51,8 +52,18 @@ export class PadecimientoComponent implements OnInit {
     this.auth.setPadecimiento(pro);
     this.router.navigate(['modificarpadecimiento']);
      }
+     Reponerpadecimientoadiente(pro: PadecimientoporDienteInterface): void {
+      this.auth.setPadecimientoadiente(pro);
+      this.router.navigate(['modificarpadecimientoadiente']);
+       }
   eliminarMaterial(pro: PadecimientoInterface): void {
     this.auth.deletePadecimiento(pro.id).subscribe(data => {
+
+      this.ngOnInit();
+     } );
+  }
+  eliminarMaterialpadepordiete(pro: PadecimientoporDienteInterface): void {
+    this.auth.deletePadecimientoprodiente(pro.id).subscribe(data => {
 
       this.ngOnInit();
      } );

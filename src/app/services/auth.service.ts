@@ -22,6 +22,7 @@ import { EvolutionInterface } from '../models/evolution.interface';
 import { HistotialClinicoInterface } from '../models/historialclinico.interface';
 import { RecipeInterface } from '../models/recipe.interface';
 import { InformeMedicoInterface } from '../models/informemedico.interface';
+import { PadecimientoADienteComponent } from '../pages/padecimiento-adiente/padecimiento-adiente.component';
 @Injectable({
   providedIn: 'root'
 })
@@ -98,6 +99,11 @@ deletePiezaDental(id: string) {
     return this.htttp.delete<PadecimientoInterface>(urlApi,
     );
     }
+    deletePadecimientoprodiente(id: string) {
+      const urlApi = `http://localhost:3000/padecimientoporPieza/delete/${id}`;
+      return this.htttp.delete<PadecimientoADienteComponent>(urlApi,
+      );
+      }
     deleteProcedimiento(id: string) {
       const urlApi = `http://localhost:3000/procedimiento/delete/${id}`;
       return this.htttp.delete<ProcedimientoInterface>(urlApi,
@@ -595,6 +601,29 @@ registerProcedimientoPorPieza(NombrePadecimiento: string, NombrePieza: string, I
   },
   );
 }
+updateProcedimientoPorPieza(id: string, NombrePadecimiento: string, NombrePieza: string,
+                            Imagen: string, Nomenclatura: string, Posicion: string) {
+  const urlApi = 'http://localhost:3000/padecimientoporPieza/update';
+  return this.htttp
+  .put<PadecimientoporDienteInterface>(
+  urlApi,
+  {
+     // tslint:disable-next-line: object-literal-shorthand
+     id: id,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento: NombrePadecimiento,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePieza: NombrePieza,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen: Imagen,
+  // tslint:disable-next-line: object-literal-shorthand
+// tslint:disable-next-line: object-literal-shorthand
+  Nomenclatura: Nomenclatura,
+// tslint:disable-next-line: object-literal-shorthand
+  Posicion: Posicion,
+  },
+  );
+}
 registerPadecimiento(NombrePadecimiento: string, Descripcion: string) {
   const urlApi = 'http://localhost:3000/padecimiento';
   return this.htttp
@@ -802,6 +831,10 @@ loginuser(username: string, password: string): Observable<any> {
     const padecimientoString = JSON.stringify(padecimiento);
     localStorage.setItem('currentPadecimiento', padecimientoString);
   }
+  setPadecimientoadiente(padecimientoadiente: PadecimientoporDienteInterface): void {
+    const padecimientoString = JSON.stringify(padecimientoadiente);
+    localStorage.setItem('currentPadecimientoaDiente', padecimientoString);
+  }
   setPatient(patient: PaatientInterface): void {
     const patientString = JSON.stringify(patient);
     localStorage.setItem('currentPatient', patientString);
@@ -864,6 +897,15 @@ loginuser(username: string, password: string): Observable<any> {
     const padecimientoString = localStorage.getItem('currentProcedimiento');
     if (!isNullOrUndefined(padecimientoString)) {
       const pieza: ProcedimientoInterface = JSON.parse(padecimientoString);
+      return pieza;
+    } else {
+      return null;
+    }
+  }
+  getCurrentPadecimientoadiente(): PadecimientoporDienteInterface {
+    const padecimientoString = localStorage.getItem('currentPadecimientoaDiente');
+    if (!isNullOrUndefined(padecimientoString)) {
+      const pieza: PadecimientoporDienteInterface = JSON.parse(padecimientoString);
       return pieza;
     } else {
       return null;
