@@ -5,8 +5,8 @@
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <h5 align="center">Maria RodriguezDB</h5>
-                    <h1 align="center">12 años</h1>
+                    <h5 align="center">{{patient.name}}</h5>
+                    <h1 align="center">{{patient.age}} años</h1>
                 </mat-card-title>
                 <mat-list-item>
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
@@ -104,33 +104,50 @@
             <br>
             <br>
             <br>
-            <label for="" class="lolo">Lista de Servicio check</label>
+            <div class="row mt-5">
+                <div class="col">
+                    <label for="" class="lolo">Lista de los Servicios</label>
+                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
+                    <table class="table table-hover" mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre Servicio</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Costo</th>
+                                <th scope="col">Aplicar</th>
 
-            <div class="row per ">
-                <div class="col-8">
-                    <br>
-                    <form action="">
-                        <div class="form-group row">
-                            <label for="" class="col-8 col-form-label"></label>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let servicios of servicios">
+                                <td>{{servicios.id}}</td>
+                                <td>{{servicios.NombredelServicio}}</td>
+                                <td>{{servicios.Descripcion}}</td>
+                                <td>{{servicios.Costo}}</td>
+                                <input [value]="servicios.Costo" type="checkbox" (change)="onCheckboxChange($event,servicios)">
 
-                        </div>
-                    </form>
-                </div>
+                            </tr>
 
-                <div class="col-4">
-                    <br>
-                    <form action="">
-                        <div class="form-group row">
-                            <label for="" class="col-4 col-form-label">Estimado</label>
-                            <input type="number" min="1" #costo="ngModel" name="costo" class="form-control"
-                                placeholder="" [(ngModel)]='procedimientoRe.costo' required class="form-control col-3">
-                        </div>
-                    </form>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row per ">
+                <div class="col-4">
+                    <br>
+                    <div class="form-group row">
+                        <label for="" class="col-4 col-form-label">Estimado</label>
+                        <input disabled class="form-control col-3" name="Estimado" [(ngModel)]="Estimado">
+                    </div>
 
+                </div>
+            </div>
             <div class="col-4">
-
                 <br>
                 <form action="">
                     <div class="form-group row">
@@ -140,7 +157,7 @@
                     </div>
                 </form>
             </div>
-          
+
         </mat-card-content>
     </div>
 </div>
