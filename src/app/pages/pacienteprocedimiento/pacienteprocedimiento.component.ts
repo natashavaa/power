@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
 import { AppComponent } from '../../app.component';
+import { AuthService } from '../../services/auth.service';
+import { PaatientInterface } from '../../models/patients.interface';
 
 export interface PeriodicElement {
   name: string;
@@ -35,9 +37,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PacienteprocedimientoComponent implements OnInit {
 
+  constructor(private router: Router, private app: AppComponent, private auth: AuthService) { }
+
   displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
+  private patient: PaatientInterface;
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
@@ -64,10 +69,8 @@ export class PacienteprocedimientoComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-  constructor(private router: Router, private app: AppComponent) { }
-
   ngOnInit() {
+    this.patient = this.auth.getCurrentPatient();
     this.app.mostrar = true;
   }
 

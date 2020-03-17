@@ -137,26 +137,27 @@
             <br>
             <br>
             <br>
-            <div class="row per ">
+            <form #formServicios="ngForm" (ngSubmit)="onRegister(formServicios)">
+                <div class="row per ">
+                    <div class="col-4">
+                        <br>
+                        <div class="form-group row">
+                            <label for="" class="col-4 col-form-label">Estimado</label>
+                            <input disabled class="form-control col-3" name="Estimado" [(ngModel)]="Estimado">
+                        </div>
+
+                    </div>
+                </div>
                 <div class="col-4">
                     <br>
                     <div class="form-group row">
-                        <label for="" class="col-4 col-form-label">Estimado</label>
-                        <input disabled class="form-control col-3" name="Estimado" [(ngModel)]="Estimado">
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-4">
-                <br>
-                <form action="">
-                    <div class="form-group row">
-                        <button mat-raised-button (click)="odontograma()" class="uno"><img
+                        <button type="submit" class="uno"><img
                             src="https://img.icons8.com/officel/50/000000/false-teeth.png"> Crear
                         Odontograma</button>
                     </div>
-                </form>
-            </div>
+
+                </div>
+            </form>
 
         </mat-card-content>
     </div>

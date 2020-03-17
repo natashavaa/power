@@ -1,4 +1,5 @@
 <div class="container">
+
     <div class="left">
         <br>
         <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
@@ -49,12 +50,12 @@
                     </form>
                 </mat-list-item>
                 <!-- <mat-list-item>
-                   <form>
-                        <div>
-                            <button mat-stroked-button (click)="odontograma()" class="f">Odontograma</button>
-                        </div>
-                    </form>
-                </mat-list-item> -->
+                 <form>
+                      <div>
+                          <button mat-stroked-button (click)="odontograma()" class="f">Odontograma</button>
+                      </div>
+                  </form>
+              </mat-list-item> -->
                 <mat-list-item>
                     <img clas="tres" src="https://img.icons8.com/dusk/50/000000/resume.png">
                     <form>
@@ -97,99 +98,64 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4><img src="https://img.icons8.com/dusk/50/000000/tooth.png"> PROCEDIMIENTO ODONTOLOGICO </h4>
+                        <h4><img src="https://img.icons8.com/dusk/50/000000/cheap.png"> PRESUPUESTO </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
 
 
-            <div class="row">
-
-                <br>
-                <form action="">
-                    <div class="form-group row">
-                        <mat-label for="" class="col-2 col-form-label"></mat-label>
-                        <button mat-raised-button (click)="verservicios()" class="col-7 uno"><img src="https://img.icons8.com/dusk/50/000000/services.png"/>     Ver Servicios</button>
-                    </div>
-                </form>
-            </div>
-
-
             <br>
             <br>
-            <!--     <div class="form-group row">
-                <mat-label for="" class="col-4 col-form-label">Status del Procedimiento</mat-label>
-                <br>
-                <select class="form-control col-2">
-                    <option>Activo</option>
-                    <option>Programado</option>
-                    <option>Cerrado</option>
-                </select>
-                <div class="col-1">
-                    <button class="sinp" type="submit" class="btn btn-success">Ir </button>
-                </div>
-            </div>-->
-
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 id="exampleModalLongTitle" class="text-center">AGREGAR PROCEDIMIENTO
-                            </h5>
-                        </div>
-                        <div class="modal-body">
+            <form action="">
+                <div class="row">
+                    <div class="col-12">
+                        <form #formRegisterModPre="ngForm" (ngSubmit)="onRegisterPresupuesto(formRegisterModPre)">
+                            <br>
                             <div class="form-group row">
-                                <label for="" class="col-4 col-form-label">Nombre del Procedimiento</label>
-                                <input placeholder="" class="form-control col-6">
+                                <label for="" class="col-5 col-form-label">Estimado</label>
+                                <input disabled type="text" class="form-control col-4" #Estimado="ngModel" name="Estimado" id="Estimado" [(ngModel)]="presupuestoRe.Estimado">
                             </div>
                             <div class="form-group row">
-                                <mat-label for="" class="col-4 col-form-label">Padecimiento</mat-label>
+                                <label for="" class="col-5 col-form-label">Presupuesto Bsf</label>
+                                <input type="text" class="form-control col-4" #PresupuestoBsf="ngModel" name="PresupuestoBsf" id="PresupuestoBsf" [(ngModel)]="presupuestoRe.PresupuestoBsf">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-5 col-form-label">Presupuesto Dolares</label>
+                                <input type="text" class="form-control col-4" #PresupuestoDolares="ngModel" name="PresupuestoDolares" id="PresupuestoDolares" [(ngModel)]="presupuestoRe.PresupuestoDolares">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-5 col-form-label">Abono</label>
+                                <input type="text" class="form-control col-4" #Abono="ngModel" name="Abono" id="Abono" [(ngModel)]="presupuestoRe.Abono">
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-5 col-form-label">Debe</label>
+                                <input type="text" class="form-control col-4" #Debe="ngModel" name="Debe" id="Debe" [(ngModel)]="presupuestoRe.Debe">
+                            </div>
+                            <div>
                                 <br>
-                                <select class="form-control col-6">
-                                    <option>Seleccionar</option>
-                                    <option>Parte Superior</option>
-                                    <option>Parte Inferior</option>
-                                    <option>Lado Derecho</option>
-                                    <option>Lado Izquierdo</option>
-                                    <option>Diente por Diente</option>
-                                </select>
-                            </div>
-                            <div class="form-group row">
-                                <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
-                                <br>
-                                <select class="form-control col-6">
-                                    <option>Seleccionar</option>
-                                    <option>Parte Superior</option>
-                                    <option>Parte Inferior</option>
-                                    <option>Lado Derecho</option>
-                                    <option>Lado Izquierdo</option>
-                                    <option>Diente por Diente</option>
-                                </select>
-                            </div>
+                                <div class="form-group row">
+                                    <mat-label for="" class="col-5 col-form-label">Estatus</mat-label>
+                                    <br>
+                                    <select class="form-control col-2" #Estatus="ngModel" name="Estatus" id="Estatus" [(ngModel)]="presupuestoRe.Estatus">
+                                          <option selected>Deuda</option>
+                                          <option>Pagado</option>
+                                      </select>
+                                </div>
 
-                            <label for="" class="col-6 col-form-label"></label>
-                            <input type="file" name="archivo">
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-success">Guardar</button>
+                            <button mat-raised-button class="btn btn-danger" onclick="cancelar()">Cancelar</button>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button mat-raised-button class="btn btn-success">Guardar</button>
-                            <button mat-raised-button class="btn btn-danger">Cancelar</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
-            </div>
+                <br>
 
-
-            <div class="row mt-5">
-                <div class="col">
-
-                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
-
-                </div>
-            </div>
-
+            </form>
+            <br>
+            <br>
+            <br>
         </mat-card-content>
+
     </div>
 </div>

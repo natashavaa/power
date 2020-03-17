@@ -24,6 +24,7 @@ import { RecipeInterface } from '../models/recipe.interface';
 import { InformeMedicoInterface } from '../models/informemedico.interface';
 import { PadecimientoADienteComponent } from '../pages/padecimiento-adiente/padecimiento-adiente.component';
 import { ServicioInterface } from '../models/servicios.interface';
+import { PresupustoInterface } from 'src/app/models/presupuesto.interace';
 @Injectable({
   providedIn: 'root'
 })
@@ -378,6 +379,62 @@ registerPiezaDental(NombrePieza: string, Descripcion: string, Nomenclatura: stri
 
   },
   );
+}
+registerPresupuesto(idPatient: string, PresupuestoBsf: string, PresupuestoDolares: string,
+                    Abono: string, Debe: string, Estatus: string,
+                    Estimado: string, serviciosTratados: string) {
+  const urlApi = 'http://localhost:3000/presupuesto';
+  return this.htttp
+  .post<PresupustoInterface>(
+  urlApi,
+  {
+  // tslint:disable-next-line: object-literal-shorthand
+  idPatient: idPatient,
+  // tslint:disable-next-line: object-literal-shorthand
+  PresupuestoBsf: PresupuestoBsf,
+  // tslint:disable-next-line: object-literal-shorthand
+  PresupuestoDolares: PresupuestoDolares,
+  // tslint:disable-next-line: object-literal-shorthand
+  Abono: Abono,
+  // tslint:disable-next-line: object-literal-shorthand
+  Debe: Debe,
+  // tslint:disable-next-line: object-literal-shorthand
+  Estatus: Estatus,
+  // tslint:disable-next-line: object-literal-shorthand
+  Estimado: Estimado,
+  // tslint:disable-next-line: object-literal-shorthand
+  serviciosTratados: serviciosTratados,
+  },
+  );
+}
+updatePresupuesto(id: string, idPatient: string, PresupuestoBsf: string, PresupuestoDolares: string,
+                  Abono: string, Debe: string, Estatus: string,
+                  Estimado: string, serviciosTratados: string) {
+const urlApi = 'http://localhost:3000/presupuesto/update';
+return this.htttp
+.put<PresupustoInterface>(
+urlApi,
+{
+  // tslint:disable-next-line: object-literal-shorthand
+  id: id,
+// tslint:disable-next-line: object-literal-shorthand
+idPatient: idPatient,
+// tslint:disable-next-line: object-literal-shorthand
+PresupuestoBsf: PresupuestoBsf,
+// tslint:disable-next-line: object-literal-shorthand
+PresupuestoDolares: PresupuestoDolares,
+// tslint:disable-next-line: object-literal-shorthand
+Abono: Abono,
+// tslint:disable-next-line: object-literal-shorthand
+Debe: Debe,
+// tslint:disable-next-line: object-literal-shorthand
+Estatus: Estatus,
+// tslint:disable-next-line: object-literal-shorthand
+Estimado: Estimado,
+// tslint:disable-next-line: object-literal-shorthand
+serviciosTratados: serviciosTratados,
+},
+);
 }
 registerServicio(NombredelServicio: string, Descripcion: string, Costo: string) {
   const urlApi = 'http://localhost:3000/servicios';
@@ -911,6 +968,10 @@ loginuser(username: string, password: string): Observable<any> {
     const padecimientoString = JSON.stringify(padecimiento);
     localStorage.setItem('currentPadecimiento', padecimientoString);
   }
+  setPresupuesto(presupuesto: PresupustoInterface): void {
+    const padecimientoString = JSON.stringify(presupuesto);
+    localStorage.setItem('currentPresupuesto', padecimientoString);
+  }
   setProaPadecimiento(propa: ProcedimientoApadecimentoInterface): void {
     const padecimientoString = JSON.stringify(propa);
     localStorage.setItem('currentProcedimientoAPadecimiento', padecimientoString);
@@ -936,6 +997,15 @@ loginuser(username: string, password: string): Observable<any> {
     const userString = localStorage.getItem('currentUser');
     if (!isNullOrUndefined(userString)) {
       const user: UserInterface = JSON.parse(userString);
+      return user;
+    } else {
+      return null;
+    }
+  }
+  getCurrentPresupuesto(): PresupustoInterface {
+    const userString = localStorage.getItem('currentPresupuesto');
+    if (!isNullOrUndefined(userString)) {
+      const user: PresupustoInterface = JSON.parse(userString);
       return user;
     } else {
       return null;

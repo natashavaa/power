@@ -56,6 +56,7 @@ import { ModificarprocedimientoComponent } from './pages/modificarprocedimiento/
 import { ModificarpadecimientoapiezadetalComponent } from './pages/modificarpadecimientoapiezadetal/modificarpadecimientoapiezadetal.component';
 import { ModificarprodedimientoapadecimientoComponent } from './pages/modificarprodedimientoapadecimiento/modificarprodedimientoapadecimiento.component';
 import { ModificarservicioComponent } from './pages/modificarservicio/modificarservicio.component';
+import { ModificarpacientepresupuestoComponent } from './pages/modificarpacientepresupuesto/modificarpacientepresupuesto.component';
 
 
 
@@ -92,6 +93,7 @@ const appRoutes: Routes = [
   { path: 'modificarpadecimiento', component: ModificarpadecimientoComponent },
   { path: 'modificarprocedimiento', component: ModificarprocedimientoComponent },
   { path: 'reportes', component: ReportesComponent },
+  { path: 'modificarpacientepresupuesto', component: ModificarpacientepresupuestoComponent },
   { path: 'historiaclinica', component: HistoriaComponent },
   { path: 'pacienteinformacion', component: PacienteinformacionComponent },
   { path: 'imagenes', component: ImagenesComponent },

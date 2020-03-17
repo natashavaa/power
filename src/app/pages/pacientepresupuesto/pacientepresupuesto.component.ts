@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PaatientInterface } from '../../models/patients.interface';
+import { AppComponent } from '../../app.component';
+import { DataApiService } from '../../services/data-api.service';
+import { AuthService } from '../../services/auth.service';
+import { PresupustoInterface } from 'src/app/models/presupuesto.interace';
 
 @Component({
   selector: 'app-pacientepresupuesto',
@@ -8,13 +13,30 @@ import { Router } from '@angular/router';
 })
 export class PacientepresupuestoComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dataApi: DataApiService, private authService: AuthService, private app: AppComponent) { }
+  private presupuestoRe: PresupustoInterface = {
 
-
+    idPatient: '',
+    PresupuestoBsf: '',
+    PresupuestoDolares: '',
+    Abono: '',
+    Debe: '',
+    Estatus: '',
+    Estimado: '',
+    serviciosTratados: '',
+  };
+  private patient: PaatientInterface;
+  getlistAllPresupuestopatients() {
+    this.dataApi.getAllPresupustoPatient(this.patient.id)
+    .subscribe((presupeusto: PresupustoInterface) => ( this.presupuestoRe = presupeusto));
+  }
   datos(): void {
     this.router.navigate(['historiaclinica']);
   }
-
+  Modificar(pro: PresupustoInterface): void {
+    this.authService.setPresupuesto(pro);
+    this.router.navigate(['modificarpacientepresupuesto']);
+     }
   imagen(): void {
     this.router.navigate(['imagenes']);
   }
@@ -42,17 +64,20 @@ export class PacientepresupuestoComponent implements OnInit {
   recipe(): void {
     this.router.navigate(['pacienterecipe']);
   }
-  
+
   presupuesto(): void {
     this.router.navigate(['pacientepresupuesto']);
   }
 
-  
+
   informe(): void {
     this.router.navigate(['pacienteinforme']);
   }
 
   ngOnInit() {
+    this.app.mostrar = true;
+    this.patient = this.authService.getCurrentPatient();
+    this.getlistAllPresupuestopatients();
   }
 
 }

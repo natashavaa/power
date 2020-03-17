@@ -6,8 +6,8 @@
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <h5 align="center">Maria RodriguezDB</h5>
-                    <h1 align="center">12 años</h1>
+                    <h5 align="center">{{patient.name}}</h5>
+                    <h1 align="center">{{patient.age}} años</h1>
                 </mat-card-title>
                 <mat-list-item>
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
@@ -82,7 +82,7 @@
                 </mat-list-item>
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
-                   <form>
+                    <form>
                         <div>
                             <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
                         </div>
@@ -106,50 +106,47 @@
 
             <br>
             <br>
-            <div class="row">
-                <div class="col-12">
-                    <form action="">
+
+            <div class="row mt-5">
+                <div class="col">
+                    <label for="" class="lolo">Servicios Utilizados</label>
+                    <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Presupuesto Bsf</th>
+                                <th scope="col">Presupuesto Dolares</th>
+                                <th scope="col">Debe </th>
+                                <th scope="col">Estatus</th>
+                                <th scope="col">Servicios Tratados</th>
+                                <th scope="col">Actualizar </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let presupuestoRe of presupuestoRe">
+                                <td>{{presupuestoRe.id}}</td>
+                                <td>{{presupuestoRe.PresupuestoBsf}}</td>
+                                <td>{{presupuestoRe.PresupuestoDolares}}</td>
+                                <td>{{presupuestoRe.Debe}}</td>
+                                <td>{{presupuestoRe.Estatus}}</td>
+                                <td>{{presupuestoRe.serviciosTratados}}</td>
+
+                                <td>
+                                    <button mat-raised-button (click)="Modificar(presupuestoRe)" class="btn btn-info">Modificar</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
                         <br>
-                        <div class="form-group row">
-                            <label for="" class="col-5 col-form-label">Presupuesto Bsf</label>
-                            <input type="text" class="form-control col-4">
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-5 col-form-label">Presupuesto $</label>
-                            <input type="text" class="form-control col-4">
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-5 col-form-label">Abono</label>
-                            <input type="text" class="form-control col-4">
-                        </div>
-                        <div class="form-group row">
-                            <label for="" class="col-5 col-form-label">Debe</label>
-                            <input type="text" class="form-control col-4">
-                        </div>
-                            <div>
-                                <br>
-                                <form #getype="ngForm" (ngSubmit)="getType(getype)">
-                                    <div class="form-group row">
-                                        <mat-label for="" class="col-5 col-form-label">Estatus</mat-label>
-                                        <br>
-                                        <select class="form-control col-2" #momento="ngModel" name="momento" id="momento"
-                                            [(ngModel)]="momentoC">
-                                            <option selected>Deuda</option>
-                                            <option>Pagado</option>
-                                        </select>
-                                        <div class="col-1">
-                                            <button class="sinp" type="submit" class="btn btn-info">Asignar </button>
-                                        </div>
-            
-                                    </div>
-                                </form>
-                            </div>
-                    </form>
+                        <br>
+                        <br>
+
+                    </table>
+
                 </div>
             </div>
-            <br>
-            <button mat-raised-button class="btn btn-success" >Guardar</button>
-            <button mat-raised-button  class="btn btn-danger">Cancelar</button>
         </mat-card-content>
+
     </div>
 </div>
