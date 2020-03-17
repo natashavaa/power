@@ -115,6 +115,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Fecha de Creacion</th>
+                                <th scope="col">Fechas de pago</th>
                                 <th scope="col">Presupuesto Bsf</th>
                                 <th scope="col">Presupuesto Dolares</th>
                                 <th scope="col">Debe </th>
@@ -126,6 +128,8 @@
                         <tbody>
                             <tr *ngFor="let presupuestoRe of presupuestoRe">
                                 <td>{{presupuestoRe.id}}</td>
+                                <td>{{presupuestoRe.FechadeCreacion}}</td>
+                                <td>{{presupuestoRe.FechasdePagos}}</td>
                                 <td>{{presupuestoRe.PresupuestoBsf}}</td>
                                 <td>{{presupuestoRe.PresupuestoDolares}}</td>
                                 <td>{{presupuestoRe.Debe}}</td>

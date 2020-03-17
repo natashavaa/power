@@ -382,7 +382,8 @@ registerPiezaDental(NombrePieza: string, Descripcion: string, Nomenclatura: stri
 }
 registerPresupuesto(idPatient: string, PresupuestoBsf: string, PresupuestoDolares: string,
                     Abono: string, Debe: string, Estatus: string,
-                    Estimado: string, serviciosTratados: string) {
+                    Estimado: string, serviciosTratados: string, FechadeCreacion: string,
+                    FechasdePagos: string) {
   const urlApi = 'http://localhost:3000/presupuesto';
   return this.htttp
   .post<PresupustoInterface>(
@@ -404,12 +405,17 @@ registerPresupuesto(idPatient: string, PresupuestoBsf: string, PresupuestoDolare
   Estimado: Estimado,
   // tslint:disable-next-line: object-literal-shorthand
   serviciosTratados: serviciosTratados,
+  // tslint:disable-next-line: object-literal-shorthand
+  FechadeCreacion: FechadeCreacion,
+  // tslint:disable-next-line: object-literal-shorthand
+  FechasdePagos: FechasdePagos,
   },
   );
 }
 updatePresupuesto(id: string, idPatient: string, PresupuestoBsf: string, PresupuestoDolares: string,
                   Abono: string, Debe: string, Estatus: string,
-                  Estimado: string, serviciosTratados: string) {
+                  Estimado: string, serviciosTratados: string,FechadeCreacion: string,
+                  FechasdePagos: string) {
 const urlApi = 'http://localhost:3000/presupuesto/update';
 return this.htttp
 .put<PresupustoInterface>(
@@ -433,6 +439,10 @@ Estatus: Estatus,
 Estimado: Estimado,
 // tslint:disable-next-line: object-literal-shorthand
 serviciosTratados: serviciosTratados,
+ // tslint:disable-next-line: object-literal-shorthand
+ FechadeCreacion: FechadeCreacion,
+ // tslint:disable-next-line: object-literal-shorthand
+ FechasdePagos: FechasdePagos,
 },
 );
 }

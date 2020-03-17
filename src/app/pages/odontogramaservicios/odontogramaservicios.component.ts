@@ -7,6 +7,7 @@ import { DataApiService } from '../../services/data-api.service';
 import { PaatientInterface } from '../../models/patients.interface';
 import { PresupustoInterface } from 'src/app/models/presupuesto.interace';
 import { FormControl } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-odontogramaservicios',
@@ -15,9 +16,13 @@ import { FormControl } from '@angular/forms';
 })
 export class OdontogramaserviciosComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router, private dataApi: DataApiService, private app: AppComponent) { }
+  constructor(private auth: AuthService, private router: Router,
+              private dataApi: DataApiService, private app: AppComponent,
+              public datepipe: DatePipe) { }
   private patient: PaatientInterface;
   Estimado = 0;
+
+  fechadeHoy: Date;
   materialesArray = new FormControl();
   private servicios: ServicioInterface = {
 
@@ -35,15 +40,21 @@ export class OdontogramaserviciosComponent implements OnInit {
     Estatus: '',
     Estimado: '',
     serviciosTratados: '',
+    FechadeCreacion: '',
+    FechasdePagos: '',
   };
   onRegister(): void {
+    const now = new Date();
     this.presupuestoRe.Estimado =  this.Estimado.toString();
     this.presupuestoRe.idPatient = this.patient.id;
     this.presupuestoRe.PresupuestoDolares = this.Estimado.toString();
     this.presupuestoRe.Abono = '0';
     this.presupuestoRe.Estatus = 'Deuda';
     this.presupuestoRe.Debe = this.Estimado.toString();
+    this.presupuestoRe.FechadeCreacion = this.datepipe.transform(now, 'dd-MM-yyyy');
 
+ //   const fechaInicio = this.datepipe.transform(this.startDate, 'yyyy-MM-dd h:mm:ss.ssssss');
+ //   const fechaFinal = this.datepipe.transform(this.endDate, 'yyyy-MM-dd h:mm:ss.ssssss');
     this.auth.registerPresupuesto(
       this.presupuestoRe.idPatient,
       this.presupuestoRe.PresupuestoBsf,
@@ -52,7 +63,9 @@ export class OdontogramaserviciosComponent implements OnInit {
       this.presupuestoRe.Debe,
       this.presupuestoRe.Estatus,
       this.presupuestoRe.Estimado,
-      this.presupuestoRe.serviciosTratados
+      this.presupuestoRe.serviciosTratados,
+      this.presupuestoRe.FechadeCreacion,
+      this.presupuestoRe.FechasdePagos,
     ).subscribe(pieza => {
       this.router.navigate(['pacienteodontograma']);
      } );

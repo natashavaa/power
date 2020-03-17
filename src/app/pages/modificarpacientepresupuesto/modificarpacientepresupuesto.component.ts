@@ -5,6 +5,7 @@ import { DataApiService } from '../../services/data-api.service';
 import { AppComponent } from '../../app.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { PaatientInterface } from '../../models/patients.interface';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-modificarpacientepresupuesto',
@@ -14,7 +15,9 @@ import { PaatientInterface } from '../../models/patients.interface';
 export class ModificarpacientepresupuestoComponent implements OnInit {
 
   debe = 0;
-  constructor(private router: Router, private dataApi: DataApiService, private authService: AuthService, private app: AppComponent) { }
+  constructor(public datepipe: DatePipe, private router: Router,
+              private dataApi: DataApiService, private authService: AuthService,
+              private app: AppComponent) { }
   private presupuestoRe: PresupustoInterface = {
 
     idPatient: '',
@@ -32,12 +35,14 @@ export class ModificarpacientepresupuestoComponent implements OnInit {
     this.router.navigate(['historiaclinica']);
   }
   onRegisterPresupuesto(): void {
+    const now = new Date();
   //  this.presupuestoRe.Estimado =  this.Estimado.toString();
     this.presupuestoRe.idPatient = this.patient.id;
     //this.presupuestoRe.PresupuestoDolares = this.Estimado.toString();
    // this.presupuestoRe.Abono = '0';
    // this.presupuestoRe.Estatus = 'Deuda';
-    this.debe = parseInt(this.presupuestoRe.PresupuestoDolares, 10)  - parseInt(this.presupuestoRe.Abono, 10);
+    this.presupuestoRe.FechasdePagos = this.presupuestoRe.FechasdePagos + ',' + this.datepipe.transform(now, 'dd-MM-yyyy');
+
     this.presupuestoRe.Debe = this.debe.toString();
     this.authService.updatePresupuesto(
       this.presupuestoRe.id,
@@ -48,7 +53,9 @@ export class ModificarpacientepresupuestoComponent implements OnInit {
       this.presupuestoRe.Debe,
       this.presupuestoRe.Estatus,
       this.presupuestoRe.Estimado,
-      this.presupuestoRe.serviciosTratados
+      this.presupuestoRe.serviciosTratados,
+      this.presupuestoRe.FechadeCreacion,
+      this.presupuestoRe.FechasdePagos
     ).subscribe(pieza => {
       this.router.navigate(['pacientepresupuesto']);
      } );
@@ -60,7 +67,15 @@ export class ModificarpacientepresupuestoComponent implements OnInit {
   consulta(): void {
     this.router.navigate(['pacienteconsulta']);
   }
-
+  onCheckboxChange(e, servicio: PresupustoInterface) {
+    if (e.target.value > this.presupuestoRe.Debe) {
+      alert('Sobre Pasa el limite de la deuda');
+    } else {
+      this.debe = parseInt(this.presupuestoRe.Debe, 10)  - parseInt(this.presupuestoRe.Abono, 10);
+      this.presupuestoRe.Debe = this.debe.toString();
+    }
+    console.log(this.presupuestoRe.Debe);
+    }
   procedimiento(): void {
     this.router.navigate(['pacienteprocedimiento']);
   }

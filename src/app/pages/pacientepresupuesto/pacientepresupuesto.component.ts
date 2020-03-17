@@ -24,6 +24,8 @@ export class PacientepresupuestoComponent implements OnInit {
     Estatus: '',
     Estimado: '',
     serviciosTratados: '',
+    FechadeCreacion: '',
+    FechasdePagos: '',
   };
   private patient: PaatientInterface;
   getlistAllPresupuestopatients() {

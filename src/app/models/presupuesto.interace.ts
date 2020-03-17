@@ -8,4 +8,6 @@ export interface PresupustoInterface {
   Estatus?: string;
   Estimado?: string;
   serviciosTratados?: string;
+  FechadeCreacion?: string;
+  FechasdePagos?: string;
 }
