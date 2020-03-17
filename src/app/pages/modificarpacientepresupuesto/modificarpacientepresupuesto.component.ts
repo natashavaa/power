@@ -41,7 +41,7 @@ export class ModificarpacientepresupuestoComponent implements OnInit {
     //this.presupuestoRe.PresupuestoDolares = this.Estimado.toString();
    // this.presupuestoRe.Abono = '0';
    // this.presupuestoRe.Estatus = 'Deuda';
-    this.presupuestoRe.FechasdePagos = this.presupuestoRe.FechasdePagos + ',' + this.datepipe.transform(now, 'dd-MM-yyyy');
+    this.presupuestoRe.FechasdePagos = this.presupuestoRe.FechasdePagos + '  ' + this.datepipe.transform(now, 'dd-MM-yyyy');
 
     this.presupuestoRe.Debe = this.debe.toString();
     this.authService.updatePresupuesto(
