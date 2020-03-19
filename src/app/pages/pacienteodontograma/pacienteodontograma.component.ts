@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from '../../app.component';
+import { AuthService } from '../../services/auth.service';
+import { DataApiService } from '../../services/data-api.service';
+import { PiezaDentalInterface } from '../../models/piezadental.interface';
+import { DomSanitizer } from '@angular/platform-browser';
+import { PadecimientoporDienteInterface } from '../../models/piezaconPadecimiento.interface';
 
 @Component({
   selector: 'app-pacienteodontograma',
@@ -9,10 +14,15 @@ import { AppComponent } from '../../app.component';
 })
 export class PacienteodontogramaComponent implements OnInit {
 
-  constructor(private router: Router,private app: AppComponent) { }
+  constructor(private router: Router,private app: AppComponent, private auth: AuthService, private dataApi: DataApiService,
+              private _sanitizer: DomSanitizer) { }
   momentoC: string;
+  private piezasdental: PiezaDentalInterface = {};
+  private piezasdentalconpadecimientos: PadecimientoporDienteInterface = {};
+  MostrarPadecimientos = false;
   ngOnInit() {
     this.app.mostrar = true;
+    this.getAllPiezasdentales();
   }
   getType(): void {
     if ( Object.is(this.momentoC, 'Diente por Diente')) {
@@ -22,6 +32,14 @@ export class PacienteodontogramaComponent implements OnInit {
     } else if (Object.is(this.momentoC, 'Ortodoncia')) {
       this.router.navigate(['ortodoncia']);
     }
+  }
+  convert(imagen) {
+    return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'
+       + imagen);
+  }
+  getAllPiezasdentales() {
+    // tslint:disable-next-line: max-line-length
+    this.dataApi.getAllPiezasDentales().subscribe((piezasdentales: PiezaDentalInterface) => { this.piezasdental = piezasdentales; console.log(this.piezasdental); } );
   }
   datos(): void {
     this.router.navigate(['historiaclinica']);
@@ -36,7 +54,6 @@ export class PacienteodontogramaComponent implements OnInit {
   }
 
   procedimiento(): void {
-    this.router.navigate(['pacienteprocedimiento']);
   }
 
   seguimiento(): void {
@@ -47,8 +64,12 @@ export class PacienteodontogramaComponent implements OnInit {
     this.router.navigate(['pacienteodontograma']);
   }
 
-  padecimiento(): void {
-    this.router.navigate(['pacientepadecimiento']);
+  padecimiento(piezasdental: PiezaDentalInterface): void {
+    console.log(piezasdental);
+    // tslint:disable-next-line: max-line-length
+    this.dataApi.getAllPadecimientosxpiezaporNomeclatura(piezasdental.Nomenclatura).subscribe((piezasdentalconpadecimientos: PadecimientoporDienteInterface) => { this.piezasdentalconpadecimientos = piezasdentalconpadecimientos; console.log(this.piezasdentalconpadecimientos); } );
+    this.MostrarPadecimientos = true;
+    this.ngOnInit();
   }
 
   informacion(): void {

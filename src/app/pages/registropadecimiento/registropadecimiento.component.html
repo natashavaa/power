@@ -22,7 +22,7 @@
                         <br>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">Descripcion</label>
-                            <input type="text" #Descripcion="ngModel" name="Descripcion" class="form-control" placeholder="" [(ngModel)]='PadecimientoRe.Descripcion' required minlength="4" maxlength="50" class="form-control col-5">
+                            <input type="text" #Descripcion="ngModel" name="Descripcion" class="form-control" placeholder="" [(ngModel)]='PadecimientoRe.Descripcion' required minlength="4" maxlength="450" class="form-control col-5">
                         </div>
                         <div class="alert alert-danger" role="alert" *ngIf="Descripcion.touched && !Descripcion.valid">
                             <div *ngIf="Descripcion.errors.required">Campo requerido</div>

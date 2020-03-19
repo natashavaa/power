@@ -95,6 +95,10 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/piezadental' ;
     return this.http.get(urlApi);
   }
+  getAllPadecimientosxpiezaporNomeclatura(nom: string) {
+    const urlApi = `http://localhost:3000/padecimientoporPieza/nomeclatura/${nom}` ;
+    return this.http.get(urlApi);
+  }
   getAllServicios() {
     const urlApi = 'http://localhost:3000/servicios' ;
     return this.http.get(urlApi);

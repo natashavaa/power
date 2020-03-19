@@ -115,8 +115,7 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                             <br>
-                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento"
-                                [(ngModel)]="momentoC">
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
                                 <option selected>Diente por Diente</option>
                                 <option>Todos los Dientes</option>
                                 <option>Ortodoncia</option>
@@ -155,41 +154,40 @@
                 <div class="form-group row col-12 d-block">
                     <div>
                         <div class="mar">
-                            <img class="mar" (click)="padecimiento()" height="50" width="50"
-                                src="assets/dientesanos/Diente1.png">
-                            <img class="mar" height="60" width="60" src="assets/dientesanos/Diente2.png">
-                            <img class="mar" height="70" width="70" src="assets/dientesanos/Diente3.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente4.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente5.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente6.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente7.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente8.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente9.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente10.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente11.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente12.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente13.png">
-                            <img class="mar" height="70" width="70" src="assets/dientesanos/Diente14.png">
-                            <img class="mar" height="60" width="60" src="assets/dientesanos/Diente15.png">
-                            <img class="mar" height="50" width="50" src="assets/dientesanos/Diente16.png">
+                            <img class="mar" (click)="padecimiento(piezasdental[0])" height="60" width="60<" [src]="convert(piezasdental[0].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[1])" height="60" width="60" [src]="convert(piezasdental[1].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[2])" height="70" width="70" [src]="convert(piezasdental[2].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[3])" height="30" width="30" [src]="convert(piezasdental[3].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[4])" height="30" width="30" [src]="convert(piezasdental[4].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[5])" height="30" width="30" [src]="convert(piezasdental[5].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[6])" height="30" width="30" [src]="convert(piezasdental[6].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[7])" height="30" width="30" [src]="convert(piezasdental[7].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[8])" height="30" width="30" [src]="convert(piezasdental[8].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[9])" height="30" width="30" [src]="convert(piezasdental[9].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[10])" height="30" width="30" [src]="convert(piezasdental[10].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[11])" height="30" width="30" [src]="convert(piezasdental[11].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[12])" height="30" width="30" [src]="convert(piezasdental[12].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[13])" height="70" width="70" [src]="convert(piezasdental[13].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[14])" height="60" width="60" [src]="convert(piezasdental[14].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[15])" height="50" width="50" [src]="convert(piezasdental[15].Imagen)">
                         </div>
                         <div>
-                            <img class="mar" height="50" width="50" src="assets/dientesanos/Diente17.png">
-                            <img class="mar" height="60" width="60" src="assets/dientesanos/Diente18.png">
-                            <img class="mar" height="70" width="70" src="assets/dientesanos/Diente19.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente20.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente21.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente22.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente23.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente24.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente25.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente26.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente27.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente28.png">
-                            <img class="mar" height="30" width="30" src="assets/dientesanos/Diente29.png">
-                            <img class="mar" height="70" width="70" src="assets/dientesanos/Diente30.png">
-                            <img class="mar" height="60" width="60" src="assets/dientesanos/Diente31.png">
-                            <img class="mar" height="50" width="50" src="assets/dientesanos/Diente32.png">
+                            <img class="mar" (click)="padecimiento(piezasdental[16])" height="50" width="50" [src]="convert(piezasdental[16].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[17])" height="60" width="60" [src]="convert(piezasdental[17].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[18])" height="70" width="70" [src]="convert(piezasdental[18].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[19])" height="30" width="30" [src]="convert(piezasdental[19].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[20])" height="30" width="30" [src]="convert(piezasdental[20].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[21])" height="30" width="30" [src]="convert(piezasdental[21].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[22])" height="30" width="30" [src]="convert(piezasdental[22].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[23])" height="30" width="30" [src]="convert(piezasdental[23].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[24])" height="30" width="30" [src]="convert(piezasdental[24].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[25])" height="30" width="30" [src]="convert(piezasdental[25].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[26])" height="30" width="30" [src]="convert(piezasdental[26].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[27])" height="30" width="30" [src]="convert(piezasdental[27].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[28])" height="30" width="30" [src]="convert(piezasdental[28].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[29])" height="70" width="70" [src]="convert(piezasdental[29].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[30])" height="60" width="60" [src]="convert(piezasdental[30].Imagen)">
+                            <img class="mar" (click)="padecimiento(piezasdental[31])" height="60" width="50" [src]="convert(piezasdental[31].Imagen)">
                         </div>
                     </div>
 
@@ -197,6 +195,27 @@
             </div>
             <br>
             <br>
+            <div class="row" *ngIf="MostrarPadecimientos">
+                <div class="form-group row col-12 d-block">
+                    <div>
+                        <div>
+                            <img class="mar" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[0].Imagen)">
+                            <img class="mar" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[1].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[2].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[3].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[4].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[5].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[6].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[7].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[8].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[9].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[10].Imagen)">
+                            <img class="mar" height="100" width="100" [src]="convert(piezasdentalconpadecimientos[11].Imagen)">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </mat-card-content>
     </div>
 </div>
