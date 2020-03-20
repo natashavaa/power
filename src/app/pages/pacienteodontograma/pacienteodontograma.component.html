@@ -227,11 +227,11 @@
                                 <fieldset disabled>
                                     <div class="form-group row">
                                         <label for="" class="col-4 col-form-label">Pieza</label>
-                                        <input placeholder="" class="form-control col-6">
+                                        <input #piezaux="ngModel" name="piezaux" [(ngModel)]='formulario.piezaux' class="form-control col-6">
                                     </div>
                                     <div class="form-group row">
                                         <label for="" class="col-4 col-form-label">Padecimiento</label>
-                                        <input placeholder="" class="form-control col-6">
+                                        <input #padecimientoaux="ngModel" name="padecimientoaux" [(ngModel)]='formulario.padecimientoaux' class="form-control col-6">
                                     </div>
                                     <div class="form-group row">
                                         <mat-label for="" class="col-4 col-form-label">Procedimiento Odontologico</mat-label>
@@ -273,15 +273,8 @@
                                         <br>
                                         <input type="text">
                                     </div>
-                                    <div class="form-group row">
-                                        <mat-label for="" class="col-4 col-form-label">Posicion</mat-label>
-                                        <br>
-                                        <input type="text">
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-4 col-form-label">Consultas Posteriores</label>
-                                        <input placeholder="" class="form-control col-6">
-                                    </div>
+
+
                                 </fieldset>
                             </form>
                         </div>

@@ -7,6 +7,7 @@ import { PiezaDentalInterface } from '../../models/piezadental.interface';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PadecimientoporDienteInterface } from '../../models/piezaconPadecimiento.interface';
 import { OdontogramaInterface } from '../../models/odontograma.interface';
+import { FormularioInterface } from '../../models/formulario.interface';
 
 @Component({
   selector: 'app-pacienteodontograma',
@@ -18,6 +19,7 @@ export class PacienteodontogramaComponent implements OnInit {
   constructor(private router: Router,private app: AppComponent, private auth: AuthService, private dataApi: DataApiService,
               private _sanitizer: DomSanitizer) { }
   momentoC: string;
+
   pieza1 = false;
   pieza2 = false;
   pieza3 = false;
@@ -50,7 +52,11 @@ export class PacienteodontogramaComponent implements OnInit {
   pieza30 = false;
   pieza31 = false;
   pieza32 = false;
-
+  private formulario: FormularioInterface = {
+    piezaux: '',
+    padecimientoaux: '',
+    posicionaux: '',
+  };
   private piezasdental: PiezaDentalInterface = {};
   private odontogramaoficial: OdontogramaInterface = {};
   private piezasdentalconpadecimientos: PadecimientoporDienteInterface = {};
@@ -1243,9 +1249,15 @@ export class PacienteodontogramaComponent implements OnInit {
     this.ngOnInit();
   }
   llenarFormulario(piezasdentalconpadecimiento: PadecimientoporDienteInterface): void {
+    console.log(piezasdentalconpadecimiento.Ubicacion);
     if (this.pieza1 === true ) {
       this.odontogramaoficial.Imagen1 = piezasdentalconpadecimiento.Imagen;
-
+      this.odontogramaoficial.NombrePieza1 = piezasdentalconpadecimiento.NombrePieza;
+      this.odontogramaoficial.NombrePadecimiento1 = piezasdentalconpadecimiento.NombrePadecimiento;
+      this.odontogramaoficial.Posicion1 = piezasdentalconpadecimiento.Ubicacion;
+      this.formulario.piezaux = this.odontogramaoficial.NombrePieza1;
+      this.formulario.padecimientoaux = this.odontogramaoficial.NombrePadecimiento1;
+      this.formulario.posicionaux = this.odontogramaoficial.Posicion1;
     } else if (this.pieza2 === true) {
       this.odontogramaoficial.Imagen2 = piezasdentalconpadecimiento.Imagen;
     }  else if (this.pieza3 === true) {
