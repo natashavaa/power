@@ -17,7 +17,7 @@ import { ProcedimientoApadecimentoInterface } from '../../models/procedimientoap
 })
 export class PacienteodontogramaComponent implements OnInit {
 
-  constructor(private router: Router,private app: AppComponent, private auth: AuthService, private dataApi: DataApiService,
+  constructor(private router: Router, private app: AppComponent, private auth: AuthService, private dataApi: DataApiService,
               private _sanitizer: DomSanitizer) { }
   momentoC: string;
 
