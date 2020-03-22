@@ -95,9 +95,14 @@ onRegisterSeguimiento() {
 datos(): void {
   this.router.navigate(['historiaclinica']);
 }
-
+imagen(): void {
+  this.router.navigate(['imagenes']);
+}
 consulta(): void {
   this.router.navigate(['pacienteconsulta']);
+}
+cancelar() {
+  this.router.navigate(['pacienteseguimiento']);
 }
 
 procedimiento(): void {

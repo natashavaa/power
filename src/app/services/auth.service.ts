@@ -27,6 +27,7 @@ import { ServicioInterface } from '../models/servicios.interface';
 import { PresupustoInterface } from 'src/app/models/presupuesto.interace';
 import { OdontogramaInterface } from '../models/odontograma.interface';
 import { SeguimientoDienteInterface } from '../models/seguimientodiente.interdace';
+import { TodoslosdientesInterface } from '../models/todoslosdientes.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -855,6 +856,33 @@ registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus:
   Estatus: Estatus,
   // tslint:disable-next-line: object-literal-shorthand
   costo: costo,
+
+  },
+  );
+}
+registertodoslosdientes(idPatient: string, ProcedimientoOdontologico: string, Estatus: string, Instrumentos: string, Materiales: string,
+                        Diagnostico: string, Recomendaciones: string, Observaciones: string) {
+  const urlApi = 'http://localhost:3000/procedimiento';
+  return this.htttp
+  .post<TodoslosdientesInterface>(
+  urlApi,
+  {
+    // tslint:disable-next-line: object-literal-shorthand
+    idPatient: idPatient,
+  // tslint:disable-next-line: object-literal-shorthand
+  ProcedimientoOdontologico: ProcedimientoOdontologico,
+  // tslint:disable-next-line: object-literal-shorthand
+  Estatus: Estatus,
+  // tslint:disable-next-line: object-literal-shorthand
+  Instrumentos: Instrumentos,
+  // tslint:disable-next-line: object-literal-shorthand
+  Materiales: Materiales,
+  // tslint:disable-next-line: object-literal-shorthand
+  Diagnostico: Diagnostico,
+  // tslint:disable-next-line: object-literal-shorthand
+  Recomendaciones: Recomendaciones,
+  // tslint:disable-next-line: object-literal-shorthand
+  Observaciones: Observaciones,
 
   },
   );

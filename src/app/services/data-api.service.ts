@@ -99,8 +99,16 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/piezadental' ;
     return this.http.get(urlApi);
   }
+  getAllProcedimientosTodoslosdientes() {
+    const urlApi = 'http://localhost:3000/procedimientoapadecimiento/todoslosdientes' ;
+    return this.http.get(urlApi);
+  }
   getAllodontogramasbypatient(id) {
     const urlApi = `http://localhost:3000/odontograma/patient${id}` ;
+    return this.http.get(urlApi);
+  }
+  getAllprocedimientopornombre(nombre) {
+    const urlApi = `http://localhost:3000/procedimientoapadecimiento/nombreprocedimiento/${nombre}` ;
     return this.http.get(urlApi);
   }
   getAllPadecimientosxpiezaporNomeclatura(nom: string) {

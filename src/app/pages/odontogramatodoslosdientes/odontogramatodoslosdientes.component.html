@@ -111,8 +111,7 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                             <br>
-                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento"
-                                [(ngModel)]="momentoC">
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
                                 <option selected>Diente por Diente</option>
                                 <option>Todos los Dientes</option>
                                 <option>Ortodoncia</option>
@@ -126,20 +125,7 @@
                 </div>
                 <div class="col-6">
                     <br>
-                    <form action="">
-                        <div class="form-group row">
-                            <mat-label for="" class="col-4 col-form-label">Estatus</mat-label>
-                            <br>
-                            <select class="form-control col-5">
-                                <option>Evaluado</option>
-                                <option>Iniciado</option>
-                                <option>Terminado</option>
-                            </select>
-                            <div class="col-1">
-                                <button class="sinp" type="submit" class="btn btn-success">Ir</button>
-                            </div>
-                        </div>
-                    </form>
+
                 </div>
             </div>
 
@@ -151,66 +137,88 @@
             <br>
             <br>
             <div class="row">
-                <div class="col-6">
-                    <br>
-                    <form action="">
-                        <div class="form-group row">
-                            <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
-                            <br>
-                            <select class="form-control col-6">
-                                <option selected>Seleccionar</option>
-
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-6">
-                    <br>
-                    <form action="">
-                        <div class="form-group row">
-                            <mat-label for="" class="col-4 col-form-label">Materiales</mat-label>
-                            <br>
-                            <select class="form-control col-6">
-                                <option selected>Seleccionar</option>
-
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-6">
+                <div class="col-5">
                     <br>
                     <form action="">
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Procedimiento Odontologico</mat-label>
                             <br>
-                            <select class="form-control col-6">
-                                <option>Blanqueamiento</option>
-                                <option>Profilaxis</option>
-                                <option>Topificacion de flour</option>
-                                <option>Toma de Impresion</option>
-                                <option>Gingivectomia</option>
-                                <option>Anodoncia</option>
-                            </select>
+                            <select #Procedimiento="ngModel" name="Procedimiento" [(ngModel)]='todoslosdientesOficial.ProcedimientoOdontologico' id="Procedimiento" class="form-control col-5">
+                        <option *ngFor="let procedimientoaPad of procedimientoaPad" [ngValue]="procedimientoaPad.NombreProcedimiento" >
+                            {{procedimientoaPad.NombreProcedimiento}}</option>
+                    </select>
+                            <div class="col-1 ">
+                                <button class="sinp " (click)="buscarProcedimiento(procedimientoaPad.NombreProcedimiento)" class="btn btn-success ">Seleccionar</button>
+                            </div>
                         </div>
                     </form>
                 </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-5">
+                    <div>
+                        <form action="">
+                            <div class="form-group row">
+                                <mat-label for="" class="col-3 col-form-label">Estatus</mat-label>
+                                <br>
+                                <select class="form-control col-4" #Estatus="ngModel" name="Estatus" [(ngModel)]='todoslosdientesOficial.Estatus'>
+                          <option>Evaluado</option>
+                          <option>Iniciado</option>
+                          <option>Terminado</option>
+                      </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+            </div>
+            <div class="row">
+                <div class="col-1">
+
+                </div>
+                <div class="col-4">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-3 col-form-label">Instrumentos</mat-label>
+                            <textarea disabled class="form-control" rows="5" #instrumentosaux="ngModel" name="instrumentosaux" [(ngModel)]='todoslosdientesOficial.Instrumentos'></textarea>
+                            <!--   <input #instrumentosaux="ngModel" name="instrumentosaux" [(ngModel)]='formulario.instrumentosaux' type="text">-->
+                        </div>
+                    </form>
+                </div>
+                <div class="col-2">
+
+                </div>
+                <div class="col-4">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-3 col-form-label">Materiales</mat-label>
+                            <textarea disabled class="form-control" rows="5" #materialesaux="ngModel" name="materialesaux" [(ngModel)]='todoslosdientesOficial.Materiales'></textarea>
+                            <!--  <input #materialesaux="ngModel" name="materialesaux" [(ngModel)]='formulario.materialesaux' type="text">-->
+                        </div>
+                    </form>
+                </div>
+
             </div>
             <br>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Diagnostico</label>
-                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                <textarea #Diagnostico="ngModel" name="Diagnostico" [(ngModel)]='todoslosdientesOficial.Diagnostico' rows="3" class="form-control col-6"></textarea>
             </div>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Recomendaciones</label>
-                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                <textarea #Recomendaciones="ngModel" name="Recomendaciones" [(ngModel)]='todoslosdientesOficial.Recomendaciones' rows="3" class="form-control col-6"></textarea>
             </div>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Observaciones</label>
-                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                <textarea #Observaciones="ngModel" name="Observaciones" [(ngModel)]='todoslosdientesOficial.Observaciones' rows="3" class="form-control col-6"></textarea>
             </div>
 
-            <button mat-raised-button class="btn btn-success" >Guardar</button>
-            <button mat-raised-button  class="btn btn-danger">Cancelar</button>
+            <button mat-raised-button (click)="guardar()" class="btn btn-success">Guardar</button>
+            <button mat-raised-button class="btn btn-danger">Cancelar</button>
         </mat-card-content>
     </div>
 </div>
