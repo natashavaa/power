@@ -19,6 +19,10 @@ export class DataApiService {
     const urlApi = `http://localhost:3000/patient/doctor${name}`;
     return this.http.get(urlApi);
   }
+  getSeguimientoByOdontograma(id) {
+    const urlApi = `http://localhost:3000/seguimientoadiente/odontograma/${id}`;
+    return this.http.get(urlApi);
+  }
   getAllRecipePatient(id: string) {
     const urlApi = `http://localhost:3000/recipe/patientrecipe${id}`;
     return this.http.get(urlApi);
@@ -93,6 +97,10 @@ export class DataApiService {
   }
   getAllPiezasDentales() {
     const urlApi = 'http://localhost:3000/piezadental' ;
+    return this.http.get(urlApi);
+  }
+  getAllodontogramasbypatient(id) {
+    const urlApi = `http://localhost:3000/odontograma/patient${id}` ;
     return this.http.get(urlApi);
   }
   getAllPadecimientosxpiezaporNomeclatura(nom: string) {

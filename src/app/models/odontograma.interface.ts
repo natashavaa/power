@@ -1,6 +1,7 @@
 export interface OdontogramaInterface {
   id?: string;
   idPatient?: string;
+  diagnosticoCompleto?: string;
   status?: string;
   NombrePieza1?: string;
   Nomenclatura1?: string;

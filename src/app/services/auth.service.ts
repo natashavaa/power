@@ -25,6 +25,8 @@ import { InformeMedicoInterface } from '../models/informemedico.interface';
 import { PadecimientoADienteComponent } from '../pages/padecimiento-adiente/padecimiento-adiente.component';
 import { ServicioInterface } from '../models/servicios.interface';
 import { PresupustoInterface } from 'src/app/models/presupuesto.interace';
+import { OdontogramaInterface } from '../models/odontograma.interface';
+import { SeguimientoDienteInterface } from '../models/seguimientodiente.interdace';
 @Injectable({
   providedIn: 'root'
 })
@@ -63,6 +65,219 @@ registerUser(name: string, phone: string, password: string, dni: string,
         },
       );
   }
+  registerOdontograma(
+    idPatient: string,
+    status: string,
+    NombrePadecimiento1: string,
+    Imagen1: string,
+    NombrePadecimiento2: string,
+    Imagen2: string,
+    NombrePadecimiento3: string,
+    Imagen3: string,
+    NombrePadecimiento4: string,
+    Imagen4: string,
+    NombrePadecimiento5: string,
+    Imagen5: string,
+    NombrePadecimiento6: string,
+    Imagen6: string,
+    NombrePadecimiento7: string,
+    Imagen7: string,
+    NombrePadecimiento8: string,
+    Imagen8: string,
+    NombrePadecimiento9: string,
+    Imagen9: string,
+    NombrePadecimiento10: string,
+    Imagen10: string,
+    NombrePadecimiento11: string,
+    Imagen11: string,
+    NombrePadecimiento12: string,
+    Imagen12: string,
+    NombrePadecimiento13: string,
+    Imagen13: string,
+    NombrePadecimiento14: string,
+    Imagen14: string,
+    NombrePadecimiento15: string,
+    Imagen15: string,
+    NombrePadecimiento16: string,
+    Imagen16: string,
+    NombrePadecimiento17: string,
+    Imagen17: string,
+    NombrePadecimiento18: string,
+    Imagen18: string,
+    NombrePadecimiento19: string,
+    Imagen19: string,
+    NombrePadecimiento20: string,
+    Imagen20: string,
+    NombrePadecimiento21: string,
+    Imagen21: string,
+    NombrePadecimiento22: string,
+    Imagen22: string,
+    NombrePadecimiento23: string,
+    Imagen23: string,
+    NombrePadecimiento24: string,
+    Imagen24: string,
+    NombrePadecimiento25: string,
+    Imagen25: string,
+    NombrePadecimiento26: string,
+    Imagen26: string,
+    NombrePadecimiento27: string,
+    Imagen27: string,
+    NombrePadecimiento28: string,
+    Imagen28: string,
+    NombrePadecimiento29: string,
+    Imagen29: string,
+    NombrePadecimiento30: string,
+    Imagen30: string,
+    NombrePadecimiento31: string,
+    Imagen31: string,
+    NombrePadecimiento32: string,
+    Imagen32: string,
+    diagnosticoCompleto: string
+  ) {
+const urlApi = 'http://localhost:3000/odontograma';
+return this.htttp
+.post<OdontogramaInterface>(
+urlApi,
+{
+  // tslint:disable-next-line: object-literal-shorthand
+  idPatient: idPatient,
+  // tslint:disable-next-line: object-literal-shorthand
+  status: status,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento1: NombrePadecimiento1,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen1: Imagen1,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento2: NombrePadecimiento2,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen2: Imagen2,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento3: NombrePadecimiento3,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen3: Imagen3,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento4: NombrePadecimiento4,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen4: Imagen4,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento5: NombrePadecimiento5,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen5: Imagen5,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento6: NombrePadecimiento6,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen6: Imagen6,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento7: NombrePadecimiento7,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen7: Imagen7,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento8: NombrePadecimiento8,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen8: Imagen8,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento9: NombrePadecimiento9,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen9: Imagen9,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento10: NombrePadecimiento10,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen10: Imagen10,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento11: NombrePadecimiento11,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen11: Imagen11,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento12: NombrePadecimiento12,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen12: Imagen12,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento13: NombrePadecimiento13,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen13: Imagen13,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento14: NombrePadecimiento14,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen14: Imagen14,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento15: NombrePadecimiento15,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen15: Imagen15,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento16: NombrePadecimiento16,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen16: Imagen16,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento17: NombrePadecimiento17,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen17: Imagen17,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento18: NombrePadecimiento18,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen18: Imagen18,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento19: NombrePadecimiento19,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen19: Imagen19,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento20: NombrePadecimiento20,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen20: Imagen20,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento21: NombrePadecimiento21,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen21: Imagen21,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento22: NombrePadecimiento22,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen22: Imagen22,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento23: NombrePadecimiento23,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen23: Imagen23,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento24: NombrePadecimiento24,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen24: Imagen24,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento25: NombrePadecimiento25,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen25: Imagen25,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento26: NombrePadecimiento26,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen26: Imagen26,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento27: NombrePadecimiento27,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen27: Imagen27,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento28: NombrePadecimiento28,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen28: Imagen28,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento29: NombrePadecimiento29,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen29: Imagen29,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento30: NombrePadecimiento30,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen30: Imagen30,
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento31: NombrePadecimiento31,
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen31: Imagen31,
+  // tslint: disable-next-line: object-literal-shorthand
+  // tslint:disable-next-line: object-literal-shorthand
+  NombrePadecimiento32: NombrePadecimiento32,
+  // tslint: disable-next-line: object-literal-shorthand
+  // tslint:disable-next-line: object-literal-shorthand
+  Imagen32: Imagen32,
+  // tslint:disable-next-line: object-literal-shorthand
+  diagnosticoCompleto: diagnosticoCompleto,
+},
+);
+}
   updateMaterial(id: string, name: string, cantidad: number,
                  especiality: string, costo: string, idDoctor: string,
                  estadoDisp: string, usados: number) {
@@ -414,7 +629,7 @@ registerPresupuesto(idPatient: string, PresupuestoBsf: string, PresupuestoDolare
 }
 updatePresupuesto(id: string, idPatient: string, PresupuestoBsf: string, PresupuestoDolares: string,
                   Abono: string, Debe: string, Estatus: string,
-                  Estimado: string, serviciosTratados: string,FechadeCreacion: string,
+                  Estimado: string, serviciosTratados: string, FechadeCreacion: string,
                   FechasdePagos: string) {
 const urlApi = 'http://localhost:3000/presupuesto/update';
 return this.htttp
@@ -640,6 +855,30 @@ registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus:
   Estatus: Estatus,
   // tslint:disable-next-line: object-literal-shorthand
   costo: costo,
+
+  },
+  );
+}
+registerSeguimiento(idOdontograma: string, Fecha: string,
+                    TratamientoEfectuado: string, Observaciones: string,
+                    ConsultasPosteriores: string, Estatus: string) {
+  const urlApi = 'http://localhost:3000/seguimientoadiente';
+  return this.htttp
+  .post<SeguimientoDienteInterface>(
+  urlApi,
+  {
+    // tslint:disable-next-line: object-literal-shorthand
+    idOdontograma: idOdontograma,
+  // tslint:disable-next-line: object-literal-shorthand
+  Fecha: Fecha,
+  // tslint:disable-next-line: object-literal-shorthand
+  TratamientoEfectuado: TratamientoEfectuado,
+  // tslint:disable-next-line: object-literal-shorthand
+  Observaciones: Observaciones,
+  // tslint:disable-next-line: object-literal-shorthand
+  ConsultasPosteriores: ConsultasPosteriores,
+   // tslint:disable-next-line: object-literal-shorthand
+   Estatus: Estatus,
 
   },
   );
@@ -994,6 +1233,10 @@ loginuser(username: string, password: string): Observable<any> {
     const patientString = JSON.stringify(patient);
     localStorage.setItem('currentPatient', patientString);
   }
+  setOdontogramaDiente(patient: OdontogramaInterface): void {
+    const patientString = JSON.stringify(patient);
+    localStorage.setItem('currentOdontogramaDiente', patientString);
+  }
 
   setToken(token): void {
     localStorage.setItem('accessToken', token);
@@ -1016,6 +1259,15 @@ loginuser(username: string, password: string): Observable<any> {
     const userString = localStorage.getItem('currentPresupuesto');
     if (!isNullOrUndefined(userString)) {
       const user: PresupustoInterface = JSON.parse(userString);
+      return user;
+    } else {
+      return null;
+    }
+  }
+  getCurrentOdontogramaDiente(): OdontogramaInterface {
+    const userString = localStorage.getItem('currentOdontogramaDiente');
+    if (!isNullOrUndefined(userString)) {
+      const user: OdontogramaInterface = JSON.parse(userString);
       return user;
     } else {
       return null;

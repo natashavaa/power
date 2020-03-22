@@ -1,0 +1,266 @@
+<div class="container">
+    <div class="left">
+        <br>
+        <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
+        <mat-card-content>
+            <mat-list>
+                <mat-card-title>
+                    <h5 align="center">{{patient.name}}</h5>
+                    <h1 align="center">{{patient.age}} años</h1>
+                </mat-card-title>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="datos()" class="a">Datos Personales</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/lifecycle.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="imagen()" class="b">Evolucion</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/counselor.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="consulta()" class="c">Consultas</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/workflow.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/details-popup.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="seguimiento()" class="e">Seguimiento</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <!-- <mat-list-item>
+                 <form>
+                      <div>
+                          <button mat-stroked-button (click)="odontograma()" class="f">Odontograma</button>
+                      </div>
+                  </form>
+              </mat-list-item> -->
+                <mat-list-item>
+                    <img clas="tres" src="https://img.icons8.com/dusk/50/000000/resume.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="informacion()" class="g">Historial Clinico</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/hint.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="recipe()" class="h">Recipe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img src="https://img.icons8.com/cotton/50/000000/treatment-list.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="informe()" class="j">Informe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img src="https://img.icons8.com/dusk/50/000000/budget.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </div>
+
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+
+            </mat-card-title>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="form-group row col-12 d-block">
+                    <div>
+                        <div class="mar">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento1)" eight="60" width="60" [src]="convert(odontogramaoficial.Imagen1)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento2)" eight="60" width="60" [src]="convert(odontogramaoficial.Imagen2)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento3)" eight="70" width="70" [src]="convert(odontogramaoficial.Imagen3)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento4)" eight="30" width="30" [src]="convert(odontogramaoficial.Imagen4)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento5)" eight="30" width="30" [src]="convert(odontogramaoficial.Imagen5)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento6)" eight="30" width="30" [src]="convert(odontogramaoficial.Imagen6)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento7)" eight="30" width="30" [src]="convert(odontogramaoficial.Imagen7)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento8)" eight="30" width="30" [src]="convert(odontogramaoficial.Imagen8)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento9)" eight="30" width="30" [src]="convert(odontogramaoficial.Imagen9)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento10)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen10)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento11)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen11)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento12)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen12)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento13)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen13)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento14)" height="70" width="70" [src]="convert(odontogramaoficial.Imagen14)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento15)" height="60" width="60" [src]="convert(odontogramaoficial.Imagen15)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento16)" height="50" width="50" [src]="convert(odontogramaoficial.Imagen16)">
+                        </div>
+                        <div>
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento17)" height="50" width="50" [src]="convert(odontogramaoficial.Imagen17)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento18)" height="60" width="60" [src]="convert(odontogramaoficial.Imagen18)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento19)" height="70" width="70" [src]="convert(odontogramaoficial.Imagen19)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento20)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen20)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento21)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen21)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento22)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen22)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento23)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen23)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento24)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen24)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento25)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen25)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento26)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen26)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento27)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen27)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento28)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen28)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento29)" height="30" width="30" [src]="convert(odontogramaoficial.Imagen29)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento30)" height="70" width="70" [src]="convert(odontogramaoficial.Imagen30)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento31)" height="60" width="60" [src]="convert(odontogramaoficial.Imagen31)">
+                            <img class="mar" (click)="verdetallespieza(odontogramaoficial.NombrePadecimiento32)" height="60" width="50" [src]="convert(odontogramaoficial.Imagen32)">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class=" col-12">
+                <form action="">
+                    <fieldset disabled>
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
+                                <textarea class="form-control" rows="5" #instrumentosaux="ngModel" name="instrumentosaux" [(ngModel)]='formulario.instrumentosaux'></textarea>
+                                <!--   <input #instrumentosaux="ngModel" name="instrumentosaux" [(ngModel)]='formulario.instrumentosaux' type="text">-->
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <mat-label for="" class="col-4 col-form-label">Materiales</mat-label>
+                                <textarea class="form-control" rows="5" #materialesaux="ngModel" name="materialesaux" [(ngModel)]='formulario.materialesaux'></textarea>
+                                <!--  <input #materialesaux="ngModel" name="materialesaux" [(ngModel)]='formulario.materialesaux' type="text">-->
+                            </div>
+                        </div>
+                        <div class="col-4">
+
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+
+            <form #formRegisterseguimiento="ngForm" (ngSubmit)="onRegisterSeguimiento(formRegisterseguimiento)">
+                <div class="row">
+                    <div class="col-6">
+
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Fecha </mat-label>
+                            <br>
+                            <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha" class="form-control col-4" [(ngModel)]="fecha">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
+
+                    </div>
+                    <div class="col-6">
+
+                        <div class="row">
+                            <div class="col-6">
+
+                                <fieldset>
+                                    <div class="form-group row">
+                                        <label for="" class="col-4 col-form-label">Consultas Posteriores</label>
+                                        <input #Consultas="ngModel" name="Consultas" [(ngModel)]='seguimientoRe.ConsultasPosteriores' class="form-control col-6">
+                                    </div>
+                                    <div class="form-group row">
+                                        <mat-label for="" class="col-4 col-form-label">Estatus</mat-label>
+
+                                        <select class="form-control col-5" #Estatus="ngModel" name="Estatus" [(ngModel)]='seguimientoRe.Estatus'>
+                                          <option>Evaluado</option>
+                                          <option>Iniciado</option>
+                                          <option>Terminado</option>
+                                      </select>
+
+                                    </div>
+                                </fieldset>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <label for="" class="col-4 col-form-label">Tratamiento Efectuado</label>
+                    <textarea #TratamientoEfectuado="ngModel" name="TratamientoEfectuado" [(ngModel)]='seguimientoRe.TratamientoEfectuado' rows="3" class="form-control col-6"></textarea>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4 col-form-label">Observaciones</label>
+                    <textarea #Observaciones="ngModel" name="Observaciones" [(ngModel)]='seguimientoRe.Observaciones' rows="3" class="form-control col-6"></textarea>
+                </div>
+                <br>
+                <button mat-raised-button type="submit" class="btn btn-success">Guardar</button>
+                <button mat-raised-button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row mt-5">
+                <div class="col">
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">TratamientoEfectuado</th>
+                                <th scope="col">Observaciones</th>
+                                <th scope="col">ConsultasPosteriores</th>
+                                <th scope="col">Estatus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let seguimientodeOdon of seguimientodeOdontograma">
+
+                                <td>{{seguimientodeOdon.id}}</td>
+                                <td>{{seguimientodeOdon.Fecha}}</td>
+                                <td>{{seguimientodeOdon.TratamientoEfectuado}}</td>
+                                <td>{{seguimientodeOdon.Observaciones}}</td>
+                                <td>{{seguimientodeOdon.ConsultasPosteriores}}</td>
+                                <td>{{seguimientodeOdon.Estatus}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </mat-card-content>
+    </div>
+</div>

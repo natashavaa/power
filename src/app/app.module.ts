@@ -111,6 +111,9 @@ import { ModificarpadecimientoapiezadetalComponent } from './pages/modificarpade
 import { ModificarprodedimientoapadecimientoComponent } from './pages/modificarprodedimientoapadecimiento/modificarprodedimientoapadecimiento.component';
 import { ModificarservicioComponent } from './pages/modificarservicio/modificarservicio.component';
 import { ModificarpacientepresupuestoComponent } from './pages/modificarpacientepresupuesto/modificarpacientepresupuesto.component';
+import { PacienteseguimientodetalleComponent } from './pages/pacienteseguimientodetalle/pacienteseguimientodetalle.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -171,7 +174,8 @@ import { ModificarpacientepresupuestoComponent } from './pages/modificarpaciente
     ModificarpadecimientoapiezadetalComponent,
     ModificarprodedimientoapadecimientoComponent,
     ModificarservicioComponent,
-    ModificarpacientepresupuestoComponent
+    ModificarpacientepresupuestoComponent,
+    PacienteseguimientodetalleComponent
   ],
   imports: [
     SliderModule,

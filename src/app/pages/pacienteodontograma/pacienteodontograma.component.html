@@ -6,8 +6,8 @@
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <h5 align="center">Maria RodriguezDB</h5>
-                    <h1 align="center">12 años</h1>
+                    <h5 align="center">{{patient.name}}</h5>
+                    <h1 align="center">{{patient.age}} años</h1>
                 </mat-card-title>
                 <mat-list-item>
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
@@ -238,16 +238,6 @@
 
                                         <input disabled #NombreProcedimientoaux="ngModel" name="NombreProcedimientoaux" [(ngModel)]='formulario.NombreProcedimientoaux' type="text">
                                     </div>
-                                    <div class="form-group row">
-                                        <mat-label class="col-4 col-form-label">Cara</mat-label>
-                                        <select #caraaux="ngModel" name="caraaux" id="caraaux" [(ngModel)]='formulario.caraaux' class="form-control col-6" (change)="onChange($event)">
-                                          <option>Parte Superior</option>
-                                          <option>Parte Inferior</option>
-                                          <option>Lado Derecho</option>
-                                          <option>Lado Izquierdo</option>
-                                        </select>
-
-                                    </div>
                                 </fieldset>
                             </form>
                         </div>
@@ -272,7 +262,7 @@
                     </div>
                     <br>
                     <div class="form-group row">
-                        <label for="" class="col-4 col-form-label">Diagnostico Pieza</label>
+                        <label for="" class="col-4 col-form-label">Diagnostico</label>
                         <textarea #diagnosticoPiezaaux="ngModel" name="diagnosticoPiezaaux" [(ngModel)]='formulario.diagnosticoPiezaaux' rows="3" class="form-control col-6"></textarea>
                     </div>
 

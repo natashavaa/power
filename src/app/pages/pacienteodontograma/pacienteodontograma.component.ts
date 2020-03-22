@@ -9,6 +9,7 @@ import { PadecimientoporDienteInterface } from '../../models/piezaconPadecimient
 import { OdontogramaInterface } from '../../models/odontograma.interface';
 import { FormularioInterface } from '../../models/formulario.interface';
 import { ProcedimientoApadecimentoInterface } from '../../models/procedimientoapadecimiento.interface';
+import { PaatientInterface } from '../../models/patients.interface';
 
 @Component({
   selector: 'app-pacienteodontograma',
@@ -79,11 +80,14 @@ export class PacienteodontogramaComponent implements OnInit {
   };
   private piezasdental: PiezaDentalInterface = {};
   private odontogramaoficial: OdontogramaInterface = {};
+  private odontogramaguardado: OdontogramaInterface = {};
   private piezasdentalconpadecimientos: PadecimientoporDienteInterface = {};
+  private patient: PaatientInterface = {};
   MostrarPadecimientos = false;
   Mostrarformulario = false;
   llenarodontooficialunavez = true;
   ngOnInit() {
+    this.patient = this.auth.getCurrentPatient();
     this.app.mostrar = true;
     this.getAllPiezasdentales();
   }
@@ -106,37 +110,69 @@ export class PacienteodontogramaComponent implements OnInit {
        this.piezasdental = piezasdentales;
        if (this.llenarodontooficialunavez) {
         this.odontogramaoficial.Imagen1 = this.piezasdental[0].Imagen;
+        this.odontogramaoficial.Nomenclatura1 = this.piezasdental[0].Nomenclatura;
         this.odontogramaoficial.Imagen2 = this.piezasdental[1].Imagen;
+        this.odontogramaoficial.Nomenclatura2 = this.piezasdental[1].Nomenclatura;
         this.odontogramaoficial.Imagen3 = this.piezasdental[2].Imagen;
+        this.odontogramaoficial.Nomenclatura3 = this.piezasdental[2].Nomenclatura;
         this.odontogramaoficial.Imagen4 = this.piezasdental[3].Imagen;
+        this.odontogramaoficial.Nomenclatura4 = this.piezasdental[3].Nomenclatura;
         this.odontogramaoficial.Imagen5 = this.piezasdental[4].Imagen;
+        this.odontogramaoficial.Nomenclatura5 = this.piezasdental[4].Nomenclatura;
         this.odontogramaoficial.Imagen6 = this.piezasdental[5].Imagen;
+        this.odontogramaoficial.Nomenclatura6 = this.piezasdental[5].Nomenclatura;
         this.odontogramaoficial.Imagen7 = this.piezasdental[6].Imagen;
+        this.odontogramaoficial.Nomenclatura7 = this.piezasdental[6].Nomenclatura;
         this.odontogramaoficial.Imagen8 = this.piezasdental[7].Imagen;
+        this.odontogramaoficial.Nomenclatura8 = this.piezasdental[7].Nomenclatura;
         this.odontogramaoficial.Imagen9 = this.piezasdental[8].Imagen;
+        this.odontogramaoficial.Nomenclatura9 = this.piezasdental[8].Nomenclatura;
         this.odontogramaoficial.Imagen10 = this.piezasdental[9].Imagen;
+        this.odontogramaoficial.Nomenclatura10 = this.piezasdental[9].Nomenclatura;
         this.odontogramaoficial.Imagen11 = this.piezasdental[10].Imagen;
+        this.odontogramaoficial.Nomenclatura11 = this.piezasdental[10].Nomenclatura;
         this.odontogramaoficial.Imagen12 = this.piezasdental[11].Imagen;
+        this.odontogramaoficial.Nomenclatura12 = this.piezasdental[11].Nomenclatura;
         this.odontogramaoficial.Imagen13 = this.piezasdental[12].Imagen;
+        this.odontogramaoficial.Nomenclatura13 = this.piezasdental[12].Nomenclatura;
         this.odontogramaoficial.Imagen14 = this.piezasdental[13].Imagen;
+        this.odontogramaoficial.Nomenclatura14 = this.piezasdental[13].Nomenclatura;
         this.odontogramaoficial.Imagen15 = this.piezasdental[14].Imagen;
+        this.odontogramaoficial.Nomenclatura15 = this.piezasdental[14].Nomenclatura;
         this.odontogramaoficial.Imagen16 = this.piezasdental[15].Imagen;
+        this.odontogramaoficial.Nomenclatura16 = this.piezasdental[15].Nomenclatura;
         this.odontogramaoficial.Imagen17 = this.piezasdental[16].Imagen;
+        this.odontogramaoficial.Nomenclatura17 = this.piezasdental[16].Nomenclatura;
         this.odontogramaoficial.Imagen18 = this.piezasdental[17].Imagen;
+        this.odontogramaoficial.Nomenclatura18 = this.piezasdental[17].Nomenclatura;
         this.odontogramaoficial.Imagen19 = this.piezasdental[18].Imagen;
+        this.odontogramaoficial.Nomenclatura19 = this.piezasdental[18].Nomenclatura;
         this.odontogramaoficial.Imagen20 = this.piezasdental[19].Imagen;
+        this.odontogramaoficial.Nomenclatura20 = this.piezasdental[19].Nomenclatura;
         this.odontogramaoficial.Imagen21 = this.piezasdental[20].Imagen;
+        this.odontogramaoficial.Nomenclatura21 = this.piezasdental[20].Nomenclatura;
         this.odontogramaoficial.Imagen22 = this.piezasdental[21].Imagen;
+        this.odontogramaoficial.Nomenclatura22 = this.piezasdental[21].Nomenclatura;
         this.odontogramaoficial.Imagen23 = this.piezasdental[22].Imagen;
+        this.odontogramaoficial.Nomenclatura23 = this.piezasdental[22].Nomenclatura;
         this.odontogramaoficial.Imagen24 = this.piezasdental[23].Imagen;
+        this.odontogramaoficial.Nomenclatura24 = this.piezasdental[23].Nomenclatura;
         this.odontogramaoficial.Imagen25 = this.piezasdental[24].Imagen;
+        this.odontogramaoficial.Nomenclatura25 = this.piezasdental[24].Nomenclatura;
         this.odontogramaoficial.Imagen26 = this.piezasdental[25].Imagen;
+        this.odontogramaoficial.Nomenclatura26 = this.piezasdental[25].Nomenclatura;
         this.odontogramaoficial.Imagen27 = this.piezasdental[26].Imagen;
+        this.odontogramaoficial.Nomenclatura27 = this.piezasdental[26].Nomenclatura;
         this.odontogramaoficial.Imagen28 = this.piezasdental[27].Imagen;
+        this.odontogramaoficial.Nomenclatura28 = this.piezasdental[27].Nomenclatura;
         this.odontogramaoficial.Imagen29 = this.piezasdental[28].Imagen;
+        this.odontogramaoficial.Nomenclatura29 = this.piezasdental[28].Nomenclatura;
         this.odontogramaoficial.Imagen30 = this.piezasdental[29].Imagen;
+        this.odontogramaoficial.Nomenclatura30 = this.piezasdental[29].Nomenclatura;
         this.odontogramaoficial.Imagen31 = this.piezasdental[30].Imagen;
+        this.odontogramaoficial.Nomenclatura31 = this.piezasdental[30].Nomenclatura;
         this.odontogramaoficial.Imagen32 = this.piezasdental[31].Imagen;
+        this.odontogramaoficial.Nomenclatura32 = this.piezasdental[31].Nomenclatura;
 
 
         this.odontogramaoficial.NombrePieza1 = this.piezasdental[0].NombrePieza;
@@ -1888,6 +1924,81 @@ export class PacienteodontogramaComponent implements OnInit {
     this.formulario.caraaux = e.target.value;
     }
   guardarpieza() {
+    this.odontogramaoficial.idPatient = this.patient.id;
+    this.auth.registerOdontograma(
+    this.odontogramaoficial.idPatient,
+    this.odontogramaoficial.status,
+    this.odontogramaoficial.NombrePadecimiento1,
+    this.odontogramaoficial.Imagen1,
+    this.odontogramaoficial.NombrePadecimiento2,
+    this.odontogramaoficial.Imagen2,
+    this.odontogramaoficial.NombrePadecimiento3,
+    this.odontogramaoficial.Imagen3,
+    this.odontogramaoficial.NombrePadecimiento4,
+    this.odontogramaoficial.Imagen4,
+    this.odontogramaoficial.NombrePadecimiento5,
+    this.odontogramaoficial.Imagen5,
+    this.odontogramaoficial.NombrePadecimiento6,
+    this.odontogramaoficial.Imagen6,
+    this.odontogramaoficial.NombrePadecimiento7,
+    this.odontogramaoficial.Imagen7,
+    this.odontogramaoficial.NombrePadecimiento8,
+    this.odontogramaoficial.Imagen8,
+    this.odontogramaoficial.NombrePadecimiento9,
+    this.odontogramaoficial.Imagen9,
+    this.odontogramaoficial.NombrePadecimiento10,
+    this.odontogramaoficial.Imagen10,
+    this.odontogramaoficial.NombrePadecimiento11,
+    this.odontogramaoficial.Imagen11,
+    this.odontogramaoficial.NombrePadecimiento12,
+    this.odontogramaoficial.Imagen12,
+    this.odontogramaoficial.NombrePadecimiento13,
+    this.odontogramaoficial.Imagen13,
+    this.odontogramaoficial.NombrePadecimiento14,
+    this.odontogramaoficial.Imagen14,
+    this.odontogramaoficial.NombrePadecimiento15,
+    this.odontogramaoficial.Imagen15,
+    this.odontogramaoficial.NombrePadecimiento16,
+    this.odontogramaoficial.Imagen16,
+    this.odontogramaoficial.NombrePadecimiento17,
+    this.odontogramaoficial.Imagen17,
+    this.odontogramaoficial.NombrePadecimiento18,
+    this.odontogramaoficial.Imagen18,
+    this.odontogramaoficial.NombrePadecimiento19,
+    this.odontogramaoficial.Imagen19,
+    this.odontogramaoficial.NombrePadecimiento20,
+    this.odontogramaoficial.Imagen20,
+    this.odontogramaoficial.NombrePadecimiento21,
+    this.odontogramaoficial.Imagen21,
+    this.odontogramaoficial.NombrePadecimiento22,
+    this.odontogramaoficial.Imagen22,
+    this.odontogramaoficial.NombrePadecimiento23,
+    this.odontogramaoficial.Imagen23,
+    this.odontogramaoficial.NombrePadecimiento24,
+    this.odontogramaoficial.Imagen24,
+    this.odontogramaoficial.NombrePadecimiento25,
+    this.odontogramaoficial.Imagen25,
+    this.odontogramaoficial.NombrePadecimiento26,
+    this.odontogramaoficial.Imagen26,
+    this.odontogramaoficial.NombrePadecimiento27,
+    this.odontogramaoficial.Imagen27,
+    this.odontogramaoficial.NombrePadecimiento28,
+    this.odontogramaoficial.Imagen28,
+    this.odontogramaoficial.NombrePadecimiento29,
+    this.odontogramaoficial.Imagen29,
+    this.odontogramaoficial.NombrePadecimiento30,
+    this.odontogramaoficial.Imagen30,
+    this.odontogramaoficial.NombrePadecimiento31,
+    this.odontogramaoficial.Imagen31,
+    this.odontogramaoficial.NombrePadecimiento32,
+    this.odontogramaoficial.Imagen32,
+    this.odontogramaoficial.diagnosticoCompleto,
+
+    ).subscribe((odontogramaguardado: OdontogramaInterface) => {
+      this.odontogramaguardado = odontogramaguardado;
+      console.log(this.odontogramaguardado);
+      this.router.navigate(['pacienteinformacion']);
+     } );
     this.MostrarPadecimientos = false;
     this.Mostrarformulario = false;
     this.formulario.caraaux = '';
