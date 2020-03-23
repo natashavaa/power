@@ -54,13 +54,13 @@ this. getlistAllPadecimientos();
 this.Padpordiente = this.authService.getCurrentPadecimientoadiente();
 }
 onSearch(): void {
-console.log(this.piezadentalf);
+
 this.MostrarForm =  false;
 if (!this.piezadentalf.id) {
 alert('Pieza No seleccionada');
 } else if (this.piezadentalf.id) {
 this.dataApi.getPiezaById(this.piezadentalf.id).subscribe((pieza: PiezaDentalInterface) => {
-console.log(pieza);
+
 this.Padpordiente.Nomenclatura = pieza.Nomenclatura;
 this.Padpordiente.Ubicacion = pieza.Ubicacion;
 this.Padpordiente.NombrePieza = pieza.NombrePieza;

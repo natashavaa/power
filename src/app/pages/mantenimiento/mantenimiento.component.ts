@@ -80,12 +80,12 @@ export class MantenimientoComponent implements OnInit {
     this.user = this.auth.getCurrentUser();
     if (Object.is(this.user.username, 'admin')) {
         this.usuarioA = 'Administrador';
-        console.log(this.usuarioA);
+
         return this.usuarioA;
     } else {
       this.usuarioA = 'Doctor : ' + this.user.name;
       this.especialidad = 'Especialidad : ' +  this.user.userType;
-      console.log(this.usuarioA);
+
       return  this.usuarioA;
 
     }

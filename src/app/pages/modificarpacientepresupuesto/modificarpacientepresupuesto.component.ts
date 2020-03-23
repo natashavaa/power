@@ -74,7 +74,7 @@ export class ModificarpacientepresupuestoComponent implements OnInit {
       this.debe = parseInt(this.presupuestoRe.Debe, 10)  - parseInt(this.presupuestoRe.Abono, 10);
       this.presupuestoRe.Debe = this.debe.toString();
     }
-    console.log(this.presupuestoRe.Debe);
+
     }
   procedimiento(): void {
     this.router.navigate(['pacienteprocedimiento']);

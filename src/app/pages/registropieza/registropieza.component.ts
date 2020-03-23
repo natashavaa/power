@@ -43,7 +43,6 @@ export class RegistropiezaComponent implements OnInit {
   }
   onRegisterPiezaDental(): void {
       this.PiezaRe.Imagen = this.sellersPermitString;
-      console.log(this.PiezaRe.Imagen); // REVISAR NO ESTA GUARDANDO IMAGENES
       this.authService.registerPiezaDental(
         this.PiezaRe.NombrePieza,
         this.PiezaRe.Descripcion,

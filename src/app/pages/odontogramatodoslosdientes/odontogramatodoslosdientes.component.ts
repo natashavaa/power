@@ -82,11 +82,9 @@ private todoslosdientesOficial: TodoslosdientesInterface = {};
     this.todoslosdientesOficial.idPatient = this.patient.id;
     const materiales =  this.todoslosdientesOficial.Materiales.split(', ');
     const instrumentos = this.todoslosdientesOficial.Instrumentos.split(', ');
-    console.log(instrumentos);
     let j = 0 ;
     for (j = 0; j <= instrumentos.length ; j++ ) {
       this.dataApi.getInstrumentosByName(instrumentos[j]).subscribe((instruments: InstrumentoInterface) => {
-        console.log(instruments);
         if ( instruments.cantidad > 0) {
           instruments.cantidad = instruments.cantidad - 1;
           instruments.enUso = instruments.enUso + 1;
@@ -102,13 +100,13 @@ private todoslosdientesOficial: TodoslosdientesInterface = {};
           ).subscribe(instrumentsw => {
             if (instrumentsw.cantidad < 3) {
               // tslint:disable-next-line: max-line-length
-              alert('Instrumento: ' + this.instrumentos.name + ' ' + instrumentsw.cantidad + 'Unidades' + ' Proceda a limpiar instrumentos utilizados anteriormente');
+              alert('Instrumento: ' + instrumentsw.name + ' ' + instrumentsw.cantidad + 'Unidades' + ' Proceda a limpiar instrumentos utilizados anteriormente');
 
             }
            } );
         } else {
           // tslint:disable-next-line: max-line-length
-          alert('Cantidad de Instrumentos insuficientes: ' +  ' Proceda a limpiar instrumentos utilizados anteriormente');
+          alert('Cantidad de Instrumentos insuficientes ' +  ' Proceda a limpiar instrumentos utilizados anteriormente');
           this.router.navigate(['especialidad']);
         }
       }
@@ -116,10 +114,10 @@ private todoslosdientesOficial: TodoslosdientesInterface = {};
     }
      let i = 0;
     for (i = 0 ; i <= materiales.length; i++) {
-        console.log(materiales[i]);
+
         await this.dataApi.getMAterialByName(materiales[i]).subscribe((materials: MaterialInterface) => {
           this.material = materials;
-          console.log(this.material);
+
           if ( materials.cantidad > 0) {
             this.material.cantidad =   this.material.cantidad - 1;
             this.material.usados =  this.material.usados + 1;

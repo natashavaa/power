@@ -103,7 +103,7 @@ export class PacienteinformacionComponent implements OnInit {
         this.historial.Otra,
         this.historial.Observaciones,
       ).subscribe(historila => {
-        console.log(historila);
+
         this.router.navigate(['historiaclinica']);
        } );
     } else {
@@ -133,7 +133,7 @@ export class PacienteinformacionComponent implements OnInit {
         this.historial.Otra,
         this.historial.Observaciones,
       ).subscribe(historila => {
-        console.log(historila);
+
         this.router.navigate(['historiaclinica']);
        } );
     }

@@ -241,10 +241,10 @@ export class PacienteodontogramaComponent implements OnInit {
   }
 
   padecimiento(piezasdental: PiezaDentalInterface, pieza: string): void {
-    console.log(pieza);
+
     // tslint:disable-next-line: max-line-length
-    this.dataApi.getAllPadecimientosxpiezaporNomeclatura(piezasdental.Nomenclatura).subscribe((piezasdentalconpadecimientos: PadecimientoporDienteInterface) => { this.piezasdentalconpadecimientos = piezasdentalconpadecimientos; console.log(this.piezasdentalconpadecimientos); } );
-    console.log(this.piezasdentalconpadecimientos);
+    this.dataApi.getAllPadecimientosxpiezaporNomeclatura(piezasdental.Nomenclatura).subscribe((piezasdentalconpadecimientos: PadecimientoporDienteInterface) => { this.piezasdentalconpadecimientos = piezasdentalconpadecimientos; } );
+
     this.MostrarPadecimientos = true;
     this.Mostrarformulario = false;
     if (Object.is(pieza, 'pieza1')) {
@@ -1314,12 +1314,12 @@ export class PacienteodontogramaComponent implements OnInit {
     }
     const materiales =  materialesrec.split(' , ');
     const instrumentos = instrumentosrec.split(' , ');
-    console.log(materiales);
-    console.log(instrumentos);
+
     let j = 0 ;
     for (j = 0; j <= instrumentos.length ; j++ ) {
       this.dataApi.getInstrumentosByName(instrumentos[j]).subscribe((instruments: InstrumentoInterface) => {
-        console.log(instruments);
+
+        this.instrumentos = instruments;
         if ( instruments.cantidad > 0) {
           instruments.cantidad = instruments.cantidad - 1;
           instruments.enUso = instruments.enUso + 1;
@@ -1333,15 +1333,14 @@ export class PacienteodontogramaComponent implements OnInit {
             instruments.enUso,
             instruments.enLimpieza
           ).subscribe(instrumentsw => {
-            this.instrumentos = instrumentsw;
-           // if (instrumentsw.cantidad < 3) {
-              // tslint:disable-next-line: max-line-length
-         //     alert('Instrumento: ' + this.instrumentos.name + ' ' + instrumentsw.cantidad + 'Unidades' + ' Proceda a limpiar instrumentos utilizados anteriormente');
-          //  }
+            if (instrumentsw.cantidad < 3) {
+           //    tslint:disable-next-line: max-line-length
+              alert('Instrumento: ' + instrumentsw.name + ' ' + instrumentsw.cantidad + 'Unidades' + ' Proceda a limpiar instrumentos utilizados anteriormente');
+            }
            } );
-        } else {
+        } else if (instruments.cantidad === 0) {
           // tslint:disable-next-line: max-line-length
-          alert('Cantidad de Instrumentos insuficientes: ' + this.instrumentos.name +  ' Proceda a limpiar instrumentos utilizados anteriormente');
+          alert('Cantidad de Instrumentos insuficientes ' +  ' Proceda a limpiar instrumentos utilizados anteriormente');
           this.router.navigate(['especialidad']);
         }
       }
@@ -1349,10 +1348,9 @@ export class PacienteodontogramaComponent implements OnInit {
     }
     let i = 0;
     for (i = 0 ; i <= materiales.length; i++) {
-        console.log(materiales[i]);
+
         this.dataApi.getMAterialByName(materiales[i]).subscribe((materials: MaterialInterface) => {
           this.material = materials;
-          console.log(this.material);
           if ( materials.cantidad > 0) {
             this.material.cantidad =   this.material.cantidad - 1;
             this.material.usados =  this.material.usados + 1;
@@ -1368,10 +1366,10 @@ export class PacienteodontogramaComponent implements OnInit {
             ).subscribe(materialw => {
               if (materialw.cantidad < 3) {
                 // tslint:disable-next-line: max-line-length
-                alert(' Pocas unidades de material:  ' + ' ' + materialw.name + 'Quedan : ' + materialw.cantidad + '  Unidades Disponuibles' + '  Porfavor Reponer');
+                alert(' Pocas unidades de material:  ' + ' ' + materialw.name + '  Quedan : ' + materialw.cantidad + '  Unidades Disponibles' + '  Porfavor Reponer');
                }
              } );
-        } else {
+        } else if (materials.cantidad === 0)  {
             this.material.estadoDisp = 'No Disponible';
             this.auth.updateMaterial(
               this.material.id,
@@ -2272,14 +2270,14 @@ export class PacienteodontogramaComponent implements OnInit {
 
     ).subscribe((odontogramaguardado: OdontogramaInterface) => {
       this.odontogramaguardado = odontogramaguardado;
-      console.log(this.odontogramaguardado);
-      this.router.navigate(['pacienteinformacion']);
+
+      this.router.navigate(['pacienteseguimiento']);
      } );
     this.MostrarPadecimientos = false;
     this.Mostrarformulario = false;
     this.formulario.caraaux = '';
     this.formulario.diagnosticoPiezaaux = '';
-    console.log(this.odontogramaoficial);
+
   }
   padecimientod(): void {
     this.router.navigate(['pacientepadecimiento']);

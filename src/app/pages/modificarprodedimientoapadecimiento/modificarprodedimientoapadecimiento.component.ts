@@ -67,7 +67,7 @@ export class ModificarprodedimientoapadecimientoComponent implements OnInit  {
     this.dataApi.getAllProcedimientos().subscribe((procedimiento: ProcedimientoInterface) => ( this.procedimiento = procedimiento));
   }
   onRegisterProcedimientoApad(): void {
-    console.log(this.procedimientoaPad);
+
     this.procedimientoaPad.materiales = this.materialesArray.value.map(x => x).join(' , ');
     this.procedimientoaPad.instrumentos = this.instrumentosArray.value.map(x => x).join(' , ');
     this.authService.updateProcedimientoaPadecimiento(

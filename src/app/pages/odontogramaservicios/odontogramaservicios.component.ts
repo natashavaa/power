@@ -87,7 +87,7 @@ export class OdontogramaserviciosComponent implements OnInit {
     } else if (e.target.checked === false) {
       this.Estimado = this.Estimado - parseInt(servicio.Costo, 10);
     }
-    console.log(this.presupuestoRe.serviciosTratados);
+
     }
 
 

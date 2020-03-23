@@ -38,14 +38,14 @@ export class ModificarpiezadentalComponent implements OnInit {
   ngOnInit() {
     this.app.mostrar = true;
     this.PiezaRe = this.authService.getCurrentPiezaDental();
-    console.log(this.PiezaRe);
+
   }
   cancelar() {
     this.router.navigate(['mantenimiento']);
   }
   onRegisterPiezaDental(): void {
       this.PiezaRe.Imagen = this.sellersPermitString;
-      console.log(this.PiezaRe.Imagen); // REVISAR NO ESTA GUARDANDO IMAGENES
+
       this.authService.updatePiezaDental(
         this.PiezaRe.id,
         this.PiezaRe.NombrePieza,

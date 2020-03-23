@@ -63,15 +63,16 @@ private formulario: FormularioInterface = {
   getSeguimientos() {
     this.dataApi.getSeguimientoByOdontograma(this.odontogramaoficial.id)
       .subscribe((seguimiento: SeguimientoDienteInterface) => ( this.seguimientodeOdontograma = seguimiento));
-    console.log(this.seguimientodeOdontograma);
+
     }
 verdetallespieza(padecimiento: string) {
-    if(!padecimiento) {
+    if (!padecimiento) {
       alert('Esta pieza no tiene padecimientos. !PIEZA SANA!');
     } else if (padecimiento) {
+      alert('Esta Pieza fue diagnosticada : ' + padecimiento);
       this.dataApi.getAllProcedimientosaUNpadecimiento(padecimiento)
       .subscribe((procedimientoaPad: ProcedimientoApadecimentoInterface) => ( this.procedimientoaPad = procedimientoaPad));
-      console.log(this.procedimientoaPad);
+
       this.formulario.padecimientoaux = this.odontogramaoficial.NombrePadecimiento1;
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;

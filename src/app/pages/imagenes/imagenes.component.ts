@@ -54,13 +54,12 @@ export class ImagenesComponent implements OnInit {
     this.patient = this.auth.getCurrentPatient();
     this.dataApi.getAllEvolutionBypatient(this.patient.id)
     .subscribe((evolution: EvolutionInterface) => {this.evolution = evolution;
-                                                   console.log(this.evolution); } );
+                                                  } );
   }
   onRegisterEvolution(): void {
     this.EvolutionRe.imagen = this.sellersPermitString;
     this.EvolutionRe.idPatient = this.patient.id;
     this.EvolutionRe.idClinicHistory = '1';
-    console.log(this.EvolutionRe.imagen);
     this.auth.registerEvolution(
       this.EvolutionRe.idPatient,
       this.EvolutionRe.idClinicHistory,
