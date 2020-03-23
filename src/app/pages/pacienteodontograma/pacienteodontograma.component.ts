@@ -10,6 +10,8 @@ import { OdontogramaInterface } from '../../models/odontograma.interface';
 import { FormularioInterface } from '../../models/formulario.interface';
 import { ProcedimientoApadecimentoInterface } from '../../models/procedimientoapadecimiento.interface';
 import { PaatientInterface } from '../../models/patients.interface';
+import { MaterialInterface } from '../../models/material.interface';
+import { InstrumentoInterface } from '../../models/instrumento.interface';
 
 @Component({
   selector: 'app-pacienteodontograma',
@@ -83,6 +85,8 @@ export class PacienteodontogramaComponent implements OnInit {
   private odontogramaguardado: OdontogramaInterface = {};
   private piezasdentalconpadecimientos: PadecimientoporDienteInterface = {};
   private patient: PaatientInterface = {};
+  private material: MaterialInterface;
+  private instrumentos: InstrumentoInterface;
   MostrarPadecimientos = false;
   Mostrarformulario = false;
   llenarodontooficialunavez = true;
@@ -1304,6 +1308,88 @@ export class PacienteodontogramaComponent implements OnInit {
 
     this.ngOnInit();
   }
+  vaciarInventario(materialesrec: string, instrumentosrec: string) {
+    if (materialesrec.length < 2) {
+      alert('A ocurrido algo inesperado porfavor seleccione de nuevo ');
+    }
+    const materiales =  materialesrec.split(' , ');
+    const instrumentos = instrumentosrec.split(' , ');
+    console.log(materiales);
+    console.log(instrumentos);
+    let j = 0 ;
+    for (j = 0; j <= instrumentos.length ; j++ ) {
+      this.dataApi.getInstrumentosByName(instrumentos[j]).subscribe((instruments: InstrumentoInterface) => {
+        console.log(instruments);
+        if ( instruments.cantidad > 0) {
+          instruments.cantidad = instruments.cantidad - 1;
+          instruments.enUso = instruments.enUso + 1;
+          this.auth.updateInstrumento(
+            instruments.id,
+            instruments.name,
+            instruments.cantidad,
+            instruments.especiality,
+            instruments.costo,
+            instruments.idDoctor,
+            instruments.enUso,
+            instruments.enLimpieza
+          ).subscribe(instrumentsw => {
+            this.instrumentos = instrumentsw;
+            if (instrumentsw.cantidad < 3) {
+              // tslint:disable-next-line: max-line-length
+              alert('Instrumento: ' + this.instrumentos.name + ' ' + instrumentsw.cantidad + 'Unidades' + ' Proceda a limpiar instrumentos utilizados anteriormente');
+            }
+           } );
+        } else {
+          // tslint:disable-next-line: max-line-length
+          alert('Cantidad de Instrumentos insuficientes: ' + this.instrumentos.name +  ' Proceda a limpiar instrumentos utilizados anteriormente');
+          this.router.navigate(['especialidad']);
+        }
+      }
+      );
+    }
+    let i = 0;
+    for (i = 0 ; i <= materiales.length; i++) {
+        console.log(materiales[i]);
+        this.dataApi.getMAterialByName(materiales[i]).subscribe((materials: MaterialInterface) => {
+          this.material = materials;
+          console.log(this.material);
+          if ( materials.cantidad > 0) {
+            this.material.cantidad =   this.material.cantidad - 1;
+            this.material.usados =  this.material.usados + 1;
+            this.auth.updateMaterial(
+              this.material.id,
+              this.material.name,
+              this.material.cantidad,
+              this.material.especiality,
+              this.material.costo,
+              this.material.idDoctor,
+              this.material.estadoDisp,
+              this.material.usados
+            ).subscribe(materialw => {
+              if (materialw.cantidad < 3) {
+                // tslint:disable-next-line: max-line-length
+                alert(' Pocas unidades de material:  ' + ' ' + materialw.name + 'Quedan : ' + materialw.cantidad + '  Unidades Disponuibles' + '  Porfavor Reponer');
+               }
+             } );
+        } else {
+            this.material.estadoDisp = 'No Disponible';
+            this.auth.updateMaterial(
+              this.material.id,
+              this.material.name,
+              this.material.cantidad,
+              this.material.especiality,
+              this.material.costo,
+              this.material.idDoctor,
+              this.material.estadoDisp,
+              this.material.usados
+            ).subscribe(materialw => {
+              alert('Material insuficiente : ' + materialw.name + '  '  + ' Reponer para continuar con el procedimiento');
+              this.router.navigate(['materiales']);
+             } );
+        }
+        } );
+    }
+  }
   llenarFormulario(piezasdentalconpadecimiento: PadecimientoporDienteInterface): void {
     if (this.pieza1 === true ) {
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1324,7 +1410,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
 
+      }
     } else if (this.pieza2 === true) {
       this.odontogramaoficial.Imagen2 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1344,7 +1435,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
 
+      }
     }  else if (this.pieza3 === true) {
       this.odontogramaoficial.Imagen3 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1364,6 +1460,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza4 === true) {
       this.odontogramaoficial.Imagen4 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1383,6 +1485,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza5 === true) {
       this.odontogramaoficial.Imagen5 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1402,6 +1510,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza6 === true) {
       this.odontogramaoficial.Imagen6 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1421,6 +1535,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza7 === true) {
       this.odontogramaoficial.Imagen7 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1440,6 +1560,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza8 === true) {
       this.odontogramaoficial.Imagen8 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1459,6 +1585,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza9 === true) {
       this.odontogramaoficial.Imagen9 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1478,6 +1610,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza10 === true) {
       this.odontogramaoficial.Imagen10 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1497,6 +1635,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     } else if (this.pieza11 === true) {
       this.odontogramaoficial.Imagen11 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1516,6 +1660,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     } else if (this.pieza12 === true) {
       this.odontogramaoficial.Imagen12 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1535,6 +1685,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     } else if (this.pieza13 === true) {
       this.odontogramaoficial.Imagen13 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1554,6 +1710,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     } else if (this.pieza14 === true) {
       this.odontogramaoficial.Imagen14 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1573,6 +1735,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     } else if (this.pieza15 === true) {
       this.odontogramaoficial.Imagen15 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1592,6 +1760,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     } else if (this.pieza16 === true) {
       this.odontogramaoficial.Imagen16 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1611,6 +1785,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza17 === true) {
       this.odontogramaoficial.Imagen17 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1630,6 +1810,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza18 === true) {
       this.odontogramaoficial.Imagen18 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1649,6 +1835,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza19 === true) {
       this.odontogramaoficial.Imagen19 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1668,6 +1860,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza20 === true) {
       this.odontogramaoficial.Imagen20 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1687,6 +1885,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza21 === true) {
       this.odontogramaoficial.Imagen21 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1706,6 +1910,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza22 === true) {
       this.odontogramaoficial.Imagen22 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1725,6 +1935,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza23 === true) {
       this.odontogramaoficial.Imagen23 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1744,6 +1960,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza24 === true) {
       this.odontogramaoficial.Imagen24 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1763,6 +1985,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza25 === true) {
       this.odontogramaoficial.Imagen25 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1782,6 +2010,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza26 === true) {
       this.odontogramaoficial.Imagen26 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1801,6 +2035,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza27 === true) {
       this.odontogramaoficial.Imagen27 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1820,6 +2060,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza28 === true) {
       this.odontogramaoficial.Imagen28 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1839,6 +2085,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza29 === true) {
       this.odontogramaoficial.Imagen29 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1858,6 +2110,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza30 === true) {
       this.odontogramaoficial.Imagen30 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1877,6 +2135,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza31 === true) {
       this.odontogramaoficial.Imagen31 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1896,6 +2160,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }  else if (this.pieza32 === true) {
       this.odontogramaoficial.Imagen32 = piezasdentalconpadecimiento.Imagen;
       this.dataApi.getAllProcedimientosaUNpadecimiento(piezasdentalconpadecimiento.NombrePadecimiento)
@@ -1915,6 +2185,12 @@ export class PacienteodontogramaComponent implements OnInit {
       this.formulario.NombreProcedimientoaux = this.procedimientoaPad.NombreProcedimiento;
       this.formulario.materialesaux = this.procedimientoaPad.materiales;
       this.formulario.instrumentosaux = this.procedimientoaPad.instrumentos;
+      const mensaje = confirm('¿Procedera con este procedimiento?');
+      if (mensaje) {
+       this.vaciarInventario(this.formulario.materialesaux, this.formulario.instrumentosaux);
+      } else {
+
+      }
     }
     // tslint:disable-next-line: max-line-length
     this.Mostrarformulario = true;

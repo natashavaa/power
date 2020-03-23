@@ -8,6 +8,8 @@ import { DataApiService } from '../../services/data-api.service';
 import { ProcedimientoApadecimentoInterface } from '../../models/procedimientoapadecimiento.interface';
 import { TodoslosdientesInterface } from '../../models/todoslosdientes.interface';
 import { PaatientInterface } from '../../models/patients.interface';
+import { MaterialInterface } from '../../models/material.interface';
+import { InstrumentoInterface } from '../../models/instrumento.interface';
 
 @Component({
   selector: 'app-odontogramatodoslosdientes',
@@ -22,6 +24,8 @@ export class OdontogramatodoslosdientesComponent implements OnInit {
 
 
   private patient: PaatientInterface = {};
+  private material: MaterialInterface;
+  private instrumentos: InstrumentoInterface;
   public procedimientoaPad: ProcedimientoApadecimentoInterface = {
     id: '',
     NombreProcedimiento: '',
@@ -55,7 +59,6 @@ private todoslosdientesOficial: TodoslosdientesInterface = {};
     this.dataApi.getAllProcedimientosTodoslosdientes()
       .subscribe((procedimientoaPad: ProcedimientoApadecimentoInterface) => {
         this.procedimientoaPad = procedimientoaPad;
-        console.log(this.procedimientoaPad);
       });
   }
   getType(): void {
@@ -68,19 +71,95 @@ private todoslosdientesOficial: TodoslosdientesInterface = {};
     }
   }
   buscarProcedimiento(nombre: string) {
-    console.log(this.todoslosdientesOficial.ProcedimientoOdontologico);
     this.dataApi.getAllprocedimientopornombre(this.todoslosdientesOficial.ProcedimientoOdontologico)
       .subscribe((procedimientoaPad: ProcedimientoApadecimentoInterface) => {
         this.procedimientoaPadselec = procedimientoaPad;
-        console.log(this.procedimientoaPadselec);
         this.todoslosdientesOficial.Instrumentos = this.procedimientoaPadselec[0].instrumentos;
         this.todoslosdientesOficial.Materiales = this.procedimientoaPadselec[0].materiales;
       });
   }
-  guardar() {
+  async guardar() {
     this.todoslosdientesOficial.idPatient = this.patient.id;
+    const materiales =  this.todoslosdientesOficial.Materiales.split(', ');
+    const instrumentos = this.todoslosdientesOficial.Instrumentos.split(', ');
+    console.log(instrumentos);
+    let j = 0 ;
+    for (j = 0; j <= instrumentos.length ; j++ ) {
+      this.dataApi.getInstrumentosByName(instrumentos[j]).subscribe((instruments: InstrumentoInterface) => {
+        console.log(instruments);
+        if ( instruments.cantidad > 0) {
+          instruments.cantidad = instruments.cantidad - 1;
+          instruments.enUso = instruments.enUso + 1;
+          this.auth.updateInstrumento(
+            instruments.id,
+            instruments.name,
+            instruments.cantidad,
+            instruments.especiality,
+            instruments.costo,
+            instruments.idDoctor,
+            instruments.enUso,
+            instruments.enLimpieza
+          ).subscribe(instrumentsw => {
+            this.instrumentos = instrumentsw;
+            if (instrumentsw.cantidad < 3) {
+              // tslint:disable-next-line: max-line-length
+              alert('Instrumento: ' + this.instrumentos.name + ' ' + instrumentsw.cantidad + 'Unidades' + ' Proceda a limpiar instrumentos utilizados anteriormente');
+            }
+           } );
+        } else {
+          // tslint:disable-next-line: max-line-length
+          alert('Cantidad de Instrumentos insuficientes: ' + this.instrumentos.name +  ' Proceda a limpiar instrumentos utilizados anteriormente');
+          this.router.navigate(['especialidad']);
+        }
+      }
+      );
+    }
+     let i = 0;
+    for (i = 0 ; i <= materiales.length; i++) {
+        console.log(materiales[i]);
+        await this.dataApi.getMAterialByName(materiales[i]).subscribe((materials: MaterialInterface) => {
+          this.material = materials;
+          console.log(this.material);
+          if ( materials.cantidad > 0) {
+            this.material.cantidad =   this.material.cantidad - 1;
+            this.material.usados =  this.material.usados + 1;
+            this.auth.updateMaterial(
+              this.material.id,
+              this.material.name,
+              this.material.cantidad,
+              this.material.especiality,
+              this.material.costo,
+              this.material.idDoctor,
+              this.material.estadoDisp,
+              this.material.usados
+            ).subscribe(materialw => {
+              if (materialw.cantidad < 3) {
+                // tslint:disable-next-line: max-line-length
+                alert(' Pocas unidades de material:  ' + ' ' + materialw.name + 'Quedan : ' + materialw.cantidad + '  Unidades Disponuibles' + '  Porfavor Reponer');
+               }
+             } );
+        } else {
+            this.material.estadoDisp = 'No Disponible';
+            this.auth.updateMaterial(
+              this.material.id,
+              this.material.name,
+              this.material.cantidad,
+              this.material.especiality,
+              this.material.costo,
+              this.material.idDoctor,
+              this.material.estadoDisp,
+              this.material.usados
+            ).subscribe(materialw => {
+              alert('Material insuficiente : ' + materialw.name + '  '  + ' Reponer para continuar con el procedimiento');
+              this.router.navigate(['materiales']);
+             } );
+        }
+        } );
+    }
+    this.todoslosdientesOficial.Imagen = '';
     this.auth.registertodoslosdientes(
     this.todoslosdientesOficial.idPatient,
+    this.todoslosdientesOficial.Imagen,
     this.todoslosdientesOficial.ProcedimientoOdontologico,
     this.todoslosdientesOficial.Estatus,
     this.todoslosdientesOficial.Instrumentos,
@@ -89,9 +168,8 @@ private todoslosdientesOficial: TodoslosdientesInterface = {};
     this.todoslosdientesOficial.Recomendaciones,
     this.todoslosdientesOficial.Observaciones,
     ).subscribe(registro => {
-      this.router.navigate(['pacienteprocedimiento']);
+    //  this.router.navigate(['pacienteprocedimiento']);
      } );
-    console.log(this.todoslosdientesOficial);
   }
   datos(): void {
     this.router.navigate(['historiaclinica']);

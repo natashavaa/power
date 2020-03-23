@@ -284,7 +284,7 @@ urlApi,
                  estadoDisp: string, usados: number) {
     const urlApi = 'http://localhost:3000/material/update';
     return this.htttp
-    .put<PaatientInterface>(
+    .put<MaterialInterface>(
     urlApi,
     {
       // tslint:disable-next-line: object-literal-shorthand
@@ -860,15 +860,18 @@ registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus:
   },
   );
 }
-registertodoslosdientes(idPatient: string, ProcedimientoOdontologico: string, Estatus: string, Instrumentos: string, Materiales: string,
+registertodoslosdientes(idPatient: string, Imagen: string, ProcedimientoOdontologico: string,
+                        Estatus: string, Instrumentos: string, Materiales: string,
                         Diagnostico: string, Recomendaciones: string, Observaciones: string) {
-  const urlApi = 'http://localhost:3000/procedimiento';
+  const urlApi = 'http://localhost:3000/seguimientotodosdientes';
   return this.htttp
   .post<TodoslosdientesInterface>(
   urlApi,
   {
     // tslint:disable-next-line: object-literal-shorthand
     idPatient: idPatient,
+    // tslint:disable-next-line: object-literal-shorthand
+    Imagen: Imagen,
   // tslint:disable-next-line: object-literal-shorthand
   ProcedimientoOdontologico: ProcedimientoOdontologico,
   // tslint:disable-next-line: object-literal-shorthand
@@ -1088,7 +1091,7 @@ updateInstrumento(id: string, name: string, cantidad: number, especiality: strin
                   costo: string, idDoctor: string, enUso: number, enLimpieza: number ) {
   const urlApi = 'http://localhost:3000/instrumento/update';
   return this.htttp
-  .put<PaatientInterface>(
+  .put<InstrumentoInterface>(
   urlApi,
   {
     // tslint:disable-next-line: object-literal-shorthand

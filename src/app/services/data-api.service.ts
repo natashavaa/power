@@ -91,6 +91,14 @@ export class DataApiService {
     const urlApi = 'http://localhost:3000/material' ;
     return this.http.get(urlApi);
   }
+  getMAterialByName(nombre: string) {
+    const urlApi = `http://localhost:3000/material/${nombre}` ;
+    return this.http.get(urlApi);
+  }
+  getInstrumentosByName(nombre: string) {
+    const urlApi = `http://localhost:3000/instrumento/${nombre}` ;
+    return this.http.get(urlApi);
+  }
   getAllPadecimientoPorPieza() {
     const urlApi = 'http://localhost:3000/padecimientoporPieza' ;
     return this.http.get(urlApi);

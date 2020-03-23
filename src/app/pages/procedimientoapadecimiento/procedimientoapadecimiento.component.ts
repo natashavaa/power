@@ -67,7 +67,7 @@ export class ProcedimientoapadecimientoComponent implements OnInit {
   }
   onRegisterProcedimientoApad(): void {
     this.procedimientoaPad.materiales = this.materialesArray.value.map(x => x).join(' , ');
-    this.procedimientoaPad.instrumentos = this.instrumentosArray.value.map(x => x).join(' , ');
+    this.procedimientoaPad.instrumentos = this.instrumentosArray.value.map(x => x).join(', ');
     this.authService.registerProcedimientoaPadecimiento(
       this.procedimientoaPad.NombreProcedimiento,
       this.procedimientoaPad.Descripcion,
