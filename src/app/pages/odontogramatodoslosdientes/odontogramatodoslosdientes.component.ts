@@ -100,15 +100,15 @@ private todoslosdientesOficial: TodoslosdientesInterface = {};
             instruments.enUso,
             instruments.enLimpieza
           ).subscribe(instrumentsw => {
-            this.instrumentos = instrumentsw;
             if (instrumentsw.cantidad < 3) {
               // tslint:disable-next-line: max-line-length
               alert('Instrumento: ' + this.instrumentos.name + ' ' + instrumentsw.cantidad + 'Unidades' + ' Proceda a limpiar instrumentos utilizados anteriormente');
+
             }
            } );
         } else {
           // tslint:disable-next-line: max-line-length
-          alert('Cantidad de Instrumentos insuficientes: ' + this.instrumentos.name +  ' Proceda a limpiar instrumentos utilizados anteriormente');
+          alert('Cantidad de Instrumentos insuficientes: ' +  ' Proceda a limpiar instrumentos utilizados anteriormente');
           this.router.navigate(['especialidad']);
         }
       }

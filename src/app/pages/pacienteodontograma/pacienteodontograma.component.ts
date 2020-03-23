@@ -1310,7 +1310,7 @@ export class PacienteodontogramaComponent implements OnInit {
   }
   vaciarInventario(materialesrec: string, instrumentosrec: string) {
     if (materialesrec.length < 2) {
-      alert('A ocurrido algo inesperado porfavor seleccione de nuevo ');
+      alert('A ocurrido algo inesperado porfavor seleccione de nuevo el padecimiento');
     }
     const materiales =  materialesrec.split(' , ');
     const instrumentos = instrumentosrec.split(' , ');
@@ -1334,10 +1334,10 @@ export class PacienteodontogramaComponent implements OnInit {
             instruments.enLimpieza
           ).subscribe(instrumentsw => {
             this.instrumentos = instrumentsw;
-            if (instrumentsw.cantidad < 3) {
+           // if (instrumentsw.cantidad < 3) {
               // tslint:disable-next-line: max-line-length
-              alert('Instrumento: ' + this.instrumentos.name + ' ' + instrumentsw.cantidad + 'Unidades' + ' Proceda a limpiar instrumentos utilizados anteriormente');
-            }
+         //     alert('Instrumento: ' + this.instrumentos.name + ' ' + instrumentsw.cantidad + 'Unidades' + ' Proceda a limpiar instrumentos utilizados anteriormente');
+          //  }
            } );
         } else {
           // tslint:disable-next-line: max-line-length
