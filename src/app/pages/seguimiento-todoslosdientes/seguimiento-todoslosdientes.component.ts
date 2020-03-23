@@ -7,18 +7,19 @@ import { AppComponent } from '../../app.component';
 import { AuthService } from '../../services/auth.service';
 import { DataApiService } from '../../services/data-api.service';
 import { PaatientInterface } from '../../models/patients.interface';
+import { TodoslosdientesInterface } from '../../models/todoslosdientes.interface';
 
 @Component({
-  selector: 'app-pacienteseguimiento',
-  templateUrl: './pacienteseguimiento.component.html',
-  styleUrls: ['./pacienteseguimiento.component.css']
+  selector: 'app-seguimiento-todoslosdientes',
+  templateUrl: './seguimiento-todoslosdientes.component.html',
+  styleUrls: ['./seguimiento-todoslosdientes.component.css']
 })
-export class PacienteseguimientoComponent implements OnInit {
+export class SeguimientoTodoslosdientesComponent implements OnInit {
 
   constructor(private router: Router, private app: AppComponent, private auth: AuthService, private dataApi: DataApiService,
               private _sanitizer: DomSanitizer) { }
   private piezasdental: PiezaDentalInterface = {};
-  private odontogramaoficial: OdontogramaInterface = {};
+  private seguimientosrecibidos: TodoslosdientesInterface = {};
   private patient: PaatientInterface = {};
   llenarodontooficialunavez = true;
   momentoC: string;
@@ -38,11 +39,8 @@ export class PacienteseguimientoComponent implements OnInit {
   }
   getAllPiezasdentales() {
     // tslint:disable-next-line: max-line-length
-    this.dataApi.getAllodontogramasbypatient(this.patient.id).subscribe((odontogramarecibidos: OdontogramaInterface) => {
-       this.odontogramaoficial = odontogramarecibidos;
-
-
-
+    this.dataApi.getAllodontogramastodoslosdientesbypatient(this.patient.id).subscribe((seguimientosrecibidos: TodoslosdientesInterface) => {
+       this.seguimientosrecibidos = seguimientosrecibidos;
        if (this.llenarodontooficialunavez) {
 
         this.llenarodontooficialunavez = false;

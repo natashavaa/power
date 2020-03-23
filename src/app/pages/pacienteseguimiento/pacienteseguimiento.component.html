@@ -105,15 +105,15 @@
             <br>
             <div class="row">
                 <div class="col-6">
-                    <form action="">
+                    <form #getype="ngForm" (ngSubmit)="getType(getype)">
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                             <br>
-                            <select class="form-control col-5">
-                                <option>Todos los Dientes</option>
-                                <option>Diente por Diente</option>
-                                <option>Ortodoncia</option>
-                            </select>
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
+                            <option selected>Diente por Diente</option>
+                            <option>Todos los Dientes</option>
+                            <option>Ortodoncia</option>
+                        </select>
                             <div class="col-1">
                                 <button class="sinp" type="submit" class="btn btn-success">Ir </button>
                             </div>
@@ -123,7 +123,7 @@
 
             </div>
             <br>
-            <div class="row">
+            <!--   <div class="row">
                 <div class="col-6">
                     <form action="">
                         <div class="form-group row">
@@ -140,7 +140,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div>-->
             <br>
             <br>
             <section *ngFor="let odontogramaoficial of odontogramaoficial">

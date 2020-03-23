@@ -1,0 +1,169 @@
+<div class="container">
+    <div class="left">
+        <br>
+        <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
+        <mat-card-content>
+            <mat-list>
+                <mat-card-title>
+                    <h5 align="center">{{patient.name}}</h5>
+                    <h1 align="center">{{patient.age}} años</h1>
+                </mat-card-title>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="datos()" class="a">Datos Personales</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/lifecycle.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="imagen()" class="b">Evolucion</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/counselor.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="consulta()" class="c">Consultas</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/workflow.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/details-popup.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="seguimiento()" class="e">Seguimiento</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <!-- <mat-list-item>
+                 <form>
+                      <div>
+                          <button mat-stroked-button (click)="odontograma()" class="f">Odontograma</button>
+                      </div>
+                  </form>
+              </mat-list-item> -->
+                <mat-list-item>
+                    <img clas="tres" src="https://img.icons8.com/dusk/50/000000/resume.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="informacion()" class="g">Historial Clinico</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/hint.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="recipe()" class="h">Recipe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img src="https://img.icons8.com/cotton/50/000000/treatment-list.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="informe()" class="j">Informe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img src="https://img.icons8.com/dusk/50/000000/budget.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </div>
+
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+                <form>
+                    <mat-card>
+                        <br>
+                        <h4><img src="https://img.icons8.com/dusk/50/000000/dental-crown.png"> SEGUIMIENTO </h4>
+                    </mat-card>
+                </form>
+            </mat-card-title>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <form #getype="ngForm" (ngSubmit)="getType(getype)">
+                        <div class="form-group row">
+                            <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
+                            <br>
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
+                          <option selected>Diente por Diente</option>
+                          <option>Todos los Dientes</option>
+                          <option>Ortodoncia</option>
+                      </select>
+                            <div class="col-1">
+                                <button class="sinp" type="submit" class="btn btn-success">Ir </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <br>
+            <!--   <div class="row">
+              <div class="col-6">
+                  <form action="">
+                      <div class="form-group row">
+                          <mat-label for="" class="col-4 col-form-label">Estatus</mat-label>
+                          <br>
+                          <select class="form-control col-5">
+                              <option>Evaluado</option>
+                              <option>Iniciado</option>
+                              <option>Terminado</option>
+                          </select>
+                          <div class="col-1">
+                              <button class="sinp" type="submit" class="btn btn-success">Ir </button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>-->
+            <br>
+            <br>
+            <section *ngFor="let seguimientosrecibidos of seguimientosrecibidos">
+                <img src="assets/img/odontograma.png" alt="Avatar Image">
+                <div class="row">
+                    <div class="col-6">
+                        <p class="titulo">Procedimiento Aplicado: <span class="per">{{seguimientosrecibidos.ProcedimientoOdontologico}} </span></p>
+                        <p class="titulo">Diagnostico Recibido: <span class="per">{{seguimientosrecibidos.Diagnostico}} </span></p>
+                    </div>
+                    <div class="col-1">
+
+                    </div>
+                    <div class="col-4">
+                        <p class="titulo">Estatus: <span class="per">{{seguimientosrecibidos.Estatus}} </span></p>
+                        <p class="titulo">Recomendaciones: <span class="per">{{seguimientosrecibidos.Recomendaciones}} </span></p>
+                        <p class="titulo">Observaciones: <span class="per">{{seguimientosrecibidos.Observaciones}} </span></p>
+                    </div>
+
+                </div>
+
+
+            </section>
+            <br>
+        </mat-card-content>
+    </div>
+</div>

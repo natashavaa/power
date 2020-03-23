@@ -58,6 +58,7 @@ import { ModificarprodedimientoapadecimientoComponent } from './pages/modificarp
 import { ModificarservicioComponent } from './pages/modificarservicio/modificarservicio.component';
 import { ModificarpacientepresupuestoComponent } from './pages/modificarpacientepresupuesto/modificarpacientepresupuesto.component';
 import { PacienteseguimientodetalleComponent } from './pages/pacienteseguimientodetalle/pacienteseguimientodetalle.component';
+import { SeguimientoTodoslosdientesComponent } from './pages/seguimiento-todoslosdientes/seguimiento-todoslosdientes.component';
 
 
 
@@ -113,7 +114,7 @@ const appRoutes: Routes = [
   { path: 'editarpaciente', component: EditarpacienteComponent },
   { path: 'servicios', component: ServicioscdmComponent },
   { path: 'pacienteseguimientodetalle', component: PacienteseguimientodetalleComponent },
-
+  { path: 'seguimientotodoslosdientes', component: SeguimientoTodoslosdientesComponent },
   { path: 'modiicarservicio', component: ModificarservicioComponent },
   { path: 'registerservicios', component: RegisterservicioscdmComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },

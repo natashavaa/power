@@ -112,6 +112,7 @@ import { ModificarprodedimientoapadecimientoComponent } from './pages/modificarp
 import { ModificarservicioComponent } from './pages/modificarservicio/modificarservicio.component';
 import { ModificarpacientepresupuestoComponent } from './pages/modificarpacientepresupuesto/modificarpacientepresupuesto.component';
 import { PacienteseguimientodetalleComponent } from './pages/pacienteseguimientodetalle/pacienteseguimientodetalle.component';
+import { SeguimientoTodoslosdientesComponent } from './pages/seguimiento-todoslosdientes/seguimiento-todoslosdientes.component';
 
 
 @NgModule({
@@ -175,7 +176,8 @@ import { PacienteseguimientodetalleComponent } from './pages/pacienteseguimiento
     ModificarprodedimientoapadecimientoComponent,
     ModificarservicioComponent,
     ModificarpacientepresupuestoComponent,
-    PacienteseguimientodetalleComponent
+    PacienteseguimientodetalleComponent,
+    SeguimientoTodoslosdientesComponent
   ],
   imports: [
     SliderModule,
