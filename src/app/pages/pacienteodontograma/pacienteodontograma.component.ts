@@ -2199,6 +2199,8 @@ export class PacienteodontogramaComponent implements OnInit {
     }
   guardarpieza() {
     this.odontogramaoficial.idPatient = this.patient.id;
+    this.odontogramaoficial.diagnosticoCompleto = this.formulario.diagnosticoPiezaaux;
+    console.log(this.odontogramaoficial);
     this.auth.registerOdontograma(
     this.odontogramaoficial.idPatient,
     this.odontogramaoficial.status,
