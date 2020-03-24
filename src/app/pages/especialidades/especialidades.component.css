@@ -176,10 +176,12 @@
     width: 30%;
 }
 
-.caja input {
-    background-color: gray;
+input {
     padding: 10px;
-    border-radius: 5%;
+    height: 35px;
+    width: 200px;
+    background-color: #2c2b2b;
+    margin-left: 20px;
 }
 
 .caja2 {
@@ -190,7 +192,8 @@
 }
 
 .marg {
-    margin: -5px;
+    margin: 20px;
+    padding: 0px;
 }
 
 .selector {

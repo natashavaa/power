@@ -60,7 +60,7 @@
                             src="https://img.icons8.com/dusk/50/000000/dental-mirror.png"> Agregar Instrumentos</button>
                 </div>
             </form>
-            <form #gelistIn="ngForm" (ngSubmit)="getInsumosSpeciality(gelistIn)">
+            <!--    <form #gelistIn="ngForm" (ngSubmit)="getInsumosSpeciality(gelistIn)">
                 <div class="row ">
                     <div class="col-6">
                         <br>
@@ -81,21 +81,18 @@
 
                     </div>
                 </div>
-            </form>
+            </form>-->
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista de Instrumentos Odontologicos</label>
-                    <mat-form-field class=" col-2 border-bottom text-dark">
-                        <div class="row caja2">
-                            <img src="https://img.icons8.com/dusk/25/000000/search.png">
-
-                            <div class="row marg">
-                                <mat-label class="text-dark"></mat-label>
-                                <input matInput placeholder="Buscar">
-                            </div>
+                    <div class="row">
+                        <div class="">
                         </div>
 
-                    </mat-form-field>
+                        <div class="row marg">
+                            <input placeholder="Buscar Instrumentos..." type="text" class="form-control" name="filterpost" [(ngModel)]="filterpost">
+                        </div>
+                    </div>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
                     <table class="table table-hover">
                         <thead>
@@ -110,12 +107,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let instrumento of instrumento">
+                            <tr *ngFor="let instrumento of instrumento | filtermaterial: filterpost">
                                 <td>{{instrumento.id}}</td>
                                 <td>{{instrumento.name}}</td>
                                 <td>{{instrumento.especiality}}</td>
                                 <td>{{instrumento.cantidad}}</td>
-                               
+
                                 <td>
                                     <button (click)="enUsoInsumos(instrumento)" class="btn btn-primary" type="button" data-toggle="tooltip" data-placement="top" title="Cantidad de Instrumentos Utilizados ahora,Presiones si ya los usó">
                                         <span>En uso: {{instrumento.enUso}}

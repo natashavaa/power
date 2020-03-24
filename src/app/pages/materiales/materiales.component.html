@@ -58,7 +58,7 @@
                             src="https://img.icons8.com/dusk/50/000000/toothpaste.png"> Agregar Material</button>
                 </div>
             </form>
-            <form #gelist="ngForm" (ngSubmit)="getMAterialSpeciality(gelist)">
+            <!--  <form #gelist="ngForm" (ngSubmit)="getMAterialSpeciality(gelist)">
                 <div class="row ">
                     <div class="col-6">
                         <br>
@@ -79,22 +79,19 @@
                     </div>
                 </div>
             </form>
-
+-->
 
             <div class="row mt-5">
                 <div class="col">
                     <label for="" class="lolo">Lista Materiales Odontologicos</label>
-                    <mat-form-field class=" col-2 border-bottom text-dark">
-                        <div class="row caja2">
-                            <img src="https://img.icons8.com/dusk/25/000000/search.png">
-
-                            <div class="row marg">
-                                <mat-label class="text-dark"></mat-label>
-                                <input matInput placeholder="Buscar">
-                            </div>
+                    <div class="row">
+                        <div class="">
                         </div>
 
-                    </mat-form-field>
+                        <div class="row marg">
+                            <input placeholder="Buscar materiales..." type="text" class="form-control" name="filterpost" [(ngModel)]="filterpost">
+                        </div>
+                    </div>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
                     <table class="table table-hover">
                         <thead bgcolor="">
@@ -112,34 +109,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let material of material">
-                                <td>{{material.id}}</td>
-                                <td>{{material.name}}</td>
-                                <td>{{material.especiality}}</td>
-                                <td>{{material.costo}}</td>
-                                <td>{{material.cantidad}}</td>
+                            <tr *ngFor="let materia of material | filtermaterial: filterpost">
+                                <td>{{materia.id}}</td>
+                                <td>{{materia.name}}</td>
+                                <td>{{materia.especiality}}</td>
+                                <td>{{materia.costo}}</td>
+                                <td>{{materia.cantidad}}</td>
                                 <td>
                                     <button mat-raised-button class="btn btn-info">
                                         <span>
-                                            {{material.usados}}
+                                            {{materia.usados}}
                                         </span>
                                     </button>
                                 </td>
                                 <td>
                                     <button mat-raised-button class="btn btn-primary">
                                         <span>
-                                            {{material.estadoDisp}}
+                                            {{materia.estadoDisp}}
                                         </span>
                                     </button>
                                 </td>
                                 <td>
-                                    <button mat-raised-button (click)="usarMaterial(material)" class="btn btn-success">Desechar</button>
+                                    <button mat-raised-button (click)="usarMaterial(materia)" class="btn btn-success">Desechar</button>
                                 </td>
                                 <td>
-                                    <button mat-raised-button (click)="ReponerMaterial(material)" class="btn btn-warning">Reponer</button>
+                                    <button mat-raised-button (click)="ReponerMaterial(materia)" class="btn btn-warning">Reponer</button>
                                 </td>
                                 <td>
-                                    <button mat-raised-button (click)="eliminarMaterial(material)" class="btn btn-danger">Eliminar</button>
+                                    <button mat-raised-button (click)="eliminarMaterial(materia)" class="btn btn-danger">Eliminar</button>
                                 </td>
 
                             </tr>

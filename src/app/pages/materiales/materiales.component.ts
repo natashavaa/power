@@ -55,6 +55,7 @@ odontologiatrue: boolean;
   };
      usuarioA: string;
      especialidad: string;
+     filterpost: 'Escribe';
   openDialog(material: MaterialInterface): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '250px',
@@ -86,6 +87,7 @@ odontologiatrue: boolean;
     this.odontologiatrue = false;
     this.ortodonciatrue = false;
     this.doctor();
+    this.getlistAllMaterial();
   }
   OnInput(CantUsar: number) {
     this.CantUsar = CantUsar;
@@ -169,7 +171,6 @@ odontologiatrue: boolean;
       this.getlistMaterialOrtodoncia();
 
     }
-    this.ngOnInit();
   }
   getMAterialSpecialityOninit(): void {
     if ( Object.is(this.speciality, 'Todas')) {

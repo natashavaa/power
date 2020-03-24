@@ -12,8 +12,8 @@ export class FilterPipe implements PipeTransform {
       // tslint:disable-next-line: max-line-length
       if (patient.dni.toLowerCase().indexOf(arg.toLowerCase()) > -1 || patient.name.toLowerCase().indexOf(arg.toLowerCase()) > -1  || patient.userType.toLowerCase().indexOf(arg.toLowerCase()) > -1 || patient.registradoPor.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         resultpatients.push(patient);
-      };
-    };
+      }
+    }
     return resultpatients;
   }
 

@@ -26,6 +26,7 @@ export class EspecialidadesComponent implements OnInit {
     enUso: 0,
 
   };
+  filterpost: 'Escribe';
   public user: UserInterface = {
     id: '',
     name: '',
@@ -44,6 +45,7 @@ export class EspecialidadesComponent implements OnInit {
   ngOnInit() {
     this.doctor();
     this.app.mostrar = true;
+    this.getlistAllInstrumentos();
   }
   doctor(): string {
     this.user = this.authService.getCurrentUser();
