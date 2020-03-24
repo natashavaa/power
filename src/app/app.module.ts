@@ -113,6 +113,7 @@ import { ModificarservicioComponent } from './pages/modificarservicio/modificars
 import { ModificarpacientepresupuestoComponent } from './pages/modificarpacientepresupuesto/modificarpacientepresupuesto.component';
 import { PacienteseguimientodetalleComponent } from './pages/pacienteseguimientodetalle/pacienteseguimientodetalle.component';
 import { SeguimientoTodoslosdientesComponent } from './pages/seguimiento-todoslosdientes/seguimiento-todoslosdientes.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -177,7 +178,8 @@ import { SeguimientoTodoslosdientesComponent } from './pages/seguimiento-todoslo
     ModificarservicioComponent,
     ModificarpacientepresupuestoComponent,
     PacienteseguimientodetalleComponent,
-    SeguimientoTodoslosdientesComponent
+    SeguimientoTodoslosdientesComponent,
+    FilterPipe
   ],
   imports: [
     SliderModule,

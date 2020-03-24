@@ -26,6 +26,7 @@ export class PacientesComponent {
   private doctorP: UserInterface = {
     name: '',
   };
+  filterpost: 'Escribe';
   private doctorUser: UserInterface = {};
   public user: UserInterface = {
     id: '',
@@ -46,6 +47,8 @@ export class PacientesComponent {
      especialidad: string;
 
   private patient: PaatientInterface;
+  private patientnueva: PaatientInterface;
+
 
   pacientes(): void {
     this.router.navigate(['registerpaciente']);
@@ -73,6 +76,7 @@ export class PacientesComponent {
     this.getlistUsers();
     this.doctor();
 }
+
 getlistPatients() {
   this.dataApi.getAllPatints().subscribe((patients: PaatientInterface) => ( this.patient = patients));
 }

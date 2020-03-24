@@ -46,8 +46,9 @@ button {
     border-radius: 5%;
 }
 
-.marg {
-    margin: 5px;
+input .marg {
+    padding: 0px;
+    margin: auto;
 }
 
 .tres img {
