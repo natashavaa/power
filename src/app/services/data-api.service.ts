@@ -23,6 +23,10 @@ export class DataApiService {
     const urlApi = `http://localhost:3000/seguimientoadiente/odontograma/${id}`;
     return this.http.get(urlApi);
   }
+  getSeguimientoByOdontogramatodoslosdientes(id) {
+    const urlApi = `http://localhost:3000/seguimientodetalletodos/odontograma/${id}`;
+    return this.http.get(urlApi);
+  }
   getAllRecipePatient(id: string) {
     const urlApi = `http://localhost:3000/recipe/patientrecipe${id}`;
     return this.http.get(urlApi);

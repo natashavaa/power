@@ -9,4 +9,5 @@ export interface TodoslosdientesInterface {
   Diagnostico?: string;
   Recomendaciones?: string;
   Observaciones?: string;
+
 }

@@ -104,22 +104,7 @@
             <br>
             <br>
             <div class="row">
-                <div class="col-6">
-                    <form #getype="ngForm" (ngSubmit)="getType(getype)">
-                        <div class="form-group row">
-                            <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
-                            <br>
-                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
-                          <option selected>Diente por Diente</option>
-                          <option>Todos los Dientes</option>
-                          <option>Ortodoncia</option>
-                      </select>
-                            <div class="col-1">
-                                <button class="sinp" type="submit" class="btn btn-success">Ir </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+
 
             </div>
             <br>
@@ -143,33 +128,99 @@
           </div>-->
             <br>
             <br>
-            <section *ngFor="let seguimientosrecibidos of seguimientosrecibidos">
-                <img src="assets/img/odontograma.png" alt="Avatar Image">
+            <img src="assets/img/odontograma.png" alt="Avatar Image">
+
+            <br>
+            <br>
+            <br>
+            <form #formRegisterseguimiento="ngForm" (ngSubmit)="onRegisterSeguimiento(formRegisterseguimiento)">
                 <div class="row">
                     <div class="col-6">
-                        <p class="titulo">Procedimiento Aplicado: <span class="per">{{seguimientosrecibidos.ProcedimientoOdontologico}} </span></p>
-                        <p class="titulo">Diagnostico Recibido: <span class="per">{{seguimientosrecibidos.Diagnostico}} </span></p>
-                    </div>
-                    <div class="col-1">
+
+                        <div class="form-group row">
+                            <mat-label for="" class="col-6 col-form-label">Fecha </mat-label>
+                            <br>
+                            <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha" class="form-control col-4" [(ngModel)]="fecha">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
 
                     </div>
-                    <div class="col-4">
-                        <p class="titulo">Estatus: <span class="per">{{seguimientosrecibidos.Estatus}} </span></p>
-                        <p class="titulo">Recomendaciones: <span class="per">{{seguimientosrecibidos.Recomendaciones}} </span></p>
-                        <p class="titulo">Observaciones: <span class="per">{{seguimientosrecibidos.Observaciones}} </span></p>
-                    </div>
-                    <div>
-                        <button (click)="IraDetalles(seguimientosrecibidos)" align="center" class="btn btn-success">Ver Detalles</button>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                    <div class="col-6">
+
+                        <div class="row">
+                            <div class="col-6">
+
+                                <fieldset>
+                                    <div class="form-group row">
+                                        <label for="" class="col-4 col-form-label">Consultas Posteriores</label>
+                                        <input #Consultas="ngModel" name="Consultas" [(ngModel)]='seguimientoRe.ConsultasPosteriores' class="form-control col-6">
+                                    </div>
+                                    <div class="form-group row">
+                                        <mat-label for="" class="col-4 col-form-label">Estatus</mat-label>
+
+                                        <select class="form-control col-5" #Estatus="ngModel" name="Estatus" [(ngModel)]='seguimientoRe.Estatus'>
+                                        <option>Evaluado</option>
+                                        <option>Iniciado</option>
+                                        <option>Terminado</option>
+                                    </select>
+
+                                    </div>
+                                </fieldset>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
-
-            </section>
+                <br>
+                <div class="form-group row">
+                    <label for="" class="col-4 col-form-label">Tratamiento Efectuado</label>
+                    <textarea #TratamientoEfectuado="ngModel" name="TratamientoEfectuado" [(ngModel)]='seguimientoRe.TratamientoEfectuado' rows="3" class="form-control col-6"></textarea>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4 col-form-label">Observaciones</label>
+                    <textarea #Observaciones="ngModel" name="Observaciones" [(ngModel)]='seguimientoRe.Observaciones' rows="3" class="form-control col-6"></textarea>
+                </div>
+                <br>
+                <button mat-raised-button type="submit" class="btn btn-success">Guardar</button>
+                <button mat-raised-button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
+            </form>
             <br>
+            <br>
+            <br>
+            <br>
+            <div class="row mt-5">
+                <div class="col">
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">TratamientoEfectuado</th>
+                                <th scope="col">Observaciones</th>
+                                <th scope="col">ConsultasPosteriores</th>
+                                <th scope="col">Estatus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let seguimientodeOdon of seguimientodeOdontograma">
+
+                                <td>{{seguimientodeOdon.id}}</td>
+                                <td>{{seguimientodeOdon.Fecha}}</td>
+                                <td>{{seguimientodeOdon.TratamientoEfectuado}}</td>
+                                <td>{{seguimientodeOdon.Observaciones}}</td>
+                                <td>{{seguimientodeOdon.ConsultasPosteriores}}</td>
+                                <td>{{seguimientodeOdon.Estatus}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
         </mat-card-content>
     </div>
 </div>

@@ -914,6 +914,30 @@ registerSeguimiento(idOdontograma: string, Fecha: string,
   },
   );
 }
+registerSeguimientotodoslosdientes(idOdontograma: string, Fecha: string,
+                                   TratamientoEfectuado: string, Observaciones: string,
+                                   ConsultasPosteriores: string, Estatus: string) {
+const urlApi = 'http://localhost:3000/seguimientodetalletodos';
+return this.htttp
+.post<TodoslosdientesInterface>(
+urlApi,
+{
+// tslint:disable-next-line: object-literal-shorthand
+idOdontograma: idOdontograma,
+// tslint:disable-next-line: object-literal-shorthand
+Fecha: Fecha,
+// tslint:disable-next-line: object-literal-shorthand
+TratamientoEfectuado: TratamientoEfectuado,
+// tslint:disable-next-line: object-literal-shorthand
+Observaciones: Observaciones,
+// tslint:disable-next-line: object-literal-shorthand
+ConsultasPosteriores: ConsultasPosteriores,
+// tslint:disable-next-line: object-literal-shorthand
+Estatus: Estatus,
+
+},
+);
+}
 updateProcedimiento(id: string, NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string) {
   const urlApi = 'http://localhost:3000/procedimiento/update';
   return this.htttp
@@ -1268,6 +1292,10 @@ loginuser(username: string, password: string): Observable<any> {
     const patientString = JSON.stringify(patient);
     localStorage.setItem('currentOdontogramaDiente', patientString);
   }
+  setTodoslosDientes(patient: TodoslosdientesInterface): void {
+    const patientString = JSON.stringify(patient);
+    localStorage.setItem('currentTodoslosdientes', patientString);
+  }
 
   setToken(token): void {
     localStorage.setItem('accessToken', token);
@@ -1276,7 +1304,15 @@ loginuser(username: string, password: string): Observable<any> {
   getToken() {
     return localStorage.getItem('accessToken');
   }
-
+  getTodoslosDientes(): TodoslosdientesInterface {
+    const userString = localStorage.getItem('currentTodoslosdientes');
+    if (!isNullOrUndefined(userString)) {
+      const user: UserInterface = JSON.parse(userString);
+      return user;
+    } else {
+      return null;
+    }
+  }
   getCurrentUser(): UserInterface {
     const userString = localStorage.getItem('currentUser');
     if (!isNullOrUndefined(userString)) {

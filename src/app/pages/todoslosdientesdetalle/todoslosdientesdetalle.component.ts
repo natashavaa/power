@@ -8,55 +8,54 @@ import { AuthService } from '../../services/auth.service';
 import { DataApiService } from '../../services/data-api.service';
 import { PaatientInterface } from '../../models/patients.interface';
 import { TodoslosdientesInterface } from '../../models/todoslosdientes.interface';
+import { SeguimientoTodoslosdientesComponent } from '../seguimiento-todoslosdientes/seguimiento-todoslosdientes.component';
+import { SeguimientoTodoslosDientesInterface } from '../../models/todoslosdientesdetalles.interface';
+import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-seguimiento-todoslosdientes',
-  templateUrl: './seguimiento-todoslosdientes.component.html',
-  styleUrls: ['./seguimiento-todoslosdientes.component.css']
+  selector: 'app-todoslosdientesdetalle',
+  templateUrl: './todoslosdientesdetalle.component.html',
+  styleUrls: ['./todoslosdientesdetalle.component.css']
 })
-export class SeguimientoTodoslosdientesComponent implements OnInit {
+export class TodoslosdientesdetalleComponent implements OnInit {
 
   constructor(private router: Router, private app: AppComponent, private auth: AuthService, private dataApi: DataApiService,
-              private _sanitizer: DomSanitizer) { }
+              private _sanitizer: DomSanitizer, public datepipe: DatePipe) { }
   private piezasdental: PiezaDentalInterface = {};
-  private seguimientosrecibidos: TodoslosdientesInterface = {};
+  private seguimientorecibido: TodoslosdientesInterface = {};
+  private seguimientoRe: SeguimientoTodoslosDientesInterface = {};
   private patient: PaatientInterface = {};
+  private seguimientodeOdontograma: TodoslosdientesInterface = {};
   llenarodontooficialunavez = true;
   momentoC: string;
+  fecha = Date;
   ngOnInit() {
     this.patient = this.auth.getCurrentPatient();
     this.app.mostrar = true;
-    this.getAllPiezasdentales();
+    this.seguimientorecibido = this.auth.getTodoslosDientes();
+    this.getSeguimientos();
   }
-  getType(): void {
-    if ( Object.is(this.momentoC, 'Diente por Diente')) {
-      this.router.navigate(['pacienteseguimiento']);
-    } else if ( Object.is(this.momentoC, 'Todos los Dientes')) {
-      this.router.navigate(['seguimientotodoslosdientes']);
-    } else if (Object.is(this.momentoC, 'Ortodoncia')) {
-      this.router.navigate(['ortodoncia']);
+  getSeguimientos() {
+    this.dataApi.getSeguimientoByOdontogramatodoslosdientes(this.seguimientorecibido.id)
+      .subscribe((seguimiento: TodoslosdientesInterface) => ( this.seguimientodeOdontograma = seguimiento));
+
     }
-  }
-  getAllPiezasdentales() {
-    // tslint:disable-next-line: max-line-length
-    this.dataApi.getAllodontogramastodoslosdientesbypatient(this.patient.id).subscribe((seguimientosrecibidos: TodoslosdientesInterface) => {
-       this.seguimientosrecibidos = seguimientosrecibidos;
-       if (this.llenarodontooficialunavez) {
+  onRegisterSeguimiento() {
+    this.seguimientoRe.Fecha = this.datepipe.transform(this.fecha, 'dd-MM-yyyy');
+    console.log(this.seguimientoRe);
+    this.seguimientoRe.idOdontograma = this.seguimientorecibido.id;
+    this.auth.registerSeguimientotodoslosdientes(
+      this.seguimientorecibido.id,
+      this.seguimientoRe.Fecha,
+      this.seguimientoRe.TratamientoEfectuado,
+      this.seguimientoRe.Observaciones,
+      this.seguimientoRe.ConsultasPosteriores,
+      this.seguimientoRe.Estatus,
+    ).subscribe(seguimiento => {
+      this.router.navigate(['seguimientotodoslosdientes']);
 
-        this.llenarodontooficialunavez = false;
-      }
-       this.llenarodontooficialunavez = false;
-      } );
+     } );
   }
-  convert(imagen) {
-    return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'
-       + imagen);
-  }
-  IraDetalles(seguimientosrecibidos: TodoslosdientesInterface) {
-    this.auth.setTodoslosDientes(seguimientosrecibidos);
-    this.router.navigate(['seguimientotodoslosdientesdetalle']);
-  }
-
   datos(): void {
     this.router.navigate(['historiaclinica']);
   }
