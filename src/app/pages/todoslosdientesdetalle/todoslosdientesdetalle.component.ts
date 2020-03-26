@@ -40,6 +40,9 @@ export class TodoslosdientesdetalleComponent implements OnInit {
       .subscribe((seguimiento: TodoslosdientesInterface) => ( this.seguimientodeOdontograma = seguimiento));
 
     }
+    cancelar() {
+      this.router.navigate(['seguimientotodoslosdientes']);
+    }
   onRegisterSeguimiento() {
     this.seguimientoRe.Fecha = this.datepipe.transform(this.fecha, 'dd-MM-yyyy');
     console.log(this.seguimientoRe);

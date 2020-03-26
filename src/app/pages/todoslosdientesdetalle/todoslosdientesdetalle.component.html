@@ -132,6 +132,25 @@
 
             <br>
             <br>
+            <div class="row">
+                <div class="col-6">
+                    <p class="titulo">Procedimiento Aplicado: <span class="per">{{seguimientorecibido.ProcedimientoOdontologico}} </span></p>
+                    <p class="titulo">Diagnostico Recibido: <span class="per">{{seguimientorecibido.Diagnostico}} </span></p>
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-4">
+                    <p class="titulo">Estatus: <span class="per">{{seguimientorecibido.Estatus}} </span></p>
+                    <p class="titulo">Recomendaciones: <span class="per">{{seguimientorecibido.Recomendaciones}} </span></p>
+                    <p class="titulo">Observaciones: <span class="per">{{seguimientorecibido.Observaciones}} </span></p>
+                </div>
+                <div>
+
+                    <br>
+                    <br>
+                </div>
+            </div>
             <br>
             <form #formRegisterseguimiento="ngForm" (ngSubmit)="onRegisterSeguimiento(formRegisterseguimiento)">
                 <div class="row">
