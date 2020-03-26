@@ -50,7 +50,7 @@ export class OrtodoncialistadetalleComponent implements OnInit{
   }
   getAllPiezasdentales() {
     // tslint:disable-next-line: max-line-length
-    this.dataApi.getAllodontogramastodoslosdientesbypatient(this.Ortodonciarecibido.id).subscribe((seguimientosrecibidos: SeguimientoOrtodonciaInterface) => {
+    this.dataApi.getAllortodonciasbypatient(this.Ortodonciarecibido.id).subscribe((seguimientosrecibidos: SeguimientoOrtodonciaInterface) => {
       this.listSeguimientoOrtodoncia = seguimientosrecibidos;
       } );
   }

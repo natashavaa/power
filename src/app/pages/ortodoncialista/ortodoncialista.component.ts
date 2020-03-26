@@ -17,7 +17,7 @@ import { OdontogramaInterface } from '../../models/odontograma.interface';
 export class OrtodoncialistaComponent implements OnInit {
 
   constructor(private router: Router, private app: AppComponent, private auth: AuthService, private dataApi: DataApiService) { }
-
+  momentoC: string;
   // tslint:disable-next-line: max-line-length
   toppingList: string[] = ['Diastema', 'Vestibulizacion de los incisivos superiores', 'Apiñamiento Leve', 'Apiñamiento Moderado', 'Apiñamiento Severo', 'Mordida Profunda', 'Mordida abierta anterior', 'Biprotrusión'];
   private Ortodonciarecibidos: OrtodonciaInterface = {};
@@ -39,6 +39,15 @@ export class OrtodoncialistaComponent implements OnInit {
   iradetalles(ortodoncia: OrtodonciaInterface) {
     this.auth.setodortodoncia(ortodoncia);
     this.router.navigate(['listaOrtodonciadetalle']);
+  }
+  getType(): void {
+    if ( Object.is(this.momentoC, 'Diente por Diente')) {
+      this.router.navigate(['pacienteseguimiento']);
+    } else if ( Object.is(this.momentoC, 'Todos los Dientes')) {
+      this.router.navigate(['seguimientotodoslosdientes']);
+    } else if (Object.is(this.momentoC, 'Ortodoncia')) {
+      this.router.navigate(['listaOrtodoncia']);
+    }
   }
   datos(): void {
     this.router.navigate(['historiaclinica']);
