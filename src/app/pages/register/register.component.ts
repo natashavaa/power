@@ -83,6 +83,7 @@ export class RegisterComponent {
                 let token = this.user.id;
                 this.authService.setToken(token);
                 this.app.mostrar = false;
+                alert('El usuario doctor ha sido agregado correctamente.');
                 this.router.navigate(['accesodenegado']);
                } );
             } else {

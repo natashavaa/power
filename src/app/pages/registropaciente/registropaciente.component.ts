@@ -107,6 +107,7 @@ export class RegistropacienteComponent implements OnInit {
             this.patient.phone,
             this.patient.registradoPor,
           ).subscribe(patient => {
+            alert('El Paciente ha sido agregado correctamente');
             this.router.navigate(['pacientes']);
            } );
          } else {
