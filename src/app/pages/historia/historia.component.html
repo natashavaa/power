@@ -104,7 +104,7 @@
                 EL PACIENTE PADECE DE COMPLICACIONES CON LA ANESTESIA.
             </div>
             <div>
-                <div class="col-12 row alert alert-success" role="alert" *ngIf="enfermedadesproblema">
+                <div class="marb col-12 row alert alert-success" role="alert" *ngIf="enfermedadesproblema">
                     El Paciente padece de:
                     <div *ngIf="fiebrereumatica"> Fiebre Reumatica, </div>
                     <div *ngIf="Diabetes"> Diabetes, </div>
@@ -116,6 +116,7 @@
                     <div *ngIf="Sinusitiss"> Sinusitiss, </div>
                     <div *ngIf="Renales"> Renales, </div>
                     <div *ngIf="Alergias"> Alergias, </div>
+                    <div *ngIf="otra">{{historial.Otra}} </div>
                 </div>
             </div>
 

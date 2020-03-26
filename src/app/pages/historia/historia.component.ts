@@ -46,7 +46,7 @@ export class HistoriaComponent implements OnInit {
     Otra: '',
     Observaciones: '',
   };
-  private historial: HistotialClinicoInterface = {
+  public historial: HistotialClinicoInterface = {
 
     idPatient: '',
     Labios: '',
@@ -85,6 +85,7 @@ export class HistoriaComponent implements OnInit {
   Sinusitiss = false;
   Renales = false;
   Alergias = false;
+  otra = false;
   getHistoria() {
     this.patient = this.auth.getCurrentPatient();
     this.dataApi.getAllHistorialBypatient(this.patient.id)
@@ -128,6 +129,9 @@ export class HistoriaComponent implements OnInit {
        }
        if (Object.is(historialRec.Alergias, 'Si')) {
         this.Alergias = true;
+       }
+       if (historialRec.Otra !== null) {
+        this.otra = true;
        }
       }
     } );
