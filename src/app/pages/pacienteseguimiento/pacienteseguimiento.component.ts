@@ -33,7 +33,7 @@ export class PacienteseguimientoComponent implements OnInit {
     } else if ( Object.is(this.momentoC, 'Todos los Dientes')) {
       this.router.navigate(['seguimientotodoslosdientes']);
     } else if (Object.is(this.momentoC, 'Ortodoncia')) {
-      this.router.navigate(['ortodoncia']);
+      this.router.navigate(['listaOrtodoncia']);
     }
   }
   getAllPiezasdentales() {

@@ -109,6 +109,9 @@ export class OrtodoncialistadetalleComponent implements OnInit{
      } );
     console.log(this.SeguimientoOrtodoncia);
   }
+  cancelar() {
+    this.router.navigate(['listaOrtodoncia']);
+  }
   iradetalles(ortodoncia: OrtodonciaInterface) {
     this.auth.setodortodoncia(ortodoncia);
     this.router.navigate(['listaOrtodonciadetalle']);

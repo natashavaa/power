@@ -493,37 +493,69 @@
                             <thead>
                                 <tr>
 
-                                    <th scope="col">#</th>
-                                    <th scope="col">C.P</th>
-                                    <th scope="col">SN-FH</th>
-                                    <th scope="col">SN-PLO</th>
-                                    <th scope="col">SN-GOGN</th>
-                                    <th scope="col">1NA-POG</th>
-                                    <th scope="col">SN-GN</th>
-                                    <th scope="col">SNA</th>
-                                    <th scope="col">SNB</th>
-                                    <th scope="col">ANB</th>
-                                    <th scope="col">1SUP/INF</th>
-                                    <th scope="col">GOGN -P.MAX</th>
-                                    <th scope="col">Observaciones</th>
+                                    <th scope="col">Fecha </th>
+                                    <th scope="col">Consultas Posteriores</th>
                                     <th scope="col">Estatus</th>
+                                    <th scope="col">Observaciones</th>
+                                    <th scope="col">Tratamiento Efectuado</th>
 
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let seguimientoO of listSeguimientoOrtodoncia">
 
-                                    <td>{{seguimientoO.ConsultasPosteriores}}</td>
                                     <td>{{seguimientoO.Fecha}}</td>
-                                    <td>{{seguimientoO.TratamientoEfectuado}}</td>
-                                    <td>{{seguimientoO.Observaciones}}</td>
                                     <td>{{seguimientoO.ConsultasPosteriores}}</td>
                                     <td>{{seguimientoO.Estatus}}</td>
+                                    <td>{{seguimientoO.Observaciones}}</td>
+                                    <td>{{seguimientoO.TratamientoEfectuado}}</td>
+
                                 </tr>
 
                             </tbody>
+                            <br>
+                            <br>
+                            <h4 align="center">Comentarios</h4>
                         </table>
+                        <div class="col">
 
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+
+                                        <th scope="col">SN-FH</th>
+                                        <th scope="col">SN-PLO</th>
+                                        <th scope="col">SN-GOGN</th>
+                                        <th scope="col">1NA-POG</th>
+                                        <th scope="col">SN-GN</th>
+                                        <th scope="col">SNA</th>
+                                        <th scope="col">SNB</th>
+                                        <th scope="col">ANB</th>
+                                        <th scope="col">1SUP/INF</th>
+                                        <th scope="col">GOGN -P.MAX</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let seguimientoO of listSeguimientoOrtodoncia">
+
+                                        <td>{{seguimientoO.ComentariodesNFH}}</td>
+                                        <td>{{seguimientoO.ComentariodesNPLO}}</td>
+                                        <td>{{seguimientoO.ComentariodesNGOGN}}</td>
+                                        <td>{{seguimientoO.ComentariodenAPOG}}</td>
+                                        <td>{{seguimientoO.ComentariodesNGN}}</td>
+                                        <td>{{seguimientoO.ComentariodesNA}}</td>
+                                        <td>{{seguimientoO.ComentariodesNB}}</td>
+                                        <td>{{seguimientoO.ComentariodeaNB}}</td>
+                                        <td>{{seguimientoO.ComentariodesUPINF}}</td>
+                                        <td>{{seguimientoO.ComentariodegOGNPMAX}}</td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+
+                        </div>
 
                     </div>
                 </div>

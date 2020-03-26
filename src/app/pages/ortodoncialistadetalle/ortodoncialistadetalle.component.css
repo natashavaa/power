@@ -232,9 +232,9 @@
     background-color: darkred;
 }
 
-label {
+label mat-label {
     font-size: 20px;
-    font: outline;
+    font: bold;
 }
 
 p {
