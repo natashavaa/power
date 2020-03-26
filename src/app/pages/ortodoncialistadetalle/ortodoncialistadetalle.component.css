@@ -232,6 +232,19 @@
     background-color: darkred;
 }
 
+label {
+    font-size: 20px;
+    font: outline;
+}
+
+p {
+    font-size: 20px;
+    font: oblique bold 130% cursive;
+    text-align: left;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
 .titulo {
     font-size: 30px;
     font: oblique bold 130% cursive;
