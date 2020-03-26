@@ -75,10 +75,10 @@
                         </div>
                     </form>
                 </mat-list-item>
-                
+
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
-                   <form>
+                    <form>
                         <div>
                             <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
                         </div>
@@ -100,9 +100,26 @@
                 </form>
             </mat-card-title>
             <br>
-            <div class="alert alert-danger" role="alert">
-                EL PACIENTE PADECE DE (COLOCAR ENFERMEDADES EN CASO DE QUE PADEZCA DE ALGO) Y EN CASO DE QUE HAYA TENIDO COMPLICACIONES CON LA ANESTECIA TAMBIEN COLOCARLO.
+            <div class="alert alert-danger" role="alert" *ngIf="problemasconAnestesia">
+                EL PACIENTE PADECE DE COMPLICACIONES CON LA ANESTESIA.
             </div>
+            <div>
+                <div class="col-12 row alert alert-success" role="alert" *ngIf="enfermedadesproblema">
+                    El Paciente padece de:
+                    <div *ngIf="fiebrereumatica"> Fiebre Reumatica, </div>
+                    <div *ngIf="Diabetes"> Diabetes, </div>
+                    <div *ngIf="Cardiopatias"> Cardiopatias, </div>
+                    <div *ngIf="Tbc"> T.B.C, </div>
+                    <div *ngIf="Artritis"> Artritis, </div>
+                    <div *ngIf="Hemorragias"> Hemorragias, </div>
+                    <div *ngIf="Neuralgias"> Neuralgias, </div>
+                    <div *ngIf="Sinusitiss"> Sinusitiss, </div>
+                    <div *ngIf="Renales"> Renales, </div>
+                    <div *ngIf="Alergias"> Alergias, </div>
+                </div>
+            </div>
+
+
             <div class="row per ">
                 <div class="col-6">
                     <br>
