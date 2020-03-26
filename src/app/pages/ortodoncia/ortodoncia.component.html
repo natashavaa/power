@@ -6,8 +6,8 @@
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <h5 align="center">Maria RodriguezDB</h5>
-                    <h1 align="center">12 años</h1>
+                    <h5 align="center">{{patient.name}}</h5>
+                    <h1 align="center">{{patient.age}} años</h1>
                 </mat-card-title>
                 <mat-list-item>
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
@@ -121,9 +121,8 @@
                     <div class="form-group row">
                         <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                         <br>
-                        <select class="form-control col-5" #momento="ngModel" name="momento" id="momento"
-                            [(ngModel)]="momentoC">
-                            <option selected>Diente por Diente</option>
+                        <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
+                            <option selected disabled>Diente por Diente</option>
                             <option>Todos los Dientes</option>
                             <option>Ortodoncia</option>
                         </select>
@@ -142,80 +141,59 @@
             <br>
 
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <br>
                     <form action="">
                         <div class="form-group row">
-                            <mat-label for="" class="col-8 col-form-label">Clase Canina</mat-label>
+                            <mat-label for="" class="col-6 col-form-label">Clase Canina</mat-label>
                             <br>
-                            <select class="form-control col-4">
-                                <option selected>Seleccionar</option>
+                            <select class="form-control col-6" #ClaseCanina1="ngModel" name="ClaseCanina1" [(ngModel)]='ortodoncia.ClaseCanina1'>
+                                <option selected disabled>Seleccionar</option>
                                 <option>Derecha</option>
                                 <option>Izquierda</option>
                             </select>
                         </div>
                         <div class="form-group row">
-                            <mat-label for="" class="col-8 col-form-label">Clase Canina</mat-label>
+                            <mat-label for="" class="col-6 col-form-label">Clase Canina</mat-label>
                             <br>
-                            <select class="form-control col-4">
-                                <option selected>Seleccionar</option>
+                            <select class="form-control col-6" #ClaseCanina2="ngModel" name="ClaseCanina2" [(ngModel)]='ortodoncia.ClaseCanina2'>
+                                <option selected disabled>Seleccionar</option>
                                 <option>Derecha</option>
                                 <option>Izquierda</option>
                             </select>
                         </div>
                         <div class="form-group row">
-                            <mat-label for="" class="col-8 col-form-label">Clase Molar</mat-label>
+                            <mat-label for="" class="col-6 col-form-label">Clase Molar</mat-label>
                             <br>
-                            <select class="form-control col-4">
-                                <option selected>Seleccionar</option>
+                            <select class="form-control col-6" #ClaseMolar1="ngModel" name="ClaseMolar1" [(ngModel)]='ortodoncia.ClaseMolar1'>
+                                <option selected disabled>Seleccionar</option>
                                 <option>Derecha</option>
                                 <option>Izquierda</option>
                             </select>
                         </div>
                         <div class="form-group row">
-                            <mat-label for="" class="col-8 col-form-label">Clase Molar</mat-label>
+                            <mat-label for="" class="col-6 col-form-label">Clase Molar</mat-label>
                             <br>
-                            <select class="form-control col-4">
-                                <option selected>Seleccionar</option>
+                            <select class="form-control col-6" #ClaseMolar2="ngModel" name="ClaseMolar2" [(ngModel)]='ortodoncia.ClaseMolar2'>
+                                <option selected disabled>Seleccionar</option>
                                 <option>Derecha</option>
                                 <option>Izquierda</option>
                             </select>
                         </div>
+
                         <div class="form-group row">
-                            <mat-label for="" class="col-8 col-form-label">Divisiones</mat-label>
-                            <br>
-                            <select class="form-control col-4">
-                                <option selected>Seleccionar</option>
-                                <option>Division 1 - Mordida Profunda con Resalte Incisal Excesivo</option>
-                                <option>Division 2 - Mandíbula Retrusiva</option>
-                                <option>Division 2 - Retroinclinación de los Incisivos Centrales Superiores</option>
-                                <option>Division 2 - Proclinación de los Incisivos Laterales Superiores Combinado con
-                                    Mordida Profunda</option>
-                            </select>
-                        </div>
-                        <div class="form-group row">
-                            <mat-label for="" class="col-8 col-form-label">Categorias</mat-label>
-                            <br>
-                            <select class="form-control col-4">
-                                <option selected>Seleccionar</option>
-                                <option>Pseudoclase III</option>
-                                <option>Maloclusiones Esqueléticas</option>
-                                <option>Mordida Cruzada Anterior</option>
-                            </select>
-                        </div>
-                        <div class="form-group row">
-                            <mat-label for="" class="col-8 col-form-label">Clase Esqueletal</mat-label>
+                            <mat-label for="" class="col-6 col-form-label">Clase Esqueletal</mat-label>
                             <br>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-8 col-form-label">Overjet</label>
-                            <input placeholder="" class="form-control col-4" required>
+                            <label for="" class="col-6 col-form-label">Overjet</label>
+                            <input placeholder="" class="form-control col-4" #Overjet="ngModel" name="Overjet" [(ngModel)]='ortodoncia.Overjet'>
                         </div>
                         <div class="form-group row">
-                            <mat-label for="" class="col-8 col-form-label">Linea Media</mat-label>
+                            <mat-label for="" class="col-6 col-form-label">Linea Media</mat-label>
                             <br>
-                            <select class="form-control col-4">
-                                <option selected>Seleccionar</option>
+                            <select class="form-control col-6" #LineaMedia="ngModel" name="LineaMedia" [(ngModel)]='ortodoncia.LineaMedia'>
+                                <option selected disabled>Seleccionar</option>
                                 <option>Estandar</option>
                                 <option>Desviacion</option>
                             </select>
@@ -225,24 +203,24 @@
                             <h1 for="" class="col-8 col-form-label">Estudio de la Cefalica</h1>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-8 col-form-label">SN-FH</label>
-                            <input placeholder="" class="form-control col-4" required>
+                            <label for="" class="col-6 col-form-label">SN-FH</label>
+                            <input #sNFH="ngModel" name="sNFH" [(ngModel)]='ortodoncia.sNFH' class="form-control col-4" required>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-8 col-form-label">SN-PLO</label>
-                            <input placeholder="" class="form-control col-4" required>
+                            <label for="" class="col-6 col-form-label">SN-PLO</label>
+                            <input #sNPLO="ngModel" name="sNPLO" [(ngModel)]='ortodoncia.sNPLO' class="form-control col-4" required>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-8 col-form-label">SN-GOGN</label>
-                            <input placeholder="" class="form-control col-4" required>
+                            <label for="" class="col-6 col-form-label">SN-GOGN</label>
+                            <input #sNGOGN="ngModel" name="sNGOGN" [(ngModel)]='ortodoncia.sNGOGN' class="form-control col-4" required>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-8 col-form-label">1NA-POG</label>
-                            <input placeholder="" class="form-control col-4" required>
+                            <label for="" class="col-6 col-form-label">1NA-POG</label>
+                            <input #nAPOG="ngModel" name="nAPOG" [(ngModel)]='ortodoncia.nAPOG' class="form-control col-4" required>
                         </div>
                         <div class="form-group row">
-                            <label for="" class="col-8 col-form-label">SN-GN</label>
-                            <input placeholder="" class="form-control col-4" required>
+                            <label for="" class="col-6 col-form-label">SN-GN</label>
+                            <input #sNGN="ngModel" name="sNGN" [(ngModel)]='ortodoncia.sNGN' class="form-control col-4" required>
                         </div>
                     </form>
                 </div>
@@ -252,8 +230,8 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-6 col-form-label">Clasificacion Angle</mat-label>
                             <br>
-                            <select class="form-control col-6">
-                                <option selected>Seleccionar</option>
+                            <select class="form-control col-6" #ClasificacionAngleCanina1="ngModel" name="ClasificacionAngleCanina1" [(ngModel)]='ortodoncia.ClasificacionAngleCanina1'>
+                                <option selected disabled>Seleccionar</option>
                                 <option>Clase 1</option>
                                 <option>Clase 2</option>
                                 <option>Clase 3</option>
@@ -262,8 +240,8 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-6 col-form-label">Clasificacion Angle</mat-label>
                             <br>
-                            <select class="form-control col-6">
-                                <option selected>Seleccionar</option>
+                            <select #ClasificacionAngleCanina2="ngModel" name="ClasificacionAngleCanina2" [(ngModel)]='ortodoncia.ClasificacionAngleCanina2' class="form-control col-6">
+                                <option selected disabled>Seleccionar</option>
                                 <option>Clase 1</option>
                                 <option>Clase 2</option>
                                 <option>Clase 3</option>
@@ -272,8 +250,8 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-6 col-form-label">Clasificacion Angle</mat-label>
                             <br>
-                            <select class="form-control col-6">
-                                <option selected>Seleccionar</option>
+                            <select class="form-control col-6" #ClasificacionAngleMolar1="ngModel" name="ClasificacionAngleMolar1" [(ngModel)]='ortodoncia.ClasificacionAngleMolar1' (change)="onCheckboxChange($event)">
+                                <option selected disabled>Seleccionar</option>
                                 <option>Clase 1</option>
                                 <option>Clase 2</option>
                                 <option>Clase 3</option>
@@ -282,36 +260,20 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-6 col-form-label">Clasificacion Angle</mat-label>
                             <br>
-                            <select class="form-control col-6">
-                                <option selected>Seleccionar</option>
+                            <select class="form-control col-6" #ClasificacionAngleMolar2="ngModel" name="ClasificacionAngleMolar2" [(ngModel)]='ortodoncia.ClasificacionAngleMolar2' (change)="onCheckboxChange2($event)">
+                                <option selected disabled>Seleccionar</option>
                                 <option>Clase 1</option>
                                 <option>Clase 2</option>
                                 <option>Clase 3</option>
                             </select>
                         </div>
-                        <div class="form-group row">
-                            <mat-label for="" class="col-6 col-form-label">Divisiones</mat-label>
-                            <br>
-                            <select class="form-control col-6">
-                                <option selected>Seleccionar</option>
-                                <option>Diastema</option>
-                                <option>Vestibulizacion de los incisivos superiores</option>
-                                <option>Apiñamiento Leve</option>
-                                <option>Apiñamiento Moderado</option>
-                                <option>Apiñamiento Severo</option>
-                                <option>Mordida Profunda</option>
-                                <option>Mordida abierta anterior</option>
-                                <option>Biprotrusión</option>
-                            </select>
-                        </div>
-                        <br>
-                        <br>
-                        <br>
+
+
                         <div class="form-group row">
                             <mat-label for="" class="col-6 col-form-label">Clasificacion Angle</mat-label>
                             <br>
-                            <select class="form-control col-6">
-                                <option selected>Seleccionar</option>
+                            <select #ClaseEsqueletalClasificacionAngle="ngModel" name="ClaseEsqueletalClasificacionAngle" [(ngModel)]='ortodoncia.ClaseEsqueletalClasificacionAngle' class="form-control col-6">
+                                <option selected disabled>Seleccionar</option>
                                 <option>Clase 1</option>
                                 <option>Clase 2</option>
                                 <option>Clase 3</option>
@@ -319,13 +281,13 @@
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">OverBite</label>
-                            <input placeholder="" class="form-control col-6" required>
+                            <input #OverBite="ngModel" name="OverBite" [(ngModel)]='ortodoncia.OverBite' class="form-control col-6" required>
                         </div>
                         <div class="form-group row">
                             <mat-label for="" class="col-6 col-form-label">Tipo de Perfil</mat-label>
                             <br>
-                            <select class="form-control col-6">
-                                <option selected>Seleccionar</option>
+                            <select #TipodePerfil="ngModel" name="TipodePerfil" [(ngModel)]='ortodoncia.TipodePerfil' class="form-control col-6">
+                                <option selected disabled>Seleccionar</option>
                                 <option>Convexo</option>
                                 <option>Concavo</option>
                             </select>
@@ -337,43 +299,123 @@
 
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">SNA</label>
-                            <input placeholder="" class="form-control col-6" required>
+                            <input #sNA="ngModel" name="sNA" [(ngModel)]='ortodoncia.sNA' class="form-control col-6" required>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">SNB</label>
-                            <input placeholder="" class="form-control col-6" required>
+                            <input #sNB="ngModel" name="sNB" [(ngModel)]='ortodoncia.sNB' class="form-control col-6" required>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">ANB</label>
-                            <input placeholder="" class="form-control col-6" required>
+                            <input #aNB="ngModel" name="aNB" [(ngModel)]='ortodoncia.aNB' class="form-control col-6" required>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">1SUP/INF</label>
-                            <input placeholder="" class="form-control col-6" required>
+                            <input #sUPINF="ngModel" name="sUPINF" [(ngModel)]='ortodoncia.sUPINF' class="form-control col-6" required>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-6 col-form-label">GOGN -P.MAX</label>
-                            <input placeholder="" class="form-control col-6" required>
+                            <input #gOGNPMAX="ngModel" name="gOGNPMAX" [(ngModel)]='ortodoncia.gOGNPMAX' class="form-control col-6" required>
                         </div>
                     </form>
                     <br>
+                </div>
+                <div class="col-4">
+                    <br>
+                    <div class="form-group row">
+                        <mat-label for="" class="col-6 col-form-label"></mat-label>
+
+                    </div>
+                    <div class="form-group row">
+                        <mat-label for="" class="col-6 col-form-label"></mat-label>
+
+                    </div>
+                    <!--MOlAR 1-->
+
+                    <br>
+                    <br>
+                    <div class="form-group row" *ngIf="clase1Molar1">
+                        <mat-label for="" class="col-4 col-form-label">Divisiones</mat-label>
+                        <br>
+                        <mat-form-field class="col-3">
+                            <mat-select [formControl]="opcionesArray" multiple>
+                                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group row" *ngIf="clase2Molar1">
+                        <mat-label for="" class="col-4 col-form-label">Divisiones</mat-label>
+                        <br>
+                        <select #DivisionesMolarV1="ngModel" name="DivisionesMolarV1" [(ngModel)]='ortodoncia.DivisionesMolarV1' class="form-control col-6">
+                          <option selected disabled>Seleccionar</option>
+                          <option>Division 1 - Mordida Profunda con Resalte Incisal Excesivo</option>
+                          <option>Division 2 - Mandíbula Retrusiva</option>
+                          <option>Division 2 - Retroinclinación de los Incisivos Centrales Superiores</option>
+                          <option>Division 2 - Proclinación de los Incisivos Laterales Superiores Combinado con
+                              Mordida Profunda</option>
+                      </select>
+                    </div>
+                    <div class="form-group row" *ngIf="clase3Molar1">
+                        <mat-label for="" class="col-4 col-form-label">Categorias</mat-label>
+                        <br>
+                        <select #CategoriasMolar1="ngModel" name="CategoriasMolar1" [(ngModel)]='ortodoncia.CategoriasMolar1' class="form-control col-6">
+                          <option selected disabled>Seleccionar</option>
+                          <option>Pseudoclase III</option>
+                          <option>Maloclusiones Esqueléticas</option>
+                          <option>Mordida Cruzada Anterior</option>
+                      </select>
+                    </div>
+                    <br>
+
+                    <!--MOLAR 2-->
+                    <div class="form-group row" *ngIf="clase1Molar2">
+                        <mat-label for="" class="col-4 col-form-label">Divisiones</mat-label>
+                        <br>
+                        <mat-form-field class="col-3">
+                            <mat-select [formControl]="opcionesArray2" multiple>
+                                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group row" *ngIf="clase2Molar2">
+                        <mat-label for="" class="col-4 col-form-label">Divisiones</mat-label>
+                        <br>
+                        <select #DivisionesMolarV2="ngModel" name="DivisionesMolarV2" [(ngModel)]='ortodoncia.DivisionesMolarV2' class="form-control col-6">
+                        <option selected disabled>Seleccionar</option>
+                        <option>Division 1 - Mordida Profunda con Resalte Incisal Excesivo</option>
+                        <option>Division 2 - Mandíbula Retrusiva</option>
+                        <option>Division 2 - Retroinclinación de los Incisivos Centrales Superiores</option>
+                        <option>Division 2 - Proclinación de los Incisivos Laterales Superiores Combinado con
+                            Mordida Profunda</option>
+                    </select>
+                    </div>
+                    <div class="form-group row" *ngIf="clase3Molar2">
+                        <mat-label for="" class="col-4 col-form-label">Categorias</mat-label>
+                        <br>
+                        <select #CategoriasMolar2="ngModel" name="CategoriasMolar2" [(ngModel)]='ortodoncia.CategoriasMolar2' class="form-control col-6">
+                        <option selected disabled>Seleccionar</option>
+                        <option>Pseudoclase III</option>
+                        <option>Maloclusiones Esqueléticas</option>
+                        <option>Mordida Cruzada Anterior</option>
+                    </select>
+                    </div>
                 </div>
             </div>
             <br>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Diagnostico</label>
-                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                <textarea #Diagnostico="ngModel" name="Diagnostico" [(ngModel)]='ortodoncia.Diagnostico' rows="3" class="form-control col-6"></textarea>
             </div>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Plan de Tratamiento</label>
-                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                <textarea #PlandeTratamiento="ngModel" name="PlandeTratamiento" [(ngModel)]='ortodoncia.PlandeTratamiento' rows="3" class="form-control col-6"></textarea>
             </div>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Medicaciones</label>
-                <textarea class="form-control" rows="3" class="form-control col-6"></textarea>
+                <textarea #Medicaciones="ngModel" name="Medicaciones" [(ngModel)]='ortodoncia.Medicaciones' rows="3" class="form-control col-6"></textarea>
             </div>
-            <button mat-raised-button class="btn btn-success" >Guardar</button>
-            <button mat-raised-button  class="btn btn-danger">Cancelar</button>
+            <button mat-raised-button (click)="guardar()" class="btn btn-success">Guardar</button>
+            <button mat-raised-button class="btn btn-danger">Cancelar</button>
         </mat-card-content>
     </div>
 </div>

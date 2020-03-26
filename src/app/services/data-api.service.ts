@@ -123,6 +123,10 @@ export class DataApiService {
     const urlApi = `http://localhost:3000/seguimientotodosdientes/patientseguimiento${id}` ;
     return this.http.get(urlApi);
   }
+  getAllodontogramasdeOrtodoncia(id) {
+    const urlApi = `http://localhost:3000/ortodoncia/patient/ortodoncia/${id}` ;
+    return this.http.get(urlApi);
+  }
   getAllprocedimientopornombre(nombre) {
     const urlApi = `http://localhost:3000/procedimientoapadecimiento/nombreprocedimiento/${nombre}` ;
     return this.http.get(urlApi);

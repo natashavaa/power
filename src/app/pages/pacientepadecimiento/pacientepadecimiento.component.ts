@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PaatientInterface } from '../../models/patients.interface';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-pacientepadecimiento',
@@ -8,9 +10,12 @@ import { Router } from '@angular/router';
 })
 export class PacientepadecimientoComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AuthService) { }
 
+  private patient: PaatientInterface = {};
   ngOnInit() {
+    this.patient = this.auth.getCurrentPatient();
+
   }
 
   datos(): void {
@@ -32,7 +37,7 @@ export class PacientepadecimientoComponent implements OnInit {
   seguimiento(): void {
     this.router.navigate(["pacienteseguimiento"]);
   }
-   
+
   odontograma(): void {
     this.router.navigate(["pacienteodontograma"]);
   }
@@ -54,17 +59,17 @@ export class PacientepadecimientoComponent implements OnInit {
     this.router.navigate(["pacientes"]);
 
   }
-  
+
   recipe(): void {
     this.router.navigate(["pacienterecipe"]);
   }
 
-    
+
   presupuesto(): void {
     this.router.navigate(['pacientepresupuesto']);
   }
 
-  
+
   informe(): void {
     this.router.navigate(['pacienteinforme']);
   }

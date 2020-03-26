@@ -28,6 +28,7 @@ import { PresupustoInterface } from 'src/app/models/presupuesto.interace';
 import { OdontogramaInterface } from '../models/odontograma.interface';
 import { SeguimientoDienteInterface } from '../models/seguimientodiente.interdace';
 import { TodoslosdientesInterface } from '../models/todoslosdientes.interface';
+import { OrtodonciaInterface } from '../models/ortodoncia.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -1035,6 +1036,119 @@ registerProcedimientoPorPieza(NombrePadecimiento: string, NombrePieza: string, I
   Nomenclatura: Nomenclatura,
 // tslint:disable-next-line: object-literal-shorthand
   Posicion: Posicion,
+  },
+  );
+}
+registerOrtodoncia(
+  idPatient: string,
+  imagen: string,
+  Medicaciones: string,
+  PlandeTratamiento: string,
+  Diagnostico: string,
+  ClaseCanina1: string,
+  ClaseCanina2: string,
+  ClasificacionAngleCanina1: string,
+  ClasificacionAngleCanina2: string,
+  ClaseMolar1: string,
+  ClaseMolar2: string,
+  ClasificacionAngleMolar1: string,
+  ClasificacionAngleMolar2: string,
+  DivisionesMolar1: string,
+  DivisionesMolarV1: string,
+  DivisionesMolar2: string,
+  DivisionesMolarV2: string,
+  CategoriasMolar1: string,
+  CategoriasMolar2: string,
+  ClaseEsqueletalClasificacionAngle: string,
+  Overjet: string,
+  OverBite: string,
+  LineaMedia: string,
+  TipodePerfil: string,
+  gOGNPMAX: string,
+  sUPINF: string,
+  aNB: string,
+  sNB: string,
+  sNA: string,
+  sNGN: string,
+  nAPOG: string,
+  sNGOGN: string,
+  sNPLO: string,
+  sNFH: string,
+) {
+  const urlApi = 'http://localhost:3000/ortodoncia';
+  return this.htttp
+  .post<OrtodonciaInterface>(
+  urlApi,
+  {
+    // tslint:disable-next-line: object-literal-shorthand
+  idPatient: idPatient,
+  // tslint:disable-next-line: object-literal-shorthand
+  imagen: imagen,
+  // tslint:disable-next-line: object-literal-shorthand
+  Medicaciones: Medicaciones,
+  // tslint:disable-next-line: object-literal-shorthand
+  PlandeTratamiento: PlandeTratamiento,
+  // tslint:disable-next-line: object-literal-shorthand
+  Diagnostico: Diagnostico,
+  // tslint:disable-next-line: object-literal-shorthand
+  ClaseCanina1: ClaseCanina1,
+  // tslint:disable-next-line: object-literal-shorthand
+  ClaseCanina2: ClaseCanina2,
+  // tslint:disable-next-line: object-literal-shorthand
+  ClasificacionAngleCanina1: ClasificacionAngleCanina1,
+  // tslint:disable-next-line: object-literal-shorthand
+  ClasificacionAngleCanina2: ClasificacionAngleCanina2,
+  // tslint:disable-next-line: object-literal-shorthand
+  ClaseMolar1: ClaseMolar1,
+  // tslint:disable-next-line: object-literal-shorthand
+  ClaseMolar2: ClaseMolar2,
+  // tslint:disable-next-line: object-literal-shorthand
+  ClasificacionAngleMolar1: ClasificacionAngleMolar1,
+  // tslint:disable-next-line: object-literal-shorthand
+  ClasificacionAngleMolar2: ClasificacionAngleMolar2,
+  // tslint:disable-next-line: object-literal-shorthand
+  DivisionesMolar1: DivisionesMolar1,
+  // tslint:disable-next-line: object-literal-shorthand
+  DivisionesMolarV1: DivisionesMolarV1,
+  // tslint:disable-next-line: object-literal-shorthand
+  DivisionesMolar2: DivisionesMolar2,
+  // tslint:disable-next-line: object-literal-shorthand
+  DivisionesMolarV2: DivisionesMolarV2,
+  // tslint:disable-next-line: object-literal-shorthand
+  CategoriasMolar1: CategoriasMolar1,
+  // tslint:disable-next-line: object-literal-shorthand
+  CategoriasMolar2: CategoriasMolar2,
+  // tslint:disable-next-line: object-literal-shorthand
+  ClaseEsqueletalClasificacionAngle: ClaseEsqueletalClasificacionAngle,
+  // tslint:disable-next-line: object-literal-shorthand
+  Overjet: Overjet,
+  // tslint:disable-next-line: object-literal-shorthand
+  OverBite: OverBite,
+  // tslint:disable-next-line: object-literal-shorthand
+  LineaMedia: LineaMedia,
+  // tslint:disable-next-line: object-literal-shorthand
+  TipodePerfil: TipodePerfil,
+  // tslint:disable-next-line: object-literal-shorthand
+  gOGNPMAX: gOGNPMAX,
+  // tslint:disable-next-line: object-literal-shorthand
+  sUPINF: sUPINF,
+  // tslint:disable-next-line: object-literal-shorthand
+  aNB: aNB,
+  // tslint:disable-next-line: object-literal-shorthand
+  sNB: sNB,
+  // tslint:disable-next-line: object-literal-shorthand
+  sNA: sNA,
+  // tslint:disable-next-line: object-literal-shorthand
+  sNGN: sNGN,
+  // tslint:disable-next-line: object-literal-shorthand
+  nAPOG: nAPOG,
+  // tslint:disable-next-line: object-literal-shorthand
+  sNGOGN: sNGOGN,
+  // tslint:disable-next-line: object-literal-shorthand
+  sNPLO: sNPLO,
+  // tslint:disable-next-line: object-literal-shorthand
+  sNFH: sNFH,
+
   },
   );
 }

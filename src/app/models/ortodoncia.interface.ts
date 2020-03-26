@@ -15,7 +15,9 @@ export interface OrtodonciaInterface {
   ClasificacionAngleMolar1?: string;
   ClasificacionAngleMolar2?: string;
   DivisionesMolar1?: string;
+  DivisionesMolarV1?: string;
   DivisionesMolar2?: string;
+  DivisionesMolarV2?: string;
   CategoriasMolar1?: string;
   CategoriasMolar2?: string;
   ClaseEsqueletalClasificacionAngle?: string;
