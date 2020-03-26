@@ -1,1 +1,538 @@
-<p>ortodoncialistadetalle works!</p>
+<div class="container">
+
+    <div class="left">
+        <br>
+        <img src="assets/img/usuario.png" class="avatar" alt="Avatar Image">
+        <mat-card-content>
+            <mat-list>
+                <mat-card-title>
+                    <h5 align="center">{{patient.name}}</h5>
+                    <h1 align="center">{{patient.age}} años</h1>
+                </mat-card-title>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="datos()" class="a">Datos Personales</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/lifecycle.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="imagen()" class="b">Evolucion</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/counselor.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="consulta()" class="c">Consultas</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/workflow.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/details-popup.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="seguimiento()" class="e">Seguimiento</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <!-- <mat-list-item>
+               <form>
+                    <div>
+                        <button mat-stroked-button (click)="odontograma()" class="f">Odontograma</button>
+                    </div>
+                </form>
+            </mat-list-item> -->
+                <mat-list-item>
+                    <img clas="tres" src="https://img.icons8.com/dusk/50/000000/resume.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="informacion()" class="g">Historial Clinico</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img class="tres" src="https://img.icons8.com/dusk/50/000000/hint.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="recipe()" class="h">Recipe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img src="https://img.icons8.com/cotton/50/000000/treatment-list.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="informe()" class="j">Informe</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img src="https://img.icons8.com/dusk/50/000000/budget.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="presupuesto()" class="i">Presupuesto</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </div>
+
+
+    <div class="center">
+        <mat-card-content>
+            <mat-card-title>
+                <form>
+                    <mat-card>
+                        <br>
+                        <h4><img src="https://img.icons8.com/color/50/000000/false-teeth.png"> ORTODONCIA</h4>
+                    </mat-card>
+                </form>
+            </mat-card-title>
+
+
+            <div class="row">
+                <div class="col-8">
+                    <br>
+                    <form action="">
+                        <div class="form-group row">
+                            <mat-label class="col-4 col-form-label"></mat-label>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-6">
+
+            </div>
+            <br>
+            <br>
+            <section>
+                <img src="assets/img/odontogramaconbracktes.png" alt="Avatar Image">
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Diagnostico</label>
+                    <p>{{Ortodonciarecibido.Diagnostico}} </p>
+                </div>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Plan de Tratamiento</label>
+                    <p>{{Ortodonciarecibido.PlandeTratamiento}} </p>
+                </div>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Medicaciones</label>
+                    <p>{{Ortodonciarecibido.Medicaciones}} </p>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                        <br>
+                        <form action="">
+                            <div class="form-group row">
+                                <mat-label for="" class="col-6 col-form-label">Clase Canina</mat-label>
+
+                                <p>{{Ortodonciarecibido.ClaseCanina1}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-6 col-form-label">Clase Canina</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.ClaseCanina2}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-6 col-form-label">Clase Molar</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.ClaseMolar1}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-6 col-form-label">Clase Molar</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.ClaseMolar2}} </p>
+                            </div>
+
+                            <div class="form-group row">
+                                <mat-label for="" class="col-6 col-form-label">Clase Esqueletal</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.ClaseEsqueletalClasificacionAngle}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-6 col-form-label">Overjet</label>
+                                <p>{{Ortodonciarecibido.Overjet}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label for="" class="col-6 col-form-label">Linea Media</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.LineaMedia}} </p>
+                            </div>
+                            <br>
+                            <div class="form-group row">
+                                <h1 class="col-12 col-form-label">Valores Reales</h1>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SN-FH:</label>
+                                <p>{{Ortodonciarecibido.sNFH}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SN-PLO:</label>
+                                <p>{{Ortodonciarecibido.sNPLO}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SN-GOGN:</label>
+                                <p>{{Ortodonciarecibido.sNGOGN}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">1NA-POG:</label>
+                                <p>{{Ortodonciarecibido.nAPOG}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SN-GN:</label>
+                                <p>{{Ortodonciarecibido.sNGN}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SNA:</label>
+                                <p>{{Ortodonciarecibido.sNA}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SNB:</label>
+                                <p>{{Ortodonciarecibido.sNB}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">ANB:</label>
+                                <p>{{Ortodonciarecibido.aNB}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">1SUP/INF:</label>
+                                <p>{{Ortodonciarecibido.sUPINF}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">GOGN -P.MAX:</label>
+                                <p>{{Ortodonciarecibido.gOGNPMAX}} </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-4">
+                        <br>
+                        <form action="">
+                            <div class="form-group row">
+                                <mat-label class="col-4 col-form-label">Angle</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.ClasificacionAngleCanina1}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label class="col-4 col-form-label">Angle</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.ClasificacionAngleCanina2}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label class="col-4 col-form-label">Angle</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.ClasificacionAngleMolar1}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label class="col-4 col-form-label">Angle</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.ClasificacionAngleMolar2}} </p>
+                            </div>
+
+
+                            <div class="form-group row">
+
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-4 col-form-label">OverBite</label>
+                                <p>{{Ortodonciarecibido.OverBite}} </p>
+                            </div>
+                            <div class="form-group row">
+                                <mat-label class="col-6 col-form-label">Tipo de Perfil</mat-label>
+                                <br>
+                                <p>{{Ortodonciarecibido.TipodePerfil}} </p>
+                            </div>
+
+                            <br>
+                            <br>
+                            <div class="form-group row">
+                                <h1 class="col-12 col-form-label">Valores Normales</h1>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SN-FH</label>
+
+                                <p>22°</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SN-PLO</label>
+                                <p>14°</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SN-GOGN</label>
+                                <p>32°</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">1NA-POG</label>
+                                <p>2°</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SN-GN</label>
+                                <p>67°</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SNA</label>
+                                <p>82°</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">SNB</label>
+                                <p>80°</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">ANB</label>
+                                <p>2°</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">1SUP/INF</label>
+                                <p>131°</p>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">GOGN -P.MAX</label>
+                                <p>26°</p>
+                            </div>
+
+                        </form>
+                        <br>
+                    </div>
+                    <div class="col-4">
+                        <br>
+
+                        <!--MOlAR 1-->
+
+                        <div class="form-group row">
+
+                        </div>
+                        <div class="form-group row">
+
+                        </div>
+                        <div class="form-group row">
+
+                        </div>
+                        <div class="form-group row" *ngIf="mostrarD">
+                            <mat-label class="col-4 col-form-label">Divisiones:</mat-label>
+                            <br>
+                            <p>{{Ortodonciarecibido.DivisionesMolar1}} </p>
+                        </div>
+                        <div class="form-group row" *ngIf="mostrarDV">
+                            <mat-label class="col-4 col-form-label">Divisiones:</mat-label>
+                            <br>
+                            <p>{{Ortodonciarecibido.DivisionesMolarV1}} </p>
+                        </div>
+                        <div class="form-group row" *ngIf="mostrarC">
+                            <mat-label class="col-4 col-form-label">Categorias:</mat-label>
+                            <br>
+                            <p>{{Ortodonciarecibido.CategoriasMolar1}} </p>
+                        </div>
+
+
+                        <!--MOLAR 2-->
+                        <div class="form-group row" *ngIf="mostrarD2">
+                            <mat-label class="col-4 col-form-label">Divisiones:</mat-label>
+                            <br>
+                            <p>{{Ortodonciarecibido.DivisionesMolar2}} </p>
+                        </div>
+                        <div class="form-group row" *ngIf="mostrarDV2">
+                            <mat-label class="col-4 col-form-label">Divisiones:</mat-label>
+                            <br>
+                            <p>{{Ortodonciarecibido.DivisionesMolarV2}} </p>
+                        </div>
+                        <div class="form-group row" *ngIf="mostrarC2">
+                            <mat-label class="col-4 col-form-label">Categorias:</mat-label>
+                            <br>
+                            <p>{{Ortodonciarecibido.CategoriasMolar2}} </p>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+
+                        <div class="form-group row">
+
+                        </div>
+                        <div class="form-group row">
+
+                        </div>
+                        <div class="form-group row">
+
+                        </div>
+
+
+
+                        <br>
+                        <div class="form-group row">
+                            <h1 class="col-12 col-form-label">Comentario</h1>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">SN-FH</label>
+                            <input #ComentariodesNFH="ngModel" name="ComentariodesNFH" [(ngModel)]='SeguimientoOrtodoncia.ComentariodesNFH' class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">SN-PLO</label>
+                            <input #ComentariodesNPLO="ngModel" name="ComentariodesNPLO" [(ngModel)]='SeguimientoOrtodoncia.ComentariodesNPLO' class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">SN-GOGN</label>
+                            <input #ComentariodesNGOGN="ngModel" name="ComentariodesNGOGN" [(ngModel)]='SeguimientoOrtodoncia.ComentariodesNGOGN' class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">1NA-POG</label>
+                            <input #ComentariodenAPOG="ngModel" name="ComentariodenAPOG" [(ngModel)]='SeguimientoOrtodoncia.ComentariodenAPOG' class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">SN-GN</label>
+                            <input #ComentariodesNGN="ngModel" name="ComentariodesNGN" [(ngModel)]='SeguimientoOrtodoncia.ComentariodesNGN' class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">SNA</label>
+                            <input #ComentariodesNA="ngModel" name="ComentariodesNA" [(ngModel)]='SeguimientoOrtodoncia.ComentariodesNA' class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">SNB</label>
+                            <input #ComentariodesNB="ngModel" name="ComentariodesNB" [(ngModel)]='SeguimientoOrtodoncia.ComentariodesNB' class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">ANB</label>
+                            <input #ComentariodeaNB="ngModel" name="ComentariodeaNB" [(ngModel)]='SeguimientoOrtodoncia.ComentariodeaNB' class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">1SUP/INF</label>
+                            <input #ComentariodesUPINF="ngModel" name="ComentariodesUPINF" [(ngModel)]='SeguimientoOrtodoncia.ComentariodesUPINF' class="form-control col-4">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">GOGN -P.MAX</label>
+                            <input #ComentariodegOGNPMAX="ngModel" name="ComentariodegOGNPMAX" [(ngModel)]='SeguimientoOrtodoncia.ComentariodegOGNPMAX' class="form-control col-4">
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+
+                <form #formRegisterseguimiento="ngForm" (ngSubmit)="onRegisterSeguimiento(formRegisterseguimiento)">
+                    <div class="row">
+                        <div class="col-6">
+
+                            <div class="form-group row">
+                                <mat-label for="" class="col-6 col-form-label">Fecha </mat-label>
+                                <br>
+                                <input name="fecha" matInput [matDatepicker]="picker" placeholder="Elije una fecha" class="form-control col-4" [(ngModel)]="fecha">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+
+                            <div class="row">
+                                <div class="col-6">
+
+                                    <fieldset>
+                                        <div class="form-group row">
+                                            <label for="" class="col-4 col-form-label">Consultas Posteriores</label>
+                                            <input #Consultas="ngModel" name="Consultas" [(ngModel)]='SeguimientoOrtodoncia.ConsultasPosteriores' class="form-control col-6">
+                                        </div>
+                                        <div class="form-group row">
+                                            <mat-label for="" class="col-4 col-form-label">Estatus</mat-label>
+
+                                            <select class="form-control col-5" #Estatus="ngModel" name="Estatus" [(ngModel)]='SeguimientoOrtodoncia.Estatus'>
+                                            <option>Evaluado</option>
+                                            <option>Iniciado</option>
+                                            <option>Terminado</option>
+                                        </select>
+
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <label for="" class="col-4 col-form-label">Tratamiento Efectuado</label>
+                        <textarea #TratamientoEfectuado="ngModel" name="TratamientoEfectuado" [(ngModel)]='SeguimientoOrtodoncia.TratamientoEfectuado' rows="3" class="form-control col-6"></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-4 col-form-label">Observaciones</label>
+                        <textarea #Observaciones="ngModel" name="Observaciones" [(ngModel)]='SeguimientoOrtodoncia.Observaciones' rows="3" class="form-control col-6"></textarea>
+                    </div>
+                    <br>
+                    <button mat-raised-button type="button" (click)="guardar()" class="btn btn-success">Guardar</button>
+                    <button mat-raised-button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
+                </form>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="row mt-5">
+                    <div class="col">
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+
+                                    <th scope="col">#</th>
+                                    <th scope="col">C.P</th>
+                                    <th scope="col">SN-FH</th>
+                                    <th scope="col">SN-PLO</th>
+                                    <th scope="col">SN-GOGN</th>
+                                    <th scope="col">1NA-POG</th>
+                                    <th scope="col">SN-GN</th>
+                                    <th scope="col">SNA</th>
+                                    <th scope="col">SNB</th>
+                                    <th scope="col">ANB</th>
+                                    <th scope="col">1SUP/INF</th>
+                                    <th scope="col">GOGN -P.MAX</th>
+                                    <th scope="col">Observaciones</th>
+                                    <th scope="col">Estatus</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let seguimientoO of listSeguimientoOrtodoncia">
+
+                                    <td>{{seguimientoO.ConsultasPosteriores}}</td>
+                                    <td>{{seguimientoO.Fecha}}</td>
+                                    <td>{{seguimientoO.TratamientoEfectuado}}</td>
+                                    <td>{{seguimientoO.Observaciones}}</td>
+                                    <td>{{seguimientoO.ConsultasPosteriores}}</td>
+                                    <td>{{seguimientoO.Estatus}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+
+            </section>
+
+
+
+        </mat-card-content>
+    </div>
+</div>

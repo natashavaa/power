@@ -122,9 +122,9 @@
                         <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                         <br>
                         <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
-                            <option selected disabled>Diente por Diente</option>
+                            <option  >Diente por Diente</option>
                             <option>Todos los Dientes</option>
-                            <option>Ortodoncia</option>
+                            <option selected >Ortodoncia</option>
                         </select>
                         <div class="col-2">
                             <button class="sinp" type="submit" class="btn btn-success">Ir </button>
@@ -373,7 +373,7 @@
                         <br>
                         <mat-form-field class="col-3">
                             <mat-select [formControl]="opcionesArray2" multiple>
-                                <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                                <mat-option *ngFor="let topping2 of toppingList2" [value]="topping2">{{topping2}}</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </div>

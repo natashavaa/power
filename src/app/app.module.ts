@@ -117,7 +117,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { FiltermaterialPipe } from './pipes/filtermaterial.pipe';
 import { TodoslosdientesdetalleComponent } from './pages/todoslosdientesdetalle/todoslosdientesdetalle.component';
 import { OrtodoncialistaComponent } from './pages/ortodoncialista/ortodoncialista.component';
-import { OrtodoncialistadetalleComponent } from './ortodoncialistadetalle/ortodoncialistadetalle.component';
+import { OrtodoncialistadetalleComponent } from './pages/ortodoncialistadetalle/ortodoncialistadetalle.component';
 
 
 @NgModule({

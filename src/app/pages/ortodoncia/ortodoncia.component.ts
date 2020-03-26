@@ -26,6 +26,8 @@ export class OrtodonciaComponent implements OnInit {
   opcionesArray2 = new FormControl();
   // tslint:disable-next-line: max-line-length
   toppingList: string[] = ['Diastema', 'Vestibulizacion de los incisivos superiores', 'Apiñamiento Leve', 'Apiñamiento Moderado', 'Apiñamiento Severo', 'Mordida Profunda', 'Mordida abierta anterior', 'Biprotrusión'];
+  // tslint:disable-next-line: max-line-length
+  toppingList2: string[] = ['Diastema', 'Vestibulizacion de los incisivos superiores', 'Apiñamiento Leve', 'Apiñamiento Moderado', 'Apiñamiento Severo', 'Mordida Profunda', 'Mordida abierta anterior', 'Biprotrusión'];
   private ortodoncia: OrtodonciaInterface = {};
   private patient: PaatientInterface = {};
  // private material: MaterialInterface;
@@ -48,7 +50,7 @@ export class OrtodonciaComponent implements OnInit {
       this.clase2Molar1 = false;
       this.clase3Molar1 = true;
     }
-    console.log( e.target.value);
+
 
     }
     onCheckboxChange2(e) {
@@ -65,7 +67,7 @@ export class OrtodonciaComponent implements OnInit {
         this.clase2Molar2 = false;
         this.clase3Molar2 = true;
       }
-      console.log( e.target.value);
+
 
       }
   getType(): void {
@@ -79,8 +81,13 @@ export class OrtodonciaComponent implements OnInit {
   }
   guardar() {
     this.ortodoncia.idPatient = this.patient.id;
-    this.ortodoncia.DivisionesMolar1 = this.opcionesArray.value.map(x => x).join(' , ');
-    this.ortodoncia.DivisionesMolar2 = this.opcionesArray2.value.map(x => x).join(' , ');
+    if (this.clase1Molar1 === true) {
+      this.ortodoncia.DivisionesMolar1 = this.opcionesArray.value.map(x => x).join(' , ');
+    }
+    if (this.clase1Molar2 === true) {
+      this.ortodoncia.DivisionesMolar2 = this.opcionesArray2.value.map(x => x).join(' , ');
+
+    }
     this.auth.registerOrtodoncia(
         this.ortodoncia.idPatient,
         this.ortodoncia.imagen,
@@ -120,7 +127,7 @@ export class OrtodonciaComponent implements OnInit {
 
      } );
     this.router.navigate(['listaOrtodoncia']);
-    console.log(this.ortodoncia);
+
   }
 
   datos(): void {

@@ -29,6 +29,7 @@ import { OdontogramaInterface } from '../models/odontograma.interface';
 import { SeguimientoDienteInterface } from '../models/seguimientodiente.interdace';
 import { TodoslosdientesInterface } from '../models/todoslosdientes.interface';
 import { OrtodonciaInterface } from '../models/ortodoncia.interface';
+import { SeguimientoOrtodonciaInterface } from '../models/ortodonciaseguimiento.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -915,6 +916,65 @@ registerSeguimiento(idOdontograma: string, Fecha: string,
   },
   );
 }
+registerSeguimientoOrtodoncia(
+  idOrtodoncia: string,
+  ComentariodegOGNPMAX: string,
+  ComentariodesUPINF: string,
+  ComentariodeaNB: string,
+  ComentariodesNB: string,
+  ComentariodesNA: string,
+  ComentariodesNGN: string,
+  ComentariodenAPOG: string,
+  ComentariodesNGOGN: string,
+  ComentariodesNPLO: string,
+  ComentariodesNFH: string,
+  Fecha: string,
+  TratamientoEfectuado: string,
+  Observaciones: string,
+  ConsultasPosteriores: string,
+  Estatus: string,
+) {
+const urlApi = 'http://localhost:3000/seguimientoortodoncia';
+return this.htttp
+.post<SeguimientoOrtodonciaInterface>(
+urlApi,
+{
+  // tslint:disable-next-line: object-literal-shorthand
+  idOrtodoncia: idOrtodoncia,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodegOGNPMAX: ComentariodegOGNPMAX,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodesUPINF: ComentariodesUPINF,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodeaNB: ComentariodeaNB,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodesNB: ComentariodesNB,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodesNA: ComentariodesNA,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodesNGN: ComentariodesNGN,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodenAPOG: ComentariodenAPOG,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodesNGOGN: ComentariodesNGOGN,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodesNPLO: ComentariodesNPLO,
+  // tslint:disable-next-line: object-literal-shorthand
+  ComentariodesNFH: ComentariodesNFH,
+// tslint:disable-next-line: object-literal-shorthand
+Fecha: Fecha,
+// tslint:disable-next-line: object-literal-shorthand
+TratamientoEfectuado: TratamientoEfectuado,
+// tslint:disable-next-line: object-literal-shorthand
+Observaciones: Observaciones,
+// tslint:disable-next-line: object-literal-shorthand
+ConsultasPosteriores: ConsultasPosteriores,
+// tslint:disable-next-line: object-literal-shorthand
+Estatus: Estatus,
+
+},
+);
+}
 registerSeguimientotodoslosdientes(idOdontograma: string, Fecha: string,
                                    TratamientoEfectuado: string, Observaciones: string,
                                    ConsultasPosteriores: string, Estatus: string) {
@@ -1410,6 +1470,10 @@ loginuser(username: string, password: string): Observable<any> {
     const patientString = JSON.stringify(patient);
     localStorage.setItem('currentTodoslosdientes', patientString);
   }
+  setodortodoncia(patient: OrtodonciaInterface): void {
+    const patientString = JSON.stringify(patient);
+    localStorage.setItem('currentOrtodoncia', patientString);
+  }
 
   setToken(token): void {
     localStorage.setItem('accessToken', token);
@@ -1418,10 +1482,19 @@ loginuser(username: string, password: string): Observable<any> {
   getToken() {
     return localStorage.getItem('accessToken');
   }
+  getortodoncia(): OrtodonciaInterface {
+    const userString = localStorage.getItem('currentOrtodoncia');
+    if (!isNullOrUndefined(userString)) {
+      const user: OrtodonciaInterface = JSON.parse(userString);
+      return user;
+    } else {
+      return null;
+    }
+  }
   getTodoslosDientes(): TodoslosdientesInterface {
     const userString = localStorage.getItem('currentTodoslosdientes');
     if (!isNullOrUndefined(userString)) {
-      const user: UserInterface = JSON.parse(userString);
+      const user: TodoslosdientesInterface = JSON.parse(userString);
       return user;
     } else {
       return null;
@@ -1466,7 +1539,7 @@ loginuser(username: string, password: string): Observable<any> {
   getCurrentMaterial(): MaterialInterface {
     const materialString = localStorage.getItem('currentMaterial');
     if (!isNullOrUndefined(materialString)) {
-      const material: PaatientInterface = JSON.parse(materialString);
+      const material: MaterialInterface = JSON.parse(materialString);
       return material;
     } else {
       return null;

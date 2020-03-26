@@ -36,7 +36,10 @@ export class OrtodoncialistaComponent implements OnInit {
        this.Ortodonciarecibidos = Ortodonciarecibidos;
       } );
   }
-
+  iradetalles(ortodoncia: OrtodonciaInterface) {
+    this.auth.setodortodoncia(ortodoncia);
+    this.router.navigate(['listaOrtodonciadetalle']);
+  }
   datos(): void {
     this.router.navigate(['historiaclinica']);
   }
