@@ -15,6 +15,14 @@
     border-color: #d3d3d3;
 }
 
+mat-card-content {
+    margin: 0px;
+}
+
+.correr {
+    margin-right: 40px;
+}
+
 .container .avatar {
     width: 120px;
     height: 120px;
