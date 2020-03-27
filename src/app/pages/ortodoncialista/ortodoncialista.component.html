@@ -97,21 +97,24 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4><img src="https://img.icons8.com/color/50/000000/false-teeth.png"> ORTODONCIA</h4>
+                        <h4><img src="https://img.icons8.com/dusk/50/000000/dental-crown.png"> SEGUIMIENTO </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
             <div class="row">
                 <div class="col-6">
+                    <br>
+                    <br>
                     <form #getype="ngForm" (ngSubmit)="getType(getype)">
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                             <br>
-                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
-                          <option selected>Diente por Diente</option>
-                          <option>Todos los Dientes</option>
-                          <option>Ortodoncia</option>
-                      </select>
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento"
+                                [(ngModel)]="momentoC">
+                                <option selected>Diente por Diente</option>
+                                <option>Todos los Dientes</option>
+                                <option>Ortodoncia</option>
+                            </select>
                             <div class="col-1">
                                 <button class="sinp" type="submit" class="btn btn-success">Ir </button>
                             </div>
@@ -133,10 +136,7 @@
 
             </div>
             <div class="col-6">
-
             </div>
-            <br>
-            <br>
             <section *ngFor="let odontograma of Ortodonciarecibidos">
                 <img src="assets/img/odontogramaconbracktes.png" alt="Avatar Image">
                 <br>
@@ -154,8 +154,12 @@
 
                 <br>
                 <button (click)="iradetalles(odontograma)" class="btn btn-success">
-                  Ver Detalles
-              </button>
+                    Ver Detalles
+                </button>
+                <br>
+                <br>
+                <br>
+                <br>
             </section>
 
 
