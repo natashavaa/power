@@ -892,6 +892,38 @@ registertodoslosdientes(idPatient: string, Imagen: string, ProcedimientoOdontolo
   },
   );
 }
+Updatetodoslosdientes(id: string, idPatient: string, Imagen: string, ProcedimientoOdontologico: string,
+                      Estatus: string, Instrumentos: string, Materiales: string,
+                      Diagnostico: string, Recomendaciones: string, Observaciones: string) {
+const urlApi = 'http://localhost:3000/seguimientotodosdientes/update';
+return this.htttp
+.put<TodoslosdientesInterface>(
+urlApi,
+{
+  // tslint:disable-next-line: object-literal-shorthand
+  id: id,
+// tslint:disable-next-line: object-literal-shorthand
+idPatient: idPatient,
+// tslint:disable-next-line: object-literal-shorthand
+Imagen: Imagen,
+// tslint:disable-next-line: object-literal-shorthand
+ProcedimientoOdontologico: ProcedimientoOdontologico,
+// tslint:disable-next-line: object-literal-shorthand
+Estatus: Estatus,
+// tslint:disable-next-line: object-literal-shorthand
+Instrumentos: Instrumentos,
+// tslint:disable-next-line: object-literal-shorthand
+Materiales: Materiales,
+// tslint:disable-next-line: object-literal-shorthand
+Diagnostico: Diagnostico,
+// tslint:disable-next-line: object-literal-shorthand
+Recomendaciones: Recomendaciones,
+// tslint:disable-next-line: object-literal-shorthand
+Observaciones: Observaciones,
+
+},
+);
+}
 registerSeguimiento(idOdontograma: string, Fecha: string,
                     TratamientoEfectuado: string, Observaciones: string,
                     ConsultasPosteriores: string, Estatus: string) {
