@@ -107,7 +107,7 @@
 
             <div class="row mt-5">
                 <div class="col">
-                    <label for="" class="lolo">Servicios Utilizados</label>
+                    <h4 for="" class="lolo">Servicios Utilizados</h4>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
                     <table class="table table-hover">
                         <thead>
@@ -120,7 +120,7 @@
                                 <th scope="col">Debe </th>
                                 <th scope="col">Estatus</th>
                                 <th scope="col">Servicios Tratados</th>
-                                <th scope="col">Actualizar </th>
+                                <th scope="col">Cancelar Cuota</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -135,7 +135,7 @@
                                 <td>{{presupuestoRe.serviciosTratados}}</td>
 
                                 <td>
-                                    <button mat-raised-button (click)="Modificar(presupuestoRe)" class="btn btn-info">Modificar</button>
+                                    <button mat-raised-button (click)="Modificar(presupuestoRe)" class="btn btn-info">Pagar</button>
                                 </td>
                             </tr>
 
