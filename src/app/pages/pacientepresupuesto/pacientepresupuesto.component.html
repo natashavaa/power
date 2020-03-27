@@ -100,10 +100,10 @@
                     </mat-card>
                 </form>
             </mat-card-title>
-
-
             <br>
-            <br>
+            <div class="alert alert-warning" role="alert">
+                El estimado del presupuesto obtenido dependerá de los servicios odontológicos tratados.
+            </div>
 
             <div class="row mt-5">
                 <div class="col">
@@ -135,7 +135,8 @@
                                 <td>{{presupuestoRe.serviciosTratados}}</td>
 
                                 <td>
-                                    <button mat-raised-button (click)="Modificar(presupuestoRe)" class="btn btn-info">Pagar</button>
+                                    <button mat-raised-button (click)="Modificar(presupuestoRe)"
+                                        class="btn btn-info">Pagar</button>
                                 </td>
                             </tr>
 
