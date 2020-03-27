@@ -207,6 +207,10 @@ private todoslosdientesOficial: TodoslosdientesInterface = {};
     this.router.navigate(['pacientepresupuesto']);
   }
 
+  verservicios(): void {
+    this.router.navigate(['verservicios']);
+  }
+
 
   informe(): void {
     this.router.navigate(['pacienteinforme']);

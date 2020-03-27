@@ -177,6 +177,11 @@ export class HistoriaComponent implements OnInit {
     this.router.navigate(['pacienteinforme']);
   }
 
+  verservicios(): void {
+    this.router.navigate(['verservicios']);
+  }
+
+  
   ngOnInit() {
     this.app.mostrar = true;
     this.patient = this.auth.getCurrentPatient();

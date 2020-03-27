@@ -133,6 +133,11 @@ export class PacienteconsultaComponent implements OnInit {
     this.router.navigate(['pacienteinforme']);
   }
 
+  verservicios(): void {
+    this.router.navigate(['verservicios']);
+  }
+
+
   getlistConsultas() {
     this.app.mostrar = true;
     this.patient = this.auth.getCurrentPatient();

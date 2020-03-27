@@ -97,4 +97,7 @@ export class SeguimientoTodoslosdientesComponent implements OnInit {
     this.router.navigate(['pacienteinforme']);
   }
 
+  verservicios(): void {
+    this.router.navigate(['verservicios']);
+  }
 }

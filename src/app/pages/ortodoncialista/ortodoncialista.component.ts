@@ -99,4 +99,8 @@ export class OrtodoncialistaComponent implements OnInit {
     this.router.navigate(['pacienteinforme']);
   }
 
+  verservicios(): void {
+    this.router.navigate(['verservicios']);
+  }
+
 }

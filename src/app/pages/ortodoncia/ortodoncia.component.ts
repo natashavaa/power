@@ -170,6 +170,11 @@ export class OrtodonciaComponent implements OnInit {
     this.router.navigate(['pacienterecipe']);
   }
 
+  verservicios(): void {
+    this.router.navigate(['verservicios']);
+  }
+
+
 
   presupuesto(): void {
     this.router.navigate(['pacientepresupuesto']);

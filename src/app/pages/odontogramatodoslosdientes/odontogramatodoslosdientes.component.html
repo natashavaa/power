@@ -6,14 +6,25 @@
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <h5 align="center">{{patient.name}}</h5>
-                    <h1 align="center">{{patient.age}} años</h1>
+                    <div class="text-right">
+                        <h5 align="center">{{patient.name}}</h5>
+                        <h1 align="center">{{patient.age}} años</h1>
+                    </div>
+
                 </mat-card-title>
                 <mat-list-item>
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
                     <form>
                         <div>
                             <button mat-stroked-button (click)="datos()" class="a">Datos Personales</button>
+                        </div>
+                    </form>
+                </mat-list-item>
+                <mat-list-item>
+                    <img clas="tres" src="https://img.icons8.com/dusk/50/000000/resume.png">
+                    <form>
+                        <div>
+                            <button mat-stroked-button (click)="informacion()" class="g">Historial Clinico</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -37,7 +48,7 @@
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/workflow.png">
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="procedimiento()" class="d">Procedimientos</button>
+                            <button mat-stroked-button (click)="verservicios()" class="d">Procedimientos</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -46,21 +57,6 @@
                     <form>
                         <div>
                             <button mat-stroked-button (click)="seguimiento()" class="e">Seguimiento</button>
-                        </div>
-                    </form>
-                </mat-list-item>
-                <!-- <mat-list-item>
-                   <form>
-                        <div>
-                            <button mat-stroked-button (click)="odontograma()" class="f">Odontograma</button>
-                        </div>
-                    </form>
-                </mat-list-item> -->
-                <mat-list-item>
-                    <img clas="tres" src="https://img.icons8.com/dusk/50/000000/resume.png">
-                    <form>
-                        <div>
-                            <button mat-stroked-button (click)="informacion()" class="g">Historial Clinico</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -80,6 +76,7 @@
                         </div>
                     </form>
                 </mat-list-item>
+
                 <mat-list-item>
                     <img src="https://img.icons8.com/dusk/50/000000/budget.png">
                     <form>
@@ -111,8 +108,9 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                             <br>
-                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
-                                <option >Diente por Diente</option>
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento"
+                                [(ngModel)]="momentoC">
+                                <option>Diente por Diente</option>
                                 <option>Todos los Dientes</option>
                                 <option selected>Ortodoncia</option>
                             </select>
@@ -141,32 +139,43 @@
                     <br>
                     <form action="">
                         <div class="form-group row">
-                            <mat-label for="" class="col-4 col-form-label">Procedimiento Odontologico</mat-label>
+                            <mat-label for="" class="col-5 col-form-label">Procedimiento Odontologico</mat-label>
                             <br>
-                            <select #Procedimiento="ngModel" name="Procedimiento" [(ngModel)]='todoslosdientesOficial.ProcedimientoOdontologico' id="Procedimiento" class="form-control col-5">
-                        <option *ngFor="let procedimientoaPad of procedimientoaPad" [ngValue]="procedimientoaPad.NombreProcedimiento" >
-                            {{procedimientoaPad.NombreProcedimiento}}</option>
-                    </select>
+                            <select #Procedimiento="ngModel" name="Procedimiento"
+                                [(ngModel)]='todoslosdientesOficial.ProcedimientoOdontologico' id="Procedimiento"
+                                class="form-control col-5">
+                                <option *ngFor="let procedimientoaPad of procedimientoaPad"
+                                    [ngValue]="procedimientoaPad.NombreProcedimiento">
+                                    {{procedimientoaPad.NombreProcedimiento}}</option>
+                            </select>
                             <div class="col-1 ">
-                                <button class="sinp " (click)="buscarProcedimiento(procedimientoaPad.NombreProcedimiento)" class="btn btn-success ">Seleccionar</button>
+                                <button class="sinp "
+                                    (click)="buscarProcedimiento(procedimientoaPad.NombreProcedimiento)"
+                                    class="btn btn-success ">Seleccionar</button>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="col-1">
-
                 </div>
+                <br>
                 <div class="col-5">
                     <div>
+                        <br>
                         <form action="">
+                      
                             <div class="form-group row">
+                                <br>
+                                
                                 <mat-label for="" class="col-3 col-form-label">Estatus</mat-label>
                                 <br>
-                                <select class="form-control col-4" #Estatus="ngModel" name="Estatus" [(ngModel)]='todoslosdientesOficial.Estatus'>
-                          <option>Evaluado</option>
-                          <option>Iniciado</option>
-                          <option>Terminado</option>
-                      </select>
+                                <br>
+                                <select class="form-control col-4" #Estatus="ngModel" name="Estatus"
+                                    [(ngModel)]='todoslosdientesOficial.Estatus'>
+                                    <option>Evaluado</option>
+                                    <option>Iniciado</option>
+                                    <option>Terminado</option>
+                                </select>
                             </div>
                         </form>
                     </div>
@@ -183,7 +192,8 @@
                     <form action="">
                         <div class="form-group row">
                             <mat-label for="" class="col-3 col-form-label">Instrumentos</mat-label>
-                            <textarea disabled class="form-control" rows="5" #instrumentosaux="ngModel" name="instrumentosaux" [(ngModel)]='todoslosdientesOficial.Instrumentos'></textarea>
+                            <textarea disabled class="form-control" rows="8" #instrumentosaux="ngModel"
+                                name="instrumentosaux" [(ngModel)]='todoslosdientesOficial.Instrumentos'></textarea>
                             <!--   <input #instrumentosaux="ngModel" name="instrumentosaux" [(ngModel)]='formulario.instrumentosaux' type="text">-->
                         </div>
                     </form>
@@ -196,7 +206,8 @@
                     <form action="">
                         <div class="form-group row">
                             <mat-label for="" class="col-3 col-form-label">Materiales</mat-label>
-                            <textarea disabled class="form-control" rows="5" #materialesaux="ngModel" name="materialesaux" [(ngModel)]='todoslosdientesOficial.Materiales'></textarea>
+                            <textarea disabled class="form-control" rows="8" #materialesaux="ngModel"
+                                name="materialesaux" [(ngModel)]='todoslosdientesOficial.Materiales'></textarea>
                             <!--  <input #materialesaux="ngModel" name="materialesaux" [(ngModel)]='formulario.materialesaux' type="text">-->
                         </div>
                     </form>
@@ -206,15 +217,18 @@
             <br>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Diagnostico</label>
-                <textarea #Diagnostico="ngModel" name="Diagnostico" [(ngModel)]='todoslosdientesOficial.Diagnostico' rows="3" class="form-control col-6"></textarea>
+                <textarea #Diagnostico="ngModel" name="Diagnostico" [(ngModel)]='todoslosdientesOficial.Diagnostico'
+                    rows="3" class="form-control col-6"></textarea>
             </div>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Recomendaciones</label>
-                <textarea #Recomendaciones="ngModel" name="Recomendaciones" [(ngModel)]='todoslosdientesOficial.Recomendaciones' rows="3" class="form-control col-6"></textarea>
+                <textarea #Recomendaciones="ngModel" name="Recomendaciones"
+                    [(ngModel)]='todoslosdientesOficial.Recomendaciones' rows="3" class="form-control col-6"></textarea>
             </div>
             <div class="form-group row">
                 <label for="" class="col-4 col-form-label">Observaciones</label>
-                <textarea #Observaciones="ngModel" name="Observaciones" [(ngModel)]='todoslosdientesOficial.Observaciones' rows="3" class="form-control col-6"></textarea>
+                <textarea #Observaciones="ngModel" name="Observaciones"
+                    [(ngModel)]='todoslosdientesOficial.Observaciones' rows="3" class="form-control col-6"></textarea>
             </div>
 
             <button mat-raised-button (click)="guardar()" class="btn btn-success">Guardar</button>

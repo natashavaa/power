@@ -135,4 +135,8 @@ informe(): void {
   this.router.navigate(['pacienteinforme']);
 }
 
+verservicios(): void {
+  this.router.navigate(['verservicios']);
+}
+
 }

@@ -99,4 +99,7 @@ export class TodoslosdientesdetalleComponent implements OnInit {
     this.router.navigate(['pacienteinforme']);
   }
 
+  verservicios(): void {
+    this.router.navigate(['verservicios']);
+  }
 }
