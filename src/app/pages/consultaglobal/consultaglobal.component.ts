@@ -51,7 +51,7 @@ export class ConsultaglobalComponent implements OnInit {
       status: '',
       consultorioVisitar: '',
     };
-    private patientf: PaatientInterface = {
+    public patientf: PaatientInterface = {
       dni : '',
       name : '',
       age: 0,
@@ -60,12 +60,34 @@ export class ConsultaglobalComponent implements OnInit {
       homeAddress: '',
       occupation : '',
       workAddress: '',
-      mobile: 0,
+      mobile: '',
       birthplace: '',
       sentBy: '',
       dentalColor: '',
-      familyNumber: 0,
-      familyNumberHome: 0,
+      familyNumber: '',
+      familyNumberHome: '',
+      familyName: '',
+      password: '',
+      username: '',
+      mail: '',
+      userType: '',
+      phone: '',
+    };
+    private patientdeconsulta: PaatientInterface = {
+      dni : '',
+      name : '',
+      age: 0,
+      sex: '',
+      statusC: '',
+      homeAddress: '',
+      occupation : '',
+      workAddress: '',
+      mobile: '',
+      birthplace: '',
+      sentBy: '',
+      dentalColor: '',
+      familyNumber: '',
+      familyNumberHome: '',
       familyName: '',
       password: '',
       username: '',
@@ -75,7 +97,15 @@ export class ConsultaglobalComponent implements OnInit {
     };
   ngOnInit() {
     this.app.mostrar = true;
+    this.patientdeconsulta = this.authService.getCurrentPatientConsulta();
     this.getlistUsers();
+    this.validarque();
+  }
+  validarque() {
+    if (this.patientdeconsulta) {
+      this.patientf = this.patientdeconsulta;
+      this.MostrarForm =  true;
+    }
   }
   onSearch(): void {
     this.MostrarForm =  false;
@@ -141,6 +171,7 @@ onRegisterConsulta(): void {
     this.consulta.dia,
     this.consulta.atendidoPor,
   ).subscribe(consulta => {
+    localStorage.removeItem('currentPatientConsulta');
     this.router.navigate(['diaria']);
   } );
 }

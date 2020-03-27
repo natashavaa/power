@@ -351,9 +351,9 @@ deleteInstrumento(id: string) {
         }
 registerPatient(name: string, dni: string, age: number, sex: string,
                 statusC: string, homeAddress: string, occupation: string, workAddress: string,
-                mobile: number, birthplace: string, sentBy: string,
-                dentalColor: string, familyNumber: number,
-                familyName: string, familyNumberHome: number,
+                mobile: string, birthplace: string, sentBy: string,
+                dentalColor: string, familyNumber: string,
+                familyName: string, familyNumberHome: string,
                 password: string, username: string, mail: string,
                 userType: string, phone: string, registradoPor: string) {
         const urlApi = 'http://localhost:3000/patient';
@@ -482,9 +482,9 @@ UpdateConsulta(id: string, idDoctor: string, idSpeciality: string, idClinicHisto
 }
 UpdatePatient(id: string, name: string, dni: string, age: number, sex: string,
               statusC: string, homeAddress: string, occupation: string, workAddress: string,
-              mobile: number, birthplace: string, sentBy: string,
-              dentalColor: string, familyNumber: number,
-              familyName: string, familyNumberHome: number,
+              mobile: string, birthplace: string, sentBy: string,
+              dentalColor: string, familyNumber: string,
+              familyName: string, familyNumberHome: string,
               password: string, username: string, mail: string,
               userType: string, phone: string) {
       const urlApi = 'http://localhost:3000/patient/update';
@@ -1462,6 +1462,10 @@ loginuser(username: string, password: string): Observable<any> {
     const patientString = JSON.stringify(patient);
     localStorage.setItem('currentPatient', patientString);
   }
+  setPatientConsulta(patient: PaatientInterface): void {
+    const patientString = JSON.stringify(patient);
+    localStorage.setItem('currentPatientConsulta', patientString);
+  }
   setOdontogramaDiente(patient: OdontogramaInterface): void {
     const patientString = JSON.stringify(patient);
     localStorage.setItem('currentOdontogramaDiente', patientString);
@@ -1529,6 +1533,15 @@ loginuser(username: string, password: string): Observable<any> {
   }
   getCurrentPatient(): PaatientInterface {
     const patientString = localStorage.getItem('currentPatient');
+    if (!isNullOrUndefined(patientString)) {
+      const patient: PaatientInterface = JSON.parse(patientString);
+      return patient;
+    } else {
+      return null;
+    }
+  }
+  getCurrentPatientConsulta(): PaatientInterface {
+    const patientString = localStorage.getItem('currentPatientConsulta');
     if (!isNullOrUndefined(patientString)) {
       const patient: PaatientInterface = JSON.parse(patientString);
       return patient;

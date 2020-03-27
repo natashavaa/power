@@ -6,13 +6,13 @@ export interface PaatientInterface extends UserInterface {
     homeAddress?: string;
     occupation ?: string;
     workAddress?: string;
-    mobile?: number;
+    mobile?: string;
     birthplace?: string;
     sentBy?: string;
     registradoPor?: string;
     dentalColor?: string;
-    familyNumber?: number;
-    familyNumberHome?: number;
+    familyNumber?: string;
+    familyNumberHome?: string;
     familyName?: string;
-    numberEmergency?: number;
+    numberEmergency?: string;
 }
