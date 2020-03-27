@@ -25,8 +25,8 @@ export class OrtodoncialistadetalleComponent implements OnInit{
   fecha = Date;
   // tslint:disable-next-line: max-line-length
   toppingList: string[] = ['Diastema', 'Vestibulizacion de los incisivos superiores', 'Apiñamiento Leve', 'Apiñamiento Moderado', 'Apiñamiento Severo', 'Mordida Profunda', 'Mordida abierta anterior', 'Biprotrusión'];
-  private Ortodonciarecibido: OrtodonciaInterface = {};
-  private SeguimientoOrtodoncia: SeguimientoOrtodonciaInterface = {};
+  public Ortodonciarecibido: OrtodonciaInterface = {};
+  public SeguimientoOrtodoncia: SeguimientoOrtodonciaInterface = {};
   private listSeguimientoOrtodoncia: SeguimientoOrtodonciaInterface = {};
   private patient: PaatientInterface = {};
   mostrarD = false;
