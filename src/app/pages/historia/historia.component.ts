@@ -18,7 +18,7 @@ export class HistoriaComponent implements OnInit {
 
   constructor(private dataApi: DataApiService, private router: Router, private auth: AuthService, private app: AppComponent) { }
 
-  private patient: PaatientInterface;
+  public patient: PaatientInterface;
   private historialRec: HistotialClinicoInterface = {
 
     idPatient: '',
@@ -86,6 +86,7 @@ export class HistoriaComponent implements OnInit {
   Renales = false;
   Alergias = false;
   otra = false;
+  observaciones = false;
   getHistoria() {
     this.patient = this.auth.getCurrentPatient();
     this.dataApi.getAllHistorialBypatient(this.patient.id)
@@ -132,6 +133,9 @@ export class HistoriaComponent implements OnInit {
        }
        if (historialRec.Otra !== null) {
         this.otra = true;
+       }
+       if (historialRec.Observaciones !== '') {
+         this.observaciones = true;
        }
       }
     } );

@@ -13,7 +13,7 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 // Rutas
 import { AppRoutingModule } from './app-routing.module';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatInputModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material';
@@ -199,6 +199,7 @@ import { OrtodoncialistadetalleComponent } from './pages/ortodoncialistadetalle/
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule,
+    MatInputModule,
     AngularFireStorageModule,
     CustomMaterialModule,
     FormsModule,

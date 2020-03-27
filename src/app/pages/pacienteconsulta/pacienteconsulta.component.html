@@ -5,11 +5,8 @@
         <mat-card-content>
             <mat-list>
                 <mat-card-title>
-                    <div class="text-right">
-                        <h5 align="center">{{patient.name}}</h5>
-                        <h1 align="center">{{patient.age}} años</h1>
-                    </div>
-
+                    <h5 matInput align="center">{{patient.name}}</h5>
+                    <h1 matInput align="center">{{patient.age}} años</h1>
                 </mat-card-title>
                 <mat-list-item>
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/conference.png">
@@ -91,27 +88,22 @@
     <div class="center">
         <mat-card-content>
             <mat-card-title>
-                <form>
-                    <mat-card>
-                        <br>
-                        <h4> <img src="https://img.icons8.com/dusk/50/000000/overtime.png"> CONSULTA DEL PACIENTE </h4>
-                    </mat-card>
-                </form>
-            </mat-card-title>
 
+                <mat-card>
+                    <br>
+                    <h4> <img src="https://img.icons8.com/dusk/50/000000/overtime.png"> CONSULTA DEL PACIENTE </h4>
+                </mat-card>
+
+            </mat-card-title>
             <form align="right">
                 <div>
                     <br>
                     <button mat-raised-button (click)="global()" class="uno"><img src="https://img.icons8.com/dusk/50/000000/calendar-plus.png">   Agregar Consultas</button>
                 </div>
             </form>
-            <br>
-
             <div class="row mt-5">
                 <div class="col">
-                    <mat-form-field class=" col-2 border-bottom text-dark">
 
-                    </mat-form-field>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
                     <table class="table table-hover">
                         <thead>
@@ -139,11 +131,11 @@
                                 <td>{{consulta.motive}}</td>
                                 <td>{{consulta.consultorioVisitar}}</td>
                                 <td><button type="button" class="btn btn-success" (click)="cambiarstatus(consulta)">
-                                  <span>{{consulta.status}}</span>
-                              </button></td>
+                                    <span>{{consulta.status}}</span>
+                                </button></td>
                                 <td><button type="button" class="btn btn-danger" (click)="suspenderstatus(consulta)">
-                                <span>X</span>
-                            </button></td>
+                                  <span>X</span>
+                              </button></td>
                             </tr>
 
                         </tbody>
@@ -151,6 +143,6 @@
                 </div>
             </div>
         </mat-card-content>
-
     </div>
+
 </div>

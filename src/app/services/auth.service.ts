@@ -351,9 +351,9 @@ deleteInstrumento(id: string) {
         }
 registerPatient(name: string, dni: string, age: number, sex: string,
                 statusC: string, homeAddress: string, occupation: string, workAddress: string,
-                mobile: number, birthplace: string, sentBy: string,
-                dentalColor: string, familyNumber: number,
-                familyName: string, familyNumberHome: number,
+                mobile: string, birthplace: string, sentBy: string,
+                dentalColor: string, familyNumber: string,
+                familyName: string, familyNumberHome: string,
                 password: string, username: string, mail: string,
                 userType: string, phone: string, registradoPor: string) {
         const urlApi = 'http://localhost:3000/patient';
@@ -482,9 +482,9 @@ UpdateConsulta(id: string, idDoctor: string, idSpeciality: string, idClinicHisto
 }
 UpdatePatient(id: string, name: string, dni: string, age: number, sex: string,
               statusC: string, homeAddress: string, occupation: string, workAddress: string,
-              mobile: number, birthplace: string, sentBy: string,
-              dentalColor: string, familyNumber: number,
-              familyName: string, familyNumberHome: number,
+              mobile: string, birthplace: string, sentBy: string,
+              dentalColor: string, familyNumber: string,
+              familyName: string, familyNumberHome: string,
               password: string, username: string, mail: string,
               userType: string, phone: string) {
       const urlApi = 'http://localhost:3000/patient/update';
@@ -891,6 +891,38 @@ registertodoslosdientes(idPatient: string, Imagen: string, ProcedimientoOdontolo
 
   },
   );
+}
+Updatetodoslosdientes(id: string, idPatient: string, Imagen: string, ProcedimientoOdontologico: string,
+                      Estatus: string, Instrumentos: string, Materiales: string,
+                      Diagnostico: string, Recomendaciones: string, Observaciones: string) {
+const urlApi = 'http://localhost:3000/seguimientotodosdientes/update';
+return this.htttp
+.put<TodoslosdientesInterface>(
+urlApi,
+{
+  // tslint:disable-next-line: object-literal-shorthand
+  id: id,
+// tslint:disable-next-line: object-literal-shorthand
+idPatient: idPatient,
+// tslint:disable-next-line: object-literal-shorthand
+Imagen: Imagen,
+// tslint:disable-next-line: object-literal-shorthand
+ProcedimientoOdontologico: ProcedimientoOdontologico,
+// tslint:disable-next-line: object-literal-shorthand
+Estatus: Estatus,
+// tslint:disable-next-line: object-literal-shorthand
+Instrumentos: Instrumentos,
+// tslint:disable-next-line: object-literal-shorthand
+Materiales: Materiales,
+// tslint:disable-next-line: object-literal-shorthand
+Diagnostico: Diagnostico,
+// tslint:disable-next-line: object-literal-shorthand
+Recomendaciones: Recomendaciones,
+// tslint:disable-next-line: object-literal-shorthand
+Observaciones: Observaciones,
+
+},
+);
 }
 registerSeguimiento(idOdontograma: string, Fecha: string,
                     TratamientoEfectuado: string, Observaciones: string,
@@ -1462,6 +1494,10 @@ loginuser(username: string, password: string): Observable<any> {
     const patientString = JSON.stringify(patient);
     localStorage.setItem('currentPatient', patientString);
   }
+  setPatientConsulta(patient: PaatientInterface): void {
+    const patientString = JSON.stringify(patient);
+    localStorage.setItem('currentPatientConsulta', patientString);
+  }
   setOdontogramaDiente(patient: OdontogramaInterface): void {
     const patientString = JSON.stringify(patient);
     localStorage.setItem('currentOdontogramaDiente', patientString);
@@ -1529,6 +1565,15 @@ loginuser(username: string, password: string): Observable<any> {
   }
   getCurrentPatient(): PaatientInterface {
     const patientString = localStorage.getItem('currentPatient');
+    if (!isNullOrUndefined(patientString)) {
+      const patient: PaatientInterface = JSON.parse(patientString);
+      return patient;
+    } else {
+      return null;
+    }
+  }
+  getCurrentPatientConsulta(): PaatientInterface {
+    const patientString = localStorage.getItem('currentPatientConsulta');
     if (!isNullOrUndefined(patientString)) {
       const patient: PaatientInterface = JSON.parse(patientString);
       return patient;

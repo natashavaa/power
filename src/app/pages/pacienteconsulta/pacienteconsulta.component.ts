@@ -39,6 +39,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PacienteconsultaComponent implements OnInit {
   private patient: PaatientInterface;
+  public patientf: PaatientInterface;
   private consulta: ConsultaInterface = {};
   displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -76,6 +77,8 @@ export class PacienteconsultaComponent implements OnInit {
 
   ngOnInit() {
     this.getlistConsultas();
+    this.patientf = this.auth.getCurrentPatient();
+    console.log(this.patientf);
   }
 
 
@@ -86,7 +89,48 @@ export class PacienteconsultaComponent implements OnInit {
   imagen(): void {
     this.router.navigate(['imagenes']);
   }
+  cambiarstatus(consulta: ConsultaInterface): void {
+    if (Object.is(consulta.status, 'PROGRAMADA')) {
+      consulta.status = 'REALIZADA';
+      this.auth.UpdateConsulta(
+        consulta.id,
+        consulta.idDoctor,
+        consulta.idSpeciality ,
+        consulta.idClinicHistory ,
+        consulta.idPatient ,
+        consulta.namePatient ,
+        consulta.dniPatient,
+        consulta.fechaPlanificada,
+        consulta.hora ,
+        consulta.motive,
+        consulta.status,
+        consulta.consultorioVisitar,
+      ).subscribe(consulta2 => {
+        this.ngOnInit();
+      } );
+    }
 
+  }
+  suspenderstatus(consulta: ConsultaInterface): void {
+    consulta.status = 'SUSPENDIDA';
+    this.auth.UpdateConsulta(
+      consulta.id,
+      consulta.idDoctor,
+      consulta.idSpeciality ,
+      consulta.idClinicHistory ,
+      consulta.idPatient ,
+      consulta.namePatient ,
+      consulta.dniPatient,
+      consulta.fechaPlanificada,
+      consulta.hora ,
+      consulta.motive,
+      consulta.status,
+      consulta.consultorioVisitar,
+    ).subscribe(consulta2 => {
+      this.ngOnInit();
+
+    } );
+  }
   consultac(): void {
     this.router.navigate(['pacienteconsulta']);
   }
@@ -104,6 +148,7 @@ export class PacienteconsultaComponent implements OnInit {
   }
 
   global(): void {
+    this.auth.setPatientConsulta(this.patientf);
     this.router.navigate(['global']);
   }
   editarpaciente(): void {
@@ -123,12 +168,12 @@ export class PacienteconsultaComponent implements OnInit {
     this.router.navigate(['pacienterecipe']);
   }
 
-    
+
   presupuesto(): void {
     this.router.navigate(['pacientepresupuesto']);
   }
 
-  
+
   informe(): void {
     this.router.navigate(['pacienteinforme']);
   }

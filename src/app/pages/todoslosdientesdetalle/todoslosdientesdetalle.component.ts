@@ -44,6 +44,20 @@ export class TodoslosdientesdetalleComponent implements OnInit {
       this.router.navigate(['seguimientotodoslosdientes']);
     }
   onRegisterSeguimiento() {
+    this.seguimientorecibido.Estatus = this.seguimientoRe.Estatus;
+    this.auth.Updatetodoslosdientes(
+      this.seguimientorecibido.id,
+      this.seguimientorecibido.idPatient,
+      this.seguimientorecibido.Imagen,
+      this.seguimientorecibido.ProcedimientoOdontologico,
+      this.seguimientorecibido.Estatus,
+      this.seguimientorecibido.Instrumentos,
+      this.seguimientorecibido.Materiales,
+      this.seguimientorecibido.Diagnostico,
+      this.seguimientorecibido.Recomendaciones,
+      this.seguimientorecibido.Observaciones,
+      ).subscribe(registro => {
+       } );
     this.seguimientoRe.Fecha = this.datepipe.transform(this.fecha, 'dd-MM-yyyy');
     console.log(this.seguimientoRe);
     this.seguimientoRe.idOdontograma = this.seguimientorecibido.id;
