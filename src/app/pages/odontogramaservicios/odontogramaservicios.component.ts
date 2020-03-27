@@ -55,6 +55,7 @@ export class OdontogramaserviciosComponent implements OnInit {
 
  //   const fechaInicio = this.datepipe.transform(this.startDate, 'yyyy-MM-dd h:mm:ss.ssssss');
  //   const fechaFinal = this.datepipe.transform(this.endDate, 'yyyy-MM-dd h:mm:ss.ssssss');
+    console.log(this.presupuestoRe);
     this.auth.registerPresupuesto(
       this.presupuestoRe.idPatient,
       this.presupuestoRe.PresupuestoBsf,
@@ -67,6 +68,7 @@ export class OdontogramaserviciosComponent implements OnInit {
       this.presupuestoRe.FechadeCreacion,
       this.presupuestoRe.FechasdePagos,
     ).subscribe(pieza => {
+      console.log(pieza);
       this.router.navigate(['pacienteodontograma']);
      } );
     }

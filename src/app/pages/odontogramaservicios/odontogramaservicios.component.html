@@ -107,8 +107,7 @@
                 <div class="col">
                     <h4 for="" class="lolo">Lista de los Servicios</h4>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
-                    <table class="table table-hover" mdbTable mdbTableScroll scrollY="true" maxHeight="200"
-                        bordered="true">
+                    <table class="table table-hover" mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -125,8 +124,7 @@
                                 <td>{{servicios.NombredelServicio}}</td>
                                 <td>{{servicios.Descripcion}}</td>
                                 <td>{{servicios.Costo}}</td>
-                                <input [value]="servicios.Costo" type="checkbox"
-                                    (change)="onCheckboxChange($event,servicios)">
+                                <input [value]="servicios.Costo" type="checkbox" (change)="onCheckboxChange($event,servicios)">
 
                             </tr>
 
@@ -134,7 +132,7 @@
                     </table>
                 </div>
             </div>
-            <br>           
+            <br>
             <form #formServicios="ngForm" (ngSubmit)="onRegister(formServicios)">
                 <div class="row per ">
                     <div class="col-8">
@@ -147,14 +145,14 @@
                     </div>
                 </div>
                 <br>
-                <form action="">
-                    <div class="form-group row">
-                        <mat-label for="" class="col-4 col-form-label"></mat-label>
-                        <button mat-raised-button (click)="odontograma()" class="col-4 uno"><img
+
+                <div class="form-group row">
+                    <mat-label for="" class="col-4 col-form-label"></mat-label>
+                    <button mat-raised-button type="submit" class="col-4 uno"><img
                                 src="https://img.icons8.com/officel/50/000000/false-teeth.png"> Crear
                             Odontograma</button>
-                    </div>
-                </form>
+                </div>
+
             </form>
 
         </mat-card-content>
