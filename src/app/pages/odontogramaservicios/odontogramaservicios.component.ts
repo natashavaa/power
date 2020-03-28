@@ -84,7 +84,7 @@ export class OdontogramaserviciosComponent implements OnInit {
   }
   onCheckboxChange(e, servicio: ServicioInterface) {
     if (e.target.checked === true) {
-      this.presupuestoRe.serviciosTratados = this.presupuestoRe.serviciosTratados + ' ' + servicio.NombredelServicio;
+      this.presupuestoRe.serviciosTratados = this.presupuestoRe.serviciosTratados  + servicio.NombredelServicio + ' , ';
       this.Estimado = this.Estimado + parseInt(servicio.Costo, 10);
     } else if (e.target.checked === false) {
       this.Estimado = this.Estimado - parseInt(servicio.Costo, 10);
