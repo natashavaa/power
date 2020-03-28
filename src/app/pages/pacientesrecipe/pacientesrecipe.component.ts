@@ -9,6 +9,7 @@ import { DataApiService } from '../../services/data-api.service';
 import { RecipeInterface } from '../../models/recipe.interface';
 import * as jsPDF from 'jspdf';
 import { PdfMakeWrapper } from 'pdfmake-wrapper/lib/pdfmake-wrapper';
+import { DatePipe } from '@angular/common';
 
 export interface PeriodicElement {
   name: string;
@@ -40,7 +41,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PacientesrecipeComponent implements OnInit {
 
-  constructor(private router: Router, private dataApi: DataApiService, private authService: AuthService, private app: AppComponent) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private router: Router, private dataApi: DataApiService, private authService: AuthService, private app: AppComponent,  public datepipe: DatePipe) { }
 
   private patient: PaatientInterface;
   private user: PaatientInterface;
@@ -121,8 +123,10 @@ export class PacientesrecipeComponent implements OnInit {
     this.getlistAllrecipepatients();
   }
   onRegisterRecipe(): void {
+    const now = new Date();
     this.recipeRe.idPatient = this.patient.id;
     this.recipeRe.idDoctor = this.user.id;
+    this.recipeRe.Firma = this.datepipe.transform(now, 'dd-MM-yyyy ');
     this.authService.registerRecipe(
       this.recipeRe.Rp,
       this.recipeRe.Indicaciones,

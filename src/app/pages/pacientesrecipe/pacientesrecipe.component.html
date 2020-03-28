@@ -111,13 +111,11 @@
                         <br>
                         <div class="form-group row">
                             <label for="" class="col-4 col-form-label">Rp</label>
-                            <textarea #Rp="ngModel" name="Rp" [(ngModel)]='recipeRe.Rp' rows="3"
-                                class="form-control col-6"></textarea>
+                            <textarea #Rp="ngModel" name="Rp" [(ngModel)]='recipeRe.Rp' rows="3" class="form-control col-6"></textarea>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-4 col-form-label">Indicaciones</label>
-                            <textarea #Indicaciones="ngModel" name="Indicaciones" [(ngModel)]='recipeRe.Indicaciones'
-                                rows="3" class="form-control col-6"></textarea>
+                            <textarea #Indicaciones="ngModel" name="Indicaciones" [(ngModel)]='recipeRe.Indicaciones' rows="3" class="form-control col-6"></textarea>
                         </div>
                     </div>
                 </div>
@@ -135,6 +133,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Rp </th>
                     <th scope="col">Indicaciones</th>
+                    <th scope="col">Fecha</th>
                     <th scope="col">Imprimir</th>
                 </tr>
             </thead>
@@ -143,9 +142,9 @@
                     <td></td>
                     <td>{{recipeRecibido.Rp}}</td>
                     <td>{{recipeRecibido.Indicaciones}}</td>
+                    <td>{{recipeRecibido.Firma}}</td>
                     <td>
-                        <button type="button" (click)="imprimirPdfMateriales()"
-                            class="btn btn-primary dos">Imprimir</button>
+                        <button type="button" (click)="imprimirPdfMateriales()" class="btn btn-primary dos">Imprimir</button>
                     </td>
                 </tr>
 
