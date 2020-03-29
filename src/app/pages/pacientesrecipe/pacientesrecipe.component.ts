@@ -155,9 +155,12 @@ export class PacientesrecipeComponent implements OnInit {
      pdf.add('    ');
      pdf.add('    ');
      pdf.add( await (await new Img('assets/img/lo.png').alignment('center').build()) );
+     pdf.add('    ');
+     pdf.add('    ');
+     pdf.add(new Txt('Consultorio Dental Merida').alignment('center').italics().end) ;
 
-    // pdf.add(new Txt('Consultorio Dental Merida').alignment('center').italics().end) ;
-     pdf.add(new Txt('Doctor: ' + this.user.name + ', Especialidad: ' + this.user.userType).alignment('center').italics().end) ;
+     pdf.add(new Txt('Doctor:  ' + this.user.name).alignment('center').italics().end) ;
+     pdf.add(new Txt('Especialidad:  ' + this.user.userType).alignment('center').italics().end) ;
      pdf.add(new Txt(' RIF-V-09168613-5').alignment('center').italics().end) ;
 
      // tslint:disable-next-line: max-line-length
@@ -209,6 +212,6 @@ export class PacientesrecipeComponent implements OnInit {
      pdf.add(new Txt('Email: consultoriodentalmerida@gmail.com Av Dalla Costa Edificio Almary Local 1-B San Felix - Estado Bolivar Pide tu cita al 0286-9314977.').alignment('center').italics().end);
      pdf.pageSize('A4');
 
-     pdf.create().download();
+     pdf.create().open();
     }
 }
