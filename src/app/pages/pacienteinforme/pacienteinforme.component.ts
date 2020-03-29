@@ -185,6 +185,6 @@ export class PacienteinformeComponent implements OnInit {
       pdf.add(new Txt('Email: consultoriodentalmerida@gmail.com Av Dalla Costa Edificio Almary Local 1-B San Felix - Estado Bolivar Pide tu cita al 0286-9314977.').alignment('center').italics().end);
       pdf.pageSize('A4');
 
-      pdf.create().open();
+      pdf.create().download();
      }
 }
