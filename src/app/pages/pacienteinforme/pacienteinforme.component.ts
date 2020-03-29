@@ -7,6 +7,8 @@ import { AuthService } from '../../services/auth.service';
 import { InformeMedicoInterface } from '../../models/informemedico.interface';
 import { DatePipe } from '@angular/common';
 import { UserInterface } from '../../models/user.interface';
+import { PdfMakeWrapper } from 'pdfmake-wrapper/lib/pdfmake-wrapper';
+import { Txt, Img } from 'pdfmake-wrapper';
 
 @Component({
   selector: 'app-pacienteinforme',
@@ -114,5 +116,75 @@ export class PacienteinformeComponent implements OnInit {
     this.informeRe.AtendiA = this.patient.name;
     this.getlistAllInformepatients();
     }
+    async imprimirPdfMateriales(recipeRecibido: InformeMedicoInterface) {
+      const pdf = new PdfMakeWrapper();
+      pdf.styles({
+       style1: {
+           bold: true
+       },
+       style2: {
+           italics: true
+       }
+   });
 
+
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add(new Txt('Fecha:   ' + recipeRecibido.Certificoqueeldia).alignment('right').italics().end);
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add(new Txt('Aqui va el logo').alignment('center').italics().end) ;
+      pdf.add('    ');
+      pdf.add(new Txt('Consultorio Dental Merida').alignment('center').italics().end) ;
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add(new Txt('Informe Médico').alignment('center').bold().end) ;
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      // tslint:disable-next-line: max-line-length
+      pdf.add(new Txt(' Yo  ' + this.user.name + '  Doctor encargado ' + ''  + ' certico que el dia ' + recipeRecibido.Certificoqueeldia + '   atendi a  ' + this.patient.name + '  portador de la CI nro: ' + this.patient.dni + '   por presentar: ' + recipeRecibido.PorPresentar + '  Recibiendo como Diagnostico:  ' +  recipeRecibido.DiagnosticoDefinitivo + ' ').alignment('center').italics().end) ;
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add(new Txt('___________________'  + '         ' +  '____________________________').alignment('center').bold().end);
+      pdf.add(new Txt('    Firma Doctor   '  + '         ' +  '  Sello del Consultorio').alignment('center').bold().end);
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+
+
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      // tslint:disable-next-line: max-line-length
+      pdf.add(new Txt('Email: consultoriodentalmerida@gmail.com Av Dalla Costa Edificio Almary Local 1-B San Felix - Estado Bolivar Pide tu cita al 0286-9314977.').alignment('center').italics().end);
+      pdf.pageSize('A4');
+
+      pdf.create().open();
+     }
 }

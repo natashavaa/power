@@ -86,6 +86,7 @@ import { ModalComponent } from './pages/modal/modal.component';
 import { PantallaNOaccesoComponent } from './pages/pantalla-noacceso/pantalla-noacceso.component';
 import { PdfMakeWrapper } from 'pdfmake-wrapper';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+PdfMakeWrapper.setFonts(pdfFonts);
 import { PacientepresupuestoComponent } from './pages/pacientepresupuesto/pacientepresupuesto.component';
 import { PacienteinformeComponent } from './pages/pacienteinforme/pacienteinforme.component';
 import { MantenimientoComponent } from './pages/mantenimiento/mantenimiento.component';

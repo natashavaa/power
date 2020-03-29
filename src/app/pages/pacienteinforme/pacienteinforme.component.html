@@ -140,7 +140,7 @@
                             <label for="" class="col-4 col-form-label">Diagnostico Definitivo</label>
                             <textarea #DiagnosticoDefinitivo="ngModel" name="DiagnosticoDefinitivo" [(ngModel)]="informeRe.DiagnosticoDefinitivo" rows="3" class="form-control col-6"></textarea>
                         </div>
-                       
+
                     </div>
                 </div>
                 <br>
@@ -158,13 +158,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let informeRecibido of informeRecibido">
+                <tr *ngFor="let informeRecibid of informeRecibido">
                     <td></td>
-                    <td>{{informeRecibido.DiagnosticoDefinitivo}}</td>
-                    <td>{{informeRecibido.PorPresentar}}</td>
-                    <td>{{informeRecibido.Certificoqueeldia}}</td>
+                    <td>{{informeRecibid.DiagnosticoDefinitivo}}</td>
+                    <td>{{informeRecibid.PorPresentar}}</td>
+                    <td>{{informeRecibid.Certificoqueeldia}}</td>
                     <td>
-                        <button type="button" (click)="imprimirPdfMateriales()" class="btn btn-primary">Imprimir</button>
+                        <button type="button" (click)="imprimirPdfMateriales(informeRecibid)" class="btn btn-primary">Imprimir</button>
                     </td>
                 </tr>
 

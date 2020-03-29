@@ -11,7 +11,7 @@ import * as jsPDF from 'jspdf';
 import * as html2canvas from 'html2canvas';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import { PdfMakeWrapper, Txt } from 'pdfmake-wrapper';
 import { UserInterface } from '../../models/user.interface';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -27,6 +27,8 @@ export class ReportesComponent implements OnInit {
   constructor(private router: Router, private app: AppComponent , public datepipe: DatePipe, private auth: AuthService) { }
   public startDate: Date;
   public endDate: Date;
+  fi;
+  ff;
   private material: MaterialInterface;
   materialestrue: boolean;
   insumostrue: boolean;
@@ -90,17 +92,19 @@ export class ReportesComponent implements OnInit {
     this.insumostrue = false;
     const fechaInicio = this.datepipe.transform(this.startDate, 'yyyy-MM-dd h:mm:ss.ssssss');
     const fechaFinal = this.datepipe.transform(this.endDate, 'yyyy-MM-dd h:mm:ss.ssssss');
+    this.ff = this.datepipe.transform(this.endDate, 'dd/MM/yyyy');
+    this.fi =  this.datepipe.transform(this.startDate, 'dd/MM/yyyy');
     if (Object.is(this.tabla, 'Materiales') ) {
       this.materialestrue = true;
       this.auth.getAllMAterialPorFecha(
         fechaInicio, fechaFinal
       ).subscribe((materials: MaterialInterface) => { ( this.material = materials); } );
     } else
-    if (Object.is(this.tabla, 'Insumos')) {
+    if (Object.is(this.tabla, 'Instrumentos')) {
       this.insumostrue = true;
       this.auth.getAllInstrumentoPorFecha(
         fechaInicio, fechaFinal
-      ).subscribe((insumo: InstrumentoInterface) => {   ( this.insumo = insumo); } );
+      ).subscribe((insumo: InstrumentoInterface) => {   ( this.insumo = insumo); console.log(this.insumo); } );
     }
 
 
@@ -141,21 +145,76 @@ export class ReportesComponent implements OnInit {
     pdf.footer('Numero de Contacto : 0123123');
     pdf.create().open();
    }
-   imprimirPdfMateriales() {
-     const pdf = new  jsPDF('p', 'mm', 'A4');
-     pdf.setFont('helvetica');
-     pdf.setFontType('bold');
-     pdf.setFontSize(4);
-     pdf.fromHTML(document.getElementById('pdfTable'), 1 , 1);
-     pdf.save('Reportes-Materiales');
-   }
+    async imprimirPdfMateriales() {
+      const pdf = new PdfMakeWrapper();
+      pdf.styles({
+       style1: {
+           bold: true
+       },
+       style2: {
+           italics: true
+       }
+   });
+
+
+      pdf.add('    ');
+      pdf.add('    ');
+
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add(new Txt('Aqui va el logo').alignment('center').italics().end) ;
+      pdf.add('    ');
+      pdf.add(new Txt('Consultorio Dental Merida').alignment('center').italics().end) ;
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add(new Txt('Reporte de Inventario desde:  ' + this.fi +  '  hasta:  ' + this.ff).alignment('center').bold().end) ;
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+      pdf.add('    ');
+
+      pdf.create().open();
+     }
 
    imprimirPdfInsumos() {
     const pdf = new  jsPDF('p', 'mm', 'A4');
     pdf.setFont('helvetica');
     pdf.setFontType('bold');
     pdf.setFontSize(4);
-    pdf.fromHTML(document.getElementById('pdfTableInsumos'), 1 , 1);
+  //  pdf.add(new Txt('Reporte de Inventario desde:  ' + this.fi +  '  hasta:  ' + this.ff).alignment('center').bold().end) ;
+    pdf.fromHTML(document.getElementById('pdfTableInsumos'), 10 , 1);
     pdf.save('Reportes-Insumos');
   }
 }
