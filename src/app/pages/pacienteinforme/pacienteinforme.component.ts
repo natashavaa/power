@@ -170,8 +170,8 @@ export class PacienteinformeComponent implements OnInit {
       pdf.add('    ');
       pdf.add('    ');
       pdf.add('    ');
-      pdf.add(new Txt('___________________'  + '         ' +  '____________________________').alignment('center').bold().end);
-      pdf.add(new Txt('    Firma Doctor   '  + '         ' +  '  Sello del Consultorio').alignment('center').bold().end);
+      pdf.add(new Txt('         ' +  '____________________________').alignment('center').bold().end);
+      pdf.add(new Txt('         ' +  '  Sello del Consultorio').alignment('center').bold().end);
       pdf.add('    ');
       pdf.add('    ');
       pdf.add('    ');
