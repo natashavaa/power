@@ -224,6 +224,6 @@ export class ReportesComponent implements OnInit {
     pdf.setFontSize(4);
   //  pdf.add(new Txt('Reporte de Inventario desde:  ' + this.fi +  '  hasta:  ' + this.ff).alignment('center').bold().end) ;
     pdf.fromHTML(document.getElementById('pdfTable'), 10 , 1);
-    pdf.save('Reportes-Insumos');
+    pdf.save('Reportes-materiales');
   }
 }
