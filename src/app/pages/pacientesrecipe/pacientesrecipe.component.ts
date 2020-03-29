@@ -151,30 +151,39 @@ export class PacientesrecipeComponent implements OnInit {
   });
 
 
+
      pdf.add('    ');
      pdf.add('    ');
-     pdf.add(new Txt('Fecha:   ' + recipeRecibido.Firma).alignment('right').italics().end);
-     pdf.add('    ');
-     pdf.add('    ');
-     pdf.add('    ');
-     pdf.add( await (await new Img('assets/img/logitoope.png').alignment('center').build()) );
-     pdf.add('    ');
-     pdf.add(new Txt('Consultorio Dental Merida').alignment('center').italics().end) ;
-     pdf.add('    ');
-     pdf.add('    ');
-     pdf.add('    ');
-     pdf.add(new Txt('Paciente: ' + this.patient.name).alignment('left').bold().end) ;
-     pdf.add('    ');
-     pdf.add(new Txt('Cédula: ' + this.patient.dni).alignment('left').bold().end) ;
-     pdf.add('    ');
-     pdf.add(new Txt('Doctor: ' + this.user.name).alignment('left').bold().end) ;
-     pdf.add('    ');
+     pdf.add( await (await new Img('assets/img/lo.png').alignment('center').build()) );
+
+    // pdf.add(new Txt('Consultorio Dental Merida').alignment('center').italics().end) ;
+     pdf.add(new Txt('Doctor: ' + this.user.name + ', Especialidad: ' + this.user.userType).alignment('center').italics().end) ;
+     pdf.add(new Txt(' RIF-V-09168613-5').alignment('center').italics().end) ;
+
+     // tslint:disable-next-line: max-line-length
+     pdf.add(new Txt('____________________________________________________________________________________________').alignment('center').bold().end) ;
+
      pdf.add('    ');
      pdf.add(new Txt('Recipe').alignment('center').italics().end) ;
      pdf.add('    ');
      pdf.add('    ');
+     pdf.add(new Txt('Fecha:   ' + recipeRecibido.Firma).alignment('right').bold().end);
+
+     pdf.add(new Txt('Paciente: ' + this.patient.name).alignment('left').bold().end) ;
+     pdf.add('    ');
+     pdf.add(new Txt('Cédula: ' + this.patient.dni).alignment('left').bold().end) ;
+     pdf.add('    ');
+
+     pdf.add('    ');
+     pdf.add('    ');
+
+     pdf.add('    ');
+     pdf.add('    ');
      pdf.add('    ');
      pdf.add(new Txt('Rp: ' + recipeRecibido.Rp).alignment('left').bold().end) ;
+     pdf.add('    ');
+     pdf.add('    ');
+     pdf.add('    ');
      pdf.add('    ');
      pdf.add('    ');
      pdf.add('    ');
@@ -185,18 +194,16 @@ export class PacientesrecipeComponent implements OnInit {
      pdf.add('    ');
      pdf.add('    ');
      pdf.add('    ');
-
-     pdf.add('    ');
-     pdf.add('    ');
-     pdf.add('    ');
      pdf.add(new Txt('___________________'  + '         ' +  '____________________________').alignment('center').bold().end);
      pdf.add(new Txt('    Firma Doctor   '  + '         ' +  '  Sello del Consultorio').alignment('center').bold().end);
      pdf.add('    ');
      pdf.add('    ');
      pdf.add('    ');
      pdf.add('    ');
-
-
+     pdf.add('    ');
+     pdf.add('    ');
+     pdf.add('    ');
+     pdf.add('    ');
 
      // tslint:disable-next-line: max-line-length
      pdf.add(new Txt('Email: consultoriodentalmerida@gmail.com Av Dalla Costa Edificio Almary Local 1-B San Felix - Estado Bolivar Pide tu cita al 0286-9314977.').alignment('center').italics().end);
