@@ -65,6 +65,11 @@ export class ModificarpacientepresupuestoComponent implements OnInit {
   imagen(): void {
     this.router.navigate(['imagenes']);
   }
+  onCheckboxChange(e) {
+    if (parseInt(e.target.value, 10) > parseInt(this.presupuestoRe.Debe, 10 )  ) {
+      alert('Moto a abonar sobre pasa la deuda');
+    }
+  }
 
   consulta(): void {
     this.router.navigate(['pacienteconsulta']);
