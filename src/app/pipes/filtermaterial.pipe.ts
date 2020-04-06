@@ -10,7 +10,7 @@ export class FiltermaterialPipe implements PipeTransform {
     const resultpatients = [];
     for (const material of value) {
       // tslint:disable-next-line: max-line-length
-      if (material.name.toLowerCase().indexOf(arg.toLowerCase()) > -1 || material.especiality.toLowerCase().indexOf(arg.toLowerCase()) > -1 || material.cantidad.toLowerCase().indexOf(arg.toLowerCase()) > -1 ) {
+      if (material.name.toLowerCase().indexOf(arg.toLowerCase()) > -1 || material.especiality.toLowerCase().indexOf(arg.toLowerCase()) > -1 ) {
         resultpatients.push(material);
       }
     }
