@@ -212,7 +212,7 @@ export class ReportesComponent implements OnInit {
     const pdf = new  jsPDF('p', 'mm', 'A4');
     pdf.setFont('helvetica');
     pdf.setFontType('bold');
-    pdf.setFontSize(4);
+    pdf.setFontSize(3);
   //  pdf.add(new Txt('Reporte de Inventario desde:  ' + this.fi +  '  hasta:  ' + this.ff).alignment('center').bold().end) ;
     pdf.fromHTML(document.getElementById('pdfTableInsumos'), 10 , 1);
     pdf.save('Reportes-Insumos');
@@ -221,7 +221,7 @@ export class ReportesComponent implements OnInit {
     const pdf = new  jsPDF('p', 'mm', 'A4');
     pdf.setFont('helvetica');
     pdf.setFontType('bold');
-    pdf.setFontSize(4);
+    pdf.setFontSize(3);
   //  pdf.add(new Txt('Reporte de Inventario desde:  ' + this.fi +  '  hasta:  ' + this.ff).alignment('center').bold().end) ;
     pdf.fromHTML(document.getElementById('pdfTable'), 10 , 1);
     pdf.save('Reportes-materiales');

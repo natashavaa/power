@@ -18,7 +18,7 @@ export class ModificarpacientepresupuestoComponent implements OnInit {
   constructor(public datepipe: DatePipe, private router: Router,
               private dataApi: DataApiService, private authService: AuthService,
               private app: AppComponent) { }
-  private presupuestoRe: PresupustoInterface = {
+  public presupuestoRe: PresupustoInterface = {
 
     idPatient: '',
     PresupuestoBsf: '',
@@ -29,13 +29,15 @@ export class ModificarpacientepresupuestoComponent implements OnInit {
     Estimado: '',
     serviciosTratados: '',
   };
-  private patient: PaatientInterface;
+  public patient: PaatientInterface;
 
   datos(): void {
     this.router.navigate(['historiaclinica']);
   }
   onRegisterPresupuesto(): void {
     const now = new Date();
+    this.debe = parseInt(this.presupuestoRe.Debe, 10)  - parseInt(this.presupuestoRe.Abono, 10);
+    this.presupuestoRe.Debe = this.debe.toString();
   //  this.presupuestoRe.Estimado =  this.Estimado.toString();
     this.presupuestoRe.idPatient = this.patient.id;
     //this.presupuestoRe.PresupuestoDolares = this.Estimado.toString();
@@ -67,15 +69,6 @@ export class ModificarpacientepresupuestoComponent implements OnInit {
   consulta(): void {
     this.router.navigate(['pacienteconsulta']);
   }
-  onCheckboxChange(e, servicio: PresupustoInterface) {
-    if (e.target.value > this.presupuestoRe.Debe) {
-      alert('Sobre Pasa el limite de la deuda');
-    } else {
-      this.debe = parseInt(this.presupuestoRe.Debe, 10)  - parseInt(this.presupuestoRe.Abono, 10);
-      this.presupuestoRe.Debe = this.debe.toString();
-    }
-
-    }
   procedimiento(): void {
     this.router.navigate(['pacienteprocedimiento']);
   }
