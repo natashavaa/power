@@ -42,7 +42,13 @@ export class PacientepresupuestoComponent implements OnInit {
   imagen(): void {
     this.router.navigate(['imagenes']);
   }
-
+  mostrar(debe: string): boolean {
+    if (parseInt(debe, 10 ) > 0 ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   consulta(): void {
     this.router.navigate(['pacienteconsulta']);
   }

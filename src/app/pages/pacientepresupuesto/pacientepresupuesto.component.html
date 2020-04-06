@@ -135,8 +135,10 @@
                                 <td>{{presupuestoRe.serviciosTratados}}</td>
 
                                 <td>
-                                    <button mat-raised-button (click)="Modificar(presupuestoRe)"
-                                        class="btn btn-info">Pagar</button>
+                                    <div *ngIf="mostrar(presupuestoRe.Debe)">
+                                        <button mat-raised-button (click)="Modificar(presupuestoRe)" class="btn btn-info">Pagar</button>
+                                    </div>
+
                                 </td>
                             </tr>
 
