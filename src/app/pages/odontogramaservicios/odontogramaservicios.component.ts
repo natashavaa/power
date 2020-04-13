@@ -8,6 +8,8 @@ import { PaatientInterface } from '../../models/patients.interface';
 import { PresupustoInterface } from 'src/app/models/presupuesto.interace';
 import { FormControl } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { OdontogramaInterface } from 'src/app/models/odontograma.interface';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-odontogramaservicios',
@@ -18,10 +20,11 @@ export class OdontogramaserviciosComponent implements OnInit {
 
   constructor(private auth: AuthService, private router: Router,
               private dataApi: DataApiService, private app: AppComponent,
-              public datepipe: DatePipe) { }
+              public datepipe: DatePipe,
+              private _sanitizer: DomSanitizer) { }
   private patient: PaatientInterface;
   Estimado = 0;
-
+  filterpost: 'Escribe';
   fechadeHoy: Date;
   materialesArray = new FormControl();
   private servicios: ServicioInterface = {
@@ -30,6 +33,7 @@ export class OdontogramaserviciosComponent implements OnInit {
     Descripcion: '',
     Costo: '',
   };
+  public odontogramaoficial: OdontogramaInterface = {};
   private presupuestoRe: PresupustoInterface = {
 
     idPatient: '',
@@ -76,11 +80,16 @@ export class OdontogramaserviciosComponent implements OnInit {
     this.patient = this.auth.getCurrentPatient();
     this.app.mostrar = true;
     this.getlistAllServicios();
+    this.odontogramaoficial = this.auth.getdxd();
   }
   getlistAllServicios() {
     this.dataApi.getAllServicios().subscribe((servicios: ServicioInterface) => {
        this.servicios = servicios;
     } );
+  }
+  convert(imagen) {
+    return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'
+       + imagen);
   }
   onCheckboxChange(e, servicio: ServicioInterface) {
     if (e.target.checked === true) {

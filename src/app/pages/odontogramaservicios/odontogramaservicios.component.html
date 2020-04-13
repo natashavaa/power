@@ -103,9 +103,60 @@
             <div class="alert alert-success" role="alert">
                 Debe seleccionar los servicios odontologicos que se va a realizar el paciente.
             </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="form-group row col-12 d-block">
+                    <div>
+                        <div class="mar">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen1)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen2)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen3)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen4)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen5)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen6)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen7)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen8)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen9)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen10)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen11)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen12)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen13)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen14)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen15)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen16)">
+                        </div>
+                        <div>
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen17)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen18)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen19)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen20)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen21)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen22)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen23)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen24)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen25)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen26)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen27)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen28)">
+                            <img class="mar" height="30" width="30" [src]="convert(odontogramaoficial.Imagen29)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen30)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen31)">
+                            <img class="mar" height="70" width="70" [src]="convert(odontogramaoficial.Imagen32)">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <br>
+
             <div class="row mt-5">
                 <div class="col">
                     <h4 for="" class="lolo">Lista de los Servicios</h4>
+                    <div class="row ">
+                        <input placeholder="Buscar Servicios..." type="text" class="form-control tfs" name="filterpost" [(ngModel)]="filterpost">
+                    </div>
                     <!-- <button type="button" class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalBook" (click)="resetForm()">New Book</button>-->
                     <table class="table table-hover" mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
                         <thead>
@@ -119,7 +170,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let servicios of servicios">
+                            <tr *ngFor="let servicios of servicios | filterservices: filterpost">
                                 <td>{{servicios.id}}</td>
                                 <td>{{servicios.NombredelServicio}}</td>
                                 <td>{{servicios.Descripcion}}</td>

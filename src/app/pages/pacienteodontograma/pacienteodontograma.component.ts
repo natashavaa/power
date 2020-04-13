@@ -2272,8 +2272,8 @@ export class PacienteodontogramaComponent implements OnInit {
 
     ).subscribe((odontogramaguardado: OdontogramaInterface) => {
       this.odontogramaguardado = odontogramaguardado;
-
-      this.router.navigate(['pacienteseguimiento']);
+      this.auth.setdxd(this.odontogramaguardado);
+      this.router.navigate(['verservicios']);
      } );
     this.MostrarPadecimientos = false;
     this.Mostrarformulario = false;

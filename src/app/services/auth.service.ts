@@ -1510,6 +1510,10 @@ loginuser(username: string, password: string): Observable<any> {
     const patientString = JSON.stringify(patient);
     localStorage.setItem('currentOrtodoncia', patientString);
   }
+  setdxd(odo: OdontogramaInterface): void {
+    const patientString = JSON.stringify(odo);
+    localStorage.setItem('currentOdontodxd', patientString);
+  }
 
   setToken(token): void {
     localStorage.setItem('accessToken', token);
@@ -1531,6 +1535,15 @@ loginuser(username: string, password: string): Observable<any> {
     const userString = localStorage.getItem('currentTodoslosdientes');
     if (!isNullOrUndefined(userString)) {
       const user: TodoslosdientesInterface = JSON.parse(userString);
+      return user;
+    } else {
+      return null;
+    }
+  }
+  getdxd(): OdontogramaInterface {
+    const userString = localStorage.getItem('currentOdontodxd');
+    if (!isNullOrUndefined(userString)) {
+      const user: OdontogramaInterface = JSON.parse(userString);
       return user;
     } else {
       return null;

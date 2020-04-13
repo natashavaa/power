@@ -5,6 +5,8 @@ import { ServicioInterface } from '../../models/servicios.interface';
 import { AppComponent } from '../../app.component';
 import { AuthService } from '../../services/auth.service';
 import { UserInterface } from 'src/app/models/user.interface';
+import { DomSanitizer } from '@angular/platform-browser';
+import { OdontogramaInterface } from 'src/app/models/odontograma.interface';
 
 @Component({
   selector: 'app-servicioscdm',
@@ -14,13 +16,14 @@ import { UserInterface } from 'src/app/models/user.interface';
 export class ServicioscdmComponent implements OnInit {
   usuarioA: string;
   especialidad: string;
-  constructor(private auth: AuthService, private router: Router, private dataApi: DataApiService, private app: AppComponent) { }
+  constructor(private _sanitizer: DomSanitizer, private auth: AuthService, private router: Router, private dataApi: DataApiService, private app: AppComponent) { }
   private servicios: ServicioInterface = {
 
     NombredelServicio: '',
     Descripcion: '',
     Costo: '',
   };
+  public odontogramaoficial: OdontogramaInterface = {};
   public user2: UserInterface = {
     id: '',
     name: '',
@@ -42,6 +45,7 @@ export class ServicioscdmComponent implements OnInit {
   ngOnInit() {
     this.app.mostrar = true;
     this.getlistAllServicios();
+    this.odontogramaoficial = this.auth.getdxd();
   }
   getlistAllServicios() {
     this.dataApi.getAllServicios().subscribe((servicios: ServicioInterface) => {
@@ -58,6 +62,10 @@ export class ServicioscdmComponent implements OnInit {
 
       this.ngOnInit();
      } );
+  }
+  convert(imagen) {
+    return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,'
+       + imagen);
   }
   doctor(): string {
     this.user2 = this.auth.getCurrentUser();
