@@ -68,8 +68,8 @@ export class OdontogramaserviciosComponent implements OnInit {
       this.presupuestoRe.FechadeCreacion,
       this.presupuestoRe.FechasdePagos,
     ).subscribe(pieza => {
-      console.log(pieza);
-      this.router.navigate(['pacienteodontograma']);
+
+      this.router.navigate(['pacientepresupuesto']);
      } );
     }
   ngOnInit() {
