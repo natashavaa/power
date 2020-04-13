@@ -56,7 +56,7 @@ export class PacienteodontogramaComponent implements OnInit {
   pieza30 = false;
   pieza31 = false;
   pieza32 = false;
-  private formulario: FormularioInterface = {
+  public formulario: FormularioInterface = {
     piezaux: '',
     padecimientoaux: '',
     posicionaux: '',
