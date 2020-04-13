@@ -166,7 +166,8 @@ private todoslosdientesOficial: TodoslosdientesInterface = {};
     this.todoslosdientesOficial.Recomendaciones,
     this.todoslosdientesOficial.Observaciones,
     ).subscribe(registro => {
-      this.router.navigate(['verservicios']);
+      this.auth.setTodoslosDientes(registro);
+      this.router.navigate(['verserviciostodosdientes']);
      } );
   }
   datos(): void {

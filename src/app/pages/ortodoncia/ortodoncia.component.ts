@@ -124,9 +124,9 @@ export class OrtodonciaComponent implements OnInit {
         this.ortodoncia.sNPLO,
         this.ortodoncia.sNFH,
     ).subscribe(ortodoncia => {
-
+      this.auth.setodortodoncia(ortodoncia);
      } );
-    this.router.navigate(['listaOrtodoncia']);
+    this.router.navigate(['verserviciosdeortodoncia']);
 
   }
 

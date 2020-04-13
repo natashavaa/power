@@ -62,6 +62,8 @@ import { SeguimientoTodoslosdientesComponent } from './pages/seguimiento-todoslo
 import { TodoslosdientesdetalleComponent } from './pages/todoslosdientesdetalle/todoslosdientesdetalle.component';
 import { OrtodoncialistaComponent } from './pages/ortodoncialista/ortodoncialista.component';
 import { OrtodoncialistadetalleComponent } from './pages/ortodoncialistadetalle/ortodoncialistadetalle.component';
+import { VerserviciosOrtodonciaComponent } from './pages/verservicios-ortodoncia/verservicios-ortodoncia.component';
+import { VerserviciostodosdientesComponent } from './pages/verserviciostodosdientes/verserviciostodosdientes.component';
 
 
 
@@ -114,6 +116,8 @@ const appRoutes: Routes = [
   { path: 'registermaterial', component: RegistromaterialComponent },
   { path: 'reponermaterial', component: ReponermaterialComponent },
   { path: 'verservicios', component: OdontogramaserviciosComponent},
+  { path: 'verserviciosdeortodoncia', component: VerserviciosOrtodonciaComponent},
+  { path: 'verserviciostodosdientes', component: VerserviciostodosdientesComponent},
   { path: 'editarpaciente', component: EditarpacienteComponent },
   { path: 'servicios', component: ServicioscdmComponent },
   { path: 'pacienteseguimientodetalle', component: PacienteseguimientodetalleComponent },
