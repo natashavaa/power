@@ -152,10 +152,6 @@ export class HistoriaComponent implements OnInit {
     this.router.navigate(['pacienteconsulta']);
   }
 
-  procedimiento(): void {
-    this.router.navigate(['pacienteprocedimiento']);
-  }
-
   seguimiento(): void {
     this.router.navigate(['pacienteseguimiento']);
   }
@@ -180,11 +176,6 @@ export class HistoriaComponent implements OnInit {
   informe(): void {
     this.router.navigate(['pacienteinforme']);
   }
-
-  verservicios(): void {
-    this.router.navigate(['verservicios']);
-  }
-
   
   ngOnInit() {
     this.app.mostrar = true;

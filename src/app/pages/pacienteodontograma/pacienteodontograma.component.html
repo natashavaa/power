@@ -48,7 +48,7 @@
                     <img class="tres" src="https://img.icons8.com/dusk/50/000000/workflow.png">
                     <form>
                         <div>
-                            <button mat-stroked-button (click)="verservicios()" class="d">Procedimientos</button>
+                            <button mat-stroked-button (click)="odontograma()" class="d">Procedimientos</button>
                         </div>
                     </form>
                 </mat-list-item>
@@ -97,7 +97,8 @@
                 <form>
                     <mat-card>
                         <br>
-                        <h4><img src="https://img.icons8.com/color/50/000000/false-teeth.png"> CREACIÓN DEL ODONTOGRAMA DEL PACIENTE </h4>
+                        <h4><img src="https://img.icons8.com/color/50/000000/false-teeth.png"> CREACIÓN DEL ODONTOGRAMA
+                            DEL PACIENTE </h4>
                     </mat-card>
                 </form>
             </mat-card-title>
@@ -113,7 +114,8 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                             <br>
-                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento"
+                                [(ngModel)]="momentoC">
                                 <option selected>Diente por Diente</option>
                                 <option>Todos los Dientes</option>
                                 <option>Ortodoncia</option>
@@ -124,10 +126,15 @@
                         </div>
                     </form>
                 </div>
+                <div class="col 2">
+                    <div class="form-group row">
+                        <mat-label for="" class="col-6 col-form-label"></mat-label>
+                        <button mat-raised-button type="submit" class="col-5 uno"><img src="https://img.icons8.com/dusk/50/000000/tooth.png">Ver Servicios</button>
+                    </div>
+                </div>
             </div>
             <br>
             <br>
-
             <div class="row">
                 <div class="col-6">
                     <!--  <form action="">
@@ -152,40 +159,72 @@
                 <div class="form-group row col-12 d-block">
                     <div>
                         <div class="mar">
-                            <img class="mar" (click)="padecimiento(piezasdental[0],'pieza1')" height="60" width="60" [src]="convert(odontogramaoficial.Imagen1)">
-                            <img class="mar" (click)="padecimiento(piezasdental[1],'pieza2')" height="60" width="60" [src]="convert(odontogramaoficial.Imagen2)">
-                            <img class="mar" (click)="padecimiento(piezasdental[2],'pieza3')" height="70" width="70" [src]="convert(odontogramaoficial.Imagen3)">
-                            <img class="mar" (click)="padecimiento(piezasdental[3],'pieza4')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen4)">
-                            <img class="mar" (click)="padecimiento(piezasdental[4],'pieza5')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen5)">
-                            <img class="mar" (click)="padecimiento(piezasdental[5],'pieza6')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen6)">
-                            <img class="mar" (click)="padecimiento(piezasdental[6],'pieza7')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen7)">
-                            <img class="mar" (click)="padecimiento(piezasdental[7],'pieza8')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen8)">
-                            <img class="mar" (click)="padecimiento(piezasdental[8],'pieza9')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen9)">
-                            <img class="mar" (click)="padecimiento(piezasdental[9],'pieza10')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen10)">
-                            <img class="mar" (click)="padecimiento(piezasdental[10],'pieza11')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen11)">
-                            <img class="mar" (click)="padecimiento(piezasdental[11],'pieza12')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen12)">
-                            <img class="mar" (click)="padecimiento(piezasdental[12],'pieza13')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen13)">
-                            <img class="mar" (click)="padecimiento(piezasdental[13],'pieza14')" height="70" width="70" [src]="convert(odontogramaoficial.Imagen14)">
-                            <img class="mar" (click)="padecimiento(piezasdental[14],'pieza15')" height="60" width="60" [src]="convert(odontogramaoficial.Imagen15)">
-                            <img class="mar" (click)="padecimiento(piezasdental[15],'pieza16')" height="60" width="60" [src]="convert(odontogramaoficial.Imagen16)">
+                            <img class="mar" (click)="padecimiento(piezasdental[0],'pieza1')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen1)">
+                            <img class="mar" (click)="padecimiento(piezasdental[1],'pieza2')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen2)">
+                            <img class="mar" (click)="padecimiento(piezasdental[2],'pieza3')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen3)">
+                            <img class="mar" (click)="padecimiento(piezasdental[3],'pieza4')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen4)">
+                            <img class="mar" (click)="padecimiento(piezasdental[4],'pieza5')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen5)">
+                            <img class="mar" (click)="padecimiento(piezasdental[5],'pieza6')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen6)">
+                            <img class="mar" (click)="padecimiento(piezasdental[6],'pieza7')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen7)">
+                            <img class="mar" (click)="padecimiento(piezasdental[7],'pieza8')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen8)">
+                            <img class="mar" (click)="padecimiento(piezasdental[8],'pieza9')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen9)">
+                            <img class="mar" (click)="padecimiento(piezasdental[9],'pieza10')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen10)">
+                            <img class="mar" (click)="padecimiento(piezasdental[10],'pieza11')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen11)">
+                            <img class="mar" (click)="padecimiento(piezasdental[11],'pieza12')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen12)">
+                            <img class="mar" (click)="padecimiento(piezasdental[12],'pieza13')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen13)">
+                            <img class="mar" (click)="padecimiento(piezasdental[13],'pieza14')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen14)">
+                            <img class="mar" (click)="padecimiento(piezasdental[14],'pieza15')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen15)">
+                            <img class="mar" (click)="padecimiento(piezasdental[15],'pieza16')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen16)">
                         </div>
                         <div>
-                            <img class="mar" (click)="padecimiento(piezasdental[16],'pieza17')" height="60" width="60" [src]="convert(odontogramaoficial.Imagen17)">
-                            <img class="mar" (click)="padecimiento(piezasdental[17],'pieza18')" height="60" width="60" [src]="convert(odontogramaoficial.Imagen18)">
-                            <img class="mar" (click)="padecimiento(piezasdental[18],'pieza19')" height="70" width="70" [src]="convert(odontogramaoficial.Imagen19)">
-                            <img class="mar" (click)="padecimiento(piezasdental[19],'pieza20')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen20)">
-                            <img class="mar" (click)="padecimiento(piezasdental[20],'pieza21')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen21)">
-                            <img class="mar" (click)="padecimiento(piezasdental[21],'pieza22')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen22)">
-                            <img class="mar" (click)="padecimiento(piezasdental[22],'pieza23')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen23)">
-                            <img class="mar" (click)="padecimiento(piezasdental[23],'pieza24')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen24)">
-                            <img class="mar" (click)="padecimiento(piezasdental[24],'pieza25')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen25)">
-                            <img class="mar" (click)="padecimiento(piezasdental[25],'pieza26')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen26)">
-                            <img class="mar" (click)="padecimiento(piezasdental[26],'pieza27')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen27)">
-                            <img class="mar" (click)="padecimiento(piezasdental[27],'pieza28')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen28)">
-                            <img class="mar" (click)="padecimiento(piezasdental[28],'pieza29')" height="30" width="30" [src]="convert(odontogramaoficial.Imagen29)">
-                            <img class="mar" (click)="padecimiento(piezasdental[29],'pieza30')" height="70" width="70" [src]="convert(odontogramaoficial.Imagen30)">
-                            <img class="mar" (click)="padecimiento(piezasdental[30],'pieza31')" height="60" width="60" [src]="convert(odontogramaoficial.Imagen31)">
-                            <img class="mar" (click)="padecimiento(piezasdental[31],'pieza32')" height="60" width="60" [src]="convert(odontogramaoficial.Imagen32)">
+                            <img class="mar" (click)="padecimiento(piezasdental[16],'pieza17')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen17)">
+                            <img class="mar" (click)="padecimiento(piezasdental[17],'pieza18')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen18)">
+                            <img class="mar" (click)="padecimiento(piezasdental[18],'pieza19')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen19)">
+                            <img class="mar" (click)="padecimiento(piezasdental[19],'pieza20')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen20)">
+                            <img class="mar" (click)="padecimiento(piezasdental[20],'pieza21')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen21)">
+                            <img class="mar" (click)="padecimiento(piezasdental[21],'pieza22')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen22)">
+                            <img class="mar" (click)="padecimiento(piezasdental[22],'pieza23')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen23)">
+                            <img class="mar" (click)="padecimiento(piezasdental[23],'pieza24')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen24)">
+                            <img class="mar" (click)="padecimiento(piezasdental[24],'pieza25')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen25)">
+                            <img class="mar" (click)="padecimiento(piezasdental[25],'pieza26')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen26)">
+                            <img class="mar" (click)="padecimiento(piezasdental[26],'pieza27')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen27)">
+                            <img class="mar" (click)="padecimiento(piezasdental[27],'pieza28')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen28)">
+                            <img class="mar" (click)="padecimiento(piezasdental[28],'pieza29')" height="30" width="30"
+                                [src]="convert(odontogramaoficial.Imagen29)">
+                            <img class="mar" (click)="padecimiento(piezasdental[29],'pieza30')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen30)">
+                            <img class="mar" (click)="padecimiento(piezasdental[30],'pieza31')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen31)">
+                            <img class="mar" (click)="padecimiento(piezasdental[31],'pieza32')" height="70" width="70"
+                                [src]="convert(odontogramaoficial.Imagen32)">
                         </div>
                     </div>
 
@@ -197,18 +236,30 @@
                 <div class="form-group row col-12 d-block">
                     <div>
                         <div>
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[0])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[0].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[1])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[1].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[2])" height="120" width="100" [src]="convert(piezasdentalconpadecimientos[2].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[3])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[3].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[4])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[4].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[5])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[5].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[6])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[6].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[7])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[7].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[8])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[8].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[9])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[9].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[10])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[10].Imagen)">
-                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[11])" height="120" width="120" [src]="convert(piezasdentalconpadecimientos[11].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[0])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[0].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[1])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[1].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[2])" height="120"
+                                width="100" [src]="convert(piezasdentalconpadecimientos[2].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[3])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[3].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[4])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[4].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[5])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[5].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[6])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[6].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[7])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[7].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[8])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[8].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[9])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[9].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[10])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[10].Imagen)">
+                            <img class="mar" (click)="llenarFormulario(piezasdentalconpadecimientos[11])" height="120"
+                                width="120" [src]="convert(piezasdentalconpadecimientos[11].Imagen)">
                         </div>
                     </div>
 
@@ -225,16 +276,21 @@
                                 <fieldset>
                                     <div class="form-group row">
                                         <label for="" class="col-4 col-form-label">Pieza</label>
-                                        <input disabled #piezaux="ngModel" name="piezaux" [(ngModel)]='formulario.piezaux' class="form-control col-6">
+                                        <input disabled #piezaux="ngModel" name="piezaux"
+                                            [(ngModel)]='formulario.piezaux' class="form-control col-6">
                                     </div>
                                     <div class="form-group row">
                                         <label for="" class="col-4 col-form-label">Padecimiento</label>
-                                        <input disabled #padecimientoaux="ngModel" name="padecimientoaux" [(ngModel)]='formulario.padecimientoaux' class="form-control col-6">
+                                        <input disabled #padecimientoaux="ngModel" name="padecimientoaux"
+                                            [(ngModel)]='formulario.padecimientoaux' class="form-control col-6">
                                     </div>
                                     <div class="form-group row">
-                                        <mat-label for="" class="col-4 col-form-label">Procedimiento Odontologico</mat-label>
+                                        <mat-label for="" class="col-4 col-form-label">Procedimiento Odontologico
+                                        </mat-label>
 
-                                        <input disabled #NombreProcedimientoaux="ngModel" name="NombreProcedimientoaux" [(ngModel)]='formulario.NombreProcedimientoaux' type="text" class="form-control col-6">
+                                        <input disabled #NombreProcedimientoaux="ngModel" name="NombreProcedimientoaux"
+                                            [(ngModel)]='formulario.NombreProcedimientoaux' type="text"
+                                            class="form-control col-6">
                                     </div>
                                 </fieldset>
                             </form>
@@ -244,12 +300,14 @@
                                 <fieldset disabled>
                                     <div class="form-group row">
                                         <mat-label for="" class="col-4 col-form-label">Instrumentos</mat-label>
-                                        <textarea class="form-control col-7" rows="11" #instrumentosaux="ngModel" name="instrumentosaux" [(ngModel)]='formulario.instrumentosaux'></textarea>
+                                        <textarea class="form-control col-7" rows="11" #instrumentosaux="ngModel"
+                                            name="instrumentosaux" [(ngModel)]='formulario.instrumentosaux'></textarea>
                                         <!--   <input #instrumentosaux="ngModel" name="instrumentosaux" [(ngModel)]='formulario.instrumentosaux' type="text">-->
                                     </div>
                                     <div class="form-group row">
                                         <mat-label for="" class="col-4 col-form-label">Materiales</mat-label>
-                                        <textarea class="form-control col-7" rows="11" #materialesaux="ngModel" name="materialesaux" [(ngModel)]='formulario.materialesaux'></textarea>
+                                        <textarea class="form-control col-7" rows="11" #materialesaux="ngModel"
+                                            name="materialesaux" [(ngModel)]='formulario.materialesaux'></textarea>
                                         <!--  <input #materialesaux="ngModel" name="materialesaux" [(ngModel)]='formulario.materialesaux' type="text">-->
                                     </div>
 
@@ -261,7 +319,8 @@
                     <br>
                     <div class="form-group row">
                         <label for="" class="col-4 col-form-label">Diagnostico</label>
-                        <textarea #diagnosticoPiezaaux="ngModel" name="diagnosticoPiezaaux" [(ngModel)]='formulario.diagnosticoPiezaaux' rows="3" class="form-control col-6"></textarea>
+                        <textarea #diagnosticoPiezaaux="ngModel" name="diagnosticoPiezaaux"
+                            [(ngModel)]='formulario.diagnosticoPiezaaux' rows="3" class="form-control col-6"></textarea>
                     </div>
 
                     <br>
