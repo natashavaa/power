@@ -14,7 +14,7 @@ import { PresupustoInterface } from 'src/app/models/presupuesto.interace';
 export class PacientepresupuestoComponent implements OnInit {
 
   constructor(private router: Router, private dataApi: DataApiService, private authService: AuthService, private app: AppComponent) { }
-  private presupuestoRe: PresupustoInterface = {
+  public presupuestoRe: PresupustoInterface = {
 
     idPatient: '',
     PresupuestoBsf: '',
@@ -41,6 +41,13 @@ export class PacientepresupuestoComponent implements OnInit {
      }
   imagen(): void {
     this.router.navigate(['imagenes']);
+  }
+  acomodar(FechasdePagos: string): string {
+    let nueva = FechasdePagos;
+    nueva.replace(' ', '<br>');
+    console.log(nueva);
+    console.log(FechasdePagos);
+    return nueva;
   }
   mostrar(debe: string): boolean {
     if (parseInt(debe, 10 ) > 0 ) {

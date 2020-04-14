@@ -13,6 +13,10 @@
     color: black;
 }
 
+.acomodado {
+    width: 100px;
+}
+
 .uno {
     margin: 0 20px;
     color: snow;
@@ -24,7 +28,6 @@
     color: snow;
     background-color: darkred;
 }
-
 
 .center {
     display: inline-block;
@@ -187,7 +190,6 @@
     color: darkgrey;
 }
 
-
 .i {
     text-decoration: none;
     font-size: 15px;
@@ -197,13 +199,12 @@
     left: calc(25% - 40%);
     border-color: transparent;
     background-color: transparent;
-  }
-  
-  .i:hover {
-    color: darkgrey;
-  }
+}
 
-  
+.i:hover {
+    color: darkgrey;
+}
+
 .j {
     text-decoration: none;
     font-size: 15px;
@@ -212,11 +213,12 @@
     width: 280%;
     left: calc(17% - 40%);
     border-color: transparent;
-   background-color: transparent;
-  }
-    .j:hover {
-      color: darkgrey;
-    }
+    background-color: transparent;
+}
+
+.j:hover {
+    color: darkgrey;
+}
 
 .mat-form-field {
     margin: 0;
