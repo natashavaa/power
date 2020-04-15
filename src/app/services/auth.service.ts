@@ -42,7 +42,7 @@ export class AuthService {
 registerUser(name: string, phone: string, password: string, dni: string,
              age: number, sex: string, email: string,
              userType: string, username: string) {
-    const urlApi = 'http://localhost:3000/users';
+    const urlApi = 'http://192.168.250.4:3000/users';
     return this.htttp
       .post<UserInterface>(
         urlApi,
@@ -137,7 +137,7 @@ registerUser(name: string, phone: string, password: string, dni: string,
     Imagen32: string,
     diagnosticoCompleto: string
   ) {
-const urlApi = 'http://localhost:3000/odontograma';
+const urlApi = 'http://192.168.250.4:3000/odontograma';
 return this.htttp
 .post<OdontogramaInterface>(
 urlApi,
@@ -284,7 +284,7 @@ urlApi,
   updateMaterial(id: string, name: string, cantidad: number,
                  especiality: string, costo: string, idDoctor: string,
                  estadoDisp: string, usados: number) {
-    const urlApi = 'http://localhost:3000/material/update';
+    const urlApi = 'http://192.168.250.4:3000/material/update';
     return this.htttp
     .put<MaterialInterface>(
     urlApi,
@@ -310,42 +310,42 @@ urlApi,
     );
 }
 deletePiezaDental(id: string) {
-  const urlApi = `http://localhost:3000/piezadental/delete/${id}`;
+  const urlApi = `http://192.168.250.4:3000/piezadental/delete/${id}`;
   return this.htttp.delete<PiezaDentalInterface>(urlApi,
   );
   }
   deleteServicio(id: string) {
-    const urlApi = `http://localhost:3000/servicios/delete/${id}`;
+    const urlApi = `http://192.168.250.4:3000/servicios/delete/${id}`;
     return this.htttp.delete<ServicioInterface>(urlApi,
     );
     }
   deletePadecimiento(id: string) {
-    const urlApi = `http://localhost:3000/padecimiento/delete/${id}`;
+    const urlApi = `http://192.168.250.4:3000/padecimiento/delete/${id}`;
     return this.htttp.delete<PadecimientoInterface>(urlApi,
     );
     }
     deletePadecimientoprodiente(id: string) {
-      const urlApi = `http://localhost:3000/padecimientoporPieza/delete/${id}`;
+      const urlApi = `http://192.168.250.4:3000/padecimientoporPieza/delete/${id}`;
       return this.htttp.delete<PadecimientoADienteComponent>(urlApi,
       );
       }
     deleteProcedimiento(id: string) {
-      const urlApi = `http://localhost:3000/procedimiento/delete/${id}`;
+      const urlApi = `http://192.168.250.4:3000/procedimiento/delete/${id}`;
       return this.htttp.delete<ProcedimientoInterface>(urlApi,
       );
       }
       deleteProcedimientoaPade(id: string) {
-        const urlApi = `http://localhost:3000/procedimientoapadecimiento/delete/${id}`;
+        const urlApi = `http://192.168.250.4:3000/procedimientoapadecimiento/delete/${id}`;
         return this.htttp.delete<ProcedimientoApadecimentoInterface>(urlApi,
         );
         }
 deleteMaterial(id: string) {
-      const urlApi = `http://localhost:3000/material/${id}`;
+      const urlApi = `http://192.168.250.4:3000/material/${id}`;
       return this.htttp.delete<PaatientInterface>(urlApi,
       );
       }
 deleteInstrumento(id: string) {
-        const urlApi = `http://localhost:3000/instrumento/${id}`;
+        const urlApi = `http://192.168.250.4:3000/instrumento/${id}`;
         return this.htttp.delete<PaatientInterface>(urlApi,
         );
         }
@@ -356,7 +356,7 @@ registerPatient(name: string, dni: string, age: number, sex: string,
                 familyName: string, familyNumberHome: string,
                 password: string, username: string, mail: string,
                 userType: string, phone: string, registradoPor: string) {
-        const urlApi = 'http://localhost:3000/patient';
+        const urlApi = 'http://192.168.250.4:3000/patient';
         return this.htttp
               .post<PaatientInterface>(
               urlApi,
@@ -411,7 +411,7 @@ registerConsulta(idDoctor: string, idSpeciality: string, idClinicHistory: string
                  namePatient: string, dniPatient: string, fechaPlanificada: string, hora: string,
                  motive: string, status: string, consultorioVisitar: string, mes: string,
                  dia: string, atendidoPor: string) {
-      const urlApi = 'http://localhost:3000/consulta';
+      const urlApi = 'http://192.168.250.4:3000/consulta';
       return this.htttp
       .post<ConsultaInterface>(urlApi, {
           // tslint:disable-next-line: object-literal-shorthand
@@ -449,7 +449,7 @@ registerConsulta(idDoctor: string, idSpeciality: string, idClinicHistory: string
 UpdateConsulta(id: string, idDoctor: string, idSpeciality: string, idClinicHistory: string, idPatient: string,
                namePatient: string, dniPatient: string, fechaPlanificada: string, hora: string,
                motive: string, status: string, consultorioVisitar: string) {
-      const urlApi = 'http://localhost:3000/consulta/update';
+      const urlApi = 'http://192.168.250.4:3000/consulta/update';
       return this.htttp
       .put<ConsultaInterface>(urlApi, {
         // tslint:disable-next-line: object-literal-shorthand
@@ -487,7 +487,7 @@ UpdatePatient(id: string, name: string, dni: string, age: number, sex: string,
               familyName: string, familyNumberHome: string,
               password: string, username: string, mail: string,
               userType: string, phone: string) {
-      const urlApi = 'http://localhost:3000/patient/update';
+      const urlApi = 'http://192.168.250.4:3000/patient/update';
       return this.htttp
       .put<PaatientInterface>(
       urlApi,
@@ -539,7 +539,7 @@ UpdatePatient(id: string, name: string, dni: string, age: number, sex: string,
 }
 
 registerMaterial(name: string, cantidad: number, especiality: string, costo: string, idDoctor: string) {
-    const urlApi = 'http://localhost:3000/material';
+    const urlApi = 'http://192.168.250.4:3000/material';
     return this.htttp
     .post<PaatientInterface>(
     urlApi,
@@ -559,7 +559,7 @@ registerMaterial(name: string, cantidad: number, especiality: string, costo: str
     );
 }
 registerEvolution(idPatient: string, idClinicHistory: string, imagen: string, diagnostic: string) {
-  const urlApi = 'http://localhost:3000/evolution';
+  const urlApi = 'http://192.168.250.4:3000/evolution';
   return this.htttp
   .post<EvolutionInterface>(
   urlApi,
@@ -577,7 +577,7 @@ registerEvolution(idPatient: string, idClinicHistory: string, imagen: string, di
   );
 }
 registerPiezaDental(NombrePieza: string, Descripcion: string, Nomenclatura: string, Ubicacion: string, Imagen: string, Posicion: string) {
-  const urlApi = 'http://localhost:3000/piezadental';
+  const urlApi = 'http://192.168.250.4:3000/piezadental';
   return this.htttp
   .post<PiezaDentalInterface>(
   urlApi,
@@ -602,7 +602,7 @@ registerPresupuesto(idPatient: string, PresupuestoBsf: string, PresupuestoDolare
                     Abono: string, Debe: string, Estatus: string,
                     Estimado: string, serviciosTratados: string, FechadeCreacion: string,
                     FechasdePagos: string) {
-  const urlApi = 'http://localhost:3000/presupuesto';
+  const urlApi = 'http://192.168.250.4:3000/presupuesto';
   return this.htttp
   .post<PresupustoInterface>(
   urlApi,
@@ -634,7 +634,7 @@ updatePresupuesto(id: string, idPatient: string, PresupuestoBsf: string, Presupu
                   Abono: string, Debe: string, Estatus: string,
                   Estimado: string, serviciosTratados: string, FechadeCreacion: string,
                   FechasdePagos: string) {
-const urlApi = 'http://localhost:3000/presupuesto/update';
+const urlApi = 'http://192.168.250.4:3000/presupuesto/update';
 return this.htttp
 .put<PresupustoInterface>(
 urlApi,
@@ -665,7 +665,7 @@ serviciosTratados: serviciosTratados,
 );
 }
 registerServicio(NombredelServicio: string, Descripcion: string, Costo: string) {
-  const urlApi = 'http://localhost:3000/servicios';
+  const urlApi = 'http://192.168.250.4:3000/servicios';
   return this.htttp
   .post<ServicioInterface>(
   urlApi,
@@ -681,7 +681,7 @@ registerServicio(NombredelServicio: string, Descripcion: string, Costo: string) 
   );
 }
 updateServicio(id: string, NombredelServicio: string, Descripcion: string, Costo: string) {
-  const urlApi = 'http://localhost:3000/servicios/update';
+  const urlApi = 'http://192.168.250.4:3000/servicios/update';
   return this.htttp
   .put<ServicioInterface>(
   urlApi,
@@ -700,7 +700,7 @@ updateServicio(id: string, NombredelServicio: string, Descripcion: string, Costo
 }
 updatePiezaDental(id: string, NombrePieza: string, Descripcion: string,
                   Nomenclatura: string, Ubicacion: string, Imagen: string, Posicion: string) {
-  const urlApi = 'http://localhost:3000/piezadental/update';
+  const urlApi = 'http://192.168.250.4:3000/piezadental/update';
   return this.htttp
   .put<PiezaDentalInterface>(
   urlApi,
@@ -724,7 +724,7 @@ updatePiezaDental(id: string, NombrePieza: string, Descripcion: string,
   );
 }
 registerRecipe(Rp: string, Indicaciones: string, Firma: string, idPatient: string, idDoctor: string) {
-  const urlApi = 'http://localhost:3000/recipe';
+  const urlApi = 'http://192.168.250.4:3000/recipe';
   return this.htttp
   .post<RecipeInterface>(
   urlApi,
@@ -746,7 +746,7 @@ registerRecipe(Rp: string, Indicaciones: string, Firma: string, idPatient: strin
 registerInforme(PorPresentar: string, DiagnosticoDefinitivo: string, Firma: string,
                 Certificoqueeldia: string, AtendiA: string, idPatient: string,
                 idDoctor: string) {
-  const urlApi = 'http://localhost:3000/informemedico';
+  const urlApi = 'http://192.168.250.4:3000/informemedico';
   return this.htttp
   .post<InformeMedicoInterface>(
   urlApi,
@@ -773,7 +773,7 @@ registerHistorial(idPatient: string, Labios: string, Carrillos: string, Paladar:
                   Mucosa: string, Encias: string, Calculos: string, Ganglios: string, OtroMotivo: string, complicacionesanestesia: string,
                   FiebreReumatica: string, Diabetes: string, Cardiopatias: string, Tbc: string, Artritis: string, Hemorragias: string,
                   Neuralgias: string, Sinusitiss: string, Renales: string, Alergias: string, Otra: string, Observaciones: string, ) {
-  const urlApi = 'http://localhost:3000/historialclinico';
+  const urlApi = 'http://192.168.250.4:3000/historialclinico';
   return this.htttp
   .post<HistotialClinicoInterface>(
   urlApi,
@@ -810,7 +810,7 @@ UpdateHistorial(id: string, idPatient: string, Labios: string, Carrillos: string
                 Mucosa: string, Encias: string, Calculos: string, Ganglios: string, OtroMotivo: string, complicacionesanestesia: string,
                 FiebreReumatica: string, Diabetes: string, Cardiopatias: string, Tbc: string, Artritis: string, Hemorragias: string,
                 Neuralgias: string, Sinusitiss: string, Renales: string, Alergias: string, Otra: string, Observaciones: string, ) {
-const urlApi = 'http://localhost:3000/historialclinico';
+const urlApi = 'http://192.168.250.4:3000/historialclinico';
 return this.htttp
 .put<HistotialClinicoInterface>(
 urlApi,
@@ -845,7 +845,7 @@ Observaciones,
 );
 }
 registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string) {
-  const urlApi = 'http://localhost:3000/procedimiento';
+  const urlApi = 'http://192.168.250.4:3000/procedimiento';
   return this.htttp
   .post<ProcedimientoInterface>(
   urlApi,
@@ -865,7 +865,7 @@ registerProcedimiento(NombreProcedimiento: string, Descripcion: string, Estatus:
 registertodoslosdientes(idPatient: string, Imagen: string, ProcedimientoOdontologico: string,
                         Estatus: string, Instrumentos: string, Materiales: string,
                         Diagnostico: string, Recomendaciones: string, Observaciones: string) {
-  const urlApi = 'http://localhost:3000/seguimientotodosdientes';
+  const urlApi = 'http://192.168.250.4:3000/seguimientotodosdientes';
   return this.htttp
   .post<TodoslosdientesInterface>(
   urlApi,
@@ -895,7 +895,7 @@ registertodoslosdientes(idPatient: string, Imagen: string, ProcedimientoOdontolo
 Updatetodoslosdientes(id: string, idPatient: string, Imagen: string, ProcedimientoOdontologico: string,
                       Estatus: string, Instrumentos: string, Materiales: string,
                       Diagnostico: string, Recomendaciones: string, Observaciones: string) {
-const urlApi = 'http://localhost:3000/seguimientotodosdientes/update';
+const urlApi = 'http://192.168.250.4:3000/seguimientotodosdientes/update';
 return this.htttp
 .put<TodoslosdientesInterface>(
 urlApi,
@@ -927,7 +927,7 @@ Observaciones: Observaciones,
 registerSeguimiento(idOdontograma: string, Fecha: string,
                     TratamientoEfectuado: string, Observaciones: string,
                     ConsultasPosteriores: string, Estatus: string) {
-  const urlApi = 'http://localhost:3000/seguimientoadiente';
+  const urlApi = 'http://192.168.250.4:3000/seguimientoadiente';
   return this.htttp
   .post<SeguimientoDienteInterface>(
   urlApi,
@@ -966,7 +966,7 @@ registerSeguimientoOrtodoncia(
   ConsultasPosteriores: string,
   Estatus: string,
 ) {
-const urlApi = 'http://localhost:3000/seguimientoortodoncia';
+const urlApi = 'http://192.168.250.4:3000/seguimientoortodoncia';
 return this.htttp
 .post<SeguimientoOrtodonciaInterface>(
 urlApi,
@@ -1010,7 +1010,7 @@ Estatus: Estatus,
 registerSeguimientotodoslosdientes(idOdontograma: string, Fecha: string,
                                    TratamientoEfectuado: string, Observaciones: string,
                                    ConsultasPosteriores: string, Estatus: string) {
-const urlApi = 'http://localhost:3000/seguimientodetalletodos';
+const urlApi = 'http://192.168.250.4:3000/seguimientodetalletodos';
 return this.htttp
 .post<TodoslosdientesInterface>(
 urlApi,
@@ -1032,7 +1032,7 @@ Estatus: Estatus,
 );
 }
 updateProcedimiento(id: string, NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string) {
-  const urlApi = 'http://localhost:3000/procedimiento/update';
+  const urlApi = 'http://192.168.250.4:3000/procedimiento/update';
   return this.htttp
   .put<ProcedimientoInterface>(
   urlApi,
@@ -1054,7 +1054,7 @@ updateProcedimiento(id: string, NombreProcedimiento: string, Descripcion: string
 registerProcedimientoaPadecimiento(NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string,
                                    NombrePadecimiento: string, NombrePieza: string, Imagen: string, materiales: string,
                                    instrumentos: string ) {
-  const urlApi = 'http://localhost:3000/procedimientoapadecimiento';
+  const urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento';
   return this.htttp
   .post<ProcedimientoApadecimentoInterface>(
   urlApi,
@@ -1083,7 +1083,7 @@ registerProcedimientoaPadecimiento(NombreProcedimiento: string, Descripcion: str
 updateProcedimientoaPadecimiento(id: string, NombreProcedimiento: string, Descripcion: string, Estatus: string, costo: string,
                                  NombrePadecimiento: string, NombrePieza: string, Imagen: string, materiales: string,
                                  instrumentos: string ) {
-const urlApi = 'http://localhost:3000/procedimientoapadecimiento/update';
+const urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento/update';
 return this.htttp
 .put<ProcedimientoApadecimentoInterface>(
 urlApi,
@@ -1112,7 +1112,7 @@ instrumentos: instrumentos
 );
 }
 registerProcedimientoPorPieza(NombrePadecimiento: string, NombrePieza: string, Imagen: string, Nomenclatura: string, Posicion: string) {
-  const urlApi = 'http://localhost:3000/padecimientoporPieza';
+  const urlApi = 'http://192.168.250.4:3000/padecimientoporPieza';
   return this.htttp
   .post<PadecimientoporDienteInterface>(
   urlApi,
@@ -1167,7 +1167,7 @@ registerOrtodoncia(
   sNPLO: string,
   sNFH: string,
 ) {
-  const urlApi = 'http://localhost:3000/ortodoncia';
+  const urlApi = 'http://192.168.250.4:3000/ortodoncia';
   return this.htttp
   .post<OrtodonciaInterface>(
   urlApi,
@@ -1246,7 +1246,7 @@ registerOrtodoncia(
 }
 updateProcedimientoPorPieza(id: string, NombrePadecimiento: string, NombrePieza: string,
                             Imagen: string, Nomenclatura: string, Posicion: string) {
-  const urlApi = 'http://localhost:3000/padecimientoporPieza/update';
+  const urlApi = 'http://192.168.250.4:3000/padecimientoporPieza/update';
   return this.htttp
   .put<PadecimientoporDienteInterface>(
   urlApi,
@@ -1268,7 +1268,7 @@ updateProcedimientoPorPieza(id: string, NombrePadecimiento: string, NombrePieza:
   );
 }
 registerPadecimiento(NombrePadecimiento: string, Descripcion: string) {
-  const urlApi = 'http://localhost:3000/padecimiento';
+  const urlApi = 'http://192.168.250.4:3000/padecimiento';
   return this.htttp
   .post<PadecimientoInterface>(
   urlApi,
@@ -1282,7 +1282,7 @@ registerPadecimiento(NombrePadecimiento: string, Descripcion: string) {
   );
 }
 updatePadecimiento(id: string, NombrePadecimiento: string, Descripcion: string) {
-  const urlApi = 'http://localhost:3000/padecimiento/update';
+  const urlApi = 'http://192.168.250.4:3000/padecimiento/update';
   return this.htttp
   .put<PadecimientoInterface>(
   urlApi,
@@ -1298,7 +1298,7 @@ updatePadecimiento(id: string, NombrePadecimiento: string, Descripcion: string) 
   );
 }
 registerInstrumento(name: string, cantidad: number, especiality: string, costo: string, idDoctor: string) {
-  const urlApi = 'http://localhost:3000/instrumento';
+  const urlApi = 'http://192.168.250.4:3000/instrumento';
   return this.htttp
   .post<InstrumentoInterface>(
   urlApi,
@@ -1319,7 +1319,7 @@ registerInstrumento(name: string, cantidad: number, especiality: string, costo: 
 }
 updateInstrumento(id: string, name: string, cantidad: number, especiality: string,
                   costo: string, idDoctor: string, enUso: number, enLimpieza: number ) {
-  const urlApi = 'http://localhost:3000/instrumento/update';
+  const urlApi = 'http://192.168.250.4:3000/instrumento/update';
   return this.htttp
   .put<InstrumentoInterface>(
   urlApi,
@@ -1345,7 +1345,7 @@ updateInstrumento(id: string, name: string, cantidad: number, especiality: strin
   );
 }
 getAllconsultasBypatient(id: string) {
-  const urlApi = 'http://localhost:3000/consulta/patient' ;
+  const urlApi = 'http://192.168.250.4:3000/consulta/patient' ;
   return this.htttp.get<ConsultaInterface>(urlApi,
      {
      // tslint:disable-next-line: object-literal-shorthand
@@ -1355,7 +1355,7 @@ getAllconsultasBypatient(id: string) {
   updateUser(id: string, name: string, phone: string, password: string, dni: string,
              age: number, sex: string, email: string,
              userType: string, username: string) {
-        const urlApi = 'http://localhost:3000/users/update';
+        const urlApi = 'http://192.168.250.4:3000/users/update';
         return this.htttp
         .put<UserInterface>(
         urlApi,
@@ -1386,7 +1386,7 @@ getAllconsultasBypatient(id: string) {
 updateUserPermiso(id: string, name: string, phone: string, password: string, dni: string,
                   age: number, sex: string, email: string,
                   userType: string, username: string, status: string) {
-                const urlApi = 'http://localhost:3000/users/permiso';
+                const urlApi = 'http://192.168.250.4:3000/users/permiso';
                 return this.htttp
               .put<UserInterface>(
               urlApi,
@@ -1417,7 +1417,7 @@ updateUserPermiso(id: string, name: string, phone: string, password: string, dni
               );
 }
 getAllMAterialPorFecha(fecha1: string , fecha2: string) {
-  const urlApi = 'http://localhost:3000/material/fecha' ;
+  const urlApi = 'http://192.168.250.4:3000/material/fecha' ;
   return this.htttp.post<MaterialInterface>(urlApi,
      {
      // tslint:disable-next-line: object-literal-shorthand
@@ -1427,7 +1427,7 @@ getAllMAterialPorFecha(fecha1: string , fecha2: string) {
     });
 }
 getAllInstrumentoPorFecha(fecha1: string , fecha2: string) {
-  const urlApi = 'http://localhost:3000/instrumento/fecha' ;
+  const urlApi = 'http://192.168.250.4:3000/instrumento/fecha' ;
   return this.htttp.post<InstrumentoInterface>(urlApi,
      {
      // tslint:disable-next-line: object-literal-shorthand
@@ -1438,7 +1438,7 @@ getAllInstrumentoPorFecha(fecha1: string , fecha2: string) {
 }
 
 loginuser(username: string, password: string): Observable<any> {
-    const urlApi = 'http://localhost:3000/users/login';
+    const urlApi = 'http://192.168.250.4:3000/users/login';
     return this.htttp
       .post<UserInterface>(
         urlApi,
@@ -1446,7 +1446,7 @@ loginuser(username: string, password: string): Observable<any> {
       );
   }/**/
   Recuperacion(mail: string): Observable<any> {
-    const urlApi = 'http://localhost:3000/users/pass';
+    const urlApi = 'http://192.168.250.4:3000/users/pass';
     return this.htttp
       .post<UserInterface>(
         urlApi,
