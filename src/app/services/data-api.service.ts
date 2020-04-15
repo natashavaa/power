@@ -47,6 +47,8 @@ export class DataApiService {
     const urlApi = `http://192.168.250.4:3000/consulta/doctor${doctor}` ;
     return this.http.get(urlApi);
   }
+
+
   getAllconsultasBypatient(id) {
     const urlApi = `http://192.168.250.4:3000/consulta/patient${id}`;
     return this.http.get(urlApi);
