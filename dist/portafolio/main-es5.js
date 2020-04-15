@@ -21058,253 +21058,253 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DataApiService, [{
         key: "getAllPatints",
         value: function getAllPatints() {
-          var urlApi = 'http://localhost:3000/patient';
+          var urlApi = 'http://192.168.250.4:3000/patient';
           return this.http.get(urlApi);
         }
       }, {
         key: "getPatientsByDoctor",
         value: function getPatientsByDoctor(name) {
-          var urlApi = "http://localhost:3000/patient/doctor".concat(name);
+          var urlApi = "http://192.168.250.4:3000/patient/doctor".concat(name);
           return this.http.get(urlApi);
         }
       }, {
         key: "getSeguimientoByOdontograma",
         value: function getSeguimientoByOdontograma(id) {
-          var urlApi = "http://localhost:3000/seguimientoadiente/odontograma/".concat(id);
+          var urlApi = "http://192.168.250.4:3000/seguimientoadiente/odontograma/".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getSeguimientoByOdontogramatodoslosdientes",
         value: function getSeguimientoByOdontogramatodoslosdientes(id) {
-          var urlApi = "http://localhost:3000/seguimientodetalletodos/odontograma/".concat(id);
+          var urlApi = "http://192.168.250.4:3000/seguimientodetalletodos/odontograma/".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllRecipePatient",
         value: function getAllRecipePatient(id) {
-          var urlApi = "http://localhost:3000/recipe/patientrecipe".concat(id);
+          var urlApi = "http://192.168.250.4:3000/recipe/patientrecipe".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPresupustoPatient",
         value: function getAllPresupustoPatient(id) {
-          var urlApi = "http://localhost:3000/presupuesto/patientpresupuesto".concat(id);
+          var urlApi = "http://192.168.250.4:3000/presupuesto/patientpresupuesto".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllInformePatient",
         value: function getAllInformePatient(id) {
-          var urlApi = "http://localhost:3000/informemedico/patientinforme".concat(id);
+          var urlApi = "http://192.168.250.4:3000/informemedico/patientinforme".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultas",
         value: function getAllconsultas() {
-          var urlApi = 'http://localhost:3000/consulta';
+          var urlApi = 'http://192.168.250.4:3000/consulta';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultasByDoctor",
         value: function getAllconsultasByDoctor(doctor) {
-          var urlApi = "http://localhost:3000/consulta/doctor".concat(doctor);
+          var urlApi = "http://192.168.250.4:3000/consulta/doctor".concat(doctor);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultasBypatient",
         value: function getAllconsultasBypatient(id) {
-          var urlApi = "http://localhost:3000/consulta/patient".concat(id);
+          var urlApi = "http://192.168.250.4:3000/consulta/patient".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllEvolutionBypatient",
         value: function getAllEvolutionBypatient(id) {
-          var urlApi = "http://localhost:3000/evolution/patient".concat(id);
+          var urlApi = "http://192.168.250.4:3000/evolution/patient".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllHistorialBypatient",
         value: function getAllHistorialBypatient(id) {
-          var urlApi = "http://localhost:3000/historialclinico/patient".concat(id);
+          var urlApi = "http://192.168.250.4:3000/historialclinico/patient".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultasHoy",
         value: function getAllconsultasHoy() {
-          var urlApi = 'http://localhost:3000/consulta/hoy';
+          var urlApi = 'http://192.168.250.4:3000/consulta/hoy';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultasMes",
         value: function getAllconsultasMes() {
-          var urlApi = 'http://localhost:3000/consulta/mes';
+          var urlApi = 'http://192.168.250.4:3000/consulta/mes';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllUser",
         value: function getAllUser() {
-          var urlApi = 'http://localhost:3000/users';
+          var urlApi = 'http://192.168.250.4:3000/users';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllUserConPermiso",
         value: function getAllUserConPermiso() {
-          var urlApi = 'http://localhost:3000/users/doctorPermiso';
+          var urlApi = 'http://192.168.250.4:3000/users/doctorPermiso';
           return this.http.get(urlApi);
         }
       }, {
         key: "getPatientById",
         value: function getPatientById(id) {
-          var urlApi = 'http://localhost:3000/patient/$id';
+          var urlApi = 'http://192.168.250.4:3000/patient/$id';
           return this.patient = this.http.get(urlApi);
         }
       }, {
         key: "getPatientByDni",
         value: function getPatientByDni(dni) {
-          var urlApi = "http://localhost:3000/patient/".concat(dni);
+          var urlApi = "http://192.168.250.4:3000/patient/".concat(dni);
           return this.patient = this.http.get(urlApi);
         }
       }, {
         key: "getPiezaById",
         value: function getPiezaById(id) {
-          var urlApi = "http://localhost:3000/piezadental/pieza".concat(id);
+          var urlApi = "http://192.168.250.4:3000/piezadental/pieza".concat(id);
           return this.patient = this.http.get(urlApi);
         }
       }, {
         key: "getUserByDni",
         value: function getUserByDni(dni) {
-          var urlApi = "http://localhost:3000/users/dni/".concat(dni);
+          var urlApi = "http://192.168.250.4:3000/users/dni/".concat(dni);
           return this.patient = this.http.get(urlApi);
         }
       }, {
         key: "getAllMAterial",
         value: function getAllMAterial() {
-          var urlApi = 'http://localhost:3000/material';
+          var urlApi = 'http://192.168.250.4:3000/material';
           return this.http.get(urlApi);
         }
       }, {
         key: "getMAterialByName",
         value: function getMAterialByName(nombre) {
-          var urlApi = "http://localhost:3000/material/".concat(nombre);
+          var urlApi = "http://192.168.250.4:3000/material/".concat(nombre);
           return this.http.get(urlApi);
         }
       }, {
         key: "getInstrumentosByName",
         value: function getInstrumentosByName(nombre) {
-          var urlApi = "http://localhost:3000/instrumento/".concat(nombre);
+          var urlApi = "http://192.168.250.4:3000/instrumento/".concat(nombre);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPadecimientoPorPieza",
         value: function getAllPadecimientoPorPieza() {
-          var urlApi = 'http://localhost:3000/padecimientoporPieza';
+          var urlApi = 'http://192.168.250.4:3000/padecimientoporPieza';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPiezasDentales",
         value: function getAllPiezasDentales() {
-          var urlApi = 'http://localhost:3000/piezadental';
+          var urlApi = 'http://192.168.250.4:3000/piezadental';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllProcedimientosTodoslosdientes",
         value: function getAllProcedimientosTodoslosdientes() {
-          var urlApi = 'http://localhost:3000/procedimientoapadecimiento/todoslosdientes';
+          var urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento/todoslosdientes';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllodontogramasbypatient",
         value: function getAllodontogramasbypatient(id) {
-          var urlApi = "http://localhost:3000/odontograma/patient".concat(id);
+          var urlApi = "http://192.168.250.4:3000/odontograma/patient".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllodontogramastodoslosdientesbypatient",
         value: function getAllodontogramastodoslosdientesbypatient(id) {
-          var urlApi = "http://localhost:3000/seguimientotodosdientes/patientseguimiento".concat(id);
+          var urlApi = "http://192.168.250.4:3000/seguimientotodosdientes/patientseguimiento".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllortodonciasbypatient",
         value: function getAllortodonciasbypatient(id) {
-          var urlApi = "http://localhost:3000/seguimientoortodoncia/odontograma/".concat(id);
+          var urlApi = "http://192.168.250.4:3000/seguimientoortodoncia/odontograma/".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllodontogramasdeOrtodoncia",
         value: function getAllodontogramasdeOrtodoncia(id) {
-          var urlApi = "http://localhost:3000/ortodoncia/patient/ortodoncia/".concat(id);
+          var urlApi = "http://192.168.250.4:3000/ortodoncia/patient/ortodoncia/".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllprocedimientopornombre",
         value: function getAllprocedimientopornombre(nombre) {
-          var urlApi = "http://localhost:3000/procedimientoapadecimiento/nombreprocedimiento/".concat(nombre);
+          var urlApi = "http://192.168.250.4:3000/procedimientoapadecimiento/nombreprocedimiento/".concat(nombre);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPadecimientosxpiezaporNomeclatura",
         value: function getAllPadecimientosxpiezaporNomeclatura(nom) {
-          var urlApi = "http://localhost:3000/padecimientoporPieza/nomeclatura/".concat(nom);
+          var urlApi = "http://192.168.250.4:3000/padecimientoporPieza/nomeclatura/".concat(nom);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllServicios",
         value: function getAllServicios() {
-          var urlApi = 'http://localhost:3000/servicios';
+          var urlApi = 'http://192.168.250.4:3000/servicios';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllProcedimientos",
         value: function getAllProcedimientos() {
-          var urlApi = 'http://localhost:3000/procedimiento';
+          var urlApi = 'http://192.168.250.4:3000/procedimiento';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllProcedimientosaPadecimientos",
         value: function getAllProcedimientosaPadecimientos() {
-          var urlApi = 'http://localhost:3000/procedimientoapadecimiento';
+          var urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllProcedimientosaUNpadecimiento",
         value: function getAllProcedimientosaUNpadecimiento(padecimiento) {
-          var urlApi = "http://localhost:3000/procedimientoapadecimiento/procedimiento/".concat(padecimiento);
+          var urlApi = "http://192.168.250.4:3000/procedimientoapadecimiento/procedimiento/".concat(padecimiento);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPadecimientos",
         value: function getAllPadecimientos() {
-          var urlApi = 'http://localhost:3000/padecimiento';
+          var urlApi = 'http://192.168.250.4:3000/padecimiento';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllMAterialOrtodoncia",
         value: function getAllMAterialOrtodoncia() {
-          var urlApi = 'http://localhost:3000/material/ortodoncia';
+          var urlApi = 'http://192.168.250.4:3000/material/ortodoncia';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllMAterialOdontologia",
         value: function getAllMAterialOdontologia() {
-          var urlApi = 'http://localhost:3000/material/odontologia';
+          var urlApi = 'http://192.168.250.4:3000/material/odontologia';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllIntrumentos",
         value: function getAllIntrumentos() {
-          var urlApi = 'http://localhost:3000/instrumento';
+          var urlApi = 'http://192.168.250.4:3000/instrumento';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllIntrumentosOrtodoncia",
         value: function getAllIntrumentosOrtodoncia() {
-          var urlApi = 'http://localhost:3000/instrumento/ortodoncia';
+          var urlApi = 'http://192.168.250.4:3000/instrumento/ortodoncia';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllIntrumentosOdontologia",
         value: function getAllIntrumentosOdontologia() {
-          var urlApi = 'http://localhost:3000/instrumento/odontologia';
+          var urlApi = 'http://192.168.250.4:3000/instrumento/odontologia';
           return this.http.get(urlApi);
         }
       }]);
