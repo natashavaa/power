@@ -12347,7 +12347,7 @@ let AuthService = class AuthService {
         });
     }
     registerUser(name, phone, password, dni, age, sex, email, userType, username) {
-        const urlApi = 'http://localhost:3000/users';
+        const urlApi = 'http://192.168.250.4:3000/users';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12371,7 +12371,7 @@ let AuthService = class AuthService {
         });
     }
     registerOdontograma(idPatient, status, NombrePadecimiento1, Imagen1, NombrePadecimiento2, Imagen2, NombrePadecimiento3, Imagen3, NombrePadecimiento4, Imagen4, NombrePadecimiento5, Imagen5, NombrePadecimiento6, Imagen6, NombrePadecimiento7, Imagen7, NombrePadecimiento8, Imagen8, NombrePadecimiento9, Imagen9, NombrePadecimiento10, Imagen10, NombrePadecimiento11, Imagen11, NombrePadecimiento12, Imagen12, NombrePadecimiento13, Imagen13, NombrePadecimiento14, Imagen14, NombrePadecimiento15, Imagen15, NombrePadecimiento16, Imagen16, NombrePadecimiento17, Imagen17, NombrePadecimiento18, Imagen18, NombrePadecimiento19, Imagen19, NombrePadecimiento20, Imagen20, NombrePadecimiento21, Imagen21, NombrePadecimiento22, Imagen22, NombrePadecimiento23, Imagen23, NombrePadecimiento24, Imagen24, NombrePadecimiento25, Imagen25, NombrePadecimiento26, Imagen26, NombrePadecimiento27, Imagen27, NombrePadecimiento28, Imagen28, NombrePadecimiento29, Imagen29, NombrePadecimiento30, Imagen30, NombrePadecimiento31, Imagen31, NombrePadecimiento32, Imagen32, diagnosticoCompleto) {
-        const urlApi = 'http://localhost:3000/odontograma';
+        const urlApi = 'http://192.168.250.4:3000/odontograma';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12513,7 +12513,7 @@ let AuthService = class AuthService {
         });
     }
     updateMaterial(id, name, cantidad, especiality, costo, idDoctor, estadoDisp, usados) {
-        const urlApi = 'http://localhost:3000/material/update';
+        const urlApi = 'http://192.168.250.4:3000/material/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12535,39 +12535,39 @@ let AuthService = class AuthService {
         });
     }
     deletePiezaDental(id) {
-        const urlApi = `http://localhost:3000/piezadental/delete/${id}`;
+        const urlApi = `http://192.168.250.4:3000/piezadental/delete/${id}`;
         return this.htttp.delete(urlApi);
     }
     deleteServicio(id) {
-        const urlApi = `http://localhost:3000/servicios/delete/${id}`;
+        const urlApi = `http://192.168.250.4:3000/servicios/delete/${id}`;
         return this.htttp.delete(urlApi);
     }
     deletePadecimiento(id) {
-        const urlApi = `http://localhost:3000/padecimiento/delete/${id}`;
+        const urlApi = `http://192.168.250.4:3000/padecimiento/delete/${id}`;
         return this.htttp.delete(urlApi);
     }
     deletePadecimientoprodiente(id) {
-        const urlApi = `http://localhost:3000/padecimientoporPieza/delete/${id}`;
+        const urlApi = `http://192.168.250.4:3000/padecimientoporPieza/delete/${id}`;
         return this.htttp.delete(urlApi);
     }
     deleteProcedimiento(id) {
-        const urlApi = `http://localhost:3000/procedimiento/delete/${id}`;
+        const urlApi = `http://192.168.250.4:3000/procedimiento/delete/${id}`;
         return this.htttp.delete(urlApi);
     }
     deleteProcedimientoaPade(id) {
-        const urlApi = `http://localhost:3000/procedimientoapadecimiento/delete/${id}`;
+        const urlApi = `http://192.168.250.4:3000/procedimientoapadecimiento/delete/${id}`;
         return this.htttp.delete(urlApi);
     }
     deleteMaterial(id) {
-        const urlApi = `http://localhost:3000/material/${id}`;
+        const urlApi = `http://192.168.250.4:3000/material/${id}`;
         return this.htttp.delete(urlApi);
     }
     deleteInstrumento(id) {
-        const urlApi = `http://localhost:3000/instrumento/${id}`;
+        const urlApi = `http://192.168.250.4:3000/instrumento/${id}`;
         return this.htttp.delete(urlApi);
     }
     registerPatient(name, dni, age, sex, statusC, homeAddress, occupation, workAddress, mobile, birthplace, sentBy, dentalColor, familyNumber, familyName, familyNumberHome, password, username, mail, userType, phone, registradoPor) {
-        const urlApi = 'http://localhost:3000/patient';
+        const urlApi = 'http://192.168.250.4:3000/patient';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12615,7 +12615,7 @@ let AuthService = class AuthService {
         });
     }
     registerConsulta(idDoctor, idSpeciality, idClinicHistory, idPatient, namePatient, dniPatient, fechaPlanificada, hora, motive, status, consultorioVisitar, mes, dia, atendidoPor) {
-        const urlApi = 'http://localhost:3000/consulta';
+        const urlApi = 'http://192.168.250.4:3000/consulta';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12649,7 +12649,7 @@ let AuthService = class AuthService {
         });
     }
     UpdateConsulta(id, idDoctor, idSpeciality, idClinicHistory, idPatient, namePatient, dniPatient, fechaPlanificada, hora, motive, status, consultorioVisitar) {
-        const urlApi = 'http://localhost:3000/consulta/update';
+        const urlApi = 'http://192.168.250.4:3000/consulta/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12679,7 +12679,7 @@ let AuthService = class AuthService {
         });
     }
     UpdatePatient(id, name, dni, age, sex, statusC, homeAddress, occupation, workAddress, mobile, birthplace, sentBy, dentalColor, familyNumber, familyName, familyNumberHome, password, username, mail, userType, phone) {
-        const urlApi = 'http://localhost:3000/patient/update';
+        const urlApi = 'http://192.168.250.4:3000/patient/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12727,7 +12727,7 @@ let AuthService = class AuthService {
         });
     }
     registerMaterial(name, cantidad, especiality, costo, idDoctor) {
-        const urlApi = 'http://localhost:3000/material';
+        const urlApi = 'http://192.168.250.4:3000/material';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12743,7 +12743,7 @@ let AuthService = class AuthService {
         });
     }
     registerEvolution(idPatient, idClinicHistory, imagen, diagnostic) {
-        const urlApi = 'http://localhost:3000/evolution';
+        const urlApi = 'http://192.168.250.4:3000/evolution';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12757,7 +12757,7 @@ let AuthService = class AuthService {
         });
     }
     registerPiezaDental(NombrePieza, Descripcion, Nomenclatura, Ubicacion, Imagen, Posicion) {
-        const urlApi = 'http://localhost:3000/piezadental';
+        const urlApi = 'http://192.168.250.4:3000/piezadental';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12775,7 +12775,7 @@ let AuthService = class AuthService {
         });
     }
     registerPresupuesto(idPatient, PresupuestoBsf, PresupuestoDolares, Abono, Debe, Estatus, Estimado, serviciosTratados, FechadeCreacion, FechasdePagos) {
-        const urlApi = 'http://localhost:3000/presupuesto';
+        const urlApi = 'http://192.168.250.4:3000/presupuesto';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12801,7 +12801,7 @@ let AuthService = class AuthService {
         });
     }
     updatePresupuesto(id, idPatient, PresupuestoBsf, PresupuestoDolares, Abono, Debe, Estatus, Estimado, serviciosTratados, FechadeCreacion, FechasdePagos) {
-        const urlApi = 'http://localhost:3000/presupuesto/update';
+        const urlApi = 'http://192.168.250.4:3000/presupuesto/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12829,7 +12829,7 @@ let AuthService = class AuthService {
         });
     }
     registerServicio(NombredelServicio, Descripcion, Costo) {
-        const urlApi = 'http://localhost:3000/servicios';
+        const urlApi = 'http://192.168.250.4:3000/servicios';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12841,7 +12841,7 @@ let AuthService = class AuthService {
         });
     }
     updateServicio(id, NombredelServicio, Descripcion, Costo) {
-        const urlApi = 'http://localhost:3000/servicios/update';
+        const urlApi = 'http://192.168.250.4:3000/servicios/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12855,7 +12855,7 @@ let AuthService = class AuthService {
         });
     }
     updatePiezaDental(id, NombrePieza, Descripcion, Nomenclatura, Ubicacion, Imagen, Posicion) {
-        const urlApi = 'http://localhost:3000/piezadental/update';
+        const urlApi = 'http://192.168.250.4:3000/piezadental/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12875,7 +12875,7 @@ let AuthService = class AuthService {
         });
     }
     registerRecipe(Rp, Indicaciones, Firma, idPatient, idDoctor) {
-        const urlApi = 'http://localhost:3000/recipe';
+        const urlApi = 'http://192.168.250.4:3000/recipe';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12891,7 +12891,7 @@ let AuthService = class AuthService {
         });
     }
     registerInforme(PorPresentar, DiagnosticoDefinitivo, Firma, Certificoqueeldia, AtendiA, idPatient, idDoctor) {
-        const urlApi = 'http://localhost:3000/informemedico';
+        const urlApi = 'http://192.168.250.4:3000/informemedico';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12911,7 +12911,7 @@ let AuthService = class AuthService {
         });
     }
     registerHistorial(idPatient, Labios, Carrillos, Paladar, Lengua, PisodelaBoca, Mucosa, Encias, Calculos, Ganglios, OtroMotivo, complicacionesanestesia, FiebreReumatica, Diabetes, Cardiopatias, Tbc, Artritis, Hemorragias, Neuralgias, Sinusitiss, Renales, Alergias, Otra, Observaciones) {
-        const urlApi = 'http://localhost:3000/historialclinico';
+        const urlApi = 'http://192.168.250.4:3000/historialclinico';
         return this.htttp
             .post(urlApi, {
             idPatient,
@@ -12941,7 +12941,7 @@ let AuthService = class AuthService {
         });
     }
     UpdateHistorial(id, idPatient, Labios, Carrillos, Paladar, Lengua, PisodelaBoca, Mucosa, Encias, Calculos, Ganglios, OtroMotivo, complicacionesanestesia, FiebreReumatica, Diabetes, Cardiopatias, Tbc, Artritis, Hemorragias, Neuralgias, Sinusitiss, Renales, Alergias, Otra, Observaciones) {
-        const urlApi = 'http://localhost:3000/historialclinico';
+        const urlApi = 'http://192.168.250.4:3000/historialclinico';
         return this.htttp
             .put(urlApi, {
             id,
@@ -12972,7 +12972,7 @@ let AuthService = class AuthService {
         });
     }
     registerProcedimiento(NombreProcedimiento, Descripcion, Estatus, costo) {
-        const urlApi = 'http://localhost:3000/procedimiento';
+        const urlApi = 'http://192.168.250.4:3000/procedimiento';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -12986,7 +12986,7 @@ let AuthService = class AuthService {
         });
     }
     registertodoslosdientes(idPatient, Imagen, ProcedimientoOdontologico, Estatus, Instrumentos, Materiales, Diagnostico, Recomendaciones, Observaciones) {
-        const urlApi = 'http://localhost:3000/seguimientotodosdientes';
+        const urlApi = 'http://192.168.250.4:3000/seguimientotodosdientes';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13010,7 +13010,7 @@ let AuthService = class AuthService {
         });
     }
     Updatetodoslosdientes(id, idPatient, Imagen, ProcedimientoOdontologico, Estatus, Instrumentos, Materiales, Diagnostico, Recomendaciones, Observaciones) {
-        const urlApi = 'http://localhost:3000/seguimientotodosdientes/update';
+        const urlApi = 'http://192.168.250.4:3000/seguimientotodosdientes/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13036,7 +13036,7 @@ let AuthService = class AuthService {
         });
     }
     registerSeguimiento(idOdontograma, Fecha, TratamientoEfectuado, Observaciones, ConsultasPosteriores, Estatus) {
-        const urlApi = 'http://localhost:3000/seguimientoadiente';
+        const urlApi = 'http://192.168.250.4:3000/seguimientoadiente';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13054,7 +13054,7 @@ let AuthService = class AuthService {
         });
     }
     registerSeguimientoOrtodoncia(idOrtodoncia, ComentariodegOGNPMAX, ComentariodesUPINF, ComentariodeaNB, ComentariodesNB, ComentariodesNA, ComentariodesNGN, ComentariodenAPOG, ComentariodesNGOGN, ComentariodesNPLO, ComentariodesNFH, Fecha, TratamientoEfectuado, Observaciones, ConsultasPosteriores, Estatus) {
-        const urlApi = 'http://localhost:3000/seguimientoortodoncia';
+        const urlApi = 'http://192.168.250.4:3000/seguimientoortodoncia';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13092,7 +13092,7 @@ let AuthService = class AuthService {
         });
     }
     registerSeguimientotodoslosdientes(idOdontograma, Fecha, TratamientoEfectuado, Observaciones, ConsultasPosteriores, Estatus) {
-        const urlApi = 'http://localhost:3000/seguimientodetalletodos';
+        const urlApi = 'http://192.168.250.4:3000/seguimientodetalletodos';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13110,7 +13110,7 @@ let AuthService = class AuthService {
         });
     }
     updateProcedimiento(id, NombreProcedimiento, Descripcion, Estatus, costo) {
-        const urlApi = 'http://localhost:3000/procedimiento/update';
+        const urlApi = 'http://192.168.250.4:3000/procedimiento/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13126,7 +13126,7 @@ let AuthService = class AuthService {
         });
     }
     registerProcedimientoaPadecimiento(NombreProcedimiento, Descripcion, Estatus, costo, NombrePadecimiento, NombrePieza, Imagen, materiales, instrumentos) {
-        const urlApi = 'http://localhost:3000/procedimientoapadecimiento';
+        const urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13150,7 +13150,7 @@ let AuthService = class AuthService {
         });
     }
     updateProcedimientoaPadecimiento(id, NombreProcedimiento, Descripcion, Estatus, costo, NombrePadecimiento, NombrePieza, Imagen, materiales, instrumentos) {
-        const urlApi = 'http://localhost:3000/procedimientoapadecimiento/update';
+        const urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13176,7 +13176,7 @@ let AuthService = class AuthService {
         });
     }
     registerProcedimientoPorPieza(NombrePadecimiento, NombrePieza, Imagen, Nomenclatura, Posicion) {
-        const urlApi = 'http://localhost:3000/padecimientoporPieza';
+        const urlApi = 'http://192.168.250.4:3000/padecimientoporPieza';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13193,7 +13193,7 @@ let AuthService = class AuthService {
         });
     }
     registerOrtodoncia(idPatient, imagen, Medicaciones, PlandeTratamiento, Diagnostico, ClaseCanina1, ClaseCanina2, ClasificacionAngleCanina1, ClasificacionAngleCanina2, ClaseMolar1, ClaseMolar2, ClasificacionAngleMolar1, ClasificacionAngleMolar2, DivisionesMolar1, DivisionesMolarV1, DivisionesMolar2, DivisionesMolarV2, CategoriasMolar1, CategoriasMolar2, ClaseEsqueletalClasificacionAngle, Overjet, OverBite, LineaMedia, TipodePerfil, gOGNPMAX, sUPINF, aNB, sNB, sNA, sNGN, nAPOG, sNGOGN, sNPLO, sNFH) {
-        const urlApi = 'http://localhost:3000/ortodoncia';
+        const urlApi = 'http://192.168.250.4:3000/ortodoncia';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13267,7 +13267,7 @@ let AuthService = class AuthService {
         });
     }
     updateProcedimientoPorPieza(id, NombrePadecimiento, NombrePieza, Imagen, Nomenclatura, Posicion) {
-        const urlApi = 'http://localhost:3000/padecimientoporPieza/update';
+        const urlApi = 'http://192.168.250.4:3000/padecimientoporPieza/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13286,7 +13286,7 @@ let AuthService = class AuthService {
         });
     }
     registerPadecimiento(NombrePadecimiento, Descripcion) {
-        const urlApi = 'http://localhost:3000/padecimiento';
+        const urlApi = 'http://192.168.250.4:3000/padecimiento';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13296,7 +13296,7 @@ let AuthService = class AuthService {
         });
     }
     updatePadecimiento(id, NombrePadecimiento, Descripcion) {
-        const urlApi = 'http://localhost:3000/padecimiento/update';
+        const urlApi = 'http://192.168.250.4:3000/padecimiento/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13308,7 +13308,7 @@ let AuthService = class AuthService {
         });
     }
     registerInstrumento(name, cantidad, especiality, costo, idDoctor) {
-        const urlApi = 'http://localhost:3000/instrumento';
+        const urlApi = 'http://192.168.250.4:3000/instrumento';
         return this.htttp
             .post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13324,7 +13324,7 @@ let AuthService = class AuthService {
         });
     }
     updateInstrumento(id, name, cantidad, especiality, costo, idDoctor, enUso, enLimpieza) {
-        const urlApi = 'http://localhost:3000/instrumento/update';
+        const urlApi = 'http://192.168.250.4:3000/instrumento/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13346,13 +13346,13 @@ let AuthService = class AuthService {
         });
     }
     getAllconsultasBypatient(id) {
-        const urlApi = 'http://localhost:3000/consulta/patient';
+        const urlApi = 'http://192.168.250.4:3000/consulta/patient';
         return this.htttp.get(urlApi, {
         // tslint:disable-next-line: object-literal-shorthand
         });
     }
     updateUser(id, name, phone, password, dni, age, sex, email, userType, username) {
-        const urlApi = 'http://localhost:3000/users/update';
+        const urlApi = 'http://192.168.250.4:3000/users/update';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13378,7 +13378,7 @@ let AuthService = class AuthService {
         });
     }
     updateUserPermiso(id, name, phone, password, dni, age, sex, email, userType, username, status) {
-        const urlApi = 'http://localhost:3000/users/permiso';
+        const urlApi = 'http://192.168.250.4:3000/users/permiso';
         return this.htttp
             .put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
@@ -13406,7 +13406,7 @@ let AuthService = class AuthService {
         });
     }
     getAllMAterialPorFecha(fecha1, fecha2) {
-        const urlApi = 'http://localhost:3000/material/fecha';
+        const urlApi = 'http://192.168.250.4:3000/material/fecha';
         return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             fecha1: fecha1,
@@ -13415,7 +13415,7 @@ let AuthService = class AuthService {
         });
     }
     getAllInstrumentoPorFecha(fecha1, fecha2) {
-        const urlApi = 'http://localhost:3000/instrumento/fecha';
+        const urlApi = 'http://192.168.250.4:3000/instrumento/fecha';
         return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             fecha1: fecha1,
@@ -13424,12 +13424,12 @@ let AuthService = class AuthService {
         });
     }
     loginuser(username, password) {
-        const urlApi = 'http://localhost:3000/users/login';
+        const urlApi = 'http://192.168.250.4:3000/users/login';
         return this.htttp
             .post(urlApi, { username, password });
     } /**/
     Recuperacion(mail) {
-        const urlApi = 'http://localhost:3000/users/pass';
+        const urlApi = 'http://192.168.250.4:3000/users/pass';
         return this.htttp
             .post(urlApi, 
         // tslint:disable-next-line: object-literal-shorthand
