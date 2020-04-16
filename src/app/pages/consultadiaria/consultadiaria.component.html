@@ -7,7 +7,7 @@
     <span class="claDocEs ">{{especialidad}} </span>
 </form>
 <br>
-<div class="row">
+<!--<div class="row">
     <form #gelist="ngForm" (ngSubmit)="getConsultas(gelist)">
         <br>
         <div class="form-group row">
@@ -46,7 +46,15 @@
     </form>
 
 </div>
+-->
+<div class="row">
+    <div class="">
+    </div>
 
+    <div class="row marg">
+        <input placeholder="Buscar Consultas..." type="text" class="form-control" name="filterpost" [(ngModel)]="filterpost">
+    </div>
+</div>
 <form align="right">
     <button mat-raised-button (click)="global()" class="uno"><img
             src="https://img.icons8.com/dusk/50/000000/calendar-plus.png"> Crear Consultas</button>
@@ -72,19 +80,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let consulta of consulta">
+                <tr *ngFor="let item of consulta | filterconsultas: filterpost">
                     <td></td>
-                    <td>{{consulta.namePatient}}</td>
-                    <td>{{consulta.dniPatient}}</td>
-                    <td>{{consulta.fechaPlanificada}}</td>
-                    <td>{{consulta.dia}}</td>
-                    <td>{{consulta.hora}}</td>
-                    <td>{{consulta.motive}}</td>
-                    <td>{{consulta.atendidoPor}}</td>
-                    <td><button type="button" class="btn btn-success" (click)="cambiarstatus(consulta)">
-                            <span>{{consulta.status}}</span>
+                    <td>{{item.namePatient}}</td>
+                    <td>{{item.dniPatient}}</td>
+                    <td>{{item.fechaPlanificada}}</td>
+                    <td>{{item.dia}}</td>
+                    <td>{{item.hora}}</td>
+                    <td>{{item.motive}}</td>
+                    <td>{{item.atendidoPor}}</td>
+                    <td><button type="button" class="btn btn-success" (click)="cambiarstatus(item)">
+                            <span>{{item.status}}</span>
                         </button></td>
-                    <td><button type="button" class="btn btn-danger" (click)="suspenderstatus(consulta)">
+                    <td><button type="button" class="btn btn-danger" (click)="suspenderstatus(item)">
                             <span>X</span>
                         </button></td>
                 </tr>

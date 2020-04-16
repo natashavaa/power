@@ -154,12 +154,12 @@ public user: UserInterface = {
 
 
 };
- private consulta: ConsultaInterface = {};
+ public consulta: ConsultaInterface = {};
  private doctorUser: UserInterface = {};
  private doctorP: UserInterface = {
   name: '',
 };
-
+filterpost: 'Escribe';
    usuarioA: string;
    especialidad: string;
    cambiarColor: boolean;
@@ -235,46 +235,24 @@ ngOnInit(): void {
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
-  getConsultaByDoctor(): void {
-    if (Object.is(this.doctorP.name, 'Todos')) {
-      this.getlistConsultas();
-  } else {
-  this.getlistConsultasByDoctor();
-  }
 
-  }
   global(): void {
     this.router.navigate(['global']);
   }
   getlistConsultas() {
-    this.dataApi.getAllconsultas().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
+    this.dataApi.getAllconsultas().subscribe((cosultas: ConsultaInterface) => {
+      console.log(cosultas);
+      this.consulta = cosultas;
+    });
 
   }
-  getlistConsultasByDoctor() {
-    this.dataApi.getAllconsultasByDoctor(this.doctorP.name).subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
 
-  }
   getlistUsers() {
     // tslint:disable-next-line: max-line-length
     this.dataApi.getAllUserConPermiso().subscribe((doctorUser: UserInterface) => { this.doctorUser = doctorUser; } );
   }
-  getlistConsultasHoy() {
-    this.dataApi.getAllconsultasHoy().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
-  }
-  getlistConsultasMes() {
-    this.dataApi.getAllconsultasMes().subscribe((cosultas: ConsultaInterface) => ( this.consulta = cosultas));
-  }
-  getConsultas(): void {
-    if ( Object.is(this.momentoC, 'Todas')) {
-      this.getlistConsultas();
-    } else if ( Object.is(this.momentoC, 'Mes')) {
-      this.getlistConsultasMes();
-    } else if (Object.is(this.momentoC, 'Hoy')) {
-      this.getlistConsultasHoy();
-    } else {
-      this.getlistConsultas();
-    }
-  }
+
+
 
   doctor(): string {
     this.user = this.auth.getCurrentUser();
