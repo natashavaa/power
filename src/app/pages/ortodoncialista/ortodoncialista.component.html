@@ -109,8 +109,7 @@
                         <div class="form-group row">
                             <mat-label for="" class="col-4 col-form-label">Area Afectada</mat-label>
                             <br>
-                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento"
-                                [(ngModel)]="momentoC">
+                            <select class="form-control col-5" #momento="ngModel" name="momento" id="momento" [(ngModel)]="momentoC">
                                 <option selected>Diente por Diente</option>
                                 <option>Todos los Dientes</option>
                                 <option>Ortodoncia</option>
@@ -135,24 +134,21 @@
                 </div>
 
             </div>
-            <div class="col-6">
-            </div>
+
             <section *ngFor="let odontograma of Ortodonciarecibidos">
                 <img src="assets/img/odontogramaconbracktes.png" alt="Avatar Image">
-                <br>
-                <br>
+
                 <div class="row">
                     <div class="col-3 titulo">
-                        <p>Diagnostico:</p>
+                        <p>Diagnostico Recibido: </p>
+
                     </div>
-                    <div class="">
-                        <span>{{odontograma.Diagnostico}} </span>
+                    <div class="col-9 alinear justify-content">
+                        <p>{{odontograma.Diagnostico}}</p>
                     </div>
-                    <div class="col-3">
-                    </div>
+
                 </div>
 
-                <br>
                 <button (click)="iradetalles(odontograma)" class="btn btn-success">
                     Ver Detalles
                 </button>
