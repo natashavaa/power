@@ -30,5 +30,7 @@ export class HeaderComponent implements OnInit {
      this.app.mostrar = false;
      this.authService.logoutUser();
   }
+  DescargarTuto() {
 
+  }
 }
