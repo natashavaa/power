@@ -7,7 +7,7 @@
     <span class="claDocEs ">{{especialidad}} </span>
 </form>
 <br>
-<!--<div class="row">
+<div class="row">
     <form #gelist="ngForm" (ngSubmit)="getConsultas(gelist)">
         <br>
         <div class="form-group row">
@@ -46,15 +46,8 @@
     </form>
 
 </div>
--->
-<div class="row">
-    <div class="">
-    </div>
 
-    <div class="row marg">
-        <input placeholder="Buscar Consultas..." type="text" class="form-control" name="filterpost" [(ngModel)]="filterpost">
-    </div>
-</div>
+
 <form align="right">
     <button mat-raised-button (click)="global()" class="uno"><img
             src="https://img.icons8.com/dusk/50/000000/calendar-plus.png"> Crear Consultas</button>
@@ -80,7 +73,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of consulta | filterconsultas: filterpost">
+                <tr *ngFor="let item of consulta">
                     <td></td>
                     <td>{{item.namePatient}}</td>
                     <td>{{item.dniPatient}}</td>
