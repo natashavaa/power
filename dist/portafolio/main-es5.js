@@ -19643,7 +19643,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AuthService, [{
         key: "registerUser",
         value: function registerUser(name, phone, password, dni, age, sex, email, userType, username) {
-          var urlApi = 'http://192.168.250.4:3000/users';
+          var urlApi = 'http://192.168.250.10:3000/users';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             name: name,
@@ -19668,7 +19668,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerOdontograma",
         value: function registerOdontograma(idPatient, status, NombrePadecimiento1, Imagen1, NombrePadecimiento2, Imagen2, NombrePadecimiento3, Imagen3, NombrePadecimiento4, Imagen4, NombrePadecimiento5, Imagen5, NombrePadecimiento6, Imagen6, NombrePadecimiento7, Imagen7, NombrePadecimiento8, Imagen8, NombrePadecimiento9, Imagen9, NombrePadecimiento10, Imagen10, NombrePadecimiento11, Imagen11, NombrePadecimiento12, Imagen12, NombrePadecimiento13, Imagen13, NombrePadecimiento14, Imagen14, NombrePadecimiento15, Imagen15, NombrePadecimiento16, Imagen16, NombrePadecimiento17, Imagen17, NombrePadecimiento18, Imagen18, NombrePadecimiento19, Imagen19, NombrePadecimiento20, Imagen20, NombrePadecimiento21, Imagen21, NombrePadecimiento22, Imagen22, NombrePadecimiento23, Imagen23, NombrePadecimiento24, Imagen24, NombrePadecimiento25, Imagen25, NombrePadecimiento26, Imagen26, NombrePadecimiento27, Imagen27, NombrePadecimiento28, Imagen28, NombrePadecimiento29, Imagen29, NombrePadecimiento30, Imagen30, NombrePadecimiento31, Imagen31, NombrePadecimiento32, Imagen32, diagnosticoCompleto) {
-          var urlApi = 'http://192.168.250.4:3000/odontograma';
+          var urlApi = 'http://192.168.250.10:3000/odontograma';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             idPatient: idPatient,
@@ -19811,7 +19811,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateMaterial",
         value: function updateMaterial(id, name, cantidad, especiality, costo, idDoctor, estadoDisp, usados) {
-          var urlApi = 'http://192.168.250.4:3000/material/update';
+          var urlApi = 'http://192.168.250.10:3000/material/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -19834,55 +19834,55 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deletePiezaDental",
         value: function deletePiezaDental(id) {
-          var urlApi = "http://192.168.250.4:3000/piezadental/delete/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/piezadental/delete/".concat(id);
           return this.htttp.delete(urlApi);
         }
       }, {
         key: "deleteServicio",
         value: function deleteServicio(id) {
-          var urlApi = "http://192.168.250.4:3000/servicios/delete/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/servicios/delete/".concat(id);
           return this.htttp.delete(urlApi);
         }
       }, {
         key: "deletePadecimiento",
         value: function deletePadecimiento(id) {
-          var urlApi = "http://192.168.250.4:3000/padecimiento/delete/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/padecimiento/delete/".concat(id);
           return this.htttp.delete(urlApi);
         }
       }, {
         key: "deletePadecimientoprodiente",
         value: function deletePadecimientoprodiente(id) {
-          var urlApi = "http://192.168.250.4:3000/padecimientoporPieza/delete/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/padecimientoporPieza/delete/".concat(id);
           return this.htttp.delete(urlApi);
         }
       }, {
         key: "deleteProcedimiento",
         value: function deleteProcedimiento(id) {
-          var urlApi = "http://192.168.250.4:3000/procedimiento/delete/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/procedimiento/delete/".concat(id);
           return this.htttp.delete(urlApi);
         }
       }, {
         key: "deleteProcedimientoaPade",
         value: function deleteProcedimientoaPade(id) {
-          var urlApi = "http://192.168.250.4:3000/procedimientoapadecimiento/delete/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/procedimientoapadecimiento/delete/".concat(id);
           return this.htttp.delete(urlApi);
         }
       }, {
         key: "deleteMaterial",
         value: function deleteMaterial(id) {
-          var urlApi = "http://192.168.250.4:3000/material/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/material/".concat(id);
           return this.htttp.delete(urlApi);
         }
       }, {
         key: "deleteInstrumento",
         value: function deleteInstrumento(id) {
-          var urlApi = "http://192.168.250.4:3000/instrumento/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/instrumento/".concat(id);
           return this.htttp.delete(urlApi);
         }
       }, {
         key: "registerPatient",
         value: function registerPatient(name, dni, age, sex, statusC, homeAddress, occupation, workAddress, mobile, birthplace, sentBy, dentalColor, familyNumber, familyName, familyNumberHome, password, username, mail, userType, phone, registradoPor) {
-          var urlApi = 'http://192.168.250.4:3000/patient';
+          var urlApi = 'http://192.168.250.10:3000/patient';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             name: name,
@@ -19931,7 +19931,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerConsulta",
         value: function registerConsulta(idDoctor, idSpeciality, idClinicHistory, idPatient, namePatient, dniPatient, fechaPlanificada, hora, motive, status, consultorioVisitar, mes, dia, atendidoPor) {
-          var urlApi = 'http://192.168.250.4:3000/consulta';
+          var urlApi = 'http://192.168.250.10:3000/consulta';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             idDoctor: idDoctor,
@@ -19966,7 +19966,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "UpdateConsulta",
         value: function UpdateConsulta(id, idDoctor, idSpeciality, idClinicHistory, idPatient, namePatient, dniPatient, fechaPlanificada, hora, motive, status, consultorioVisitar) {
-          var urlApi = 'http://192.168.250.4:3000/consulta/update';
+          var urlApi = 'http://192.168.250.10:3000/consulta/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -19997,7 +19997,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "UpdatePatient",
         value: function UpdatePatient(id, name, dni, age, sex, statusC, homeAddress, occupation, workAddress, mobile, birthplace, sentBy, dentalColor, familyNumber, familyName, familyNumberHome, password, username, mail, userType, phone) {
-          var urlApi = 'http://192.168.250.4:3000/patient/update';
+          var urlApi = 'http://192.168.250.10:3000/patient/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20046,7 +20046,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerMaterial",
         value: function registerMaterial(name, cantidad, especiality, costo, idDoctor) {
-          var urlApi = 'http://192.168.250.4:3000/material';
+          var urlApi = 'http://192.168.250.10:3000/material';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             name: name,
@@ -20063,7 +20063,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerEvolution",
         value: function registerEvolution(idPatient, idClinicHistory, imagen, diagnostic) {
-          var urlApi = 'http://192.168.250.4:3000/evolution';
+          var urlApi = 'http://192.168.250.10:3000/evolution';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             idPatient: idPatient,
@@ -20078,7 +20078,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerPiezaDental",
         value: function registerPiezaDental(NombrePieza, Descripcion, Nomenclatura, Ubicacion, Imagen, Posicion) {
-          var urlApi = 'http://192.168.250.4:3000/piezadental';
+          var urlApi = 'http://192.168.250.10:3000/piezadental';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             NombrePieza: NombrePieza,
@@ -20097,7 +20097,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerPresupuesto",
         value: function registerPresupuesto(idPatient, PresupuestoBsf, PresupuestoDolares, Abono, Debe, Estatus, Estimado, serviciosTratados, FechadeCreacion, FechasdePagos) {
-          var urlApi = 'http://192.168.250.4:3000/presupuesto';
+          var urlApi = 'http://192.168.250.10:3000/presupuesto';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             idPatient: idPatient,
@@ -20124,7 +20124,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updatePresupuesto",
         value: function updatePresupuesto(id, idPatient, PresupuestoBsf, PresupuestoDolares, Abono, Debe, Estatus, Estimado, serviciosTratados, FechadeCreacion, FechasdePagos) {
-          var urlApi = 'http://192.168.250.4:3000/presupuesto/update';
+          var urlApi = 'http://192.168.250.10:3000/presupuesto/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20153,7 +20153,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerServicio",
         value: function registerServicio(NombredelServicio, Descripcion, Costo) {
-          var urlApi = 'http://192.168.250.4:3000/servicios';
+          var urlApi = 'http://192.168.250.10:3000/servicios';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             NombredelServicio: NombredelServicio,
@@ -20166,7 +20166,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateServicio",
         value: function updateServicio(id, NombredelServicio, Descripcion, Costo) {
-          var urlApi = 'http://192.168.250.4:3000/servicios/update';
+          var urlApi = 'http://192.168.250.10:3000/servicios/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20181,7 +20181,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updatePiezaDental",
         value: function updatePiezaDental(id, NombrePieza, Descripcion, Nomenclatura, Ubicacion, Imagen, Posicion) {
-          var urlApi = 'http://192.168.250.4:3000/piezadental/update';
+          var urlApi = 'http://192.168.250.10:3000/piezadental/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20202,7 +20202,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerRecipe",
         value: function registerRecipe(Rp, Indicaciones, Firma, idPatient, idDoctor) {
-          var urlApi = 'http://192.168.250.4:3000/recipe';
+          var urlApi = 'http://192.168.250.10:3000/recipe';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             Rp: Rp,
@@ -20219,7 +20219,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerInforme",
         value: function registerInforme(PorPresentar, DiagnosticoDefinitivo, Firma, Certificoqueeldia, AtendiA, idPatient, idDoctor) {
-          var urlApi = 'http://192.168.250.4:3000/informemedico';
+          var urlApi = 'http://192.168.250.10:3000/informemedico';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             PorPresentar: PorPresentar,
@@ -20240,7 +20240,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerHistorial",
         value: function registerHistorial(idPatient, Labios, Carrillos, Paladar, Lengua, PisodelaBoca, Mucosa, Encias, Calculos, Ganglios, OtroMotivo, complicacionesanestesia, FiebreReumatica, Diabetes, Cardiopatias, Tbc, Artritis, Hemorragias, Neuralgias, Sinusitiss, Renales, Alergias, Otra, Observaciones) {
-          var urlApi = 'http://192.168.250.4:3000/historialclinico';
+          var urlApi = 'http://192.168.250.10:3000/historialclinico';
           return this.htttp.post(urlApi, {
             idPatient: idPatient,
             Labios: Labios,
@@ -20271,7 +20271,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "UpdateHistorial",
         value: function UpdateHistorial(id, idPatient, Labios, Carrillos, Paladar, Lengua, PisodelaBoca, Mucosa, Encias, Calculos, Ganglios, OtroMotivo, complicacionesanestesia, FiebreReumatica, Diabetes, Cardiopatias, Tbc, Artritis, Hemorragias, Neuralgias, Sinusitiss, Renales, Alergias, Otra, Observaciones) {
-          var urlApi = 'http://192.168.250.4:3000/historialclinico';
+          var urlApi = 'http://192.168.250.10:3000/historialclinico';
           return this.htttp.put(urlApi, {
             id: id,
             idPatient: idPatient,
@@ -20303,7 +20303,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerProcedimiento",
         value: function registerProcedimiento(NombreProcedimiento, Descripcion, Estatus, costo) {
-          var urlApi = 'http://192.168.250.4:3000/procedimiento';
+          var urlApi = 'http://192.168.250.10:3000/procedimiento';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             NombreProcedimiento: NombreProcedimiento,
@@ -20318,7 +20318,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registertodoslosdientes",
         value: function registertodoslosdientes(idPatient, Imagen, ProcedimientoOdontologico, Estatus, Instrumentos, Materiales, Diagnostico, Recomendaciones, Observaciones) {
-          var urlApi = 'http://192.168.250.4:3000/seguimientotodosdientes';
+          var urlApi = 'http://192.168.250.10:3000/seguimientotodosdientes';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             idPatient: idPatient,
@@ -20343,7 +20343,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "Updatetodoslosdientes",
         value: function Updatetodoslosdientes(id, idPatient, Imagen, ProcedimientoOdontologico, Estatus, Instrumentos, Materiales, Diagnostico, Recomendaciones, Observaciones) {
-          var urlApi = 'http://192.168.250.4:3000/seguimientotodosdientes/update';
+          var urlApi = 'http://192.168.250.10:3000/seguimientotodosdientes/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20370,7 +20370,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerSeguimiento",
         value: function registerSeguimiento(idOdontograma, Fecha, TratamientoEfectuado, Observaciones, ConsultasPosteriores, Estatus) {
-          var urlApi = 'http://192.168.250.4:3000/seguimientoadiente';
+          var urlApi = 'http://192.168.250.10:3000/seguimientoadiente';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             idOdontograma: idOdontograma,
@@ -20389,7 +20389,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerSeguimientoOrtodoncia",
         value: function registerSeguimientoOrtodoncia(idOrtodoncia, ComentariodegOGNPMAX, ComentariodesUPINF, ComentariodeaNB, ComentariodesNB, ComentariodesNA, ComentariodesNGN, ComentariodenAPOG, ComentariodesNGOGN, ComentariodesNPLO, ComentariodesNFH, Fecha, TratamientoEfectuado, Observaciones, ConsultasPosteriores, Estatus) {
-          var urlApi = 'http://192.168.250.4:3000/seguimientoortodoncia';
+          var urlApi = 'http://192.168.250.10:3000/seguimientoortodoncia';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             idOrtodoncia: idOrtodoncia,
@@ -20428,7 +20428,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerSeguimientotodoslosdientes",
         value: function registerSeguimientotodoslosdientes(idOdontograma, Fecha, TratamientoEfectuado, Observaciones, ConsultasPosteriores, Estatus) {
-          var urlApi = 'http://192.168.250.4:3000/seguimientodetalletodos';
+          var urlApi = 'http://192.168.250.10:3000/seguimientodetalletodos';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             idOdontograma: idOdontograma,
@@ -20447,7 +20447,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateProcedimiento",
         value: function updateProcedimiento(id, NombreProcedimiento, Descripcion, Estatus, costo) {
-          var urlApi = 'http://192.168.250.4:3000/procedimiento/update';
+          var urlApi = 'http://192.168.250.10:3000/procedimiento/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20464,7 +20464,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerProcedimientoaPadecimiento",
         value: function registerProcedimientoaPadecimiento(NombreProcedimiento, Descripcion, Estatus, costo, NombrePadecimiento, NombrePieza, Imagen, materiales, instrumentos) {
-          var urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento';
+          var urlApi = 'http://192.168.250.10:3000/procedimientoapadecimiento';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             NombreProcedimiento: NombreProcedimiento,
@@ -20489,7 +20489,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateProcedimientoaPadecimiento",
         value: function updateProcedimientoaPadecimiento(id, NombreProcedimiento, Descripcion, Estatus, costo, NombrePadecimiento, NombrePieza, Imagen, materiales, instrumentos) {
-          var urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento/update';
+          var urlApi = 'http://192.168.250.10:3000/procedimientoapadecimiento/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20516,7 +20516,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerProcedimientoPorPieza",
         value: function registerProcedimientoPorPieza(NombrePadecimiento, NombrePieza, Imagen, Nomenclatura, Posicion) {
-          var urlApi = 'http://192.168.250.4:3000/padecimientoporPieza';
+          var urlApi = 'http://192.168.250.10:3000/padecimientoporPieza';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             NombrePadecimiento: NombrePadecimiento,
@@ -20534,7 +20534,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerOrtodoncia",
         value: function registerOrtodoncia(idPatient, imagen, Medicaciones, PlandeTratamiento, Diagnostico, ClaseCanina1, ClaseCanina2, ClasificacionAngleCanina1, ClasificacionAngleCanina2, ClaseMolar1, ClaseMolar2, ClasificacionAngleMolar1, ClasificacionAngleMolar2, DivisionesMolar1, DivisionesMolarV1, DivisionesMolar2, DivisionesMolarV2, CategoriasMolar1, CategoriasMolar2, ClaseEsqueletalClasificacionAngle, Overjet, OverBite, LineaMedia, TipodePerfil, gOGNPMAX, sUPINF, aNB, sNB, sNA, sNGN, nAPOG, sNGOGN, sNPLO, sNFH) {
-          var urlApi = 'http://192.168.250.4:3000/ortodoncia';
+          var urlApi = 'http://192.168.250.10:3000/ortodoncia';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             idPatient: idPatient,
@@ -20609,7 +20609,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateProcedimientoPorPieza",
         value: function updateProcedimientoPorPieza(id, NombrePadecimiento, NombrePieza, Imagen, Nomenclatura, Posicion) {
-          var urlApi = 'http://192.168.250.4:3000/padecimientoporPieza/update';
+          var urlApi = 'http://192.168.250.10:3000/padecimientoporPieza/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20629,7 +20629,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerPadecimiento",
         value: function registerPadecimiento(NombrePadecimiento, Descripcion) {
-          var urlApi = 'http://192.168.250.4:3000/padecimiento';
+          var urlApi = 'http://192.168.250.10:3000/padecimiento';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             NombrePadecimiento: NombrePadecimiento,
@@ -20640,7 +20640,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updatePadecimiento",
         value: function updatePadecimiento(id, NombrePadecimiento, Descripcion) {
-          var urlApi = 'http://192.168.250.4:3000/padecimiento/update';
+          var urlApi = 'http://192.168.250.10:3000/padecimiento/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20653,7 +20653,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "registerInstrumento",
         value: function registerInstrumento(name, cantidad, especiality, costo, idDoctor) {
-          var urlApi = 'http://192.168.250.4:3000/instrumento';
+          var urlApi = 'http://192.168.250.10:3000/instrumento';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             name: name,
@@ -20670,7 +20670,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateInstrumento",
         value: function updateInstrumento(id, name, cantidad, especiality, costo, idDoctor, enUso, enLimpieza) {
-          var urlApi = 'http://192.168.250.4:3000/instrumento/update';
+          var urlApi = 'http://192.168.250.10:3000/instrumento/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20693,14 +20693,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllconsultasBypatient",
         value: function getAllconsultasBypatient(id) {
-          var urlApi = 'http://192.168.250.4:3000/consulta/patient';
+          var urlApi = 'http://192.168.250.10:3000/consulta/patient';
           return this.htttp.get(urlApi, {// tslint:disable-next-line: object-literal-shorthand
           });
         }
       }, {
         key: "updateUser",
         value: function updateUser(id, name, phone, password, dni, age, sex, email, userType, username) {
-          var urlApi = 'http://192.168.250.4:3000/users/update';
+          var urlApi = 'http://192.168.250.10:3000/users/update';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20727,7 +20727,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "updateUserPermiso",
         value: function updateUserPermiso(id, name, phone, password, dni, age, sex, email, userType, username, status) {
-          var urlApi = 'http://192.168.250.4:3000/users/permiso';
+          var urlApi = 'http://192.168.250.10:3000/users/permiso';
           return this.htttp.put(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             id: id,
@@ -20756,7 +20756,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllMAterialPorFecha",
         value: function getAllMAterialPorFecha(fecha1, fecha2) {
-          var urlApi = 'http://192.168.250.4:3000/material/fecha';
+          var urlApi = 'http://192.168.250.10:3000/material/fecha';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             fecha1: fecha1,
@@ -20767,7 +20767,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllInstrumentoPorFecha",
         value: function getAllInstrumentoPorFecha(fecha1, fecha2) {
-          var urlApi = 'http://192.168.250.4:3000/instrumento/fecha';
+          var urlApi = 'http://192.168.250.10:3000/instrumento/fecha';
           return this.htttp.post(urlApi, {
             // tslint:disable-next-line: object-literal-shorthand
             fecha1: fecha1,
@@ -20778,7 +20778,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "loginuser",
         value: function loginuser(username, password) {
-          var urlApi = 'http://192.168.250.4:3000/users/login';
+          var urlApi = 'http://192.168.250.10:3000/users/login';
           return this.htttp.post(urlApi, {
             username: username,
             password: password
@@ -20789,7 +20789,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "Recuperacion",
         value: function Recuperacion(mail) {
-          var urlApi = 'http://192.168.250.4:3000/users/pass';
+          var urlApi = 'http://192.168.250.10:3000/users/pass';
           return this.htttp.post(urlApi, // tslint:disable-next-line: object-literal-shorthand
           {
             mail: mail
@@ -21152,253 +21152,253 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DataApiService, [{
         key: "getAllPatints",
         value: function getAllPatints() {
-          var urlApi = 'http://192.168.250.4:3000/patient';
+          var urlApi = 'http://192.168.250.10:3000/patient';
           return this.http.get(urlApi);
         }
       }, {
         key: "getPatientsByDoctor",
         value: function getPatientsByDoctor(name) {
-          var urlApi = "http://192.168.250.4:3000/patient/doctor".concat(name);
+          var urlApi = "http://192.168.250.10:3000/patient/doctor".concat(name);
           return this.http.get(urlApi);
         }
       }, {
         key: "getSeguimientoByOdontograma",
         value: function getSeguimientoByOdontograma(id) {
-          var urlApi = "http://192.168.250.4:3000/seguimientoadiente/odontograma/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/seguimientoadiente/odontograma/".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getSeguimientoByOdontogramatodoslosdientes",
         value: function getSeguimientoByOdontogramatodoslosdientes(id) {
-          var urlApi = "http://192.168.250.4:3000/seguimientodetalletodos/odontograma/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/seguimientodetalletodos/odontograma/".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllRecipePatient",
         value: function getAllRecipePatient(id) {
-          var urlApi = "http://192.168.250.4:3000/recipe/patientrecipe".concat(id);
+          var urlApi = "http://192.168.250.10:3000/recipe/patientrecipe".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPresupustoPatient",
         value: function getAllPresupustoPatient(id) {
-          var urlApi = "http://192.168.250.4:3000/presupuesto/patientpresupuesto".concat(id);
+          var urlApi = "http://192.168.250.10:3000/presupuesto/patientpresupuesto".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllInformePatient",
         value: function getAllInformePatient(id) {
-          var urlApi = "http://192.168.250.4:3000/informemedico/patientinforme".concat(id);
+          var urlApi = "http://192.168.250.10:3000/informemedico/patientinforme".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultas",
         value: function getAllconsultas() {
-          var urlApi = 'http://192.168.250.4:3000/consulta';
+          var urlApi = 'http://192.168.250.10:3000/consulta';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultasByDoctor",
         value: function getAllconsultasByDoctor(doctor) {
-          var urlApi = "http://192.168.250.4:3000/consulta/doctor".concat(doctor);
+          var urlApi = "http://192.168.250.10:3000/consulta/doctor".concat(doctor);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultasBypatient",
         value: function getAllconsultasBypatient(id) {
-          var urlApi = "http://192.168.250.4:3000/consulta/patient".concat(id);
+          var urlApi = "http://192.168.250.10:3000/consulta/patient".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllEvolutionBypatient",
         value: function getAllEvolutionBypatient(id) {
-          var urlApi = "http://192.168.250.4:3000/evolution/patient".concat(id);
+          var urlApi = "http://192.168.250.10:3000/evolution/patient".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllHistorialBypatient",
         value: function getAllHistorialBypatient(id) {
-          var urlApi = "http://192.168.250.4:3000/historialclinico/patient".concat(id);
+          var urlApi = "http://192.168.250.10:3000/historialclinico/patient".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultasHoy",
         value: function getAllconsultasHoy() {
-          var urlApi = 'http://192.168.250.4:3000/consulta/hoy';
+          var urlApi = 'http://192.168.250.10:3000/consulta/hoy';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllconsultasMes",
         value: function getAllconsultasMes() {
-          var urlApi = 'http://192.168.250.4:3000/consulta/mes';
+          var urlApi = 'http://192.168.250.10:3000/consulta/mes';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllUser",
         value: function getAllUser() {
-          var urlApi = 'http://192.168.250.4:3000/users';
+          var urlApi = 'http://192.168.250.10:3000/users';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllUserConPermiso",
         value: function getAllUserConPermiso() {
-          var urlApi = 'http://192.168.250.4:3000/users/doctorPermiso';
+          var urlApi = 'http://192.168.250.10:3000/users/doctorPermiso';
           return this.http.get(urlApi);
         }
       }, {
         key: "getPatientById",
         value: function getPatientById(id) {
-          var urlApi = 'http://192.168.250.4:3000/patient/$id';
+          var urlApi = 'http://192.168.250.10:3000/patient/$id';
           return this.patient = this.http.get(urlApi);
         }
       }, {
         key: "getPatientByDni",
         value: function getPatientByDni(dni) {
-          var urlApi = "http://192.168.250.4:3000/patient/".concat(dni);
+          var urlApi = "http://192.168.250.10:3000/patient/".concat(dni);
           return this.patient = this.http.get(urlApi);
         }
       }, {
         key: "getPiezaById",
         value: function getPiezaById(id) {
-          var urlApi = "http://192.168.250.4:3000/piezadental/pieza".concat(id);
+          var urlApi = "http://192.168.250.10:3000/piezadental/pieza".concat(id);
           return this.patient = this.http.get(urlApi);
         }
       }, {
         key: "getUserByDni",
         value: function getUserByDni(dni) {
-          var urlApi = "http://192.168.250.4:3000/users/dni/".concat(dni);
+          var urlApi = "http://192.168.250.10:3000/users/dni/".concat(dni);
           return this.patient = this.http.get(urlApi);
         }
       }, {
         key: "getAllMAterial",
         value: function getAllMAterial() {
-          var urlApi = 'http://192.168.250.4:3000/material';
+          var urlApi = 'http://192.168.250.10:3000/material';
           return this.http.get(urlApi);
         }
       }, {
         key: "getMAterialByName",
         value: function getMAterialByName(nombre) {
-          var urlApi = "http://192.168.250.4:3000/material/".concat(nombre);
+          var urlApi = "http://192.168.250.10:3000/material/".concat(nombre);
           return this.http.get(urlApi);
         }
       }, {
         key: "getInstrumentosByName",
         value: function getInstrumentosByName(nombre) {
-          var urlApi = "http://192.168.250.4:3000/instrumento/".concat(nombre);
+          var urlApi = "http://192.168.250.10:3000/instrumento/".concat(nombre);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPadecimientoPorPieza",
         value: function getAllPadecimientoPorPieza() {
-          var urlApi = 'http://192.168.250.4:3000/padecimientoporPieza';
+          var urlApi = 'http://192.168.250.10:3000/padecimientoporPieza';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPiezasDentales",
         value: function getAllPiezasDentales() {
-          var urlApi = 'http://192.168.250.4:3000/piezadental';
+          var urlApi = 'http://192.168.250.10:3000/piezadental';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllProcedimientosTodoslosdientes",
         value: function getAllProcedimientosTodoslosdientes() {
-          var urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento/todoslosdientes';
+          var urlApi = 'http://192.168.250.10:3000/procedimientoapadecimiento/todoslosdientes';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllodontogramasbypatient",
         value: function getAllodontogramasbypatient(id) {
-          var urlApi = "http://192.168.250.4:3000/odontograma/patient".concat(id);
+          var urlApi = "http://192.168.250.10:3000/odontograma/patient".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllodontogramastodoslosdientesbypatient",
         value: function getAllodontogramastodoslosdientesbypatient(id) {
-          var urlApi = "http://192.168.250.4:3000/seguimientotodosdientes/patientseguimiento".concat(id);
+          var urlApi = "http://192.168.250.10:3000/seguimientotodosdientes/patientseguimiento".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllortodonciasbypatient",
         value: function getAllortodonciasbypatient(id) {
-          var urlApi = "http://192.168.250.4:3000/seguimientoortodoncia/odontograma/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/seguimientoortodoncia/odontograma/".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllodontogramasdeOrtodoncia",
         value: function getAllodontogramasdeOrtodoncia(id) {
-          var urlApi = "http://192.168.250.4:3000/ortodoncia/patient/ortodoncia/".concat(id);
+          var urlApi = "http://192.168.250.10:3000/ortodoncia/patient/ortodoncia/".concat(id);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllprocedimientopornombre",
         value: function getAllprocedimientopornombre(nombre) {
-          var urlApi = "http://192.168.250.4:3000/procedimientoapadecimiento/nombreprocedimiento/".concat(nombre);
+          var urlApi = "http://192.168.250.10:3000/procedimientoapadecimiento/nombreprocedimiento/".concat(nombre);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPadecimientosxpiezaporNomeclatura",
         value: function getAllPadecimientosxpiezaporNomeclatura(nom) {
-          var urlApi = "http://192.168.250.4:3000/padecimientoporPieza/nomeclatura/".concat(nom);
+          var urlApi = "http://192.168.250.10:3000/padecimientoporPieza/nomeclatura/".concat(nom);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllServicios",
         value: function getAllServicios() {
-          var urlApi = 'http://192.168.250.4:3000/servicios';
+          var urlApi = 'http://192.168.250.10:3000/servicios';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllProcedimientos",
         value: function getAllProcedimientos() {
-          var urlApi = 'http://192.168.250.4:3000/procedimiento';
+          var urlApi = 'http://192.168.250.10:3000/procedimiento';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllProcedimientosaPadecimientos",
         value: function getAllProcedimientosaPadecimientos() {
-          var urlApi = 'http://192.168.250.4:3000/procedimientoapadecimiento';
+          var urlApi = 'http://192.168.250.10:3000/procedimientoapadecimiento';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllProcedimientosaUNpadecimiento",
         value: function getAllProcedimientosaUNpadecimiento(padecimiento) {
-          var urlApi = "http://192.168.250.4:3000/procedimientoapadecimiento/procedimiento/".concat(padecimiento);
+          var urlApi = "http://192.168.250.10:3000/procedimientoapadecimiento/procedimiento/".concat(padecimiento);
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllPadecimientos",
         value: function getAllPadecimientos() {
-          var urlApi = 'http://192.168.250.4:3000/padecimiento';
+          var urlApi = 'http://192.168.250.10:3000/padecimiento';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllMAterialOrtodoncia",
         value: function getAllMAterialOrtodoncia() {
-          var urlApi = 'http://192.168.250.4:3000/material/ortodoncia';
+          var urlApi = 'http://192.168.250.10:3000/material/ortodoncia';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllMAterialOdontologia",
         value: function getAllMAterialOdontologia() {
-          var urlApi = 'http://192.168.250.4:3000/material/odontologia';
+          var urlApi = 'http://192.168.250.10:3000/material/odontologia';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllIntrumentos",
         value: function getAllIntrumentos() {
-          var urlApi = 'http://192.168.250.4:3000/instrumento';
+          var urlApi = 'http://192.168.250.10:3000/instrumento';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllIntrumentosOrtodoncia",
         value: function getAllIntrumentosOrtodoncia() {
-          var urlApi = 'http://192.168.250.4:3000/instrumento/ortodoncia';
+          var urlApi = 'http://192.168.250.10:3000/instrumento/ortodoncia';
           return this.http.get(urlApi);
         }
       }, {
         key: "getAllIntrumentosOdontologia",
         value: function getAllIntrumentosOdontologia() {
-          var urlApi = 'http://192.168.250.4:3000/instrumento/odontologia';
+          var urlApi = 'http://192.168.250.10:3000/instrumento/odontologia';
           return this.http.get(urlApi);
         }
       }]);
